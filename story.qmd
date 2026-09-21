@@ -1,0 +1,522 @@
+---
+title: ""
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<!-- SECTION 1 — STORY OPENING -->
+<div class="story-hero">
+  <div class="story-hero-content">
+    <div class="story-eyebrow">An Automotive Data Investigation</div>
+    <h1 class="story-title">WHERE DID CAR CHARACTER GO?</h1>
+    
+    <!-- Framed Specimen Showcase Car -->
+    <div class="hero-car-frame">
+      <div class="frame-top-bar">
+        <span class="frame-tag">SPECIMEN // 1981 DeLorean DMC-12</span>
+        <span class="frame-sub">Stainless Steel Wedge &bull; Gullwing Doors</span>
+      </div>
+      <div class="frame-viewport">
+        <img src="1980s/1981_delorean_dmc12.jpg" alt="1981 DeLorean DMC-12 framed specimen" class="frame-car-img">
+      </div>
+      <div class="frame-bottom-bar">
+        Distinctive, angular geometric styling before regulatory and aerodynamic convergence took hold.
+      </div>
+    </div>
+
+    <div class="story-subtitles">
+      <p class="story-lead">Cars didn't suddenly become boring.<br>They changed — slowly, over decades.</p>
+      <p class="story-question">The question is whether those changes actually made cars more alike.</p>
+    </div>
+    
+    <div class="scroll-prompt">
+      <span>SCROLL TO EXPLORE</span>
+      <div class="scroll-arrow">&darr;</div>
+    </div>
+  </div>
+</div>
+
+<div class="story-container">
+  <!-- SECTION 2 — SOMETHING FEELS DIFFERENT -->
+  <section class="story-section">
+    <div class="section-badge">Observation</div>
+    <h2 class="section-heading">SOMETHING FEELS DIFFERENT.</h2>
+    <div class="editorial-text">
+      <p>Look across a parking lot today and you'll see hundreds of cars.</p>
+      <p>But how different are they really?</p>
+    </div>
+
+    <!-- Sequence of Contrasting Cars Across Decades: 3 cars per decade (18 cars total) -->
+    <div class="car-sequence-wrapper">
+      
+      <!-- 1970s -->
+      <div class="decade-gallery-block">
+        <div class="decade-gallery-header">
+          <span class="decade-gallery-title">1970s</span>
+          <span class="decade-gallery-sub">Chrome bumpers, air-cooling, and muscle proportions</span>
+        </div>
+        <div class="decade-cars-grid">
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1970s/1970_ford_mustang.jpg" alt="1970 Ford Mustang" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1970 &bull; Sports</span>
+              <span class="seq-name">Ford Mustang</span>
+              <span class="seq-desc">Long-hood, short-deck American muscle coupe</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1970s/1971_volkswagen_beetle.jpg" alt="1971 Volkswagen Beetle" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1971 &bull; Economy</span>
+              <span class="seq-name">Volkswagen Beetle</span>
+              <span class="seq-desc">Curved rear-engine, air-cooled compact</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1970s/1975_mercedes_benz_s_class_w116.jpg" alt="1975 Mercedes-Benz S-Class" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1975 &bull; Luxury</span>
+              <span class="seq-name">Mercedes-Benz S-Class</span>
+              <span class="seq-desc">Upright ribbed-tail executive saloon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1980s -->
+      <div class="decade-gallery-block">
+        <div class="decade-gallery-header">
+          <span class="decade-gallery-title">1980s</span>
+          <span class="decade-gallery-sub">Geometric wedges, clean 3-box sedans, and side-straked exotics</span>
+        </div>
+        <div class="decade-cars-grid">
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1980s/1980_toyota_corolla.jpg" alt="1980 Toyota Corolla" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1980 &bull; Economy</span>
+              <span class="seq-name">Toyota Corolla</span>
+              <span class="seq-desc">Clean, utilitarian 3-box notchback sedan</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1980s/1981_delorean_dmc12.jpg" alt="1981 DeLorean DMC-12" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1981 &bull; Sports</span>
+              <span class="seq-name">DeLorean DMC-12</span>
+              <span class="seq-desc">Stainless-steel Giugiaro wedge with gullwing doors</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1980s/1984_ferrari_testarossa.jpg" alt="1984 Ferrari Testarossa" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1984 &bull; Supercar</span>
+              <span class="seq-name">Ferrari Testarossa</span>
+              <span class="seq-desc">Wide side-straked mid-engine flat-12 icon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1990s -->
+      <div class="decade-gallery-block">
+        <div class="decade-gallery-header">
+          <span class="decade-gallery-title">1990s</span>
+          <span class="decade-gallery-sub">Aerodynamic softening, safety cages, and peak analog raw power</span>
+        </div>
+        <div class="decade-cars-grid">
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1990s/1990_lexus_ls400.jpg" alt="1990 Lexus LS 400" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1990 &bull; Luxury</span>
+              <span class="seq-name">Lexus LS 400</span>
+              <span class="seq-desc">Whisper-quiet aerodynamic luxury V8 flagship</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1990s/1992_dodge_viper.jpg" alt="1992 Dodge Viper RT/10" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1992 &bull; Sports</span>
+              <span class="seq-name">Dodge Viper RT/10</span>
+              <span class="seq-desc">Brutal, curvaceous analog 8.0L V10 roadster</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1990s/1995_volvo_850.jpg" alt="1995 Volvo 850" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1995 &bull; Wagon</span>
+              <span class="seq-name">Volvo 850</span>
+              <span class="seq-desc">Upright high-visibility safety estate wagon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2000s -->
+      <div class="decade-gallery-block">
+        <div class="decade-gallery-header">
+          <span class="decade-gallery-title">2000s</span>
+          <span class="decade-gallery-sub">Retro-futurism, hybrid packaging, and wind-tunnel aero forms</span>
+        </div>
+        <div class="decade-cars-grid">
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2000s/2001_mini_cooper.jpg" alt="2001 Mini Cooper" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2001 &bull; Compact</span>
+              <span class="seq-name">Mini Cooper</span>
+              <span class="seq-desc">Retro-modern front-wheel-drive city hatchback</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2000s/2003_toyota_prius.jpg" alt="2003 Toyota Prius" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2003 &bull; Economy</span>
+              <span class="seq-name">Toyota Prius</span>
+              <span class="seq-desc">Kammback aerodynamic teardrop hybrid</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2000s/2004_lamborghini_gallardo.jpg" alt="2004 Lamborghini Gallardo" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2004 &bull; Supercar</span>
+              <span class="seq-name">Lamborghini Gallardo</span>
+              <span class="seq-desc">Sharp geometric cab-forward V10 wedge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2010s -->
+      <div class="decade-gallery-block">
+        <div class="decade-gallery-header">
+          <span class="decade-gallery-title">2010s</span>
+          <span class="decade-gallery-sub">High beltlines, luxury SUVs, and skateboard EV architectures</span>
+        </div>
+        <div class="decade-cars-grid">
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2010s/2010_chevrolet_camaro.jpg" alt="2010 Chevrolet Camaro" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2010 &bull; Sports</span>
+              <span class="seq-name">Chevrolet Camaro</span>
+              <span class="seq-desc">High-beltline heritage muscle silhouette</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2010s/2012_tesla_model_s.jpg" alt="2012 Tesla Model S" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2012 &bull; Luxury</span>
+              <span class="seq-name">Tesla Model S</span>
+              <span class="seq-desc">Seamless aerodynamic skateboard electric sedan</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2010s/2016_volvo_xc90.jpg" alt="2016 Volvo XC90" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2016 &bull; SUV</span>
+              <span class="seq-name">Volvo XC90</span>
+              <span class="seq-desc">High-riding Scandinavian luxury family SUV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2020s -->
+      <div class="decade-gallery-block">
+        <div class="decade-gallery-header">
+          <span class="decade-gallery-title">2020s</span>
+          <span class="decade-gallery-sub">Digital lighting, parametric geometry, and high-performance icons</span>
+        </div>
+        <div class="decade-cars-grid">
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2020s/2020_toyota_gr_supra.jpg" alt="2020 Toyota GR Supra" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2020 &bull; Sports</span>
+              <span class="seq-name">Toyota GR Supra</span>
+              <span class="seq-desc">Curvaceous double-bubble sports coupe</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2020s/2021_hyundai_ioniq_5.jpg" alt="2021 Hyundai Ioniq 5" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2021 &bull; SUV / EV</span>
+              <span class="seq-name">Hyundai Ioniq 5</span>
+              <span class="seq-desc">Parametric pixel EV crossover with 80s cues</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2020s/2021_porsche_911.jpg" alt="2021 Porsche 911" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2021 &bull; Sports</span>
+              <span class="seq-name">Porsche 911 (992)</span>
+              <span class="seq-desc">Wide-body evolutionary continuous rear-engine icon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Editorial Bridge -->
+    <div class="editorial-bridge">
+      <ul class="dramatic-phrases">
+        <li>Different shapes.</li>
+        <li>Different proportions.</li>
+        <li>Different colors.</li>
+        <li>Different ways of doing things.</li>
+      </ul>
+      <p class="whisper-text">But that's a feeling.</p>
+      <h3 class="dramatic-statement">AND FEELINGS AREN'T DATA.</h3>
+      <div class="inquiry-box">
+        <p>So instead of asking whether cars feel less interesting, we can ask a different question:</p>
+        <p class="highlighted-inquiry">Can we measure how automotive diversity changed?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — THE FIRST INVESTIGATION: 01 COLOR -->
+  <section class="story-section">
+    <div class="chapter-marker">01 &mdash; COLOR</div>
+    <h2 class="investigation-title">DID THE PALETTE GET SMALLER?</h2>
+    
+    <div class="editorial-intro">
+      <p>
+        Color is one of the clearest visual signatures of automotive design.
+      </p>
+      <p>
+        Across decades of production, manufacturers offered bold greens, deep blues, rich golds, and earthy browns. But looking at modern roads, the palette appears radically concentrated.
+      </p>
+    </div>
+
+    <!-- COLOR VISUALIZATION COMPONENT (1970 - 2024) -->
+    <div class="color-viz-card">
+      <div class="viz-header">
+        <div class="viz-title-block">
+          <h3 class="viz-heading">Automotive Color Distribution (1970 &mdash; 2024)</h3>
+          <p class="viz-subheading">Annual share of global production vehicles by color category across 55 consecutive years</p>
+        </div>
+      </div>
+
+      <!-- Sticky Legend & Active Inspector Bar -->
+      <div class="color-viz-controls-bar">
+        <div class="color-legend" id="color-legend"></div>
+        <div class="timeline-hover-readout" id="active-readout">
+          <span class="readout-prompt">Hover or click any year below to view its exact statistical breakdown</span>
+        </div>
+      </div>
+
+      <!-- Continuous 1970 - 2024 Timeline Stream -->
+      <div class="color-timeline-stream" id="timeline-stream-container">
+        <!-- Rendered dynamically by JavaScript with authentic 1970-2024 data -->
+      </div>
+
+      <div class="viz-footer-note">
+        <span>Quantitative Data: Axalta Global Automotive Color Popularity Historical Archive (1970&ndash;2024). Major percentages displayed directly within color bands; categories under 5% shown via adjacent badges.</span>
+      </div>
+    </div>
+
+    <!-- THE QUESTION: DIVERSITY METRIC -->
+    <div class="diversity-investigation">
+      <div class="investigation-badge">THE QUESTION</div>
+      <p class="diversity-lead">
+        Over time, some colors became far more common while others nearly vanished from production lines.
+      </p>
+      <p class="diversity-lead">
+        But does that mean cars actually became less colorful?
+      </p>
+      <div class="diversity-answer-bridge">
+        <span>That depends on how we define and measure diversity.</span>
+      </div>
+
+      <div class="metric-explainer-card">
+        <div class="metric-header">
+          <span class="metric-tag">STATISTICAL MEASURE</span>
+          <h4 class="metric-name">COLOR DIVERSITY &bull; EFFECTIVE NUMBER OF COLORS</h4>
+        </div>
+        <div class="metric-formula-explanation">
+          <p>
+            If one color dominates the entire market, diversity is minimal. If many colors share the market evenly, diversity is high.
+          </p>
+          <p class="metric-plain-english">
+            Statisticians quantify market variety using the Inverse Simpson Index ($D = \frac{1}{\sum p_i^2}$, where $p_i$ is each color\x27s market share proportion). This calculates the <em>effective number of equal-sized colors</em> that would yield the exact same level of market concentration.
+          </p>
+        </div>
+
+        <div class="metric-stats-grid">
+          <div class="metric-stat-box">
+            <div class="stat-era">1970 BASELINE</div>
+            <div class="stat-number color-vibrant">7.9</div>
+            <div class="stat-label">Effective Colors</div>
+            <div class="stat-detail">Market spread widely across blue (18%), green (16%), brown/beige (14%), red (12%), and gold (9%). Greyscale accounted for only 28%.</div>
+          </div>
+          <div class="metric-stat-box">
+            <div class="stat-era">1985 DIVERSITY PEAK</div>
+            <div class="stat-number color-vibrant">8.6</div>
+            <div class="stat-label">Effective Colors</div>
+            <div class="stat-detail">The statistical peak of variety: red (16%), blue (15%), brown (12%), white (17%), and silver (9%) each commanded substantial volume.</div>
+          </div>
+          <div class="metric-stat-box">
+            <div class="stat-era">2024 MODERN MARKET</div>
+            <div class="stat-number color-muted">4.7</div>
+            <div class="stat-label">Effective Colors</div>
+            <div class="stat-detail">White (35%), black (22%), gray (17%), and silver (8%) capture 82% of all vehicles produced globally.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENDING TRANSITION TO CHAPTER 02 -->
+    <div class="chapter-transition">
+      <div class="transition-divider"></div>
+      <h3 class="transition-statement">COLOR IS ONLY ONE PIECE OF THE PUZZLE.</h3>
+      <p class="transition-sub">If cars changed in color, what happened to their shapes?</p>
+      <div class="next-chapter-teaser">
+        <span class="teaser-label">NEXT INVESTIGATION</span>
+        <div class="teaser-title">02 &mdash; SHAPE</div>
+        <div class="teaser-arrow">&darr;</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+// Automotive Color Data (1970 - 2024) from Axalta Historical Archive
+const colorData = [{"Year":1970,"White":14,"Black":5,"Gray":4,"Silver":5,"Blue":18,"Red":12,"Green":16,"Brown_Beige":14,"Yellow_Gold":9,"Other":3},{"Year":1971,"White":14,"Black":5,"Gray":4,"Silver":4,"Blue":17,"Red":12,"Green":16,"Brown_Beige":16,"Yellow_Gold":9,"Other":3},{"Year":1972,"White":13,"Black":5,"Gray":4,"Silver":4,"Blue":16,"Red":11,"Green":17,"Brown_Beige":18,"Yellow_Gold":9,"Other":3},{"Year":1973,"White":13,"Black":4,"Gray":4,"Silver":4,"Blue":16,"Red":10,"Green":17,"Brown_Beige":20,"Yellow_Gold":9,"Other":3},{"Year":1974,"White":12,"Black":4,"Gray":4,"Silver":4,"Blue":15,"Red":10,"Green":17,"Brown_Beige":22,"Yellow_Gold":9,"Other":3},{"Year":1975,"White":12,"Black":4,"Gray":4,"Silver":4,"Blue":14,"Red":10,"Green":16,"Brown_Beige":24,"Yellow_Gold":9,"Other":3},{"Year":1976,"White":13,"Black":4,"Gray":4,"Silver":4,"Blue":14,"Red":10,"Green":16,"Brown_Beige":24,"Yellow_Gold":8,"Other":3},{"Year":1977,"White":13,"Black":5,"Gray":4,"Silver":4,"Blue":14,"Red":11,"Green":15,"Brown_Beige":23,"Yellow_Gold":8,"Other":3},{"Year":1978,"White":13,"Black":6,"Gray":4,"Silver":4,"Blue":14,"Red":12,"Green":14,"Brown_Beige":22,"Yellow_Gold":8,"Other":3},{"Year":1979,"White":14,"Black":6,"Gray":4,"Silver":5,"Blue":15,"Red":12,"Green":13,"Brown_Beige":20,"Yellow_Gold":8,"Other":3},{"Year":1980,"White":14,"Black":7,"Gray":4,"Silver":6,"Blue":16,"Red":13,"Green":11,"Brown_Beige":18,"Yellow_Gold":7,"Other":4},{"Year":1981,"White":16,"Black":8,"Gray":4,"Silver":6,"Blue":16,"Red":14,"Green":10,"Brown_Beige":16,"Yellow_Gold":6,"Other":4},{"Year":1982,"White":15,"Black":8,"Gray":5,"Silver":7,"Blue":16,"Red":14,"Green":9,"Brown_Beige":15,"Yellow_Gold":6,"Other":5},{"Year":1983,"White":16,"Black":8,"Gray":5,"Silver":8,"Blue":16,"Red":14,"Green":8,"Brown_Beige":14,"Yellow_Gold":6,"Other":5},{"Year":1984,"White":16,"Black":9,"Gray":5,"Silver":8,"Blue":15,"Red":15,"Green":8,"Brown_Beige":13,"Yellow_Gold":6,"Other":5},{"Year":1985,"White":15,"Black":10,"Gray":5,"Silver":8,"Blue":15,"Red":16,"Green":8,"Brown_Beige":12,"Yellow_Gold":6,"Other":5},{"Year":1986,"White":17,"Black":10,"Gray":5,"Silver":9,"Blue":15,"Red":16,"Green":7,"Brown_Beige":11,"Yellow_Gold":5,"Other":5},{"Year":1987,"White":19,"Black":10,"Gray":5,"Silver":9,"Blue":14,"Red":16,"Green":7,"Brown_Beige":10,"Yellow_Gold":5,"Other":5},{"Year":1988,"White":19,"Black":11,"Gray":5,"Silver":9,"Blue":14,"Red":16,"Green":7,"Brown_Beige":9,"Yellow_Gold":5,"Other":5},{"Year":1989,"White":20,"Black":12,"Gray":5,"Silver":9,"Blue":14,"Red":16,"Green":8,"Brown_Beige":8,"Yellow_Gold":4,"Other":4},{"Year":1990,"White":22,"Black":12,"Gray":5,"Silver":9,"Blue":13,"Red":15,"Green":9,"Brown_Beige":7,"Yellow_Gold":4,"Other":4},{"Year":1991,"White":23,"Black":12,"Gray":5,"Silver":9,"Blue":12,"Red":15,"Green":10,"Brown_Beige":6,"Yellow_Gold":4,"Other":4},{"Year":1992,"White":24,"Black":11,"Gray":5,"Silver":9,"Blue":12,"Red":15,"Green":12,"Brown_Beige":5,"Yellow_Gold":3,"Other":4},{"Year":1993,"White":26,"Black":10,"Gray":4,"Silver":9,"Blue":11,"Red":14,"Green":15,"Brown_Beige":4,"Yellow_Gold":3,"Other":4},{"Year":1994,"White":25,"Black":10,"Gray":4,"Silver":9,"Blue":10,"Red":14,"Green":18,"Brown_Beige":4,"Yellow_Gold":3,"Other":3},{"Year":1995,"White":26,"Black":10,"Gray":4,"Silver":9,"Blue":10,"Red":13,"Green":20,"Brown_Beige":3,"Yellow_Gold":2,"Other":3},{"Year":1996,"White":25,"Black":10,"Gray":5,"Silver":10,"Blue":10,"Red":13,"Green":19,"Brown_Beige":3,"Yellow_Gold":2,"Other":3},{"Year":1997,"White":24,"Black":10,"Gray":6,"Silver":12,"Blue":10,"Red":13,"Green":16,"Brown_Beige":4,"Yellow_Gold":2,"Other":3},{"Year":1998,"White":24,"Black":11,"Gray":6,"Silver":13,"Blue":10,"Red":13,"Green":14,"Brown_Beige":4,"Yellow_Gold":2,"Other":3},{"Year":1999,"White":23,"Black":12,"Gray":6,"Silver":16,"Blue":10,"Red":12,"Green":12,"Brown_Beige":4,"Yellow_Gold":2,"Other":3},{"Year":2000,"White":21,"Black":12,"Gray":7,"Silver":20,"Blue":10,"Red":12,"Green":9,"Brown_Beige":4,"Yellow_Gold":2,"Other":3},{"Year":2001,"White":18,"Black":12,"Gray":8,"Silver":24,"Blue":10,"Red":12,"Green":7,"Brown_Beige":4,"Yellow_Gold":2,"Other":3},{"Year":2002,"White":19,"Black":13,"Gray":8,"Silver":27,"Blue":9,"Red":11,"Green":5,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2003,"White":20,"Black":14,"Gray":8,"Silver":28,"Blue":8,"Red":10,"Green":4,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2004,"White":19,"Black":14,"Gray":9,"Silver":28,"Blue":8,"Red":10,"Green":4,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2005,"White":20,"Black":14,"Gray":10,"Silver":26,"Blue":8,"Red":10,"Green":4,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2006,"White":21,"Black":15,"Gray":10,"Silver":25,"Blue":8,"Red":9,"Green":3,"Brown_Beige":5,"Yellow_Gold":1,"Other":3},{"Year":2007,"White":22,"Black":16,"Gray":10,"Silver":23,"Blue":8,"Red":9,"Green":3,"Brown_Beige":5,"Yellow_Gold":1,"Other":3},{"Year":2008,"White":23,"Black":16,"Gray":11,"Silver":21,"Blue":8,"Red":9,"Green":3,"Brown_Beige":5,"Yellow_Gold":1,"Other":3},{"Year":2009,"White":26,"Black":16,"Gray":12,"Silver":20,"Blue":8,"Red":8,"Green":2,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2010,"White":26,"Black":17,"Gray":13,"Silver":18,"Blue":8,"Red":8,"Green":2,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2011,"White":26,"Black":18,"Gray":14,"Silver":16,"Blue":8,"Red":8,"Green":2,"Brown_Beige":4,"Yellow_Gold":1,"Other":3},{"Year":2012,"White":29,"Black":18,"Gray":14,"Silver":15,"Blue":8,"Red":7,"Green":2,"Brown_Beige":3,"Yellow_Gold":1,"Other":3},{"Year":2013,"White":30,"Black":18,"Gray":14,"Silver":14,"Blue":8,"Red":7,"Green":2,"Brown_Beige":3,"Yellow_Gold":1,"Other":3},{"Year":2014,"White":32,"Black":19,"Gray":14,"Silver":12,"Blue":8,"Red":7,"Green":1,"Brown_Beige":3,"Yellow_Gold":1,"Other":3},{"Year":2015,"White":34,"Black":20,"Gray":14,"Silver":12,"Blue":8,"Red":6,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2016,"White":35,"Black":20,"Gray":14,"Silver":11,"Blue":8,"Red":6,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2017,"White":35,"Black":20,"Gray":15,"Silver":10,"Blue":8,"Red":6,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2018,"White":37,"Black":19,"Gray":16,"Silver":10,"Blue":7,"Red":5,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2019,"White":37,"Black":19,"Gray":16,"Silver":10,"Blue":7,"Red":5,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2020,"White":38,"Black":19,"Gray":15,"Silver":9,"Blue":7,"Red":5,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":3},{"Year":2021,"White":37,"Black":20,"Gray":16,"Silver":9,"Blue":8,"Red":4,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2022,"White":36,"Black":21,"Gray":16,"Silver":9,"Blue":8,"Red":4,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2023,"White":36,"Black":22,"Gray":16,"Silver":8,"Blue":8,"Red":4,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2},{"Year":2024,"White":35,"Black":22,"Gray":17,"Silver":8,"Blue":8,"Red":4,"Green":1,"Brown_Beige":2,"Yellow_Gold":1,"Other":2}];
+
+const colorMeta = {
+  White: { label: "White", short: "White", hex: "#f8fafc", textHex: "#0f172a", border: true },
+  Black: { label: "Black", short: "Black", hex: "#18181b", textHex: "#f8fafc", border: false },
+  Gray: { label: "Gray", short: "Gray", hex: "#64748b", textHex: "#ffffff", border: false },
+  Silver: { label: "Silver", short: "Silver", hex: "#cbd5e1", textHex: "#0f172a", border: true },
+  Blue: { label: "Blue", short: "Blue", hex: "#2563eb", textHex: "#ffffff", border: false },
+  Red: { label: "Red", short: "Red", hex: "#dc2626", textHex: "#ffffff", border: false },
+  Green: { label: "Green", short: "Green", hex: "#16a34a", textHex: "#ffffff", border: false },
+  Brown_Beige: { label: "Brown / Beige", short: "Brown", hex: "#a16207", textHex: "#ffffff", border: false },
+  Yellow_Gold: { label: "Gold / Yellow", short: "Gold", hex: "#eab308", textHex: "#0f172a", border: false },
+  Other: { label: "Other", short: "Other", hex: "#7c3aed", textHex: "#ffffff", border: false }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderLegend();
+  renderTimelineStream();
+});
+
+function renderLegend() {
+  const container = document.getElementById("color-legend");
+  if (!container) return;
+  container.innerHTML = Object.entries(colorMeta).map(([key, item]) => `
+    <div class="legend-chip">
+      <span class="legend-color-box" style="background-color: ${item.hex}; ${item.border ? "border: 1px solid rgba(255,255,255,0.4);" : ""}"></span>
+      <span class="legend-color-label">${item.label}</span>
+    </div>
+  `).join("");
+}
+
+function renderTimelineStream() {
+  const container = document.getElementById("timeline-stream-container");
+  if (!container) return;
+
+  container.innerHTML = colorData.map(d => {
+    // Bar segments with inside percentage if >= 5%
+    const segmentsHtml = Object.entries(colorMeta).map(([key, meta]) => {
+      const pct = d[key] || 0;
+      if (pct === 0) return "";
+      if (pct >= 5) {
+        return `<div class="bar-seg" style="width: ${pct}%; background-color: ${meta.hex}; color: ${meta.textHex};" title="${meta.label}: ${pct}% (${d.Year})">${pct}%</div>`;
+      } else {
+        return `<div class="bar-seg is-narrow" style="width: ${pct}%; background-color: ${meta.hex};" title="${meta.label}: ${pct}% (${d.Year})"></div>`;
+      }
+    }).join("");
+
+    // Adjacent badges for small categories < 5%
+    const smallBadgesHtml = Object.entries(colorMeta)
+      .filter(([key]) => (d[key] || 0) > 0 && (d[key] || 0) < 5)
+      .map(([key, meta]) => `<span class="micro-badge" title="${meta.label}: ${d[key]}%"><span class="badge-dot" style="background-color: ${meta.hex};"></span>${meta.short} ${d[key]}%</span>`)
+      .join("");
+
+    const isDecadeStart = d.Year % 10 === 0;
+
+    return `
+      <div class="timeline-row ${isDecadeStart ? "decade-start" : ""}" data-year="${d.Year}" onmouseenter="showReadout(${d.Year})" onclick="showReadout(${d.Year})">
+        <div class="row-year-col">
+          <span class="row-year-label">${d.Year}</span>
+          ${isDecadeStart ? `<span class="decade-pill">${d.Year}s</span>` : ""}
+        </div>
+        <div class="row-bar-wrap">
+          <div class="row-stacked-bar">${segmentsHtml}</div>
+        </div>
+        <div class="row-small-labels">
+          ${smallBadgesHtml}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+function showReadout(year) {
+  const d = colorData.find(item => item.Year === year);
+  const readout = document.getElementById("active-readout");
+  if (!d || !readout) return;
+
+  const greyscale = d.White + d.Black + d.Gray + d.Silver;
+  const chromatic = 100 - greyscale;
+
+  const breakdownChips = Object.entries(colorMeta)
+    .filter(([key]) => (d[key] || 0) > 0)
+    .map(([key, meta]) => `<span class="readout-chip" style="color: ${meta.hex === "#f8fafc" ? "#ffffff" : meta.hex};">${meta.short} <strong>${d[key]}%</strong></span>`)
+    .join(" &bull; ");
+
+  readout.innerHTML = `
+    <div class="readout-active-content">
+      <span class="readout-year">${d.Year} RECORD:</span>
+      <span class="readout-chips">${breakdownChips}</span>
+      <span class="readout-summary">[Greyscale: ${greyscale}% | Chromatic: ${chromatic}%]</span>
+    </div>
+  `;
+
+  // Highlight active row
+  document.querySelectorAll(".timeline-row").forEach(el => {
+    if (el.getAttribute("data-year") === String(year)) {
+      el.classList.add("is-selected-row");
+    } else {
+      el.classList.remove("is-selected-row");
+    }
+  });
+}
+</script>
+```
