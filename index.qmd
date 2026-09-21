@@ -23,16 +23,16 @@ toc: false
         <span class="panel-decade-badge">1970s</span>
         <div class="panel-horizon-node"></div>
         <div class="panel-image-frame">
-          <img src="1970s/1971_volkswagen_beetle.jpg" alt="1971 Volkswagen Beetle" class="panel-car-img" loading="lazy">
+          <img src="1970s/1970_ford_mustang.jpg" alt="1970 Ford Mustang" class="panel-car-img" loading="lazy">
         </div>
         <div class="panel-meta">
-          <span class="panel-year">1971</span>
-          <span class="panel-model">VOLKSWAGEN BEETLE</span>
+          <span class="panel-year">1970</span>
+          <span class="panel-model">FORD MUSTANG</span>
           <div class="panel-specs">
-            <span>160 in</span>
-            <span>1,625 lb</span>
-            <span>1.2L Flat-4</span>
-            <span>35 hp</span>
+            <span>187 in</span>
+            <span>3,120 lb</span>
+            <span>4.9L V8</span>
+            <span>210 hp</span>
           </div>
         </div>
       </div>
@@ -42,16 +42,16 @@ toc: false
         <span class="panel-decade-badge">1980s</span>
         <div class="panel-horizon-node"></div>
         <div class="panel-image-frame">
-          <img src="1980s/1980_toyota_corolla.jpg" alt="1980 Toyota Corolla" class="panel-car-img" loading="lazy">
+          <img src="1980s/1981_delorean_dmc12.jpg" alt="1981 DeLorean DMC-12" class="panel-car-img" loading="lazy">
         </div>
         <div class="panel-meta">
-          <span class="panel-year">1980</span>
-          <span class="panel-model">TOYOTA COROLLA</span>
+          <span class="panel-year">1981</span>
+          <span class="panel-model">DELOREAN DMC-12</span>
           <div class="panel-specs">
-            <span>158 in</span>
-            <span>2,060 lb</span>
-            <span>1.3L I4</span>
-            <span>82 hp</span>
+            <span>166 in</span>
+            <span>2,718 lb</span>
+            <span>2.85L V6</span>
+            <span>130 hp</span>
           </div>
         </div>
       </div>
@@ -61,16 +61,16 @@ toc: false
         <span class="panel-decade-badge">1990s</span>
         <div class="panel-horizon-node"></div>
         <div class="panel-image-frame">
-          <img src="1990s/1995_volvo_850.jpg" alt="1995 Volvo 850" class="panel-car-img" loading="lazy">
+          <img src="1990s/1992_dodge_viper.jpg" alt="1992 Dodge Viper" class="panel-car-img" loading="lazy">
         </div>
         <div class="panel-meta">
-          <span class="panel-year">1995</span>
-          <span class="panel-model">VOLVO 850</span>
+          <span class="panel-year">1992</span>
+          <span class="panel-model">DODGE VIPER</span>
           <div class="panel-specs">
-            <span>184 in</span>
-            <span>3,177 lb</span>
-            <span>2.3L Turbo I5</span>
-            <span>240 hp</span>
+            <span>175 in</span>
+            <span>3,290 lb</span>
+            <span>8.0L V10</span>
+            <span>400 hp</span>
           </div>
         </div>
       </div>
@@ -80,16 +80,16 @@ toc: false
         <span class="panel-decade-badge">2000s</span>
         <div class="panel-horizon-node"></div>
         <div class="panel-image-frame">
-          <img src="2000s/2003_toyota_prius.jpg" alt="2003 Toyota Prius" class="panel-car-img" loading="lazy">
+          <img src="2000s/2004_lamborghini_gallardo.jpg" alt="2004 Lamborghini Gallardo" class="panel-car-img" loading="lazy">
         </div>
         <div class="panel-meta">
-          <span class="panel-year">2003</span>
-          <span class="panel-model">TOYOTA PRIUS</span>
+          <span class="panel-year">2004</span>
+          <span class="panel-model">LAMBORGHINI GALLARDO</span>
           <div class="panel-specs">
-            <span>175 in</span>
-            <span>2,810 lb</span>
-            <span>1.5L Hybrid I4</span>
-            <span>78 hp</span>
+            <span>169 in</span>
+            <span>3,153 lb</span>
+            <span>5.0L V10</span>
+            <span>493 hp</span>
           </div>
         </div>
       </div>
@@ -99,16 +99,16 @@ toc: false
         <span class="panel-decade-badge">2010s</span>
         <div class="panel-horizon-node"></div>
         <div class="panel-image-frame">
-          <img src="2010s/2016_volvo_xc90.jpg" alt="2016 Volvo XC90" class="panel-car-img" loading="lazy">
+          <img src="2010s/2010_chevrolet_camaro.jpg" alt="2010 Chevrolet Camaro" class="panel-car-img" loading="lazy">
         </div>
         <div class="panel-meta">
-          <span class="panel-year">2016</span>
-          <span class="panel-model">VOLVO XC90</span>
+          <span class="panel-year">2010</span>
+          <span class="panel-model">CHEVROLET CAMARO</span>
           <div class="panel-specs">
-            <span>195 in</span>
-            <span>4,420 lb</span>
-            <span>2.0L Turbo I4</span>
-            <span>250 hp</span>
+            <span>190 in</span>
+            <span>3,741 lb</span>
+            <span>3.6L V6</span>
+            <span>304 hp</span>
           </div>
         </div>
       </div>
@@ -118,16 +118,16 @@ toc: false
         <span class="panel-decade-badge">2020s</span>
         <div class="panel-horizon-node"></div>
         <div class="panel-image-frame">
-          <img src="2020s/2021_hyundai_ioniq_5.jpg" alt="2021 Hyundai Ioniq 5" class="panel-car-img" loading="lazy">
+          <img src="2020s/2020_toyota_gr_supra.jpg" alt="2020 Toyota GR Supra" class="panel-car-img" loading="lazy">
         </div>
         <div class="panel-meta">
-          <span class="panel-year">2021</span>
-          <span class="panel-model">HYUNDAI IONIQ 5</span>
+          <span class="panel-year">2020</span>
+          <span class="panel-model">TOYOTA GR SUPRA</span>
           <div class="panel-specs">
-            <span>186 in</span>
-            <span>4,450 lb</span>
-            <span>Dual Motor EV</span>
-            <span>305 hp</span>
+            <span>172 in</span>
+            <span>3,397 lb</span>
+            <span>3.0L Turbo I6</span>
+            <span>382 hp</span>
           </div>
         </div>
       </div>

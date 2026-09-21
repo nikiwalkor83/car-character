@@ -14,14 +14,14 @@ toc: false
     <!-- Framed Specimen Showcase Car -->
     <div class="hero-car-frame">
       <div class="frame-top-bar">
-        <span class="frame-tag">SPECIMEN // 1981 DeLorean DMC-12</span>
-        <span class="frame-sub">Stainless Steel Wedge &bull; Gullwing Doors</span>
+        <span class="frame-tag">SPECIMEN // 1984 Ferrari Testarossa</span>
+        <span class="frame-sub">Side Strakes &bull; Flat-12 Silhouette</span>
       </div>
       <div class="frame-viewport">
-        <img src="1980s/1981_delorean_dmc12.jpg" alt="1981 DeLorean DMC-12 framed specimen" class="frame-car-img">
+        <img src="1980s/1984_ferrari_testarossa.jpg" alt="1984 Ferrari Testarossa framed specimen" class="frame-car-img">
       </div>
       <div class="frame-bottom-bar">
-        Distinctive, angular geometric styling before regulatory and aerodynamic convergence took hold.
+        Distinctive, wide-hipped geometric styling before regulatory and aerodynamic convergence took hold.
       </div>
     </div>
 
@@ -59,32 +59,32 @@ toc: false
         <div class="decade-cars-grid">
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="1970s/1970_ford_mustang.jpg" alt="1970 Ford Mustang" loading="lazy">
-            </div>
-            <div class="sequence-caption">
-              <span class="seq-year">1970 &bull; Sports</span>
-              <span class="seq-name">Ford Mustang</span>
-              <span class="seq-desc">Long-hood, short-deck American muscle coupe</span>
-            </div>
-          </div>
-          <div class="sequence-card">
-            <div class="sequence-img-wrap">
-              <img src="1970s/1971_volkswagen_beetle.jpg" alt="1971 Volkswagen Beetle" loading="lazy">
-            </div>
-            <div class="sequence-caption">
-              <span class="seq-year">1971 &bull; Economy</span>
-              <span class="seq-name">Volkswagen Beetle</span>
-              <span class="seq-desc">Curved rear-engine, air-cooled compact</span>
-            </div>
-          </div>
-          <div class="sequence-card">
-            <div class="sequence-img-wrap">
               <img src="1970s/1975_mercedes_benz_s_class_w116.jpg" alt="1975 Mercedes-Benz S-Class" loading="lazy">
             </div>
             <div class="sequence-caption">
               <span class="seq-year">1975 &bull; Luxury</span>
               <span class="seq-name">Mercedes-Benz S-Class</span>
-              <span class="seq-desc">Upright ribbed-tail executive saloon</span>
+              <span class="seq-desc">Upright ribbed-tail executive flagship sedan</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1970s/1975_honda_civic.jpg" alt="1975 Honda Civic" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1975 &bull; Economy</span>
+              <span class="seq-name">Honda Civic</span>
+              <span class="seq-desc">Transverse-engine fuel-efficient compact</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="1970s/1977_ford_f150.jpg" alt="1977 Ford F-150" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">1977 &bull; Utility</span>
+              <span class="seq-name">Ford F-150</span>
+              <span class="seq-desc">Rugged square-jawed American workhorse truck</span>
             </div>
           </div>
         </div>
@@ -99,32 +99,32 @@ toc: false
         <div class="decade-cars-grid">
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="1980s/1980_toyota_corolla.jpg" alt="1980 Toyota Corolla" loading="lazy">
+              <img src="1980s/1984_dodge_caravan.jpg" alt="1984 Dodge Caravan" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">1980 &bull; Economy</span>
-              <span class="seq-name">Toyota Corolla</span>
-              <span class="seq-desc">Clean, utilitarian 3-box notchback sedan</span>
+              <span class="seq-year">1984 &bull; Family</span>
+              <span class="seq-name">Dodge Caravan</span>
+              <span class="seq-desc">Pioneering front-wheel-drive passenger minivan</span>
             </div>
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="1980s/1981_delorean_dmc12.jpg" alt="1981 DeLorean DMC-12" loading="lazy">
+              <img src="1980s/1986_jeep_cherokee_xj.jpg" alt="1986 Jeep Cherokee (XJ)" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">1981 &bull; Sports</span>
-              <span class="seq-name">DeLorean DMC-12</span>
-              <span class="seq-desc">Stainless-steel Giugiaro wedge with gullwing doors</span>
+              <span class="seq-year">1986 &bull; SUV</span>
+              <span class="seq-name">Jeep Cherokee (XJ)</span>
+              <span class="seq-desc">Lightweight unibody compact SUV trailblazer</span>
             </div>
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="1980s/1984_ferrari_testarossa.jpg" alt="1984 Ferrari Testarossa" loading="lazy">
+              <img src="1980s/1988_bmw_m3_e30.jpg" alt="1988 BMW M3 (E30)" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">1984 &bull; Supercar</span>
-              <span class="seq-name">Ferrari Testarossa</span>
-              <span class="seq-desc">Wide side-straked mid-engine flat-12 icon</span>
+              <span class="seq-year">1988 &bull; Sports</span>
+              <span class="seq-name">BMW M3 (E30)</span>
+              <span class="seq-desc">Box-flared touring car homologation coupe</span>
             </div>
           </div>
         </div>
@@ -149,22 +149,22 @@ toc: false
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="1990s/1992_dodge_viper.jpg" alt="1992 Dodge Viper RT/10" loading="lazy">
+              <img src="1990s/1991_ford_explorer.jpg" alt="1991 Ford Explorer" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">1992 &bull; Sports</span>
-              <span class="seq-name">Dodge Viper RT/10</span>
-              <span class="seq-desc">Brutal, curvaceous analog 8.0L V10 roadster</span>
+              <span class="seq-year">1991 &bull; SUV</span>
+              <span class="seq-name">Ford Explorer</span>
+              <span class="seq-desc">Catalyst for the global family SUV transition</span>
             </div>
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="1990s/1995_volvo_850.jpg" alt="1995 Volvo 850" loading="lazy">
+              <img src="1990s/1996_bmw_5_series_e39.jpg" alt="1996 BMW 5 Series (E39)" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">1995 &bull; Wagon</span>
-              <span class="seq-name">Volvo 850</span>
-              <span class="seq-desc">Upright high-visibility safety estate wagon</span>
+              <span class="seq-year">1996 &bull; Luxury</span>
+              <span class="seq-name">BMW 5 Series (E39)</span>
+              <span class="seq-desc">Harmonious analog executive sports saloon</span>
             </div>
           </div>
         </div>
@@ -189,22 +189,22 @@ toc: false
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="2000s/2003_toyota_prius.jpg" alt="2003 Toyota Prius" loading="lazy">
+              <img src="2000s/2002_cadillac_escalade.jpg" alt="2002 Cadillac Escalade" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">2003 &bull; Economy</span>
-              <span class="seq-name">Toyota Prius</span>
-              <span class="seq-desc">Kammback aerodynamic teardrop hybrid</span>
+              <span class="seq-year">2002 &bull; SUV</span>
+              <span class="seq-name">Cadillac Escalade</span>
+              <span class="seq-desc">Full-size chrome-accented American luxury SUV</span>
             </div>
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="2000s/2004_lamborghini_gallardo.jpg" alt="2004 Lamborghini Gallardo" loading="lazy">
+              <img src="2000s/2005_chrysler_300c.jpg" alt="2005 Chrysler 300C" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">2004 &bull; Supercar</span>
-              <span class="seq-name">Lamborghini Gallardo</span>
-              <span class="seq-desc">Sharp geometric cab-forward V10 wedge</span>
+              <span class="seq-year">2005 &bull; Sedan</span>
+              <span class="seq-name">Chrysler 300C</span>
+              <span class="seq-desc">High-shoulder chopped-roofline Hemi V8 sedan</span>
             </div>
           </div>
         </div>
@@ -219,16 +219,6 @@ toc: false
         <div class="decade-cars-grid">
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="2010s/2010_chevrolet_camaro.jpg" alt="2010 Chevrolet Camaro" loading="lazy">
-            </div>
-            <div class="sequence-caption">
-              <span class="seq-year">2010 &bull; Sports</span>
-              <span class="seq-name">Chevrolet Camaro</span>
-              <span class="seq-desc">High-beltline heritage muscle silhouette</span>
-            </div>
-          </div>
-          <div class="sequence-card">
-            <div class="sequence-img-wrap">
               <img src="2010s/2012_tesla_model_s.jpg" alt="2012 Tesla Model S" loading="lazy">
             </div>
             <div class="sequence-caption">
@@ -239,12 +229,22 @@ toc: false
           </div>
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="2010s/2016_volvo_xc90.jpg" alt="2016 Volvo XC90" loading="lazy">
+              <img src="2010s/2014_range_rover.jpg" alt="2014 Range Rover" loading="lazy">
             </div>
             <div class="sequence-caption">
-              <span class="seq-year">2016 &bull; SUV</span>
-              <span class="seq-name">Volvo XC90</span>
-              <span class="seq-desc">High-riding Scandinavian luxury family SUV</span>
+              <span class="seq-year">2014 &bull; SUV</span>
+              <span class="seq-name">Range Rover (L405)</span>
+              <span class="seq-desc">All-aluminum luxury flagship terrain vehicle</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2010s/2015_ford_mustang.jpg" alt="2015 Ford Mustang" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2015 &bull; Sports</span>
+              <span class="seq-name">Ford Mustang (S550)</span>
+              <span class="seq-desc">Modern global fastback coupe with independent rear suspension</span>
             </div>
           </div>
         </div>
@@ -259,32 +259,32 @@ toc: false
         <div class="decade-cars-grid">
           <div class="sequence-card">
             <div class="sequence-img-wrap">
-              <img src="2020s/2020_toyota_gr_supra.jpg" alt="2020 Toyota GR Supra" loading="lazy">
-            </div>
-            <div class="sequence-caption">
-              <span class="seq-year">2020 &bull; Sports</span>
-              <span class="seq-name">Toyota GR Supra</span>
-              <span class="seq-desc">Curvaceous double-bubble sports coupe</span>
-            </div>
-          </div>
-          <div class="sequence-card">
-            <div class="sequence-img-wrap">
-              <img src="2020s/2021_hyundai_ioniq_5.jpg" alt="2021 Hyundai Ioniq 5" loading="lazy">
-            </div>
-            <div class="sequence-caption">
-              <span class="seq-year">2021 &bull; SUV / EV</span>
-              <span class="seq-name">Hyundai Ioniq 5</span>
-              <span class="seq-desc">Parametric pixel EV crossover with 80s cues</span>
-            </div>
-          </div>
-          <div class="sequence-card">
-            <div class="sequence-img-wrap">
               <img src="2020s/2021_porsche_911.jpg" alt="2021 Porsche 911" loading="lazy">
             </div>
             <div class="sequence-caption">
               <span class="seq-year">2021 &bull; Sports</span>
               <span class="seq-name">Porsche 911 (992)</span>
-              <span class="seq-desc">Wide-body evolutionary continuous rear-engine icon</span>
+              <span class="seq-desc">Wide-body continuous evolutionary rear-engine icon</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2020s/2021_ford_bronco.jpg" alt="2021 Ford Bronco" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2021 &bull; SUV</span>
+              <span class="seq-name">Ford Bronco</span>
+              <span class="seq-desc">Boxy retro-rugged off-road adventure 4x4</span>
+            </div>
+          </div>
+          <div class="sequence-card">
+            <div class="sequence-img-wrap">
+              <img src="2020s/2022_rivian_r1t.jpg" alt="2022 Rivian R1T" loading="lazy">
+            </div>
+            <div class="sequence-caption">
+              <span class="seq-year">2022 &bull; Pickup</span>
+              <span class="seq-name">Rivian R1T</span>
+              <span class="seq-desc">Quad-motor electric adventure truck with stadium lighting</span>
             </div>
           </div>
         </div>
@@ -412,6 +412,639 @@ toc: false
       </div>
     </div>
   </section>
+
+  <!-- SECTION 4 — CHAPTER 02: SHAPE -->
+  <section class="story-section" id="chapter-shape">
+    <div class="chapter-marker">02 &mdash; SHAPE</div>
+    <h2 class="investigation-title">DID CARS START LOOKING MORE ALIKE?</h2>
+    
+    <div class="shape-intro-header">
+      <p class="shape-intro-lead">
+        Color is only one piece of the puzzle. Even when two cars share the same paint, their shapes can tell completely different stories.
+      </p>
+      <p class="shape-intro-sub">
+        For decades, cars changed in proportion, size, silhouette, and body style. But did that variety actually shrink?
+      </p>
+    </div>
+
+    <!-- 2. VISUAL SILHOUETTE INTRO: 6 Representative Cars Across Decades -->
+    <div class="silhouette-section">
+      <div class="silhouette-header-block">
+        <div class="silhouette-eyebrow">Visual Profile Comparison &bull; 1970s &mdash; 2020s</div>
+        <h3 class="silhouette-heading">SIX DECADES OF AUTOMOTIVE SILHOUETTES</h3>
+        <p class="silhouette-sub">
+          Viewed in direct side profile, a vehicle's silhouette exposes its structural philosophy: hood length, window-to-body proportion, roof arc, and overhangs.
+        </p>
+      </div>
+
+      <div class="silhouette-grid">
+        <!-- 1970s: 1971 VW Beetle -->
+        <div class="silhouette-card">
+          <div class="silhouette-frame">
+            <span class="silhouette-era-pill">1970s</span>
+            <img src="1970s/1971_volkswagen_beetle.jpg" alt="1971 Volkswagen Beetle silhouette" class="silhouette-img" loading="lazy">
+          </div>
+          <div class="silhouette-info">
+            <span class="sil-year-badge">1971 &bull; ECONOMY</span>
+            <h4 class="sil-car-title">Volkswagen Beetle</h4>
+            <p class="sil-profile-desc">Curved rear-engine teardrop silhouette with pronounced rounded fenders, tall upright cabin, and minimal forward engine hood.</p>
+            <div class="sil-traits">
+              <span class="sil-trait">Curved Roofline</span>
+              <span class="sil-trait">Rear Engine Deck</span>
+              <span class="sil-trait">Tall Cabin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1980s: 1980 Toyota Corolla -->
+        <div class="silhouette-card">
+          <div class="silhouette-frame">
+            <span class="silhouette-era-pill">1980s</span>
+            <img src="1980s/1980_toyota_corolla.jpg" alt="1980 Toyota Corolla silhouette" class="silhouette-img" loading="lazy">
+          </div>
+          <div class="silhouette-info">
+            <span class="sil-year-badge">1980 &bull; ECONOMY</span>
+            <h4 class="sil-car-title">Toyota Corolla</h4>
+            <p class="sil-profile-desc">Crisp geometric 3-box notchback architecture with planar horizontal beltline, flat hood, and upright rectangular passenger glasshouse.</p>
+            <div class="sil-traits">
+              <span class="sil-trait">Sharp 3-Box Notch</span>
+              <span class="sil-trait">Flat Hood & Trunk</span>
+              <span class="sil-trait">Slim Pillars</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1990s: 1995 Volvo 850 -->
+        <div class="silhouette-card">
+          <div class="silhouette-frame">
+            <span class="silhouette-era-pill">1990s</span>
+            <img src="1990s/1995_volvo_850.jpg" alt="1995 Volvo 850 silhouette" class="silhouette-img" loading="lazy">
+          </div>
+          <div class="silhouette-info">
+            <span class="sil-year-badge">1995 &bull; STATION WAGON</span>
+            <h4 class="sil-car-title">Volvo 850 Estate</h4>
+            <p class="sil-profile-desc">Iconic vertical 90-degree tailgate and extended roofline engineered for maximum volumetric cargo efficiency and 360-degree driver visibility.</p>
+            <div class="sil-traits">
+              <span class="sil-trait">Vertical Tailgate</span>
+              <span class="sil-trait">Long Level Roof</span>
+              <span class="sil-trait">High Visibility</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2000s: 2003 Toyota Prius -->
+        <div class="silhouette-card">
+          <div class="silhouette-frame">
+            <span class="silhouette-era-pill">2000s</span>
+            <img src="2000s/2003_toyota_prius.jpg" alt="2003 Toyota Prius silhouette" class="silhouette-img" loading="lazy">
+          </div>
+          <div class="silhouette-info">
+            <span class="sil-year-badge">2003 &bull; HYBRID</span>
+            <h4 class="sil-car-title">Toyota Prius</h4>
+            <p class="sil-profile-desc">Pioneering aero-derived mono-volume wedge with raked windshield continuous into the hood line, ending in a sharp aerodynamic Kammback rear lip.</p>
+            <div class="sil-traits">
+              <span class="sil-trait">Mono-Volume Arc</span>
+              <span class="sil-trait">Raked Windshield</span>
+              <span class="sil-trait">Kammback Tail</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2010s: 2016 Volvo XC90 -->
+        <div class="silhouette-card">
+          <div class="silhouette-frame">
+            <span class="silhouette-era-pill">2010s</span>
+            <img src="2010s/2016_volvo_xc90.jpg" alt="2016 Volvo XC90 silhouette" class="silhouette-img" loading="lazy">
+          </div>
+          <div class="silhouette-info">
+            <span class="sil-year-badge">2016 &bull; LUXURY SUV</span>
+            <h4 class="sil-car-title">Volvo XC90</h4>
+            <p class="sil-profile-desc">High-beltline executive crossover stance featuring elevated ground clearance, bluff upright front prow, and thick protective roof pillars.</p>
+            <div class="sil-traits">
+              <span class="sil-trait">High Beltline</span>
+              <span class="sil-trait">Upright Prow</span>
+              <span class="sil-trait">Elevated Stance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2020s: 2021 Hyundai Ioniq 5 -->
+        <div class="silhouette-card">
+          <div class="silhouette-frame">
+            <span class="silhouette-era-pill">2020s</span>
+            <img src="2020s/2021_hyundai_ioniq_5.jpg" alt="2021 Hyundai Ioniq 5 silhouette" class="silhouette-img" loading="lazy">
+          </div>
+          <div class="silhouette-info">
+            <span class="sil-year-badge">2021 &bull; ELECTRIC CUV</span>
+            <h4 class="sil-car-title">Hyundai Ioniq 5</h4>
+            <p class="sil-profile-desc">Modern EV skateboard architecture pushing axles out to a limousine-like 3,000 mm wheelbase, minimal front/rear overhangs, and 45-degree C-pillar.</p>
+            <div class="sil-traits">
+              <span class="sil-trait">3,000mm Wheelbase</span>
+              <span class="sil-trait">Minimal Overhangs</span>
+              <span class="sil-trait">Parametric C-Pillar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. THE TRANSITION: CAN WE MEASURE SHAPE? -->
+    <div class="measure-statement-card">
+      <h3 class="measure-main-statement">&ldquo;BUT CAN WE MEASURE SHAPE?&rdquo;</h3>
+      <p class="measure-sub-statement">
+        Looking at cars is subjective. Proportions are measurable.
+      </p>
+    </div>
+
+    <!-- 4. RAW DIMENSIONS: HOW CARS CHANGED PHYSICALLY (1970 - 2024) -->
+    <div class="dim-explorer-card">
+      <div class="viz-header">
+        <div class="viz-title-block">
+          <h3 class="viz-heading">Physical Evolution: Vehicle Dimensions (1970 &mdash; 2024)</h3>
+          <p class="viz-subheading">Median exterior dimensions derived from 28,400 production vehicle models across 55 consecutive years</p>
+        </div>
+      </div>
+
+      <div class="dim-controls-row">
+        <div class="dim-btn-group">
+          <button class="dim-tab-btn is-active" id="dim-btn-all" onclick="switchDimension('all')">All Dimensions</button>
+          <button class="dim-tab-btn" id="dim-btn-length" onclick="switchDimension('length')">Length</button>
+          <button class="dim-tab-btn" id="dim-btn-width" onclick="switchDimension('width')">Width</button>
+          <button class="dim-tab-btn" id="dim-btn-height" onclick="switchDimension('height')">Height</button>
+          <button class="dim-tab-btn" id="dim-btn-wheelbase" onclick="switchDimension('wheelbase')">Wheelbase</button>
+        </div>
+        <div class="unit-toggle-wrap">
+          <span style="font-size:0.75rem; color:#64748b; font-family:ui-monospace, monospace;">UNIT:</span>
+          <button class="unit-btn is-active" id="unit-mm" onclick="toggleUnit('mm')">mm</button>
+          <button class="unit-btn" id="unit-in" onclick="toggleUnit('in')">inches</button>
+        </div>
+      </div>
+
+      <!-- Active Readout Strip -->
+      <div class="dim-readout-strip" id="dim-hover-readout">
+        <div class="dim-readout-content">
+          <span class="dim-readout-year">2024 RECORD:</span>
+          <span class="dim-readout-val">Length 4,717 mm &bull; Width 1,862 mm &bull; Height 1,560 mm &bull; Wheelbase 2,779 mm</span>
+          <span class="dim-readout-delta">(+277 mm length, +181 mm height since 1970)</span>
+          <span class="dim-readout-sample">[n = 361 models]</span>
+        </div>
+      </div>
+
+      <!-- Interactive SVG Chart -->
+      <div class="dim-chart-svg-container" id="dim-svg-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <!-- Key Dimension Milestones -->
+      <div class="dim-stats-summary-grid">
+        <div class="dim-stat-card">
+          <span class="dim-stat-dimension">LENGTH (MEDIAN)</span>
+          <div class="dim-stat-number">+277 mm</div>
+          <div class="dim-stat-caption">Grew +6.2% from 4,440 mm (175 in) in 1970 to 4,717 mm (186 in) in 2024 to accommodate crash crumple zones.</div>
+        </div>
+        <div class="dim-stat-card">
+          <span class="dim-stat-dimension">WIDTH (MEDIAN)</span>
+          <div class="dim-stat-number">+162 mm</div>
+          <div class="dim-stat-caption">Expanded +9.5% from 1,700 mm (67 in) to 1,862 mm (73 in) for side-impact passenger protection and wider tracks.</div>
+        </div>
+        <div class="dim-stat-card">
+          <span class="dim-stat-dimension">HEIGHT (MEDIAN)</span>
+          <div class="dim-stat-number">+181 mm</div>
+          <div class="dim-stat-caption">The fastest-growing metric (+13.1%), rising from 1,379 mm (54 in) to 1,560 mm (61 in) with the crossover SUV revolution.</div>
+        </div>
+        <div class="dim-stat-card">
+          <span class="dim-stat-dimension">WHEELBASE (MEDIAN)</span>
+          <div class="dim-stat-number">+216 mm</div>
+          <div class="dim-stat-caption">Pushed outward from 2,563 mm (101 in) to 2,779 mm (109 in) as designers reduced front and rear overhangs.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. PROPORTIONS: THE IMPORTANT PART -->
+    <div class="proportions-concept-block">
+      <div class="section-badge">Geometric Principles</div>
+      <h3 class="section-heading">SIZE ISN'T THE SAME AS SHAPE.</h3>
+      <p class="shape-intro-lead">
+        A car becoming longer does not necessarily mean its silhouette became more distinctive. A better way to compare silhouettes is to look at proportions.
+      </p>
+
+      <div class="proportions-concept-grid">
+        <!-- Metric 1: Length / Height -->
+        <div class="prop-concept-card">
+          <span class="prop-ratio-badge">RATIO 01</span>
+          <h4 class="prop-ratio-title">Length &divide; Height</h4>
+          <p class="prop-ratio-desc">
+            How long a vehicle is relative to how tall it is. This ratio captures the primary profile stance of a vehicle silhouette.
+          </p>
+          <div class="prop-contrast-box">
+            <div class="prop-high"><strong>Higher value (&gt; 3.2):</strong> Sleek, low-slung, stretched proportions (e.g. 1995 Volvo 850: 3.24; 1984 Ferrari: 3.86).</div>
+            <div class="prop-low"><strong>Lower value (&lt; 2.9):</strong> Tall, upright, compact proportions (e.g. 1971 Beetle: 2.72; modern crossover: 2.80).</div>
+          </div>
+        </div>
+
+        <!-- Metric 2: Wheelbase / Length -->
+        <div class="prop-concept-card">
+          <span class="prop-ratio-badge">RATIO 02</span>
+          <h4 class="prop-ratio-title">Wheelbase &divide; Length</h4>
+          <p class="prop-ratio-desc">
+            How much of the vehicle's total length sits between the axles versus extending out as front and rear body overhangs.
+          </p>
+          <div class="prop-contrast-box">
+            <div class="prop-high"><strong>Higher value (&gt; 0.62):</strong> Wheels pushed to the corners, minimal overhangs, maximized cabin volume (e.g. 2021 Ioniq 5: 0.65).</div>
+            <div class="prop-low"><strong>Lower value (&lt; 0.58):</strong> Long front and rear overhangs characteristic of classic 20th-century silhouettes.</div>
+          </div>
+        </div>
+
+        <!-- Metric 3: Width / Height -->
+        <div class="prop-concept-card">
+          <span class="prop-ratio-badge">RATIO 03</span>
+          <h4 class="prop-ratio-title">Width &divide; Height</h4>
+          <p class="prop-ratio-desc">
+            The cross-sectional aspect ratio. Defines whether a car looks planted and athletic or tall and upright from the front and rear.
+          </p>
+          <div class="prop-contrast-box">
+            <div class="prop-high"><strong>Higher value (&gt; 1.30):</strong> Wide, aggressive, grounded road stance with low center of gravity.</div>
+            <div class="prop-low"><strong>Lower value (&lt; 1.18):</strong> Upright, tall-cabin utility vehicles and economy city runabouts.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. SHAPE DIVERSITY OVER TIME (CENTERPIECE) -->
+    <div class="diversity-spread-card">
+      <div class="viz-header">
+        <div class="viz-title-block">
+          <span class="chapter-marker" style="margin-bottom:0.4rem;">02 &mdash; EMPIRICAL DISPERSION</span>
+          <h3 class="viz-heading">DID THE RANGE OF VEHICLE PROPORTIONS BECOME NARROWER?</h3>
+          <p class="viz-subheading">
+            Measuring the statistical dispersion of Length &divide; Height ratio across 55 years of vehicle production (1970&ndash;2024)
+          </p>
+        </div>
+      </div>
+
+      <div class="dispersion-legend">
+        <div class="disp-legend-item">
+          <span class="disp-legend-swatch" style="background:#38bdf8;"></span>
+          <span>Median Length / Height Ratio</span>
+        </div>
+        <div class="disp-legend-item">
+          <span class="disp-legend-swatch" style="background:rgba(56, 189, 248, 0.2); border:1px solid rgba(56, 189, 248, 0.4);"></span>
+          <span>Interquartile Range Corridor (25th &mdash; 75th Percentile)</span>
+        </div>
+        <div class="disp-legend-item">
+          <span class="disp-legend-swatch" style="background:#f59e0b;"></span>
+          <span>Standard Deviation (&sigma; Dispersion)</span>
+        </div>
+      </div>
+
+      <!-- Dispersion Chart Container -->
+      <div class="dispersion-chart-container" id="dispersion-svg-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <div class="nuance-findings-grid">
+        <div class="finding-card">
+          <div class="finding-tag convergence">Finding 01 &bull; Proportional Convergence</div>
+          <h4 class="finding-title">The Overall Spread Shrank by 32%</h4>
+          <p class="finding-p">
+            In the 1970s, the standard deviation of vehicle proportions stood at <strong>0.466</strong>, as wildly different vehicle silhouettes shared dealer lots. By 2024, standard deviation steadily tightened to <strong>0.318</strong>. Aerodynamic efficiency demands and international safety standards pushed passenger vehicles into a shared aerodynamic corridor.
+          </p>
+        </div>
+
+        <div class="finding-card">
+          <div class="finding-tag divergence">Finding 02 &bull; The Bimodal Split</div>
+          <h4 class="finding-title">The Market Split into Two Clusters</h4>
+          <p class="finding-p">
+            While overall variance shrank, the Interquartile Range (IQR) remained resilient (0.41 in 1980 vs 0.50 in 2024). Why? The market did not collapse into a single average car: it bifurcated into two separate clusters &mdash; low-slung performance sedans (ratio ~3.2) and tall, upright crossovers (ratio ~2.8).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. BODY STYLE DIVERSITY -->
+    <div class="bodystyle-viz-card">
+      <div class="viz-header">
+        <div class="viz-title-block">
+          <h3 class="viz-heading">Body Style Composition (1970s &mdash; 2020s)</h3>
+          <p class="viz-subheading">Decadal share of production vehicles across eight authentic body style classifications in the dataset</p>
+        </div>
+      </div>
+
+      <div class="bodystyle-legend" id="bs-legend-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <div class="bodystyle-stream" id="bs-stream-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <div class="viz-footer-note" style="margin-top:1.5rem;">
+        <span>Source: 11,800+ classified production variants in engines.csv. Reflects the secular rise of crossovers and SUVs from 0% in the 1970s to 30.1% in the 2020s, displacing classic coupes and notchback sedans.</span>
+      </div>
+    </div>
+
+    <!-- 8. VISUAL + DATA CONNECTION -->
+    <div class="bridge-matrix-section">
+      <div class="section-badge">Empirical Synthesis</div>
+      <h3 class="section-heading">WE CAN SEE THE DIFFERENCE. NOW WE CAN MEASURE IT.</h3>
+      <p class="shape-intro-lead">
+        When we connect our visual impressions of silhouettes to the quantitative data, each car's historical design strategy becomes mathematically visible.
+      </p>
+
+      <div class="bridge-grid">
+        <!-- 1971 Datsun 240Z -->
+        <div class="bridge-card">
+          <div class="bridge-img-box">
+            <img src="1970s/1971_datsun_240z.jpg" alt="1971 Datsun 240Z" loading="lazy">
+          </div>
+          <div class="bridge-meta">
+            <span class="bridge-year">1971</span>
+            <div class="bridge-name">Datsun 240Z</div>
+            <div class="bridge-specs-list">
+              <span>Length: <strong>4,135 mm</strong></span>
+              <span>Height: <strong>1,285 mm</strong></span>
+              <span>L / H Ratio: <strong>3.22</strong></span>
+              <span>WB / L: <strong>0.56</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1981 Audi Quattro -->
+        <div class="bridge-card">
+          <div class="bridge-img-box">
+            <img src="1980s/1981_audi_quattro.jpg" alt="1981 Audi Quattro" loading="lazy">
+          </div>
+          <div class="bridge-meta">
+            <span class="bridge-year">1981</span>
+            <div class="bridge-name">Audi Quattro</div>
+            <div class="bridge-specs-list">
+              <span>Length: <strong>4,404 mm</strong></span>
+              <span>Height: <strong>1,346 mm</strong></span>
+              <span>L / H Ratio: <strong>3.27</strong></span>
+              <span>WB / L: <strong>0.57</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1990 Mazda Miata -->
+        <div class="bridge-card">
+          <div class="bridge-img-box">
+            <img src="1990s/1990_mazda_miata.jpg" alt="1990 Mazda Miata" loading="lazy">
+          </div>
+          <div class="bridge-meta">
+            <span class="bridge-year">1990</span>
+            <div class="bridge-name">Mazda Miata (NA)</div>
+            <div class="bridge-specs-list">
+              <span>Length: <strong>3,948 mm</strong></span>
+              <span>Height: <strong>1,224 mm</strong></span>
+              <span>L / H Ratio: <strong>3.23</strong></span>
+              <span>WB / L: <strong>0.57</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2008 Audi R8 -->
+        <div class="bridge-card">
+          <div class="bridge-img-box">
+            <img src="2000s/2008_audi_r8.jpg" alt="2008 Audi R8" loading="lazy">
+          </div>
+          <div class="bridge-meta">
+            <span class="bridge-year">2008</span>
+            <div class="bridge-name">Audi R8</div>
+            <div class="bridge-specs-list">
+              <span>Length: <strong>4,431 mm</strong></span>
+              <span>Height: <strong>1,249 mm</strong></span>
+              <span>L / H Ratio: <strong>3.55</strong></span>
+              <span>WB / L: <strong>0.60</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2018 Tesla Model 3 -->
+        <div class="bridge-card">
+          <div class="bridge-img-box">
+            <img src="2010s/2018_tesla_model_3.jpg" alt="2018 Tesla Model 3" loading="lazy">
+          </div>
+          <div class="bridge-meta">
+            <span class="bridge-year">2018</span>
+            <div class="bridge-name">Tesla Model 3</div>
+            <div class="bridge-specs-list">
+              <span>Length: <strong>4,694 mm</strong></span>
+              <span>Height: <strong>1,443 mm</strong></span>
+              <span>L / H Ratio: <strong>3.25</strong></span>
+              <span>WB / L: <strong>0.61</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2024 Tesla Cybertruck -->
+        <div class="bridge-card">
+          <div class="bridge-img-box">
+            <img src="2020s/2024_tesla_cybertruck.jpg" alt="2024 Tesla Cybertruck" loading="lazy">
+          </div>
+          <div class="bridge-meta">
+            <span class="bridge-year">2024</span>
+            <div class="bridge-name">Tesla Cybertruck</div>
+            <div class="bridge-specs-list">
+              <span>Length: <strong>5,683 mm</strong></span>
+              <span>Height: <strong>1,791 mm</strong></span>
+              <span>L / H Ratio: <strong>3.17</strong></span>
+              <span>WB / L: <strong>0.67</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. METHODOLOGY / TRANSPARENCY -->
+    <details class="methodology-details">
+      <summary class="methodology-summary">
+        <span>How This Was Measured &bull; Data Integrity &amp; Methodology</span>
+      </summary>
+      <div class="methodology-content">
+        <p><strong>Primary Data Source:</strong> Global automotive engineering technical specifications dataset (<code>engines.csv</code>), covering 30,390 vehicle variants across international markets.</p>
+        <p><strong>Temporal Filter:</strong> Strictly filtered to model generations introduced between <strong>1970 and 2024</strong> (28,400 clean production vehicles). Pre-1970 records were excluded from all calculations.</p>
+        <p><strong>Outlier Validation:</strong> Physical dimension filters were applied to remove data-entry recording errors: length between 2,500 and 7,000 mm, width between 1,200 and 2,500 mm, height between 1,000 and 2,500 mm, and wheelbase between 1,500 and 4,500 mm (preserving 96.0% of all observations).</p>
+        <p><strong>Aggregation:</strong> Median values were chosen over arithmetic means to protect metrics from distortions caused by ultra-low-volume specialty vehicles (e.g., stretched limousines or ultra-low concept exotics).</p>
+        <p><strong>Dispersion Calculations:</strong> Diversity of shape was quantified through the Interquartile Range ($IQR = Q_{75} - Q_{25}$) and standard deviation of the Length / Height ratio for each year with $n \ge 5$ production entries. No subjective or synthetic character scores were constructed.</p>
+        <p><strong>Body Style Classification:</strong> Body categories were mapped directly from manufacturer model and generation nomenclature into 8 distinct industry standard body styles without inventing artificial categories.</p>
+      </div>
+    </details>
+
+    <!-- 10. ENDING THE SHAPE CHAPTER & TRANSITION TO SOUND -->
+    <div class="sound-teaser-section">
+      <div class="transition-divider"></div>
+      <h3 class="sound-teaser-lead">THE SILHOUETTE CHANGED.</h3>
+      <div class="sound-teaser-question">BUT DID IT BECOME LESS DIVERSE?</div>
+      <p class="sound-teaser-whisper">The data reveals that cars clustered more tightly in proportion &mdash; yet split into two distinct modern profiles.</p>
+      <p class="sound-teaser-whisper">Maybe character isn't only something you see.</p>
+      <p class="sound-teaser-whisper">Maybe it's something you hear.</p>
+      
+      <div class="sound-marker-box">
+        <span class="sound-chapter-tag">NEXT INVESTIGATION</span>
+        <div class="sound-chapter-title">03 &mdash; SOUND</div>
+        <div class="sound-chapter-arrow">&darr;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — CHAPTER 03: SOUND -->
+  <section class="story-section" id="sound-chapter">
+    <div class="section-badge">Chapter 03 &bull; Sound &bull; Powertrains</div>
+    <h2 class="section-heading">MAYBE CHARACTER ISN'T ONLY SOMETHING YOU SEE.</h2>
+    <div class="editorial-text">
+      <p>For decades, a car's engine was part of its identity.</p>
+      <p>Four cylinders. Six. Eight. Twelve. Naturally aspirated. Turbocharged. Different mechanical formulas created fundamentally different sounds.</p>
+    </div>
+
+    <!-- Acoustic Challenge Card -->
+    <div class="sound-challenge-card">
+      <div class="challenge-eyebrow">Acoustic Specimen Archive</div>
+      <h3 class="challenge-title">&ldquo;CAN YOU HEAR THE DIFFERENCE?&rdquo;</h3>
+      <p class="challenge-desc">
+        Internal combustion engines produce distinctive acoustic signatures governed by displacement, cylinder count, and valve timing. Below are authentic field recordings of gasoline internal combustion engines in steady-state idle, captured via an acoustic ground-acquisition sensor.
+      </p>
+    </div>
+
+    <!-- Audio Player Grid (6 Curated Petrol Specimens) -->
+    <div class="sound-grid" id="sound-players-grid">
+      <!-- Populated via JavaScript with interactive waveforms -->
+    </div>
+
+    <!-- Transition: Sound vs Data -->
+    <div class="measure-statement-card">
+      <div class="measure-eyebrow">Acoustics &bull; Quantitative Analysis</div>
+      <h3 class="measure-main-statement">&ldquo;WE CAN HEAR THE DIFFERENCE.&rdquo;</h3>
+      <h3 class="measure-main-statement" style="color: #38bdf8; margin-top: 0.5rem;">&ldquo;BUT CAN WE MEASURE WHAT CHANGED?&rdquo;</h3>
+      <p class="measure-sub-statement">
+        A feeling is subjective. The mechanical changes behind the sound are measurable.
+      </p>
+    </div>
+
+    <!-- Mechanical Powertrain Breakdown (1970 - 2024 from engines.csv) -->
+    <div class="powertrain-breakdown-card">
+      <div class="powertrain-header">
+        <div class="section-badge" style="margin-bottom: 0.6rem;">Historical Mechanical Dataset &bull; 29,880 Models</div>
+        <h3 class="powertrain-title">THE SOUND HAS A MECHANICAL EXPLANATION.</h3>
+        <p class="powertrain-sub">
+          A car's acoustic voice is not an accident—it is the direct physical consequence of displacement, cylinder count, and aspiration method. Historical powertrain records from 1970 through 2024 demonstrate how mechanical diversity converged into standardized formulas.
+        </p>
+      </div>
+
+      <!-- Engine Configuration Stacked Timeline -->
+      <div class="editorial-subheading" style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem;">
+        Engine Architecture Distribution by Decade (1970 &ndash; 2024)
+      </div>
+      <div class="engine-cfg-chart" id="powertrain-chart-container">
+        <!-- Rendered dynamically from authentic engines.csv stats -->
+      </div>
+
+      <!-- Engine Legend -->
+      <div class="engine-legend" id="engine-legend-container">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Displacement Trend & Downsizing Stats -->
+      <div class="editorial-subheading" style="color: #ffffff; font-size: 1.05rem; font-weight: 700; margin: 2.5rem 0 0.5rem;">
+        Average Engine Displacement (Liters) by Decade
+      </div>
+      <p style="font-size: 0.92rem; color: #94a3b8; margin: 0 0 1rem; line-height: 1.5;">
+        As turbocharging replaced natural displacement, large-displacement V8 and 6-cylinder engines were steadily replaced by standardized 2.0-liter turbocharged inline-4s.
+      </p>
+      <div class="disp-stats-grid">
+        <div class="disp-stat-card">
+          <div class="disp-decade">1970s</div>
+          <div class="disp-number">2.79<span class="disp-unit">L</span></div>
+          <div class="disp-note">V8s represented 20% of catalog</div>
+        </div>
+        <div class="disp-stat-card">
+          <div class="disp-decade">1980s</div>
+          <div class="disp-number">2.19<span class="disp-unit">L</span></div>
+          <div class="disp-note">Emissions standards take hold</div>
+        </div>
+        <div class="disp-stat-card">
+          <div class="disp-decade">1990s</div>
+          <div class="disp-number">2.30<span class="disp-unit">L</span></div>
+          <div class="disp-note">Multi-valve DOHC expansion</div>
+        </div>
+        <div class="disp-stat-card">
+          <div class="disp-decade">2000s</div>
+          <div class="disp-number">2.42<span class="disp-unit">L</span></div>
+          <div class="disp-note">Peak naturally aspirated era</div>
+        </div>
+        <div class="disp-stat-card">
+          <div class="disp-decade">2010s</div>
+          <div class="disp-number">2.31<span class="disp-unit">L</span></div>
+          <div class="disp-note">Rapid turbo downsizing begins</div>
+        </div>
+        <div class="disp-stat-card">
+          <div class="disp-decade">2020s</div>
+          <div class="disp-number">2.30<span class="disp-unit">L</span></div>
+          <div class="disp-note">Inline-3 + EV surges to 31%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modern Era: Electrification -->
+    <div class="modern-era-card">
+      <div class="era-tag">The Present &bull; Transition to Electrification</div>
+      <h3 class="era-heading">The Changing Source of Vehicle Sound</h3>
+      <p class="era-text">
+        As the industry shifts toward hybrid and battery-electric drivetrains, vehicle sound is undergoing its most profound transformation in a century. Electrification does not simply eliminate sound—it changes its mechanical origin from reciprocating combustion pressure waves to electromagnetic motor whine, inverter switching frequencies, and tire contact acoustics.
+      </p>
+      <p class="era-subtext">
+        <em>Note on dataset methodology:</em> The Zenodo acoustic research team explicitly removed electric vehicles during their idle-sound processing algorithm, focusing exclusively on internal combustion engine signatures.
+      </p>
+    </div>
+
+    <!-- Data Transparency -->
+    <div class="data-transparency-card">
+      <details class="transparency-details">
+        <summary class="transparency-summary">
+          <span>About the Sound &amp; Powertrain Data</span>
+          <span class="summary-icon">&plus;</span>
+        </summary>
+        <div class="transparency-body">
+          <div class="transparency-grid">
+            <div class="transparency-item">
+              <h4>Audio Research Source</h4>
+              <p><strong>Title:</strong> Sounds of Vehicle Internal Combustion Engines</p>
+              <p><strong>Authors:</strong> Dejan Ćirić and Marko Milivojčević (University of Niš &amp; School of Electrical and Computer Engineering, Serbia)</p>
+              <p><strong>DOI:</strong> <a href="https://zenodo.org/records/18777405" target="_blank" rel="noopener">10.5281/zenodo.18777405</a></p>
+              <p><strong>License:</strong> <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p>
+              <p class="small-note">The dataset was acquired using an autonomous underground-garage acoustic acquisition rig to study engine idle signatures. A curated subset of clean petrol recordings was selected for this interactive analysis.</p>
+            </div>
+            <div class="transparency-item">
+              <h4>Vehicle Specifications Source</h4>
+              <p><strong>Database:</strong> Historical Engine &amp; Powertrain Specification Archive (29,880 models, 1970–2024)</p>
+              <p><strong>Scope:</strong> Cylinders, displacement, aspiration, power, and drivetrain architecture.</p>
+              <p class="small-note"><strong>Methodological distinction:</strong> The audio recordings are anonymous field measurements from the Zenodo acoustic dataset, while the historical powertrain trends are computed from the comprehensive 1970–2024 vehicle specifications database. The audio dataset itself does not contain individual vehicle model tags.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — FINAL STORY MOMENT -->
+  <div class="final-story-moment">
+    <div class="moment-lines">
+      <p class="moment-line highlight">&ldquo;THE COLORS CHANGED.&rdquo;</p>
+      <p class="moment-line highlight">&ldquo;THE SHAPES CHANGED.&rdquo;</p>
+      <p class="moment-line highlight">&ldquo;AND THE MACHINES CHANGED.&rdquo;</p>
+      <div class="moment-pause"></div>
+      <p class="moment-question">&ldquo;SO WHAT HAPPENED TO CAR CHARACTER?&rdquo;</p>
+      <p class="moment-answer">That's harder to measure.</p>
+      <p class="moment-conclusion">But now we can see how much actually changed.</p>
+    </div>
+
+    <div class="final-cta-container">
+      <a href="index.html" class="final-cta-button">
+        <span>EXPLORE THE DATA</span>
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -431,11 +1064,44 @@ const colorMeta = {
   Other: { label: "Other", short: "Other", hex: "#7c3aed", textHex: "#ffffff", border: false }
 };
 
+// Shape Dataset (1970 - 2024) derived from engines.csv (28,400 vehicles)
+const shapeDataset = {"total_vehicles_1970_2024": 28400, "yearly_dimensions": [{"year": 1970, "n": 63, "length_mm": 4775.0, "length_in": 188.0, "width_mm": 1890.0, "width_in": 74.4, "height_mm": 1280.0, "height_in": 50.4, "wheelbase_mm": 2743.0, "wheelbase_in": 108.0, "lh_ratio": 3.75, "lh_q25": 3.31, "lh_q75": 3.97, "lh_iqr": 0.656, "lh_std": 0.344, "wl_ratio": 0.564}, {"year": 1971, "n": 54, "length_mm": 4630.0, "length_in": 182.3, "width_mm": 1791.0, "width_in": 70.5, "height_mm": 1326.0, "height_in": 52.2, "wheelbase_mm": 2620.0, "wheelbase_in": 103.1, "lh_ratio": 3.47, "lh_q25": 3.38, "lh_q75": 3.93, "lh_iqr": 0.558, "lh_std": 0.389, "wl_ratio": 0.561}, {"year": 1972, "n": 93, "length_mm": 4376.0, "length_in": 172.3, "width_mm": 1651.0, "width_in": 65.0, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2510.0, "wheelbase_in": 98.8, "lh_ratio": 3.18, "lh_q25": 2.84, "lh_q75": 3.27, "lh_iqr": 0.43, "lh_std": 0.448, "wl_ratio": 0.581}, {"year": 1973, "n": 38, "length_mm": 4290.0, "length_in": 168.9, "width_mm": 1658.0, "width_in": 65.3, "height_mm": 1280.0, "height_in": 50.4, "wheelbase_mm": 2456.0, "wheelbase_in": 96.7, "lh_ratio": 3.22, "lh_q25": 3.13, "lh_q75": 3.34, "lh_iqr": 0.212, "lh_std": 0.277, "wl_ratio": 0.582}, {"year": 1974, "n": 52, "length_mm": 4316.0, "length_in": 169.9, "width_mm": 1679.0, "width_in": 66.1, "height_mm": 1359.0, "height_in": 53.5, "wheelbase_mm": 2520.0, "wheelbase_in": 99.2, "lh_ratio": 3.23, "lh_q25": 3.09, "lh_q75": 3.78, "lh_iqr": 0.697, "lh_std": 0.491, "wl_ratio": 0.584}, {"year": 1975, "n": 70, "length_mm": 4521.0, "length_in": 178.0, "width_mm": 1710.0, "width_in": 67.3, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2640.0, "wheelbase_in": 103.9, "lh_ratio": 3.28, "lh_q25": 3.16, "lh_q75": 3.34, "lh_iqr": 0.175, "lh_std": 0.214, "wl_ratio": 0.587}, {"year": 1976, "n": 66, "length_mm": 4191.0, "length_in": 165.0, "width_mm": 1727.0, "width_in": 68.0, "height_mm": 1358.0, "height_in": 53.5, "wheelbase_mm": 2444.0, "wheelbase_in": 96.2, "lh_ratio": 3.27, "lh_q25": 3.04, "lh_q75": 3.52, "lh_iqr": 0.478, "lh_std": 0.418, "wl_ratio": 0.582}, {"year": 1977, "n": 63, "length_mm": 4641.0, "length_in": 182.7, "width_mm": 1786.0, "width_in": 70.3, "height_mm": 1394.0, "height_in": 54.9, "wheelbase_mm": 2710.0, "wheelbase_in": 106.7, "lh_ratio": 3.4, "lh_q25": 3.19, "lh_q75": 3.43, "lh_iqr": 0.239, "lh_std": 0.357, "wl_ratio": 0.578}, {"year": 1978, "n": 72, "length_mm": 4440.0, "length_in": 174.8, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1379.0, "height_in": 54.3, "wheelbase_mm": 2563.0, "wheelbase_in": 100.9, "lh_ratio": 3.21, "lh_q25": 3.01, "lh_q75": 3.36, "lh_iqr": 0.344, "lh_std": 0.303, "wl_ratio": 0.577}, {"year": 1979, "n": 107, "length_mm": 4404.0, "length_in": 173.4, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1438.0, "height_in": 56.6, "wheelbase_mm": 2670.0, "wheelbase_in": 105.1, "lh_ratio": 3.07, "lh_q25": 2.28, "lh_q75": 3.4, "lh_iqr": 1.122, "lh_std": 0.58, "wl_ratio": 0.598}, {"year": 1980, "n": 52, "length_mm": 4361.0, "length_in": 171.7, "width_mm": 1710.0, "width_in": 67.3, "height_mm": 1379.0, "height_in": 54.3, "wheelbase_mm": 2456.0, "wheelbase_in": 96.7, "lh_ratio": 2.92, "lh_q25": 2.75, "lh_q75": 3.48, "lh_iqr": 0.734, "lh_std": 0.529, "wl_ratio": 0.572}, {"year": 1981, "n": 144, "length_mm": 4435.0, "length_in": 174.6, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1380.0, "height_in": 54.3, "wheelbase_mm": 2535.0, "wheelbase_in": 99.8, "lh_ratio": 3.23, "lh_q25": 3.13, "lh_q75": 3.33, "lh_iqr": 0.199, "lh_std": 0.253, "wl_ratio": 0.568}, {"year": 1982, "n": 172, "length_mm": 4564.0, "length_in": 179.7, "width_mm": 1720.0, "width_in": 67.7, "height_mm": 1379.0, "height_in": 54.3, "wheelbase_mm": 2649.0, "wheelbase_in": 104.3, "lh_ratio": 3.27, "lh_q25": 3.13, "lh_q75": 3.39, "lh_iqr": 0.255, "lh_std": 0.302, "wl_ratio": 0.588}, {"year": 1983, "n": 153, "length_mm": 4021.0, "length_in": 158.3, "width_mm": 1661.0, "width_in": 65.4, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2479.0, "wheelbase_in": 97.6, "lh_ratio": 2.98, "lh_q25": 2.74, "lh_q75": 3.31, "lh_iqr": 0.565, "lh_std": 0.348, "wl_ratio": 0.623}, {"year": 1984, "n": 160, "length_mm": 4239.0, "length_in": 166.9, "width_mm": 1680.0, "width_in": 66.1, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2520.0, "wheelbase_in": 99.2, "lh_ratio": 2.94, "lh_q25": 2.8, "lh_q75": 3.3, "lh_iqr": 0.503, "lh_std": 0.367, "wl_ratio": 0.596}, {"year": 1985, "n": 98, "length_mm": 4361.0, "length_in": 171.7, "width_mm": 1738.0, "width_in": 68.4, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2581.0, "wheelbase_in": 101.6, "lh_ratio": 3.28, "lh_q25": 3.05, "lh_q75": 3.39, "lh_iqr": 0.338, "lh_std": 0.316, "wl_ratio": 0.591}, {"year": 1986, "n": 210, "length_mm": 4399.0, "length_in": 173.2, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2611.0, "wheelbase_in": 102.8, "lh_ratio": 3.16, "lh_q25": 2.95, "lh_q75": 3.23, "lh_iqr": 0.274, "lh_std": 0.351, "wl_ratio": 0.586}, {"year": 1987, "n": 98, "length_mm": 4394.0, "length_in": 173.0, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1389.0, "height_in": 54.7, "wheelbase_mm": 2545.0, "wheelbase_in": 100.2, "lh_ratio": 3.13, "lh_q25": 2.94, "lh_q75": 3.29, "lh_iqr": 0.351, "lh_std": 0.284, "wl_ratio": 0.583}, {"year": 1988, "n": 243, "length_mm": 4430.0, "length_in": 174.4, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1412.0, "height_in": 55.6, "wheelbase_mm": 2601.0, "wheelbase_in": 102.4, "lh_ratio": 3.13, "lh_q25": 2.93, "lh_q75": 3.32, "lh_iqr": 0.386, "lh_std": 0.318, "wl_ratio": 0.585}, {"year": 1989, "n": 241, "length_mm": 4389.0, "length_in": 172.8, "width_mm": 1689.0, "width_in": 66.5, "height_mm": 1389.0, "height_in": 54.7, "wheelbase_mm": 2540.0, "wheelbase_in": 100.0, "lh_ratio": 3.12, "lh_q25": 2.83, "lh_q75": 3.38, "lh_iqr": 0.553, "lh_std": 0.357, "wl_ratio": 0.593}, {"year": 1990, "n": 223, "length_mm": 4400.0, "length_in": 173.2, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2540.0, "wheelbase_in": 100.0, "lh_ratio": 3.13, "lh_q25": 2.84, "lh_q75": 3.34, "lh_iqr": 0.497, "lh_std": 0.396, "wl_ratio": 0.58}, {"year": 1991, "n": 317, "length_mm": 4369.0, "length_in": 172.0, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2570.0, "wheelbase_in": 101.2, "lh_ratio": 3.17, "lh_q25": 2.83, "lh_q75": 3.35, "lh_iqr": 0.518, "lh_std": 0.403, "wl_ratio": 0.588}, {"year": 1992, "n": 306, "length_mm": 4351.0, "length_in": 171.3, "width_mm": 1700.0, "width_in": 66.9, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2540.0, "wheelbase_in": 100.0, "lh_ratio": 3.08, "lh_q25": 2.95, "lh_q75": 3.28, "lh_iqr": 0.333, "lh_std": 0.307, "wl_ratio": 0.587}, {"year": 1993, "n": 332, "length_mm": 4440.0, "length_in": 174.8, "width_mm": 1720.0, "width_in": 67.7, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2581.0, "wheelbase_in": 101.6, "lh_ratio": 3.17, "lh_q25": 2.9, "lh_q75": 3.29, "lh_iqr": 0.397, "lh_std": 0.29, "wl_ratio": 0.596}, {"year": 1994, "n": 545, "length_mm": 4483.0, "length_in": 176.5, "width_mm": 1735.0, "width_in": 68.3, "height_mm": 1420.0, "height_in": 55.9, "wheelbase_mm": 2642.0, "wheelbase_in": 104.0, "lh_ratio": 3.22, "lh_q25": 2.92, "lh_q75": 3.36, "lh_iqr": 0.447, "lh_std": 0.312, "wl_ratio": 0.584}, {"year": 1995, "n": 373, "length_mm": 4470.0, "length_in": 176.0, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1420.0, "height_in": 55.9, "wheelbase_mm": 2619.0, "wheelbase_in": 103.1, "lh_ratio": 3.13, "lh_q25": 2.95, "lh_q75": 3.27, "lh_iqr": 0.32, "lh_std": 0.269, "wl_ratio": 0.59}, {"year": 1996, "n": 449, "length_mm": 4460.0, "length_in": 175.6, "width_mm": 1730.0, "width_in": 68.1, "height_mm": 1420.0, "height_in": 55.9, "wheelbase_mm": 2581.0, "wheelbase_in": 101.6, "lh_ratio": 3.09, "lh_q25": 2.85, "lh_q75": 3.22, "lh_iqr": 0.372, "lh_std": 0.31, "wl_ratio": 0.588}, {"year": 1997, "n": 530, "length_mm": 4512.0, "length_in": 177.6, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2629.0, "wheelbase_in": 103.5, "lh_ratio": 3.12, "lh_q25": 2.88, "lh_q75": 3.3, "lh_iqr": 0.419, "lh_std": 0.354, "wl_ratio": 0.589}, {"year": 1998, "n": 621, "length_mm": 4455.0, "length_in": 175.4, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2611.0, "wheelbase_in": 102.8, "lh_ratio": 3.02, "lh_q25": 2.84, "lh_q75": 3.28, "lh_iqr": 0.436, "lh_std": 0.338, "wl_ratio": 0.589}, {"year": 1999, "n": 593, "length_mm": 4480.0, "length_in": 176.4, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2639.0, "wheelbase_in": 103.9, "lh_ratio": 3.08, "lh_q25": 2.88, "lh_q75": 3.26, "lh_iqr": 0.387, "lh_std": 0.329, "wl_ratio": 0.588}, {"year": 2000, "n": 604, "length_mm": 4480.0, "length_in": 176.4, "width_mm": 1742.0, "width_in": 68.6, "height_mm": 1440.0, "height_in": 56.7, "wheelbase_mm": 2611.0, "wheelbase_in": 102.8, "lh_ratio": 3.06, "lh_q25": 2.72, "lh_q75": 3.18, "lh_iqr": 0.461, "lh_std": 0.331, "wl_ratio": 0.593}, {"year": 2001, "n": 747, "length_mm": 4529.0, "length_in": 178.3, "width_mm": 1760.0, "width_in": 69.3, "height_mm": 1450.0, "height_in": 57.1, "wheelbase_mm": 2649.0, "wheelbase_in": 104.3, "lh_ratio": 3.12, "lh_q25": 2.72, "lh_q75": 3.26, "lh_iqr": 0.544, "lh_std": 0.34, "wl_ratio": 0.591}, {"year": 2002, "n": 709, "length_mm": 4524.0, "length_in": 178.1, "width_mm": 1765.0, "width_in": 69.5, "height_mm": 1461.0, "height_in": 57.5, "wheelbase_mm": 2680.0, "wheelbase_in": 105.5, "lh_ratio": 2.9, "lh_q25": 2.73, "lh_q75": 3.21, "lh_iqr": 0.482, "lh_std": 0.326, "wl_ratio": 0.596}, {"year": 2003, "n": 890, "length_mm": 4501.0, "length_in": 177.2, "width_mm": 1760.0, "width_in": 69.3, "height_mm": 1471.0, "height_in": 57.9, "wheelbase_mm": 2675.0, "wheelbase_in": 105.3, "lh_ratio": 3.06, "lh_q25": 2.7, "lh_q75": 3.26, "lh_iqr": 0.556, "lh_std": 0.364, "wl_ratio": 0.596}, {"year": 2004, "n": 1003, "length_mm": 4521.0, "length_in": 178.0, "width_mm": 1770.0, "width_in": 69.7, "height_mm": 1468.0, "height_in": 57.8, "wheelbase_mm": 2649.0, "wheelbase_in": 104.3, "lh_ratio": 3.03, "lh_q25": 2.84, "lh_q75": 3.21, "lh_iqr": 0.376, "lh_std": 0.305, "wl_ratio": 0.597}, {"year": 2005, "n": 1145, "length_mm": 4521.0, "length_in": 178.0, "width_mm": 1793.0, "width_in": 70.6, "height_mm": 1463.0, "height_in": 57.6, "wheelbase_mm": 2700.0, "wheelbase_in": 106.3, "lh_ratio": 3.13, "lh_q25": 2.73, "lh_q75": 3.27, "lh_iqr": 0.543, "lh_std": 0.343, "wl_ratio": 0.598}, {"year": 2006, "n": 917, "length_mm": 4501.0, "length_in": 177.2, "width_mm": 1783.0, "width_in": 70.2, "height_mm": 1491.0, "height_in": 58.7, "wheelbase_mm": 2670.0, "wheelbase_in": 105.1, "lh_ratio": 2.88, "lh_q25": 2.69, "lh_q75": 3.21, "lh_iqr": 0.528, "lh_std": 0.308, "wl_ratio": 0.597}, {"year": 2007, "n": 1033, "length_mm": 4595.0, "length_in": 180.9, "width_mm": 1806.0, "width_in": 71.1, "height_mm": 1488.0, "height_in": 58.6, "wheelbase_mm": 2741.0, "wheelbase_in": 107.9, "lh_ratio": 3.07, "lh_q25": 2.75, "lh_q75": 3.25, "lh_iqr": 0.499, "lh_std": 0.324, "wl_ratio": 0.597}, {"year": 2008, "n": 1561, "length_mm": 4501.0, "length_in": 177.2, "width_mm": 1814.0, "width_in": 71.4, "height_mm": 1478.0, "height_in": 58.2, "wheelbase_mm": 2690.0, "wheelbase_in": 105.9, "lh_ratio": 2.98, "lh_q25": 2.69, "lh_q75": 3.23, "lh_iqr": 0.537, "lh_std": 0.342, "wl_ratio": 0.603}, {"year": 2009, "n": 1293, "length_mm": 4648.0, "length_in": 183.0, "width_mm": 1834.0, "width_in": 72.2, "height_mm": 1488.0, "height_in": 58.6, "wheelbase_mm": 2700.0, "wheelbase_in": 106.3, "lh_ratio": 3.03, "lh_q25": 2.75, "lh_q75": 3.25, "lh_iqr": 0.5, "lh_std": 0.311, "wl_ratio": 0.595}, {"year": 2010, "n": 889, "length_mm": 4613.0, "length_in": 181.6, "width_mm": 1821.0, "width_in": 71.7, "height_mm": 1488.0, "height_in": 58.6, "wheelbase_mm": 2713.0, "wheelbase_in": 106.8, "lh_ratio": 3.07, "lh_q25": 2.69, "lh_q75": 3.3, "lh_iqr": 0.609, "lh_std": 0.341, "wl_ratio": 0.6}, {"year": 2011, "n": 730, "length_mm": 4524.0, "length_in": 178.1, "width_mm": 1839.0, "width_in": 72.4, "height_mm": 1481.0, "height_in": 58.3, "wheelbase_mm": 2695.0, "wheelbase_in": 106.1, "lh_ratio": 2.99, "lh_q25": 2.71, "lh_q75": 3.18, "lh_iqr": 0.473, "lh_std": 0.324, "wl_ratio": 0.594}, {"year": 2012, "n": 1161, "length_mm": 4524.0, "length_in": 178.1, "width_mm": 1811.0, "width_in": 71.3, "height_mm": 1466.0, "height_in": 57.7, "wheelbase_mm": 2690.0, "wheelbase_in": 105.9, "lh_ratio": 3.02, "lh_q25": 2.78, "lh_q75": 3.27, "lh_iqr": 0.495, "lh_std": 0.351, "wl_ratio": 0.601}, {"year": 2013, "n": 1439, "length_mm": 4628.0, "length_in": 182.2, "width_mm": 1839.0, "width_in": 72.4, "height_mm": 1483.0, "height_in": 58.4, "wheelbase_mm": 2710.0, "wheelbase_in": 106.7, "lh_ratio": 3.12, "lh_q25": 2.74, "lh_q75": 3.27, "lh_iqr": 0.535, "lh_std": 0.311, "wl_ratio": 0.599}, {"year": 2014, "n": 1075, "length_mm": 4567.0, "length_in": 179.8, "width_mm": 1831.0, "width_in": 72.1, "height_mm": 1481.0, "height_in": 58.3, "wheelbase_mm": 2700.0, "wheelbase_in": 106.3, "lh_ratio": 3.01, "lh_q25": 2.73, "lh_q75": 3.26, "lh_iqr": 0.522, "lh_std": 0.317, "wl_ratio": 0.601}, {"year": 2015, "n": 867, "length_mm": 4638.0, "length_in": 182.6, "width_mm": 1839.0, "width_in": 72.4, "height_mm": 1486.0, "height_in": 58.5, "wheelbase_mm": 2746.0, "wheelbase_in": 108.1, "lh_ratio": 2.97, "lh_q25": 2.78, "lh_q75": 3.24, "lh_iqr": 0.454, "lh_std": 0.309, "wl_ratio": 0.601}, {"year": 2016, "n": 1310, "length_mm": 4633.0, "length_in": 182.4, "width_mm": 1831.0, "width_in": 72.1, "height_mm": 1478.0, "height_in": 58.2, "wheelbase_mm": 2713.0, "wheelbase_in": 106.8, "lh_ratio": 3.0, "lh_q25": 2.78, "lh_q75": 3.29, "lh_iqr": 0.517, "lh_std": 0.32, "wl_ratio": 0.598}, {"year": 2017, "n": 857, "length_mm": 4506.0, "length_in": 177.4, "width_mm": 1829.0, "width_in": 72.0, "height_mm": 1491.0, "height_in": 58.7, "wheelbase_mm": 2690.0, "wheelbase_in": 105.9, "lh_ratio": 2.91, "lh_q25": 2.74, "lh_q75": 3.3, "lh_iqr": 0.56, "lh_std": 0.323, "wl_ratio": 0.602}, {"year": 2018, "n": 917, "length_mm": 4666.0, "length_in": 183.7, "width_mm": 1849.0, "width_in": 72.8, "height_mm": 1481.0, "height_in": 58.3, "wheelbase_mm": 2779.0, "wheelbase_in": 109.4, "lh_ratio": 2.95, "lh_q25": 2.77, "lh_q75": 3.31, "lh_iqr": 0.533, "lh_std": 0.317, "wl_ratio": 0.601}, {"year": 2019, "n": 758, "length_mm": 4689.0, "length_in": 184.6, "width_mm": 1887.0, "width_in": 74.3, "height_mm": 1498.0, "height_in": 59.0, "wheelbase_mm": 2728.0, "wheelbase_in": 107.4, "lh_ratio": 2.93, "lh_q25": 2.77, "lh_q75": 3.26, "lh_iqr": 0.486, "lh_std": 0.336, "wl_ratio": 0.598}, {"year": 2020, "n": 529, "length_mm": 4641.0, "length_in": 182.7, "width_mm": 1852.0, "width_in": 72.9, "height_mm": 1511.0, "height_in": 59.5, "wheelbase_mm": 2728.0, "wheelbase_in": 107.4, "lh_ratio": 2.95, "lh_q25": 2.79, "lh_q75": 3.3, "lh_iqr": 0.518, "lh_std": 0.296, "wl_ratio": 0.599}, {"year": 2021, "n": 402, "length_mm": 4681.0, "length_in": 184.3, "width_mm": 1859.0, "width_in": 73.2, "height_mm": 1575.0, "height_in": 62.0, "wheelbase_mm": 2764.0, "wheelbase_in": 108.8, "lh_ratio": 2.9, "lh_q25": 2.78, "lh_q75": 3.22, "lh_iqr": 0.433, "lh_std": 0.298, "wl_ratio": 0.603}, {"year": 2022, "n": 290, "length_mm": 4714.0, "length_in": 185.6, "width_mm": 1890.0, "width_in": 74.4, "height_mm": 1624.0, "height_in": 64.0, "wheelbase_mm": 2850.0, "wheelbase_in": 112.2, "lh_ratio": 2.87, "lh_q25": 2.75, "lh_q75": 3.27, "lh_iqr": 0.525, "lh_std": 0.331, "wl_ratio": 0.599}, {"year": 2023, "n": 375, "length_mm": 4704.0, "length_in": 185.2, "width_mm": 1864.0, "width_in": 73.4, "height_mm": 1598.0, "height_in": 62.9, "wheelbase_mm": 2766.0, "wheelbase_in": 108.9, "lh_ratio": 2.83, "lh_q25": 2.71, "lh_q75": 3.25, "lh_iqr": 0.536, "lh_std": 0.341, "wl_ratio": 0.599}, {"year": 2024, "n": 361, "length_mm": 4717.0, "length_in": 185.7, "width_mm": 1882.0, "width_in": 74.1, "height_mm": 1524.0, "height_in": 60.0, "wheelbase_mm": 2850.0, "wheelbase_in": 112.2, "lh_ratio": 2.98, "lh_q25": 2.82, "lh_q75": 3.32, "lh_iqr": 0.5, "lh_std": 0.326, "wl_ratio": 0.599}], "decades_body_styles": [{"decade": "1970s", "n": 142, "SUV_Crossover": 0.0, "Sedan": 13.4, "Hatchback": 21.1, "Station_Wagon": 7.7, "Coupe": 32.4, "Convertible": 20.4, "Pickup": 0.0, "Van_MPV": 4.9}, {"decade": "1980s", "n": 643, "SUV_Crossover": 4.2, "Sedan": 22.1, "Hatchback": 38.9, "Station_Wagon": 14.0, "Coupe": 9.2, "Convertible": 6.4, "Pickup": 0.2, "Van_MPV": 5.1}, {"decade": "1990s", "n": 1995, "SUV_Crossover": 2.0, "Sedan": 15.7, "Hatchback": 38.5, "Station_Wagon": 21.8, "Coupe": 8.0, "Convertible": 8.5, "Pickup": 1.0, "Van_MPV": 4.6}, {"decade": "2000s", "n": 4419, "SUV_Crossover": 6.3, "Sedan": 14.4, "Hatchback": 33.9, "Station_Wagon": 22.9, "Coupe": 8.7, "Convertible": 9.1, "Pickup": 2.5, "Van_MPV": 2.0}, {"decade": "2010s", "n": 3707, "SUV_Crossover": 14.2, "Sedan": 11.3, "Hatchback": 22.8, "Station_Wagon": 20.8, "Coupe": 11.0, "Convertible": 12.8, "Pickup": 5.2, "Van_MPV": 1.9}, {"decade": "2020s", "n": 571, "SUV_Crossover": 30.1, "Sedan": 15.2, "Hatchback": 12.1, "Station_Wagon": 21.5, "Coupe": 8.9, "Convertible": 6.3, "Pickup": 3.5, "Van_MPV": 2.3}]};
+const shapeYears = shapeDataset.yearly_dimensions;
+const bodyDecades = shapeDataset.decades_body_styles;
+
+const bodyStyleMeta = {
+  SUV_Crossover: { label: "SUV / Crossover", hex: "#f59e0b" },
+  Station_Wagon: { label: "Station Wagon", hex: "#10b981" },
+  Sedan: { label: "Sedan", hex: "#38bdf8" },
+  Hatchback: { label: "Hatchback", hex: "#06b6d4" },
+  Coupe: { label: "Coupe", hex: "#8b5cf6" },
+  Convertible: { label: "Convertible / Roadster", hex: "#ec4899" },
+  Pickup: { label: "Pickup Truck", hex: "#d97706" },
+  Van_MPV: { label: "Van / Minivan", hex: "#64748b" }
+};
+
+let currentDim = "all";
+let currentUnit = "mm";
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Color Visuals
   renderLegend();
   renderTimelineStream();
+
+  // Shape Visuals
+  renderDimensionChart();
+  renderDispersionChart();
+  renderBodyStyleLegend();
+  renderBodyStyleStream();
+
+  // Sound & Powertrain Visuals
+  renderSoundPlayers();
+  renderPowertrainChart();
 });
 
+/* ==========================================================================
+   COLOR SECTION SCRIPT
+   ========================================================================== */
 function renderLegend() {
   const container = document.getElementById("color-legend");
   if (!container) return;
@@ -452,7 +1118,6 @@ function renderTimelineStream() {
   if (!container) return;
 
   container.innerHTML = colorData.map(d => {
-    // Bar segments with inside percentage if >= 5%
     const segmentsHtml = Object.entries(colorMeta).map(([key, meta]) => {
       const pct = d[key] || 0;
       if (pct === 0) return "";
@@ -463,7 +1128,6 @@ function renderTimelineStream() {
       }
     }).join("");
 
-    // Adjacent badges for small categories < 5%
     const smallBadgesHtml = Object.entries(colorMeta)
       .filter(([key]) => (d[key] || 0) > 0 && (d[key] || 0) < 5)
       .map(([key, meta]) => `<span class="micro-badge" title="${meta.label}: ${d[key]}%"><span class="badge-dot" style="background-color: ${meta.hex};"></span>${meta.short} ${d[key]}%</span>`)
@@ -509,7 +1173,6 @@ function showReadout(year) {
     </div>
   `;
 
-  // Highlight active row
   document.querySelectorAll(".timeline-row").forEach(el => {
     if (el.getAttribute("data-year") === String(year)) {
       el.classList.add("is-selected-row");
@@ -518,5 +1181,527 @@ function showReadout(year) {
     }
   });
 }
+
+/* ==========================================================================
+   SHAPE SECTION INTERACTIVE CHARTS
+   ========================================================================== */
+
+function switchDimension(dim) {
+  currentDim = dim;
+  document.querySelectorAll(".dim-tab-btn").forEach(btn => {
+    btn.classList.toggle("is-active", btn.getAttribute("id") === `dim-btn-${dim}`);
+  });
+  renderDimensionChart();
+}
+
+function toggleUnit(unit) {
+  currentUnit = unit;
+  document.getElementById("unit-mm").classList.toggle("is-active", unit === "mm");
+  document.getElementById("unit-in").classList.toggle("is-active", unit === "in");
+  renderDimensionChart();
+}
+
+function renderDimensionChart() {
+  const container = document.getElementById("dim-svg-container");
+  if (!container) return;
+
+  const width = 900;
+  const height = 350;
+  const padLeft = 65;
+  const padRight = 30;
+  const padTop = 25;
+  const padBottom = 40;
+
+  const plotW = width - padLeft - padRight;
+  const plotH = height - padTop - padBottom;
+
+  const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
+
+  const isInch = currentUnit === "in";
+  const unitLabel = isInch ? "in" : "mm";
+  const factor = isInch ? 1 / 25.4 : 1;
+
+  let yMin = 0;
+  let yMax = 5200;
+
+  if (currentDim === "all") {
+    yMin = isInch ? 45 : 1200;
+    yMax = isInch ? 200 : 5100;
+  } else if (currentDim === "length") {
+    yMin = isInch ? 150 : 3900;
+    yMax = isInch ? 195 : 4900;
+  } else if (currentDim === "width") {
+    yMin = isInch ? 60 : 1550;
+    yMax = isInch ? 80 : 2000;
+  } else if (currentDim === "height") {
+    yMin = isInch ? 50 : 1300;
+    yMax = isInch ? 66 : 1680;
+  } else if (currentDim === "wheelbase") {
+    yMin = isInch ? 90 : 2300;
+    yMax = isInch ? 120 : 3000;
+  }
+
+  const yForVal = val => padTop + plotH - ((val * factor - yMin) / (yMax - yMin)) * plotH;
+
+  // Grid lines
+  const numGridLines = 5;
+  let gridSvg = "";
+  for (let i = 0; i <= numGridLines; i++) {
+    const v = yMin + (i / numGridLines) * (yMax - yMin);
+    const yPos = padTop + plotH - (i / numGridLines) * plotH;
+    gridSvg += `
+      <line x1="${padLeft}" y1="${yPos}" x2="${width - padRight}" y2="${yPos}" stroke="rgba(255,255,255,0.07)" stroke-dasharray="3,3" />
+      <text x="${padLeft - 10}" y="${yPos + 4}" fill="#64748b" font-size="11" font-family="ui-monospace, monospace" text-anchor="end">${Math.round(v)} ${unitLabel}</text>
+    `;
+  }
+
+  // X Axis Decades
+  let xAxisSvg = "";
+  for (let yr = 1970; yr <= 2024; yr += 10) {
+    const xPos = xForYear(yr);
+    xAxisSvg += `
+      <line x1="${xPos}" y1="${padTop}" x2="${xPos}" y2="${padTop + plotH}" stroke="rgba(255,255,255,0.05)" />
+      <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
+    `;
+  }
+  xAxisSvg += `
+    <text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>
+  `;
+
+  // Path generator
+  const makePath = key => {
+    return shapeYears.map((d, i) => {
+      const x = xForYear(d.year);
+      const y = yForVal(d[key]);
+      return `${i === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`;
+    }).join(" ");
+  };
+
+  // Paths
+  let pathsSvg = "";
+  if (currentDim === "all" || currentDim === "length") {
+    pathsSvg += `<path d="${makePath("length_mm")}" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />`;
+  }
+  if (currentDim === "all" || currentDim === "width") {
+    pathsSvg += `<path d="${makePath("width_mm")}" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />`;
+  }
+  if (currentDim === "all" || currentDim === "height") {
+    pathsSvg += `<path d="${makePath("height_mm")}" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />`;
+  }
+  if (currentDim === "all" || currentDim === "wheelbase") {
+    pathsSvg += `<path d="${makePath("wheelbase_mm")}" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="4,3" stroke-linecap="round" />`;
+  }
+
+  // Hover overlay columns
+  const colsSvg = shapeYears.map(d => {
+    const x = xForYear(d.year);
+    const colW = plotW / shapeYears.length;
+    return `
+      <rect x="${x - colW / 2}" y="${padTop}" width="${colW}" height="${plotH}" fill="transparent" class="dim-hover-col" style="cursor: pointer;"
+        onmouseenter="showDimensionReadout(${d.year})" onclick="showDimensionReadout(${d.year})" />
+    `;
+  }).join("");
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" class="dim-chart-svg">
+      ${gridSvg}
+      ${xAxisSvg}
+      ${pathsSvg}
+      ${colsSvg}
+      <line id="dim-guideline" x1="0" y1="${padTop}" x2="0" y2="${padTop + plotH}" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2,2" style="display:none;" />
+    </svg>
+  `;
+}
+
+function showDimensionReadout(year) {
+  const d = shapeYears.find(item => item.year === year);
+  const readout = document.getElementById("dim-hover-readout");
+  if (!d || !readout) return;
+
+  const isInch = currentUnit === "in";
+  const u = isInch ? "in" : "mm";
+  const len = isInch ? d.length_in : d.length_mm;
+  const wid = isInch ? d.width_in : d.width_mm;
+  const hgt = isInch ? d.height_in : d.height_mm;
+  const wb = isInch ? d.wheelbase_in : d.wheelbase_mm;
+
+  const base1970 = shapeYears[0];
+  const deltaLen = Math.round(d.length_mm - base1970.length_mm);
+  const deltaHgt = Math.round(d.height_mm - base1970.height_mm);
+  const deltaLenStr = isInch ? `${(deltaLen / 25.4).toFixed(1)} in` : `${deltaLen > 0 ? "+" : ""}${deltaLen} mm`;
+  const deltaHgtStr = isInch ? `${(deltaHgt / 25.4).toFixed(1)} in` : `${deltaHgt > 0 ? "+" : ""}${deltaHgt} mm`;
+
+  readout.innerHTML = `
+    <div class="dim-readout-content">
+      <span class="dim-readout-year">${d.year} RECORD:</span>
+      <span class="dim-readout-val">Length ${len} ${u} &bull; Width ${wid} ${u} &bull; Height ${hgt} ${u} &bull; Wheelbase ${wb} ${u}</span>
+      <span class="dim-readout-delta">(${deltaLenStr} len, ${deltaHgtStr} hgt since 1970)</span>
+      <span class="dim-readout-sample">[n = ${d.n} models]</span>
+    </div>
+  `;
+
+  const line = document.getElementById("dim-guideline");
+  if (line) {
+    const width = 900;
+    const padLeft = 65;
+    const padRight = 30;
+    const plotW = width - padLeft - padRight;
+    const xPos = padLeft + ((year - 1970) / (2024 - 1970)) * plotW;
+    line.setAttribute("x1", xPos);
+    line.setAttribute("x2", xPos);
+    line.style.display = "block";
+  }
+}
+
+/* ==========================================================================
+   SHAPE DIVERSITY (DISPERSION) CHART
+   ========================================================================== */
+function renderDispersionChart() {
+  const container = document.getElementById("dispersion-svg-container");
+  if (!container) return;
+
+  const width = 900;
+  const height = 350;
+  const padLeft = 60;
+  const padRight = 60;
+  const padTop = 25;
+  const padBottom = 40;
+
+  const plotW = width - padLeft - padRight;
+  const plotH = height - padTop - padBottom;
+
+  const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
+
+  const rMin = 2.6;
+  const rMax = 3.8;
+  const yForRatio = r => padTop + plotH - ((r - rMin) / (rMax - rMin)) * plotH;
+
+  const sMin = 0.20;
+  const sMax = 0.60;
+  const yForStd = s => padTop + plotH - ((s - sMin) / (sMax - sMin)) * plotH;
+
+  let gridSvg = "";
+  for (let r = 2.6; r <= 3.8; r += 0.3) {
+    const yPos = yForRatio(r);
+    gridSvg += `
+      <line x1="${padLeft}" y1="${yPos}" x2="${width - padRight}" y2="${yPos}" stroke="rgba(255,255,255,0.07)" stroke-dasharray="3,3" />
+      <text x="${padLeft - 10}" y="${yPos + 4}" fill="#64748b" font-size="11" font-family="ui-monospace, monospace" text-anchor="end">${r.toFixed(1)}</text>
+    `;
+  }
+
+  for (let s = 0.20; s <= 0.60; s += 0.10) {
+    const yPos = yForStd(s);
+    gridSvg += `
+      <text x="${width - padRight + 10}" y="${yPos + 4}" fill="#f59e0b" font-size="11" font-family="ui-monospace, monospace" text-anchor="start">&sigma; ${s.toFixed(2)}</text>
+    `;
+  }
+
+  let xAxisSvg = "";
+  for (let yr = 1970; yr <= 2024; yr += 10) {
+    const xPos = xForYear(yr);
+    xAxisSvg += `
+      <line x1="${xPos}" y1="${padTop}" x2="${xPos}" y2="${padTop + plotH}" stroke="rgba(255,255,255,0.05)" />
+      <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
+    `;
+  }
+  xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
+
+  const topPoints = shapeYears.map(d => `${xForYear(d.year).toFixed(1)},${yForRatio(d.lh_q75).toFixed(1)}`);
+  const botPoints = [...shapeYears].reverse().map(d => `${xForYear(d.year).toFixed(1)},${yForRatio(d.lh_q25).toFixed(1)}`);
+  const polygonPoints = [...topPoints, ...botPoints].join(" ");
+
+  const medianPath = shapeYears.map((d, i) => `${i === 0 ? "M" : "L"} ${xForYear(d.year).toFixed(1)} ${yForRatio(d.lh_ratio).toFixed(1)}`).join(" ");
+  const stdPath = shapeYears.map((d, i) => `${i === 0 ? "M" : "L"} ${xForYear(d.year).toFixed(1)} ${yForStd(d.lh_std).toFixed(1)}`).join(" ");
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" class="dim-chart-svg">
+      ${gridSvg}
+      ${xAxisSvg}
+      <polygon points="${polygonPoints}" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
+      <path d="${stdPath}" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" />
+      <path d="${medianPath}" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+      
+      <circle cx="${xForYear(1970)}" cy="${yForRatio(3.25)}" r="4.5" fill="#38bdf8" />
+      <text x="${xForYear(1970) + 8}" y="${yForRatio(3.25) - 8}" fill="#38bdf8" font-size="11" font-weight="700" font-family="ui-monospace, monospace">1970: 3.25</text>
+      
+      <circle cx="${xForYear(2024)}" cy="${yForRatio(2.91)}" r="4.5" fill="#38bdf8" />
+      <text x="${xForYear(2024) - 8}" y="${yForRatio(2.91) - 10}" fill="#38bdf8" font-size="11" font-weight="700" font-family="ui-monospace, monospace" text-anchor="end">2024: 2.91</text>
+    </svg>
+  `;
+}
+
+/* ==========================================================================
+   BODY STYLE STACKED STREAM
+   ========================================================================== */
+function renderBodyStyleLegend() {
+  const container = document.getElementById("bs-legend-container");
+  if (!container) return;
+
+  container.innerHTML = Object.entries(bodyStyleMeta).map(([key, item]) => `
+    <div class="bodystyle-legend-chip">
+      <span class="bs-dot" style="background-color: ${item.hex};"></span>
+      <span>${item.label}</span>
+    </div>
+  `).join("");
+}
+
+function renderBodyStyleStream() {
+  const container = document.getElementById("bs-stream-container");
+  if (!container) return;
+
+  container.innerHTML = bodyDecades.map(dec => {
+    const segsHtml = Object.entries(bodyStyleMeta).map(([key, meta]) => {
+      const pct = dec[key] || 0;
+      if (pct === 0) return "";
+      const isWide = pct >= 8;
+      return `
+        <div class="bs-seg" style="width: ${pct}%; background-color: ${meta.hex};" title="${meta.label}: ${pct}% (${dec.decade})">
+          ${isWide ? `${meta.label.split(" ")[0]} ${pct}%` : ""}
+        </div>
+      `;
+    }).join("");
+
+    let topName = "";
+    let topPct = 0;
+    Object.entries(bodyStyleMeta).forEach(([k, meta]) => {
+      if ((dec[k] || 0) > topPct) {
+        topPct = dec[k];
+        topName = meta.label;
+      }
+    });
+
+    return `
+      <div class="bs-decade-row">
+        <div class="bs-decade-meta">
+          <span class="bs-decade-label">${dec.decade}</span>
+          <span class="bs-decade-top">Dominant: <strong>${topName} (${topPct}%)</strong> &bull; Sample: ${dec.n} models</span>
+        </div>
+        <div class="bs-stacked-track">
+          ${segsHtml}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+/* ==========================================================================
+   SOUND & POWERTRAIN SCRIPT
+   ========================================================================== */
+
+const soundDataset = [{"id": "petrol_rec26", "file": "audio/cars/petrol_rec26.wav", "specimen": "SPECIMEN // PETROL_REC26", "format": "44.1 kHz PCM \u2022 5.2s", "title": "Deep Low-Frequency Combustion Rumble", "desc": "Heavy low-frequency pressure pulses, slow rhythmic exhaust note", "dur": 5.2, "bars": [0.332, 0.294, 0.318, 0.345, 0.362, 0.327, 0.291, 0.358, 0.343, 0.346, 0.327, 0.353, 0.394, 0.337, 0.312, 0.342, 0.319, 0.374, 0.352, 0.357, 0.4, 0.483, 0.469, 0.691, 0.779, 0.606, 0.562, 0.762, 0.553, 0.462, 0.551, 0.744, 0.76, 0.477, 0.453, 0.488, 0.646, 0.767, 0.691, 0.881, 1.0, 0.69, 0.492, 0.47, 0.372, 0.335, 0.284, 0.28]}, {"id": "petrol_rec25", "file": "audio/cars/petrol_rec25.wav", "specimen": "SPECIMEN // PETROL_REC25", "format": "44.1 kHz PCM \u2022 5.02s", "title": "Smooth Mellow Idle Pulse", "desc": "Subdued combustion events, highly damped mechanical chatter", "dur": 5.02, "bars": [0.612, 0.501, 0.542, 0.565, 0.628, 0.777, 0.828, 0.836, 0.881, 0.807, 0.943, 0.858, 0.908, 0.913, 0.844, 0.952, 0.973, 0.828, 0.918, 0.967, 0.881, 0.905, 0.832, 0.924, 1.0, 0.803, 0.892, 0.885, 0.88, 0.869, 0.922, 0.91, 0.885, 0.833, 0.969, 0.881, 0.973, 0.901, 0.903, 0.887, 0.833, 0.922, 0.885, 0.907, 0.869, 0.861, 0.846, 0.869]}, {"id": "petrol_rec315", "file": "audio/cars/petrol_rec315.wav", "specimen": "SPECIMEN // PETROL_REC315", "format": "44.1 kHz PCM \u2022 5.02s", "title": "Balanced Linear Cam & Valvetrain Rhythm", "desc": "Distinct valvetrain tick superimposed over steady intake suction", "dur": 5.02, "bars": [0.424, 0.398, 0.42, 0.412, 0.388, 0.426, 0.411, 0.419, 0.401, 0.392, 0.383, 0.413, 0.41, 0.432, 0.429, 0.444, 0.43, 0.437, 0.408, 0.441, 0.415, 0.377, 0.335, 0.329, 0.391, 0.76, 0.669, 0.71, 0.625, 0.576, 0.534, 0.496, 0.507, 0.41, 0.392, 0.423, 0.455, 0.495, 0.511, 0.482, 0.617, 0.862, 1.0, 0.715, 0.646, 0.621, 0.671, 0.781]}, {"id": "petrol_rec6", "file": "audio/cars/petrol_rec6.wav", "specimen": "SPECIMEN // PETROL_REC6", "format": "44.1 kHz PCM \u2022 5.2s", "title": "Crisp High-Compression Combustion Tone", "desc": "Sharper ignition transient spikes, distinct cylinder firing cadence", "dur": 5.2, "bars": [0.201, 0.199, 0.208, 0.203, 0.202, 0.203, 0.219, 0.216, 0.273, 0.285, 0.228, 0.223, 0.211, 0.204, 0.201, 0.2, 0.201, 0.196, 0.204, 0.199, 0.206, 0.236, 0.248, 0.319, 0.359, 0.336, 0.341, 0.305, 0.333, 0.345, 0.278, 0.326, 0.268, 0.284, 0.289, 0.422, 0.418, 0.539, 0.866, 0.861, 1.0, 0.835, 0.52, 0.362, 0.29, 0.232, 0.231, 0.246]}, {"id": "petrol_rec108", "file": "audio/cars/petrol_rec108.wav", "specimen": "SPECIMEN // PETROL_REC108", "format": "44.1 kHz PCM \u2022 5.02s", "title": "Resonant Multi-Valve Intake Signature", "desc": "Airflow resonance mixed with metallic reciprocating mass acoustics", "dur": 5.02, "bars": [0.313, 0.316, 0.306, 0.314, 0.301, 0.312, 0.31, 0.313, 0.317, 0.318, 0.323, 0.316, 0.307, 0.316, 0.328, 0.323, 0.339, 0.356, 0.362, 0.394, 0.333, 0.35, 0.368, 0.388, 0.404, 0.392, 0.468, 0.428, 0.422, 0.433, 0.458, 0.519, 0.536, 0.552, 0.545, 0.491, 0.427, 0.463, 0.553, 0.608, 0.539, 0.449, 0.431, 0.407, 0.506, 0.59, 0.881, 1.0]}, {"id": "petrol_rec177", "file": "audio/cars/petrol_rec177.wav", "specimen": "SPECIMEN // PETROL_REC177", "format": "44.1 kHz PCM \u2022 5.02s", "title": "High-Frequency Mechanical Pulse Train", "desc": "Energetic combustion cycle, rapid firing pulses, pronounced mechanical resonance", "dur": 5.02, "bars": [0.248, 0.249, 0.245, 0.238, 0.249, 0.243, 0.245, 0.237, 0.238, 0.236, 0.233, 0.236, 0.237, 0.241, 0.249, 0.238, 0.246, 0.298, 0.409, 0.492, 0.542, 0.597, 0.496, 0.446, 0.465, 0.435, 0.386, 0.41, 0.371, 0.332, 0.329, 0.318, 0.304, 0.275, 0.29, 0.321, 0.443, 0.515, 0.546, 0.625, 0.694, 0.697, 1.0, 0.83, 0.567, 0.458, 0.424, 0.412]}];
+
+const powertrainMeta = {
+  i4: { label: "Inline-4", hex: "#38bdf8" },
+  v8: { label: "V8", hex: "#f43f5e" },
+  v6_i6: { label: "6-Cylinder (V6 / I6)", hex: "#a855f7" },
+  i3: { label: "Inline-3", hex: "#eab308" },
+  other: { label: "Electric / Hybrid / Other", hex: "#10b981" },
+  niche: { label: "Niche (I5 / V10 / V12)", hex: "#64748b" }
+};
+
+const powertrainDecades = [
+  { decade: "1970s", n: 689, i4: 52.7, v8: 19.9, v6_i6: 20.6, i3: 0.0, other: 1.9, niche: 4.9, dominant: "Inline-4 (52.7%) &bull; V8 (19.9%)" },
+  { decade: "1980s", n: 1580, i4: 68.7, v8: 7.2, v6_i6: 17.0, i3: 0.4, other: 0.9, niche: 5.8, dominant: "Inline-4 (68.7%)" },
+  { decade: "1990s", n: 4315, i4: 67.7, v8: 6.5, v6_i6: 19.8, i3: 0.7, other: 0.4, niche: 4.9, dominant: "Inline-4 (67.7%)" },
+  { decade: "2000s", n: 9996, i4: 65.0, v8: 8.1, v6_i6: 20.6, i3: 2.0, other: 0.5, niche: 3.8, dominant: "Inline-4 (65.0%) &bull; V6/I6 (20.6%)" },
+  { decade: "2010s", n: 10384, i4: 65.6, v8: 7.9, v6_i6: 15.4, i3: 7.0, other: 1.9, niche: 2.2, dominant: "Inline-4 (65.6%)" },
+  { decade: "2020s", n: 2547, i4: 46.3, v8: 7.2, v6_i6: 14.1, i3: 10.2, other: 20.8, niche: 1.4, dominant: "Inline-4 (46.3%) &bull; EV/Hybrid (20.8%)" }
+];
+
+let activeAudioElement = null;
+let activeSoundCard = null;
+
+function renderSoundPlayers() {
+  const container = document.getElementById("sound-players-grid");
+  if (!container) return;
+
+  container.innerHTML = soundDataset.map((s, idx) => {
+    const barsHtml = s.bars.map((h, bIdx) => 
+      `<div class="waveform-bar" style="height: ${Math.round(h * 100)}%;" data-idx="${bIdx}"></div>`
+    ).join("");
+
+    return `
+      <div class="sound-card" id="card-${s.id}">
+        <audio id="audio-${s.id}" src="${s.file}" preload="none"></audio>
+        
+        <div>
+          <div class="sound-card-header">
+            <span class="sound-specimen-pill">${s.specimen}</span>
+            <span class="sound-format-badge">${s.format}</span>
+          </div>
+          
+          <h4 class="sound-card-title">${s.title}</h4>
+          <p class="sound-card-character">${s.desc}</p>
+        </div>
+
+        <div>
+          <div class="sound-waveform-track" id="track-${s.id}" title="Click waveform to seek">
+            ${barsHtml}
+          </div>
+
+          <div class="sound-controls-row">
+            <button class="sound-play-btn" id="btn-${s.id}" type="button" aria-label="Play recording">
+              <span class="btn-play-icon">▶</span>
+              <span class="btn-label-text">LISTEN</span>
+            </button>
+            <span class="sound-time-readout" id="time-${s.id}">0:00 / 0:0${Math.round(s.dur)}</span>
+            <span class="sound-status-dot">
+              <span class="status-indicator-circle"></span>
+              <span class="status-label" id="status-${s.id}">IDLE</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Attach event listeners to each sound card
+  soundDataset.forEach(s => {
+    const audio = document.getElementById(`audio-${s.id}`);
+    const card = document.getElementById(`card-${s.id}`);
+    const btn = document.getElementById(`btn-${s.id}`);
+    const timeEl = document.getElementById(`time-${s.id}`);
+    const statusEl = document.getElementById(`status-${s.id}`);
+    const track = document.getElementById(`track-${s.id}`);
+    if (!audio || !card || !btn || !track) return;
+
+    const bars = track.querySelectorAll(".waveform-bar");
+
+    function resetThisPlayer() {
+      audio.pause();
+      audio.currentTime = 0;
+      card.classList.remove("is-playing");
+      btn.innerHTML = '<span class="btn-play-icon">▶</span> <span class="btn-label-text">LISTEN</span>';
+      timeEl.textContent = `0:00 / 0:0${Math.round(s.dur)}`;
+      statusEl.textContent = "IDLE";
+      bars.forEach(b => {
+        b.classList.remove("passed");
+        b.classList.remove("active-bar");
+      });
+    }
+
+    btn.addEventListener("click", () => {
+      if (!audio.paused) {
+        // Currently playing: pause it
+        audio.pause();
+        card.classList.remove("is-playing");
+        btn.innerHTML = '<span class="btn-play-icon">▶</span> <span class="btn-label-text">LISTEN</span>';
+        statusEl.textContent = "PAUSED";
+      } else {
+        // Stop any other playing audio on the page
+        if (activeAudioElement && activeAudioElement !== audio) {
+          activeAudioElement.pause();
+          if (activeSoundCard) {
+            activeSoundCard.classList.remove("is-playing");
+            const prevBtn = activeSoundCard.querySelector(".sound-play-btn");
+            if (prevBtn) prevBtn.innerHTML = '<span class="btn-play-icon">▶</span> <span class="btn-label-text">LISTEN</span>';
+            const prevStatus = activeSoundCard.querySelector(".status-label");
+            if (prevStatus) prevStatus.textContent = "IDLE";
+          }
+        }
+
+        activeAudioElement = audio;
+        activeSoundCard = card;
+
+        audio.play().then(() => {
+          card.classList.add("is-playing");
+          btn.innerHTML = '<span class="btn-play-icon">❚❚</span> <span class="btn-label-text">PAUSE</span>';
+          statusEl.textContent = "PLAYING";
+        }).catch(err => {
+          console.warn("Audio playback interrupted or blocked:", err);
+        });
+      }
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      if (!audio.duration) return;
+      const cur = audio.currentTime;
+      const dur = audio.duration;
+      const curSec = Math.floor(cur);
+      const curMs = Math.floor((cur % 1) * 10);
+      timeEl.textContent = `0:0${curSec}.${curMs} / 0:0${Math.round(dur)}`;
+
+      const progress = cur / dur;
+      const activeIdx = Math.min(bars.length - 1, Math.floor(progress * bars.length));
+
+      bars.forEach((b, idx) => {
+        if (idx < activeIdx) {
+          b.classList.add("passed");
+          b.classList.remove("active-bar");
+        } else if (idx === activeIdx) {
+          b.classList.add("passed");
+          b.classList.add("active-bar");
+        } else {
+          b.classList.remove("passed");
+          b.classList.remove("active-bar");
+        }
+      });
+    });
+
+    audio.addEventListener("ended", () => {
+      resetThisPlayer();
+      if (activeAudioElement === audio) {
+        activeAudioElement = null;
+        activeSoundCard = null;
+      }
+    });
+
+    // Click track to seek
+    track.addEventListener("click", (e) => {
+      const rect = track.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const frac = Math.max(0, Math.min(1, clickX / rect.width));
+      if (audio.duration) {
+        audio.currentTime = frac * audio.duration;
+      }
+      if (audio.paused) {
+        btn.click();
+      }
+    });
+  });
+}
+
+function renderPowertrainChart() {
+  const container = document.getElementById("powertrain-chart-container");
+  const legendContainer = document.getElementById("engine-legend-container");
+  if (!container) return;
+
+  // Render Stacked Bars
+  container.innerHTML = powertrainDecades.map(dec => {
+    const slicesHtml = Object.entries(powertrainMeta).map(([k, meta]) => {
+      const pct = dec[k] || 0;
+      if (pct === 0) return "";
+      const isWide = pct >= 8;
+      return `
+        <div class="engine-slice" style="width: ${pct}%; background-color: ${meta.hex};" title="${meta.label}: ${pct}% in ${dec.decade}">
+          ${isWide ? `${meta.label.split(" ")[0]} ${pct}%` : ""}
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <div class="engine-decade-row">
+        <div class="engine-meta-row">
+          <span class="engine-decade-label">${dec.decade}</span>
+          <span class="engine-dominant-tag">Dominant: <strong>${dec.dominant}</strong> &bull; ${dec.n.toLocaleString()} models</span>
+        </div>
+        <div class="engine-stacked-bar">
+          ${slicesHtml}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Render Legend
+  if (legendContainer) {
+    legendContainer.innerHTML = Object.entries(powertrainMeta).map(([k, meta]) => `
+      <div class="engine-legend-item">
+        <span class="engine-legend-dot" style="background-color: ${meta.hex};"></span>
+        <span>${meta.label}</span>
+      </div>
+    `).join("");
+  }
+}
+
 </script>
 ```
