@@ -3,6 +3,14 @@ project:
   resources:
     - "audio/**"
     - "data/**"
+    - "images/**"
+    - "1960s/**"
+    - "1970s/**"
+    - "1980s/**"
+    - "1990s/**"
+    - "2000s/**"
+    - "2010s/**"
+    - "2020s/**"
 
 website:
   title: "Car Character"

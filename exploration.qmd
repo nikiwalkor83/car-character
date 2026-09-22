@@ -6,86 +6,264 @@ toc: false
 
 ```{=html}
 <div class="exploration-section">
-  <!-- EXPLORATION HEADER -->
-  <div class="exploration-header">
-    <div class="hero-eyebrow">Interactive Exploration &bull; Global Geography</div>
-    <h1 class="exploration-title">THE GEOGRAPHY OF CHARACTER.</h1>
-    <p class="exploration-subtitle">
-      Automotive identity was forged across distinct national cultures, engineering philosophies, and regulatory landscapes. Select a country to explore.
-    </p>
-  </div>
 
-  <!-- MAP STAGE WRAPPER -->
-  <div class="map-wrapper">
-    <div class="map-topbar">
-      <div id="selected-indicator" class="map-selected-readout">
-        <span class="map-status-pill"></span>
-        <span class="selected-label">Selected:</span>
-        <span class="selected-highlight" id="selected-country-name">None</span>
+  <!-- =========================================================================
+       VIEW 1: WORLD MAP VIEW
+       ========================================================================= -->
+  <div id="world-view" class="exploration-view is-active">
+    <!-- Header -->
+    <div class="exploration-header">
+      <div class="hero-eyebrow">Interactive Exploration &bull; Global Geography</div>
+      <h1 class="exploration-title">THE GEOGRAPHY OF CHARACTER.</h1>
+      <p class="exploration-subtitle">
+        Automotive identity was forged across distinct national cultures, engineering philosophies, and regulatory landscapes. Select a country to explore.
+      </p>
+    </div>
+
+    <!-- Map Stage Wrapper -->
+    <div class="map-wrapper">
+      <div class="map-topbar">
+        <div id="selected-indicator" class="map-selected-readout">
+          <span class="map-status-pill"></span>
+          <span class="selected-label">Selected:</span>
+          <span class="selected-highlight" id="selected-country-name">None</span>
+        </div>
+        <div class="map-hints">Hover to inspect &bull; Click to select</div>
       </div>
-      <div class="map-hints">Hover to inspect &bull; Click to select</div>
-    </div>
 
-    <div class="map-stage" id="map-container">
-      <div id="map-tooltip" class="map-tooltip"></div>
-      <svg id="world-map-svg" class="map-svg" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="map-stage" id="map-container">
+        <div id="map-tooltip" class="map-tooltip"></div>
+        <svg id="world-map-svg" class="map-svg" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
     </div>
   </div>
+
+
+  <!-- =========================================================================
+       VIEW 2: COUNTRY-SPECIFIC VIEW
+       ========================================================================= -->
+  <div id="country-view" class="exploration-view is-hidden">
+    <!-- Country Navigation Bar -->
+    <div class="country-nav-bar">
+      <button id="btn-back-nav" class="btn-back-world">
+        <span class="back-arrow">&larr;</span> <span id="back-nav-label">Back to World</span>
+      </button>
+
+      <div id="country-breadcrumbs" class="country-breadcrumbs">
+        <span id="crumb-world" class="breadcrumb-item">World</span>
+        <span class="breadcrumb-sep">/</span>
+        <span id="crumb-country" class="breadcrumb-item is-current">Country</span>
+        <span id="crumb-mfg-sep" class="breadcrumb-sep" style="display:none;">/</span>
+        <span id="crumb-mfg" class="breadcrumb-item is-current" style="display:none;">Automaker</span>
+      </div>
+    </div>
+
+    <!-- Country Identity Hero -->
+    <div class="country-view-hero">
+      <div class="country-identity-row">
+        <div class="country-flag-frame">
+          <img id="country-flag-img" src="" alt="National Flag" />
+          <span id="country-flag-fallback" class="country-flag-fallback" style="display: none;"></span>
+        </div>
+        <div class="country-heading-group">
+          <h1 id="country-view-name" class="country-view-title">COUNTRY</h1>
+          <div class="country-view-subtitle">*Selected country*</div>
+        </div>
+      </div>
+
+      <!-- Subtle Map Locator Indication -->
+      <div class="country-locator-card">
+        <div class="country-locator-info">
+          <span class="locator-label">Global Territory Coordinates</span>
+          <span id="locator-detail-text" class="locator-detail">Selected nation highlighted on the world map</span>
+        </div>
+        <div class="country-locator-stage">
+          <svg id="locator-svg" class="locator-svg" viewBox="0 0 240 110" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Country Automotive Content Area -->
+    <div class="country-content-space">
+
+      <!-- STAGE A: AUTOMAKERS LIST -->
+      <div id="automakers-panel" class="exploration-panel is-active">
+        <div class="section-head">
+          <div class="section-eyebrow">National Automotive Industry</div>
+          <h2 class="section-title">Automakers</h2>
+          <p id="automakers-subtitle" class="section-desc">
+            Select a manufacturer to inspect specimens represented in the archive.
+          </p>
+        </div>
+
+        <div id="automakers-grid-container" class="automakers-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- STAGE B: MANUFACTURER SPECIMEN VEHICLES -->
+      <div id="models-panel" class="exploration-panel is-hidden">
+        <div class="section-head">
+          <div id="models-eyebrow" class="section-eyebrow">Manufacturer Archive</div>
+          <h2 id="models-title" class="section-title">Models</h2>
+          <p id="models-desc" class="section-desc">
+            Specimens represented in the historical automotive collection.
+          </p>
+        </div>
+
+        <div id="models-grid-container" class="models-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
-<!-- D3 & TOPOJSON LIBRARIES -->
+<!-- D3, TOPOJSON & DATA SOURCES -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <script src="data/countries_110m.js"></script>
 <script src="data/iso_countries.js"></script>
+<script src="data/cars_metadata.js"></script>
 
 <script>
-// State storage for selected country accessible to next steps
+// Modular reusable state
 window.selectedCountry = null;
+window.selectedManufacturer = null;
 
-(function initWorldMap() {
-  const svg = d3.select("#world-map-svg");
-  const container = document.getElementById("map-container");
+(function initExploration() {
+  const worldView = document.getElementById("world-view");
+  const countryView = document.getElementById("country-view");
+  const btnBackNav = document.getElementById("btn-back-nav");
+  const backNavLabel = document.getElementById("back-nav-label");
+
+  // Breadcrumbs
+  const crumbWorld = document.getElementById("crumb-world");
+  const crumbCountry = document.getElementById("crumb-country");
+  const crumbMfgSep = document.getElementById("crumb-mfg-sep");
+  const crumbMfg = document.getElementById("crumb-mfg");
+
+  // Panels
+  const automakersPanel = document.getElementById("automakers-panel");
+  const modelsPanel = document.getElementById("models-panel");
+  const automakersSubtitle = document.getElementById("automakers-subtitle");
+  const automakersGrid = document.getElementById("automakers-grid-container");
+
+  const modelsEyebrow = document.getElementById("models-eyebrow");
+  const modelsTitle = document.getElementById("models-title");
+  const modelsDesc = document.getElementById("models-desc");
+  const modelsGrid = document.getElementById("models-grid-container");
+
+  // World map and SVG
+  const mapSvg = d3.select("#world-map-svg");
+  const locatorSvg = d3.select("#locator-svg");
+  const mapContainer = document.getElementById("map-container");
   const tooltip = document.getElementById("map-tooltip");
   const selectedNameEl = document.getElementById("selected-country-name");
+
+  // Country view elements
+  const countryNameEl = document.getElementById("country-view-name");
+  const countryFlagImg = document.getElementById("country-flag-img");
+  const countryFlagFallback = document.getElementById("country-flag-fallback");
+  const locatorDetailText = document.getElementById("locator-detail-text");
 
   const width = 960;
   const height = 500;
 
-  // Set explicit SVG viewBox for responsiveness
-  svg.attr("viewBox", `0 0 ${width} ${height}`)
-     .attr("preserveAspectRatio", "xMidYMid meet");
+  // View state tracking: "world" | "country" | "manufacturer"
+  let currentNavigationLevel = "world";
+  let activeCountryData = null;
 
+  // Projection setups
   const projection = d3.geoEqualEarth();
   const pathGenerator = d3.geoPath().projection(projection);
 
-  // Group layers
-  const gBase = svg.append("g").attr("class", "map-base-layer");
-  const gCountries = svg.append("g").attr("class", "map-countries-layer");
+  const locatorProjection = d3.geoEqualEarth();
+  const locatorPathGenerator = d3.geoPath().projection(locatorProjection);
+
+  const gBase = mapSvg.append("g").attr("class", "map-base-layer");
+  const gCountries = mapSvg.append("g").attr("class", "map-countries-layer");
+
+  let activeCountryPath = null;
+  let locatorCountries = null;
+
+  function getCountryInfo(d) {
+    const isoMap = window.ISO_COUNTRIES || {};
+    const id = d && d.id ? String(d.id) : "";
+    const name = d && d.properties ? d.properties.name || "" : "";
+    const numInt = id && !isNaN(parseInt(id, 10)) ? String(parseInt(id, 10)) : "";
+
+    const match = isoMap[id] || 
+                  (numInt ? isoMap[numInt] : null) || 
+                  isoMap[name] || 
+                  (name ? isoMap[name.toLowerCase()] : null) || 
+                  null;
+
+    if (match) {
+      return {
+        id: id || match.iso3,
+        name: match.name || name,
+        iso2: (match.iso2 || "").toLowerCase(),
+        iso3: (match.iso3 || "").toUpperCase()
+      };
+    }
+
+    return {
+      id: id,
+      name: name || "Unknown",
+      iso2: "",
+      iso3: ""
+    };
+  }
+
+  function getFlagEmoji(countryCode) {
+    if (!countryCode || countryCode.length !== 2) return "🌐";
+    const codePoints = countryCode
+      .toUpperCase()
+      .split("")
+      .map(char => 127397 + char.charCodeAt(0));
+    return String.fromCodePoint(...codePoints);
+  }
+
+  function getCountryCars(countryObj) {
+    if (!window.CARS_METADATA || !Array.isArray(window.CARS_METADATA)) return [];
+    const targetName = (countryObj.name || "").toLowerCase().trim();
+    const targetIso3 = (countryObj.iso3 || "").toUpperCase().trim();
+
+    return window.CARS_METADATA.filter(car => {
+      const carCountry = (car["Country of manufacturer"] || "").toLowerCase().trim();
+      if (carCountry === targetName) return true;
+      if (targetName.includes(carCountry) || carCountry.includes(targetName)) return true;
+      if (targetIso3 === "USA" && (carCountry.includes("united states") || carCountry === "usa")) return true;
+      if (targetIso3 === "GBR" && (carCountry.includes("united kingdom") || carCountry === "uk")) return true;
+      if (targetIso3 === "KOR" && (carCountry.includes("korea") || carCountry === "south korea")) return true;
+      return false;
+    });
+  }
 
   function renderTopology(worldData) {
     if (!worldData || !worldData.objects || !worldData.objects.countries) return;
 
-    // Filter out Antarctica (010) for a centered, cinematic presentation of populated landmasses
     const countries = topojson.feature(worldData, worldData.objects.countries).features
       .filter(d => d.id !== "010");
 
-    const isoMap = window.ISO_COUNTRIES || {};
-
-    // Center and scale the world projection cleanly within viewBox
     projection.fitExtent([[30, 20], [width - 30, height - 20]], {
       type: "FeatureCollection",
       features: countries
     });
 
-    // Graticule lines for cartographic drafting aesthetic
+    locatorProjection.fitExtent([[6, 6], [234, 104]], {
+      type: "FeatureCollection",
+      features: countries
+    });
+
     const graticule = d3.geoGraticule10();
     gBase.append("path")
       .datum(graticule)
       .attr("class", "map-graticule")
       .attr("d", pathGenerator);
-
-    let activePath = null;
 
     gCountries.selectAll("path.world-country")
       .data(countries)
@@ -95,13 +273,10 @@ window.selectedCountry = null;
       .attr("d", pathGenerator)
       .attr("data-id", d => d.id)
       .on("mouseenter", function(event, d) {
-        const iso = isoMap[d.id] || {};
-        const countryName = iso.name || d.properties?.name || "Unknown";
-        const iso3 = iso.iso3 || "";
-
+        const country = getCountryInfo(d);
         tooltip.innerHTML = `
-          <span class="tooltip-name">${countryName}</span>
-          ${iso3 ? `<span class="tooltip-iso">${iso3}</span>` : ""}
+          <span class="tooltip-name">${country.name}</span>
+          ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
         `;
         tooltip.style.opacity = "1";
         positionTooltip(event);
@@ -113,48 +288,331 @@ window.selectedCountry = null;
         tooltip.style.opacity = "0";
       })
       .on("click", function(event, d) {
-        const iso = isoMap[d.id] || {};
-        const countryName = iso.name || d.properties?.name || "Unknown";
-        const iso3 = iso.iso3 || "";
-        const iso2 = iso.iso2 || "";
-
-        // Deselect previous country
-        if (activePath) {
-          activePath.classed("is-selected", false);
-        }
-
-        // Highlight newly selected country
-        activePath = d3.select(this);
-        activePath.classed("is-selected", true);
-
-        // Store selected country state
-        window.selectedCountry = {
-          id: d.id,
-          name: countryName,
-          iso2: iso2,
-          iso3: iso3
-        };
-
-        // Update selected display
-        if (selectedNameEl) {
-          selectedNameEl.innerHTML = `${countryName} ${iso3 ? `<span class="selected-iso">(${iso3})</span>` : ""}`;
-        }
-
-        // Emit event for modular integration in future steps
-        window.dispatchEvent(new CustomEvent("countrySelected", { detail: window.selectedCountry }));
+        selectCountry(d, this);
       });
+
+    locatorCountries = locatorSvg.selectAll("path.locator-country")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("class", "locator-country")
+      .attr("d", locatorPathGenerator)
+      .attr("data-id", d => d.id);
   }
 
+  function selectCountry(d, element) {
+    const country = getCountryInfo(d);
+    activeCountryData = country;
+
+    // Highlight on main map
+    if (activeCountryPath) {
+      activeCountryPath.classed("is-selected", false);
+    }
+    if (element) {
+      activeCountryPath = d3.select(element);
+      activeCountryPath.classed("is-selected", true);
+    } else {
+      activeCountryPath = gCountries.select(`path[data-id="${d.id}"]`);
+      activeCountryPath.classed("is-selected", true);
+    }
+
+    // Highlight on locator map
+    if (locatorCountries) {
+      locatorCountries.classed("is-target", f => f.id === d.id);
+    }
+
+    // Store state in window.selectedCountry
+    window.selectedCountry = {
+      id: d.id,
+      name: country.name,
+      iso2: country.iso2,
+      iso3: country.iso3
+    };
+    window.selectedManufacturer = null;
+
+    // Update main map indicator bar
+    if (selectedNameEl) {
+      selectedNameEl.innerHTML = `${country.name} ${country.iso3 ? `<span class="selected-iso">(${country.iso3})</span>` : ""}`;
+    }
+
+    // Populate country identity
+    countryNameEl.textContent = country.name;
+    locatorDetailText.textContent = `${country.name} ${country.iso3 ? `(${country.iso3})` : ""} active territory`;
+
+    // Flag setup
+    if (country.iso2) {
+      countryFlagImg.style.display = "block";
+      countryFlagFallback.style.display = "none";
+      countryFlagImg.src = `https://flagcdn.com/${country.iso2}.svg`;
+      countryFlagImg.alt = `${country.name} Flag`;
+
+      countryFlagImg.onerror = function() {
+        this.style.display = "none";
+        countryFlagFallback.textContent = getFlagEmoji(country.iso2);
+        countryFlagFallback.style.display = "inline-block";
+      };
+    } else {
+      countryFlagImg.style.display = "none";
+      countryFlagFallback.textContent = "🌐";
+      countryFlagFallback.style.display = "inline-block";
+    }
+
+    // Build Automakers section from data
+    populateAutomakers(country);
+
+    // Set navigation state
+    currentNavigationLevel = "country";
+    backNavLabel.textContent = "Back to World";
+    crumbCountry.textContent = country.name;
+    crumbCountry.classList.add("is-current");
+    crumbMfgSep.style.display = "none";
+    crumbMfg.style.display = "none";
+
+    // Show Automakers panel, hide Models panel
+    automakersPanel.classList.remove("is-hidden");
+    automakersPanel.classList.add("is-active");
+    modelsPanel.classList.remove("is-active");
+    modelsPanel.classList.add("is-hidden");
+
+    // Transition view
+    worldView.style.opacity = "0";
+    setTimeout(() => {
+      worldView.classList.remove("is-active");
+      worldView.classList.add("is-hidden");
+
+      countryView.classList.remove("is-hidden");
+      countryView.classList.add("is-active");
+      countryView.style.opacity = "0";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      requestAnimationFrame(() => {
+        countryView.style.opacity = "1";
+      });
+    }, 200);
+
+    window.dispatchEvent(new CustomEvent("countrySelected", { detail: window.selectedCountry }));
+  }
+
+  function populateAutomakers(country) {
+    const cars = getCountryCars(country);
+    automakersGrid.innerHTML = "";
+
+    if (cars.length === 0) {
+      automakersSubtitle.textContent = "No automotive data available for this territory.";
+      automakersGrid.innerHTML = `
+        <div class="automakers-empty-card" style="grid-column: 1 / -1;">
+          <div class="empty-icon">📁</div>
+          <h3 class="empty-title">NO VEHICLE DATA AVAILABLE</h3>
+          <p class="empty-desc">
+            There are no automotive manufacturers or specimen models recorded for <strong>${country.name}</strong> in the current project archive.
+          </p>
+          <button id="btn-empty-return" class="btn-back-world">
+            <span class="back-arrow">&larr;</span> Return to World Map
+          </button>
+        </div>
+      `;
+      const btnEmpty = document.getElementById("btn-empty-return");
+      if (btnEmpty) btnEmpty.addEventListener("click", backToWorld);
+      return;
+    }
+
+    // Group cars by Manufacturer
+    const groups = {};
+    cars.forEach(car => {
+      const mfg = car["Manufacturer"] || "Unknown";
+      if (!groups[mfg]) {
+        groups[mfg] = [];
+      }
+      groups[mfg].push(car);
+    });
+
+    const mfgNames = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length || a.localeCompare(b));
+    automakersSubtitle.textContent = `${mfgNames.length} distinct automaker${mfgNames.length === 1 ? '' : 's'} recorded with ${cars.length} specimen models in the archive.`;
+
+    mfgNames.forEach(mfgName => {
+      const mfgCars = groups[mfgName];
+      const years = mfgCars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y));
+      const minYear = years.length ? Math.min(...years) : null;
+      const maxYear = years.length ? Math.max(...years) : null;
+      const eraStr = minYear && maxYear ? (minYear === maxYear ? `${minYear}` : `${minYear} — ${maxYear}`) : "Archive";
+      const monogram = mfgName.substring(0, 2).toUpperCase();
+
+      const card = document.createElement("div");
+      card.className = "automaker-card";
+      card.innerHTML = `
+        <div>
+          <div class="automaker-card-top">
+            <div class="mfg-monogram">${monogram}</div>
+            <div class="mfg-badge-count">${mfgCars.length} ${mfgCars.length === 1 ? 'Model' : 'Models'}</div>
+          </div>
+          <h3 class="mfg-title">${mfgName}</h3>
+          <p class="mfg-era">${eraStr}</p>
+        </div>
+        <div class="automaker-card-bottom">
+          <span class="mfg-action-text">Inspect Models</span>
+          <span class="mfg-chevron">&rarr;</span>
+        </div>
+      `;
+
+      card.addEventListener("click", function() {
+        selectManufacturer({
+          name: mfgName,
+          cars: mfgCars,
+          count: mfgCars.length,
+          minYear: minYear,
+          maxYear: maxYear,
+          eraStr: eraStr
+        });
+      });
+
+      automakersGrid.appendChild(card);
+    });
+  }
+
+  function selectManufacturer(mfg) {
+    window.selectedManufacturer = mfg;
+    currentNavigationLevel = "manufacturer";
+
+    // Update navigation controls
+    backNavLabel.textContent = `Back to ${activeCountryData.name}`;
+    crumbCountry.classList.remove("is-current");
+    crumbMfgSep.style.display = "inline";
+    crumbMfg.style.display = "inline";
+    crumbMfg.textContent = mfg.name;
+
+    // Header info
+    modelsEyebrow.textContent = `${activeCountryData.name.toUpperCase()} // AUTOMAKER SPECIMENS`;
+    modelsTitle.textContent = mfg.name.toUpperCase();
+    modelsDesc.textContent = `${mfg.count} specimen ${mfg.count === 1 ? 'model' : 'models'} represented across historical production eras (${mfg.eraStr}).`;
+
+    // Populate car models
+    modelsGrid.innerHTML = "";
+    // Sort cars chronologically
+    const sortedCars = [...mfg.cars].sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
+
+    sortedCars.forEach(car => {
+      const card = document.createElement("div");
+      card.className = "car-model-card";
+
+      const imgSrc = car["Image filename"] || "";
+      const carName = car["Car name"] || `${car["Model year"]} ${mfg.name}`;
+      const year = car["Model year"] || "";
+      const category = car["Vehicle category"] || car["Decade"] || "Specimen";
+      const generation = car["Exact model generation"] || car["Decade"] || "";
+      const source = car["Image source"] || "Automotive Archive";
+
+      card.innerHTML = `
+        <div class="car-image-frame">
+          <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
+          <div class="car-pills-overlay">
+            <span class="car-year-pill">${year}</span>
+            <span class="car-cat-pill">${category}</span>
+          </div>
+        </div>
+        <div class="car-details-body">
+          <h4 class="car-model-name">${carName}</h4>
+          <div class="car-model-gen">${generation}</div>
+          <div class="car-credit-line">Source: ${source}</div>
+        </div>
+      `;
+
+      modelsGrid.appendChild(card);
+    });
+
+    // Smooth transition from Automakers to Models
+    automakersPanel.style.opacity = "0";
+    setTimeout(() => {
+      automakersPanel.classList.remove("is-active");
+      automakersPanel.classList.add("is-hidden");
+
+      modelsPanel.classList.remove("is-hidden");
+      modelsPanel.classList.add("is-active");
+      modelsPanel.style.opacity = "0";
+
+      // Scroll smoothly to content space
+      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
+
+      requestAnimationFrame(() => {
+        modelsPanel.style.opacity = "1";
+      });
+    }, 180);
+
+    window.dispatchEvent(new CustomEvent("manufacturerSelected", { detail: mfg }));
+  }
+
+  function backToCountry() {
+    window.selectedManufacturer = null;
+    currentNavigationLevel = "country";
+
+    backNavLabel.textContent = "Back to World";
+    crumbMfgSep.style.display = "none";
+    crumbMfg.style.display = "none";
+    crumbCountry.classList.add("is-current");
+
+    modelsPanel.style.opacity = "0";
+    setTimeout(() => {
+      modelsPanel.classList.remove("is-active");
+      modelsPanel.classList.add("is-hidden");
+
+      automakersPanel.classList.remove("is-hidden");
+      automakersPanel.classList.add("is-active");
+      automakersPanel.style.opacity = "0";
+
+      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
+
+      requestAnimationFrame(() => {
+        automakersPanel.style.opacity = "1";
+      });
+    }, 180);
+  }
+
+  function backToWorld() {
+    window.selectedManufacturer = null;
+    currentNavigationLevel = "world";
+
+    countryView.style.opacity = "0";
+    setTimeout(() => {
+      countryView.classList.remove("is-active");
+      countryView.classList.add("is-hidden");
+
+      worldView.classList.remove("is-hidden");
+      worldView.classList.add("is-active");
+      worldView.style.opacity = "0";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      requestAnimationFrame(() => {
+        worldView.style.opacity = "1";
+      });
+    }, 200);
+  }
+
+  // Unified Back button click dispatcher
+  btnBackNav.addEventListener("click", function() {
+    if (currentNavigationLevel === "manufacturer") {
+      backToCountry();
+    } else {
+      backToWorld();
+    }
+  });
+
+  // Breadcrumb interactive navigations
+  crumbWorld.addEventListener("click", backToWorld);
+  crumbCountry.addEventListener("click", function() {
+    if (currentNavigationLevel === "manufacturer") {
+      backToCountry();
+    }
+  });
+
   function positionTooltip(event) {
-    if (!container) return;
-    const rect = container.getBoundingClientRect();
+    if (!mapContainer) return;
+    const rect = mapContainer.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
     tooltip.style.left = `${x}px`;
     tooltip.style.top = `${y}px`;
   }
 
-  // Use embedded TopoJSON data or fetch fallback
+  // Load topology
   if (window.COUNTRIES_110M) {
     renderTopology(window.COUNTRIES_110M);
   } else {

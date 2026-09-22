@@ -1064,22 +1064,10 @@ const colorMeta = {
   Other: { label: "Other", short: "Other", hex: "#7c3aed", textHex: "#ffffff", border: false }
 };
 
-// Shape Dataset (1970 - 2024) derived from engines.csv (28,400 vehicles)
+// Shape Dataset (1970 - 2024) derived from engines.csv (16,300+ classified vehicles)
 const shapeDataset = {"total_vehicles_1970_2024": 28400, "yearly_dimensions": [{"year": 1970, "n": 63, "length_mm": 4775.0, "length_in": 188.0, "width_mm": 1890.0, "width_in": 74.4, "height_mm": 1280.0, "height_in": 50.4, "wheelbase_mm": 2743.0, "wheelbase_in": 108.0, "lh_ratio": 3.75, "lh_q25": 3.31, "lh_q75": 3.97, "lh_iqr": 0.656, "lh_std": 0.344, "wl_ratio": 0.564}, {"year": 1971, "n": 54, "length_mm": 4630.0, "length_in": 182.3, "width_mm": 1791.0, "width_in": 70.5, "height_mm": 1326.0, "height_in": 52.2, "wheelbase_mm": 2620.0, "wheelbase_in": 103.1, "lh_ratio": 3.47, "lh_q25": 3.38, "lh_q75": 3.93, "lh_iqr": 0.558, "lh_std": 0.389, "wl_ratio": 0.561}, {"year": 1972, "n": 93, "length_mm": 4376.0, "length_in": 172.3, "width_mm": 1651.0, "width_in": 65.0, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2510.0, "wheelbase_in": 98.8, "lh_ratio": 3.18, "lh_q25": 2.84, "lh_q75": 3.27, "lh_iqr": 0.43, "lh_std": 0.448, "wl_ratio": 0.581}, {"year": 1973, "n": 38, "length_mm": 4290.0, "length_in": 168.9, "width_mm": 1658.0, "width_in": 65.3, "height_mm": 1280.0, "height_in": 50.4, "wheelbase_mm": 2456.0, "wheelbase_in": 96.7, "lh_ratio": 3.22, "lh_q25": 3.13, "lh_q75": 3.34, "lh_iqr": 0.212, "lh_std": 0.277, "wl_ratio": 0.582}, {"year": 1974, "n": 52, "length_mm": 4316.0, "length_in": 169.9, "width_mm": 1679.0, "width_in": 66.1, "height_mm": 1359.0, "height_in": 53.5, "wheelbase_mm": 2520.0, "wheelbase_in": 99.2, "lh_ratio": 3.23, "lh_q25": 3.09, "lh_q75": 3.78, "lh_iqr": 0.697, "lh_std": 0.491, "wl_ratio": 0.584}, {"year": 1975, "n": 70, "length_mm": 4521.0, "length_in": 178.0, "width_mm": 1710.0, "width_in": 67.3, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2640.0, "wheelbase_in": 103.9, "lh_ratio": 3.28, "lh_q25": 3.16, "lh_q75": 3.34, "lh_iqr": 0.175, "lh_std": 0.214, "wl_ratio": 0.587}, {"year": 1976, "n": 66, "length_mm": 4191.0, "length_in": 165.0, "width_mm": 1727.0, "width_in": 68.0, "height_mm": 1358.0, "height_in": 53.5, "wheelbase_mm": 2444.0, "wheelbase_in": 96.2, "lh_ratio": 3.27, "lh_q25": 3.04, "lh_q75": 3.52, "lh_iqr": 0.478, "lh_std": 0.418, "wl_ratio": 0.582}, {"year": 1977, "n": 63, "length_mm": 4641.0, "length_in": 182.7, "width_mm": 1786.0, "width_in": 70.3, "height_mm": 1394.0, "height_in": 54.9, "wheelbase_mm": 2710.0, "wheelbase_in": 106.7, "lh_ratio": 3.4, "lh_q25": 3.19, "lh_q75": 3.43, "lh_iqr": 0.239, "lh_std": 0.357, "wl_ratio": 0.578}, {"year": 1978, "n": 72, "length_mm": 4440.0, "length_in": 174.8, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1379.0, "height_in": 54.3, "wheelbase_mm": 2563.0, "wheelbase_in": 100.9, "lh_ratio": 3.21, "lh_q25": 3.01, "lh_q75": 3.36, "lh_iqr": 0.344, "lh_std": 0.303, "wl_ratio": 0.577}, {"year": 1979, "n": 107, "length_mm": 4404.0, "length_in": 173.4, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1438.0, "height_in": 56.6, "wheelbase_mm": 2670.0, "wheelbase_in": 105.1, "lh_ratio": 3.07, "lh_q25": 2.28, "lh_q75": 3.4, "lh_iqr": 1.122, "lh_std": 0.58, "wl_ratio": 0.598}, {"year": 1980, "n": 52, "length_mm": 4361.0, "length_in": 171.7, "width_mm": 1710.0, "width_in": 67.3, "height_mm": 1379.0, "height_in": 54.3, "wheelbase_mm": 2456.0, "wheelbase_in": 96.7, "lh_ratio": 2.92, "lh_q25": 2.75, "lh_q75": 3.48, "lh_iqr": 0.734, "lh_std": 0.529, "wl_ratio": 0.572}, {"year": 1981, "n": 144, "length_mm": 4435.0, "length_in": 174.6, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1380.0, "height_in": 54.3, "wheelbase_mm": 2535.0, "wheelbase_in": 99.8, "lh_ratio": 3.23, "lh_q25": 3.13, "lh_q75": 3.33, "lh_iqr": 0.199, "lh_std": 0.253, "wl_ratio": 0.568}, {"year": 1982, "n": 172, "length_mm": 4564.0, "length_in": 179.7, "width_mm": 1720.0, "width_in": 67.7, "height_mm": 1379.0, "height_in": 54.3, "wheelbase_mm": 2649.0, "wheelbase_in": 104.3, "lh_ratio": 3.27, "lh_q25": 3.13, "lh_q75": 3.39, "lh_iqr": 0.255, "lh_std": 0.302, "wl_ratio": 0.588}, {"year": 1983, "n": 153, "length_mm": 4021.0, "length_in": 158.3, "width_mm": 1661.0, "width_in": 65.4, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2479.0, "wheelbase_in": 97.6, "lh_ratio": 2.98, "lh_q25": 2.74, "lh_q75": 3.31, "lh_iqr": 0.565, "lh_std": 0.348, "wl_ratio": 0.623}, {"year": 1984, "n": 160, "length_mm": 4239.0, "length_in": 166.9, "width_mm": 1680.0, "width_in": 66.1, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2520.0, "wheelbase_in": 99.2, "lh_ratio": 2.94, "lh_q25": 2.8, "lh_q75": 3.3, "lh_iqr": 0.503, "lh_std": 0.367, "wl_ratio": 0.596}, {"year": 1985, "n": 98, "length_mm": 4361.0, "length_in": 171.7, "width_mm": 1738.0, "width_in": 68.4, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2581.0, "wheelbase_in": 101.6, "lh_ratio": 3.28, "lh_q25": 3.05, "lh_q75": 3.39, "lh_iqr": 0.338, "lh_std": 0.316, "wl_ratio": 0.591}, {"year": 1986, "n": 210, "length_mm": 4399.0, "length_in": 173.2, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2611.0, "wheelbase_in": 102.8, "lh_ratio": 3.16, "lh_q25": 2.95, "lh_q75": 3.23, "lh_iqr": 0.274, "lh_std": 0.351, "wl_ratio": 0.586}, {"year": 1987, "n": 98, "length_mm": 4394.0, "length_in": 173.0, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1389.0, "height_in": 54.7, "wheelbase_mm": 2545.0, "wheelbase_in": 100.2, "lh_ratio": 3.13, "lh_q25": 2.94, "lh_q75": 3.29, "lh_iqr": 0.351, "lh_std": 0.284, "wl_ratio": 0.583}, {"year": 1988, "n": 243, "length_mm": 4430.0, "length_in": 174.4, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1412.0, "height_in": 55.6, "wheelbase_mm": 2601.0, "wheelbase_in": 102.4, "lh_ratio": 3.13, "lh_q25": 2.93, "lh_q75": 3.32, "lh_iqr": 0.386, "lh_std": 0.318, "wl_ratio": 0.585}, {"year": 1989, "n": 241, "length_mm": 4389.0, "length_in": 172.8, "width_mm": 1689.0, "width_in": 66.5, "height_mm": 1389.0, "height_in": 54.7, "wheelbase_mm": 2540.0, "wheelbase_in": 100.0, "lh_ratio": 3.12, "lh_q25": 2.83, "lh_q75": 3.38, "lh_iqr": 0.553, "lh_std": 0.357, "wl_ratio": 0.593}, {"year": 1990, "n": 223, "length_mm": 4400.0, "length_in": 173.2, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2540.0, "wheelbase_in": 100.0, "lh_ratio": 3.13, "lh_q25": 2.84, "lh_q75": 3.34, "lh_iqr": 0.497, "lh_std": 0.396, "wl_ratio": 0.58}, {"year": 1991, "n": 317, "length_mm": 4369.0, "length_in": 172.0, "width_mm": 1699.0, "width_in": 66.9, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2570.0, "wheelbase_in": 101.2, "lh_ratio": 3.17, "lh_q25": 2.83, "lh_q75": 3.35, "lh_iqr": 0.518, "lh_std": 0.403, "wl_ratio": 0.588}, {"year": 1992, "n": 306, "length_mm": 4351.0, "length_in": 171.3, "width_mm": 1700.0, "width_in": 66.9, "height_mm": 1410.0, "height_in": 55.5, "wheelbase_mm": 2540.0, "wheelbase_in": 100.0, "lh_ratio": 3.08, "lh_q25": 2.95, "lh_q75": 3.28, "lh_iqr": 0.333, "lh_std": 0.307, "wl_ratio": 0.587}, {"year": 1993, "n": 332, "length_mm": 4440.0, "length_in": 174.8, "width_mm": 1720.0, "width_in": 67.7, "height_mm": 1400.0, "height_in": 55.1, "wheelbase_mm": 2581.0, "wheelbase_in": 101.6, "lh_ratio": 3.17, "lh_q25": 2.9, "lh_q75": 3.29, "lh_iqr": 0.397, "lh_std": 0.29, "wl_ratio": 0.596}, {"year": 1994, "n": 545, "length_mm": 4483.0, "length_in": 176.5, "width_mm": 1735.0, "width_in": 68.3, "height_mm": 1420.0, "height_in": 55.9, "wheelbase_mm": 2642.0, "wheelbase_in": 104.0, "lh_ratio": 3.22, "lh_q25": 2.92, "lh_q75": 3.36, "lh_iqr": 0.447, "lh_std": 0.312, "wl_ratio": 0.584}, {"year": 1995, "n": 373, "length_mm": 4470.0, "length_in": 176.0, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1420.0, "height_in": 55.9, "wheelbase_mm": 2619.0, "wheelbase_in": 103.1, "lh_ratio": 3.13, "lh_q25": 2.95, "lh_q75": 3.27, "lh_iqr": 0.32, "lh_std": 0.269, "wl_ratio": 0.59}, {"year": 1996, "n": 449, "length_mm": 4460.0, "length_in": 175.6, "width_mm": 1730.0, "width_in": 68.1, "height_mm": 1420.0, "height_in": 55.9, "wheelbase_mm": 2581.0, "wheelbase_in": 101.6, "lh_ratio": 3.09, "lh_q25": 2.85, "lh_q75": 3.22, "lh_iqr": 0.372, "lh_std": 0.31, "wl_ratio": 0.588}, {"year": 1997, "n": 530, "length_mm": 4512.0, "length_in": 177.6, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2629.0, "wheelbase_in": 103.5, "lh_ratio": 3.12, "lh_q25": 2.88, "lh_q75": 3.3, "lh_iqr": 0.419, "lh_std": 0.354, "wl_ratio": 0.589}, {"year": 1998, "n": 621, "length_mm": 4455.0, "length_in": 175.4, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2611.0, "wheelbase_in": 102.8, "lh_ratio": 3.02, "lh_q25": 2.84, "lh_q75": 3.28, "lh_iqr": 0.436, "lh_std": 0.338, "wl_ratio": 0.589}, {"year": 1999, "n": 593, "length_mm": 4480.0, "length_in": 176.4, "width_mm": 1740.0, "width_in": 68.5, "height_mm": 1430.0, "height_in": 56.3, "wheelbase_mm": 2639.0, "wheelbase_in": 103.9, "lh_ratio": 3.08, "lh_q25": 2.88, "lh_q75": 3.26, "lh_iqr": 0.387, "lh_std": 0.329, "wl_ratio": 0.588}, {"year": 2000, "n": 604, "length_mm": 4480.0, "length_in": 176.4, "width_mm": 1742.0, "width_in": 68.6, "height_mm": 1440.0, "height_in": 56.7, "wheelbase_mm": 2611.0, "wheelbase_in": 102.8, "lh_ratio": 3.06, "lh_q25": 2.72, "lh_q75": 3.18, "lh_iqr": 0.461, "lh_std": 0.331, "wl_ratio": 0.593}, {"year": 2001, "n": 747, "length_mm": 4529.0, "length_in": 178.3, "width_mm": 1760.0, "width_in": 69.3, "height_mm": 1450.0, "height_in": 57.1, "wheelbase_mm": 2649.0, "wheelbase_in": 104.3, "lh_ratio": 3.12, "lh_q25": 2.72, "lh_q75": 3.26, "lh_iqr": 0.544, "lh_std": 0.34, "wl_ratio": 0.591}, {"year": 2002, "n": 709, "length_mm": 4524.0, "length_in": 178.1, "width_mm": 1765.0, "width_in": 69.5, "height_mm": 1461.0, "height_in": 57.5, "wheelbase_mm": 2680.0, "wheelbase_in": 105.5, "lh_ratio": 2.9, "lh_q25": 2.73, "lh_q75": 3.21, "lh_iqr": 0.482, "lh_std": 0.326, "wl_ratio": 0.596}, {"year": 2003, "n": 890, "length_mm": 4501.0, "length_in": 177.2, "width_mm": 1760.0, "width_in": 69.3, "height_mm": 1471.0, "height_in": 57.9, "wheelbase_mm": 2675.0, "wheelbase_in": 105.3, "lh_ratio": 3.06, "lh_q25": 2.7, "lh_q75": 3.26, "lh_iqr": 0.556, "lh_std": 0.364, "wl_ratio": 0.596}, {"year": 2004, "n": 1003, "length_mm": 4521.0, "length_in": 178.0, "width_mm": 1770.0, "width_in": 69.7, "height_mm": 1468.0, "height_in": 57.8, "wheelbase_mm": 2649.0, "wheelbase_in": 104.3, "lh_ratio": 3.03, "lh_q25": 2.84, "lh_q75": 3.21, "lh_iqr": 0.376, "lh_std": 0.305, "wl_ratio": 0.597}, {"year": 2005, "n": 1145, "length_mm": 4521.0, "length_in": 178.0, "width_mm": 1793.0, "width_in": 70.6, "height_mm": 1463.0, "height_in": 57.6, "wheelbase_mm": 2700.0, "wheelbase_in": 106.3, "lh_ratio": 3.13, "lh_q25": 2.73, "lh_q75": 3.27, "lh_iqr": 0.543, "lh_std": 0.343, "wl_ratio": 0.598}, {"year": 2006, "n": 917, "length_mm": 4501.0, "length_in": 177.2, "width_mm": 1783.0, "width_in": 70.2, "height_mm": 1491.0, "height_in": 58.7, "wheelbase_mm": 2670.0, "wheelbase_in": 105.1, "lh_ratio": 2.88, "lh_q25": 2.69, "lh_q75": 3.21, "lh_iqr": 0.528, "lh_std": 0.308, "wl_ratio": 0.597}, {"year": 2007, "n": 1033, "length_mm": 4595.0, "length_in": 180.9, "width_mm": 1806.0, "width_in": 71.1, "height_mm": 1488.0, "height_in": 58.6, "wheelbase_mm": 2741.0, "wheelbase_in": 107.9, "lh_ratio": 3.07, "lh_q25": 2.75, "lh_q75": 3.25, "lh_iqr": 0.499, "lh_std": 0.324, "wl_ratio": 0.597}, {"year": 2008, "n": 1561, "length_mm": 4501.0, "length_in": 177.2, "width_mm": 1814.0, "width_in": 71.4, "height_mm": 1478.0, "height_in": 58.2, "wheelbase_mm": 2690.0, "wheelbase_in": 105.9, "lh_ratio": 2.98, "lh_q25": 2.69, "lh_q75": 3.23, "lh_iqr": 0.537, "lh_std": 0.342, "wl_ratio": 0.603}, {"year": 2009, "n": 1293, "length_mm": 4648.0, "length_in": 183.0, "width_mm": 1834.0, "width_in": 72.2, "height_mm": 1488.0, "height_in": 58.6, "wheelbase_mm": 2700.0, "wheelbase_in": 106.3, "lh_ratio": 3.03, "lh_q25": 2.75, "lh_q75": 3.25, "lh_iqr": 0.5, "lh_std": 0.311, "wl_ratio": 0.595}, {"year": 2010, "n": 889, "length_mm": 4613.0, "length_in": 181.6, "width_mm": 1821.0, "width_in": 71.7, "height_mm": 1488.0, "height_in": 58.6, "wheelbase_mm": 2713.0, "wheelbase_in": 106.8, "lh_ratio": 3.07, "lh_q25": 2.69, "lh_q75": 3.3, "lh_iqr": 0.609, "lh_std": 0.341, "wl_ratio": 0.6}, {"year": 2011, "n": 730, "length_mm": 4524.0, "length_in": 178.1, "width_mm": 1839.0, "width_in": 72.4, "height_mm": 1481.0, "height_in": 58.3, "wheelbase_mm": 2695.0, "wheelbase_in": 106.1, "lh_ratio": 2.99, "lh_q25": 2.71, "lh_q75": 3.18, "lh_iqr": 0.473, "lh_std": 0.324, "wl_ratio": 0.594}, {"year": 2012, "n": 1161, "length_mm": 4524.0, "length_in": 178.1, "width_mm": 1811.0, "width_in": 71.3, "height_mm": 1466.0, "height_in": 57.7, "wheelbase_mm": 2690.0, "wheelbase_in": 105.9, "lh_ratio": 3.02, "lh_q25": 2.78, "lh_q75": 3.27, "lh_iqr": 0.495, "lh_std": 0.351, "wl_ratio": 0.601}, {"year": 2013, "n": 1439, "length_mm": 4628.0, "length_in": 182.2, "width_mm": 1839.0, "width_in": 72.4, "height_mm": 1483.0, "height_in": 58.4, "wheelbase_mm": 2710.0, "wheelbase_in": 106.7, "lh_ratio": 3.12, "lh_q25": 2.74, "lh_q75": 3.27, "lh_iqr": 0.535, "lh_std": 0.311, "wl_ratio": 0.599}, {"year": 2014, "n": 1075, "length_mm": 4567.0, "length_in": 179.8, "width_mm": 1831.0, "width_in": 72.1, "height_mm": 1481.0, "height_in": 58.3, "wheelbase_mm": 2700.0, "wheelbase_in": 106.3, "lh_ratio": 3.01, "lh_q25": 2.73, "lh_q75": 3.26, "lh_iqr": 0.522, "lh_std": 0.317, "wl_ratio": 0.601}, {"year": 2015, "n": 867, "length_mm": 4638.0, "length_in": 182.6, "width_mm": 1839.0, "width_in": 72.4, "height_mm": 1486.0, "height_in": 58.5, "wheelbase_mm": 2746.0, "wheelbase_in": 108.1, "lh_ratio": 2.97, "lh_q25": 2.78, "lh_q75": 3.24, "lh_iqr": 0.454, "lh_std": 0.309, "wl_ratio": 0.601}, {"year": 2016, "n": 1310, "length_mm": 4633.0, "length_in": 182.4, "width_mm": 1831.0, "width_in": 72.1, "height_mm": 1478.0, "height_in": 58.2, "wheelbase_mm": 2713.0, "wheelbase_in": 106.8, "lh_ratio": 3.0, "lh_q25": 2.78, "lh_q75": 3.29, "lh_iqr": 0.517, "lh_std": 0.32, "wl_ratio": 0.598}, {"year": 2017, "n": 857, "length_mm": 4506.0, "length_in": 177.4, "width_mm": 1829.0, "width_in": 72.0, "height_mm": 1491.0, "height_in": 58.7, "wheelbase_mm": 2690.0, "wheelbase_in": 105.9, "lh_ratio": 2.91, "lh_q25": 2.74, "lh_q75": 3.3, "lh_iqr": 0.56, "lh_std": 0.323, "wl_ratio": 0.602}, {"year": 2018, "n": 917, "length_mm": 4666.0, "length_in": 183.7, "width_mm": 1849.0, "width_in": 72.8, "height_mm": 1481.0, "height_in": 58.3, "wheelbase_mm": 2779.0, "wheelbase_in": 109.4, "lh_ratio": 2.95, "lh_q25": 2.77, "lh_q75": 3.31, "lh_iqr": 0.533, "lh_std": 0.317, "wl_ratio": 0.601}, {"year": 2019, "n": 758, "length_mm": 4689.0, "length_in": 184.6, "width_mm": 1887.0, "width_in": 74.3, "height_mm": 1498.0, "height_in": 59.0, "wheelbase_mm": 2728.0, "wheelbase_in": 107.4, "lh_ratio": 2.93, "lh_q25": 2.77, "lh_q75": 3.26, "lh_iqr": 0.486, "lh_std": 0.336, "wl_ratio": 0.598}, {"year": 2020, "n": 529, "length_mm": 4641.0, "length_in": 182.7, "width_mm": 1852.0, "width_in": 72.9, "height_mm": 1511.0, "height_in": 59.5, "wheelbase_mm": 2728.0, "wheelbase_in": 107.4, "lh_ratio": 2.95, "lh_q25": 2.79, "lh_q75": 3.3, "lh_iqr": 0.518, "lh_std": 0.296, "wl_ratio": 0.599}, {"year": 2021, "n": 402, "length_mm": 4681.0, "length_in": 184.3, "width_mm": 1859.0, "width_in": 73.2, "height_mm": 1575.0, "height_in": 62.0, "wheelbase_mm": 2764.0, "wheelbase_in": 108.8, "lh_ratio": 2.9, "lh_q25": 2.78, "lh_q75": 3.22, "lh_iqr": 0.433, "lh_std": 0.298, "wl_ratio": 0.603}, {"year": 2022, "n": 290, "length_mm": 4714.0, "length_in": 185.6, "width_mm": 1890.0, "width_in": 74.4, "height_mm": 1624.0, "height_in": 64.0, "wheelbase_mm": 2850.0, "wheelbase_in": 112.2, "lh_ratio": 2.87, "lh_q25": 2.75, "lh_q75": 3.27, "lh_iqr": 0.525, "lh_std": 0.331, "wl_ratio": 0.599}, {"year": 2023, "n": 375, "length_mm": 4704.0, "length_in": 185.2, "width_mm": 1864.0, "width_in": 73.4, "height_mm": 1598.0, "height_in": 62.9, "wheelbase_mm": 2766.0, "wheelbase_in": 108.9, "lh_ratio": 2.83, "lh_q25": 2.71, "lh_q75": 3.25, "lh_iqr": 0.536, "lh_std": 0.341, "wl_ratio": 0.599}, {"year": 2024, "n": 361, "length_mm": 4717.0, "length_in": 185.7, "width_mm": 1882.0, "width_in": 74.1, "height_mm": 1524.0, "height_in": 60.0, "wheelbase_mm": 2850.0, "wheelbase_in": 112.2, "lh_ratio": 2.98, "lh_q25": 2.82, "lh_q75": 3.32, "lh_iqr": 0.5, "lh_std": 0.326, "wl_ratio": 0.599}], "decades_body_styles": [{"decade": "1970s", "n": 142, "SUV_Crossover": 0.0, "Sedan": 13.4, "Hatchback": 21.1, "Station_Wagon": 7.7, "Coupe": 32.4, "Convertible": 20.4, "Pickup": 0.0, "Van_MPV": 4.9}, {"decade": "1980s", "n": 643, "SUV_Crossover": 4.2, "Sedan": 22.1, "Hatchback": 38.9, "Station_Wagon": 14.0, "Coupe": 9.2, "Convertible": 6.4, "Pickup": 0.2, "Van_MPV": 5.1}, {"decade": "1990s", "n": 1995, "SUV_Crossover": 2.0, "Sedan": 15.7, "Hatchback": 38.5, "Station_Wagon": 21.8, "Coupe": 8.0, "Convertible": 8.5, "Pickup": 1.0, "Van_MPV": 4.6}, {"decade": "2000s", "n": 4419, "SUV_Crossover": 6.3, "Sedan": 14.4, "Hatchback": 33.9, "Station_Wagon": 22.9, "Coupe": 8.7, "Convertible": 9.1, "Pickup": 2.5, "Van_MPV": 2.0}, {"decade": "2010s", "n": 3707, "SUV_Crossover": 14.2, "Sedan": 11.3, "Hatchback": 22.8, "Station_Wagon": 20.8, "Coupe": 11.0, "Convertible": 12.8, "Pickup": 5.2, "Van_MPV": 1.9}, {"decade": "2020s", "n": 571, "SUV_Crossover": 30.1, "Sedan": 15.2, "Hatchback": 12.1, "Station_Wagon": 21.5, "Coupe": 8.9, "Convertible": 6.3, "Pickup": 3.5, "Van_MPV": 2.3}]};
-const shapeYears = shapeDataset.yearly_dimensions;
-const bodyDecades = shapeDataset.decades_body_styles;
 
-const bodyStyleMeta = {
-  SUV_Crossover: { label: "SUV / Crossover", hex: "#f59e0b" },
-  Station_Wagon: { label: "Station Wagon", hex: "#10b981" },
-  Sedan: { label: "Sedan", hex: "#38bdf8" },
-  Hatchback: { label: "Hatchback", hex: "#06b6d4" },
-  Coupe: { label: "Coupe", hex: "#8b5cf6" },
-  Convertible: { label: "Convertible / Roadster", hex: "#ec4899" },
-  Pickup: { label: "Pickup Truck", hex: "#d97706" },
-  Van_MPV: { label: "Van / Minivan", hex: "#64748b" }
-};
-
+let currentBodyType = "Coupe";
 let currentDim = "all";
 let currentUnit = "mm";
 
@@ -1089,10 +1077,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderTimelineStream();
 
   // Shape Visuals
-  renderDimensionChart();
-  renderDispersionChart();
+  renderBodyStyleSelector();
   renderBodyStyleLegend();
   renderBodyStyleStream();
+  selectBodyType("Coupe");
 
   // Sound & Powertrain Visuals
   renderSoundPlayers();
@@ -1100,96 +1088,269 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================================
-   COLOR SECTION SCRIPT
+   SHAPE SECTION INTERACTIVE FUNCTIONS
    ========================================================================== */
-function renderLegend() {
-  const container = document.getElementById("color-legend");
+function renderBodyStyleSelector() {
+  const container = document.getElementById("bs-selector-bar");
   if (!container) return;
-  container.innerHTML = Object.entries(colorMeta).map(([key, item]) => `
-    <div class="legend-chip">
-      <span class="legend-color-box" style="background-color: ${item.hex}; ${item.border ? "border: 1px solid rgba(255,255,255,0.4);" : ""}"></span>
-      <span class="legend-color-label">${item.label}</span>
-    </div>
-  `).join("");
+  container.innerHTML = shapeDataset.categories.map(cat => {
+    const info = shapeDataset.by_type[cat];
+    const isActive = cat === currentBodyType;
+    return `
+      <button class="bs-select-btn ${isActive ? "is-active" : ""}" id="btn-body-${cat}" onclick="selectBodyType('${cat}')">
+        <span class="bs-btn-dot" style="background-color: ${info.meta.hex};"></span>
+        <span>${info.meta.label}</span>
+        <span class="bs-badge-count">${info.total_n.toLocaleString()}</span>
+      </button>
+    `;
+  }).join("");
 }
 
-function renderTimelineStream() {
-  const container = document.getElementById("timeline-stream-container");
+function renderBodyStyleLegend() {
+  const container = document.getElementById("bs-legend-container");
+  if (!container) return;
+  container.innerHTML = shapeDataset.categories.map(cat => {
+    const info = shapeDataset.by_type[cat];
+    return `
+      <div class="bodystyle-legend-chip" onclick="selectBodyType('${cat}')" style="cursor: pointer;" title="Click to view ${info.meta.label}">
+        <span class="bs-dot" style="background-color: ${info.meta.hex};"></span>
+        <span>${info.meta.label}</span>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderBodyStyleStream() {
+  const container = document.getElementById("bs-stream-container");
   if (!container) return;
 
-  container.innerHTML = colorData.map(d => {
-    const segmentsHtml = Object.entries(colorMeta).map(([key, meta]) => {
-      const pct = d[key] || 0;
+  container.innerHTML = shapeDataset.decades_summary.map(dec => {
+    const segsHtml = shapeDataset.categories.map(cat => {
+      const pct = dec[cat] || 0;
       if (pct === 0) return "";
-      if (pct >= 5) {
-        return `<div class="bar-seg" style="width: ${pct}%; background-color: ${meta.hex}; color: ${meta.textHex};" title="${meta.label}: ${pct}% (${d.Year})">${pct}%</div>`;
-      } else {
-        return `<div class="bar-seg is-narrow" style="width: ${pct}%; background-color: ${meta.hex};" title="${meta.label}: ${pct}% (${d.Year})"></div>`;
-      }
+      const isWide = pct >= 8;
+      const meta = shapeDataset.category_meta[cat];
+      const isCurrent = cat === currentBodyType;
+      return `
+        <div class="bs-seg" style="width: ${pct}%; background-color: ${meta.hex}; cursor: pointer; ${isCurrent ? 'box-shadow: inset 0 0 0 2px #ffffff; font-weight:900;' : ''}"
+          onclick="selectBodyType('${cat}')"
+          title="${meta.label}: ${pct}% in ${dec.decade} (Click to isolate)">
+          ${isWide ? `${meta.label.split(" ")[0]} ${pct}%` : ""}
+        </div>
+      `;
     }).join("");
 
-    const smallBadgesHtml = Object.entries(colorMeta)
-      .filter(([key]) => (d[key] || 0) > 0 && (d[key] || 0) < 5)
-      .map(([key, meta]) => `<span class="micro-badge" title="${meta.label}: ${d[key]}%"><span class="badge-dot" style="background-color: ${meta.hex};"></span>${meta.short} ${d[key]}%</span>`)
-      .join("");
-
-    const isDecadeStart = d.Year % 10 === 0;
+    let topName = "";
+    let topPct = 0;
+    shapeDataset.categories.forEach(cat => {
+      if ((dec[cat] || 0) > topPct) {
+        topPct = dec[cat];
+        topName = shapeDataset.category_meta[cat].label;
+      }
+    });
 
     return `
-      <div class="timeline-row ${isDecadeStart ? "decade-start" : ""}" data-year="${d.Year}" onmouseenter="showReadout(${d.Year})" onclick="showReadout(${d.Year})">
-        <div class="row-year-col">
-          <span class="row-year-label">${d.Year}</span>
-          ${isDecadeStart ? `<span class="decade-pill">${d.Year}s</span>` : ""}
+      <div class="bs-decade-row">
+        <div class="bs-decade-meta">
+          <span class="bs-decade-label">${dec.decade}</span>
+          <span class="bs-decade-top">Dominant: <strong>${topName} (${topPct}%)</strong> &bull; Total models: ${dec.n.toLocaleString()}</span>
         </div>
-        <div class="row-bar-wrap">
-          <div class="row-stacked-bar">${segmentsHtml}</div>
-        </div>
-        <div class="row-small-labels">
-          ${smallBadgesHtml}
+        <div class="bs-stacked-track">
+          ${segsHtml}
         </div>
       </div>
     `;
   }).join("");
 }
 
-function showReadout(year) {
-  const d = colorData.find(item => item.Year === year);
-  const readout = document.getElementById("active-readout");
-  if (!d || !readout) return;
+function selectBodyType(type) {
+  if (!shapeDataset.by_type[type]) return;
+  currentBodyType = type;
 
-  const greyscale = d.White + d.Black + d.Gray + d.Silver;
-  const chromatic = 100 - greyscale;
-
-  const breakdownChips = Object.entries(colorMeta)
-    .filter(([key]) => (d[key] || 0) > 0)
-    .map(([key, meta]) => `<span class="readout-chip" style="color: ${meta.hex === "#f8fafc" ? "#ffffff" : meta.hex};">${meta.short} <strong>${d[key]}%</strong></span>`)
-    .join(" &bull; ");
-
-  readout.innerHTML = `
-    <div class="readout-active-content">
-      <span class="readout-year">${d.Year} RECORD:</span>
-      <span class="readout-chips">${breakdownChips}</span>
-      <span class="readout-summary">[Greyscale: ${greyscale}% | Chromatic: ${chromatic}%]</span>
-    </div>
-  `;
-
-  document.querySelectorAll(".timeline-row").forEach(el => {
-    if (el.getAttribute("data-year") === String(year)) {
-      el.classList.add("is-selected-row");
-    } else {
-      el.classList.remove("is-selected-row");
-    }
+  // Update button active state
+  shapeDataset.categories.forEach(cat => {
+    const btn = document.getElementById(`btn-body-${cat}`);
+    if (btn) btn.classList.toggle("is-active", cat === type);
   });
+
+  const data = shapeDataset.by_type[type];
+  const meta = data.meta;
+  const labelUpper = meta.label.toUpperCase();
+
+  // Dynamic headings
+  const shareHeading = document.getElementById("share-heading");
+  if (shareHeading) shareHeading.textContent = `HOW COMMON WAS THE ${type === "SUV" ? "SUV" : labelUpper}?`;
+
+  const shareSubheading = document.getElementById("share-subheading");
+  if (shareSubheading) shareSubheading.textContent = `Annual percentage share of vehicle introductions and total model counts for ${meta.label} from 1970 to 2024`;
+
+  const dimHeading = document.getElementById("dim-heading");
+  if (dimHeading) dimHeading.textContent = `${labelUpper} PHYSICAL DIMENSIONS (1970 — 2024)`;
+
+  const dimSubheading = document.getElementById("dim-subheading");
+  if (dimSubheading) dimSubheading.textContent = `Median exterior dimensions derived exclusively from ${meta.label} production models (${data.total_n.toLocaleString()} vehicles across ${data.years_with_data} distinct years). Insufficient data years are shown honestly with gaps.`;
+
+  const propHeading = document.getElementById("prop-heading");
+  if (propHeading) propHeading.textContent = `HOW ${labelUpper} PROPORTIONS EVOLVED (1970 — 2024)`;
+
+  const propSubheading = document.getElementById("prop-subheading");
+  if (propSubheading) propSubheading.textContent = `Tracking the silhouette stance ratio (Length ÷ Height) and wheelbase efficiency (Wheelbase ÷ Length) specifically for ${meta.label} over time`;
+
+  // Re-render all sub-visualizations
+  renderBodyStyleStream();
+  renderShareChart();
+  renderDimensionChart();
+  renderDimensionMilestones();
+  renderProportionsChart();
+  renderProportionsFindings();
 }
 
 /* ==========================================================================
-   SHAPE SECTION INTERACTIVE CHARTS
+   BODY STYLE PREVALENCE (SHARE) CHART
    ========================================================================== */
+function renderShareChart() {
+  const container = document.getElementById("share-svg-container");
+  const statsContainer = document.getElementById("share-stats-container");
+  if (!container) return;
 
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const yearly = typeData.yearly;
+  const meta = typeData.meta;
+
+  const width = 900;
+  const height = 280;
+  const padLeft = 65;
+  const padRight = 30;
+  const padTop = 25;
+  const padBottom = 40;
+
+  const plotW = width - padLeft - padRight;
+  const plotH = height - padTop - padBottom;
+
+  const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
+
+  // Max share for scaling
+  const maxShareVal = Math.max(...yearly.map(d => d.share_pct), 10);
+  const yMax = Math.ceil(maxShareVal / 10) * 10;
+  const yForShare = s => padTop + plotH - (s / yMax) * plotH;
+
+  // Y-axis grid
+  let gridSvg = "";
+  const gridSteps = 4;
+  for (let i = 0; i <= gridSteps; i++) {
+    const val = (i / gridSteps) * yMax;
+    const yPos = padTop + plotH - (i / gridSteps) * plotH;
+    gridSvg += `
+      <line x1="${padLeft}" y1="${yPos}" x2="${width - padRight}" y2="${yPos}" stroke="rgba(255,255,255,0.07)" stroke-dasharray="3,3" />
+      <text x="${padLeft - 10}" y="${yPos + 4}" fill="#64748b" font-size="11" font-family="ui-monospace, monospace" text-anchor="end">${Math.round(val)}%</text>
+    `;
+  }
+
+  // X Axis Decades
+  let xAxisSvg = "";
+  for (let yr = 1970; yr <= 2024; yr += 10) {
+    const xPos = xForYear(yr);
+    xAxisSvg += `
+      <line x1="${xPos}" y1="${padTop}" x2="${xPos}" y2="${padTop + plotH}" stroke="rgba(255,255,255,0.05)" />
+      <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
+    `;
+  }
+  xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="${meta.hex}" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
+
+  // Area & Line Path
+  const linePoints = yearly.map(d => `${xForYear(d.year).toFixed(1)},${yForShare(d.share_pct).toFixed(1)}`).join(" ");
+  const areaPoints = `${xForYear(1970).toFixed(1)},${padTop + plotH} ` + linePoints + ` ${xForYear(2024).toFixed(1)},${padTop + plotH}`;
+
+  // Hover columns
+  const colW = plotW / yearly.length;
+  const colsSvg = yearly.map(d => `
+    <rect x="${xForYear(d.year) - colW / 2}" y="${padTop}" width="${colW}" height="${plotH}" fill="transparent" class="dim-hover-col" style="cursor: pointer;"
+      onmouseenter="showShareReadout(${d.year})" onclick="showShareReadout(${d.year})" />
+  `).join("");
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" class="dim-chart-svg">
+      <defs>
+        <linearGradient id="shareGradient-${currentBodyType}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="${meta.hex}" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="${meta.hex}" stop-opacity="0.0" />
+        </linearGradient>
+      </defs>
+      ${gridSvg}
+      ${xAxisSvg}
+      <polygon points="${areaPoints}" fill="url(#shareGradient-${currentBodyType})" />
+      <polyline points="${linePoints}" fill="none" stroke="${meta.hex}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+      ${colsSvg}
+      <line id="share-guideline" x1="0" y1="${padTop}" x2="0" y2="${padTop + plotH}" stroke="${meta.hex}" stroke-width="1.5" stroke-dasharray="2,2" style="display:none;" />
+    </svg>
+  `;
+
+  // Stats cards
+  if (statsContainer) {
+    const descMap = {
+      Coupe: "Peaked as an iconic sports and personal luxury format in the early 1970s before gradually consolidating into a dedicated enthusiast niche.",
+      Sedan: "Formed the foundational backbone of passenger mobility through the 1980s and 1990s before facing strong competition from crossover utility vehicles.",
+      SUV: "Rose from specialized 4x4 off-roaders in the 1970s into the dominant passenger vehicle format of the modern era, capturing unprecedented market share.",
+      Wagon: "Long-roof estate utility maintained strong family transport demand for decades, celebrated for cargo volume without elevated ride heights.",
+      Hatchback: "Dominated international commuter markets with unbeatable packaging efficiency, two-box practicality, and nimble urban footprints.",
+      Convertible: "Experienced iconic booms during open-air roadster renaissances before stabilizing as specialized weekend drivers.",
+      Pickup: "Expanded steadily from purely utilitarian workhorse roots into high-volume, multi-role personal passenger trucks.",
+      Van: "Revolutionized spacious family and cargo transit during the minivan revolution of the 1980s and 1990s."
+    };
+
+    statsContainer.innerHTML = `
+      <div class="share-stat-card">
+        <span class="share-stat-label">Peak Market Share</span>
+        <div class="share-stat-val" style="color:${meta.hex};">${typeData.peak_share}%</div>
+        <div class="share-stat-sub">Achieved peak representation in <strong>${typeData.peak_year}</strong></div>
+      </div>
+      <div class="share-stat-card">
+        <span class="share-stat-label">Total Models in Dataset</span>
+        <div class="share-stat-val">${typeData.total_n.toLocaleString()}</div>
+        <div class="share-stat-sub">Classified production variants across ${typeData.years_with_data} distinct years</div>
+      </div>
+      <div class="share-stat-card">
+        <span class="share-stat-label">Historical Trajectory</span>
+        <div class="share-stat-sub" style="margin-top:0.35rem; color:#cbd5e1; font-size:0.82rem;">${descMap[currentBodyType] || ""}</div>
+      </div>
+    `;
+  }
+}
+
+function showShareReadout(year) {
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const d = typeData.yearly.find(item => item.year === year);
+  const readout = document.getElementById("share-hover-readout");
+  if (!d || !readout) return;
+
+  readout.innerHTML = `
+    <div class="dim-readout-content">
+      <span class="dim-readout-year">${d.year} SHARE:</span>
+      <span class="dim-readout-val"><strong>${d.share_pct}%</strong> of all classified vehicles (${d.n} models recorded)</span>
+      <span class="dim-readout-sample">[Category: ${typeData.meta.label}]</span>
+    </div>
+  `;
+
+  const line = document.getElementById("share-guideline");
+  if (line) {
+    const width = 900;
+    const padLeft = 65;
+    const padRight = 30;
+    const plotW = width - padLeft - padRight;
+    const xPos = padLeft + ((year - 1970) / (2024 - 1970)) * plotW;
+    line.setAttribute("x1", xPos);
+    line.setAttribute("x2", xPos);
+    line.style.display = "block";
+  }
+}
+
+/* ==========================================================================
+   BODY-TYPE SPECIFIC PHYSICAL DIMENSION CHART
+   ========================================================================== */
 function switchDimension(dim) {
   currentDim = dim;
   document.querySelectorAll(".dim-tab-btn").forEach(btn => {
-    btn.classList.toggle("is-active", btn.getAttribute("id") === `dim-btn-${dim}`);
+    btn.classList.toggle("is-active", btn.id === `dim-btn-${dim}`);
   });
   renderDimensionChart();
 }
@@ -1199,11 +1360,15 @@ function toggleUnit(unit) {
   document.getElementById("unit-mm").classList.toggle("is-active", unit === "mm");
   document.getElementById("unit-in").classList.toggle("is-active", unit === "in");
   renderDimensionChart();
+  renderDimensionMilestones();
 }
 
 function renderDimensionChart() {
   const container = document.getElementById("dim-svg-container");
   if (!container) return;
+
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const yearly = typeData.yearly;
 
   const width = 900;
   const height = 350;
@@ -1221,24 +1386,43 @@ function renderDimensionChart() {
   const unitLabel = isInch ? "in" : "mm";
   const factor = isInch ? 1 / 25.4 : 1;
 
-  let yMin = 0;
+  // Compute dynamic min/max bounds based on actual data
+  const valid = yearly.filter(d => d.length_mm !== null);
+  if (valid.length === 0) {
+    container.innerHTML = `<div style="padding:4rem; text-align:center; color:#64748b;">No dimensional data recorded for this body type.</div>`;
+    return;
+  }
+
+  let yMin = 1000;
   let yMax = 5200;
 
   if (currentDim === "all") {
-    yMin = isInch ? 45 : 1200;
-    yMax = isInch ? 200 : 5100;
+    yMin = isInch ? 40 : 1000;
+    yMax = isInch ? 220 : 5400;
   } else if (currentDim === "length") {
-    yMin = isInch ? 150 : 3900;
-    yMax = isInch ? 195 : 4900;
+    const minL = Math.min(...valid.map(d => d.length_mm));
+    const maxL = Math.max(...valid.map(d => d.length_mm));
+    yMin = Math.floor((minL - 150) / 100) * 100;
+    yMax = Math.ceil((maxL + 150) / 100) * 100;
+    if (isInch) { yMin = Math.floor(yMin / 25.4); yMax = Math.ceil(yMax / 25.4); }
   } else if (currentDim === "width") {
-    yMin = isInch ? 60 : 1550;
-    yMax = isInch ? 80 : 2000;
+    const minW = Math.min(...valid.map(d => d.width_mm));
+    const maxW = Math.max(...valid.map(d => d.width_mm));
+    yMin = Math.floor((minW - 100) / 50) * 50;
+    yMax = Math.ceil((maxW + 100) / 50) * 50;
+    if (isInch) { yMin = Math.floor(yMin / 25.4); yMax = Math.ceil(yMax / 25.4); }
   } else if (currentDim === "height") {
-    yMin = isInch ? 50 : 1300;
-    yMax = isInch ? 66 : 1680;
+    const minH = Math.min(...valid.map(d => d.height_mm));
+    const maxH = Math.max(...valid.map(d => d.height_mm));
+    yMin = Math.floor((minH - 100) / 50) * 50;
+    yMax = Math.ceil((maxH + 100) / 50) * 50;
+    if (isInch) { yMin = Math.floor(yMin / 25.4); yMax = Math.ceil(yMax / 25.4); }
   } else if (currentDim === "wheelbase") {
-    yMin = isInch ? 90 : 2300;
-    yMax = isInch ? 120 : 3000;
+    const minWB = Math.min(...valid.map(d => d.wheelbase_mm));
+    const maxWB = Math.max(...valid.map(d => d.wheelbase_mm));
+    yMin = Math.floor((minWB - 150) / 100) * 100;
+    yMax = Math.ceil((maxWB + 150) / 100) * 100;
+    if (isInch) { yMin = Math.floor(yMin / 25.4); yMax = Math.ceil(yMax / 25.4); }
   }
 
   const yForVal = val => padTop + plotH - ((val * factor - yMin) / (yMax - yMin)) * plotH;
@@ -1264,43 +1448,57 @@ function renderDimensionChart() {
       <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
     `;
   }
-  xAxisSvg += `
-    <text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>
-  `;
+  xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
 
-  // Path generator
-  const makePath = key => {
-    return shapeYears.map((d, i) => {
-      const x = xForYear(d.year);
-      const y = yForVal(d[key]);
-      return `${i === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`;
-    }).join(" ");
+  // Break paths on missing data (honest presentation: no fake lines across gaps)
+  const makeSegmentedPaths = (key, strokeColor, strokeWidth, dash = "") => {
+    let pathD = "";
+    let isDrawing = false;
+    let circlesSvg = "";
+
+    yearly.forEach(d => {
+      const val = d[key];
+      if (val !== null && val !== undefined) {
+        const x = xForYear(d.year);
+        const y = yForVal(val);
+        if (!isDrawing) {
+          pathD += ` M ${x.toFixed(1)} ${y.toFixed(1)}`;
+          isDrawing = true;
+        } else {
+          pathD += ` L ${x.toFixed(1)} ${y.toFixed(1)}`;
+        }
+        circlesSvg += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5" fill="${strokeColor}" opacity="0.85" />`;
+      } else {
+        isDrawing = false;
+      }
+    });
+
+    return `
+      <path d="${pathD}" fill="none" stroke="${strokeColor}" stroke-width="${strokeWidth}" ${dash ? `stroke-dasharray="${dash}"` : ""} stroke-linecap="round" stroke-linejoin="round" />
+      ${circlesSvg}
+    `;
   };
 
-  // Paths
   let pathsSvg = "";
   if (currentDim === "all" || currentDim === "length") {
-    pathsSvg += `<path d="${makePath("length_mm")}" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />`;
+    pathsSvg += makeSegmentedPaths("length_mm", "#38bdf8", 2.6);
   }
   if (currentDim === "all" || currentDim === "width") {
-    pathsSvg += `<path d="${makePath("width_mm")}" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />`;
+    pathsSvg += makeSegmentedPaths("width_mm", "#10b981", 2.6);
   }
   if (currentDim === "all" || currentDim === "height") {
-    pathsSvg += `<path d="${makePath("height_mm")}" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />`;
+    pathsSvg += makeSegmentedPaths("height_mm", "#f59e0b", 2.6);
   }
   if (currentDim === "all" || currentDim === "wheelbase") {
-    pathsSvg += `<path d="${makePath("wheelbase_mm")}" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="4,3" stroke-linecap="round" />`;
+    pathsSvg += makeSegmentedPaths("wheelbase_mm", "#818cf8", 2.2, "4,3");
   }
 
   // Hover overlay columns
-  const colsSvg = shapeYears.map(d => {
-    const x = xForYear(d.year);
-    const colW = plotW / shapeYears.length;
-    return `
-      <rect x="${x - colW / 2}" y="${padTop}" width="${colW}" height="${plotH}" fill="transparent" class="dim-hover-col" style="cursor: pointer;"
-        onmouseenter="showDimensionReadout(${d.year})" onclick="showDimensionReadout(${d.year})" />
-    `;
-  }).join("");
+  const colW = plotW / yearly.length;
+  const colsSvg = yearly.map(d => `
+    <rect x="${xForYear(d.year) - colW / 2}" y="${padTop}" width="${colW}" height="${plotH}" fill="transparent" class="dim-hover-col" style="cursor: pointer;"
+      onmouseenter="showDimensionReadout(${d.year})" onclick="showDimensionReadout(${d.year})" />
+  `).join("");
 
   container.innerHTML = `
     <svg viewBox="0 0 ${width} ${height}" class="dim-chart-svg">
@@ -1314,31 +1512,43 @@ function renderDimensionChart() {
 }
 
 function showDimensionReadout(year) {
-  const d = shapeYears.find(item => item.year === year);
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const d = typeData.yearly.find(item => item.year === year);
   const readout = document.getElementById("dim-hover-readout");
   if (!d || !readout) return;
 
   const isInch = currentUnit === "in";
   const u = isInch ? "in" : "mm";
-  const len = isInch ? d.length_in : d.length_mm;
-  const wid = isInch ? d.width_in : d.width_mm;
-  const hgt = isInch ? d.height_in : d.height_mm;
-  const wb = isInch ? d.wheelbase_in : d.wheelbase_mm;
 
-  const base1970 = shapeYears[0];
-  const deltaLen = Math.round(d.length_mm - base1970.length_mm);
-  const deltaHgt = Math.round(d.height_mm - base1970.height_mm);
-  const deltaLenStr = isInch ? `${(deltaLen / 25.4).toFixed(1)} in` : `${deltaLen > 0 ? "+" : ""}${deltaLen} mm`;
-  const deltaHgtStr = isInch ? `${(deltaHgt / 25.4).toFixed(1)} in` : `${deltaHgt > 0 ? "+" : ""}${deltaHgt} mm`;
+  if (d.length_mm === null) {
+    readout.innerHTML = `
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">${d.year} RECORD:</span>
+        <span class="dim-readout-val" style="color:#94a3b8; font-style:italic;">Insufficient production records for ${typeData.meta.label} in ${d.year} (n = ${d.n} models)</span>
+        <span class="dim-readout-sample">[Honest gap &mdash; not estimated]</span>
+      </div>
+    `;
+  } else {
+    const len = isInch ? d.length_in : d.length_mm;
+    const wid = isInch ? d.width_in : d.width_mm;
+    const hgt = isInch ? d.height_in : d.height_mm;
+    const wb = isInch ? d.wheelbase_in : d.wheelbase_mm;
 
-  readout.innerHTML = `
-    <div class="dim-readout-content">
-      <span class="dim-readout-year">${d.year} RECORD:</span>
-      <span class="dim-readout-val">Length ${len} ${u} &bull; Width ${wid} ${u} &bull; Height ${hgt} ${u} &bull; Wheelbase ${wb} ${u}</span>
-      <span class="dim-readout-delta">(${deltaLenStr} len, ${deltaHgtStr} hgt since 1970)</span>
-      <span class="dim-readout-sample">[n = ${d.n} models]</span>
-    </div>
-  `;
+    const firstRec = typeData.first_dimensions;
+    const deltaLen = Math.round(d.length_mm - firstRec.length_mm);
+    const deltaHgt = Math.round(d.height_mm - firstRec.height_mm);
+    const deltaLenStr = isInch ? `${(deltaLen / 25.4).toFixed(1)} in` : `${deltaLen > 0 ? "+" : ""}${deltaLen} mm`;
+    const deltaHgtStr = isInch ? `${(deltaHgt / 25.4).toFixed(1)} in` : `${deltaHgt > 0 ? "+" : ""}${deltaHgt} mm`;
+
+    readout.innerHTML = `
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">${d.year} ${typeData.meta.label.toUpperCase()}:</span>
+        <span class="dim-readout-val">Length ${len} ${u} &bull; Width ${wid} ${u} &bull; Height ${hgt} ${u} &bull; Wheelbase ${wb} ${u}</span>
+        <span class="dim-readout-delta">(${deltaLenStr} len, ${deltaHgtStr} hgt since ${firstRec.year})</span>
+        <span class="dim-readout-sample">[n = ${d.n} models]</span>
+      </div>
+    `;
+  }
 
   const line = document.getElementById("dim-guideline");
   if (line) {
@@ -1353,12 +1563,66 @@ function showDimensionReadout(year) {
   }
 }
 
+function renderDimensionMilestones() {
+  const grid = document.getElementById("dim-stats-summary-grid");
+  if (!grid) return;
+
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const first = typeData.first_dimensions;
+  const latest = typeData.latest_dimensions;
+  if (!first || !latest) return;
+
+  const isInch = currentUnit === "in";
+  const u = isInch ? "in" : "mm";
+  const conv = val => isInch ? (val / 25.4).toFixed(1) : `${val > 0 ? "+" : ""}${val}`;
+
+  const dLen = conv(typeData.delta_length_mm);
+  const dWid = conv(typeData.delta_width_mm);
+  const dHgt = conv(typeData.delta_height_mm);
+  const dWb = conv(typeData.delta_wheelbase_mm);
+
+  const lenStart = isInch ? first.length_in : first.length_mm;
+  const lenEnd = isInch ? latest.length_in : latest.length_mm;
+  const widStart = isInch ? first.width_in : first.width_mm;
+  const widEnd = isInch ? latest.width_in : latest.width_mm;
+  const hgtStart = isInch ? first.height_in : first.height_mm;
+  const hgtEnd = isInch ? latest.height_in : latest.height_mm;
+  const wbStart = isInch ? first.wheelbase_in : first.wheelbase_mm;
+  const wbEnd = isInch ? latest.wheelbase_in : latest.wheelbase_mm;
+
+  grid.innerHTML = `
+    <div class="dim-stat-card">
+      <span class="dim-stat-dimension">LENGTH (MEDIAN)</span>
+      <div class="dim-stat-number" style="color:#38bdf8;">${dLen} ${u}</div>
+      <div class="dim-stat-caption">Measured from ${lenStart} ${u} (${first.year}) to ${lenEnd} ${u} (${latest.year}) for ${typeData.meta.label}.</div>
+    </div>
+    <div class="dim-stat-card">
+      <span class="dim-stat-dimension">WIDTH (MEDIAN)</span>
+      <div class="dim-stat-number" style="color:#10b981;">${dWid} ${u}</div>
+      <div class="dim-stat-caption">Widened from ${widStart} ${u} to ${widEnd} ${u} for stability and passenger safety.</div>
+    </div>
+    <div class="dim-stat-card">
+      <span class="dim-stat-dimension">HEIGHT (MEDIAN)</span>
+      <div class="dim-stat-number" style="color:#f59e0b;">${dHgt} ${u}</div>
+      <div class="dim-stat-caption">Profile shifted from ${hgtStart} ${u} to ${hgtEnd} ${u} across five decades of production.</div>
+    </div>
+    <div class="dim-stat-card">
+      <span class="dim-stat-dimension">WHEELBASE (MEDIAN)</span>
+      <div class="dim-stat-number" style="color:#818cf8;">${dWb} ${u}</div>
+      <div class="dim-stat-caption">Axle span evolved from ${wbStart} ${u} to ${wbEnd} ${u} to optimize cabin space.</div>
+    </div>
+  `;
+}
+
 /* ==========================================================================
-   SHAPE DIVERSITY (DISPERSION) CHART
+   BODY-TYPE SPECIFIC PROPORTIONS CHART
    ========================================================================== */
-function renderDispersionChart() {
-  const container = document.getElementById("dispersion-svg-container");
+function renderProportionsChart() {
+  const container = document.getElementById("prop-svg-container");
   if (!container) return;
+
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const yearly = typeData.yearly;
 
   const width = 900;
   const height = 350;
@@ -1372,16 +1636,20 @@ function renderDispersionChart() {
 
   const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
 
-  const rMin = 2.6;
-  const rMax = 3.8;
+  const valid = yearly.filter(d => d.lh_ratio !== null);
+  if (valid.length === 0) {
+    container.innerHTML = `<div style="padding:4rem; text-align:center; color:#64748b;">No proportion records for this body type.</div>`;
+    return;
+  }
+
+  // Left axis: Length / Height ratio (range ~ 2.2 to 4.2)
+  const rMin = 2.2;
+  const rMax = 4.0;
   const yForRatio = r => padTop + plotH - ((r - rMin) / (rMax - rMin)) * plotH;
 
-  const sMin = 0.20;
-  const sMax = 0.60;
-  const yForStd = s => padTop + plotH - ((s - sMin) / (sMax - sMin)) * plotH;
-
+  // Grid lines
   let gridSvg = "";
-  for (let r = 2.6; r <= 3.8; r += 0.3) {
+  for (let r = 2.4; r <= 3.8; r += 0.3) {
     const yPos = yForRatio(r);
     gridSvg += `
       <line x1="${padLeft}" y1="${yPos}" x2="${width - padRight}" y2="${yPos}" stroke="rgba(255,255,255,0.07)" stroke-dasharray="3,3" />
@@ -1389,13 +1657,16 @@ function renderDispersionChart() {
     `;
   }
 
-  for (let s = 0.20; s <= 0.60; s += 0.10) {
-    const yPos = yForStd(s);
+  // Right axis: Wheelbase / Length ratio (range 0.50 to 0.68)
+  for (let wb = 0.52; wb <= 0.66; wb += 0.04) {
+    const scaledR = rMin + ((wb - 0.50) / (0.68 - 0.50)) * (rMax - rMin);
+    const yPos = yForRatio(scaledR);
     gridSvg += `
-      <text x="${width - padRight + 10}" y="${yPos + 4}" fill="#f59e0b" font-size="11" font-family="ui-monospace, monospace" text-anchor="start">&sigma; ${s.toFixed(2)}</text>
+      <text x="${width - padRight + 10}" y="${yPos + 4}" fill="#f59e0b" font-size="11" font-family="ui-monospace, monospace" text-anchor="start">${wb.toFixed(2)}</text>
     `;
   }
 
+  // X Axis Decades
   let xAxisSvg = "";
   for (let yr = 1970; yr <= 2024; yr += 10) {
     const xPos = xForYear(yr);
@@ -1406,83 +1677,123 @@ function renderDispersionChart() {
   }
   xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
 
-  const topPoints = shapeYears.map(d => `${xForYear(d.year).toFixed(1)},${yForRatio(d.lh_q75).toFixed(1)}`);
-  const botPoints = [...shapeYears].reverse().map(d => `${xForYear(d.year).toFixed(1)},${yForRatio(d.lh_q25).toFixed(1)}`);
-  const polygonPoints = [...topPoints, ...botPoints].join(" ");
+  // Build segmented paths for L/H ratio
+  let lhPathD = "";
+  let wbPathD = "";
+  let isLhDrawing = false;
+  let isWbDrawing = false;
+  let circlesSvg = "";
 
-  const medianPath = shapeYears.map((d, i) => `${i === 0 ? "M" : "L"} ${xForYear(d.year).toFixed(1)} ${yForRatio(d.lh_ratio).toFixed(1)}`).join(" ");
-  const stdPath = shapeYears.map((d, i) => `${i === 0 ? "M" : "L"} ${xForYear(d.year).toFixed(1)} ${yForStd(d.lh_std).toFixed(1)}`).join(" ");
+  yearly.forEach(d => {
+    if (d.lh_ratio !== null) {
+      const x = xForYear(d.year);
+      const yLh = yForRatio(d.lh_ratio);
+      const scaledWbR = rMin + ((d.wl_ratio - 0.50) / (0.68 - 0.50)) * (rMax - rMin);
+      const yWb = yForRatio(scaledWbR);
+
+      if (!isLhDrawing) {
+        lhPathD += ` M ${x.toFixed(1)} ${yLh.toFixed(1)}`;
+        isLhDrawing = true;
+      } else {
+        lhPathD += ` L ${x.toFixed(1)} ${yLh.toFixed(1)}`;
+      }
+
+      if (!isWbDrawing) {
+        wbPathD += ` M ${x.toFixed(1)} ${yWb.toFixed(1)}`;
+        isWbDrawing = true;
+      } else {
+        wbPathD += ` L ${x.toFixed(1)} ${yWb.toFixed(1)}`;
+      }
+
+      circlesSvg += `<circle cx="${x.toFixed(1)}" cy="${yLh.toFixed(1)}" r="2.8" fill="#38bdf8" />`;
+      circlesSvg += `<circle cx="${x.toFixed(1)}" cy="${yWb.toFixed(1)}" r="2.5" fill="#f59e0b" />`;
+    } else {
+      isLhDrawing = false;
+      isWbDrawing = false;
+    }
+  });
+
+  // First and latest callout labels
+  const first = valid[0];
+  const latest = valid[valid.length - 1];
+
+  const firstCallout = `
+    <circle cx="${xForYear(first.year)}" cy="${yForRatio(first.lh_ratio)}" r="5" fill="#38bdf8" stroke="#000" stroke-width="1.5" />
+    <text x="${xForYear(first.year) + 8}" y="${yForRatio(first.lh_ratio) - 8}" fill="#38bdf8" font-size="11" font-weight="700" font-family="ui-monospace, monospace">${first.year}: ${first.lh_ratio}</text>
+  `;
+
+  const latestCallout = `
+    <circle cx="${xForYear(latest.year)}" cy="${yForRatio(latest.lh_ratio)}" r="5" fill="#38bdf8" stroke="#000" stroke-width="1.5" />
+    <text x="${xForYear(latest.year) - 8}" y="${yForRatio(latest.lh_ratio) - 8}" fill="#38bdf8" font-size="11" font-weight="700" font-family="ui-monospace, monospace" text-anchor="end">${latest.year}: ${latest.lh_ratio}</text>
+  `;
 
   container.innerHTML = `
     <svg viewBox="0 0 ${width} ${height}" class="dim-chart-svg">
       ${gridSvg}
       ${xAxisSvg}
-      <polygon points="${polygonPoints}" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
-      <path d="${stdPath}" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" />
-      <path d="${medianPath}" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
-      
-      <circle cx="${xForYear(1970)}" cy="${yForRatio(3.25)}" r="4.5" fill="#38bdf8" />
-      <text x="${xForYear(1970) + 8}" y="${yForRatio(3.25) - 8}" fill="#38bdf8" font-size="11" font-weight="700" font-family="ui-monospace, monospace">1970: 3.25</text>
-      
-      <circle cx="${xForYear(2024)}" cy="${yForRatio(2.91)}" r="4.5" fill="#38bdf8" />
-      <text x="${xForYear(2024) - 8}" y="${yForRatio(2.91) - 10}" fill="#38bdf8" font-size="11" font-weight="700" font-family="ui-monospace, monospace" text-anchor="end">2024: 2.91</text>
+      <path d="${wbPathD}" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-dasharray="4,3" stroke-linecap="round" />
+      <path d="${lhPathD}" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      ${circlesSvg}
+      ${firstCallout}
+      ${latestCallout}
     </svg>
   `;
 }
 
-/* ==========================================================================
-   BODY STYLE STACKED STREAM
-   ========================================================================== */
-function renderBodyStyleLegend() {
-  const container = document.getElementById("bs-legend-container");
-  if (!container) return;
+function renderProportionsFindings() {
+  const grid = document.getElementById("prop-findings-grid");
+  if (!grid) return;
 
-  container.innerHTML = Object.entries(bodyStyleMeta).map(([key, item]) => `
-    <div class="bodystyle-legend-chip">
-      <span class="bs-dot" style="background-color: ${item.hex};"></span>
-      <span>${item.label}</span>
+  const typeData = shapeDataset.by_type[currentBodyType];
+  const first = typeData.first_dimensions;
+  const latest = typeData.latest_dimensions;
+  if (!first || !latest) return;
+
+  const findingsMap = {
+    Coupe: [
+      { tag: "Stance Identity", title: "Resilient Low-Profile Stance", p: `Coupes retained an average Length ÷ Height ratio around ${latest.lh_ratio}, remaining the sleekest, lowest-slung architecture in the fleet throughout 55 years of production.` },
+      { tag: "Packaging Evolution", title: "Wheelbase Stretching", p: `Wheelbase share expanded from ${Math.round(first.wl_ratio * 100)}% to ${Math.round(latest.wl_ratio * 100)}% of total length, eliminating extreme 1970s front and rear overhangs in favor of planted high-speed stability.` }
+    ],
+    SUV: [
+      { tag: "Aerodynamic Convergence", title: "From Tall Truck to Crossover", p: `Early utility vehicles had compact, upright ratios. Modern SUVs grew longer and more raked, bringing their silhouette ratio closer to passenger sedans.` },
+      { tag: "Packaging Efficiency", title: "Expanded Passenger Cell", p: `Wheelbase proportions expanded significantly, pushing the wheels out to the vehicle corners to deliver interior legroom and electric skateboard battery packaging.` }
+    ],
+    Sedan: [
+      { tag: "Three-Box Geometry", title: "Balanced Classic Proportions", p: `Sedans consistently maintained a balanced Length ÷ Height ratio of ~${latest.lh_ratio}, preserving aerodynamic greenhouse clearance and passenger headroom.` },
+      { tag: "Axle Optimization", title: "Minimal Overhang Design", p: `Front and rear overhangs were drastically shortened over the decades, pushing the wheelbase from ${Math.round(first.wl_ratio * 100)}% to ${Math.round(latest.wl_ratio * 100)}% of total vehicle length.` }
+    ],
+    Wagon: [
+      { tag: "Volumetric Architecture", title: "Extended Two-Box Silhouette", p: `Station wagons maintained long, horizontal roof profiles (ratio ~${latest.lh_ratio}), maximizing cargo capacity while keeping a low car-like center of gravity.` },
+      { tag: "Platform Stretch", title: "High Wheelbase Ratio", p: `Wagon wheelbases stretched outward, enabling stable highway towing and vast flat loading floors.` }
+    ],
+    Hatchback: [
+      { tag: "Urban Efficiency", title: "Compact Packaging Champion", p: `Hatchbacks kept the shortest overall length in the fleet while maximizing vertical cabin space, maintaining agile city proportions.` },
+      { tag: "Wheels to the Corners", title: "Near-Zero Overhangs", p: `Hatchback wheelbases represent the highest ratio of total length (up to 65%), creating spacious subcompact interiors.` }
+    ],
+    Convertible: [
+      { tag: "Low Greenhouse", title: "Extreme Open-Air Stance", p: `Without a fixed steel roof, convertibles maintained aggressive silhouette ratios with minimal waistline heights.` },
+      { tag: "Roadster Dynamics", title: "Classic Sports Proportions", p: `Preserved sports car driving dynamics with balanced axle distributions and compact overhangs.` }
+    ],
+    Pickup: [
+      { tag: "Utility Scale", title: "Massive Dimensional Expansion", p: `Pickups grew substantially in length and ride height, evolving from compact utilitarian runabouts into full-size multi-crew haulers.` },
+      { tag: "Bed and Cab Balance", title: "Extended Wheelbase Platforms", p: `Wheelbases lengthened dramatically to accommodate dual-row crew cabs while preserving 6-to-8 foot cargo beds.` }
+    ],
+    Van: [
+      { tag: "Mono-Volume Cabin", title: "Maximized Interior Volume", p: `Vans maintain the most upright silhouette ratio in the dataset (~2.6), prioritizing vertical passenger head room and multi-row seating.` },
+      { tag: "Forward Cab Design", title: "Flat-Floor Packaging", p: `Wheelbases and cabin floorplans were pushed outward to deliver unmatched volumetric storage efficiency.` }
+    ]
+  };
+
+  const findings = findingsMap[currentBodyType] || findingsMap["Coupe"];
+  grid.innerHTML = findings.map((f, i) => `
+    <div class="finding-card">
+      <div class="finding-tag convergence">Finding 0${i + 1} &bull; ${f.tag}</div>
+      <h4 class="finding-title">${f.title}</h4>
+      <p class="finding-p">${f.p}</p>
     </div>
   `).join("");
 }
 
-function renderBodyStyleStream() {
-  const container = document.getElementById("bs-stream-container");
-  if (!container) return;
-
-  container.innerHTML = bodyDecades.map(dec => {
-    const segsHtml = Object.entries(bodyStyleMeta).map(([key, meta]) => {
-      const pct = dec[key] || 0;
-      if (pct === 0) return "";
-      const isWide = pct >= 8;
-      return `
-        <div class="bs-seg" style="width: ${pct}%; background-color: ${meta.hex};" title="${meta.label}: ${pct}% (${dec.decade})">
-          ${isWide ? `${meta.label.split(" ")[0]} ${pct}%` : ""}
-        </div>
-      `;
-    }).join("");
-
-    let topName = "";
-    let topPct = 0;
-    Object.entries(bodyStyleMeta).forEach(([k, meta]) => {
-      if ((dec[k] || 0) > topPct) {
-        topPct = dec[k];
-        topName = meta.label;
-      }
-    });
-
-    return `
-      <div class="bs-decade-row">
-        <div class="bs-decade-meta">
-          <span class="bs-decade-label">${dec.decade}</span>
-          <span class="bs-decade-top">Dominant: <strong>${topName} (${topPct}%)</strong> &bull; Sample: ${dec.n} models</span>
-        </div>
-        <div class="bs-stacked-track">
-          ${segsHtml}
-        </div>
-      </div>
-    `;
-  }).join("");
-}
 
 /* ==========================================================================
    SOUND & POWERTRAIN SCRIPT
