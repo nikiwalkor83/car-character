@@ -1,0 +1,168 @@
+---
+title: ""
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<div class="exploration-section">
+  <!-- EXPLORATION HEADER -->
+  <div class="exploration-header">
+    <div class="hero-eyebrow">Interactive Exploration &bull; Global Geography</div>
+    <h1 class="exploration-title">THE GEOGRAPHY OF CHARACTER.</h1>
+    <p class="exploration-subtitle">
+      Automotive identity was forged across distinct national cultures, engineering philosophies, and regulatory landscapes. Select a country to explore.
+    </p>
+  </div>
+
+  <!-- MAP STAGE WRAPPER -->
+  <div class="map-wrapper">
+    <div class="map-topbar">
+      <div id="selected-indicator" class="map-selected-readout">
+        <span class="map-status-pill"></span>
+        <span class="selected-label">Selected:</span>
+        <span class="selected-highlight" id="selected-country-name">None</span>
+      </div>
+      <div class="map-hints">Hover to inspect &bull; Click to select</div>
+    </div>
+
+    <div class="map-stage" id="map-container">
+      <div id="map-tooltip" class="map-tooltip"></div>
+      <svg id="world-map-svg" class="map-svg" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+  </div>
+</div>
+
+<!-- D3 & TOPOJSON LIBRARIES -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script src="data/countries_110m.js"></script>
+<script src="data/iso_countries.js"></script>
+
+<script>
+// State storage for selected country accessible to next steps
+window.selectedCountry = null;
+
+(function initWorldMap() {
+  const svg = d3.select("#world-map-svg");
+  const container = document.getElementById("map-container");
+  const tooltip = document.getElementById("map-tooltip");
+  const selectedNameEl = document.getElementById("selected-country-name");
+
+  const width = 960;
+  const height = 500;
+
+  // Set explicit SVG viewBox for responsiveness
+  svg.attr("viewBox", `0 0 ${width} ${height}`)
+     .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const projection = d3.geoEqualEarth();
+  const pathGenerator = d3.geoPath().projection(projection);
+
+  // Group layers
+  const gBase = svg.append("g").attr("class", "map-base-layer");
+  const gCountries = svg.append("g").attr("class", "map-countries-layer");
+
+  function renderTopology(worldData) {
+    if (!worldData || !worldData.objects || !worldData.objects.countries) return;
+
+    // Filter out Antarctica (010) for a centered, cinematic presentation of populated landmasses
+    const countries = topojson.feature(worldData, worldData.objects.countries).features
+      .filter(d => d.id !== "010");
+
+    const isoMap = window.ISO_COUNTRIES || {};
+
+    // Center and scale the world projection cleanly within viewBox
+    projection.fitExtent([[30, 20], [width - 30, height - 20]], {
+      type: "FeatureCollection",
+      features: countries
+    });
+
+    // Graticule lines for cartographic drafting aesthetic
+    const graticule = d3.geoGraticule10();
+    gBase.append("path")
+      .datum(graticule)
+      .attr("class", "map-graticule")
+      .attr("d", pathGenerator);
+
+    let activePath = null;
+
+    gCountries.selectAll("path.world-country")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("class", "world-country")
+      .attr("d", pathGenerator)
+      .attr("data-id", d => d.id)
+      .on("mouseenter", function(event, d) {
+        const iso = isoMap[d.id] || {};
+        const countryName = iso.name || d.properties?.name || "Unknown";
+        const iso3 = iso.iso3 || "";
+
+        tooltip.innerHTML = `
+          <span class="tooltip-name">${countryName}</span>
+          ${iso3 ? `<span class="tooltip-iso">${iso3}</span>` : ""}
+        `;
+        tooltip.style.opacity = "1";
+        positionTooltip(event);
+      })
+      .on("mousemove", function(event) {
+        positionTooltip(event);
+      })
+      .on("mouseleave", function() {
+        tooltip.style.opacity = "0";
+      })
+      .on("click", function(event, d) {
+        const iso = isoMap[d.id] || {};
+        const countryName = iso.name || d.properties?.name || "Unknown";
+        const iso3 = iso.iso3 || "";
+        const iso2 = iso.iso2 || "";
+
+        // Deselect previous country
+        if (activePath) {
+          activePath.classed("is-selected", false);
+        }
+
+        // Highlight newly selected country
+        activePath = d3.select(this);
+        activePath.classed("is-selected", true);
+
+        // Store selected country state
+        window.selectedCountry = {
+          id: d.id,
+          name: countryName,
+          iso2: iso2,
+          iso3: iso3
+        };
+
+        // Update selected display
+        if (selectedNameEl) {
+          selectedNameEl.innerHTML = `${countryName} ${iso3 ? `<span class="selected-iso">(${iso3})</span>` : ""}`;
+        }
+
+        // Emit event for modular integration in future steps
+        window.dispatchEvent(new CustomEvent("countrySelected", { detail: window.selectedCountry }));
+      });
+  }
+
+  function positionTooltip(event) {
+    if (!container) return;
+    const rect = container.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    tooltip.style.left = `${x}px`;
+    tooltip.style.top = `${y}px`;
+  }
+
+  // Use embedded TopoJSON data or fetch fallback
+  if (window.COUNTRIES_110M) {
+    renderTopology(window.COUNTRIES_110M);
+  } else {
+    fetch("data/countries-110m.json")
+      .then(res => res.json())
+      .then(data => renderTopology(data))
+      .catch(err => console.error("Could not load country map data", err));
+  }
+})();
+</script>
+```

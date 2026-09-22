@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - "audio/**"
+    - "data/**"
 
 website:
   title: "Car Character"
@@ -12,6 +13,8 @@ website:
         text: Home
       - href: story.qmd
         text: Story
+      - href: exploration.qmd
+        text: Exploration
       - href: about.qmd
         text: About
 
