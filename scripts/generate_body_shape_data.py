@@ -5,7 +5,7 @@ import re
 
 # Load dataset
 df = pd.read_csv('engines.csv', low_memory=False)
-df = df[(df['gen_year_start'] >= 1970) & (df['gen_year_start'] <= 2024)].copy()
+df = df[(df['gen_year_end'].fillna(2024) >= 1970) & (df['gen_year_start'] <= 2024)].copy()
 
 # Dimension filters for valid physical production vehicles
 df = df[
@@ -101,8 +101,12 @@ for dec in ['1970s', '1980s', '1990s', '2000s', '2010s', '2020s']:
         row[bt] = pct
     decades_summary.append(row)
 
-# Yearly metrics
-yearly_total = valid.groupby('gen_year_start').size()
+# Yearly metrics: Active production years (gen_year_start <= yr <= gen_year_end)
+valid['gen_year_end_clean'] = valid['gen_year_end'].fillna(2024)
+
+yearly_total_active = {}
+for yr in range(1970, 2025):
+    yearly_total_active[yr] = len(valid[(valid['gen_year_start'] <= yr) & (valid['gen_year_end_clean'] >= yr)])
 
 by_type = {}
 for bt in body_categories:
@@ -110,12 +114,12 @@ for bt in body_categories:
     years_data = []
     
     for yr in range(1970, 2025):
-        yr_sub = sub[sub['gen_year_start'] == yr]
+        yr_sub = sub[(sub['gen_year_start'] <= yr) & (sub['gen_year_end_clean'] >= yr)]
         n = len(yr_sub)
-        tot_yr = yearly_total.get(yr, 0)
+        tot_yr = yearly_total_active.get(yr, 0)
         share = round(float(n / tot_yr * 100), 1) if tot_yr > 0 else 0.0
         
-        if n >= 2:
+        if n >= 1:
             l_mm = round(float(yr_sub['length_mm'].median()), 1)
             w_mm = round(float(yr_sub['width_mm'].median()), 1)
             h_mm = round(float(yr_sub['height_mm'].median()), 1)

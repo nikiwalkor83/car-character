@@ -15,7 +15,7 @@ project:
 website:
   title: "Car Character"
   navbar:
-    background: dark
+    background: light
     left:
       - href: index.qmd
         text: Home

@@ -13,10 +13,10 @@ toc: false
   <div id="world-view" class="exploration-view is-active">
     <!-- Header -->
     <div class="exploration-header">
-      <div class="hero-eyebrow">Interactive Exploration &bull; Global Geography</div>
-      <h1 class="exploration-title">THE GEOGRAPHY OF CHARACTER.</h1>
+      <div class="hero-eyebrow">Interactive Motoring Atlas</div>
+      <h1 class="exploration-title">Different countries made different cars.</h1>
       <p class="exploration-subtitle">
-        Automotive identity was forged across distinct national cultures, engineering philosophies, and regulatory landscapes. Select a country to explore.
+        Explore production histories, manufacturers, and classic specimens by country.
       </p>
     </div>
 
@@ -28,7 +28,7 @@ toc: false
           <span class="selected-label">Selected:</span>
           <span class="selected-highlight" id="selected-country-name">None</span>
         </div>
-        <div class="map-hints">Hover to inspect &bull; Click to select</div>
+        <div class="map-hints">Select a country to view its cars</div>
       </div>
 
       <div class="map-stage" id="map-container">
@@ -46,11 +46,11 @@ toc: false
     <!-- Country Navigation Bar -->
     <div class="country-nav-bar">
       <button id="btn-back-nav" class="btn-back-world">
-        <span class="back-arrow">&larr;</span> <span id="back-nav-label">Back to World</span>
+        <span class="back-arrow">&larr;</span> <span id="back-nav-label">Return to atlas</span>
       </button>
 
       <div id="country-breadcrumbs" class="country-breadcrumbs">
-        <span id="crumb-world" class="breadcrumb-item">World</span>
+        <span id="crumb-world" class="breadcrumb-item">Atlas</span>
         <span class="breadcrumb-sep">/</span>
         <span id="crumb-country" class="breadcrumb-item is-current">Country</span>
         <span id="crumb-mfg-sep" class="breadcrumb-sep" style="display:none;">/</span>
@@ -66,16 +66,16 @@ toc: false
           <span id="country-flag-fallback" class="country-flag-fallback" style="display: none;"></span>
         </div>
         <div class="country-heading-group">
-          <h1 id="country-view-name" class="country-view-title">COUNTRY</h1>
-          <div class="country-view-subtitle">*Selected country*</div>
+          <h1 id="country-view-name" class="country-view-title">Country</h1>
+          <div class="country-view-subtitle">Selected territory</div>
         </div>
       </div>
 
       <!-- Subtle Map Locator Indication -->
       <div class="country-locator-card">
         <div class="country-locator-info">
-          <span class="locator-label">Global Territory Coordinates</span>
-          <span id="locator-detail-text" class="locator-detail">Selected nation highlighted on the world map</span>
+          <span class="locator-label">Atlas Location</span>
+          <span id="locator-detail-text" class="locator-detail">Selected nation highlighted on the map</span>
         </div>
         <div class="country-locator-stage">
           <svg id="locator-svg" class="locator-svg" viewBox="0 0 240 110" preserveAspectRatio="xMidYMid meet"></svg>
@@ -89,10 +89,10 @@ toc: false
       <!-- STAGE A: AUTOMAKERS LIST -->
       <div id="automakers-panel" class="exploration-panel is-active">
         <div class="section-head">
-          <div class="section-eyebrow">National Automotive Industry</div>
-          <h2 class="section-title">Automakers</h2>
+          <div class="section-eyebrow">National Manufacturers</div>
+          <h2 class="section-title">Manufacturers</h2>
           <p id="automakers-subtitle" class="section-desc">
-            Select a manufacturer to inspect specimens represented in the archive.
+            Select a marque to view models in the archive.
           </p>
         </div>
 
@@ -362,7 +362,7 @@ window.selectedManufacturer = null;
 
     // Set navigation state
     currentNavigationLevel = "country";
-    backNavLabel.textContent = "Back to World";
+    backNavLabel.textContent = "Return to atlas";
     crumbCountry.textContent = country.name;
     crumbCountry.classList.add("is-current");
     crumbMfgSep.style.display = "none";
@@ -398,16 +398,16 @@ window.selectedManufacturer = null;
     automakersGrid.innerHTML = "";
 
     if (cars.length === 0) {
-      automakersSubtitle.textContent = "No automotive data available for this territory.";
+      automakersSubtitle.textContent = "No automotive data recorded for this territory.";
       automakersGrid.innerHTML = `
         <div class="automakers-empty-card" style="grid-column: 1 / -1;">
           <div class="empty-icon">📁</div>
-          <h3 class="empty-title">NO VEHICLE DATA AVAILABLE</h3>
+          <h3 class="empty-title">No vehicle records in archive</h3>
           <p class="empty-desc">
             There are no automotive manufacturers or specimen models recorded for <strong>${country.name}</strong> in the current project archive.
           </p>
           <button id="btn-empty-return" class="btn-back-world">
-            <span class="back-arrow">&larr;</span> Return to World Map
+            <span class="back-arrow">&larr;</span> Return to Atlas
           </button>
         </div>
       `;
@@ -449,7 +449,7 @@ window.selectedManufacturer = null;
           <p class="mfg-era">${eraStr}</p>
         </div>
         <div class="automaker-card-bottom">
-          <span class="mfg-action-text">Inspect Models</span>
+          <span class="mfg-action-text">View models</span>
           <span class="mfg-chevron">&rarr;</span>
         </div>
       `;
@@ -474,16 +474,16 @@ window.selectedManufacturer = null;
     currentNavigationLevel = "manufacturer";
 
     // Update navigation controls
-    backNavLabel.textContent = `Back to ${activeCountryData.name}`;
+    backNavLabel.textContent = `Return to ${activeCountryData.name}`;
     crumbCountry.classList.remove("is-current");
     crumbMfgSep.style.display = "inline";
     crumbMfg.style.display = "inline";
     crumbMfg.textContent = mfg.name;
 
     // Header info
-    modelsEyebrow.textContent = `${activeCountryData.name.toUpperCase()} // AUTOMAKER SPECIMENS`;
-    modelsTitle.textContent = mfg.name.toUpperCase();
-    modelsDesc.textContent = `${mfg.count} specimen ${mfg.count === 1 ? 'model' : 'models'} represented across historical production eras (${mfg.eraStr}).`;
+    modelsEyebrow.textContent = `${activeCountryData.name} \u2022 Specimen Collection`;
+    modelsTitle.textContent = mfg.name;
+    modelsDesc.textContent = `${mfg.count} specimen ${mfg.count === 1 ? 'model' : 'models'} across production eras (${mfg.eraStr}).`;
 
     // Populate car models
     modelsGrid.innerHTML = "";
@@ -544,7 +544,7 @@ window.selectedManufacturer = null;
     window.selectedManufacturer = null;
     currentNavigationLevel = "country";
 
-    backNavLabel.textContent = "Back to World";
+    backNavLabel.textContent = "Return to atlas";
     crumbMfgSep.style.display = "none";
     crumbMfg.style.display = "none";
     crumbCountry.classList.add("is-current");
