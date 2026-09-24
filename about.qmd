@@ -1,5 +1,58 @@
 ---
-title: "About"
+title: ""
+page-layout: custom
+toc: false
 ---
 
-About this project.
+```{=html}
+<div class="story-reading-wrapper">
+
+  <!-- MASTHEAD / HEADER -->
+  <header class="story-article-header">
+    <div class="story-kicker">Project Dossier</div>
+    <h1 class="story-headline">About</h1>
+    <p class="story-deck">
+      An empirical motoring inquiry into the evolution of vehicle character, 1970 to 2024.
+    </p>
+    <div class="story-byline-rule"></div>
+  </header>
+
+  <!-- BODY CONTENT -->
+  <article class="story-essay">
+
+    <section style="margin-bottom: 3.5rem;">
+      <h2 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-ink); border-bottom: 1px solid var(--border-rule); padding-bottom: 0.5rem;">About Me</h2>
+      
+      <p class="story-dropcap-para">
+        <span class="story-dropcap">M</span>y name is <strong>Mikita Liohki</strong>, but pretty much everyone calls me Nikita. The reason is a long story, so I'll just leave it at that.
+      </p>
+
+      <p>
+        I've always been really into cars — how they look, sound, and just the personality they have. I've always felt like older cars had something that a lot of newer cars don't.
+      </p>
+
+      <p>
+        So for this project, I wanted to take that feeling and actually see if the data backs it up.
+      </p>
+
+      <div class="story-emphasis-quote" style="margin: 2.25rem 0; font-size: 1.35rem; font-weight: 600; text-align: center;">
+        Where did car character go?
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-ink); border-bottom: 1px solid var(--border-rule); padding-bottom: 0.5rem;">About the Project</h2>
+
+      <p>
+        <strong>Car Character</strong> is an empirical investigation exploring how passenger vehicles evolved across six decades, from 1970 to 2024. By analyzing historical shifts across automotive color palettes, silhouette proportions, powertrain and acoustic architectures, and global engineering specifications, the project explores whether the perceived loss of distinctive vehicle personality is reflected in measurable data.
+      </p>
+
+      <p>
+        This project was created using R, Quarto, and the tidyverse as part of a course based on <a href="https://ppbds.github.io/primer/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-racing-green); text-decoration: underline;"><em>Preceptor’s Primer for Bayesian Data Science</em></a>.
+      </p>
+    </section>
+
+  </article>
+
+</div>
+```

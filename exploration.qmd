@@ -1171,7 +1171,7 @@ window.selectedManufacturer = null;
     activeScopeName = scopeName;
 
     availableScopeYears = [...new Set(
-      scopeCars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y))
+      scopeCars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y) && y >= 1970)
     )].sort((a, b) => a - b);
 
     if (availableScopeYears.length === 0) {
@@ -1181,19 +1181,16 @@ window.selectedManufacturer = null;
     }
 
     if (timelineControlBlock) timelineControlBlock.style.display = "block";
-    const minYear = availableScopeYears[0];
-    const maxYear = availableScopeYears[availableScopeYears.length - 1];
 
-    railMinYear = Math.floor(minYear / 10) * 10;
-    railMaxYear = Math.ceil(maxYear / 10) * 10;
-    if (railMaxYear === railMinYear) {
-      railMaxYear = railMinYear + 10;
-    }
+    // The year timeline begins strictly at 1970 and continues through latest dataset year (2024)
+    railMinYear = 1970;
+    railMaxYear = 2024;
 
-    // Decade markers
+    // Decade markers (1970 to present)
     if (timelineDecadeLabels) {
       timelineDecadeLabels.innerHTML = "";
-      for (let dec = railMinYear; dec <= railMaxYear; dec += 10) {
+      const decades = [1970, 1980, 1990, 2000, 2010, 2020];
+      decades.forEach(dec => {
         const pct = ((dec - railMinYear) / (railMaxYear - railMinYear)) * 100;
         const marker = document.createElement("div");
         marker.className = "timeline-decade-marker";
@@ -1203,7 +1200,7 @@ window.selectedManufacturer = null;
           <div class="timeline-decade-tick"></div>
         `;
         timelineDecadeLabels.appendChild(marker);
-      }
+      });
     }
 
     // Year nodes / pips
@@ -1731,7 +1728,7 @@ window.selectedManufacturer = null;
       return;
     }
 
-    const sortedCars = [...carsList].sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
+    const sortedCars = [...carsList].filter(c => parseInt(c["Model year"] || 0, 10) >= 1970).sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
     currentVisibleCars = sortedCars;
 
     sortedCars.forEach(car => {
