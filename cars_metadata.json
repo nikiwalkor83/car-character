@@ -1,18 +1,5 @@
 [
   {
-    "Car name": "1968 Chevrolet Corvette",
-    "Manufacturer": "Chevrolet",
-    "Exact model generation": "Corvette C3 (1968–1982)",
-    "Model year": 1968,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1968_chevrolet_corvette.jpg",
-    "Original image URL": "https://commons.wikimedia.org/wiki/File:Chevrolet_Corvette_Convertible_(C3,_1968)_(front_three-quarter_view)_at_GLION_MUSEUM.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 4.0; Author: Aos.1905"
-  },
-  {
     "Car name": "1970 Ford Mustang",
     "Manufacturer": "Ford",
     "Exact model generation": "First generation facelift (1969-1970)",
@@ -1025,279 +1012,6 @@
     "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/e8/VW_Golf_II_front_20080206.jpg",
     "Image source": "Wikimedia Commons",
     "Image license/copyright information": "CC BY-SA 3.0; Author: Rudolf Stricker"
-  },
-  {
-    "Car name": "1960 Austin Mini",
-    "Manufacturer": "Mini",
-    "Exact model generation": "Mark I (ADO15)",
-    "Model year": 1960,
-    "Decade": "1960s",
-    "Country of manufacturer": "United Kingdom",
-    "Vehicle category": "Economy",
-    "Image filename": "1960s/1960_austin_mini.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/b/b5/1961_Morris_Mini_Mk_I_850_Saloon.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY 2.0; Author: Cars Down Under"
-  },
-  {
-    "Car name": "1961 Jaguar E-Type",
-    "Manufacturer": "Jaguar",
-    "Exact model generation": "Series 1 (3.8L)",
-    "Model year": 1961,
-    "Decade": "1960s",
-    "Country of manufacturer": "United Kingdom",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1961_jaguar_e_type.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Jaguar_E-type_Low_Drag_Coup%C3%A9_recreation_-_Morges_2017_-_Front_three-quarters.jpeg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 2.0 fr; Author: Akela NDE"
-  },
-  {
-    "Car name": "1962 Ferrari 250 GTO",
-    "Manufacturer": "Ferrari",
-    "Exact model generation": "250 GTO (Series I)",
-    "Model year": 1962,
-    "Decade": "1960s",
-    "Country of manufacturer": "Italy",
-    "Vehicle category": "Supercar",
-    "Image filename": "1960s/1962_ferrari_250_gto.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/3/31/1962_Ferrari_250_GTO_SP25.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 4.0; Author: MrWalkr"
-  },
-  {
-    "Car name": "1963 Porsche 911",
-    "Manufacturer": "Porsche",
-    "Exact model generation": "Original 911 (901)",
-    "Model year": 1963,
-    "Decade": "1960s",
-    "Country of manufacturer": "Germany",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1963_porsche_911.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Porsche_911E_ca_1969.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Charles01"
-  },
-  {
-    "Car name": "1963 Chevrolet Corvette Sting Ray",
-    "Manufacturer": "Chevrolet",
-    "Exact model generation": "Corvette C2 Split Window",
-    "Model year": 1963,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1963_chevrolet_corvette_sting_ray.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Chevrolet_Corvette_Sting_Ray_Split_Window_1963.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 4.0; Author: Avaldia"
-  },
-  {
-    "Car name": "1964 Aston Martin DB5",
-    "Manufacturer": "Aston Martin",
-    "Exact model generation": "DB5 Coupe",
-    "Model year": 1964,
-    "Decade": "1960s",
-    "Country of manufacturer": "United Kingdom",
-    "Vehicle category": "Luxury",
-    "Image filename": "1960s/1964_aston_martin_db5.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Aston_Martin_DB5_%28Skyfall%29.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA; Author: Unknown"
-  },
-  {
-    "Car name": "1964 Ford Mustang",
-    "Manufacturer": "Ford",
-    "Exact model generation": "First generation (1964 1/2)",
-    "Model year": 1964,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1964_ford_mustang.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/7/7f/1965_Ford_Mustang_2D_Hardtop_Front.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Kroelleboelle"
-  },
-  {
-    "Car name": "1964 Pontiac GTO",
-    "Manufacturer": "Pontiac",
-    "Exact model generation": "First generation GTO",
-    "Model year": 1964,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Coupe",
-    "Image filename": "1960s/1964_pontiac_gto.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/c/c0/1964_Pontiac_GTO_389_Tri-Power.JPG",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Stephen Foskett (Wikipedia User: sfoskett)"
-  },
-  {
-    "Car name": "1965 Alfa Romeo Giulia Sprint GTA",
-    "Manufacturer": "Alfa Romeo",
-    "Exact model generation": "Giulia Sprint GTA (Tipo 105.32)",
-    "Model year": 1965,
-    "Decade": "1960s",
-    "Country of manufacturer": "Italy",
-    "Vehicle category": "Coupe",
-    "Image filename": "1960s/1965_alfa_romeo_giulia_sprint_gta.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Arese_Museo_Storico_Alfa_Romeo_1965_Giulia_Sprint_GTA_1.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 4.0; Author: Zairon"
-  },
-  {
-    "Car name": "1965 Shelby Cobra 427",
-    "Manufacturer": "Ford",
-    "Exact model generation": "AC Cobra Mk III (CSX3000)",
-    "Model year": 1965,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1965_shelby_cobra_427.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Shelby_AC_427_Cobra_vl_blue.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Stahlkocher"
-  },
-  {
-    "Car name": "1966 Lamborghini Miura",
-    "Manufacturer": "Lamborghini",
-    "Exact model generation": "P400",
-    "Model year": 1966,
-    "Decade": "1960s",
-    "Country of manufacturer": "Italy",
-    "Vehicle category": "Supercar",
-    "Image filename": "1960s/1966_lamborghini_miura.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/e0/1971_Lamborghini_Miura_P400_SV.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 4.0; Author: Chelsea Jay"
-  },
-  {
-    "Car name": "1966 Toyota 2000GT",
-    "Manufacturer": "Toyota",
-    "Exact model generation": "MF10",
-    "Model year": 1966,
-    "Decade": "1960s",
-    "Country of manufacturer": "Japan",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1966_toyota_2000gt.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/9/97/TOYOTA_2000GT.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Unknown"
-  },
-  {
-    "Car name": "1966 Volvo 144",
-    "Manufacturer": "Volvo",
-    "Exact model generation": "140 Series",
-    "Model year": 1966,
-    "Decade": "1960s",
-    "Country of manufacturer": "Sweden",
-    "Vehicle category": "Sedan",
-    "Image filename": "1960s/1966_volvo_144.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Volvo_145_green_vr_TCE.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Stahlkocher"
-  },
-  {
-    "Car name": "1967 Chevrolet Camaro",
-    "Manufacturer": "Chevrolet",
-    "Exact model generation": "First generation (F-body)",
-    "Model year": 1967,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1967_chevrolet_camaro.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Chevrolet_Camaro_RS_327_1968_%28cropped%29.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA; Author: Unknown"
-  },
-  {
-    "Car name": "1967 Mazda Cosmo Sport",
-    "Manufacturer": "Mazda",
-    "Exact model generation": "Series I (L10A)",
-    "Model year": 1967,
-    "Decade": "1960s",
-    "Country of manufacturer": "Japan",
-    "Vehicle category": "Sports",
-    "Image filename": "1960s/1967_mazda_cosmo_sport.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/f/fd/1968_Mazda_Cosmo-Sport_01.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Mytho88"
-  },
-  {
-    "Car name": "1967 Volkswagen Type 2 Bus",
-    "Manufacturer": "Volkswagen",
-    "Exact model generation": "T2 (Bay Window)",
-    "Model year": 1967,
-    "Decade": "1960s",
-    "Country of manufacturer": "Germany",
-    "Vehicle category": "Van",
-    "Image filename": "1960s/1967_volkswagen_type_2_bus.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/9/9b/0385_Porsche_Diesel_Bus_blau.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Raizy"
-  },
-  {
-    "Car name": "1968 Dodge Charger",
-    "Manufacturer": "Dodge",
-    "Exact model generation": "Second generation (B-body)",
-    "Model year": 1968,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Coupe",
-    "Image filename": "1960s/1968_dodge_charger.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/9/9d/1969_Dodge_Charger_R-T%2C_front_right_%282022_Ellwood_City_Fall_Fest_%26_Car_Cruise%29.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA; Author: Unknown"
-  },
-  {
-    "Car name": "1968 BMW 2002",
-    "Manufacturer": "BMW",
-    "Exact model generation": "02 Series (E10)",
-    "Model year": 1968,
-    "Decade": "1960s",
-    "Country of manufacturer": "Germany",
-    "Vehicle category": "Sedan",
-    "Image filename": "1960s/1968_bmw_2002.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Blackrock%2C_Co_Dublin_-_Ireland_%284799982672%29.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA; Author: Unknown"
-  },
-  {
-    "Car name": "1968 Ford GT40 Mk I",
-    "Manufacturer": "Ford",
-    "Exact model generation": "Mk I Road Car",
-    "Model year": 1968,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Supercar",
-    "Image filename": "1960s/1968_ford_gt40_mk_i.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/a/a6/GT40_at_Goodwood.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY 2.0; Author: edvvc from London, UK"
-  },
-  {
-    "Car name": "1969 Nissan Skyline 2000GT-R",
-    "Manufacturer": "Nissan",
-    "Exact model generation": "PGC10 (Hakosuka)",
-    "Model year": 1969,
-    "Decade": "1960s",
-    "Country of manufacturer": "Japan",
-    "Vehicle category": "Sedan",
-    "Image filename": "1960s/1969_nissan_skyline_2000gt_r.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/7/74/Nissan_Skyline_2000GT-R_%28PGC10%29_1969_JAF_Grand_Prix_winner_replica_front.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 3.0; Author: Morio"
-  },
-  {
-    "Car name": "1969 Plymouth Road Runner",
-    "Manufacturer": "Plymouth",
-    "Exact model generation": "First generation (B-body)",
-    "Model year": 1969,
-    "Decade": "1960s",
-    "Country of manufacturer": "United States",
-    "Vehicle category": "Coupe",
-    "Image filename": "1960s/1969_plymouth_road_runner.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Plymouth_Road_Runner_1969_5312706.jpg",
-    "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 4.0; Author: Ermell"
   },
   {
     "Car name": "1970 Dodge Challenger R/T",
@@ -2439,9 +2153,9 @@
     "Country of manufacturer": "United States",
     "Vehicle category": "Hatchback",
     "Image filename": "2010s/2012_ford_focus_st.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/3/39/1913_Ford_Model_T_and_Standard_Oil_Gas_Pump%2C_Great_Hall%2C_Grove_Park_Inn%2C_Grove_Park-Sunset%2C_Asheville%2C_NC.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/8/8b/2013_Ford_Focus_ST%2C_Front_Right%2C_09-06-2021.jpg",
     "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 2.0; Author: w_lemay"
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Elise240SX"
   },
   {
     "Car name": "2012 Subaru BRZ",
@@ -2452,9 +2166,9 @@
     "Country of manufacturer": "Japan",
     "Vehicle category": "Sports",
     "Image filename": "2010s/2012_subaru_brz.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/5/50/2022_Toyota_GR86_Premium_in_Halo%2C_Front_Right%2C_04-10-2022.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Osaka_Motor_Show_2012_-_Subaru_BRZ_%28ZC6%29.JPG",
     "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA; Author: Unknown"
+    "Image license/copyright information": "CC0; Author: Tokumeigakarinoaoshima"
   },
   {
     "Car name": "2013 Alfa Romeo 4C",
@@ -2556,9 +2270,9 @@
     "Country of manufacturer": "Germany",
     "Vehicle category": "Supercar",
     "Image filename": "2010s/2015_audi_r8_v10_plus.jpg",
-    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/c/c6/2013_Porsche_911_Carrera_4S_%28991%29_%289626546987%29.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Audi_R8_V10_Plus_5.2_FSI_%28Typ_4S%2C_2020%29_%2852566233006%29.jpg",
     "Image source": "Wikimedia Commons",
-    "Image license/copyright information": "CC BY-SA 2.0; Author: David Villarreal Fernández"
+    "Image license/copyright information": "CC BY 2.0; Author: Charles from Port Chester, New York"
   },
   {
     "Car name": "2015 Mazda MX-5 Miata (ND)",
@@ -2594,10 +2308,10 @@
     "Decade": "2010s",
     "Country of manufacturer": "Italy",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2010s/2017_alfa_romeo_giulia_quadrifoglio.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2018_Alfa_Romeo_Giulia_Quadrifoglio%2C_Greenwich%2C_CT_%28front_left%29.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 3.0; Author: Mr.choppers"
   },
   {
     "Car name": "2017 Bugatti Chiron",
@@ -2607,10 +2321,10 @@
     "Decade": "2010s",
     "Country of manufacturer": "France",
     "Vehicle category": "Supercar",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2010s/2017_bugatti_chiron.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/1/18/Bugatti_Chiron_1.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Calreyn88"
   },
   {
     "Car name": "2017 Kia Stinger GT",
@@ -2620,10 +2334,10 @@
     "Decade": "2010s",
     "Country of manufacturer": "South Korea",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2010s/2017_kia_stinger_gt.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/0/03/Kia_Stinger_Facelift_IMG_4468.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Alexander Migl"
   },
   {
     "Car name": "2018 Alpine A110",
@@ -2633,10 +2347,10 @@
     "Decade": "2010s",
     "Country of manufacturer": "France",
     "Vehicle category": "Sports",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2010s/2018_alpine_a110.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Alpine_A110_S_Automesse_Ludwigsburg_2022_1X7A5946.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Alexander Migl"
   },
   {
     "Car name": "2018 Genesis G70",
@@ -2646,10 +2360,10 @@
     "Decade": "2010s",
     "Country of manufacturer": "South Korea",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2010s/2018_genesis_g70.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/a/a6/2022_Genesis_G70_2.0T_Prestige%2C_front_left%2C_09-09-2023.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2019 Hyundai Veloster N",
@@ -2659,10 +2373,10 @@
     "Decade": "2010s",
     "Country of manufacturer": "South Korea",
     "Vehicle category": "Hatchback",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2010s/2019_hyundai_veloster_n.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/b/b7/2019_Hyundai_Veloster_N_front_4.2.18.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Kevauto"
   },
   {
     "Car name": "2020 Land Rover Defender 110",
@@ -2672,10 +2386,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United Kingdom",
     "Vehicle category": "SUV",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2020_land_rover_defender_110.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Land_Rover_Defender_110_D40_SE_L663_Pangea_Green_%281%29_%28cropped%29.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2020 Polestar 2",
@@ -2685,10 +2399,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Sweden",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2020_polestar_2.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Polestar_2_%E2%80%93_f_02042021.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2021 BMW M4 (G82)",
@@ -2698,10 +2412,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Germany",
     "Vehicle category": "Coupe",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2021_bmw_m4_g82.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/e2/2021_BMW_M4_Competition_Automatic_3.0_Front.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Vauxford"
   },
   {
     "Car name": "2021 Genesis GV70",
@@ -2711,10 +2425,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "South Korea",
     "Vehicle category": "SUV",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2021_genesis_gv70.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Genesis_GV70_IAA_2021_1X7A0228.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Alexander Migl"
   },
   {
     "Car name": "2021 Lucid Air",
@@ -2724,10 +2438,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "Luxury",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2021_lucid_air.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/2/26/2022_Lucid_Air_Grand_Touring_in_Zenith_Red%2C_front_left.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2021 Mercedes-Benz S-Class (W223)",
@@ -2737,10 +2451,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Germany",
     "Vehicle category": "Luxury",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2021_mercedes_benz_s_class_w223.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Mercedes-Benz_W223_IMG_3951.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Alexander Migl"
   },
   {
     "Car name": "2021 Ram 1500 TRX",
@@ -2750,10 +2464,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "Pickup",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2021_ram_1500_trx.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/0/02/2023_Ram_1500_TRX_Havoc_Edition_in_Baja_Yellow_Clearcoat%2C_Front_Left%2C_04-30-2023.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Elise240SX"
   },
   {
     "Car name": "2022 Cadillac CT5-V Blackwing",
@@ -2763,10 +2477,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2022_cadillac_ct5_v_blackwing.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/d/df/2022_Cadillac_CT5-V_Blackwing_in_Dark_Emerald_Frost%2C_front_left.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 3.0; Author: Mr.choppers"
   },
   {
     "Car name": "2022 Ferrari 296 GTB",
@@ -2776,10 +2490,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Italy",
     "Vehicle category": "Supercar",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2022_ferrari_296_gtb.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/4/46/2022_Ferrari_296_%28cropped%29.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2022 Ford F-150 Lightning",
@@ -2789,10 +2503,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "Pickup",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2022_ford_f_150_lightning.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/7/76/2022_Ford_F-150_Lightning_Lariat_in_Atlas_Blue_Metallic%2C_Front_Right%2C_08-06-2022.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2022 Hyundai Elantra N",
@@ -2802,10 +2516,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "South Korea",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2022_hyundai_elantra_n.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/8/82/2022_Hyundai_Elantra_N_in_Fiery_Red%2C_Front_Left%2C_04-18-2022.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Elise240SX"
   },
   {
     "Car name": "2022 Nissan Z (RZ34)",
@@ -2815,10 +2529,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Japan",
     "Vehicle category": "Sports",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2022_nissan_z_rz34.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/7/75/Nissan_FAIRLADY_Z_%28Z34%29_Version_ST%2C_2022%2C_left-front.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA; Author: Unknown"
   },
   {
     "Car name": "2022 Subaru WRX (VB)",
@@ -2828,10 +2542,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Japan",
     "Vehicle category": "Sedan",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2022_subaru_wrx_vb.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/c/c2/2022_Subaru_WRX%2C_front_right%2C_06-19-2023.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: MercurySable99"
   },
   {
     "Car name": "2023 Chevrolet Corvette Z06 (C8)",
@@ -2841,10 +2555,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "Sports",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2023_chevrolet_corvette_z06_c8.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/0/00/Chevrolet_Corvette_Z06_%28C8%2C_2022%29_%2852337874897%29.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY 2.0; Author: Charles from Port Chester, New York"
   },
   {
     "Car name": "2023 Dodge Hornet",
@@ -2854,10 +2568,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "SUV",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2023_dodge_hornet.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/c/cf/2023_Dodge_Hornet_GT%2C_front_right%2C_08-05-2023.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: MercurySable99"
   },
   {
     "Car name": "2023 Honda Civic Type R (FL5)",
@@ -2867,10 +2581,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Japan",
     "Vehicle category": "Hatchback",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2023_honda_civic_type_r_fl5.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/a/a6/2024_Honda_Civic_Type_R_FL5_in_Championship_White%2C_front_left%2C_06-30-2024.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Ethan Llamas"
   },
   {
     "Car name": "2023 Lotus Eletre",
@@ -2880,10 +2594,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United Kingdom",
     "Vehicle category": "SUV",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2023_lotus_eletre.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/3/39/Lotus_Eletre_Automesse_Ludwigsburg_2025_DSC_2658.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Alexander Migl"
   },
   {
     "Car name": "2023 Toyota GR Corolla",
@@ -2893,10 +2607,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "Japan",
     "Vehicle category": "Hatchback",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2023_toyota_gr_corolla.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/e/e6/2022_Toyota_GR_Corolla_RZ_%28Japan%29_front_view.png",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY 3.0; Author: 【公式】くるまの話　ROOTS"
   },
   {
     "Car name": "2024 Aston Martin DB12",
@@ -2906,10 +2620,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United Kingdom",
     "Vehicle category": "Luxury",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2024_aston_martin_db12.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Aston_Martin_DB12_1X7A1921.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Alexander-93"
   },
   {
     "Car name": "2024 Ford Mustang Dark Horse",
@@ -2919,10 +2633,10 @@
     "Decade": "2020s",
     "Country of manufacturer": "United States",
     "Vehicle category": "Sports",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2024_ford_mustang_dark_horse.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/8/87/2023_Denver_Auto_Show_Ford_Mustang_Dark_Horse_front.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC0; Author: Corqe"
   },
   {
     "Car name": "2024 Hyundai Ioniq 5 N",
@@ -2932,9 +2646,9 @@
     "Decade": "2020s",
     "Country of manufacturer": "South Korea",
     "Vehicle category": "SUV",
-    "Image filename": "",
-    "Original image URL": "",
-    "Image source": "Automotive Archive",
-    "Image license/copyright information": ""
+    "Image filename": "2020s/2024_hyundai_ioniq_5_n.jpg",
+    "Original image URL": "https://upload.wikimedia.org/wikipedia/commons/f/f5/2024_Hyundai_Ioniq_5_N_AWD_in_Performance_Blue%2C_front_right%2C_06-16-2024.jpg",
+    "Image source": "Wikimedia Commons",
+    "Image license/copyright information": "CC BY-SA 4.0; Author: Ethan Llamas"
   }
 ]

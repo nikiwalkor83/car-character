@@ -423,6 +423,9 @@ window.selectedManufacturer = null;
     const targetIso3 = (countryObj.iso3 || "").toUpperCase().trim();
 
     return window.CARS_METADATA.filter(car => {
+      const yr = parseInt(car["Model year"], 10);
+      if (isNaN(yr) || yr < 1970) return false;
+
       const carCountry = (car["Country of manufacturer"] || "").toLowerCase().trim();
       if (carCountry === targetName) return true;
       if (targetName.includes(carCountry) || carCountry.includes(targetName)) return true;
