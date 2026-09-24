@@ -1,0 +1,169 @@
+---
+title: ""
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<div class="story-hero" style="min-height: 40vh; padding: 5rem 1.5rem 3rem;">
+  <div class="story-hero-content">
+    <div class="story-eyebrow">Dimension 03 &bull; Acoustics &amp; Powertrains &bull; 1970 &mdash; 2024</div>
+    <h1 class="story-title" style="font-size: clamp(2.4rem, 5vw, 4rem);">What happened to mechanical variety?</h1>
+    <div class="story-subtitles" style="max-width: 760px; margin: 1.5rem auto 0;">
+      <p class="story-lead">
+        A car's character wasn't only visual—it was acoustic. For over a century, a vehicle's voice was the direct physical byproduct of cylinder count, firing intervals, displacement, and valvetrain architecture.
+      </p>
+      <p class="story-question" style="margin-top: 0.75rem;">
+        Listen to real internal combustion idle signatures and explore how powertrain diversity evolved across 29,880 cataloged models.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="story-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 6rem;">
+
+  <!-- SECTION 1: AUDIO SPECIMEN LAB -->
+  <div class="sound-section-block" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Acoustic Archeology &bull; Zenodo Repository</div>
+        <h3 class="viz-heading">Curated Petrol Idle Specimens</h3>
+        <p class="viz-subheading">
+          High-fidelity field recordings captured in an underground garage acoustic test rig. Click any track to inspect the waveform and compare the rhythm and pressure pulses of different cylinder arrangements.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6 Audio Player Cards Grid -->
+    <div class="sound-players-grid" id="sound-players-grid">
+      <!-- Rendered via JavaScript -->
+    </div>
+  </div>
+
+  <!-- SECTION 2: POWERTRAIN CONFIGURATION EVOLUTION -->
+  <div class="powertrain-block" style="margin-bottom: 3.5rem;">
+    <div class="powertrain-header-block">
+      <div class="section-badge">Mechanical Evolution &bull; 29,880 Models</div>
+      <h3 class="powertrain-title">The Mechanical Explanation</h3>
+      <p class="powertrain-sub">
+        A car's sound signature is not decorative; it is the physical result of cylinder architecture, displacement, and breathing method. Historical specification records show how mechanical diversity converged toward standardized modular configurations.
+      </p>
+    </div>
+
+    <!-- Engine Configuration Stacked Timeline -->
+    <div class="editorial-subheading" style="color: var(--text-ink); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.75rem; font-family: var(--font-serif);">
+      Engine Architecture Distribution by Decade (1970 &ndash; 2024)
+    </div>
+    <div class="engine-cfg-chart" id="powertrain-chart-container">
+      <!-- Rendered dynamically from engines dataset -->
+    </div>
+
+    <!-- Engine Legend -->
+    <div class="engine-legend" id="engine-legend-container">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Displacement Trend & Downsizing Stats -->
+    <div class="editorial-subheading" style="color: var(--text-ink); font-size: 1.05rem; font-weight: 600; margin: 2.5rem 0 0.5rem; font-family: var(--font-serif);">
+      Average Engine Displacement (Liters) by Decade
+    </div>
+    <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0 0 1rem; line-height: 1.6;">
+      As turbocharging and electronic direct injection replaced natural displacement, large-displacement V8 and 6-cylinder blocks were replaced across the industry by standardized 2.0-liter turbocharged inline-4s.
+    </p>
+    <div class="disp-stats-grid">
+      <div class="disp-stat-card">
+        <div class="disp-decade">1970s</div>
+        <div class="disp-number">2.79<span class="disp-unit">L</span></div>
+        <div class="disp-note">V8s represented 20% of catalog</div>
+      </div>
+      <div class="disp-stat-card">
+        <div class="disp-decade">1980s</div>
+        <div class="disp-number">2.19<span class="disp-unit">L</span></div>
+        <div class="disp-note">Emissions standards take hold</div>
+      </div>
+      <div class="disp-stat-card">
+        <div class="disp-decade">1990s</div>
+        <div class="disp-number">2.30<span class="disp-unit">L</span></div>
+        <div class="disp-note">Multi-valve DOHC expansion</div>
+      </div>
+      <div class="disp-stat-card">
+        <div class="disp-decade">2000s</div>
+        <div class="disp-number">2.42<span class="disp-unit">L</span></div>
+        <div class="disp-note">Peak naturally aspirated era</div>
+      </div>
+      <div class="disp-stat-card">
+        <div class="disp-decade">2010s</div>
+        <div class="disp-number">2.31<span class="disp-unit">L</span></div>
+        <div class="disp-note">Rapid turbo downsizing begins</div>
+      </div>
+      <div class="disp-stat-card">
+        <div class="disp-decade">2020s</div>
+        <div class="disp-number">2.30<span class="disp-unit">L</span></div>
+        <div class="disp-note">Inline-3 + EV surges to 31%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: THE ELECTRIFICATION TRANSITION -->
+  <div class="modern-era-card" style="margin-bottom: 3.5rem;">
+    <div class="era-tag">The Present &bull; Transition to Electrification</div>
+    <h3 class="era-heading">The Changing Source of Vehicle Sound</h3>
+    <p class="era-text">
+      As vehicles transition toward hybrid and battery-electric drivetrains, automotive sound is experiencing its most fundamental acoustic shift in over a century. Electrification does not simply silence a vehicle; it shifts the physical origin of sound from mechanical combustion pressure waves to electromagnetic stator whine, high-frequency inverter switching, and road surface tire rumble.
+    </p>
+    <p class="era-subtext">
+      <em>Methodological note:</em> The Zenodo acoustic research team explicitly excluded electric vehicles during their idle classification analysis to focus purely on internal combustion acoustics.
+    </p>
+  </div>
+
+  <!-- SECTION 4: DATA CITATIONS & TRANSPARENCY -->
+  <div class="data-transparency-card">
+    <details class="transparency-details">
+      <summary class="transparency-summary">
+        <span>About the Audio &amp; Powertrain Data</span>
+        <span class="summary-icon">&plus;</span>
+      </summary>
+      <div class="transparency-body">
+        <div class="transparency-grid">
+          <div class="transparency-item">
+            <h4>Audio Research Source</h4>
+            <p><strong>Title:</strong> Sounds of Vehicle Internal Combustion Engines</p>
+            <p><strong>Authors:</strong> Dejan Ćirić and Marko Milivojčević (University of Niš &amp; School of Electrical and Computer Engineering, Serbia)</p>
+            <p><strong>Repository DOI:</strong> <a href="https://zenodo.org/records/18777405" target="_blank" rel="noopener">10.5281/zenodo.18777405</a></p>
+            <p><strong>License:</strong> Creative Commons Attribution 4.0 International (CC BY 4.0)</p>
+            <p class="small-note">The recordings were captured with calibrated condenser microphones during stationary idle cycles. Waveform envelopes were extracted and normalized for this web presentation.</p>
+          </div>
+          <div class="transparency-item">
+            <h4>Powertrain Specifications Source</h4>
+            <p><strong>Database:</strong> Historical Engine Specification Archive (29,880 production passenger models, 1970–2024)</p>
+            <p><strong>Scope:</strong> Cylinders, configuration, displacement, turbocharging, and drivetrain architecture.</p>
+            <p class="small-note"><strong>Distinction:</strong> Audio recordings are anonymous empirical acoustic specimens from the Zenodo dataset; historical powertrain charts are computed from the complete specifications archive.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- SECTION 5: FINAL NAVIGATION TO REVISIT STORY OR HOME -->
+  <div class="editorial-nav-box" style="margin-top: 4rem; text-align: center; padding: 3rem 2rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
+    <div class="section-badge" style="margin-bottom: 0.8rem;">Synthesis</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin: 0 0 1rem; color: var(--text-ink);">Three dimensions of change.</h3>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.75rem; font-size: 0.95rem; line-height: 1.6;">
+      Color narrowed into greyscale. Shapes coalesced around high-riding crossover silhouettes. Powertrains converged toward turbocharged four-cylinders and silent electric motors.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="story.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 0.85rem 1.75rem;">
+        <span>READ THE COMPLETE STORY</span>
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+      <a href="color.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 0.85rem 1.75rem; background: transparent; color: var(--text-ink); border: 1px solid var(--border-rule);">
+        <span>EXPLORE COLOR</span>
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+```
+
+<script src="scripts/sound-interactive.js"></script>

@@ -1,0 +1,282 @@
+---
+title: ""
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<div class="story-hero" style="min-height: 40vh; padding: 5rem 1.5rem 3rem;">
+  <div class="story-hero-content">
+    <div class="story-eyebrow">Dimension 02 &bull; Silhouette &amp; Proportions &bull; 1970 &mdash; 2024</div>
+    <h1 class="story-title" style="font-size: clamp(2.4rem, 5vw, 4rem);">Did the shapes become more alike?</h1>
+    <div class="story-subtitles" style="max-width: 760px; margin: 1.5rem auto 0;">
+      <p class="story-lead">
+        Color is only one dimension of character. Even painted in the same shade, cars once occupied completely different architectural archetypes: long-hooded sports coupés, vertical station wagons, and sharp notchback sedans.
+      </p>
+      <p class="story-question" style="margin-top: 0.75rem;">
+        Explore 16,469 classified production vehicles to see how body styles shifted and how individual dimensions evolved.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="story-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 6rem;">
+
+  <!-- SECTION 1: VISUAL SILHOUETTE EVOLUTION -->
+  <div class="silhouette-section" style="margin: 2rem 0 3.5rem;">
+    <div class="silhouette-header-block">
+      <div class="section-badge">Visual Profile Comparison &bull; 1970s &mdash; 2020s</div>
+      <h3 class="silhouette-heading">Six decades of silhouettes</h3>
+      <p class="silhouette-sub">
+        Viewed in direct side profile, a vehicle's silhouette exposes its structural philosophy: hood length, window-to-body proportion, roof arc, and overhangs.
+      </p>
+    </div>
+
+    <div class="silhouette-grid">
+      <!-- 1970s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">1970s</span>
+          <span class="sil-year-badge">1971 &bull; ECONOMY</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="1970s/1971_volkswagen_beetle.jpg" alt="1971 Volkswagen Beetle silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Volkswagen Beetle</h4>
+          <p class="sil-profile-desc">Curved rear-engine teardrop silhouette with pronounced rounded fenders, tall upright cabin, and minimal forward engine hood.</p>
+        </div>
+      </div>
+
+      <!-- 1980s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">1980s</span>
+          <span class="sil-year-badge">1980 &bull; ECONOMY</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="1980s/1980_toyota_corolla.jpg" alt="1980 Toyota Corolla silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Toyota Corolla</h4>
+          <p class="sil-profile-desc">Crisp geometric 3-box notchback architecture with planar horizontal beltline, flat hood, and upright rectangular passenger glasshouse.</p>
+        </div>
+      </div>
+
+      <!-- 1990s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">1990s</span>
+          <span class="sil-year-badge">1995 &bull; STATION WAGON</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="1990s/1995_volvo_850.jpg" alt="1995 Volvo 850 silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Volvo 850 Estate</h4>
+          <p class="sil-profile-desc">Iconic vertical 90-degree tailgate and extended roofline engineered for maximum volumetric cargo efficiency and 360-degree driver visibility.</p>
+        </div>
+      </div>
+
+      <!-- 2000s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">2000s</span>
+          <span class="sil-year-badge">2003 &bull; HYBRID</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="2000s/2003_toyota_prius.jpg" alt="2003 Toyota Prius silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Toyota Prius</h4>
+          <p class="sil-profile-desc">Pioneering aero-derived mono-volume wedge with raked windshield continuous into the hood line, ending in a sharp aerodynamic Kammback rear lip.</p>
+        </div>
+      </div>
+
+      <!-- 2010s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">2010s</span>
+          <span class="sil-year-badge">2016 &bull; LUXURY SUV</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="2010s/2016_volvo_xc90.jpg" alt="2016 Volvo XC90 silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Volvo XC90</h4>
+          <p class="sil-profile-desc">High-beltline executive crossover stance featuring elevated ground clearance, bluff upright front prow, and thick protective roof pillars.</p>
+        </div>
+      </div>
+
+      <!-- 2020s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">2020s</span>
+          <span class="sil-year-badge">2021 &bull; ELECTRIC CUV</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="2020s/2021_hyundai_ioniq_5.jpg" alt="2021 Hyundai Ioniq 5 silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Hyundai Ioniq 5</h4>
+          <p class="sil-profile-desc">Modern EV skateboard architecture pushing axles out to a limousine-like 3,000 mm wheelbase, minimal front/rear overhangs, and 45-degree C-pillar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: MACRO POPULARITY OF BODY STYLES -->
+  <div class="bodystyle-viz-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Macro Fleet Architecture &bull; 16,469 Models</div>
+        <h3 class="viz-heading">The Shift in Body Style Popularity</h3>
+        <p class="viz-subheading">
+          Decadal composition of production models across eight authentic automotive body categories (1970&ndash;2024). Click any body type button below to isolate its physical dimensions, market share, and proportions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Body Style Selector Bar -->
+    <div class="bodystyle-selector-bar" id="bs-selector-bar"></div>
+    <div class="bodystyle-legend" id="bs-legend-container"></div>
+    <div class="bodystyle-stream" id="bs-stream-container"></div>
+  </div>
+
+  <!-- SECTION 3: BODY-SPECIFIC PREVALENCE -->
+  <div class="dim-explorer-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Isolated Market Trajectory</div>
+        <h3 class="viz-heading" id="share-heading">How common was this body style?</h3>
+        <p class="viz-subheading" id="share-subheading">
+          Annual percentage share of vehicle introductions and total model counts from 1970 to 2024.
+        </p>
+      </div>
+    </div>
+
+    <div class="dim-readout-strip" id="share-hover-readout">
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
+        <span class="dim-readout-val">Inspect annual production share and recorded model count</span>
+        <span class="dim-readout-sample">[1970 &mdash; 2024]</span>
+      </div>
+    </div>
+
+    <div class="dim-chart-svg-container" id="share-svg-container" style="min-height: 280px;"></div>
+    <div class="share-stats-row" id="share-stats-container"></div>
+  </div>
+
+  <!-- SECTION 4: BODY-SPECIFIC PHYSICAL DIMENSIONS -->
+  <div class="dim-explorer-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Isolated Physical Dimensions</div>
+        <h3 class="viz-heading" id="dim-heading">Exterior dimensions (1970 &mdash; 2024)</h3>
+        <p class="viz-subheading" id="dim-subheading">
+          Median exterior dimensions derived exclusively from selected body type production models.
+        </p>
+      </div>
+    </div>
+
+    <div class="dim-controls-row">
+      <div class="dim-btn-group">
+        <button class="dim-tab-btn is-active" id="dim-btn-all" onclick="switchDimension('all')">All Dimensions</button>
+        <button class="dim-tab-btn" id="dim-btn-length" onclick="switchDimension('length')">Length</button>
+        <button class="dim-tab-btn" id="dim-btn-width" onclick="switchDimension('width')">Width</button>
+        <button class="dim-tab-btn" id="dim-btn-height" onclick="switchDimension('height')">Height</button>
+        <button class="dim-tab-btn" id="dim-btn-wheelbase" onclick="switchDimension('wheelbase')">Wheelbase</button>
+      </div>
+      <div class="unit-toggle-wrap">
+        <span style="font-size:0.75rem; color:#64748b; font-family:ui-monospace, monospace;">UNIT:</span>
+        <button class="unit-btn is-active" id="unit-mm" onclick="toggleUnit('mm')">mm</button>
+        <button class="unit-btn" id="unit-in" onclick="toggleUnit('in')">inches</button>
+      </div>
+    </div>
+
+    <div class="dim-readout-strip" id="dim-hover-readout">
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
+        <span class="dim-readout-val">Hover over any year to inspect isolated body type dimensions</span>
+        <span class="dim-readout-sample">[1970 &mdash; 2024]</span>
+      </div>
+    </div>
+
+    <div class="dim-chart-svg-container" id="dim-svg-container"></div>
+    <div class="gap-note">
+      <span>&lowast; Continuous Fleet Metric: Based on vehicles actively produced during each calendar year across their generation lifespan.</span>
+    </div>
+
+    <div class="dim-stats-summary-grid" id="dim-stats-summary-grid"></div>
+  </div>
+
+  <!-- SECTION 5: PROPORTIONS OVER TIME -->
+  <div class="diversity-spread-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Proportion Analysis</div>
+        <h3 class="viz-heading" id="prop-heading">How proportions changed</h3>
+        <p class="viz-subheading" id="prop-subheading">
+          Size is not shape. Tracking the profile stance ratio (Length &divide; Height) and packaging wheelbase ratio (Wheelbase &divide; Length) specifically for this body shape over time.
+        </p>
+      </div>
+    </div>
+
+    <div class="dispersion-legend">
+      <div class="disp-legend-item">
+        <span class="disp-legend-swatch" style="background:#38bdf8;"></span>
+        <span>Profile Stance Ratio (Length &divide; Height &bull; Left Axis)</span>
+      </div>
+      <div class="disp-legend-item">
+        <span class="disp-legend-swatch" style="background:#f59e0b; border-bottom: 2px dashed #f59e0b;"></span>
+        <span>Wheelbase Packaging Efficiency (Wheelbase &divide; Length &bull; Right Axis)</span>
+      </div>
+    </div>
+
+    <div class="dispersion-chart-container" id="prop-svg-container"></div>
+    <div class="nuance-findings-grid" id="prop-findings-grid"></div>
+  </div>
+
+  <!-- SECTION 6: DATA TRANSPARENCY -->
+  <div class="data-transparency-card">
+    <details class="transparency-details">
+      <summary class="transparency-summary">
+        <span>About the Shape &amp; Dimensions Dataset</span>
+        <span class="summary-icon">&plus;</span>
+      </summary>
+      <div class="transparency-body">
+        <div class="transparency-grid">
+          <div class="transparency-item">
+            <h4>Dataset Origin &amp; Coverage</h4>
+            <p><strong>Primary Source:</strong> Historical Automotive Specification Archive &amp; VIN Catalogue.</p>
+            <p><strong>Sample Size:</strong> 16,469 classified production passenger vehicles (1970–2024).</p>
+            <p><strong>Variables Tracked:</strong> Overall Length, Width, Height, Wheelbase, Curb Weight, Body Class, and Generation Production Spans.</p>
+          </div>
+          <div class="transparency-item">
+            <h4>Measurement Methodology</h4>
+            <p>Dimensions represent production model medians in millimeters. All figures are strictly computed within the active body style category so that growth in SUVs does not falsely inflate sedan measurements.</p>
+            <p class="small-note">Years with fewer than two classified production introductions are preserved with visual chart gaps rather than interpolated estimates.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- NAVIGATION CALLOUT TO NEXT CHAPTER -->
+  <div class="editorial-nav-box" style="margin-top: 4rem; text-align: center; padding: 3rem 2rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
+    <div class="section-badge" style="margin-bottom: 0.8rem;">Next Dimension</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin: 0 0 1rem; color: var(--text-ink);">What happened to mechanical variety?</h3>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.75rem; font-size: 0.95rem; line-height: 1.6;">
+      Beyond what we see, a car's identity lived in what we heard: cylinders, aspiration, displacement, and mechanical sound.
+    </p>
+    <a href="sound.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 0.85rem 2rem;">
+      <span>EXPLORE SOUND</span>
+      <span class="cta-arrow">&rarr;</span>
+    </a>
+  </div>
+
+</div>
+```
+
+<script src="data/shape_data.js"></script>
+<script src="scripts/shape-interactive.js"></script>

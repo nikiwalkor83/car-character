@@ -3,6 +3,7 @@ project:
   resources:
     - "audio/**"
     - "data/**"
+    - "scripts/**"
     - "images/**"
     - "1960s/**"
     - "1970s/**"
@@ -21,6 +22,12 @@ website:
         text: Home
       - href: story.qmd
         text: Story
+      - href: color.qmd
+        text: Color
+      - href: shape.qmd
+        text: Shape
+      - href: sound.qmd
+        text: Sound
       - href: exploration.qmd
         text: Exploration
       - href: about.qmd

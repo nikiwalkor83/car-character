@@ -6,14 +6,43 @@ toc: false
 
 ```{=html}
 <div class="seven-decades-section">
-  <!-- MAIN HEADING -->
+  <!-- MAIN HERO HEADING -->
   <div class="seven-decades-header">
-    <div class="hero-eyebrow">Motoring Archive &bull; 1970 &mdash; 2024</div>
-    <h1 class="timeline-headline">Cars looked different.</h1>
-    <p class="timeline-subtitle">&ldquo;They didn't always come from the same design template.&rdquo;</p>
+    <div class="hero-eyebrow">An Empirical Motoring Investigation &bull; 1970 &mdash; 2024</div>
+    <h1 class="timeline-headline" style="font-size: clamp(2.4rem, 5.5vw, 4.4rem); letter-spacing: -0.02em; text-transform: uppercase;">Where did car character go?</h1>
+    <p class="timeline-subtitle" style="max-width: 680px; margin: 1rem auto 0; font-size: 1.15rem; color: var(--text-muted); line-height: 1.6;">
+      Cars used to feel different. But what does &ldquo;character&rdquo; actually mean?
+    </p>
   </div>
 
-  <!-- SIX EQUAL VERTICAL PANELS -->
+  <!-- THE THREE ENTHUSIAST CLAIMS -->
+  <div style="max-width: 780px; margin: 0 auto 3rem; text-align: center; padding: 0 1rem;">
+    <p style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-ink); line-height: 1.7; margin-bottom: 1.25rem;">
+      When drivers argue that modern cars lack personality, they usually point to three complaints:
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
+      <div style="background: var(--bg-cream); border: 1px solid var(--border-rule); padding: 1.25rem 1rem; border-radius: 2px;">
+        <span style="display:block; font-family: ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 0.35rem;">CLAIM 01</span>
+        <strong style="color: var(--text-ink); font-size: 1rem;">&ldquo;They are all grey.&rdquo;</strong>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0 0;">Did automotive paint palettes actually shrink?</p>
+      </div>
+      <div style="background: var(--bg-cream); border: 1px solid var(--border-rule); padding: 1.25rem 1rem; border-radius: 2px;">
+        <span style="display:block; font-family: ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 0.35rem;">CLAIM 02</span>
+        <strong style="color: var(--text-ink); font-size: 1rem;">&ldquo;They all look the same.&rdquo;</strong>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0 0;">Did vehicle body shapes and silhouettes converge?</p>
+      </div>
+      <div style="background: var(--bg-cream); border: 1px solid var(--border-rule); padding: 1.25rem 1rem; border-radius: 2px;">
+        <span style="display:block; font-family: ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 0.35rem;">CLAIM 03</span>
+        <strong style="color: var(--text-ink); font-size: 1rem;">&ldquo;They sound like appliances.&rdquo;</strong>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0 0;">What happened to mechanical variety and acoustics?</p>
+      </div>
+    </div>
+    <p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic;">
+      A feeling isn't data. We gathered 55 years of paint popularity, 16,469 classified body dimensions, and 29,880 powertrain records to measure what changed.
+    </p>
+  </div>
+
+  <!-- SIX EQUAL VERTICAL PANELS: PHOTOGRAPHIC PROGRESSION -->
   <div class="seven-decades-container">
     <div class="timeline-horizon-line"></div>
     <div class="seven-decades-grid">
@@ -135,155 +164,143 @@ toc: false
     </div>
   </div>
 
-  <!-- OUTRO STATEMENT & INVESTIGATION QUESTION -->
-  <div class="seven-decades-outro">
-    <div class="outro-statement">&ldquo;Six decades. Six different ideas of what a car should look like.&rdquo;</div>
-    <div class="outro-transition-box">
-      <div class="transition-question">Did cars actually become more similar?</div>
-      <p class="transition-subtext">Look at the data across forty years of design.</p>
-    </div>
+  <!-- MAIN CALL TO ACTION -->
+  <div style="text-align: center; margin: 3rem 0 5rem;">
+    <a href="story.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 1rem 2.5rem; font-size: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
+      <span>EXPLORE THE STORY</span>
+      <span class="cta-arrow">&rarr;</span>
+    </a>
   </div>
 </div>
 
+<!-- CASE STUDY: FORTY YEARS (1980 VS 2024) -->
 <div class="comparison-section">
-<div class="comparison-header">
-  <div class="comparison-eyebrow">Case Study &bull; Forty Years</div>
-  <h2 class="comparison-title">Forty years of change: 1980 and 2024</h2>
-  <p class="comparison-subtitle">Different shapes. Different proportions. Different priorities.</p>
-</div>
+  <div class="comparison-header">
+    <div class="comparison-eyebrow">Direct Benchmark Case Study</div>
+    <h2 class="comparison-title">Forty Years of Shift: 1980 and 2024</h2>
+    <p class="comparison-subtitle">Identical street length. Inverted design priorities.</p>
+  </div>
 
-<div class="comparison-stage">
-  <!-- Older Car: Volvo 244 -->
-  <div class="car-card older-car">
-    <div class="car-media">
-      <img src="images/1980s.jpg" alt="1980 Volvo 244" class="car-photo">
-      <span class="era-tag">1980</span>
+  <div class="comparison-stage">
+    <!-- Older Car: Volvo 244 -->
+    <div class="car-card older-car">
+      <div class="car-media">
+        <img src="images/1980s.jpg" alt="1980 Volvo 244" class="car-photo">
+        <span class="era-tag">1980</span>
+      </div>
+      <div class="car-meta">
+        <h3 class="car-name">Volvo 244</h3>
+        <div class="car-category">3-Box Compact Executive Sedan &bull; Sweden</div>
+        
+        <dl class="car-specs-grid">
+          <div class="spec-row">
+            <dt>Length</dt>
+            <dd>188.2 in <span class="spec-metric">(4,780 mm)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Width</dt>
+            <dd>67.3 in <span class="spec-metric">(1,710 mm)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Height</dt>
+            <dd>56.3 in <span class="spec-metric">(1,430 mm)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Curb Weight</dt>
+            <dd>2,756 lb <span class="spec-metric">(1,250 kg)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Powertrain</dt>
+            <dd>2.0L Inline-4 Gas &bull; 90 hp</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Drivetrain</dt>
+            <dd>Rear-Wheel Drive (RWD)</dd>
+          </div>
+        </dl>
+      </div>
     </div>
-    <div class="car-meta">
-      <h3 class="car-name">Volvo 244</h3>
-      <div class="car-category">3-Box Compact Executive Sedan &bull; Sweden</div>
-      
-      <dl class="car-specs-grid">
-        <div class="spec-row">
-          <dt>Length</dt>
-          <dd>188.2 in <span class="spec-metric">(4,780 mm)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Width</dt>
-          <dd>67.3 in <span class="spec-metric">(1,710 mm)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Height</dt>
-          <dd>56.3 in <span class="spec-metric">(1,430 mm)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Curb Weight</dt>
-          <dd>2,756 lb <span class="spec-metric">(1,250 kg)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Powertrain</dt>
-          <dd>2.0L Inline-4 Gas &bull; 90 hp</dd>
-        </div>
-        <div class="spec-row">
-          <dt>Drivetrain</dt>
-          <dd>Rear-Wheel Drive (RWD)</dd>
-        </div>
-      </dl>
+
+    <!-- Divider / Time Bridge -->
+    <div class="comparison-bridge">
+      <div class="bridge-line"></div>
+      <div class="bridge-badge">VS</div>
+      <div class="bridge-line"></div>
+    </div>
+
+    <!-- Modern Car: Tesla Model Y -->
+    <div class="car-card modern-car">
+      <div class="car-media">
+        <img src="images/2020s.jpg" alt="2020s Tesla Model Y" class="car-photo">
+        <span class="era-tag">2024</span>
+      </div>
+      <div class="car-meta">
+        <h3 class="car-name">Tesla Model Y</h3>
+        <div class="car-category">Fastback Crossover SUV &bull; United States</div>
+        
+        <dl class="car-specs-grid">
+          <div class="spec-row">
+            <dt>Length</dt>
+            <dd>188.0 in <span class="spec-metric">(4,775 mm)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Width</dt>
+            <dd>78.0 in <span class="spec-metric">(1,981 mm)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Height</dt>
+            <dd>63.9 in <span class="spec-metric">(1,623 mm)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Curb Weight</dt>
+            <dd>4,403 lb <span class="spec-metric">(1,997 kg)</span></dd>
+          </div>
+          <div class="spec-row">
+            <dt>Powertrain</dt>
+            <dd>Dual Electric Motors &bull; 514 hp</dd>
+          </div>
+          <div class="spec-row">
+            <dt>Drivetrain</dt>
+            <dd>All-Wheel Drive (AWD)</dd>
+          </div>
+        </dl>
+      </div>
     </div>
   </div>
 
-  <!-- Divider / Time Bridge -->
-  <div class="comparison-bridge">
-    <div class="bridge-line"></div>
-    <div class="bridge-badge">VS</div>
-    <div class="bridge-line"></div>
-  </div>
-
-  <!-- Modern Car: Tesla Model Y -->
-  <div class="car-card modern-car">
-    <div class="car-media">
-      <img src="images/2020s.jpg" alt="2020s Tesla Model Y" class="car-photo">
-      <span class="era-tag">2024</span>
-    </div>
-    <div class="car-meta">
-      <h3 class="car-name">Tesla Model Y</h3>
-      <div class="car-category">Fastback Crossover SUV &bull; United States</div>
-      
-      <dl class="car-specs-grid">
-        <div class="spec-row">
-          <dt>Length</dt>
-          <dd>188.0 in <span class="spec-metric">(4,775 mm)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Width</dt>
-          <dd>78.0 in <span class="spec-metric">(1,981 mm)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Height</dt>
-          <dd>63.9 in <span class="spec-metric">(1,623 mm)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Curb Weight</dt>
-          <dd>4,403 lb <span class="spec-metric">(1,997 kg)</span></dd>
-        </div>
-        <div class="spec-row">
-          <dt>Powertrain</dt>
-          <dd>Dual Electric Motors &bull; 514 hp</dd>
-        </div>
-        <div class="spec-row">
-          <dt>Drivetrain</dt>
-          <dd>All-Wheel Drive (AWD)</dd>
-        </div>
-      </dl>
+  <!-- Delta / Data Insight Strip -->
+  <div class="comparison-delta-strip">
+    <div class="delta-header">MEASURABLE SHIFT (1980 &rarr; 2024)</div>
+    <div class="delta-grid">
+      <div class="delta-item">
+        <span class="delta-value">&minus;0.2 in</span>
+        <span class="delta-label">Length (Same Footprint)</span>
+      </div>
+      <div class="delta-item highlight">
+        <span class="delta-value">+10.7 in</span>
+        <span class="delta-label">Width (+16% wider)</span>
+      </div>
+      <div class="delta-item highlight">
+        <span class="delta-value">+7.6 in</span>
+        <span class="delta-label">Height (+14% taller)</span>
+      </div>
+      <div class="delta-item highlight">
+        <span class="delta-value">+1,647 lb</span>
+        <span class="delta-label">Weight (+60% heavier)</span>
+      </div>
+      <div class="delta-item highlight">
+        <span class="delta-value">+424 hp</span>
+        <span class="delta-label">Power (5.7&times; output)</span>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Delta / Data Insight Strip -->
-<div class="comparison-delta-strip">
-  <div class="delta-header">MEASURABLE SHIFT (1980 &rarr; 2024)</div>
-  <div class="delta-grid">
-    <div class="delta-item">
-      <span class="delta-value">&minus;0.2 in</span>
-      <span class="delta-label">Length (Same Footprint)</span>
-    </div>
-    <div class="delta-item highlight">
-      <span class="delta-value">+10.7 in</span>
-      <span class="delta-label">Width (+16% wider)</span>
-    </div>
-    <div class="delta-item highlight">
-      <span class="delta-value">+7.6 in</span>
-      <span class="delta-label">Height (+14% taller)</span>
-    </div>
-    <div class="delta-item highlight">
-      <span class="delta-value">+1,647 lb</span>
-      <span class="delta-label">Weight (+60% heavier)</span>
-    </div>
-    <div class="delta-item highlight">
-      <span class="delta-value">+424 hp</span>
-      <span class="delta-label">Power (5.7&times; output)</span>
-    </div>
+  <!-- Navigation CTA Box -->
+  <div style="text-align: center; margin: 3.5rem 0 1rem;">
+    <a href="story.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 0.95rem 2.25rem;">
+      <span>EXPLORE THE STORY</span>
+      <span class="cta-arrow">&rarr;</span>
+    </a>
   </div>
 </div>
-
-<!-- Editorial Observation & Narrative -->
-<div class="comparison-narrative">
-  <h3 class="narrative-heading">On paper, they’re different too.</h3>
-  <div class="narrative-body">
-    <p>
-      In 1980, the Volvo 244 embodied traditional European packaging: sharp, three-box geometry, thin steel pillars, an upright greenhouse, and an accessible four-cylinder engine driving the rear wheels. Its identity was carved out of simple right angles and upright glass built for 360-degree road visibility.
-    </p>
-    <p>
-      Forty years later, the Tesla Model Y occupies almost the exact same street length, but every design priority has inverted. Massive safety crumble zones, thick reinforced rollover pillars, floor-mounted battery packs, and relentless wind-tunnel tuning produced a tall, cab-forward, seamless aerodynamic teardrop.
-    </p>
-    <p class="narrative-question">
-      <em>But is this just nostalgia — or did cars actually become more similar?</em>
-    </p>
-    <div style="margin-top: 1.5rem;">
-      <a href="story.html" class="palette-cta-btn">Read the story &rarr;</a>
-    </div>
-  </div>
-</div>
-</div>
-
 ```

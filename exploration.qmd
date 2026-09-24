@@ -55,6 +55,8 @@ toc: false
         <span id="crumb-country" class="breadcrumb-item is-current">Country</span>
         <span id="crumb-mfg-sep" class="breadcrumb-sep" style="display:none;">/</span>
         <span id="crumb-mfg" class="breadcrumb-item is-current" style="display:none;">Automaker</span>
+        <span id="crumb-year-sep" class="breadcrumb-sep" style="display:none;">/</span>
+        <span id="crumb-year" class="breadcrumb-item is-current" style="display:none;">Year</span>
       </div>
     </div>
 
@@ -88,6 +90,18 @@ toc: false
 
       <!-- STAGE A: AUTOMAKERS LIST -->
       <div id="automakers-panel" class="exploration-panel is-active">
+        <!-- National Chronology Invite Card -->
+        <div id="country-timeline-invite-box" class="country-timeline-invite">
+          <div class="timeline-invite-info">
+            <span class="invite-eyebrow">Chronological Overview</span>
+            <h3 id="timeline-invite-title" class="invite-title">Explore Production Across Time</h3>
+            <p id="timeline-invite-desc" class="invite-desc">Trace the evolution of all vehicles recorded for this country.</p>
+          </div>
+          <button id="btn-explore-timeline" class="btn-explore-timeline">
+            <span>Explore Timeline</span> &rarr;
+          </button>
+        </div>
+
         <div class="section-head">
           <div class="section-eyebrow">National Manufacturers</div>
           <h2 class="section-title">Manufacturers</h2>
@@ -101,14 +115,48 @@ toc: false
         </div>
       </div>
 
-      <!-- STAGE B: MANUFACTURER SPECIMEN VEHICLES -->
+      <!-- STAGE B: SPECIMEN VEHICLES & YEAR / TIMELINE EXPLORATION -->
       <div id="models-panel" class="exploration-panel is-hidden">
-        <div class="section-head">
-          <div id="models-eyebrow" class="section-eyebrow">Manufacturer Archive</div>
-          <h2 id="models-title" class="section-title">Models</h2>
-          <p id="models-desc" class="section-desc">
-            Specimens represented in the historical automotive collection.
-          </p>
+        <div class="models-header-row">
+          <div class="section-head" style="margin-bottom:0;">
+            <div id="models-eyebrow" class="section-eyebrow">Manufacturer Archive</div>
+            <h2 id="models-title" class="section-title">Models</h2>
+            <p id="models-desc" class="section-desc">
+              Specimens represented in the historical automotive collection.
+            </p>
+          </div>
+          <div id="models-scope-container" style="display:none;">
+            <button id="btn-scope-all-country" class="btn-scope-switch">View all national cars</button>
+          </div>
+        </div>
+
+        <!-- HISTORICAL AUTOMOTIVE TIMELINE CONTROL (PROMPT 4) -->
+        <div id="timeline-control-block" class="timeline-control-block">
+          <div class="timeline-meta-bar">
+            <div class="timeline-year-readout">
+              <span class="timeline-eyebrow">Historical Era</span>
+              <div class="timeline-year-heading">
+                <span id="timeline-active-year-display" class="timeline-active-year">All Years</span>
+                <span id="timeline-year-status" class="timeline-year-status">Displaying all archive models</span>
+              </div>
+            </div>
+            <div class="timeline-nav-group">
+              <button id="btn-timeline-all" class="btn-timeline-toggle is-active" title="View all recorded years">All Eras</button>
+              <div class="timeline-stepper">
+                <button id="btn-timeline-prev" class="btn-timeline-step" title="Previous recorded year" aria-label="Previous year">&larr;</button>
+                <button id="btn-timeline-next" class="btn-timeline-step" title="Next recorded year" aria-label="Next year">&rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Scrubber Track -->
+          <div class="timeline-rail-scroller">
+            <div class="timeline-rail-inner" id="timeline-rail-inner">
+              <div id="timeline-decade-labels" class="timeline-decade-labels"></div>
+              <div class="timeline-rail-axis"></div>
+              <div id="timeline-year-nodes" class="timeline-year-nodes"></div>
+            </div>
+          </div>
         </div>
 
         <div id="models-grid-container" class="models-grid">
@@ -127,6 +175,7 @@ toc: false
 <script src="data/countries_110m.js"></script>
 <script src="data/iso_countries.js"></script>
 <script src="data/cars_metadata.js"></script>
+<script src="data/manufacturers_config.js"></script>
 
 <script>
 // Modular reusable state
@@ -144,12 +193,41 @@ window.selectedManufacturer = null;
   const crumbCountry = document.getElementById("crumb-country");
   const crumbMfgSep = document.getElementById("crumb-mfg-sep");
   const crumbMfg = document.getElementById("crumb-mfg");
+  const crumbYearSep = document.getElementById("crumb-year-sep");
+  const crumbYear = document.getElementById("crumb-year");
 
   // Panels
   const automakersPanel = document.getElementById("automakers-panel");
   const modelsPanel = document.getElementById("models-panel");
   const automakersSubtitle = document.getElementById("automakers-subtitle");
   const automakersGrid = document.getElementById("automakers-grid-container");
+
+  // National chronology invite card
+  const countryTimelineInviteBox = document.getElementById("country-timeline-invite-box");
+  const timelineInviteTitle = document.getElementById("timeline-invite-title");
+  const timelineInviteDesc = document.getElementById("timeline-invite-desc");
+  const btnExploreTimeline = document.getElementById("btn-explore-timeline");
+
+  // Models panel timeline controls
+  const modelsScopeContainer = document.getElementById("models-scope-container");
+  const btnScopeAllCountry = document.getElementById("btn-scope-all-country");
+  const timelineControlBlock = document.getElementById("timeline-control-block");
+  const timelineActiveYearDisplay = document.getElementById("timeline-active-year-display");
+  const timelineYearStatus = document.getElementById("timeline-year-status");
+  const btnTimelineAll = document.getElementById("btn-timeline-all");
+  const btnTimelinePrev = document.getElementById("btn-timeline-prev");
+  const btnTimelineNext = document.getElementById("btn-timeline-next");
+  const timelineDecadeLabels = document.getElementById("timeline-decade-labels");
+  const timelineYearNodes = document.getElementById("timeline-year-nodes");
+
+  // Timeline state tracking
+  let activeScopeType = "manufacturer"; // "country" | "manufacturer"
+  let activeScopeCars = [];
+  let activeScopeName = "";
+  let activeTimelineYear = null; // null = all eras
+  let availableScopeYears = [];
+  let railMinYear = 1970;
+  let railMaxYear = 2024;
 
   const modelsEyebrow = document.getElementById("models-eyebrow");
   const modelsTitle = document.getElementById("models-title");
@@ -185,9 +263,13 @@ window.selectedManufacturer = null;
 
   const gBase = mapSvg.append("g").attr("class", "map-base-layer");
   const gCountries = mapSvg.append("g").attr("class", "map-countries-layer");
+  const gConnectors = mapSvg.append("g").attr("class", "map-connectors-layer");
+  const gLogos = mapSvg.append("g").attr("class", "map-logos-layer");
 
   let activeCountryPath = null;
   let locatorCountries = null;
+  let currentHoverCountryId = null;
+  let hoverHideTimeout = null;
 
   function getCountryInfo(d) {
     const isoMap = window.ISO_COUNTRIES || {};
@@ -269,26 +351,49 @@ window.selectedManufacturer = null;
       .data(countries)
       .enter()
       .append("path")
-      .attr("class", "world-country")
+      .attr("class", d => {
+        const country = getCountryInfo(d);
+        const cars = getCountryCars(country);
+        return cars.length > 0 ? "world-country has-data" : "world-country is-muted";
+      })
       .attr("d", pathGenerator)
       .attr("data-id", d => d.id)
       .on("mouseenter", function(event, d) {
         const country = getCountryInfo(d);
-        tooltip.innerHTML = `
-          <span class="tooltip-name">${country.name}</span>
-          ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
-        `;
-        tooltip.style.opacity = "1";
-        positionTooltip(event);
+        const cars = getCountryCars(country);
+        if (cars.length > 0) {
+          clearTimeout(hoverHideTimeout);
+          tooltip.innerHTML = `
+            <span class="tooltip-name">${country.name}</span>
+            ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
+            <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• ${cars.length} specimen${cars.length === 1 ? '' : 's'}</span>
+          `;
+          tooltip.style.opacity = "1";
+          positionTooltip(event);
+          showCountryLogos(d, country, cars);
+        } else {
+          tooltip.innerHTML = `
+            <span class="tooltip-name">${country.name}</span>
+            <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• No vehicle data</span>
+          `;
+          tooltip.style.opacity = "0.75";
+          positionTooltip(event);
+          scheduleHideLogos(180);
+        }
       })
       .on("mousemove", function(event) {
         positionTooltip(event);
       })
       .on("mouseleave", function() {
         tooltip.style.opacity = "0";
+        scheduleHideLogos(450);
       })
       .on("click", function(event, d) {
-        selectCountry(d, this);
+        const country = getCountryInfo(d);
+        const cars = getCountryCars(country);
+        if (cars.length > 0) {
+          selectCountry(d, this);
+        }
       });
 
     locatorCountries = locatorSvg.selectAll("path.locator-country")
@@ -300,9 +405,364 @@ window.selectedManufacturer = null;
       .attr("data-id", d => d.id);
   }
 
-  function selectCountry(d, element) {
+  function scheduleHideLogos(delay = 450) {
+    clearTimeout(hoverHideTimeout);
+    hoverHideTimeout = setTimeout(() => {
+      hideCountryLogos();
+    }, delay);
+  }
+
+  function hideCountryLogos() {
+    currentHoverCountryId = null;
+    gCountries.selectAll("path.world-country").classed("is-active-source", false);
+    gConnectors.selectAll("circle.mfg-cluster-aura").remove();
+
+    gConnectors.selectAll("line")
+      .transition().duration(180)
+      .style("opacity", 0)
+      .remove();
+
+    gLogos.selectAll("g.mfg-logo-node")
+      .transition().duration(200)
+      .style("opacity", 0)
+      .remove();
+  }
+
+  function calculateLogoPositions(cx, cy, N, iso3) {
+    const positions = [];
+    const clampX = x => Math.max(46, Math.min(width - 46, x));
+    const clampY = y => Math.max(46, Math.min(height - 46, y));
+
+    if (N === 1) {
+      // 1 manufacturer (e.g. France) - branch northwest into open bay
+      const angle = -0.75;
+      const r = 66;
+      positions.push({
+        x: clampX(cx + r * Math.cos(angle)),
+        y: clampY(cy + r * Math.sin(angle))
+      });
+    } else if (N === 2) {
+      // 2 manufacturers (e.g. UK, Sweden, South Korea)
+      let angles = [-Math.PI * 0.4, Math.PI * 0.6];
+      let r = 74;
+      if (iso3 === "GBR") {
+        angles = [-2.35, -0.78]; // Atlantic West and North-West
+        r = 74;
+      } else if (iso3 === "SWE") {
+        angles = [0.15, -1.75]; // Baltic East and North
+        r = 74;
+      } else if (iso3 === "KOR") {
+        angles = [-2.4, 0.65]; // Yellow Sea and Sea of Japan
+        r = 70;
+      }
+      for (let i = 0; i < N; i++) {
+        positions.push({
+          x: clampX(cx + r * Math.cos(angles[i])),
+          y: clampY(cy + r * Math.sin(angles[i]))
+        });
+      }
+    } else if (N === 3) {
+      // 3 manufacturers (e.g. Italy) - branch West, East, South
+      const angles = [-2.55, 0.35, 1.75];
+      const radii = [74, 78, 76];
+      for (let i = 0; i < N; i++) {
+        positions.push({
+          x: clampX(cx + radii[i] * Math.cos(angles[i])),
+          y: clampY(cy + radii[i] * Math.sin(angles[i]))
+        });
+      }
+    } else if (N <= 5) {
+      // 4 to 5 manufacturers (e.g. Germany with 5)
+      const r = 86;
+      for (let i = 0; i < N; i++) {
+        const angle = (2 * Math.PI * i / N) - Math.PI / 2 + 0.15;
+        positions.push({
+          x: clampX(cx + r * Math.cos(angle)),
+          y: clampY(cy + r * Math.sin(angle))
+        });
+      }
+    } else if (N <= 8) {
+      // 6 to 8 manufacturers (e.g. Japan with 7)
+      const r = 104;
+      for (let i = 0; i < N; i++) {
+        const angle = (2 * Math.PI * i / N) - Math.PI / 2 + 0.18;
+        positions.push({
+          x: clampX(cx + r * Math.cos(angle)),
+          y: clampY(cy + r * Math.sin(angle))
+        });
+      }
+    } else {
+      // 9+ manufacturers (e.g. USA with 10) - two staggered concentric rings
+      // All manufacturers appear cleanly with zero overlap!
+      const innerCount = 5;
+      const outerCount = N - innerCount;
+      const rInner = 82;
+      const rOuter = 148;
+
+      for (let i = 0; i < N; i++) {
+        if (i < innerCount) {
+          const angle = (2 * Math.PI * i / innerCount) - Math.PI / 2;
+          positions.push({
+            x: clampX(cx + rInner * Math.cos(angle)),
+            y: clampY(cy + rInner * Math.sin(angle))
+          });
+        } else {
+          const j = i - innerCount;
+          const angle = (2 * Math.PI * j / outerCount) - Math.PI / 2 + (Math.PI / outerCount);
+          positions.push({
+            x: clampX(cx + rOuter * Math.cos(angle)),
+            y: clampY(cy + rOuter * Math.sin(angle))
+          });
+        }
+      }
+    }
+
+    return positions;
+  }
+
+  function showCountryLogos(d, country, cars) {
+    if (currentHoverCountryId === d.id) {
+      return;
+    }
+    currentHoverCountryId = d.id;
+
+    // Highlight source country
+    gCountries.selectAll("path.world-country")
+      .classed("is-active-source", feat => feat.id === d.id);
+
+    // Group cars by manufacturer
+    const groups = {};
+    cars.forEach(car => {
+      const m = car["Manufacturer"] || "Unknown";
+      if (!groups[m]) groups[m] = [];
+      groups[m].push(car);
+    });
+
+    const mfgNames = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length || a.localeCompare(b));
+    const logosMap = window.MANUFACTURER_LOGOS || {};
+
+    const mfgItems = mfgNames.map(mfgName => {
+      const normKey = mfgName.toLowerCase();
+      const id = normKey.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const logo = (logosMap[normKey] !== undefined) ? logosMap[normKey] : (logosMap[id] !== undefined ? logosMap[id] : null);
+      const mfgCars = groups[mfgName];
+      const years = mfgCars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y));
+      const minYear = years.length ? Math.min(...years) : null;
+      const maxYear = years.length ? Math.max(...years) : null;
+      const eraStr = minYear && maxYear ? (minYear === maxYear ? `${minYear}` : `${minYear} — ${maxYear}`) : "Archive";
+
+      return {
+        id: id,
+        name: mfgName,
+        logo: logo,
+        count: mfgCars.length,
+        cars: mfgCars,
+        minYear: minYear,
+        maxYear: maxYear,
+        eraStr: eraStr
+      };
+    });
+
+    // Anchor coordinates for geographic precision
+    const COUNTRY_COORDS = {
+      "USA": [-98.5, 39.5],
+      "JPN": [138.2, 36.2],
+      "DEU": [10.4, 51.1],
+      "GBR": [-2.2, 54.5],
+      "ITA": [12.5, 42.5],
+      "FRA": [2.2, 46.6],
+      "SWE": [16.5, 62.0],
+      "KOR": [127.7, 36.5]
+    };
+
+    let center;
+    if (country.iso3 && COUNTRY_COORDS[country.iso3]) {
+      center = projection(COUNTRY_COORDS[country.iso3]);
+    } else {
+      center = pathGenerator.centroid(d);
+    }
+
+    const cx = center[0];
+    const cy = center[1];
+    const positions = calculateLogoPositions(cx, cy, mfgItems.length, country.iso3);
+
+    // Continuous interactive aura behind cluster to prevent premature closes
+    const maxDist = Math.max(...positions.map(p => Math.hypot(p.x - cx, p.y - cy)), 60);
+    let aura = gConnectors.selectAll("circle.mfg-cluster-aura").data([1]);
+    aura.enter()
+      .insert("circle", ":first-child")
+      .attr("class", "mfg-cluster-aura")
+      .merge(aura)
+      .attr("cx", cx)
+      .attr("cy", cy)
+      .attr("r", maxDist + 44)
+      .on("mouseenter", function() {
+        clearTimeout(hoverHideTimeout);
+      })
+      .on("mouseleave", function() {
+        scheduleHideLogos(450);
+      });
+
+    // 1. Connector lines
+    const connectorData = mfgItems.map((item, i) => ({
+      id: item.id,
+      x1: cx,
+      y1: cy,
+      x2: positions[i].x,
+      y2: positions[i].y
+    }));
+
+    const lines = gConnectors.selectAll("line")
+      .data(connectorData, item => item.id);
+
+    lines.exit()
+      .transition().duration(160)
+      .style("opacity", 0)
+      .remove();
+
+    const linesEnter = lines.enter()
+      .append("line")
+      .attr("x1", cx)
+      .attr("y1", cy)
+      .attr("x2", cx)
+      .attr("y2", cy)
+      .style("opacity", 0)
+      .on("mouseenter", function() {
+        clearTimeout(hoverHideTimeout);
+      });
+
+    linesEnter.merge(lines)
+      .transition()
+      .duration(260)
+      .delay((item, i) => i * 20)
+      .ease(d3.easeCubicOut)
+      .attr("x1", cx)
+      .attr("y1", cy)
+      .attr("x2", item => item.x2)
+      .attr("y2", item => item.y2)
+      .style("opacity", 1);
+
+    // 2. Logo badge nodes
+    const nodeData = mfgItems.map((item, i) => ({
+      ...item,
+      x: positions[i].x,
+      y: positions[i].y,
+      cx: cx,
+      cy: cy
+    }));
+
+    const nodes = gLogos.selectAll("g.mfg-logo-node")
+      .data(nodeData, item => item.id);
+
+    nodes.exit()
+      .transition().duration(160)
+      .style("opacity", 0)
+      .remove();
+
+    const nodesEnter = nodes.enter()
+      .append("g")
+      .attr("class", "mfg-logo-node")
+      .attr("transform", `translate(${cx}, ${cy})`)
+      .style("opacity", 0);
+
+    // Generous invisible hit target circle (diameter 64px) for effortless clicking
+    nodesEnter.append("circle")
+      .attr("class", "mfg-hit-area")
+      .attr("r", 32);
+
+    // Badge plate group (stable in place - no scaling transforms)
+    const badge = nodesEnter.append("g").attr("class", "mfg-logo-badge");
+
+    // Visible badge circle (diameter 52px, ~1.8x original visual area)
+    badge.append("circle")
+      .attr("class", "mfg-badge-circle")
+      .attr("r", 26);
+
+    // Image (36x36px) or Monogram fallback
+    badge.each(function(mfg) {
+      const g = d3.select(this);
+      if (mfg.logo) {
+        g.append("image")
+          .attr("class", "mfg-badge-image")
+          .attr("href", mfg.logo)
+          .attr("x", -18)
+          .attr("y", -18)
+          .attr("width", 36)
+          .attr("height", 36)
+          .attr("preserveAspectRatio", "xMidYMid meet");
+      } else {
+        const initials = mfg.name.split(" ").map(w => w[0]).join("").substring(0, 3).toUpperCase();
+        g.append("text")
+          .attr("class", "mfg-badge-monogram")
+          .attr("y", 5)
+          .text(initials);
+      }
+    });
+
+    // Floating editorial label neatly above badge
+    const label = nodesEnter.append("g")
+      .attr("class", "mfg-logo-label")
+      .attr("transform", "translate(0, -36)");
+
+    label.append("rect")
+      .attr("class", "mfg-label-rect")
+      .attr("x", -52)
+      .attr("y", -13)
+      .attr("width", 104)
+      .attr("height", 26)
+      .attr("rx", 3);
+
+    label.append("text")
+      .attr("class", "mfg-label-text")
+      .attr("y", -1)
+      .text(item => item.name.toUpperCase());
+
+    label.append("text")
+      .attr("class", "mfg-label-count")
+      .attr("y", 9)
+      .text(item => `${item.count} ${item.count === 1 ? 'vehicle' : 'vehicles'}`);
+
+    // Events on logo nodes
+    nodesEnter
+      .on("mouseenter", function(event, item) {
+        clearTimeout(hoverHideTimeout);
+        gLogos.selectAll("g.mfg-logo-node")
+          .classed("is-dimmed", d => d.id !== item.id)
+          .classed("is-hovered", d => d.id === item.id);
+        gConnectors.selectAll("line")
+          .classed("is-highlighted", d => d.id === item.id)
+          .classed("is-dimmed", d => d.id !== item.id);
+        if (selectedNameEl) {
+          selectedNameEl.innerHTML = `${country.name} • <strong>${item.name}</strong> (${item.count} ${item.count === 1 ? 'model' : 'models'})`;
+        }
+      })
+      .on("mouseleave", function(event, item) {
+        gLogos.selectAll("g.mfg-logo-node").classed("is-dimmed", false).classed("is-hovered", false);
+        gConnectors.selectAll("line").classed("is-highlighted", false).classed("is-dimmed", false);
+        if (selectedNameEl) {
+          selectedNameEl.innerHTML = `${country.name} ${country.iso3 ? `<span class="selected-iso">(${country.iso3})</span>` : ""} • ${cars.length} specimen${cars.length === 1 ? '' : 's'}`;
+        }
+        scheduleHideLogos(450);
+      })
+      .on("click", function(event, item) {
+        event.stopPropagation();
+        selectCountry(d, null, item);
+      });
+
+    // Smooth entrance animation - locks into stable (x, y) coordinates with ZERO jitter
+    nodesEnter.merge(nodes)
+      .transition()
+      .duration(280)
+      .delay((item, i) => i * 20)
+      .ease(d3.easeCubicOut)
+      .attr("transform", item => `translate(${item.x}, ${item.y})`)
+      .style("opacity", 1);
+  }
+
+  function selectCountry(d, element, targetMfg) {
     const country = getCountryInfo(d);
     activeCountryData = country;
+    hideCountryLogos();
 
     // Highlight on main map
     if (activeCountryPath) {
@@ -328,7 +788,7 @@ window.selectedManufacturer = null;
       iso2: country.iso2,
       iso3: country.iso3
     };
-    window.selectedManufacturer = null;
+    window.selectedManufacturer = targetMfg || null;
 
     // Update main map indicator bar
     if (selectedNameEl) {
@@ -357,40 +817,73 @@ window.selectedManufacturer = null;
       countryFlagFallback.style.display = "inline-block";
     }
 
-    // Build Automakers section from data
+    // Always build Automakers section from data so back-navigation works
     populateAutomakers(country);
 
-    // Set navigation state
-    currentNavigationLevel = "country";
-    backNavLabel.textContent = "Return to atlas";
-    crumbCountry.textContent = country.name;
-    crumbCountry.classList.add("is-current");
-    crumbMfgSep.style.display = "none";
-    crumbMfg.style.display = "none";
+    if (targetMfg) {
+      // Transition directly to manufacturer specimen models
+      currentNavigationLevel = "manufacturer";
+      backNavLabel.textContent = `Return to ${country.name}`;
+      crumbCountry.textContent = country.name;
+      crumbCountry.classList.remove("is-current");
+      crumbMfgSep.style.display = "inline";
+      crumbMfg.style.display = "inline";
+      crumbMfg.textContent = targetMfg.name;
 
-    // Show Automakers panel, hide Models panel
-    automakersPanel.classList.remove("is-hidden");
-    automakersPanel.classList.add("is-active");
-    modelsPanel.classList.remove("is-active");
-    modelsPanel.classList.add("is-hidden");
+      automakersPanel.classList.remove("is-active");
+      automakersPanel.classList.add("is-hidden");
+      modelsPanel.classList.remove("is-hidden");
+      modelsPanel.classList.add("is-active");
 
-    // Transition view
-    worldView.style.opacity = "0";
-    setTimeout(() => {
-      worldView.classList.remove("is-active");
-      worldView.classList.add("is-hidden");
+      populateManufacturerModels(targetMfg);
 
-      countryView.classList.remove("is-hidden");
-      countryView.classList.add("is-active");
-      countryView.style.opacity = "0";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      worldView.style.opacity = "0";
+      setTimeout(() => {
+        worldView.classList.remove("is-active");
+        worldView.classList.add("is-hidden");
 
-      requestAnimationFrame(() => {
-        countryView.style.opacity = "1";
-      });
-    }, 200);
+        countryView.classList.remove("is-hidden");
+        countryView.classList.add("is-active");
+        countryView.style.opacity = "0";
+        document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
-    window.dispatchEvent(new CustomEvent("countrySelected", { detail: window.selectedCountry }));
+        requestAnimationFrame(() => {
+          countryView.style.opacity = "1";
+        });
+      }, 200);
+
+      window.dispatchEvent(new CustomEvent("manufacturerSelected", { detail: targetMfg }));
+    } else {
+      // Standard country view showing all automakers
+      currentNavigationLevel = "country";
+      backNavLabel.textContent = "Return to atlas";
+      crumbCountry.textContent = country.name;
+      crumbCountry.classList.add("is-current");
+      crumbMfgSep.style.display = "none";
+      crumbMfg.style.display = "none";
+
+      automakersPanel.classList.remove("is-hidden");
+      automakersPanel.classList.add("is-active");
+      modelsPanel.classList.remove("is-active");
+      modelsPanel.classList.add("is-hidden");
+
+      worldView.style.opacity = "0";
+      setTimeout(() => {
+        worldView.classList.remove("is-active");
+        worldView.classList.add("is-hidden");
+
+        countryView.classList.remove("is-hidden");
+        countryView.classList.add("is-active");
+        countryView.style.opacity = "0";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        requestAnimationFrame(() => {
+          countryView.style.opacity = "1";
+        });
+      }, 200);
+
+      window.dispatchEvent(new CustomEvent("countrySelected", { detail: window.selectedCountry }));
+    }
   }
 
   function populateAutomakers(country) {
@@ -398,6 +891,7 @@ window.selectedManufacturer = null;
     automakersGrid.innerHTML = "";
 
     if (cars.length === 0) {
+      if (countryTimelineInviteBox) countryTimelineInviteBox.style.display = "none";
       automakersSubtitle.textContent = "No automotive data recorded for this territory.";
       automakersGrid.innerHTML = `
         <div class="automakers-empty-card" style="grid-column: 1 / -1;">
@@ -416,6 +910,21 @@ window.selectedManufacturer = null;
       return;
     }
 
+    // Configure National Chronology invite card
+    const allCountryYears = cars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y));
+    if (countryTimelineInviteBox) {
+      if (allCountryYears.length > 0) {
+        const minYr = Math.min(...allCountryYears);
+        const maxYr = Math.max(...allCountryYears);
+        const eraStr = minYr === maxYr ? `${minYr}` : `${minYr} — ${maxYr}`;
+        countryTimelineInviteBox.style.display = "flex";
+        if (timelineInviteTitle) timelineInviteTitle.textContent = `Explore ${country.name}'s Automotive History Across Time`;
+        if (timelineInviteDesc) timelineInviteDesc.textContent = `Chronological record of all ${cars.length} specimen${cars.length === 1 ? '' : 's'} across production years (${eraStr}).`;
+      } else {
+        countryTimelineInviteBox.style.display = "none";
+      }
+    }
+
     // Group cars by Manufacturer
     const groups = {};
     cars.forEach(car => {
@@ -428,6 +937,7 @@ window.selectedManufacturer = null;
 
     const mfgNames = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length || a.localeCompare(b));
     automakersSubtitle.textContent = `${mfgNames.length} distinct automaker${mfgNames.length === 1 ? '' : 's'} recorded with ${cars.length} specimen models in the archive.`;
+    const logosMap = window.MANUFACTURER_LOGOS || {};
 
     mfgNames.forEach(mfgName => {
       const mfgCars = groups[mfgName];
@@ -437,12 +947,16 @@ window.selectedManufacturer = null;
       const eraStr = minYear && maxYear ? (minYear === maxYear ? `${minYear}` : `${minYear} — ${maxYear}`) : "Archive";
       const monogram = mfgName.substring(0, 2).toUpperCase();
 
+      const normKey = mfgName.toLowerCase();
+      const id = normKey.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      const logo = (logosMap[normKey] !== undefined) ? logosMap[normKey] : (logosMap[id] !== undefined ? logosMap[id] : null);
+
       const card = document.createElement("div");
       card.className = "automaker-card";
       card.innerHTML = `
         <div>
           <div class="automaker-card-top">
-            <div class="mfg-monogram">${monogram}</div>
+            ${logo ? `<div class="mfg-logo-frame"><img src="${logo}" alt="${mfgName}" class="mfg-logo-img" /></div>` : `<div class="mfg-monogram">${monogram}</div>`}
             <div class="mfg-badge-count">${mfgCars.length} ${mfgCars.length === 1 ? 'Model' : 'Models'}</div>
           </div>
           <h3 class="mfg-title">${mfgName}</h3>
@@ -457,6 +971,8 @@ window.selectedManufacturer = null;
       card.addEventListener("click", function() {
         selectManufacturer({
           name: mfgName,
+          id: id,
+          logo: logo,
           cars: mfgCars,
           count: mfgCars.length,
           minYear: minYear,
@@ -469,34 +985,269 @@ window.selectedManufacturer = null;
     });
   }
 
-  function selectManufacturer(mfg) {
-    window.selectedManufacturer = mfg;
+  function exploreCountryTimeline(country) {
+    activeScopeType = "country";
+    activeScopeCars = getCountryCars(country);
+    activeScopeName = country.name;
+    activeManufacturerData = null;
+    window.selectedManufacturer = null;
     currentNavigationLevel = "manufacturer";
 
-    // Update navigation controls
-    backNavLabel.textContent = `Return to ${activeCountryData.name}`;
+    backNavLabel.textContent = `Return to ${country.name}`;
+    crumbCountry.textContent = country.name;
     crumbCountry.classList.remove("is-current");
     crumbMfgSep.style.display = "inline";
     crumbMfg.style.display = "inline";
-    crumbMfg.textContent = mfg.name;
+    crumbMfg.textContent = "Chronology";
+    if (crumbYearSep) crumbYearSep.style.display = "none";
+    if (crumbYear) crumbYear.style.display = "none";
 
-    // Header info
-    modelsEyebrow.textContent = `${activeCountryData.name} \u2022 Specimen Collection`;
+    if (modelsScopeContainer) {
+      modelsScopeContainer.style.display = "none";
+    }
+
+    const allYears = activeScopeCars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y));
+    const minYr = allYears.length ? Math.min(...allYears) : "";
+    const maxYr = allYears.length ? Math.max(...allYears) : "";
+    const eraStr = minYr && maxYr ? (minYr === maxYr ? `${minYr}` : `${minYr} — ${maxYr}`) : "Archive";
+
+    modelsEyebrow.textContent = `${country.name} • National Chronology`;
+    modelsTitle.textContent = "Production Timeline";
+    modelsDesc.textContent = `All ${activeScopeCars.length} specimens from ${country.name} arranged across chronological production eras (${eraStr}).`;
+
+    setupTimeline(activeScopeCars, country.name);
+
+    automakersPanel.style.opacity = "0";
+    setTimeout(() => {
+      automakersPanel.classList.remove("is-active");
+      automakersPanel.classList.add("is-hidden");
+
+      modelsPanel.classList.remove("is-hidden");
+      modelsPanel.classList.add("is-active");
+      modelsPanel.style.opacity = "0";
+
+      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
+
+      requestAnimationFrame(() => {
+        modelsPanel.style.opacity = "1";
+      });
+    }, 180);
+  }
+
+  function populateManufacturerModels(mfg) {
+    activeScopeType = "manufacturer";
+    activeScopeCars = mfg.cars;
+    activeScopeName = mfg.name;
+    activeManufacturerData = mfg;
+
+    if (modelsScopeContainer) {
+      modelsScopeContainer.style.display = "block";
+      btnScopeAllCountry.textContent = `View all ${activeCountryData ? activeCountryData.name : 'national'} cars`;
+    }
+
+    modelsEyebrow.textContent = `${activeCountryData ? activeCountryData.name : 'Atlas'} • Specimen Collection`;
     modelsTitle.textContent = mfg.name;
     modelsDesc.textContent = `${mfg.count} specimen ${mfg.count === 1 ? 'model' : 'models'} across production eras (${mfg.eraStr}).`;
 
-    // Populate car models
+    setupTimeline(mfg.cars, mfg.name);
+  }
+
+  function setupTimeline(scopeCars, scopeName, defaultYear = null) {
+    activeScopeCars = scopeCars;
+    activeScopeName = scopeName;
+
+    availableScopeYears = [...new Set(
+      scopeCars.map(c => parseInt(c["Model year"], 10)).filter(y => !isNaN(y))
+    )].sort((a, b) => a - b);
+
+    if (availableScopeYears.length === 0) {
+      if (timelineControlBlock) timelineControlBlock.style.display = "none";
+      renderCarsGrid([], null, scopeName, []);
+      return;
+    }
+
+    if (timelineControlBlock) timelineControlBlock.style.display = "block";
+    const minYear = availableScopeYears[0];
+    const maxYear = availableScopeYears[availableScopeYears.length - 1];
+
+    railMinYear = Math.floor(minYear / 10) * 10;
+    railMaxYear = Math.ceil(maxYear / 10) * 10;
+    if (railMaxYear === railMinYear) {
+      railMaxYear = railMinYear + 10;
+    }
+
+    // Decade markers
+    if (timelineDecadeLabels) {
+      timelineDecadeLabels.innerHTML = "";
+      for (let dec = railMinYear; dec <= railMaxYear; dec += 10) {
+        const pct = ((dec - railMinYear) / (railMaxYear - railMinYear)) * 100;
+        const marker = document.createElement("div");
+        marker.className = "timeline-decade-marker";
+        marker.style.left = `${pct}%`;
+        marker.innerHTML = `
+          <span class="timeline-decade-text">${dec}</span>
+          <div class="timeline-decade-tick"></div>
+        `;
+        timelineDecadeLabels.appendChild(marker);
+      }
+    }
+
+    // Year nodes / pips
+    if (timelineYearNodes) {
+      timelineYearNodes.innerHTML = "";
+      availableScopeYears.forEach(y => {
+        const pct = ((y - railMinYear) / (railMaxYear - railMinYear)) * 100;
+        const count = scopeCars.filter(c => parseInt(c["Model year"], 10) === y).length;
+        const pip = document.createElement("button");
+        pip.type = "button";
+        pip.className = "timeline-year-pip";
+        pip.dataset.year = y;
+        pip.style.left = `${pct}%`;
+        pip.title = `${y} • ${count} specimen${count === 1 ? '' : 's'}`;
+        pip.innerHTML = `
+          <span class="pip-dot"></span>
+          <span class="pip-label">${y}</span>
+        `;
+        pip.addEventListener("click", () => {
+          selectTimelineYear(y);
+        });
+        timelineYearNodes.appendChild(pip);
+      });
+    }
+
+    selectTimelineYear(defaultYear);
+  }
+
+  function selectTimelineYear(year) {
+    activeTimelineYear = year !== null && !isNaN(parseInt(year, 10)) ? parseInt(year, 10) : null;
+
+    // Breadcrumb year
+    if (crumbYearSep && crumbYear) {
+      if (activeTimelineYear === null) {
+        crumbYearSep.style.display = "none";
+        crumbYear.style.display = "none";
+      } else {
+        crumbYearSep.style.display = "inline";
+        crumbYear.style.display = "inline";
+        crumbYear.textContent = activeTimelineYear;
+      }
+    }
+
+    // "All Eras" toggle
+    if (btnTimelineAll) {
+      btnTimelineAll.classList.toggle("is-active", activeTimelineYear === null);
+    }
+
+    // Year pips active state
+    if (timelineYearNodes) {
+      timelineYearNodes.querySelectorAll(".timeline-year-pip").forEach(pip => {
+        const pipYr = parseInt(pip.dataset.year, 10);
+        pip.classList.toggle("is-active", activeTimelineYear !== null && pipYr === activeTimelineYear);
+      });
+    }
+
+    // Stepper states
+    if (btnTimelinePrev && btnTimelineNext) {
+      if (availableScopeYears.length > 0) {
+        if (activeTimelineYear === null) {
+          btnTimelinePrev.disabled = false;
+          btnTimelineNext.disabled = false;
+          btnTimelinePrev.title = `Jump to earliest recorded year (${availableScopeYears[0]})`;
+          btnTimelineNext.title = `Jump to latest recorded year (${availableScopeYears[availableScopeYears.length - 1]})`;
+        } else {
+          const idx = availableScopeYears.indexOf(activeTimelineYear);
+          btnTimelinePrev.disabled = (idx <= 0);
+          btnTimelineNext.disabled = (idx >= availableScopeYears.length - 1 || idx === -1);
+          if (idx > 0) {
+            btnTimelinePrev.title = `Previous: ${availableScopeYears[idx - 1]}`;
+          } else {
+            btnTimelinePrev.title = "At earliest recorded year";
+          }
+          if (idx < availableScopeYears.length - 1 && idx !== -1) {
+            btnTimelineNext.title = `Next: ${availableScopeYears[idx + 1]}`;
+          } else {
+            btnTimelineNext.title = "At latest recorded year";
+          }
+        }
+      } else {
+        btnTimelinePrev.disabled = true;
+        btnTimelineNext.disabled = true;
+      }
+    }
+
+    // Readout headline
+    if (activeTimelineYear === null) {
+      if (timelineActiveYearDisplay) timelineActiveYearDisplay.textContent = "All Eras";
+      const minYear = availableScopeYears.length > 0 ? availableScopeYears[0] : "";
+      const maxYear = availableScopeYears.length > 0 ? availableScopeYears[availableScopeYears.length - 1] : "";
+      const range = minYear === maxYear ? minYear : `${minYear} — ${maxYear}`;
+      if (timelineYearStatus) {
+        timelineYearStatus.textContent = `${activeScopeCars.length} specimen${activeScopeCars.length === 1 ? '' : 's'} across archive (${range})`;
+      }
+      renderCarsGrid(activeScopeCars, null, activeScopeName, availableScopeYears);
+    } else {
+      if (timelineActiveYearDisplay) timelineActiveYearDisplay.textContent = activeTimelineYear;
+      const matching = activeScopeCars.filter(c => parseInt(c["Model year"], 10) === activeTimelineYear);
+      if (timelineYearStatus) {
+        if (matching.length > 0) {
+          timelineYearStatus.textContent = `${matching.length} specimen${matching.length === 1 ? '' : 's'} recorded in ${activeScopeName} for ${activeTimelineYear}`;
+        } else {
+          timelineYearStatus.textContent = `No specimens recorded for ${activeTimelineYear}`;
+        }
+      }
+      renderCarsGrid(matching, activeTimelineYear, activeScopeName, availableScopeYears);
+    }
+  }
+
+  function renderCarsGrid(carsList, year, scopeName, availableYears) {
+    if (!modelsGrid) return;
     modelsGrid.innerHTML = "";
-    // Sort cars chronologically
-    const sortedCars = [...mfg.cars].sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
+
+    if (carsList.length === 0) {
+      const prevYears = availableYears.filter(y => y < year);
+      const prevYear = prevYears.length > 0 ? prevYears[prevYears.length - 1] : null;
+      const nextYears = availableYears.filter(y => y > year);
+      const nextYear = nextYears.length > 0 ? nextYears[0] : null;
+
+      const emptyCard = document.createElement("div");
+      emptyCard.className = "timeline-empty-card";
+      emptyCard.innerHTML = `
+        <div class="timeline-empty-tag">Production Hiatus</div>
+        <h3 class="timeline-empty-title">No specimens in archive for ${year}</h3>
+        <p class="timeline-empty-desc">
+          The historical collection contains no surviving models manufactured by <strong>${scopeName}</strong> during ${year}.
+        </p>
+        <div class="timeline-empty-nav">
+          ${prevYear ? `<button type="button" class="btn-jump-year" data-year="${prevYear}">&larr; Advance backward to ${prevYear}</button>` : ""}
+          ${nextYear ? `<button type="button" class="btn-jump-year" data-year="${nextYear}">Advance forward to ${nextYear} &rarr;</button>` : ""}
+          <button type="button" class="btn-jump-year" data-year="all">View all eras</button>
+        </div>
+      `;
+
+      emptyCard.querySelectorAll(".btn-jump-year").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.year;
+          if (target === "all") {
+            selectTimelineYear(null);
+          } else {
+            selectTimelineYear(parseInt(target, 10));
+          }
+        });
+      });
+
+      modelsGrid.appendChild(emptyCard);
+      return;
+    }
+
+    const sortedCars = [...carsList].sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
 
     sortedCars.forEach(car => {
       const card = document.createElement("div");
       card.className = "car-model-card";
 
       const imgSrc = car["Image filename"] || "";
-      const carName = car["Car name"] || `${car["Model year"]} ${mfg.name}`;
-      const year = car["Model year"] || "";
+      const carName = car["Car name"] || `${car["Model year"]} ${car["Manufacturer"] || scopeName}`;
+      const carYear = car["Model year"] || "";
       const category = car["Vehicle category"] || car["Decade"] || "Specimen";
       const generation = car["Exact model generation"] || car["Decade"] || "";
       const source = car["Image source"] || "Automotive Archive";
@@ -505,7 +1256,7 @@ window.selectedManufacturer = null;
         <div class="car-image-frame">
           <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
           <div class="car-pills-overlay">
-            <span class="car-year-pill">${year}</span>
+            <span class="car-year-pill">${carYear}</span>
             <span class="car-cat-pill">${category}</span>
           </div>
         </div>
@@ -518,6 +1269,22 @@ window.selectedManufacturer = null;
 
       modelsGrid.appendChild(card);
     });
+  }
+
+  function selectManufacturer(mfg) {
+    window.selectedManufacturer = mfg;
+    currentNavigationLevel = "manufacturer";
+
+    // Update navigation controls
+    backNavLabel.textContent = `Return to ${activeCountryData ? activeCountryData.name : 'country'}`;
+    crumbCountry.classList.remove("is-current");
+    crumbMfgSep.style.display = "inline";
+    crumbMfg.style.display = "inline";
+    crumbMfg.textContent = mfg.name;
+    if (crumbYearSep) crumbYearSep.style.display = "none";
+    if (crumbYear) crumbYear.style.display = "none";
+
+    populateManufacturerModels(mfg);
 
     // Smooth transition from Automakers to Models
     automakersPanel.style.opacity = "0";
@@ -548,6 +1315,8 @@ window.selectedManufacturer = null;
     crumbMfgSep.style.display = "none";
     crumbMfg.style.display = "none";
     crumbCountry.classList.add("is-current");
+    if (crumbYearSep) crumbYearSep.style.display = "none";
+    if (crumbYear) crumbYear.style.display = "none";
 
     modelsPanel.style.opacity = "0";
     setTimeout(() => {
@@ -569,6 +1338,9 @@ window.selectedManufacturer = null;
   function backToWorld() {
     window.selectedManufacturer = null;
     currentNavigationLevel = "world";
+
+    if (crumbYearSep) crumbYearSep.style.display = "none";
+    if (crumbYear) crumbYear.style.display = "none";
 
     countryView.style.opacity = "0";
     setTimeout(() => {
@@ -602,6 +1374,62 @@ window.selectedManufacturer = null;
       backToCountry();
     }
   });
+  if (crumbMfg) {
+    crumbMfg.addEventListener("click", function() {
+      if (activeTimelineYear !== null) {
+        selectTimelineYear(null);
+      }
+    });
+  }
+
+  // Timeline button listeners
+  if (btnTimelineAll) {
+    btnTimelineAll.addEventListener("click", () => selectTimelineYear(null));
+  }
+
+  if (btnTimelinePrev) {
+    btnTimelinePrev.addEventListener("click", () => {
+      if (availableScopeYears.length === 0) return;
+      if (activeTimelineYear === null) {
+        selectTimelineYear(availableScopeYears[availableScopeYears.length - 1]);
+      } else {
+        const idx = availableScopeYears.indexOf(activeTimelineYear);
+        if (idx > 0) {
+          selectTimelineYear(availableScopeYears[idx - 1]);
+        }
+      }
+    });
+  }
+
+  if (btnTimelineNext) {
+    btnTimelineNext.addEventListener("click", () => {
+      if (availableScopeYears.length === 0) return;
+      if (activeTimelineYear === null) {
+        selectTimelineYear(availableScopeYears[0]);
+      } else {
+        const idx = availableScopeYears.indexOf(activeTimelineYear);
+        if (idx < availableScopeYears.length - 1 && idx !== -1) {
+          selectTimelineYear(availableScopeYears[idx + 1]);
+        }
+      }
+    });
+  }
+
+  if (btnExploreTimeline) {
+    btnExploreTimeline.addEventListener("click", () => {
+      if (activeCountryData) {
+        exploreCountryTimeline(activeCountryData);
+      }
+    });
+  }
+
+  if (btnScopeAllCountry) {
+    btnScopeAllCountry.addEventListener("click", () => {
+      if (activeCountryData) {
+        exploreCountryTimeline(activeCountryData);
+      }
+    });
+  }
 
   function positionTooltip(event) {
     if (!mapContainer) return;
