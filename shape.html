@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>shape – Car Character</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8f83ba16321a7fef8bc7299ee1375644.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Car Character</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./story.html"> 
+<span class="menu-text">Story</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./color.html"> 
+<span class="menu-text">Color</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./shape.html" aria-current="page"> 
+<span class="menu-text">Shape</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sound.html"> 
+<span class="menu-text">Sound</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./exploration.html"> 
+<span class="menu-text">Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+
+
+
+<div class="story-hero" style="min-height: 40vh; padding: 5rem 1.5rem 3rem;">
+  <div class="story-hero-content">
+    <div class="story-eyebrow">Dimension 02 • Silhouette &amp; Proportions • 1970 — 2024</div>
+    <h1 class="story-title" style="font-size: clamp(2.4rem, 5vw, 4rem);">Did the shapes become more alike?</h1>
+    <div class="story-subtitles" style="max-width: 760px; margin: 1.5rem auto 0;">
+      <p class="story-lead">
+        Color is only one dimension of character. Even painted in the same shade, cars once occupied completely different architectural archetypes: long-hooded sports coupés, vertical station wagons, and sharp notchback sedans.
+      </p>
+      <p class="story-question" style="margin-top: 0.75rem;">
+        Explore 16,469 classified production vehicles to see how body styles shifted and how individual dimensions evolved.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="story-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 6rem;">
+
+  <!-- SECTION 1: VISUAL SILHOUETTE EVOLUTION -->
+  <div class="silhouette-section" style="margin: 2rem 0 3.5rem;">
+    <div class="silhouette-header-block">
+      <div class="section-badge">Visual Profile Comparison • 1970s — 2020s</div>
+      <h3 class="silhouette-heading">Six decades of silhouettes</h3>
+      <p class="silhouette-sub">
+        Viewed in direct side profile, a vehicle's silhouette exposes its structural philosophy: hood length, window-to-body proportion, roof arc, and overhangs.
+      </p>
+    </div>
+
+    <div class="silhouette-grid">
+      <!-- 1970s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">1970s</span>
+          <span class="sil-year-badge">1971 • ECONOMY</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="1970s/1971_volkswagen_beetle.jpg" alt="1971 Volkswagen Beetle silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Volkswagen Beetle</h4>
+          <p class="sil-profile-desc">Curved rear-engine teardrop silhouette with pronounced rounded fenders, tall upright cabin, and minimal forward engine hood.</p>
+        </div>
+      </div>
+
+      <!-- 1980s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">1980s</span>
+          <span class="sil-year-badge">1980 • ECONOMY</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="1980s/1980_toyota_corolla.jpg" alt="1980 Toyota Corolla silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Toyota Corolla</h4>
+          <p class="sil-profile-desc">Crisp geometric 3-box notchback architecture with planar horizontal beltline, flat hood, and upright rectangular passenger glasshouse.</p>
+        </div>
+      </div>
+
+      <!-- 1990s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">1990s</span>
+          <span class="sil-year-badge">1995 • STATION WAGON</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="1990s/1995_volvo_850.jpg" alt="1995 Volvo 850 silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Volvo 850 Estate</h4>
+          <p class="sil-profile-desc">Iconic vertical 90-degree tailgate and extended roofline engineered for maximum volumetric cargo efficiency and 360-degree driver visibility.</p>
+        </div>
+      </div>
+
+      <!-- 2000s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">2000s</span>
+          <span class="sil-year-badge">2003 • HYBRID</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="2000s/2003_toyota_prius.jpg" alt="2003 Toyota Prius silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Toyota Prius</h4>
+          <p class="sil-profile-desc">Pioneering aero-derived mono-volume wedge with raked windshield continuous into the hood line, ending in a sharp aerodynamic Kammback rear lip.</p>
+        </div>
+      </div>
+
+      <!-- 2010s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">2010s</span>
+          <span class="sil-year-badge">2016 • LUXURY SUV</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="2010s/2016_volvo_xc90.jpg" alt="2016 Volvo XC90 silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Volvo XC90</h4>
+          <p class="sil-profile-desc">High-beltline executive crossover stance featuring elevated ground clearance, bluff upright front prow, and thick protective roof pillars.</p>
+        </div>
+      </div>
+
+      <!-- 2020s -->
+      <div class="silhouette-card">
+        <div class="silhouette-card-header">
+          <span class="silhouette-era-pill">2020s</span>
+          <span class="sil-year-badge">2021 • ELECTRIC CUV</span>
+        </div>
+        <div class="silhouette-frame">
+          <img src="2020s/2021_hyundai_ioniq_5.jpg" alt="2021 Hyundai Ioniq 5 silhouette" class="silhouette-img" loading="lazy">
+        </div>
+        <div class="silhouette-info">
+          <h4 class="sil-car-title">Hyundai Ioniq 5</h4>
+          <p class="sil-profile-desc">Modern EV skateboard architecture pushing axles out to a limousine-like 3,000 mm wheelbase, minimal front/rear overhangs, and 45-degree C-pillar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: MACRO POPULARITY OF BODY STYLES -->
+  <div class="bodystyle-viz-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Macro Fleet Architecture • 16,469 Models</div>
+        <h3 class="viz-heading">The Shift in Body Style Popularity</h3>
+        <p class="viz-subheading">
+          Decadal composition of production models across eight authentic automotive body categories (1970–2024). Click any body type button below to isolate its physical dimensions, market share, and proportions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Body Style Selector Bar -->
+    <div class="bodystyle-selector-bar" id="bs-selector-bar"></div>
+    <div class="bodystyle-legend" id="bs-legend-container"></div>
+    <div class="bodystyle-stream" id="bs-stream-container"></div>
+  </div>
+
+  <!-- SECTION 3: BODY-SPECIFIC PREVALENCE -->
+  <div class="dim-explorer-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Isolated Market Trajectory</div>
+        <h3 class="viz-heading" id="share-heading">How common was this body style?</h3>
+        <p class="viz-subheading" id="share-subheading">
+          Annual percentage share of vehicle introductions and total model counts from 1970 to 2024.
+        </p>
+      </div>
+    </div>
+
+    <div class="dim-readout-strip" id="share-hover-readout">
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
+        <span class="dim-readout-val">Inspect annual production share and recorded model count</span>
+        <span class="dim-readout-sample">[1970 — 2024]</span>
+      </div>
+    </div>
+
+    <div class="dim-chart-svg-container" id="share-svg-container" style="min-height: 280px;"></div>
+    <div class="share-stats-row" id="share-stats-container"></div>
+  </div>
+
+  <!-- SECTION 4: BODY-SPECIFIC PHYSICAL DIMENSIONS -->
+  <div class="dim-explorer-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Isolated Physical Dimensions</div>
+        <h3 class="viz-heading" id="dim-heading">Exterior dimensions (1970 — 2024)</h3>
+        <p class="viz-subheading" id="dim-subheading">
+          Median exterior dimensions derived exclusively from selected body type production models.
+        </p>
+      </div>
+    </div>
+
+    <div class="dim-controls-row">
+      <div class="dim-btn-group">
+        <button class="dim-tab-btn is-active" id="dim-btn-all" onclick="switchDimension('all')">All Dimensions</button>
+        <button class="dim-tab-btn" id="dim-btn-length" onclick="switchDimension('length')">Length</button>
+        <button class="dim-tab-btn" id="dim-btn-width" onclick="switchDimension('width')">Width</button>
+        <button class="dim-tab-btn" id="dim-btn-height" onclick="switchDimension('height')">Height</button>
+        <button class="dim-tab-btn" id="dim-btn-wheelbase" onclick="switchDimension('wheelbase')">Wheelbase</button>
+      </div>
+      <div class="unit-toggle-wrap">
+        <span style="font-size:0.75rem; color:#64748b; font-family:ui-monospace, monospace;">UNIT:</span>
+        <button class="unit-btn is-active" id="unit-mm" onclick="toggleUnit('mm')">mm</button>
+        <button class="unit-btn" id="unit-in" onclick="toggleUnit('in')">inches</button>
+      </div>
+    </div>
+
+    <div class="dim-readout-strip" id="dim-hover-readout">
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
+        <span class="dim-readout-val">Hover over any year to inspect isolated body type dimensions</span>
+        <span class="dim-readout-sample">[1970 — 2024]</span>
+      </div>
+    </div>
+
+    <div class="dim-chart-svg-container" id="dim-svg-container"></div>
+    <div class="gap-note">
+      <span>∗ Continuous Fleet Metric: Based on vehicles actively produced during each calendar year across their generation lifespan.</span>
+    </div>
+
+    <div class="dim-stats-summary-grid" id="dim-stats-summary-grid"></div>
+  </div>
+
+  <!-- SECTION 5: PROPORTIONS OVER TIME -->
+  <div class="diversity-spread-card" style="margin-bottom: 3.5rem;">
+    <div class="viz-header">
+      <div class="viz-title-block">
+        <div class="section-badge">Proportion Analysis</div>
+        <h3 class="viz-heading" id="prop-heading">How proportions changed</h3>
+        <p class="viz-subheading" id="prop-subheading">
+          Size is not shape. Tracking the profile stance ratio (Length ÷ Height) and packaging wheelbase ratio (Wheelbase ÷ Length) specifically for this body shape over time.
+        </p>
+      </div>
+    </div>
+
+    <div class="dispersion-legend">
+      <div class="disp-legend-item">
+        <span class="disp-legend-swatch" style="background:#38bdf8;"></span>
+        <span>Profile Stance Ratio (Length ÷ Height • Left Axis)</span>
+      </div>
+      <div class="disp-legend-item">
+        <span class="disp-legend-swatch" style="background:#f59e0b; border-bottom: 2px dashed #f59e0b;"></span>
+        <span>Wheelbase Packaging Efficiency (Wheelbase ÷ Length • Right Axis)</span>
+      </div>
+    </div>
+
+    <div class="dispersion-chart-container" id="prop-svg-container"></div>
+    <div class="nuance-findings-grid" id="prop-findings-grid"></div>
+  </div>
+
+  <!-- SECTION 6: DATA TRANSPARENCY -->
+  <div class="data-transparency-card">
+    <details class="transparency-details">
+      <summary class="transparency-summary">
+        <span>About the Shape &amp; Dimensions Dataset</span>
+        <span class="summary-icon">+</span>
+      </summary>
+      <div class="transparency-body">
+        <div class="transparency-grid">
+          <div class="transparency-item">
+            <h4>Dataset Origin &amp; Coverage</h4>
+            <p><strong>Primary Source:</strong> Historical Automotive Specification Archive &amp; VIN Catalogue.</p>
+            <p><strong>Sample Size:</strong> 16,469 classified production passenger vehicles (1970–2024).</p>
+            <p><strong>Variables Tracked:</strong> Overall Length, Width, Height, Wheelbase, Curb Weight, Body Class, and Generation Production Spans.</p>
+          </div>
+          <div class="transparency-item">
+            <h4>Measurement Methodology</h4>
+            <p>Dimensions represent production model medians in millimeters. All figures are strictly computed within the active body style category so that growth in SUVs does not falsely inflate sedan measurements.</p>
+            <p class="small-note">Years with fewer than two classified production introductions are preserved with visual chart gaps rather than interpolated estimates.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- NAVIGATION CALLOUT TO NEXT CHAPTER -->
+  <div class="editorial-nav-box" style="margin-top: 4rem; text-align: center; padding: 3rem 2rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
+    <div class="section-badge" style="margin-bottom: 0.8rem;">Next Dimension</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin: 0 0 1rem; color: var(--text-ink);">What happened to mechanical variety?</h3>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.75rem; font-size: 0.95rem; line-height: 1.6;">
+      Beyond what we see, a car's identity lived in what we heard: cylinders, aspiration, displacement, and mechanical sound.
+    </p>
+    <a href="sound.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 0.85rem 2rem;">
+      <span>EXPLORE SOUND</span>
+      <span class="cta-arrow">→</span>
+    </a>
+  </div>
+
+</div>
+<script src="data/shape_data.js"></script>
+<script src="scripts/shape-interactive.js"></script>
+
+
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

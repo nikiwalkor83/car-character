@@ -1,0 +1,1192 @@
+{
+  "1960s": [
+    {
+      "name": "1960 Austin Mini",
+      "make": "Mini",
+      "gen": "Mark I (ADO15)",
+      "year": 1960,
+      "country": "United Kingdom",
+      "category": "Economy"
+    },
+    {
+      "name": "1961 Jaguar E-Type",
+      "make": "Jaguar",
+      "gen": "Series 1 (3.8L)",
+      "year": 1961,
+      "country": "United Kingdom",
+      "category": "Sports"
+    },
+    {
+      "name": "1962 Ferrari 250 GTO",
+      "make": "Ferrari",
+      "gen": "250 GTO (Series I)",
+      "year": 1962,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "1963 Porsche 911",
+      "make": "Porsche",
+      "gen": "Original 911 (901)",
+      "year": 1963,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "1963 Chevrolet Corvette Sting Ray",
+      "make": "Chevrolet",
+      "gen": "Corvette C2 Split Window",
+      "year": 1963,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1964 Aston Martin DB5",
+      "make": "Aston Martin",
+      "gen": "DB5 Coupe",
+      "year": 1964,
+      "country": "United Kingdom",
+      "category": "Luxury"
+    },
+    {
+      "name": "1964 Ford Mustang",
+      "make": "Ford",
+      "gen": "First generation (1964 1/2)",
+      "year": 1964,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1964 Pontiac GTO",
+      "make": "Pontiac",
+      "gen": "First generation GTO",
+      "year": 1964,
+      "country": "United States",
+      "category": "Coupe"
+    },
+    {
+      "name": "1965 Alfa Romeo Giulia Sprint GTA",
+      "make": "Alfa Romeo",
+      "gen": "Giulia Sprint GTA (Tipo 105.32)",
+      "year": 1965,
+      "country": "Italy",
+      "category": "Coupe"
+    },
+    {
+      "name": "1965 Shelby Cobra 427",
+      "make": "Ford",
+      "gen": "AC Cobra Mk III (CSX3000)",
+      "year": 1965,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1966 Lamborghini Miura",
+      "make": "Lamborghini",
+      "gen": "P400",
+      "year": 1966,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "1966 Toyota 2000GT",
+      "make": "Toyota",
+      "gen": "MF10",
+      "year": 1966,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1966 Volvo 144",
+      "make": "Volvo",
+      "gen": "140 Series",
+      "year": 1966,
+      "country": "Sweden",
+      "category": "Sedan"
+    },
+    {
+      "name": "1967 Chevrolet Camaro",
+      "make": "Chevrolet",
+      "gen": "First generation (F-body)",
+      "year": 1967,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1967 Mazda Cosmo Sport",
+      "make": "Mazda",
+      "gen": "Series I (L10A)",
+      "year": 1967,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1967 Volkswagen Type 2 Bus",
+      "make": "Volkswagen",
+      "gen": "T2 (Bay Window)",
+      "year": 1967,
+      "country": "Germany",
+      "category": "Van"
+    },
+    {
+      "name": "1968 Dodge Charger",
+      "make": "Dodge",
+      "gen": "Second generation (B-body)",
+      "year": 1968,
+      "country": "United States",
+      "category": "Coupe"
+    },
+    {
+      "name": "1968 BMW 2002",
+      "make": "BMW",
+      "gen": "02 Series (E10)",
+      "year": 1968,
+      "country": "Germany",
+      "category": "Sedan"
+    },
+    {
+      "name": "1968 Ford GT40 Mk I",
+      "make": "Ford",
+      "gen": "Mk I Road Car",
+      "year": 1968,
+      "country": "United States",
+      "category": "Supercar"
+    },
+    {
+      "name": "1969 Nissan Skyline 2000GT-R",
+      "make": "Nissan",
+      "gen": "PGC10 (Hakosuka)",
+      "year": 1969,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "1969 Plymouth Road Runner",
+      "make": "Plymouth",
+      "gen": "First generation (B-body)",
+      "year": 1969,
+      "country": "United States",
+      "category": "Coupe"
+    }
+  ],
+  "1970s": [
+    {
+      "name": "1970 Dodge Challenger R/T",
+      "make": "Dodge",
+      "gen": "First generation (E-body)",
+      "year": 1970,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1970 Range Rover Classic",
+      "make": "Land Rover",
+      "gen": "First generation (Classic)",
+      "year": 1970,
+      "country": "United Kingdom",
+      "category": "SUV"
+    },
+    {
+      "name": "1971 Alfa Romeo Montreal",
+      "make": "Alfa Romeo",
+      "gen": "Tipo 105.64",
+      "year": 1971,
+      "country": "Italy",
+      "category": "Sports"
+    },
+    {
+      "name": "1972 BMW 520",
+      "make": "BMW",
+      "gen": "First generation 5 Series (E12)",
+      "year": 1972,
+      "country": "Germany",
+      "category": "Sedan"
+    },
+    {
+      "name": "1972 Fiat 126",
+      "make": "Fiat",
+      "gen": "First generation (Typ 126)",
+      "year": 1972,
+      "country": "Italy",
+      "category": "Economy"
+    },
+    {
+      "name": "1973 Lancia Stratos HF",
+      "make": "Lancia",
+      "gen": "Tipo 829",
+      "year": 1973,
+      "country": "Italy",
+      "category": "Sports"
+    },
+    {
+      "name": "1974 Lamborghini Countach LP400",
+      "make": "Lamborghini",
+      "gen": "LP400 Periscopio",
+      "year": 1974,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "1974 Volvo 240",
+      "make": "Volvo",
+      "gen": "200 Series (242/244)",
+      "year": 1974,
+      "country": "Sweden",
+      "category": "Sedan"
+    },
+    {
+      "name": "1975 Ferrari 308 GTB",
+      "make": "Ferrari",
+      "gen": "308 GTB (V8)",
+      "year": 1975,
+      "country": "Italy",
+      "category": "Sports"
+    },
+    {
+      "name": "1975 Toyota Celica",
+      "make": "Toyota",
+      "gen": "First generation (A20/A35)",
+      "year": 1975,
+      "country": "Japan",
+      "category": "Coupe"
+    },
+    {
+      "name": "1976 Lotus Esprit S1",
+      "make": "Lotus",
+      "gen": "Series 1 (Type 79)",
+      "year": 1976,
+      "country": "United Kingdom",
+      "category": "Sports"
+    },
+    {
+      "name": "1976 Renault 5 Alpine",
+      "make": "Renault",
+      "gen": "First generation (R1223)",
+      "year": 1976,
+      "country": "France",
+      "category": "Hatchback"
+    },
+    {
+      "name": "1977 Aston Martin V8 Vantage",
+      "make": "Aston Martin",
+      "gen": "Series 2 V8",
+      "year": 1977,
+      "country": "United Kingdom",
+      "category": "Luxury"
+    },
+    {
+      "name": "1977 Chevrolet Caprice",
+      "make": "Chevrolet",
+      "gen": "Third generation (B-body)",
+      "year": 1977,
+      "country": "United States",
+      "category": "Sedan"
+    },
+    {
+      "name": "1978 Mazda RX-7 (SA22C)",
+      "make": "Mazda",
+      "gen": "First generation (SA22C/FB)",
+      "year": 1978,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1978 Subaru BRAT",
+      "make": "Subaru",
+      "gen": "First generation",
+      "year": 1978,
+      "country": "Japan",
+      "category": "Pickup"
+    },
+    {
+      "name": "1978 Lincoln Continental Mark V",
+      "make": "Lincoln",
+      "gen": "Continental Mark V",
+      "year": 1978,
+      "country": "United States",
+      "category": "Luxury"
+    },
+    {
+      "name": "1979 Mercedes-Benz G-Class (W460)",
+      "make": "Mercedes-Benz",
+      "gen": "First generation (W460)",
+      "year": 1979,
+      "country": "Germany",
+      "category": "SUV"
+    },
+    {
+      "name": "1979 Ford Fox Mustang",
+      "make": "Ford",
+      "gen": "Third generation (Fox body)",
+      "year": 1979,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1979 Toyota Hilux",
+      "make": "Toyota",
+      "gen": "Third generation (N30)",
+      "year": 1979,
+      "country": "Japan",
+      "category": "Pickup"
+    },
+    {
+      "name": "1979 Honda Prelude",
+      "make": "Honda",
+      "gen": "First generation (SN)",
+      "year": 1979,
+      "country": "Japan",
+      "category": "Coupe"
+    }
+  ],
+  "1980s": [
+    {
+      "name": "1980 Fiat Panda",
+      "make": "Fiat",
+      "gen": "First generation (Typ 141)",
+      "year": 1980,
+      "country": "Italy",
+      "category": "Economy"
+    },
+    {
+      "name": "1981 Renault 5 Turbo",
+      "make": "Renault",
+      "gen": "Group 4 Homologation",
+      "year": 1981,
+      "country": "France",
+      "category": "Hatchback"
+    },
+    {
+      "name": "1982 Chevrolet Camaro Z28",
+      "make": "Chevrolet",
+      "gen": "Third generation (F-body)",
+      "year": 1982,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1982 Porsche 944",
+      "make": "Porsche",
+      "gen": "First generation (Typ 944)",
+      "year": 1982,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "1983 Peugeot 205",
+      "make": "Peugeot",
+      "gen": "Phase 1",
+      "year": 1983,
+      "country": "France",
+      "category": "Hatchback"
+    },
+    {
+      "name": "1983 Toyota Sprinter Trueno (AE86)",
+      "make": "Toyota",
+      "gen": "AE86 generation",
+      "year": 1983,
+      "country": "Japan",
+      "category": "Coupe"
+    },
+    {
+      "name": "1984 Honda CRX",
+      "make": "Honda",
+      "gen": "First generation (AF/AS)",
+      "year": 1984,
+      "country": "Japan",
+      "category": "Hatchback"
+    },
+    {
+      "name": "1985 Ford Sierra RS Cosworth",
+      "make": "Ford",
+      "gen": "First generation Cosworth",
+      "year": 1985,
+      "country": "United Kingdom",
+      "category": "Coupe"
+    },
+    {
+      "name": "1985 Lancia Delta HF 4WD",
+      "make": "Lancia",
+      "gen": "Delta I (Tipo 831)",
+      "year": 1985,
+      "country": "Italy",
+      "category": "Hatchback"
+    },
+    {
+      "name": "1985 Saab 9000",
+      "make": "Saab",
+      "gen": "First generation (CC)",
+      "year": 1985,
+      "country": "Sweden",
+      "category": "Sedan"
+    },
+    {
+      "name": "1986 Porsche 959",
+      "make": "Porsche",
+      "gen": "Typ 959",
+      "year": 1986,
+      "country": "Germany",
+      "category": "Supercar"
+    },
+    {
+      "name": "1986 Toyota MR2 (AW11)",
+      "make": "Toyota",
+      "gen": "First generation (W10)",
+      "year": 1986,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1987 Buick GNX",
+      "make": "Buick",
+      "gen": "Regal Grand National GNX",
+      "year": 1987,
+      "country": "United States",
+      "category": "Coupe"
+    },
+    {
+      "name": "1987 Ferrari F40",
+      "make": "Ferrari",
+      "gen": "Tipo F120",
+      "year": 1987,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "1987 Mitsubishi Starion",
+      "make": "Mitsubishi",
+      "gen": "Widebody (A187A)",
+      "year": 1987,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1988 Honda CR-X Si",
+      "make": "Honda",
+      "gen": "Second generation (ED9/EF8)",
+      "year": 1988,
+      "country": "Japan",
+      "category": "Hatchback"
+    },
+    {
+      "name": "1988 Volvo 740 Turbo",
+      "make": "Volvo",
+      "gen": "700 Series Estate",
+      "year": 1988,
+      "country": "Sweden",
+      "category": "Wagon"
+    },
+    {
+      "name": "1989 Chevrolet Corvette ZR-1",
+      "make": "Chevrolet",
+      "gen": "Corvette C4 ZR-1 (LT5)",
+      "year": 1989,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1989 Nissan Skyline GT-R (R32)",
+      "make": "Nissan",
+      "gen": "Eighth generation (BNR32)",
+      "year": 1989,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1989 Subaru Legacy",
+      "make": "Subaru",
+      "gen": "First generation (BC/BF)",
+      "year": 1989,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "1989 Mercedes-Benz 500SL (R129)",
+      "make": "Mercedes-Benz",
+      "gen": "Fourth generation SL (R129)",
+      "year": 1989,
+      "country": "Germany",
+      "category": "Convertible"
+    }
+  ],
+  "1990s": [
+    {
+      "name": "1990 Acura NSX",
+      "make": "Acura",
+      "gen": "First generation (NA1)",
+      "year": 1990,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1991 GMC Syclone",
+      "make": "GMC",
+      "gen": "First generation (S-15)",
+      "year": 1991,
+      "country": "United States",
+      "category": "Pickup"
+    },
+    {
+      "name": "1991 Mazda RX-7 (FD)",
+      "make": "Mazda",
+      "gen": "Third generation (FD3S)",
+      "year": 1991,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1992 McLaren F1",
+      "make": "McLaren",
+      "gen": "First generation (XP)",
+      "year": 1992,
+      "country": "United Kingdom",
+      "category": "Supercar"
+    },
+    {
+      "name": "1992 Mitsubishi Lancer Evolution I",
+      "make": "Mitsubishi",
+      "gen": "First generation (CD9A)",
+      "year": 1992,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "1993 Toyota Supra Turbo (A80)",
+      "make": "Toyota",
+      "gen": "Fourth generation (A80)",
+      "year": 1993,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1994 Audi RS2 Avant",
+      "make": "Audi",
+      "gen": "Typ 8C (B4)",
+      "year": 1994,
+      "country": "Germany",
+      "category": "Wagon"
+    },
+    {
+      "name": "1994 Ferrari F355",
+      "make": "Ferrari",
+      "gen": "F355 Berlinetta (Tipo F129)",
+      "year": 1994,
+      "country": "Italy",
+      "category": "Sports"
+    },
+    {
+      "name": "1994 Subaru Impreza 555",
+      "make": "Subaru",
+      "gen": "First generation WRX STI (GC8)",
+      "year": 1994,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "1995 BMW M3 (E36)",
+      "make": "BMW",
+      "gen": "Second generation M3 (E36)",
+      "year": 1995,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "1995 Honda Integra Type R (DC2)",
+      "make": "Honda",
+      "gen": "Third generation Integra (DC2)",
+      "year": 1995,
+      "country": "Japan",
+      "category": "Coupe"
+    },
+    {
+      "name": "1995 Porsche 911 (993)",
+      "make": "Porsche",
+      "gen": "Fourth generation 911 (993)",
+      "year": 1995,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "1996 Dodge Viper GTS",
+      "make": "Dodge",
+      "gen": "Second generation (SR II)",
+      "year": 1996,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1996 Lotus Elise Series 1",
+      "make": "Lotus",
+      "gen": "Series 1 (Type 111)",
+      "year": 1996,
+      "country": "United Kingdom",
+      "category": "Sports"
+    },
+    {
+      "name": "1997 Plymouth Prowler",
+      "make": "Plymouth",
+      "gen": "First generation (PR platform)",
+      "year": 1997,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "1997 Honda CR-V",
+      "make": "Honda",
+      "gen": "First generation (RD1-RD3)",
+      "year": 1997,
+      "country": "Japan",
+      "category": "SUV"
+    },
+    {
+      "name": "1998 Alfa Romeo 156",
+      "make": "Alfa Romeo",
+      "gen": "Tipo 932",
+      "year": 1998,
+      "country": "Italy",
+      "category": "Sedan"
+    },
+    {
+      "name": "1998 Land Rover Defender 90",
+      "make": "Land Rover",
+      "gen": "Original Defender (L316)",
+      "year": 1998,
+      "country": "United Kingdom",
+      "category": "SUV"
+    },
+    {
+      "name": "1999 Nissan Skyline GT-R (R34)",
+      "make": "Nissan",
+      "gen": "Tenth generation (BNR34)",
+      "year": 1999,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "1999 Pagani Zonda C12",
+      "make": "Pagani",
+      "gen": "C12 (6.0L AMG V12)",
+      "year": 1999,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "1999 Porsche 911 GT3 (996)",
+      "make": "Porsche",
+      "gen": "Fifth generation (996.1 GT3)",
+      "year": 1999,
+      "country": "Germany",
+      "category": "Sports"
+    }
+  ],
+  "2000s": [
+    {
+      "name": "2000 BMW M3 (E46)",
+      "make": "BMW",
+      "gen": "Third generation M3 (E46)",
+      "year": 2000,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "2000 Lotus Exige Series 1",
+      "make": "Lotus",
+      "gen": "Series 1 (NA Rover K)",
+      "year": 2000,
+      "country": "United Kingdom",
+      "category": "Sports"
+    },
+    {
+      "name": "2001 Chevrolet Corvette Z06 (C5)",
+      "make": "Chevrolet",
+      "gen": "Fifth generation Z06 (LS6)",
+      "year": 2001,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "2002 Ferrari Enzo",
+      "make": "Ferrari",
+      "gen": "Tipo F140",
+      "year": 2002,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "2002 Honda Civic Type R (EP3)",
+      "make": "Honda",
+      "gen": "Second generation Type R (EP3)",
+      "year": 2002,
+      "country": "Japan",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2003 Bentley Continental GT",
+      "make": "Bentley",
+      "gen": "First generation (W12)",
+      "year": 2003,
+      "country": "United Kingdom",
+      "category": "Luxury"
+    },
+    {
+      "name": "2003 Mitsubishi Lancer Evolution VIII",
+      "make": "Mitsubishi",
+      "gen": "Eighth generation (CT9A)",
+      "year": 2003,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "2004 Porsche Carrera GT",
+      "make": "Porsche",
+      "gen": "Typ 980 (5.7L V10)",
+      "year": 2004,
+      "country": "Germany",
+      "category": "Supercar"
+    },
+    {
+      "name": "2004 Subaru Impreza WRX STI",
+      "make": "Subaru",
+      "gen": "Second generation facelift (GD Blobeye)",
+      "year": 2004,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "2004 Volkswagen Golf R32 (Mk4)",
+      "make": "Volkswagen",
+      "gen": "Fourth generation R32 (Typ 1J)",
+      "year": 2004,
+      "country": "Germany",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2005 Aston Martin V8 Vantage",
+      "make": "Aston Martin",
+      "gen": "VH generation (4.3L V8)",
+      "year": 2005,
+      "country": "United Kingdom",
+      "category": "Sports"
+    },
+    {
+      "name": "2005 Bugatti Veyron 16.4",
+      "make": "Bugatti",
+      "gen": "EB 16.4 (Quad-Turbo W16)",
+      "year": 2005,
+      "country": "France",
+      "category": "Supercar"
+    },
+    {
+      "name": "2005 Chevrolet Corvette (C6)",
+      "make": "Chevrolet",
+      "gen": "Sixth generation (C6)",
+      "year": 2005,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "2006 Audi RS4 (B7)",
+      "make": "Audi",
+      "gen": "Typ 8E (B7 4.2L V8)",
+      "year": 2006,
+      "country": "Germany",
+      "category": "Sedan"
+    },
+    {
+      "name": "2006 Ford Mustang GT (S197)",
+      "make": "Ford",
+      "gen": "Fifth generation (S197)",
+      "year": 2006,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "2006 Porsche Cayman S (987)",
+      "make": "Porsche",
+      "gen": "First generation (987.1)",
+      "year": 2006,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "2007 BMW M3 (E92)",
+      "make": "BMW",
+      "gen": "Fourth generation M3 (E92 V8)",
+      "year": 2007,
+      "country": "Germany",
+      "category": "Coupe"
+    },
+    {
+      "name": "2007 Mini Cooper S (R56)",
+      "make": "Mini",
+      "gen": "Second modern generation (R56 Turbo)",
+      "year": 2007,
+      "country": "United Kingdom",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2008 Dodge Challenger SRT8",
+      "make": "Dodge",
+      "gen": "Third generation (LC platform)",
+      "year": 2008,
+      "country": "United States",
+      "category": "Coupe"
+    },
+    {
+      "name": "2008 Hyundai Genesis Coupe",
+      "make": "Hyundai",
+      "gen": "First generation (BK)",
+      "year": 2008,
+      "country": "South Korea",
+      "category": "Coupe"
+    },
+    {
+      "name": "2009 Ferrari 458 Italia",
+      "make": "Ferrari",
+      "gen": "Tipo F142 (4.5L V8)",
+      "year": 2009,
+      "country": "Italy",
+      "category": "Supercar"
+    }
+  ],
+  "2010s": [
+    {
+      "name": "2010 Lexus LFA",
+      "make": "Lexus",
+      "gen": "LFA (1LR-GUE 4.8L V10)",
+      "year": 2010,
+      "country": "Japan",
+      "category": "Supercar"
+    },
+    {
+      "name": "2011 BMW 1 Series M Coupe",
+      "make": "BMW",
+      "gen": "E82 1M (N54 Twin Turbo)",
+      "year": 2011,
+      "country": "Germany",
+      "category": "Coupe"
+    },
+    {
+      "name": "2011 Ferrari FF",
+      "make": "Ferrari",
+      "gen": "Tipo F151 (V12 AWD Shooting Brake)",
+      "year": 2011,
+      "country": "Italy",
+      "category": "Sports"
+    },
+    {
+      "name": "2012 Ford Focus ST",
+      "make": "Ford",
+      "gen": "Third generation (C346)",
+      "year": 2012,
+      "country": "United States",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2012 Subaru BRZ",
+      "make": "Subaru",
+      "gen": "First generation (ZC6)",
+      "year": 2012,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "2013 Alfa Romeo 4C",
+      "make": "Alfa Romeo",
+      "gen": "Tipo 960 (Carbon tub)",
+      "year": 2013,
+      "country": "Italy",
+      "category": "Sports"
+    },
+    {
+      "name": "2013 Chevrolet Corvette Stingray (C7)",
+      "make": "Chevrolet",
+      "gen": "Seventh generation (C7 LT1)",
+      "year": 2013,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "2013 McLaren P1",
+      "make": "McLaren",
+      "gen": "Ultimate Series (Hybrid V8)",
+      "year": 2013,
+      "country": "United Kingdom",
+      "category": "Supercar"
+    },
+    {
+      "name": "2013 Porsche 918 Spyder",
+      "make": "Porsche",
+      "gen": "Typ 918 (Hybrid V8 AWD)",
+      "year": 2013,
+      "country": "Germany",
+      "category": "Supercar"
+    },
+    {
+      "name": "2014 BMW i8",
+      "make": "BMW",
+      "gen": "First generation (I12 PHEV)",
+      "year": 2014,
+      "country": "Germany",
+      "category": "Sports"
+    },
+    {
+      "name": "2014 Dodge Challenger SRT Hellcat",
+      "make": "Dodge",
+      "gen": "LA platform (6.2L Supercharged)",
+      "year": 2014,
+      "country": "United States",
+      "category": "Coupe"
+    },
+    {
+      "name": "2014 Ferrari LaFerrari",
+      "make": "Ferrari",
+      "gen": "Tipo F150 (HY-KERS V12)",
+      "year": 2014,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "2015 Audi R8 V10 Plus",
+      "make": "Audi",
+      "gen": "Second generation (Typ 4S)",
+      "year": 2015,
+      "country": "Germany",
+      "category": "Supercar"
+    },
+    {
+      "name": "2015 Mazda MX-5 Miata (ND)",
+      "make": "Mazda",
+      "gen": "Fourth generation (ND1)",
+      "year": 2015,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "2016 Ford Focus RS",
+      "make": "Ford",
+      "gen": "Third generation (C346 AWD)",
+      "year": 2016,
+      "country": "United States",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2017 Alfa Romeo Giulia Quadrifoglio",
+      "make": "Alfa Romeo",
+      "gen": "Tipo 952 (2.9L Twin Turbo V6)",
+      "year": 2017,
+      "country": "Italy",
+      "category": "Sedan"
+    },
+    {
+      "name": "2017 Bugatti Chiron",
+      "make": "Bugatti",
+      "gen": "Chiron (8.0L Quad-Turbo W16)",
+      "year": 2017,
+      "country": "France",
+      "category": "Supercar"
+    },
+    {
+      "name": "2017 Kia Stinger GT",
+      "make": "Kia",
+      "gen": "First generation (CK 3.3T)",
+      "year": 2017,
+      "country": "South Korea",
+      "category": "Sedan"
+    },
+    {
+      "name": "2018 Alpine A110",
+      "make": "Alpine",
+      "gen": "Modern A110",
+      "year": 2018,
+      "country": "France",
+      "category": "Sports"
+    },
+    {
+      "name": "2018 Genesis G70",
+      "make": "Genesis",
+      "gen": "First generation (IK)",
+      "year": 2018,
+      "country": "South Korea",
+      "category": "Sedan"
+    },
+    {
+      "name": "2019 Hyundai Veloster N",
+      "make": "Hyundai",
+      "gen": "Second generation (JS N)",
+      "year": 2019,
+      "country": "South Korea",
+      "category": "Hatchback"
+    }
+  ],
+  "2020s": [
+    {
+      "name": "2020 Land Rover Defender 110",
+      "make": "Land Rover",
+      "gen": "Second generation (L663)",
+      "year": 2020,
+      "country": "United Kingdom",
+      "category": "SUV"
+    },
+    {
+      "name": "2020 Polestar 2",
+      "make": "Polestar",
+      "gen": "First generation (CMA EV)",
+      "year": 2020,
+      "country": "Sweden",
+      "category": "Sedan"
+    },
+    {
+      "name": "2021 BMW M4 (G82)",
+      "make": "BMW",
+      "gen": "Second generation M4 (G82)",
+      "year": 2021,
+      "country": "Germany",
+      "category": "Coupe"
+    },
+    {
+      "name": "2021 Genesis GV70",
+      "make": "Genesis",
+      "gen": "First generation (JK1)",
+      "year": 2021,
+      "country": "South Korea",
+      "category": "SUV"
+    },
+    {
+      "name": "2021 Lucid Air",
+      "make": "Lucid",
+      "gen": "First generation",
+      "year": 2021,
+      "country": "United States",
+      "category": "Luxury"
+    },
+    {
+      "name": "2021 Mercedes-Benz S-Class (W223)",
+      "make": "Mercedes-Benz",
+      "gen": "Seventh generation S-Class (W223)",
+      "year": 2021,
+      "country": "Germany",
+      "category": "Luxury"
+    },
+    {
+      "name": "2021 Ram 1500 TRX",
+      "make": "Ram",
+      "gen": "Fifth generation (DT 6.2L Supercharged)",
+      "year": 2021,
+      "country": "United States",
+      "category": "Pickup"
+    },
+    {
+      "name": "2022 Cadillac CT5-V Blackwing",
+      "make": "Cadillac",
+      "gen": "First generation (6.2L Supercharged)",
+      "year": 2022,
+      "country": "United States",
+      "category": "Sedan"
+    },
+    {
+      "name": "2022 Ferrari 296 GTB",
+      "make": "Ferrari",
+      "gen": "Tipo F171 (3.0L Twin-Turbo V6 Hybrid)",
+      "year": 2022,
+      "country": "Italy",
+      "category": "Supercar"
+    },
+    {
+      "name": "2022 Ford F-150 Lightning",
+      "make": "Ford",
+      "gen": "Fourteenth generation (EV)",
+      "year": 2022,
+      "country": "United States",
+      "category": "Pickup"
+    },
+    {
+      "name": "2022 Hyundai Elantra N",
+      "make": "Hyundai",
+      "gen": "Seventh generation (CN7 N)",
+      "year": 2022,
+      "country": "South Korea",
+      "category": "Sedan"
+    },
+    {
+      "name": "2022 Nissan Z (RZ34)",
+      "make": "Nissan",
+      "gen": "Seventh generation Z (RZ34)",
+      "year": 2022,
+      "country": "Japan",
+      "category": "Sports"
+    },
+    {
+      "name": "2022 Subaru WRX (VB)",
+      "make": "Subaru",
+      "gen": "Second generation (VB FA24F)",
+      "year": 2022,
+      "country": "Japan",
+      "category": "Sedan"
+    },
+    {
+      "name": "2023 Chevrolet Corvette Z06 (C8)",
+      "make": "Chevrolet",
+      "gen": "Eighth generation Z06 (LT6 flat-plane V8)",
+      "year": 2023,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "2023 Dodge Hornet",
+      "make": "Dodge",
+      "gen": "First generation",
+      "year": 2023,
+      "country": "United States",
+      "category": "SUV"
+    },
+    {
+      "name": "2023 Honda Civic Type R (FL5)",
+      "make": "Honda",
+      "gen": "Sixth generation Type R (FL5)",
+      "year": 2023,
+      "country": "Japan",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2023 Lotus Eletre",
+      "make": "Lotus",
+      "gen": "Type 132 (EV SUV)",
+      "year": 2023,
+      "country": "United Kingdom",
+      "category": "SUV"
+    },
+    {
+      "name": "2023 Toyota GR Corolla",
+      "make": "Toyota",
+      "gen": "E210 GR (G16E-GTS AWD)",
+      "year": 2023,
+      "country": "Japan",
+      "category": "Hatchback"
+    },
+    {
+      "name": "2024 Aston Martin DB12",
+      "make": "Aston Martin",
+      "gen": "First generation (4.0L Twin-Turbo V8)",
+      "year": 2024,
+      "country": "United Kingdom",
+      "category": "Luxury"
+    },
+    {
+      "name": "2024 Ford Mustang Dark Horse",
+      "make": "Ford",
+      "gen": "Seventh generation (S650 5.0L Coyote)",
+      "year": 2024,
+      "country": "United States",
+      "category": "Sports"
+    },
+    {
+      "name": "2024 Hyundai Ioniq 5 N",
+      "make": "Hyundai",
+      "gen": "First generation (NE N Dual-Motor AWD)",
+      "year": 2024,
+      "country": "South Korea",
+      "category": "SUV"
+    }
+  ]
+}
