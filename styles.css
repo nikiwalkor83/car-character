@@ -5209,4 +5209,590 @@ body {
   transform: translateX(3px);
 }
 
+/* ==========================================================================
+   AUTOMOTIVE DATA SPECIFICATIONS & ENGINEERING DOSSIER (PROMPT 5)
+   Editorial layout for vehicle specifications, performance, & fleet comparison
+   ========================================================================== */
+
+.car-model-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.car-model-card.is-selected {
+  border-color: var(--accent-brass) !important;
+  box-shadow: 0 0 0 2px var(--accent-brass), 0 6px 20px rgba(150, 116, 68, 0.18) !important;
+  transform: translateY(-2px);
+}
+
+.car-selected-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: var(--accent-brass);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.car-model-card.is-selected .car-selected-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.automotive-data-stage {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-rule);
+  transition: opacity 0.25s ease;
+}
+
+.spec-stage-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.spec-stage-heading .spec-eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-brass);
+  margin-bottom: 0.35rem;
+}
+
+.spec-stage-heading .spec-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-ink);
+  margin: 0 0 0.4rem;
+}
+
+.spec-stage-heading .spec-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.spec-view-controls {
+  display: inline-flex;
+  background: var(--bg-cream);
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid var(--border-rule);
+}
+
+.spec-toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 0.45rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-body);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.spec-toggle-btn.is-active {
+  background: #ffffff;
+  color: var(--accent-racing-green);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Specimen Switcher Pills */
+.spec-car-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1.25rem;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+}
+
+.spec-switcher-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.spec-switcher-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.spec-switcher-pill {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  background: #ffffff;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.spec-switcher-pill:hover {
+  border-color: var(--border-strong);
+  color: var(--text-ink);
+}
+
+.spec-switcher-pill.is-active {
+  background: var(--accent-racing-green);
+  color: #ffffff;
+  border-color: var(--accent-racing-green);
+}
+
+/* Dossier Hero Card */
+.spec-hero-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  background: #ffffff;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+@media (max-width: 768px) {
+  .spec-hero-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spec-hero-media {
+  background: var(--bg-cream);
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spec-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spec-hero-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spec-hero-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.spec-pill-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-stone);
+  color: var(--text-ink);
+  border-radius: 2px;
+}
+
+.spec-pill-badge.accent {
+  background: var(--accent-racing-green);
+  color: #ffffff;
+}
+
+.spec-hero-name {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0 0 0.35rem;
+}
+
+.spec-hero-gen {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.spec-hero-note {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-body);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Benchmarks Grid (Horsepower, Weight, MPG) */
+.spec-benchmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.spec-benchmark-card {
+  background: #ffffff;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+}
+
+.spec-benchmark-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.spec-benchmark-value-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.spec-benchmark-num {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--accent-racing-green);
+  line-height: 1;
+}
+
+.spec-benchmark-unit {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-body);
+  text-transform: uppercase;
+}
+
+.spec-benchmark-secondary {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.spec-benchmark-bar-track {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-stone);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.spec-benchmark-bar-fill {
+  height: 100%;
+  background: var(--accent-racing-green);
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spec-benchmark-bar-fill.gold {
+  background: var(--accent-brass);
+}
+
+/* Dossier Sections: Powertrain & Dimensions */
+.spec-dossier-section {
+  background: #ffffff;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.spec-section-heading {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.spec-attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem 1.5rem;
+}
+
+.spec-attr-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-attr-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.spec-attr-value {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  line-height: 1.4;
+}
+
+/* Dimensions Grid */
+.spec-dimensions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .spec-dimensions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.spec-dim-card {
+  background: var(--bg-paper);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.spec-dim-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.spec-dim-primary {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-ink);
+  line-height: 1.2;
+}
+
+.spec-dim-secondary {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Stance Bars */
+.spec-stance-bars {
+  background: var(--bg-paper);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.spec-stance-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 110px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spec-stance-name {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.spec-stance-track {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-stone);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.spec-stance-fill {
+  height: 100%;
+  background: var(--accent-racing-green);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.spec-stance-num {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  text-align: right;
+}
+
+/* Fleet Comparison Table */
+.spec-comparison-table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.02);
+}
+
+.spec-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.spec-comparison-table th {
+  background: var(--bg-cream);
+  padding: 0.85rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-ink);
+  border-bottom: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+.spec-comparison-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-rule);
+  color: var(--text-body);
+  vertical-align: middle;
+}
+
+.spec-comparison-table tr:hover {
+  background: var(--bg-paper);
+  cursor: pointer;
+}
+
+.spec-comparison-table tr.is-selected {
+  background: rgba(150, 116, 68, 0.07);
+}
+
+.spec-comp-car-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.spec-comp-thumb {
+  width: 48px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--bg-cream);
+}
+
+.spec-comp-name {
+  font-weight: 600;
+  color: var(--text-ink);
+}
+
+.spec-comp-gen {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.spec-comp-bar-cell {
+  min-width: 140px;
+}
+
+.spec-comp-val {
+  font-weight: 600;
+  color: var(--text-ink);
+  margin-bottom: 0.25rem;
+}
+
+.spec-comp-mini-track {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-stone);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.spec-comp-mini-fill {
+  height: 100%;
+  background: var(--accent-racing-green);
+  border-radius: 2px;
+}
+
+/* Fallback Notice */
+.spec-no-data-notice {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: var(--bg-paper);
+  border: 1px dashed var(--border-strong);
+  border-radius: 2px;
+  margin-top: 1rem;
+}
+
+.spec-notice-text {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+
 

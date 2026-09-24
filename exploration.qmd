@@ -57,6 +57,8 @@ toc: false
         <span id="crumb-mfg" class="breadcrumb-item is-current" style="display:none;">Automaker</span>
         <span id="crumb-year-sep" class="breadcrumb-sep" style="display:none;">/</span>
         <span id="crumb-year" class="breadcrumb-item is-current" style="display:none;">Year</span>
+        <span id="crumb-car-sep" class="breadcrumb-sep" style="display:none;">/</span>
+        <span id="crumb-car" class="breadcrumb-item is-current" style="display:none;">Vehicle</span>
       </div>
     </div>
 
@@ -162,6 +164,79 @@ toc: false
         <div id="models-grid-container" class="models-grid">
           <!-- Populated dynamically -->
         </div>
+
+        <!-- STAGE C: AUTOMOTIVE DATA SPECIFICATIONS INSPECTOR (PROMPT 5) -->
+        <div id="automotive-data-stage" class="automotive-data-stage is-hidden">
+          <div class="spec-stage-header">
+            <div class="spec-stage-heading">
+              <span class="spec-eyebrow">Automotive Data &amp; Engineering Specs</span>
+              <h3 id="spec-stage-title" class="spec-title">Technical Dossier</h3>
+              <p id="spec-stage-subtitle" class="spec-subtitle">Authentic factory specifications from master automotive engineering records.</p>
+            </div>
+            <div id="spec-view-controls" class="spec-view-controls" style="display:none;">
+              <button id="btn-view-dossier" class="spec-toggle-btn is-active" type="button" title="Inspect selected specimen">Specimen Dossier</button>
+              <button id="btn-view-comparison" class="spec-toggle-btn" type="button" title="Compare visible specimens">Fleet Comparison</button>
+            </div>
+          </div>
+
+          <!-- Quick specimen selector pills for switching among visible cars -->
+          <div id="spec-car-switcher" class="spec-car-switcher" style="display:none;">
+            <span class="spec-switcher-label">Inspect Vehicle:</span>
+            <div id="spec-switcher-pills" class="spec-switcher-pills"></div>
+          </div>
+
+          <!-- Single Car Dossier View -->
+          <div id="spec-single-dossier" class="spec-dossier-panel is-active">
+            <div class="spec-hero-card">
+              <div class="spec-hero-media">
+                <img id="spec-hero-img" src="" alt="Vehicle specimen" class="spec-hero-img" />
+              </div>
+              <div class="spec-hero-info">
+                <div class="spec-hero-badges">
+                  <span id="spec-badge-year" class="spec-pill-badge">Year</span>
+                  <span id="spec-badge-make" class="spec-pill-badge accent">Make</span>
+                  <span id="spec-badge-category" class="spec-pill-badge">Category</span>
+                </div>
+                <h2 id="spec-hero-name" class="spec-hero-name">Car Name</h2>
+                <div id="spec-hero-gen" class="spec-hero-gen">Generation</div>
+                <p id="spec-hero-note" class="spec-hero-note"></p>
+              </div>
+            </div>
+
+            <!-- Primary Performance Benchmarks -->
+            <div id="spec-benchmarks-grid" class="spec-benchmarks-grid"></div>
+
+            <!-- Powertrain & Mechanical Architecture -->
+            <div id="spec-powertrain-block" class="spec-dossier-section">
+              <h4 class="spec-section-heading">Powertrain &amp; Mechanical Architecture</h4>
+              <div id="spec-powertrain-grid" class="spec-attributes-grid"></div>
+            </div>
+
+            <!-- Physical Architecture & Dimensions -->
+            <div id="spec-dimensions-block" class="spec-dossier-section">
+              <h4 class="spec-section-heading">Physical Architecture &amp; Dimensions</h4>
+              <div id="spec-dimensions-grid" class="spec-dimensions-grid"></div>
+              <div id="spec-stance-bars" class="spec-stance-bars"></div>
+            </div>
+
+            <!-- Notice when specs are not in archive -->
+            <div id="spec-no-data-notice" class="spec-no-data-notice" style="display:none;">
+              <p class="spec-notice-text">
+                Detailed engineering specifications for this historical specimen were not recorded in the automotive archive.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fleet Comparison View -->
+          <div id="spec-comparison-panel" class="spec-comparison-panel is-hidden">
+            <div class="spec-comparison-table-wrapper">
+              <table class="spec-comparison-table" id="spec-comparison-table">
+                <thead><tr><th>Vehicle Specimen</th><th>Horsepower</th><th>Curb Weight</th><th>Fuel Economy</th><th>Drivetrain</th><th>Dimensions</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -175,6 +250,7 @@ toc: false
 <script src="data/countries_110m.js"></script>
 <script src="data/iso_countries.js"></script>
 <script src="data/cars_metadata.js"></script>
+<script src="data/car_specs.js"></script>
 <script src="data/manufacturers_config.js"></script>
 
 <script>
@@ -195,6 +271,38 @@ window.selectedManufacturer = null;
   const crumbMfg = document.getElementById("crumb-mfg");
   const crumbYearSep = document.getElementById("crumb-year-sep");
   const crumbYear = document.getElementById("crumb-year");
+  const crumbCarSep = document.getElementById("crumb-car-sep");
+  const crumbCar = document.getElementById("crumb-car");
+
+  // Automotive Data stage elements (Prompt 5)
+  const automotiveDataStage = document.getElementById("automotive-data-stage");
+  const specViewControls = document.getElementById("spec-view-controls");
+  const btnViewDossier = document.getElementById("btn-view-dossier");
+  const btnViewComparison = document.getElementById("btn-view-comparison");
+  const specCarSwitcher = document.getElementById("spec-car-switcher");
+  const specSwitcherPills = document.getElementById("spec-switcher-pills");
+  const specSingleDossier = document.getElementById("spec-single-dossier");
+  const specComparisonPanel = document.getElementById("spec-comparison-panel");
+  const specHeroImg = document.getElementById("spec-hero-img");
+  const specBadgeYear = document.getElementById("spec-badge-year");
+  const specBadgeMake = document.getElementById("spec-badge-make");
+  const specBadgeCategory = document.getElementById("spec-badge-category");
+  const specHeroName = document.getElementById("spec-hero-name");
+  const specHeroGen = document.getElementById("spec-hero-gen");
+  const specHeroNote = document.getElementById("spec-hero-note");
+  const specBenchmarksGrid = document.getElementById("spec-benchmarks-grid");
+  const specPowertrainBlock = document.getElementById("spec-powertrain-block");
+  const specPowertrainGrid = document.getElementById("spec-powertrain-grid");
+  const specDimensionsBlock = document.getElementById("spec-dimensions-block");
+  const specDimensionsGrid = document.getElementById("spec-dimensions-grid");
+  const specStanceBars = document.getElementById("spec-stance-bars");
+  const specNoDataNotice = document.getElementById("spec-no-data-notice");
+  const specComparisonTable = document.getElementById("spec-comparison-table");
+
+  // Automotive data state tracking
+  let activeSelectedCar = null;
+  let currentSpecViewMode = "dossier"; // "dossier" | "comparison"
+  let currentVisibleCars = [];
 
   // Panels
   const automakersPanel = document.getElementById("automakers-panel");
@@ -429,92 +537,93 @@ window.selectedManufacturer = null;
   }
 
   function calculateLogoPositions(cx, cy, N, iso3) {
+    const leftMargin = 48;
+    const rightMargin = 48;
+    const topMargin = 48;
+    const bottomMargin = 48;
+
+    const clampX = x => Math.max(leftMargin, Math.min(width - rightMargin, x));
+    const clampY = y => Math.max(topMargin, Math.min(height - bottomMargin, y));
+
     const positions = [];
-    const clampX = x => Math.max(46, Math.min(width - 46, x));
-    const clampY = y => Math.max(46, Math.min(height - 46, y));
 
     if (N === 1) {
-      // 1 manufacturer (e.g. France) - branch northwest into open bay
-      const angle = -0.75;
+      const angle = -Math.PI * 0.25;
       const r = 66;
-      positions.push({
-        x: clampX(cx + r * Math.cos(angle)),
-        y: clampY(cy + r * Math.sin(angle))
-      });
-    } else if (N === 2) {
-      // 2 manufacturers (e.g. UK, Sweden, South Korea)
-      let angles = [-Math.PI * 0.4, Math.PI * 0.6];
-      let r = 74;
-      if (iso3 === "GBR") {
-        angles = [-2.35, -0.78]; // Atlantic West and North-West
-        r = 74;
-      } else if (iso3 === "SWE") {
-        angles = [0.15, -1.75]; // Baltic East and North
-        r = 74;
-      } else if (iso3 === "KOR") {
-        angles = [-2.4, 0.65]; // Yellow Sea and Sea of Japan
-        r = 70;
-      }
+      positions.push({ x: clampX(cx + r * Math.cos(angle)), y: clampY(cy + r * Math.sin(angle)) });
+      return positions;
+    }
+
+    if (N <= 9) {
+      // Dynamic single ring: radius automatically scales to guarantee generous spacing (>=72px)
+      const minSpacing = 72;
+      const targetR = Math.max(76, minSpacing / (2 * Math.sin(Math.PI / N)));
+
+      // Keep the cluster center within canvas margins so northern countries don't flatten against the top
+      const effCy = Math.max(topMargin + targetR, Math.min(height - bottomMargin - targetR, cy));
+      const effCx = Math.max(leftMargin + targetR, Math.min(width - rightMargin - targetR, cx));
+
       for (let i = 0; i < N; i++) {
+        const angle = (2 * Math.PI * i / N) - Math.PI / 2 + 0.12;
         positions.push({
-          x: clampX(cx + r * Math.cos(angles[i])),
-          y: clampY(cy + r * Math.sin(angles[i]))
-        });
-      }
-    } else if (N === 3) {
-      // 3 manufacturers (e.g. Italy) - branch West, East, South
-      const angles = [-2.55, 0.35, 1.75];
-      const radii = [74, 78, 76];
-      for (let i = 0; i < N; i++) {
-        positions.push({
-          x: clampX(cx + radii[i] * Math.cos(angles[i])),
-          y: clampY(cy + radii[i] * Math.sin(angles[i]))
-        });
-      }
-    } else if (N <= 5) {
-      // 4 to 5 manufacturers (e.g. Germany with 5)
-      const r = 86;
-      for (let i = 0; i < N; i++) {
-        const angle = (2 * Math.PI * i / N) - Math.PI / 2 + 0.15;
-        positions.push({
-          x: clampX(cx + r * Math.cos(angle)),
-          y: clampY(cy + r * Math.sin(angle))
-        });
-      }
-    } else if (N <= 8) {
-      // 6 to 8 manufacturers (e.g. Japan with 7)
-      const r = 104;
-      for (let i = 0; i < N; i++) {
-        const angle = (2 * Math.PI * i / N) - Math.PI / 2 + 0.18;
-        positions.push({
-          x: clampX(cx + r * Math.cos(angle)),
-          y: clampY(cy + r * Math.sin(angle))
+          x: clampX(effCx + targetR * Math.cos(angle)),
+          y: clampY(effCy + targetR * Math.sin(angle))
         });
       }
     } else {
-      // 9+ manufacturers (e.g. USA with 10) - two staggered concentric rings
-      // All manufacturers appear cleanly with zero overlap!
-      const innerCount = 5;
+      // 10+ manufacturers (e.g. USA with 16): Two concentric rings with staggered angles
+      const innerCount = Math.floor(N * 0.38);
       const outerCount = N - innerCount;
-      const rInner = 82;
-      const rOuter = 148;
 
-      for (let i = 0; i < N; i++) {
-        if (i < innerCount) {
-          const angle = (2 * Math.PI * i / innerCount) - Math.PI / 2;
-          positions.push({
-            x: clampX(cx + rInner * Math.cos(angle)),
-            y: clampY(cy + rInner * Math.sin(angle))
-          });
-        } else {
-          const j = i - innerCount;
-          const angle = (2 * Math.PI * j / outerCount) - Math.PI / 2 + (Math.PI / outerCount);
-          positions.push({
-            x: clampX(cx + rOuter * Math.cos(angle)),
-            y: clampY(cy + rOuter * Math.sin(angle))
-          });
+      const rInner = Math.max(72, 70 / (2 * Math.sin(Math.PI / innerCount)));
+      const rOuter = Math.max(rInner + 66, 72 / (2 * Math.sin(Math.PI / outerCount)));
+
+      const effCy = Math.max(topMargin + rOuter, Math.min(height - bottomMargin - rOuter, cy));
+      const effCx = Math.max(leftMargin + rOuter, Math.min(width - rightMargin - rOuter, cx));
+
+      for (let i = 0; i < innerCount; i++) {
+        const angle = (2 * Math.PI * i / innerCount) - Math.PI / 2;
+        positions.push({
+          x: clampX(effCx + rInner * Math.cos(angle)),
+          y: clampY(effCy + rInner * Math.sin(angle))
+        });
+      }
+
+      for (let j = 0; j < outerCount; j++) {
+        const angle = (2 * Math.PI * j / outerCount) - Math.PI / 2 + (Math.PI / outerCount);
+        positions.push({
+          x: clampX(effCx + rOuter * Math.cos(angle)),
+          y: clampY(effCy + rOuter * Math.sin(angle))
+        });
+      }
+    }
+
+    // Safety relaxation pass: iteratively resolves any remaining collision to guarantee >=64px center distance
+    const MIN_SAFE_DIST = 64; // Badge circle diameter is 52px; 64px provides a 12px clear buffer
+    for (let iter = 0; iter < 20; iter++) {
+      let collided = false;
+      for (let i = 0; i < positions.length; i++) {
+        for (let j = i + 1; j < positions.length; j++) {
+          const dx = positions[j].x - positions[i].x;
+          const dy = positions[j].y - positions[i].y;
+          const d = Math.hypot(dx, dy);
+          if (d < MIN_SAFE_DIST) {
+            collided = true;
+            const overlap = (MIN_SAFE_DIST - (d || 0.1)) / 2;
+            const nx = ((dx || 0.1) / (d || 0.1)) * overlap;
+            const ny = ((dy || 0.1) / (d || 0.1)) * overlap;
+            positions[i].x -= nx;
+            positions[i].y -= ny;
+            positions[j].x += nx;
+            positions[j].y += ny;
+          }
         }
       }
+      positions.forEach(p => {
+        p.x = clampX(p.x);
+        p.y = clampY(p.y);
+      });
+      if (!collided) break;
     }
 
     return positions;
@@ -1001,6 +1110,8 @@ window.selectedManufacturer = null;
     crumbMfg.textContent = "Chronology";
     if (crumbYearSep) crumbYearSep.style.display = "none";
     if (crumbYear) crumbYear.style.display = "none";
+    if (crumbCarSep) crumbCarSep.style.display = "none";
+    if (crumbCar) crumbCar.style.display = "none";
 
     if (modelsScopeContainer) {
       modelsScopeContainer.style.display = "none";
@@ -1199,11 +1310,389 @@ window.selectedManufacturer = null;
     }
   }
 
+  function getCarSpecs(car) {
+    if (!car) return null;
+    const carName = car["Car name"];
+    if (window.CAR_SPECS && window.CAR_SPECS[carName]) {
+      return window.CAR_SPECS[carName];
+    }
+    return car.specs || null;
+  }
+
+  function selectCar(car, visibleCars = null) {
+    if (!car) return;
+    activeSelectedCar = car;
+    if (visibleCars) {
+      currentVisibleCars = visibleCars;
+    } else if (currentVisibleCars.length === 0) {
+      currentVisibleCars = [car];
+    }
+
+    // Update active state on car cards in models grid
+    if (modelsGrid) {
+      modelsGrid.querySelectorAll(".car-model-card").forEach(card => {
+        const isTarget = card.dataset.carName === car["Car name"];
+        card.classList.toggle("is-selected", isTarget);
+      });
+    }
+
+    // Update breadcrumbs
+    if (crumbCarSep && crumbCar) {
+      crumbCarSep.style.display = "inline";
+      crumbCar.style.display = "inline";
+      crumbCar.textContent = car["Car name"];
+      crumbCar.classList.add("is-current");
+      if (crumbYear) crumbYear.classList.remove("is-current");
+      if (crumbMfg) crumbMfg.classList.remove("is-current");
+      if (crumbCountry) crumbCountry.classList.remove("is-current");
+    }
+
+    // Reveal Automotive Data stage
+    if (automotiveDataStage) {
+      automotiveDataStage.classList.remove("is-hidden");
+      automotiveDataStage.classList.add("is-active");
+    }
+
+    // Quick switcher pills & comparison controls
+    const showMultiControls = currentVisibleCars.length >= 2;
+    if (specViewControls) {
+      specViewControls.style.display = showMultiControls ? "inline-flex" : "none";
+    }
+    if (specCarSwitcher) {
+      specCarSwitcher.style.display = showMultiControls ? "flex" : "none";
+      if (showMultiControls && specSwitcherPills) {
+        specSwitcherPills.innerHTML = "";
+        currentVisibleCars.forEach(c => {
+          const pill = document.createElement("button");
+          pill.type = "button";
+          pill.className = `spec-switcher-pill ${c["Car name"] === car["Car name"] ? "is-active" : ""}`;
+          pill.textContent = `${c["Model year"]} ${c["Car name"].replace(/^\d{4}\s+/, "")}`;
+          pill.addEventListener("click", () => {
+            selectCar(c, currentVisibleCars);
+          });
+          specSwitcherPills.appendChild(pill);
+        });
+      }
+    }
+
+    renderSpecDossier(car);
+    if (currentSpecViewMode === "comparison") {
+      renderSpecComparison(currentVisibleCars, car);
+    }
+  }
+
+  function renderSpecDossier(car) {
+    if (!car) return;
+    const specs = getCarSpecs(car);
+
+    // Hero metadata
+    if (specHeroImg) {
+      specHeroImg.src = car["Image filename"] || "";
+      specHeroImg.alt = car["Car name"] || "Vehicle specimen";
+    }
+    if (specBadgeYear) specBadgeYear.textContent = car["Model year"] || "";
+    if (specBadgeMake) specBadgeMake.textContent = car["Manufacturer"] || activeScopeName;
+    if (specBadgeCategory) specBadgeCategory.textContent = car["Vehicle category"] || "Specimen";
+    if (specHeroName) specHeroName.textContent = car["Car name"] || "Specimen";
+    if (specHeroGen) specHeroGen.textContent = car["Exact model generation"] || "";
+    if (specHeroNote) {
+      const src = car["Image source"] || "Automotive Archive";
+      specHeroNote.textContent = `Archived engineering specimen • Source: ${src}`;
+    }
+
+    const hasAnySpecs = specs && (
+      specs.horsepower || specs.weight_kg || specs.mpg ||
+      specs.engine || specs.drivetrain || specs.body_type ||
+      specs.length_mm || specs.width_mm || specs.height_mm || specs.wheelbase_mm
+    );
+
+    if (!hasAnySpecs) {
+      if (specBenchmarksGrid) specBenchmarksGrid.innerHTML = "";
+      if (specPowertrainBlock) specPowertrainBlock.style.display = "none";
+      if (specDimensionsBlock) specDimensionsBlock.style.display = "none";
+      if (specNoDataNotice) specNoDataNotice.style.display = "block";
+      return;
+    }
+
+    if (specNoDataNotice) specNoDataNotice.style.display = "none";
+
+    // 1. Performance Benchmarks Grid (Horsepower, Weight, MPG)
+    if (specBenchmarksGrid) {
+      specBenchmarksGrid.innerHTML = "";
+
+      // Horsepower
+      if (specs.horsepower) {
+        const hpPct = Math.min(100, Math.max(10, Math.round((specs.horsepower / 750) * 100)));
+        const card = document.createElement("div");
+        card.className = "spec-benchmark-card";
+        card.innerHTML = `
+          <span class="spec-benchmark-label">Power Output</span>
+          <div class="spec-benchmark-value-group">
+            <span class="spec-benchmark-num">${specs.horsepower}</span>
+            <span class="spec-benchmark-unit">BHP / HP</span>
+          </div>
+          <div class="spec-benchmark-secondary">Mechanical horsepower at crank</div>
+          <div class="spec-benchmark-bar-track">
+            <div class="spec-benchmark-bar-fill" style="width: ${hpPct}%;"></div>
+          </div>
+        `;
+        specBenchmarksGrid.appendChild(card);
+      }
+
+      // Curb Weight
+      if (specs.weight_kg) {
+        const wtPct = Math.min(100, Math.max(10, Math.round((specs.weight_kg / 2600) * 100)));
+        const card = document.createElement("div");
+        card.className = "spec-benchmark-card";
+        card.innerHTML = `
+          <span class="spec-benchmark-label">Curb Weight</span>
+          <div class="spec-benchmark-value-group">
+            <span class="spec-benchmark-num">${specs.weight_kg.toLocaleString()}</span>
+            <span class="spec-benchmark-unit">kg</span>
+          </div>
+          <div class="spec-benchmark-secondary">${specs.weight_lbs ? `${specs.weight_lbs.toLocaleString()} lbs unladen` : 'Unladen weight'}</div>
+          <div class="spec-benchmark-bar-track">
+            <div class="spec-benchmark-bar-fill gold" style="width: ${wtPct}%;"></div>
+          </div>
+        `;
+        specBenchmarksGrid.appendChild(card);
+      }
+
+      // Fuel Economy / MPG
+      if (specs.mpg) {
+        const mpgPct = Math.min(100, Math.max(10, Math.round((specs.mpg / 55) * 100)));
+        const card = document.createElement("div");
+        card.className = "spec-benchmark-card";
+        card.innerHTML = `
+          <span class="spec-benchmark-label">Combined Economy</span>
+          <div class="spec-benchmark-value-group">
+            <span class="spec-benchmark-num">${specs.mpg}</span>
+            <span class="spec-benchmark-unit">US MPG</span>
+          </div>
+          <div class="spec-benchmark-secondary">${specs.fuel_economy_l100 ? `${specs.fuel_economy_l100} L/100km combined` : 'Combined rating'}</div>
+          <div class="spec-benchmark-bar-track">
+            <div class="spec-benchmark-bar-fill" style="width: ${mpgPct}%;"></div>
+          </div>
+        `;
+        specBenchmarksGrid.appendChild(card);
+      }
+    }
+
+    // 2. Powertrain & Mechanical Architecture
+    if (specPowertrainBlock && specPowertrainGrid) {
+      specPowertrainGrid.innerHTML = "";
+      const powertrainAttrs = [];
+
+      if (specs.engine) {
+        powertrainAttrs.push({ label: "Engine Configuration", val: specs.engine });
+      }
+      if (specs.displacement_cc) {
+        powertrainAttrs.push({ label: "Displacement", val: `${specs.displacement_cc.toLocaleString()} cc (${(specs.displacement_cc / 1000).toFixed(1)}L)` });
+      }
+      if (specs.cylinders) {
+        powertrainAttrs.push({ label: "Cylinders", val: `${specs.cylinders} Cylinders` });
+      }
+      if (specs.fuel_type) {
+        powertrainAttrs.push({ label: "Fuel System", val: specs.fuel_type });
+      }
+      if (specs.drivetrain) {
+        powertrainAttrs.push({ label: "Drive Configuration", val: specs.drivetrain });
+      }
+      if (specs.transmission) {
+        powertrainAttrs.push({ label: "Transmission", val: specs.transmission });
+      }
+      if (specs.body_type) {
+        powertrainAttrs.push({ label: "Body Architecture", val: specs.body_type });
+      }
+
+      if (powertrainAttrs.length > 0) {
+        specPowertrainBlock.style.display = "block";
+        powertrainAttrs.forEach(attr => {
+          const item = document.createElement("div");
+          item.className = "spec-attr-item";
+          item.innerHTML = `
+            <span class="spec-attr-label">${attr.label}</span>
+            <span class="spec-attr-value">${attr.val}</span>
+          `;
+          specPowertrainGrid.appendChild(item);
+        });
+      } else {
+        specPowertrainBlock.style.display = "none";
+      }
+    }
+
+    // 3. Physical Architecture & Stance Dimensions
+    if (specDimensionsBlock && specDimensionsGrid) {
+      specDimensionsGrid.innerHTML = "";
+      const dims = [];
+
+      if (specs.length_mm) {
+        dims.push({ label: "Overall Length", mm: specs.length_mm, inch: specs.length_in });
+      }
+      if (specs.wheelbase_mm) {
+        dims.push({ label: "Wheelbase", mm: specs.wheelbase_mm, inch: specs.wheelbase_in });
+      }
+      if (specs.width_mm) {
+        dims.push({ label: "Overall Width", mm: specs.width_mm, inch: specs.width_in });
+      }
+      if (specs.height_mm) {
+        dims.push({ label: "Overall Height", mm: specs.height_mm, inch: specs.height_in });
+      }
+
+      if (dims.length > 0) {
+        specDimensionsBlock.style.display = "block";
+        dims.forEach(d => {
+          const card = document.createElement("div");
+          card.className = "spec-dim-card";
+          card.innerHTML = `
+            <div class="spec-dim-label">${d.label}</div>
+            <div class="spec-dim-primary">${d.mm.toLocaleString()} mm</div>
+            <div class="spec-dim-secondary">${d.inch ? `${d.inch} in` : ''}</div>
+          `;
+          specDimensionsGrid.appendChild(card);
+        });
+
+        // Stance relative bar graph
+        if (specStanceBars) {
+          specStanceBars.innerHTML = "";
+          const maxDim = 5400; // standard reference baseline (mm)
+          dims.forEach(d => {
+            const pct = Math.min(100, Math.max(12, Math.round((d.mm / maxDim) * 100)));
+            const row = document.createElement("div");
+            row.className = "spec-stance-row";
+            row.innerHTML = `
+              <span class="spec-stance-name">${d.label.replace("Overall ", "")}</span>
+              <div class="spec-stance-track">
+                <div class="spec-stance-fill" style="width: ${pct}%;"></div>
+              </div>
+              <span class="spec-stance-num">${d.mm.toLocaleString()} mm</span>
+            `;
+            specStanceBars.appendChild(row);
+          });
+        }
+      } else {
+        specDimensionsBlock.style.display = "none";
+      }
+    }
+  }
+
+  function renderSpecComparison(carsList, activeCar) {
+    if (!specComparisonTable) return;
+    specComparisonTable.innerHTML = "";
+
+    const maxHp = Math.max(...carsList.map(c => {
+      const s = getCarSpecs(c);
+      return (s && s.horsepower) ? s.horsepower : 0;
+    }), 400);
+
+    const thead = document.createElement("thead");
+    thead.innerHTML = `
+      <tr>
+        <th>Vehicle Specimen</th>
+        <th>Horsepower</th>
+        <th>Curb Weight</th>
+        <th>Fuel Economy</th>
+        <th>Drivetrain</th>
+        <th>Dimensions (L &times; W &times; H)</th>
+      </tr>
+    `;
+    specComparisonTable.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    carsList.forEach(car => {
+      const s = getCarSpecs(car);
+      const isSelected = activeCar && car["Car name"] === activeCar["Car name"];
+      const tr = document.createElement("tr");
+      if (isSelected) tr.className = "is-selected";
+
+      const hpVal = (s && s.horsepower) ? `${s.horsepower} HP` : "&mdash;";
+      const hpPct = (s && s.horsepower) ? Math.min(100, Math.round((s.horsepower / maxHp) * 100)) : 0;
+      const wtVal = (s && s.weight_kg) ? `${s.weight_kg.toLocaleString()} kg` : "&mdash;";
+      const mpgVal = (s && s.mpg) ? `${s.mpg} MPG` : "&mdash;";
+      const driveVal = (s && s.drivetrain) ? s.drivetrain : (s && s.body_type ? s.body_type : "&mdash;");
+      
+      let dimVal = "&mdash;";
+      if (s && s.length_mm && s.width_mm && s.height_mm) {
+        dimVal = `${s.length_mm} &times; ${s.width_mm} &times; ${s.height_mm} mm`;
+      } else if (s && s.length_mm) {
+        dimVal = `${s.length_mm} mm length`;
+      }
+
+      tr.innerHTML = `
+        <td>
+          <div class="spec-comp-car-cell">
+            <img src="${car["Image filename"] || ""}" alt="${car["Car name"]}" class="spec-comp-thumb" />
+            <div>
+              <div class="spec-comp-name">${car["Car name"]}</div>
+              <div class="spec-comp-gen">${car["Exact model generation"] || car["Vehicle category"] || ""}</div>
+            </div>
+          </div>
+        </td>
+        <td class="spec-comp-bar-cell">
+          <div class="spec-comp-val">${hpVal}</div>
+          ${s && s.horsepower ? `
+            <div class="spec-comp-mini-track">
+              <div class="spec-comp-mini-fill" style="width: ${hpPct}%;"></div>
+            </div>
+          ` : ""}
+        </td>
+        <td>${wtVal}</td>
+        <td>${mpgVal}</td>
+        <td>${driveVal}</td>
+        <td>${dimVal}</td>
+      </tr>
+      `;
+
+      tr.addEventListener("click", () => {
+        selectCar(car, carsList);
+        setSpecViewMode("dossier");
+      });
+
+      tbody.appendChild(tr);
+    });
+    specComparisonTable.appendChild(tbody);
+  }
+
+  function setSpecViewMode(mode) {
+    currentSpecViewMode = mode;
+    if (btnViewDossier) btnViewDossier.classList.toggle("is-active", mode === "dossier");
+    if (btnViewComparison) btnViewComparison.classList.toggle("is-active", mode === "comparison");
+
+    if (mode === "dossier") {
+      if (specSingleDossier) {
+        specSingleDossier.classList.remove("is-hidden");
+        specSingleDossier.classList.add("is-active");
+      }
+      if (specComparisonPanel) {
+        specComparisonPanel.classList.remove("is-active");
+        specComparisonPanel.classList.add("is-hidden");
+      }
+      if (activeSelectedCar) {
+        renderSpecDossier(activeSelectedCar);
+      }
+    } else {
+      if (specSingleDossier) {
+        specSingleDossier.classList.remove("is-active");
+        specSingleDossier.classList.add("is-hidden");
+      }
+      if (specComparisonPanel) {
+        specComparisonPanel.classList.remove("is-hidden");
+        specComparisonPanel.classList.add("is-active");
+      }
+      renderSpecComparison(currentVisibleCars, activeSelectedCar);
+    }
+  }
+
   function renderCarsGrid(carsList, year, scopeName, availableYears) {
     if (!modelsGrid) return;
     modelsGrid.innerHTML = "";
 
     if (carsList.length === 0) {
+      if (automotiveDataStage) automotiveDataStage.classList.add("is-hidden");
+      if (crumbCarSep) crumbCarSep.style.display = "none";
+      if (crumbCar) crumbCar.style.display = "none";
+      activeSelectedCar = null;
+
       const prevYears = availableYears.filter(y => y < year);
       const prevYear = prevYears.length > 0 ? prevYears[prevYears.length - 1] : null;
       const nextYears = availableYears.filter(y => y > year);
@@ -1240,10 +1729,12 @@ window.selectedManufacturer = null;
     }
 
     const sortedCars = [...carsList].sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
+    currentVisibleCars = sortedCars;
 
     sortedCars.forEach(car => {
       const card = document.createElement("div");
       card.className = "car-model-card";
+      card.dataset.carName = car["Car name"];
 
       const imgSrc = car["Image filename"] || "";
       const carName = car["Car name"] || `${car["Model year"]} ${car["Manufacturer"] || scopeName}`;
@@ -1265,10 +1756,23 @@ window.selectedManufacturer = null;
           <div class="car-model-gen">${generation}</div>
           <div class="car-credit-line">Source: ${source}</div>
         </div>
+        <span class="car-selected-badge">Selected</span>
       `;
+
+      card.addEventListener("click", () => {
+        selectCar(car, sortedCars);
+      });
 
       modelsGrid.appendChild(card);
     });
+
+    // Auto-select car: keep current if still in visible set, else select first
+    const stillVisible = activeSelectedCar && sortedCars.find(c => c["Car name"] === activeSelectedCar["Car name"]);
+    if (stillVisible) {
+      selectCar(stillVisible, sortedCars);
+    } else {
+      selectCar(sortedCars[0], sortedCars);
+    }
   }
 
   function selectManufacturer(mfg) {
@@ -1283,6 +1787,9 @@ window.selectedManufacturer = null;
     crumbMfg.textContent = mfg.name;
     if (crumbYearSep) crumbYearSep.style.display = "none";
     if (crumbYear) crumbYear.style.display = "none";
+    if (crumbCarSep) crumbCarSep.style.display = "none";
+    if (crumbCar) crumbCar.style.display = "none";
+    activeSelectedCar = null;
 
     populateManufacturerModels(mfg);
 
@@ -1317,6 +1824,10 @@ window.selectedManufacturer = null;
     crumbCountry.classList.add("is-current");
     if (crumbYearSep) crumbYearSep.style.display = "none";
     if (crumbYear) crumbYear.style.display = "none";
+    if (crumbCarSep) crumbCarSep.style.display = "none";
+    if (crumbCar) crumbCar.style.display = "none";
+    activeSelectedCar = null;
+    if (automotiveDataStage) automotiveDataStage.classList.add("is-hidden");
 
     modelsPanel.style.opacity = "0";
     setTimeout(() => {
@@ -1341,6 +1852,10 @@ window.selectedManufacturer = null;
 
     if (crumbYearSep) crumbYearSep.style.display = "none";
     if (crumbYear) crumbYear.style.display = "none";
+    if (crumbCarSep) crumbCarSep.style.display = "none";
+    if (crumbCar) crumbCar.style.display = "none";
+    activeSelectedCar = null;
+    if (automotiveDataStage) automotiveDataStage.classList.add("is-hidden");
 
     countryView.style.opacity = "0";
     setTimeout(() => {
@@ -1380,6 +1895,28 @@ window.selectedManufacturer = null;
         selectTimelineYear(null);
       }
     });
+  }
+  if (crumbYear) {
+    crumbYear.addEventListener("click", function() {
+      if (modelsGrid) {
+        modelsGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+  if (crumbCar) {
+    crumbCar.addEventListener("click", function() {
+      if (automotiveDataStage) {
+        automotiveDataStage.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  // View mode toggles (Specimen Dossier vs Fleet Comparison)
+  if (btnViewDossier) {
+    btnViewDossier.addEventListener("click", () => setSpecViewMode("dossier"));
+  }
+  if (btnViewComparison) {
+    btnViewComparison.addEventListener("click", () => setSpecViewMode("comparison"));
   }
 
   // Timeline button listeners

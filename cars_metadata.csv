@@ -78,126 +78,127 @@ Car name,Manufacturer,Exact model generation,Model year,Decade,Country of manufa
 2024 Tesla Cybertruck,Tesla,First generation,2024,2020s,United States,Pickup,2020s/2024_tesla_cybertruck.jpg,https://upload.wikimedia.org/wikipedia/commons/9/95/2024_Tesla_Cybertruck_Foundation_Series%2C_front_left_%28Greenwich%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
 2024 Volvo EX30,Volvo,First generation,2024,2020s,Sweden,SUV,2020s/2024_volvo_ex30.jpg,https://upload.wikimedia.org/wikipedia/commons/e/eb/Volvo_EX30_IMG_8923.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Alexander-93
 1985 Volkswagen Golf Mk2,Volkswagen,Second generation (Typ 19E),1985,1980s,Germany,Hatchback,1980s/1985_volkswagen_golf_mk2.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e8/VW_Golf_II_front_20080206.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Rudolf Stricker
-1960 Austin Mini,Mini,Mark I (ADO15),1960,1960s,United Kingdom,Economy,,,Automotive Archive,
-1961 Jaguar E-Type,Jaguar,Series 1 (3.8L),1961,1960s,United Kingdom,Sports,,,Automotive Archive,
-1962 Ferrari 250 GTO,Ferrari,250 GTO (Series I),1962,1960s,Italy,Supercar,,,Automotive Archive,
-1963 Porsche 911,Porsche,Original 911 (901),1963,1960s,Germany,Sports,,,Automotive Archive,
-1963 Chevrolet Corvette Sting Ray,Chevrolet,Corvette C2 Split Window,1963,1960s,United States,Sports,,,Automotive Archive,
-1964 Aston Martin DB5,Aston Martin,DB5 Coupe,1964,1960s,United Kingdom,Luxury,,,Automotive Archive,
-1964 Ford Mustang,Ford,First generation (1964 1/2),1964,1960s,United States,Sports,,,Automotive Archive,
-1964 Pontiac GTO,Pontiac,First generation GTO,1964,1960s,United States,Coupe,,,Automotive Archive,
-1965 Alfa Romeo Giulia Sprint GTA,Alfa Romeo,Giulia Sprint GTA (Tipo 105.32),1965,1960s,Italy,Coupe,,,Automotive Archive,
-1965 Shelby Cobra 427,Ford,AC Cobra Mk III (CSX3000),1965,1960s,United States,Sports,,,Automotive Archive,
-1966 Lamborghini Miura,Lamborghini,P400,1966,1960s,Italy,Supercar,,,Automotive Archive,
-1966 Toyota 2000GT,Toyota,MF10,1966,1960s,Japan,Sports,,,Automotive Archive,
-1966 Volvo 144,Volvo,140 Series,1966,1960s,Sweden,Sedan,,,Automotive Archive,
-1967 Chevrolet Camaro,Chevrolet,First generation (F-body),1967,1960s,United States,Sports,,,Automotive Archive,
-1967 Mazda Cosmo Sport,Mazda,Series I (L10A),1967,1960s,Japan,Sports,,,Automotive Archive,
-1967 Volkswagen Type 2 Bus,Volkswagen,T2 (Bay Window),1967,1960s,Germany,Van,,,Automotive Archive,
-1968 Dodge Charger,Dodge,Second generation (B-body),1968,1960s,United States,Coupe,,,Automotive Archive,
-1968 BMW 2002,BMW,02 Series (E10),1968,1960s,Germany,Sedan,,,Automotive Archive,
-1968 Ford GT40 Mk I,Ford,Mk I Road Car,1968,1960s,United States,Supercar,,,Automotive Archive,
-1969 Nissan Skyline 2000GT-R,Nissan,PGC10 (Hakosuka),1969,1960s,Japan,Sedan,,,Automotive Archive,
-1969 Plymouth Road Runner,Plymouth,First generation (B-body),1969,1960s,United States,Coupe,,,Automotive Archive,
-1970 Dodge Challenger R/T,Dodge,First generation (E-body),1970,1970s,United States,Sports,,,Automotive Archive,
-1970 Range Rover Classic,Land Rover,First generation (Classic),1970,1970s,United Kingdom,SUV,,,Automotive Archive,
-1971 Alfa Romeo Montreal,Alfa Romeo,Tipo 105.64,1971,1970s,Italy,Sports,,,Automotive Archive,
-1972 BMW 520,BMW,First generation 5 Series (E12),1972,1970s,Germany,Sedan,,,Automotive Archive,
-1972 Fiat 126,Fiat,First generation (Typ 126),1972,1970s,Italy,Economy,,,Automotive Archive,
-1973 Lancia Stratos HF,Lancia,Tipo 829,1973,1970s,Italy,Sports,,,Automotive Archive,
-1974 Lamborghini Countach LP400,Lamborghini,LP400 Periscopio,1974,1970s,Italy,Supercar,,,Automotive Archive,
-1974 Volvo 240,Volvo,200 Series (242/244),1974,1970s,Sweden,Sedan,,,Automotive Archive,
-1975 Ferrari 308 GTB,Ferrari,308 GTB (V8),1975,1970s,Italy,Sports,,,Automotive Archive,
-1975 Toyota Celica,Toyota,First generation (A20/A35),1975,1970s,Japan,Coupe,,,Automotive Archive,
-1976 Lotus Esprit S1,Lotus,Series 1 (Type 79),1976,1970s,United Kingdom,Sports,,,Automotive Archive,
-1976 Renault 5 Alpine,Renault,First generation (R1223),1976,1970s,France,Hatchback,,,Automotive Archive,
-1977 Aston Martin V8 Vantage,Aston Martin,Series 2 V8,1977,1970s,United Kingdom,Luxury,,,Automotive Archive,
-1977 Chevrolet Caprice,Chevrolet,Third generation (B-body),1977,1970s,United States,Sedan,,,Automotive Archive,
-1978 Mazda RX-7 (SA22C),Mazda,First generation (SA22C/FB),1978,1970s,Japan,Sports,,,Automotive Archive,
-1978 Subaru BRAT,Subaru,First generation,1978,1970s,Japan,Pickup,,,Automotive Archive,
-1978 Lincoln Continental Mark V,Lincoln,Continental Mark V,1978,1970s,United States,Luxury,,,Automotive Archive,
-1979 Mercedes-Benz G-Class (W460),Mercedes-Benz,First generation (W460),1979,1970s,Germany,SUV,,,Automotive Archive,
-1979 Ford Fox Mustang,Ford,Third generation (Fox body),1979,1970s,United States,Sports,,,Automotive Archive,
-1979 Toyota Hilux,Toyota,Third generation (N30),1979,1970s,Japan,Pickup,,,Automotive Archive,
-1979 Honda Prelude,Honda,First generation (SN),1979,1970s,Japan,Coupe,,,Automotive Archive,
-1980 Fiat Panda,Fiat,First generation (Typ 141),1980,1980s,Italy,Economy,,,Automotive Archive,
-1981 Renault 5 Turbo,Renault,Group 4 Homologation,1981,1980s,France,Hatchback,,,Automotive Archive,
-1982 Chevrolet Camaro Z28,Chevrolet,Third generation (F-body),1982,1980s,United States,Sports,,,Automotive Archive,
-1982 Porsche 944,Porsche,First generation (Typ 944),1982,1980s,Germany,Sports,,,Automotive Archive,
-1983 Peugeot 205,Peugeot,Phase 1,1983,1980s,France,Hatchback,,,Automotive Archive,
-1983 Toyota Sprinter Trueno (AE86),Toyota,AE86 generation,1983,1980s,Japan,Coupe,,,Automotive Archive,
-1984 Honda CRX,Honda,First generation (AF/AS),1984,1980s,Japan,Hatchback,,,Automotive Archive,
-1985 Ford Sierra RS Cosworth,Ford,First generation Cosworth,1985,1980s,United Kingdom,Coupe,,,Automotive Archive,
-1985 Lancia Delta HF 4WD,Lancia,Delta I (Tipo 831),1985,1980s,Italy,Hatchback,,,Automotive Archive,
-1985 Saab 9000,Saab,First generation (CC),1985,1980s,Sweden,Sedan,,,Automotive Archive,
-1986 Porsche 959,Porsche,Typ 959,1986,1980s,Germany,Supercar,,,Automotive Archive,
-1986 Toyota MR2 (AW11),Toyota,First generation (W10),1986,1980s,Japan,Sports,,,Automotive Archive,
-1987 Buick GNX,Buick,Regal Grand National GNX,1987,1980s,United States,Coupe,,,Automotive Archive,
-1987 Ferrari F40,Ferrari,Tipo F120,1987,1980s,Italy,Supercar,,,Automotive Archive,
-1987 Mitsubishi Starion,Mitsubishi,Widebody (A187A),1987,1980s,Japan,Sports,,,Automotive Archive,
-1988 Honda CR-X Si,Honda,Second generation (ED9/EF8),1988,1980s,Japan,Hatchback,,,Automotive Archive,
-1988 Volvo 740 Turbo,Volvo,700 Series Estate,1988,1980s,Sweden,Wagon,,,Automotive Archive,
-1989 Chevrolet Corvette ZR-1,Chevrolet,Corvette C4 ZR-1 (LT5),1989,1980s,United States,Sports,,,Automotive Archive,
-1989 Nissan Skyline GT-R (R32),Nissan,Eighth generation (BNR32),1989,1980s,Japan,Sports,,,Automotive Archive,
-1989 Subaru Legacy,Subaru,First generation (BC/BF),1989,1980s,Japan,Sedan,,,Automotive Archive,
-1989 Mercedes-Benz 500SL (R129),Mercedes-Benz,Fourth generation SL (R129),1989,1980s,Germany,Convertible,,,Automotive Archive,
-1990 Acura NSX,Acura,First generation (NA1),1990,1990s,Japan,Sports,,,Automotive Archive,
-1991 GMC Syclone,GMC,First generation (S-15),1991,1990s,United States,Pickup,,,Automotive Archive,
-1991 Mazda RX-7 (FD),Mazda,Third generation (FD3S),1991,1990s,Japan,Sports,,,Automotive Archive,
-1992 McLaren F1,McLaren,First generation (XP),1992,1990s,United Kingdom,Supercar,,,Automotive Archive,
-1992 Mitsubishi Lancer Evolution I,Mitsubishi,First generation (CD9A),1992,1990s,Japan,Sedan,,,Automotive Archive,
-1993 Toyota Supra Turbo (A80),Toyota,Fourth generation (A80),1993,1990s,Japan,Sports,,,Automotive Archive,
-1994 Audi RS2 Avant,Audi,Typ 8C (B4),1994,1990s,Germany,Wagon,,,Automotive Archive,
-1994 Ferrari F355,Ferrari,F355 Berlinetta (Tipo F129),1994,1990s,Italy,Sports,,,Automotive Archive,
-1994 Subaru Impreza 555,Subaru,First generation WRX STI (GC8),1994,1990s,Japan,Sedan,,,Automotive Archive,
-1995 BMW M3 (E36),BMW,Second generation M3 (E36),1995,1990s,Germany,Sports,,,Automotive Archive,
-1995 Honda Integra Type R (DC2),Honda,Third generation Integra (DC2),1995,1990s,Japan,Coupe,,,Automotive Archive,
-1995 Porsche 911 (993),Porsche,Fourth generation 911 (993),1995,1990s,Germany,Sports,,,Automotive Archive,
-1996 Dodge Viper GTS,Dodge,Second generation (SR II),1996,1990s,United States,Sports,,,Automotive Archive,
-1996 Lotus Elise Series 1,Lotus,Series 1 (Type 111),1996,1990s,United Kingdom,Sports,,,Automotive Archive,
-1997 Plymouth Prowler,Plymouth,First generation (PR platform),1997,1990s,United States,Sports,,,Automotive Archive,
-1997 Honda CR-V,Honda,First generation (RD1-RD3),1997,1990s,Japan,SUV,,,Automotive Archive,
-1998 Alfa Romeo 156,Alfa Romeo,Tipo 932,1998,1990s,Italy,Sedan,,,Automotive Archive,
-1998 Land Rover Defender 90,Land Rover,Original Defender (L316),1998,1990s,United Kingdom,SUV,,,Automotive Archive,
-1999 Nissan Skyline GT-R (R34),Nissan,Tenth generation (BNR34),1999,1990s,Japan,Sports,,,Automotive Archive,
-1999 Pagani Zonda C12,Pagani,C12 (6.0L AMG V12),1999,1990s,Italy,Supercar,,,Automotive Archive,
-1999 Porsche 911 GT3 (996),Porsche,Fifth generation (996.1 GT3),1999,1990s,Germany,Sports,,,Automotive Archive,
-2000 BMW M3 (E46),BMW,Third generation M3 (E46),2000,2000s,Germany,Sports,,,Automotive Archive,
-2000 Lotus Exige Series 1,Lotus,Series 1 (NA Rover K),2000,2000s,United Kingdom,Sports,,,Automotive Archive,
-2001 Chevrolet Corvette Z06 (C5),Chevrolet,Fifth generation Z06 (LS6),2001,2000s,United States,Sports,,,Automotive Archive,
-2002 Ferrari Enzo,Ferrari,Tipo F140,2002,2000s,Italy,Supercar,,,Automotive Archive,
-2002 Honda Civic Type R (EP3),Honda,Second generation Type R (EP3),2002,2000s,Japan,Hatchback,,,Automotive Archive,
-2003 Bentley Continental GT,Bentley,First generation (W12),2003,2000s,United Kingdom,Luxury,,,Automotive Archive,
-2003 Mitsubishi Lancer Evolution VIII,Mitsubishi,Eighth generation (CT9A),2003,2000s,Japan,Sedan,,,Automotive Archive,
-2004 Porsche Carrera GT,Porsche,Typ 980 (5.7L V10),2004,2000s,Germany,Supercar,,,Automotive Archive,
-2004 Subaru Impreza WRX STI,Subaru,Second generation facelift (GD Blobeye),2004,2000s,Japan,Sedan,,,Automotive Archive,
-2004 Volkswagen Golf R32 (Mk4),Volkswagen,Fourth generation R32 (Typ 1J),2004,2000s,Germany,Hatchback,,,Automotive Archive,
-2005 Aston Martin V8 Vantage,Aston Martin,VH generation (4.3L V8),2005,2000s,United Kingdom,Sports,,,Automotive Archive,
-2005 Bugatti Veyron 16.4,Bugatti,EB 16.4 (Quad-Turbo W16),2005,2000s,France,Supercar,,,Automotive Archive,
-2005 Chevrolet Corvette (C6),Chevrolet,Sixth generation (C6),2005,2000s,United States,Sports,,,Automotive Archive,
-2006 Audi RS4 (B7),Audi,Typ 8E (B7 4.2L V8),2006,2000s,Germany,Sedan,,,Automotive Archive,
-2006 Ford Mustang GT (S197),Ford,Fifth generation (S197),2006,2000s,United States,Sports,,,Automotive Archive,
-2006 Porsche Cayman S (987),Porsche,First generation (987.1),2006,2000s,Germany,Sports,,,Automotive Archive,
-2007 BMW M3 (E92),BMW,Fourth generation M3 (E92 V8),2007,2000s,Germany,Coupe,,,Automotive Archive,
-2007 Mini Cooper S (R56),Mini,Second modern generation (R56 Turbo),2007,2000s,United Kingdom,Hatchback,,,Automotive Archive,
-2008 Dodge Challenger SRT8,Dodge,Third generation (LC platform),2008,2000s,United States,Coupe,,,Automotive Archive,
-2008 Hyundai Genesis Coupe,Hyundai,First generation (BK),2008,2000s,South Korea,Coupe,,,Automotive Archive,
-2009 Ferrari 458 Italia,Ferrari,Tipo F142 (4.5L V8),2009,2000s,Italy,Supercar,,,Automotive Archive,
-2010 Lexus LFA,Lexus,LFA (1LR-GUE 4.8L V10),2010,2010s,Japan,Supercar,,,Automotive Archive,
-2011 BMW 1 Series M Coupe,BMW,E82 1M (N54 Twin Turbo),2011,2010s,Germany,Coupe,,,Automotive Archive,
-2011 Ferrari FF,Ferrari,Tipo F151 (V12 AWD Shooting Brake),2011,2010s,Italy,Sports,,,Automotive Archive,
-2012 Ford Focus ST,Ford,Third generation (C346),2012,2010s,United States,Hatchback,,,Automotive Archive,
-2012 Subaru BRZ,Subaru,First generation (ZC6),2012,2010s,Japan,Sports,,,Automotive Archive,
-2013 Alfa Romeo 4C,Alfa Romeo,Tipo 960 (Carbon tub),2013,2010s,Italy,Sports,,,Automotive Archive,
-2013 Chevrolet Corvette Stingray (C7),Chevrolet,Seventh generation (C7 LT1),2013,2010s,United States,Sports,,,Automotive Archive,
-2013 McLaren P1,McLaren,Ultimate Series (Hybrid V8),2013,2010s,United Kingdom,Supercar,,,Automotive Archive,
-2013 Porsche 918 Spyder,Porsche,Typ 918 (Hybrid V8 AWD),2013,2010s,Germany,Supercar,,,Automotive Archive,
-2014 BMW i8,BMW,First generation (I12 PHEV),2014,2010s,Germany,Sports,,,Automotive Archive,
-2014 Dodge Challenger SRT Hellcat,Dodge,LA platform (6.2L Supercharged),2014,2010s,United States,Coupe,,,Automotive Archive,
-2014 Ferrari LaFerrari,Ferrari,Tipo F150 (HY-KERS V12),2014,2010s,Italy,Supercar,,,Automotive Archive,
-2015 Audi R8 V10 Plus,Audi,Second generation (Typ 4S),2015,2010s,Germany,Supercar,,,Automotive Archive,
-2015 Mazda MX-5 Miata (ND),Mazda,Fourth generation (ND1),2015,2010s,Japan,Sports,,,Automotive Archive,
-2016 Ford Focus RS,Ford,Third generation (C346 AWD),2016,2010s,United States,Hatchback,,,Automotive Archive,
+1960 Austin Mini,Mini,Mark I (ADO15),1960,1960s,United Kingdom,Economy,1960s/1960_austin_mini.jpg,https://upload.wikimedia.org/wikipedia/commons/b/b5/1961_Morris_Mini_Mk_I_850_Saloon.jpg,Wikimedia Commons,CC BY 2.0; Author: Cars Down Under
+1961 Jaguar E-Type,Jaguar,Series 1 (3.8L),1961,1960s,United Kingdom,Sports,1960s/1961_jaguar_e_type.jpg,https://upload.wikimedia.org/wikipedia/commons/2/2c/Jaguar_E-type_Low_Drag_Coup%C3%A9_recreation_-_Morges_2017_-_Front_three-quarters.jpeg,Wikimedia Commons,CC BY-SA 2.0 fr; Author: Akela NDE
+1962 Ferrari 250 GTO,Ferrari,250 GTO (Series I),1962,1960s,Italy,Supercar,1960s/1962_ferrari_250_gto.jpg,https://upload.wikimedia.org/wikipedia/commons/3/31/1962_Ferrari_250_GTO_SP25.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MrWalkr
+1963 Porsche 911,Porsche,Original 911 (901),1963,1960s,Germany,Sports,1960s/1963_porsche_911.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a4/Porsche_911E_ca_1969.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Charles01
+1963 Chevrolet Corvette Sting Ray,Chevrolet,Corvette C2 Split Window,1963,1960s,United States,Sports,1960s/1963_chevrolet_corvette_sting_ray.jpg,https://upload.wikimedia.org/wikipedia/commons/f/fc/Chevrolet_Corvette_Sting_Ray_Split_Window_1963.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Avaldia
+1964 Aston Martin DB5,Aston Martin,DB5 Coupe,1964,1960s,United Kingdom,Luxury,1960s/1964_aston_martin_db5.jpg,https://upload.wikimedia.org/wikipedia/commons/3/3d/Aston_Martin_DB5_%28Skyfall%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1964 Ford Mustang,Ford,First generation (1964 1/2),1964,1960s,United States,Sports,1960s/1964_ford_mustang.jpg,https://upload.wikimedia.org/wikipedia/commons/7/7f/1965_Ford_Mustang_2D_Hardtop_Front.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Kroelleboelle
+1964 Pontiac GTO,Pontiac,First generation GTO,1964,1960s,United States,Coupe,1960s/1964_pontiac_gto.jpg,https://upload.wikimedia.org/wikipedia/commons/c/c0/1964_Pontiac_GTO_389_Tri-Power.JPG,Wikimedia Commons,CC BY-SA 3.0; Author: Stephen Foskett (Wikipedia User: sfoskett)
+1965 Alfa Romeo Giulia Sprint GTA,Alfa Romeo,Giulia Sprint GTA (Tipo 105.32),1965,1960s,Italy,Coupe,1960s/1965_alfa_romeo_giulia_sprint_gta.jpg,https://upload.wikimedia.org/wikipedia/commons/0/09/Arese_Museo_Storico_Alfa_Romeo_1965_Giulia_Sprint_GTA_1.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Zairon
+1965 Shelby Cobra 427,Ford,AC Cobra Mk III (CSX3000),1965,1960s,United States,Sports,1960s/1965_shelby_cobra_427.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e8/Shelby_AC_427_Cobra_vl_blue.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Stahlkocher
+1966 Lamborghini Miura,Lamborghini,P400,1966,1960s,Italy,Supercar,1960s/1966_lamborghini_miura.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e0/1971_Lamborghini_Miura_P400_SV.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Chelsea Jay
+1966 Toyota 2000GT,Toyota,MF10,1966,1960s,Japan,Sports,1960s/1966_toyota_2000gt.jpg,https://upload.wikimedia.org/wikipedia/commons/9/97/TOYOTA_2000GT.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Unknown
+1966 Volvo 144,Volvo,140 Series,1966,1960s,Sweden,Sedan,1960s/1966_volvo_144.jpg,https://upload.wikimedia.org/wikipedia/commons/e/ea/Volvo_145_green_vr_TCE.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Stahlkocher
+1967 Chevrolet Camaro,Chevrolet,First generation (F-body),1967,1960s,United States,Sports,1960s/1967_chevrolet_camaro.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a3/Chevrolet_Camaro_RS_327_1968_%28cropped%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1967 Mazda Cosmo Sport,Mazda,Series I (L10A),1967,1960s,Japan,Sports,1960s/1967_mazda_cosmo_sport.jpg,https://upload.wikimedia.org/wikipedia/commons/f/fd/1968_Mazda_Cosmo-Sport_01.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mytho88
+1967 Volkswagen Type 2 Bus,Volkswagen,T2 (Bay Window),1967,1960s,Germany,Van,1960s/1967_volkswagen_type_2_bus.jpg,https://upload.wikimedia.org/wikipedia/commons/9/9b/0385_Porsche_Diesel_Bus_blau.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Raizy
+1968 Dodge Charger,Dodge,Second generation (B-body),1968,1960s,United States,Coupe,1960s/1968_dodge_charger.jpg,https://upload.wikimedia.org/wikipedia/commons/9/9d/1969_Dodge_Charger_R-T%2C_front_right_%282022_Ellwood_City_Fall_Fest_%26_Car_Cruise%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1968 BMW 2002,BMW,02 Series (E10),1968,1960s,Germany,Sedan,1960s/1968_bmw_2002.jpg,https://upload.wikimedia.org/wikipedia/commons/2/2d/Blackrock%2C_Co_Dublin_-_Ireland_%284799982672%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1968 Ford GT40 Mk I,Ford,Mk I Road Car,1968,1960s,United States,Supercar,1960s/1968_ford_gt40_mk_i.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a6/GT40_at_Goodwood.jpg,Wikimedia Commons,"CC BY 2.0; Author: edvvc from London, UK"
+1969 Nissan Skyline 2000GT-R,Nissan,PGC10 (Hakosuka),1969,1960s,Japan,Sedan,1960s/1969_nissan_skyline_2000gt_r.jpg,https://upload.wikimedia.org/wikipedia/commons/7/74/Nissan_Skyline_2000GT-R_%28PGC10%29_1969_JAF_Grand_Prix_winner_replica_front.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Morio
+1969 Plymouth Road Runner,Plymouth,First generation (B-body),1969,1960s,United States,Coupe,1960s/1969_plymouth_road_runner.jpg,https://upload.wikimedia.org/wikipedia/commons/e/ea/Plymouth_Road_Runner_1969_5312706.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Ermell
+1970 Dodge Challenger R/T,Dodge,First generation (E-body),1970,1970s,United States,Sports,1970s/1970_dodge_challenger_r_t.jpg,https://upload.wikimedia.org/wikipedia/commons/2/22/1970_Dodge_Challenger_R-T_%285183963061%29.jpg,Wikimedia Commons,CC BY 2.0; Author: sv1ambo
+1970 Range Rover Classic,Land Rover,First generation (Classic),1970,1970s,United Kingdom,SUV,1970s/1970_range_rover_classic.jpg,https://upload.wikimedia.org/wikipedia/commons/0/08/1973_Land_Rover_Range_Rover_3.5.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Vauxford
+1971 Alfa Romeo Montreal,Alfa Romeo,Tipo 105.64,1971,1970s,Italy,Sports,1970s/1971_alfa_romeo_montreal.jpg,https://upload.wikimedia.org/wikipedia/commons/b/b5/Alfa_Romeo_Montreal_Classic-Gala_2022_1X7A0198.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Alexander Migl
+1972 BMW 520,BMW,First generation 5 Series (E12),1972,1970s,Germany,Sedan,1970s/1972_bmw_520.jpg,https://upload.wikimedia.org/wikipedia/commons/a/ae/BMW_525_%283538948081%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1972 Fiat 126,Fiat,First generation (Typ 126),1972,1970s,Italy,Economy,1970s/1972_fiat_126.jpg,https://upload.wikimedia.org/wikipedia/commons/4/45/1973_Fiat_126_IMG_7855.jpg,Wikimedia Commons,CC BY-SA 2.0; Author: Tony Harrison
+1973 Lancia Stratos HF,Lancia,Tipo 829,1973,1970s,Italy,Sports,1970s/1973_lancia_stratos_hf.jpg,https://upload.wikimedia.org/wikipedia/commons/8/83/1974_Lancia_Stratos_Stradale_at_Greenwich_2021%2C_front_left.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1974 Lamborghini Countach LP400,Lamborghini,LP400 Periscopio,1974,1970s,Italy,Supercar,1970s/1974_lamborghini_countach_lp400.jpg,https://upload.wikimedia.org/wikipedia/commons/4/48/Lamborghini_Countach_-_Flickr_-_exfordy_%282%29_%28cropped-2%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1974 Volvo 240,Volvo,200 Series (242/244),1974,1970s,Sweden,Sedan,1970s/1974_volvo_240.jpg,https://upload.wikimedia.org/wikipedia/commons/d/df/1988-1991_Volvo_240_GL_station_wagon_%282011-06-15%29_01.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1975 Ferrari 308 GTB,Ferrari,308 GTB (V8),1975,1970s,Italy,Sports,1970s/1975_ferrari_308_gtb.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e4/Ferrari_308_GTB_IMG_3510.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Alexander Migl
+1975 Toyota Celica,Toyota,First generation (A20/A35),1975,1970s,Japan,Coupe,1970s/1975_toyota_celica.jpg,https://upload.wikimedia.org/wikipedia/commons/3/39/1975_Toyota_Celica_A20_GT_Coupe_%2823464906570%29.jpg,Wikimedia Commons,CC BY 2.0; Author: Sicnag
+1976 Lotus Esprit S1,Lotus,Series 1 (Type 79),1976,1970s,United Kingdom,Sports,1970s/1976_lotus_esprit_s1.jpg,https://upload.wikimedia.org/wikipedia/commons/2/2e/Early_Lotus_Esprit_S1_white.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mr.choppers
+1976 Renault 5 Alpine,Renault,First generation (R1223),1976,1970s,France,Hatchback,1970s/1976_renault_5_alpine.jpg,https://upload.wikimedia.org/wikipedia/commons/4/4c/1983_Renault_5_Alpine_Turbo_1.4_Front.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Vauxford
+1977 Aston Martin V8 Vantage,Aston Martin,Series 2 V8,1977,1970s,United Kingdom,Luxury,1970s/1977_aston_martin_v8_vantage.jpg,https://upload.wikimedia.org/wikipedia/commons/4/41/1985_Aston_Martin_Vantage_V8.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Calreyn88
+1977 Chevrolet Caprice,Chevrolet,Third generation (B-body),1977,1970s,United States,Sedan,1970s/1977_chevrolet_caprice.jpg,https://upload.wikimedia.org/wikipedia/commons/e/ea/1977-79_Chevrolet_Caprice_Coupe.jpg,Wikimedia Commons,Public domain; Author: IFCAR
+1978 Mazda RX-7 (SA22C),Mazda,First generation (SA22C/FB),1978,1970s,Japan,Sports,1970s/1978_mazda_rx_7_sa22c.jpg,https://upload.wikimedia.org/wikipedia/commons/5/50/Mazda-rx7-1st-generation01.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Taisyo
+1978 Subaru BRAT,Subaru,First generation,1978,1970s,Japan,Pickup,1970s/1978_subaru_brat.jpg,https://upload.wikimedia.org/wikipedia/commons/5/50/1978_Subaru_Brumby_Pickup.jpg,Wikimedia Commons,CC BY 2.0; Author: Sicnag
+1978 Lincoln Continental Mark V,Lincoln,Continental Mark V,1978,1970s,United States,Luxury,1970s/1978_lincoln_continental_mark_v.jpg,https://upload.wikimedia.org/wikipedia/commons/1/17/1978_Lincoln_Continental_Mk_V_Coupe_%2832916956520%29.jpg,Wikimedia Commons,CC BY 2.0; Author: Sicnag
+1979 Mercedes-Benz G-Class (W460),Mercedes-Benz,First generation (W460),1979,1970s,Germany,SUV,1970s/1979_mercedes_benz_g_class_w460.jpg,https://upload.wikimedia.org/wikipedia/commons/7/70/1984_Mercedes-Benz_230_GE_Automatic_2.3_Front.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Vauxford
+1979 Ford Fox Mustang,Ford,Third generation (Fox body),1979,1970s,United States,Sports,1970s/1979_ford_fox_mustang.jpg,https://upload.wikimedia.org/wikipedia/commons/6/62/1990_Ford_Mustang_GT_5.0_Hatchback_in_Ultra_Blue%2C_front_right.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1979 Toyota Hilux,Toyota,Third generation (N30),1979,1970s,Japan,Pickup,1970s/1979_toyota_hilux.jpg,https://upload.wikimedia.org/wikipedia/commons/1/11/1981_Toyota_Deluxe_Pickup_4WD_Long_Bed_in_Beige%2C_Front_Right%2C_06-10-2023.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Elise240SX
+1979 Honda Prelude,Honda,First generation (SN),1979,1970s,Japan,Coupe,1970s/1979_honda_prelude.jpg,https://upload.wikimedia.org/wikipedia/commons/2/28/1981_Honda_Prelude_front_5.6.18.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Kevauto
+1980 Fiat Panda,Fiat,First generation (Typ 141),1980,1980s,Italy,Economy,1980s/1980_fiat_panda.jpg,https://upload.wikimedia.org/wikipedia/commons/3/3f/1984_Fiat_Panda_45_S_front.jpg,Wikimedia Commons,CC BY 2.0; Author: Rutger van der Maar
+1981 Renault 5 Turbo,Renault,Group 4 Homologation,1981,1980s,France,Hatchback,1980s/1981_renault_5_turbo.jpg,https://upload.wikimedia.org/wikipedia/commons/1/15/1981_Renault_5_Turbo_LC23.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MrWalkr
+1982 Chevrolet Camaro Z28,Chevrolet,Third generation (F-body),1982,1980s,United States,Sports,1980s/1982_chevrolet_camaro_z28.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a4/1982-1983-1984_Chevrolet_Camaro_Z28.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Jonboy2312
+1982 Porsche 944,Porsche,First generation (Typ 944),1982,1980s,Germany,Sports,1980s/1982_porsche_944.jpg,https://upload.wikimedia.org/wikipedia/commons/1/13/1986_944_Turbo.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Daniel J. Leivick
+1983 Peugeot 205,Peugeot,Phase 1,1983,1980s,France,Hatchback,1980s/1983_peugeot_205.jpg,https://upload.wikimedia.org/wikipedia/commons/5/55/Peugeot_205_front_20080121.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Rudolf Stricker
+1983 Toyota Sprinter Trueno (AE86),Toyota,AE86 generation,1983,1980s,Japan,Coupe,1980s/1983_toyota_sprinter_trueno_ae86.jpg,https://upload.wikimedia.org/wikipedia/commons/4/46/TRUENO_AE86.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: ja:利用者:宮本すぐる
+1984 Honda CRX,Honda,First generation (AF/AS),1984,1980s,Japan,Hatchback,1980s/1984_honda_crx.jpg,https://upload.wikimedia.org/wikipedia/commons/6/6c/1983_Honda_Ballade_Sports_CR-X_1.5i.jpg,Wikimedia Commons,Public domain; Author: TTTNIS
+1985 Ford Sierra RS Cosworth,Ford,First generation Cosworth,1985,1980s,United Kingdom,Coupe,1980s/1985_ford_sierra_rs_cosworth.jpg,https://upload.wikimedia.org/wikipedia/commons/8/82/1986_Ford_Sierra_RS_Cosworth_2.0_%281%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1985 Lancia Delta HF 4WD,Lancia,Delta I (Tipo 831),1985,1980s,Italy,Hatchback,1980s/1985_lancia_delta_hf_4wd.jpg,https://upload.wikimedia.org/wikipedia/commons/9/97/GIMS_2024%2C_Le_Grand-Saconnex_%28GIMS0052-4%29.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Matti Blume
+1985 Saab 9000,Saab,First generation (CC),1985,1980s,Sweden,Sedan,1980s/1985_saab_9000.jpg,https://upload.wikimedia.org/wikipedia/commons/1/1d/1995_Saab_9000_Aero_in_Imola_Red%2C_front_left_%28Lime_Rock%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1986 Porsche 959,Porsche,Typ 959,1986,1980s,Germany,Supercar,1980s/1986_porsche_959.jpg,https://upload.wikimedia.org/wikipedia/commons/b/b2/Porsche_959_%E2%80%93_Frontansicht_%282%29%2C_21._M%C3%A4rz_2013%2C_D%C3%BCsseldorf.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1986 Toyota MR2 (AW11),Toyota,First generation (W10),1986,1980s,Japan,Sports,1980s/1986_toyota_mr2_aw11.jpg,https://upload.wikimedia.org/wikipedia/commons/d/d1/1987_Toyota_MR2_T-Bar_AW11_red.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mr.choppers
+1987 Buick GNX,Buick,Regal Grand National GNX,1987,1980s,United States,Coupe,1980s/1987_buick_gnx.jpg,https://upload.wikimedia.org/wikipedia/commons/c/cc/Sloan_Museum_at_Courtland_Center_December_2018_30_%281987_Buick_GNX%29.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Michael Barera
+1987 Ferrari F40,Ferrari,Tipo F120,1987,1980s,Italy,Supercar,1980s/1987_ferrari_f40.jpg,https://upload.wikimedia.org/wikipedia/commons/c/cb/F40_Ferrari_20090509.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Will ainsworth
+1987 Mitsubishi Starion,Mitsubishi,Widebody (A187A),1987,1980s,Japan,Sports,1980s/1987_mitsubishi_starion.jpg,https://upload.wikimedia.org/wikipedia/commons/9/9b/1988_Mitsubishi_Starion_Turbo_2.0_Front_%281%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1988 Honda CR-X Si,Honda,Second generation (ED9/EF8),1988,1980s,Japan,Hatchback,1980s/1988_honda_cr_x_si.jpg,https://upload.wikimedia.org/wikipedia/commons/8/88/1991_Honda_CRX_Si_in_Rio_Red%2C_front_left.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Mr.choppers
+1988 Volvo 740 Turbo,Volvo,700 Series Estate,1988,1980s,Sweden,Wagon,1980s/1988_volvo_740_turbo.jpg,https://upload.wikimedia.org/wikipedia/commons/d/d4/1987_Volvo_740_Turbo_US.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mr.choppers
+1989 Chevrolet Corvette ZR-1,Chevrolet,Corvette C4 ZR-1 (LT5),1989,1980s,United States,Sports,1980s/1989_chevrolet_corvette_zr_1.jpg,https://upload.wikimedia.org/wikipedia/commons/3/3a/1985_Chevrolet_C4_Corvette_Coupe_%2815999724940%29.jpg,Wikimedia Commons,CC BY 2.0; Author: Sicnag
+1989 Nissan Skyline GT-R (R32),Nissan,Eighth generation (BNR32),1989,1980s,Japan,Sports,1980s/1989_nissan_skyline_gt_r_r32.jpg,https://upload.wikimedia.org/wikipedia/commons/a/ab/1990_Nissan_Skyline_R32_GT-R_front.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: DestinationFearFan
+1989 Subaru Legacy,Subaru,First generation (BC/BF),1989,1980s,Japan,Sedan,1980s/1989_subaru_legacy.jpg,https://upload.wikimedia.org/wikipedia/commons/8/8c/USDM_side-1-.jpg,Wikimedia Commons,Public domain; Author: Dddike
+1989 Mercedes-Benz 500SL (R129),Mercedes-Benz,Fourth generation SL (R129),1989,1980s,Germany,Convertible,1980s/1989_mercedes_benz_500sl_r129.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a5/Mercedes-Benz_SL_R129_.jpg,Wikimedia Commons,Public domain; Author: IFCAR
+1990 Acura NSX,Acura,First generation (NA1),1990,1990s,Japan,Sports,1990s/1990_acura_nsx.jpg,https://upload.wikimedia.org/wikipedia/commons/0/09/Honda_NSX_red.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: ed g2s • talk
+1991 GMC Syclone,GMC,First generation (S-15),1991,1990s,United States,Pickup,1990s/1991_gmc_syclone.jpg,https://upload.wikimedia.org/wikipedia/commons/4/4b/1991GMCSyclone.jpg,Wikimedia Commons,Public domain; Author: Willyson at English Wikipedia
+1991 Mazda RX-7 (FD),Mazda,Third generation (FD3S),1991,1990s,Japan,Sports,1990s/1991_mazda_rx_7_fd.jpg,https://upload.wikimedia.org/wikipedia/commons/8/8c/1994_Mazda_RX-7_R2_in_Vintage_Red%2C_front_left_%28Lime_Rock%29.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mr.choppers
+1992 McLaren F1,McLaren,First generation (XP),1992,1990s,United Kingdom,Supercar,1990s/1992_mclaren_f1.jpg,https://upload.wikimedia.org/wikipedia/commons/1/16/1996_McLaren_F1_Chassis_No_63_6.1_Front.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Chelsea Jay
+1992 Mitsubishi Lancer Evolution I,Mitsubishi,First generation (CD9A),1992,1990s,Japan,Sedan,1990s/1992_mitsubishi_lancer_evolution_i.jpg,https://upload.wikimedia.org/wikipedia/commons/4/46/1992_Mitsubishi_Lancer_GSR_Evolution.jpg,Wikimedia Commons,CC0; Author: TTTNIS
+1993 Toyota Supra Turbo (A80),Toyota,Fourth generation (A80),1993,1990s,Japan,Sports,1990s/1993_toyota_supra_turbo_a80.jpg,https://upload.wikimedia.org/wikipedia/commons/b/bc/1996_Toyota_Supra_A80_%28front%29.jpg,Wikimedia Commons,CC BY 3.0; Author: User3204
+1994 Audi RS2 Avant,Audi,Typ 8C (B4),1994,1990s,Germany,Wagon,1990s/1994_audi_rs2_avant.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a0/1995_Audi_RS2_Avant_LC25.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MrWalkr
+1994 Ferrari F355,Ferrari,F355 Berlinetta (Tipo F129),1994,1990s,Italy,Sports,1990s/1994_ferrari_f355.jpg,https://upload.wikimedia.org/wikipedia/commons/b/b9/Ferrari_F355_Berlinetta_1X7A7333.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Alexander-93
+1994 Subaru Impreza 555,Subaru,First generation WRX STI (GC8),1994,1990s,Japan,Sedan,1990s/1994_subaru_impreza_555.jpg,https://upload.wikimedia.org/wikipedia/commons/b/b0/Subaru_IMPREZA_WRX_%28E-GC8%29_front.jpg,Wikimedia Commons,CC0; Author: Tokumeigakarinoaoshima
+1995 BMW M3 (E36),BMW,Second generation M3 (E36),1995,1990s,Germany,Sports,1990s/1995_bmw_m3_e36.jpg,https://upload.wikimedia.org/wikipedia/commons/7/7f/BMW_M3_%28E36%2C_1998%29_%2855207349456%29.jpg,Wikimedia Commons,"CC0; Author: Charles from Port Chester, New York"
+1995 Honda Integra Type R (DC2),Honda,Third generation Integra (DC2),1995,1990s,Japan,Coupe,1990s/1995_honda_integra_type_r_dc2.jpg,https://upload.wikimedia.org/wikipedia/commons/5/5a/1996_Honda_Integra_Type_R_in_White%2C_front_left.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mr.choppers
+1995 Porsche 911 (993),Porsche,Fourth generation 911 (993),1995,1990s,Germany,Sports,1990s/1995_porsche_911_993.jpg,https://upload.wikimedia.org/wikipedia/commons/0/0a/Porsche_911_Turbo_S_%281998%29_in_the_Porsche-Museum_%282009%29_1X7A0365.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1996 Dodge Viper GTS,Dodge,Second generation (SR II),1996,1990s,United States,Sports,1990s/1996_dodge_viper_gts.jpg,https://upload.wikimedia.org/wikipedia/commons/4/4c/1999_Dodge_Viper_GTS%2C_Front_Right%2C_06-15-2021.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: SsmIntrigue
+1996 Lotus Elise Series 1,Lotus,Series 1 (Type 111),1996,1990s,United Kingdom,Sports,1990s/1996_lotus_elise_series_1.jpg,https://upload.wikimedia.org/wikipedia/commons/f/f7/2000_Lotus_Elise_1.8_Front.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Vauxford
+1997 Plymouth Prowler,Plymouth,First generation (PR platform),1997,1990s,United States,Sports,1990s/1997_plymouth_prowler.jpg,https://upload.wikimedia.org/wikipedia/commons/2/27/2000_Plymouth_Prowler_in_Prowler_Black_Clearcoat%2C_Front_Right%2C_06-10-2023.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1997 Honda CR-V,Honda,First generation (RD1-RD3),1997,1990s,Japan,SUV,1990s/1997_honda_cr_v.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e5/Honda_CR-V_%28first_generation%29_%28front%29%2C_Kuala_Lumpur.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: User:Two hundred percent.
+1998 Alfa Romeo 156,Alfa Romeo,Tipo 932,1998,1990s,Italy,Sedan,1990s/1998_alfa_romeo_156.jpg,https://upload.wikimedia.org/wikipedia/commons/a/a7/Alfa_156_berlina_932.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Salexx156
+1998 Land Rover Defender 90,Land Rover,Original Defender (L316),1998,1990s,United Kingdom,SUV,1990s/1998_land_rover_defender_90.jpg,https://upload.wikimedia.org/wikipedia/commons/1/19/Defender90.JPG,Wikimedia Commons,CC BY-SA 3.0; Author: Shelka04 (talk)
+1999 Nissan Skyline GT-R (R34),Nissan,Tenth generation (BNR34),1999,1990s,Japan,Sports,1990s/1999_nissan_skyline_gt_r_r34.jpg,https://upload.wikimedia.org/wikipedia/commons/9/99/2001_Nissan_Skyline_GT-R_V-Spec_II_R34.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MrWalkr
+1999 Pagani Zonda C12,Pagani,C12 (6.0L AMG V12),1999,1990s,Italy,Supercar,1990s/1999_pagani_zonda_c12.jpg,https://upload.wikimedia.org/wikipedia/commons/4/42/Pagani_Zonda_C12_%27chassis_001%27_Genf_2019_1Y7A5539.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+1999 Porsche 911 GT3 (996),Porsche,Fifth generation (996.1 GT3),1999,1990s,Germany,Sports,1990s/1999_porsche_911_gt3_996.jpg,https://upload.wikimedia.org/wikipedia/commons/8/80/2004_Porsche_911_GT3%2C_front_left%2C_08-29-2026.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MercurySable99
+2000 BMW M3 (E46),BMW,Third generation M3 (E46),2000,2000s,Germany,Sports,2000s/2000_bmw_m3_e46.jpg,https://upload.wikimedia.org/wikipedia/commons/c/cd/2003_BMW_M3_CSL_front_%2830.7.2022%29.jpg,Wikimedia Commons,CC0; Author: Land Rover Series 3
+2000 Lotus Exige Series 1,Lotus,Series 1 (NA Rover K),2000,2000s,United Kingdom,Sports,2000s/2000_lotus_exige_series_1.jpg,https://upload.wikimedia.org/wikipedia/commons/7/7e/Lotus_Exige_S1_london.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Mr.choppers
+2001 Chevrolet Corvette Z06 (C5),Chevrolet,Fifth generation Z06 (LS6),2001,2000s,United States,Sports,2000s/2001_chevrolet_corvette_z06_c5.jpg,https://upload.wikimedia.org/wikipedia/commons/d/de/2001_Chevrolet_Corvette_Z06%2C_rear_right_%282022_Back_to_the_50%27s_Weekend%29.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MercurySable99
+2002 Ferrari Enzo,Ferrari,Tipo F140,2002,2000s,Italy,Supercar,2000s/2002_ferrari_enzo.jpg,https://upload.wikimedia.org/wikipedia/commons/c/ce/Orange_Enzo_Ferrari_%287191948164%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2002 Honda Civic Type R (EP3),Honda,Second generation Type R (EP3),2002,2000s,Japan,Hatchback,2000s/2002_honda_civic_type_r_ep3.jpg,https://upload.wikimedia.org/wikipedia/commons/f/fc/2002_Honda_Civic_Type_R_EP3%2C_front_right.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Ethan Llamas
+2003 Bentley Continental GT,Bentley,First generation (W12),2003,2000s,United Kingdom,Luxury,2000s/2003_bentley_continental_gt.jpg,https://upload.wikimedia.org/wikipedia/commons/b/bb/2005_green_Bentley_Continental_GT_front.JPG,Wikimedia Commons,CC BY-SA 3.0; Author: BrokenSphere
+2003 Mitsubishi Lancer Evolution VIII,Mitsubishi,Eighth generation (CT9A),2003,2000s,Japan,Sedan,2000s/2003_mitsubishi_lancer_evolution_viii.jpg,https://upload.wikimedia.org/wikipedia/commons/1/17/Mitsubishi_GH-CT9A_Lancer_Evolution_%E2%85%A7_MR_GSR_%2822092313345%29.jpg,Wikimedia Commons,CC0; Author: 先従隗始
+2004 Porsche Carrera GT,Porsche,Typ 980 (5.7L V10),2004,2000s,Germany,Supercar,2000s/2004_porsche_carrera_gt.jpg,https://upload.wikimedia.org/wikipedia/commons/6/65/Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_%28July_2008%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2004 Subaru Impreza WRX STI,Subaru,Second generation facelift (GD Blobeye),2004,2000s,Japan,Sedan,2000s/2004_subaru_impreza_wrx_sti.jpg,https://upload.wikimedia.org/wikipedia/commons/6/6c/2004_Subaru_WRX_STI.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: This picture has been taken by Oleg Yunakov. Contact e-mail: yunakovgmail.com. Image can be used in accordance with the terms of the СС-BY-SA license. Other photos can be seen here.
+2004 Volkswagen Golf R32 (Mk4),Volkswagen,Fourth generation R32 (Typ 1J),2004,2000s,Germany,Hatchback,2000s/2004_volkswagen_golf_r32_mk4.jpg,https://upload.wikimedia.org/wikipedia/commons/0/09/Volkswagen_Golf_IV_R32_%282004%29_%2852230674164%29.jpg,Wikimedia Commons,"CC BY 2.0; Author: Charles from Port Chester, New York"
+2005 Aston Martin V8 Vantage,Aston Martin,VH generation (4.3L V8),2005,2000s,United Kingdom,Sports,2000s/2005_aston_martin_v8_vantage.jpg,https://upload.wikimedia.org/wikipedia/commons/3/32/2017_Aston_Martin_V12_Vantage_S%2C_Jet_Black%2C_front_left.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2005 Bugatti Veyron 16.4,Bugatti,EB 16.4 (Quad-Turbo W16),2005,2000s,France,Supercar,2000s/2005_bugatti_veyron_16_4.jpg,https://upload.wikimedia.org/wikipedia/commons/c/c9/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%281%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2005 Chevrolet Corvette (C6),Chevrolet,Sixth generation (C6),2005,2000s,United States,Sports,2000s/2005_chevrolet_corvette_c6.jpg,https://upload.wikimedia.org/wikipedia/commons/4/4f/Chevrolet_Corvette_Z06_-_Flickr_-_Alexandre_Pr%C3%A9vot_%287%29_%28cropped%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2006 Audi RS4 (B7),Audi,Typ 8E (B7 4.2L V8),2006,2000s,Germany,Sedan,2000s/2006_audi_rs4_b7.jpg,https://upload.wikimedia.org/wikipedia/commons/9/9c/Audi_RS4_B7.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Samoborac
+2006 Ford Mustang GT (S197),Ford,Fifth generation (S197),2006,2000s,United States,Sports,2000s/2006_ford_mustang_gt_s197.jpg,https://upload.wikimedia.org/wikipedia/commons/8/89/Ford_MUSTANG_V8_GT_Coup%C3%A9_Premium_%28S197%29_front.JPG,Wikimedia Commons,CC0; Author: Tokumeigakarinoaoshima
+2006 Porsche Cayman S (987),Porsche,First generation (987.1),2006,2000s,Germany,Sports,2000s/2006_porsche_cayman_s_987.jpg,https://upload.wikimedia.org/wikipedia/commons/6/6b/2006-05-01_Tuning_World_Bodensee.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Stefan-Xp
+2007 BMW M3 (E92),BMW,Fourth generation M3 (E92 V8),2007,2000s,Germany,Coupe,2000s/2007_bmw_m3_e92.jpg,https://upload.wikimedia.org/wikipedia/commons/1/16/2011_BMW_M3_E92%2C_front_left%2C_05-05-2024.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Ethan Llamas
+2007 Mini Cooper S (R56),Mini,Second modern generation (R56 Turbo),2007,2000s,United Kingdom,Hatchback,2000s/2007_mini_cooper_s_r56.jpg,https://upload.wikimedia.org/wikipedia/commons/a/aa/2007_Mini_Cooper_S_Hardtop%2C_front_right%2C_09-09-2023.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: MercurySable99
+2008 Dodge Challenger SRT8,Dodge,Third generation (LC platform),2008,2000s,United States,Coupe,2000s/2008_dodge_challenger_srt8.jpg,https://upload.wikimedia.org/wikipedia/commons/e/ed/Dodge_Challenger_2008_SRT8_NoseOn_Tall_LakeMirrorClassic_17Oct09_%2814414125607%29.jpg,Wikimedia Commons,CC BY 2.0; Author: Valder137
+2008 Hyundai Genesis Coupe,Hyundai,First generation (BK),2008,2000s,South Korea,Coupe,2000s/2008_hyundai_genesis_coupe.jpg,https://upload.wikimedia.org/wikipedia/commons/7/7d/2010_Hyundai_Genesis_Coupe_3_--_08-28-2009.jpg,Wikimedia Commons,Public domain; Author: IFCAR
+2009 Ferrari 458 Italia,Ferrari,Tipo F142 (4.5L V8),2009,2000s,Italy,Supercar,2000s/2009_ferrari_458_italia.jpg,https://upload.wikimedia.org/wikipedia/commons/0/04/Ferrari_458_Fort_Worth_June_2016_56_%28Ferrari%29_%28cropped-2%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2010 Lexus LFA,Lexus,LFA (1LR-GUE 4.8L V10),2010,2010s,Japan,Supercar,2010s/2010_lexus_lfa.jpg,https://upload.wikimedia.org/wikipedia/commons/8/82/Lexus_LFA_001.JPG,Wikimedia Commons,CC BY-SA 3.0; Author: Tennen-Gas
+2011 BMW 1 Series M Coupe,BMW,E82 1M (N54 Twin Turbo),2011,2010s,Germany,Coupe,2010s/2011_bmw_1_series_m_coupe.jpg,https://upload.wikimedia.org/wikipedia/commons/f/fb/BMW_1-Series_Coup%C3%A9_%28E82%29_M_Coup%C3%A9_%282011%29_%2853464656006%29.jpg,Wikimedia Commons,"CC BY 2.0; Author: Charles from Port Chester, New York"
+2011 Ferrari FF,Ferrari,Tipo F151 (V12 AWD Shooting Brake),2011,2010s,Italy,Sports,2010s/2011_ferrari_ff.jpg,https://upload.wikimedia.org/wikipedia/commons/f/fd/2013_Ferrari_FF%2C_Blu_TdF%2C_front_left.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2012 Ford Focus ST,Ford,Third generation (C346),2012,2010s,United States,Hatchback,2010s/2012_ford_focus_st.jpg,https://upload.wikimedia.org/wikipedia/commons/3/39/1913_Ford_Model_T_and_Standard_Oil_Gas_Pump%2C_Great_Hall%2C_Grove_Park_Inn%2C_Grove_Park-Sunset%2C_Asheville%2C_NC.jpg,Wikimedia Commons,CC BY-SA 2.0; Author: w_lemay
+2012 Subaru BRZ,Subaru,First generation (ZC6),2012,2010s,Japan,Sports,2010s/2012_subaru_brz.jpg,https://upload.wikimedia.org/wikipedia/commons/5/50/2022_Toyota_GR86_Premium_in_Halo%2C_Front_Right%2C_04-10-2022.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2013 Alfa Romeo 4C,Alfa Romeo,Tipo 960 (Carbon tub),2013,2010s,Italy,Sports,2010s/2013_alfa_romeo_4c.jpg,https://upload.wikimedia.org/wikipedia/commons/3/34/Festival_automobile_international_2014_-_Alfa_Romeo_4C_-_009.jpg,Wikimedia Commons,CC BY-SA 3.0; Author: Thesupermat
+2013 Chevrolet Corvette Stingray (C7),Chevrolet,Seventh generation (C7 LT1),2013,2010s,United States,Sports,2010s/2013_chevrolet_corvette_stingray_c7.jpg,https://upload.wikimedia.org/wikipedia/commons/9/95/2015_Chevrolet_Corvette_Z06_in_Velocity_Yellow%2C_Front_Right%2C_08-06-2022.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2013 McLaren P1,McLaren,Ultimate Series (Hybrid V8),2013,2010s,United Kingdom,Supercar,2010s/2013_mclaren_p1.jpg,https://upload.wikimedia.org/wikipedia/commons/c/c8/McLaren_P1.jpg,Wikimedia Commons,"CC BY 2.0; Author: Axion23 (original)
+Tony Patt (cropped)"
+2013 Porsche 918 Spyder,Porsche,Typ 918 (Hybrid V8 AWD),2013,2010s,Germany,Supercar,2010s/2013_porsche_918_spyder.jpg,https://upload.wikimedia.org/wikipedia/commons/9/91/Porsche_918_Spyder_IAA_2013.jpg,Wikimedia Commons,"CC BY-SA 3.0 de; Author: Thomas Wolf, www.foto-tw.de"
+2014 BMW i8,BMW,First generation (I12 PHEV),2014,2010s,Germany,Sports,2010s/2014_bmw_i8.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e9/2016_BMW_i8.jpg,Wikimedia Commons,CC BY-SA 4.0; Author: Vauxford
+2014 Dodge Challenger SRT Hellcat,Dodge,LA platform (6.2L Supercharged),2014,2010s,United States,Coupe,2010s/2014_dodge_challenger_srt_hellcat.jpg,https://upload.wikimedia.org/wikipedia/commons/2/2c/2015_Dodge_Challenger_SRT_Hellcat_%2821607516352%29.jpg,Wikimedia Commons,CC BY 2.0; Author: Sicnag
+2014 Ferrari LaFerrari,Ferrari,Tipo F150 (HY-KERS V12),2014,2010s,Italy,Supercar,2010s/2014_ferrari_laferrari.jpg,https://upload.wikimedia.org/wikipedia/commons/e/e5/LaFerrari_in_Beverly_Hills_%2814563979888%29.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2015 Audi R8 V10 Plus,Audi,Second generation (Typ 4S),2015,2010s,Germany,Supercar,2010s/2015_audi_r8_v10_plus.jpg,https://upload.wikimedia.org/wikipedia/commons/c/c6/2013_Porsche_911_Carrera_4S_%28991%29_%289626546987%29.jpg,Wikimedia Commons,CC BY-SA 2.0; Author: David Villarreal Fernández
+2015 Mazda MX-5 Miata (ND),Mazda,Fourth generation (ND1),2015,2010s,Japan,Sports,2010s/2015_mazda_mx_5_miata_nd.jpg,https://upload.wikimedia.org/wikipedia/commons/b/b7/Mazda_MX-5_%28ND%29_1X7A7471.jpg,Wikimedia Commons,CC BY-SA; Author: Unknown
+2016 Ford Focus RS,Ford,Third generation (C346 AWD),2016,2010s,United States,Hatchback,2010s/2016_ford_focus_rs.jpg,https://upload.wikimedia.org/wikipedia/commons/8/8b/2016_Ford_Focus_MkIII_RS_%2829933423530%29.jpg,Wikimedia Commons,CC BY 2.0; Author: Sicnag
 2017 Alfa Romeo Giulia Quadrifoglio,Alfa Romeo,Tipo 952 (2.9L Twin Turbo V6),2017,2010s,Italy,Sedan,,,Automotive Archive,
 2017 Bugatti Chiron,Bugatti,Chiron (8.0L Quad-Turbo W16),2017,2010s,France,Supercar,,,Automotive Archive,
 2017 Kia Stinger GT,Kia,First generation (CK 3.3T),2017,2010s,South Korea,Sedan,,,Automotive Archive,
