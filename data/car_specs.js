@@ -385,7 +385,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2451,
     "wheelbase_in": 96.5
   },
-  "1971 Datsun 240Z": null,
+  "1971 Datsun 240Z": {
+    "body_type": "Sports"
+  },
   "1975 Honda Civic": {
     "horsepower": 60,
     "weight_kg": 40,
@@ -528,7 +530,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2743,
     "wheelbase_in": 108.0
   },
-  "1978 Saab 99 Turbo": null,
+  "1978 Saab 99 Turbo": {
+    "body_type": "Sedan"
+  },
   "1976 Peugeot 504": {
     "horsepower": 106,
     "weight_kg": 1250,
@@ -701,7 +705,28 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2428,
     "wheelbase_in": 95.6
   },
-  "1989 Nissan 300ZX (Z32)": null,
+  "1989 Nissan 300ZX (Z32)": {
+    "horsepower": 283,
+    "weight_kg": 1637,
+    "weight_lbs": 3609,
+    "fuel_economy_l100": 11.2,
+    "mpg": 21.0,
+    "engine": "3.0L V6 Turbo 4AT RWD (268 HP)",
+    "cylinders": 6,
+    "displacement_cc": 2960,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed automatic",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Sports",
+    "length_mm": 4519,
+    "length_in": 177.9,
+    "width_mm": 1801,
+    "width_in": 70.9,
+    "height_mm": 1260,
+    "height_in": 49.6,
+    "wheelbase_mm": 2570,
+    "wheelbase_in": 101.2
+  },
   "1989 Land Rover Discovery": {
     "horsepower": 155,
     "weight_kg": 1856,
@@ -1706,7 +1731,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2451,
     "wheelbase_in": 96.5
   },
-  "1974 Volvo 240": null,
+  "1974 Volvo 240": {
+    "body_type": "Sedan"
+  },
   "1975 Ferrari 308 GTB": {
     "horsepower": 243,
     "weight_kg": 1410,
@@ -1813,7 +1840,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2611,
     "wheelbase_in": 102.8
   },
-  "1977 Chevrolet Caprice": null,
+  "1977 Chevrolet Caprice": {
+    "body_type": "Sedan"
+  },
   "1978 Mazda RX-7 (SA22C)": {
     "horsepower": 116,
     "weight_kg": 995,
@@ -1834,7 +1863,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2421,
     "wheelbase_in": 95.3
   },
-  "1978 Subaru BRAT": null,
+  "1978 Subaru BRAT": {
+    "body_type": "Pickup"
+  },
   "1978 Lincoln Continental Mark V": {
     "horsepower": 168,
     "weight_kg": 2203,
@@ -2049,7 +2080,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2421,
     "wheelbase_in": 95.3
   },
-  "1983 Toyota Sprinter Trueno (AE86)": null,
+  "1983 Toyota Sprinter Trueno (AE86)": {
+    "body_type": "Coupe"
+  },
   "1984 Honda CRX": {
     "horsepower": 131,
     "weight_kg": 899,
@@ -2182,7 +2215,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2319,
     "wheelbase_in": 91.3
   },
-  "1987 Buick GNX": null,
+  "1987 Buick GNX": {
+    "body_type": "Coupe"
+  },
   "1987 Ferrari F40": {
     "horsepower": 478,
     "weight_kg": 1250,
@@ -2249,7 +2284,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2301,
     "wheelbase_in": 90.6
   },
-  "1988 Volvo 740 Turbo": null,
+  "1988 Volvo 740 Turbo": {
+    "body_type": "Wagon"
+  },
   "1989 Chevrolet Corvette ZR-1": {
     "horsepower": 238,
     "weight_kg": 1524,
@@ -2316,7 +2353,28 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2649,
     "wheelbase_in": 104.3
   },
-  "1989 Mercedes-Benz 500SL (R129)": null,
+  "1989 Mercedes-Benz 500SL (R129)": {
+    "horsepower": 326,
+    "weight_kg": 1770,
+    "weight_lbs": 3902,
+    "fuel_economy_l100": 12.4,
+    "mpg": 19.0,
+    "engine": "500 V8 4AT RWD (326 HP)",
+    "cylinders": 8,
+    "displacement_cc": 4973,
+    "fuel_type": "Gasoline",
+    "transmission": "4-Speed automatic",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Convertible",
+    "length_mm": 4470,
+    "length_in": 176.0,
+    "width_mm": 1811,
+    "width_in": 71.3,
+    "height_mm": 1290,
+    "height_in": 50.8,
+    "wheelbase_mm": 2520,
+    "wheelbase_in": 99.2
+  },
   "1990 Acura NSX": {
     "horsepower": 270,
     "weight_kg": 1365,
@@ -2339,7 +2397,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2530,
     "wheelbase_in": 99.6
   },
-  "1991 GMC Syclone": null,
+  "1991 GMC Syclone": {
+    "body_type": "Pickup"
+  },
   "1991 Mazda RX-7 (FD)": {
     "horsepower": 147,
     "weight_kg": 1223,
@@ -2594,7 +2654,9 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2301,
     "wheelbase_in": 90.6
   },
-  "1997 Plymouth Prowler": null,
+  "1997 Plymouth Prowler": {
+    "body_type": "Sports"
+  },
   "1997 Honda CR-V": {
     "horsepower": 128,
     "weight_kg": 1345,
@@ -3007,7 +3069,28 @@ window.CAR_SPECS = {
     "wheelbase_mm": 2639,
     "wheelbase_in": 103.9
   },
-  "2006 Audi RS4 (B7)": null,
+  "2006 Audi RS4 (B7)": {
+    "horsepower": 420,
+    "weight_kg": 1650,
+    "weight_lbs": 3638,
+    "fuel_economy_l100": 13.4,
+    "mpg": 17.6,
+    "engine": "4.2L FSI V8 6MT AWD (420 HP)",
+    "cylinders": 8,
+    "displacement_cc": 4163,
+    "fuel_type": "Gasoline",
+    "transmission": "6-Speed manual",
+    "drivetrain": "All Wheel Drive",
+    "body_type": "Sedan",
+    "length_mm": 4590,
+    "length_in": 180.7,
+    "width_mm": 1816,
+    "width_in": 71.5,
+    "height_mm": 1415,
+    "height_in": 55.7,
+    "wheelbase_mm": 2649,
+    "wheelbase_in": 104.3
+  },
   "2006 Ford Mustang GT (S197)": {
     "horsepower": 549,
     "weight_kg": 1580,

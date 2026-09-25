@@ -56,7 +56,7 @@ MODEL_OVERRIDES = {
     "1993 Renault Twingo": ("Renault", "Twingo"),
     "2015 Renault Zoe": ("Renault", "ZOE"),
     "1994 McLaren F1": ("McLaren", "F1"),
-    "1989 Nissan 300ZX (Z32)": ("Nissan", "300ZX"),
+    "1989 Nissan 300ZX (Z32)": ("Nissan", "300 ZX"),
     "2013 Toyota GT86": ("Toyota", "GT 86"),
     "1977 BMW 320i": ("BMW", "3 Series"),
     "1972 BMW 520": ("BMW", "5 Series"),
@@ -66,9 +66,9 @@ MODEL_OVERRIDES = {
     "1985 Ford Sierra RS Cosworth": ("Ford", "Sierra"),
     "1988 Honda CR-X Si": ("Honda", "CR-X"),
     "1988 Volvo 740 Turbo": ("Volvo", "740"),
-    "1989 Mercedes-Benz 500SL (R129)": ("Mercedes-Benz", "SL"),
+    "1989 Mercedes-Benz 500SL (R129)": ("Mercedes-Benz", "MERCEDES BENZ SL-Klasse"),
     "1997 Plymouth Prowler": ("Plymouth", "Prowler"),
-    "2006 Audi RS4 (B7)": ("Audi", "RS4"),
+    "2006 Audi RS4 (B7)": ("Audi", "RS 4"),
     "2007 Mini Cooper S (R56)": ("Mini", "Hatch"),
     "1970 Range Rover Classic": ("Land Rover", "Range Rover")
 }
@@ -88,9 +88,15 @@ def find_best_engine(car):
             for _, r in mod_sub.iterrows():
                 y_diff = abs(yr - r["gen_year_start"]) if pd.notna(r["gen_year_start"]) else 99
                 has_specs = sum(pd.notna(r[c]) for c in ["power_hp", "curb_weight_kg", "length_mm"])
-                scored.append((y_diff, -has_specs, r))
-            scored.sort(key=lambda x: (x[0], x[1]))
-            return scored[0][2]
+                cabrio_penalty = 10 if "cabrio" in str(r["generation"]).lower() and "cabrio" not in gen.lower() else 0
+                eng_label = str(r.get("engine_label", "")).lower()
+                trim_match = 0
+                for tok in ["500", "turbo", "gti", "v8", "v6", "rs"]:
+                    if tok in name.lower() and tok in eng_label:
+                        trim_match += 5
+                scored.append((y_diff + cabrio_penalty, -trim_match, -has_specs, r))
+            scored.sort(key=lambda x: (x[0], x[1], x[2]))
+            return scored[0][3]
 
     possible_makes = MAKE_ALIASES.get(mfg.lower(), [mfg.lower()])
     m_sub = engines[engines["make"].str.lower().isin(possible_makes) | engines["make_group"].str.lower().isin(possible_makes)]
@@ -151,8 +157,10 @@ for c in cars:
     car_name = c["Car name"]
     eng = find_best_engine(c)
     if eng is None:
-        specs_dict[car_name] = None
-        c["specs"] = None
+        btype = c.get("Vehicle category")
+        s = {"body_type": btype} if btype else None
+        specs_dict[car_name] = s
+        c["specs"] = s
         continue
 
     matched_count += 1

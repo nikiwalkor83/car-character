@@ -1,19 +1,19 @@
-/* Compact engine-category selector for the Sound section. */
+/* Dropdown engine-category selector for the Sound section. */
 (function () {
   const engineCategories = [
     { key: "2-cylinder", label: "2-cylinder", count: 51, file: "2-cylinder.ogg" },
     { key: "3-cylinder", label: "3-cylinder", count: 1260, file: "3-cylinder.ogg" },
     { key: "4-cylinder", label: "4-cylinder", count: 18955, file: "4-cylinder.wav" },
     { key: "5-cylinder", label: "5-cylinder", count: 684, file: "5-cylinder.ogg" },
-    { key: "6-cylinder", label: "6-cylinder / Flat-6", count: 2724, file: "flat-6.wav" },
+    { key: "flat-6", label: "Flat-6", count: 346, file: "flat-6.wav" },
     { key: "v6", label: "V6", count: 2596, file: "v6.ogg" },
     { key: "v8", label: "V8", count: 1996, file: "v8.ogg" },
     { key: "v10", label: "V10", count: 80, file: "v10.ogg" },
     { key: "v12", label: "V12", count: 235, file: "v12.ogg" },
-    { key: "electric", label: "Electric motor", count: 705, file: "electric-motor.ogg" },
-    { key: "hybrid", label: "Hybrid", count: 1319, file: "hybrid.ogg" },
     { key: "w16", label: "W16", count: 12, file: "w16.ogg" },
-    { key: "diesel", label: "Diesel", count: 8320, file: "diesel.ogg" }
+    { key: "diesel", label: "Diesel", count: 8320, file: "diesel.ogg" },
+    { key: "hybrid", label: "Hybrid", count: 1319, file: "hybrid.ogg" },
+    { key: "electric", label: "Electric motor", count: 705, file: "electric-motor.ogg" }
   ];
 
   const waveform = [0.3, 0.46, 0.35, 0.62, 0.42, 0.78, 0.52, 0.68, 0.38, 0.57, 0.74, 0.48, 0.64, 0.36, 0.58, 0.8, 0.45, 0.69, 0.4, 0.55, 0.72, 0.5, 0.63, 0.34];
@@ -47,38 +47,18 @@
   }
 
   function selectorHtml() {
-    const maxCount = Math.max(...engineCategories.map(category => category.count));
     return `
-      <div class="engine-selector-intro">
-        <span>Dataset representation</span>
-        <span>Bar height follows record count</span>
-      </div>
-      <div class="engine-category-selector" role="listbox" aria-label="Engine categories">
-        ${engineCategories.map(category => {
-          const scale = Math.max(0.14, Math.sqrt(category.count / maxCount));
-          const recordingState = recordingFor(category) ? "recording available" : "no recording";
-          return `
-            <button class="engine-category-button" type="button" role="option" aria-selected="false" data-engine-key="${category.key}" style="--category-scale: ${scale}" aria-label="${escapeHtml(category.label)}, ${category.count.toLocaleString()} records, ${recordingState}">
-              <span class="engine-category-bar"><span></span></span>
-              <span class="engine-category-label">${escapeHtml(category.label)}</span>
-              <span class="engine-category-count">${category.count.toLocaleString()}</span>
-            </button>
-          `;
-        }).join("")}
+      <div class="sound-dropdown-wrap">
+        <label for="engine-type-select" class="sound-dropdown-label">SELECT AN ENGINE TYPE</label>
+        <div class="sound-select-box">
+          <select id="engine-type-select" class="sound-engine-select" aria-label="Select an engine type">
+            ${engineCategories.map(cat => `
+              <option value="${cat.key}">${escapeHtml(cat.label)}</option>
+            `).join("")}
+          </select>
+        </div>
       </div>
       <div class="engine-recording-detail" id="engine-recording-detail" aria-live="polite"></div>
-    `;
-  }
-
-  function unavailableDetail(category) {
-    return `
-      <div class="engine-detail-copy">
-        <div class="sound-specimen-pill">${escapeHtml(category.label)}</div>
-        <p class="engine-detail-count">${category.count.toLocaleString()} records in the 1970-present dataset</p>
-        <h4 class="sound-card-title">No verified openly licensed recording currently available</h4>
-        <p class="sound-card-character">This category is represented in the dataset (${category.count.toLocaleString()} cataloged models), but no matching recording under an open redistribution license is currently available in public archives. No unverified, restricted, or synthetic recordings are substituted.</p>
-      </div>
-      <div class="sound-card-availability">NO VERIFIED AUDIO</div>
     `;
   }
 
@@ -90,16 +70,13 @@
     const powertrainDesc = recording.engine_description || recording.engine_type;
     return `
       <audio id="selected-engine-audio" src="audio/engines/${escapeHtml(recording.filename)}" preload="metadata"></audio>
-      <div class="engine-detail-copy">
-        <div class="sound-specimen-pill">${escapeHtml(category.label)}</div>
-        <p class="engine-detail-count">${category.count.toLocaleString()} records in the 1970-present dataset</p>
-        <h4 class="sound-card-title">${escapeHtml(recording.display_name)}</h4>
-        <p class="sound-card-character">
-          <strong>Vehicle:</strong> ${escapeHtml(recording.vehicle)}<br>
-          <strong>Powertrain:</strong> ${escapeHtml(powertrainDesc)}<br>
-          <strong>Recording:</strong> ${escapeHtml(recording.recording_type)}
-        </p>
-        <p class="sound-card-source"><a href="${escapeHtml(recording.source_page_url)}" target="_blank" rel="noopener">Source: ${escapeHtml(recording.source)}</a> &bull; ${escapeHtml(recording.license)}${attributionHtml}</p>
+      <div class="sound-specimen-meta">
+        <div class="sound-specimen-heading-row">
+          <h4 class="sound-specimen-title">${escapeHtml(category.label)}</h4>
+          <span class="sound-specimen-count">${category.count.toLocaleString()} cataloged models in dataset</span>
+        </div>
+        <div class="sound-specimen-vehicle">${escapeHtml(recording.vehicle)}</div>
+        <div class="sound-specimen-engine-desc">${escapeHtml(powertrainDesc)}</div>
       </div>
       <div class="engine-detail-player">
         <div class="sound-waveform-track" id="selected-engine-track" title="Click waveform to seek">${waveformHtml()}</div>
@@ -111,6 +88,11 @@
           <span class="sound-status-dot"><span class="status-indicator-circle"></span><span class="status-label" id="selected-engine-status">READY</span></span>
           <span class="sound-format-badge">${extension}</span>
         </div>
+      </div>
+      <div class="sound-specimen-source-row">
+        <p class="sound-card-source">
+          <a href="${escapeHtml(recording.source_page_url)}" target="_blank" rel="noopener">Source: ${escapeHtml(recording.source)}</a> &bull; ${escapeHtml(recording.license)}${attributionHtml}
+        </p>
       </div>
     `;
   }
@@ -124,7 +106,10 @@
     if (!audio || !button || !time || !status || !track) return;
 
     activeAudio = audio;
+    audio.autoplay = false;
+    audio.loop = false;
     const bars = track.querySelectorAll(".waveform-bar");
+
     audio.addEventListener("loadedmetadata", () => {
       time.textContent = `0:00 / ${formatTime(audio.duration)}`;
     });
@@ -174,24 +159,28 @@
     });
   }
 
-  function selectCategory(category, container) {
-    document.querySelectorAll("audio").forEach(el => {
-      if (!el.paused) {
-        el.pause();
-        el.currentTime = 0;
-      }
-    });
+  function selectCategory(category) {
+    if (activeAudio && !activeAudio.paused) {
+      activeAudio.pause();
+      activeAudio.currentTime = 0;
+    }
     activeAudio = null;
 
-    container.querySelectorAll(".engine-category-button").forEach(button => {
-      const selected = button.dataset.engineKey === category.key;
-      button.classList.toggle("is-selected", selected);
-      button.setAttribute("aria-selected", selected ? "true" : "false");
-    });
+    const select = document.getElementById("engine-type-select");
+    if (select && select.value !== category.key) {
+      select.value = category.key;
+    }
+
     const detail = document.getElementById("engine-recording-detail");
-    const recording = recordingFor(category);
-    detail.innerHTML = recording ? availableDetail(category, recording) : unavailableDetail(category);
-    if (recording) attachSelectedPlayer();
+    if (!detail) return;
+
+    detail.classList.add("is-fading");
+    setTimeout(() => {
+      const recording = recordingFor(category);
+      detail.innerHTML = recording ? availableDetail(category, recording) : "";
+      if (recording) attachSelectedPlayer();
+      detail.classList.remove("is-fading");
+    }, 120);
   }
 
   async function renderEngineRecordings() {
@@ -203,13 +192,17 @@
       const recordings = await response.json();
       recordingsByFilename = new Map(recordings.map(recording => [recording.filename, recording]));
       container.innerHTML = selectorHtml();
-      container.querySelectorAll(".engine-category-button").forEach(button => {
-        button.addEventListener("click", () => {
-          const category = engineCategories.find(item => item.key === button.dataset.engineKey);
-          selectCategory(category, container);
+
+      const select = document.getElementById("engine-type-select");
+      if (select) {
+        select.addEventListener("change", (e) => {
+          const category = engineCategories.find(item => item.key === e.target.value);
+          if (category) selectCategory(category);
         });
-      });
-      selectCategory(engineCategories.find(category => category.key === "v8"), container);
+      }
+
+      const defaultCategory = engineCategories.find(category => category.key === "v8") || engineCategories[0];
+      selectCategory(defaultCategory);
     } catch (error) {
       container.innerHTML = '<p class="sound-card-character">Engine recording metadata could not be loaded.</p>';
       console.error("Unable to render engine recordings:", error);

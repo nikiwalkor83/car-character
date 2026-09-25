@@ -669,8 +669,13 @@ window.selectedManufacturer = null;
   const mapSvg = d3.select("#world-map-svg");
   const locatorSvg = d3.select("#locator-svg");
   const mapContainer = document.getElementById("map-container");
+  let mapContainerRect = mapContainer.getBoundingClientRect();
   const tooltip = document.getElementById("map-tooltip");
   const selectedNameEl = document.getElementById("selected-country-name");
+
+  window.addEventListener("resize", () => {
+    mapContainerRect = mapContainer.getBoundingClientRect();
+  });
 
   // Country view elements
   const countryNameEl = document.getElementById("country-view-name");
@@ -701,6 +706,7 @@ window.selectedManufacturer = null;
   let locatorCountries = null;
   let currentHoverCountryId = null;
   let hoverHideTimeout = null;
+  const logoPositionCache = new Map();
 
   function getCountryInfo(d) {
     const isoMap = window.ISO_COUNTRIES || {};
@@ -998,28 +1004,22 @@ window.selectedManufacturer = null;
       };
     });
 
-    // Anchor coordinates for geographic precision
-    const COUNTRY_COORDS = {
-      "USA": [-98.5, 39.5],
-      "JPN": [138.2, 36.2],
-      "DEU": [10.4, 51.1],
-      "GBR": [-2.2, 54.5],
-      "ITA": [12.5, 42.5],
-      "FRA": [2.2, 46.6],
-      "SWE": [16.5, 62.0],
-      "KOR": [127.7, 36.5]
-    };
-
-    let center;
-    if (country.iso3 && COUNTRY_COORDS[country.iso3]) {
-      center = projection(COUNTRY_COORDS[country.iso3]);
-    } else {
-      center = pathGenerator.centroid(d);
+    const cacheKey = `${d.id}:${mfgItems.length}`;
+    let layout = logoPositionCache.get(cacheKey);
+    if (!layout) {
+      const countryCoords = {
+        USA: [-98.5, 39.5], JPN: [138.2, 36.2], DEU: [10.4, 51.1], GBR: [-2.2, 54.5],
+        ITA: [12.5, 42.5], FRA: [2.2, 46.6], SWE: [16.5, 62.0], KOR: [127.7, 36.5]
+      };
+      const center = country.iso3 && countryCoords[country.iso3]
+        ? projection(countryCoords[country.iso3])
+        : pathGenerator.centroid(d);
+      const cx = center[0];
+      const cy = center[1];
+      layout = { cx, cy, positions: calculateLogoPositions(cx, cy, mfgItems.length, country.iso3) };
+      logoPositionCache.set(cacheKey, layout);
     }
-
-    const cx = center[0];
-    const cy = center[1];
-    const positions = calculateLogoPositions(cx, cy, mfgItems.length, country.iso3);
+    const { cx, cy, positions } = layout;
 
     // Continuous interactive aura behind cluster to prevent premature closes
     const maxDist = Math.max(...positions.map(p => Math.hypot(p.x - cx, p.y - cy)), 60);
@@ -1283,7 +1283,6 @@ window.selectedManufacturer = null;
         countryView.classList.remove("is-hidden");
         countryView.classList.add("is-active");
         countryView.style.opacity = "0";
-        document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
         requestAnimationFrame(() => {
           countryView.style.opacity = "1";
@@ -1313,7 +1312,6 @@ window.selectedManufacturer = null;
         countryView.classList.remove("is-hidden");
         countryView.classList.add("is-active");
         countryView.style.opacity = "0";
-        window.scrollTo({ top: 0, behavior: "smooth" });
 
         requestAnimationFrame(() => {
           countryView.style.opacity = "1";
@@ -1466,7 +1464,6 @@ window.selectedManufacturer = null;
       modelsPanel.classList.add("is-active");
       modelsPanel.style.opacity = "0";
 
-      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
       requestAnimationFrame(() => {
         modelsPanel.style.opacity = "1";
@@ -1635,8 +1632,6 @@ window.selectedManufacturer = null;
       renderCarsGrid(matching, activeTimelineYear, activeScopeName, availableScopeYears);
     }
 
-    updateCountryContext();
-    updateWhyCarsChanged();
   }
 
   function renderContextSparkline(container, records, indicator, selectedYear) {
@@ -1956,7 +1951,23 @@ window.selectedManufacturer = null;
     return car.specs || null;
   }
 
-  function selectCar(car, visibleCars = null) {
+  let lastScrollTarget = null;
+  let lastScrollAt = 0;
+
+  function scrollToSection(element) {
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    if (rect.top >= 0 && rect.top <= window.innerHeight * 0.35) return;
+
+    const now = performance.now();
+    if (lastScrollTarget === element && now - lastScrollAt < 700) return;
+    lastScrollTarget = element;
+    lastScrollAt = now;
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    element.scrollIntoView({ behavior, block: "start" });
+  }
+
+  function selectCar(car, visibleCars = null, scrollToStage = false) {
     if (!car) return;
     activeSelectedCar = car;
     if (visibleCars) {
@@ -2018,11 +2029,9 @@ window.selectedManufacturer = null;
     }
     updateCountryContext();
     updateWhyCarsChanged();
-    requestAnimationFrame(() => {
-      if (automotiveDataStage && !automotiveDataStage.classList.contains("is-hidden")) {
-        automotiveDataStage.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
+    if (scrollToStage && automotiveDataStage && !automotiveDataStage.classList.contains("is-hidden")) {
+      scrollToSection(automotiveDataStage);
+    }
   }
 
   function renderSpecDossier(car) {
@@ -2290,13 +2299,14 @@ window.selectedManufacturer = null;
 
   function renderCarsGrid(carsList, year, scopeName, availableYears) {
     if (!modelsGrid) return;
-    modelsGrid.innerHTML = "";
 
     if (carsList.length === 0) {
       if (automotiveDataStage) automotiveDataStage.classList.add("is-hidden");
       if (crumbCarSep) crumbCarSep.style.display = "none";
       if (crumbCar) crumbCar.style.display = "none";
       activeSelectedCar = null;
+      updateCountryContext();
+      updateWhyCarsChanged();
 
       const prevYears = availableYears.filter(y => y < year);
       const prevYear = prevYears.length > 0 ? prevYears[prevYears.length - 1] : null;
@@ -2329,47 +2339,62 @@ window.selectedManufacturer = null;
         });
       });
 
-      modelsGrid.appendChild(emptyCard);
+      modelsGrid.replaceChildren(emptyCard);
       return;
     }
 
     const sortedCars = [...carsList].filter(c => parseInt(c["Model year"] || 0, 10) >= 1970).sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
     currentVisibleCars = sortedCars;
 
-    sortedCars.forEach(car => {
-      const card = document.createElement("div");
-      card.className = "car-model-card";
-      card.dataset.carName = car["Car name"];
+    const existingCards = new Map(
+      Array.from(modelsGrid.querySelectorAll(".car-model-card"), card => [card.dataset.carName, card])
+    );
+    const nextCards = sortedCars.map(car => {
+      let card = existingCards.get(car["Car name"]);
+      if (!card) {
+        card = document.createElement("div");
+        card.className = "car-model-card";
+        card.dataset.carName = car["Car name"];
 
-      const imgSrc = car["Image filename"] || "";
-      const carName = car["Car name"] || `${car["Model year"]} ${car["Manufacturer"] || scopeName}`;
-      const carYear = car["Model year"] || "";
-      const category = car["Vehicle category"] || car["Decade"] || "Specimen";
-      const generation = car["Exact model generation"] || car["Decade"] || "";
-      const source = car["Image source"] || "Automotive Archive";
+        const imgSrc = car["Image filename"] || "";
+        const carName = car["Car name"] || `${car["Model year"]} ${car["Manufacturer"] || scopeName}`;
+        const carYear = car["Model year"] || "";
+        const category = car["Vehicle category"] || car["Decade"] || "Specimen";
+        const generation = car["Exact model generation"] || car["Decade"] || "";
+        const source = car["Image source"] || "Automotive Archive";
 
-      card.innerHTML = `
-        <div class="car-image-frame">
-          <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
-          <div class="car-pills-overlay">
-            <span class="car-year-pill">${carYear}</span>
-            <span class="car-cat-pill">${category}</span>
+        card.innerHTML = `
+          <div class="car-image-frame">
+            <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
+            <div class="car-pills-overlay">
+              <span class="car-year-pill">${carYear}</span>
+              <span class="car-cat-pill">${category}</span>
+            </div>
           </div>
-        </div>
-        <div class="car-details-body">
-          <h4 class="car-model-name">${carName}</h4>
-          <div class="car-model-gen">${generation}</div>
-          <div class="car-credit-line">Source: ${source}</div>
-        </div>
-        <span class="car-selected-badge">Selected</span>
-      `;
+          <div class="car-details-body">
+            <h4 class="car-model-name">${carName}</h4>
+            <div class="car-model-gen">${generation}</div>
+            <div class="car-credit-line">Source: ${source}</div>
+          </div>
+          <span class="car-selected-badge">Selected</span>
+        `;
 
-      card.addEventListener("click", () => {
-        selectCar(car, sortedCars);
-      });
-
-      modelsGrid.appendChild(card);
+        card.addEventListener("click", () => {
+          const selectedCar = currentVisibleCars.find(item => item["Car name"] === card.dataset.carName);
+          if (selectedCar) selectCar(selectedCar, currentVisibleCars, true);
+        });
+      }
+      existingCards.delete(car["Car name"]);
+      return card;
     });
+
+    modelsGrid.querySelectorAll(".timeline-empty-card").forEach(card => card.remove());
+    let nextPosition = modelsGrid.firstElementChild;
+    nextCards.forEach(card => {
+      if (card !== nextPosition) modelsGrid.insertBefore(card, nextPosition);
+      nextPosition = card.nextElementSibling;
+    });
+    existingCards.forEach(card => card.remove());
 
     // Auto-select car: keep current if still in visible set, else select first
     const stillVisible = activeSelectedCar && sortedCars.find(c => c["Car name"] === activeSelectedCar["Car name"]);
@@ -2408,8 +2433,6 @@ window.selectedManufacturer = null;
       modelsPanel.classList.add("is-active");
       modelsPanel.style.opacity = "0";
 
-      // Scroll smoothly to content space
-      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
       requestAnimationFrame(() => {
         modelsPanel.style.opacity = "1";
@@ -2443,7 +2466,6 @@ window.selectedManufacturer = null;
       automakersPanel.classList.add("is-active");
       automakersPanel.style.opacity = "0";
 
-      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
       requestAnimationFrame(() => {
         automakersPanel.style.opacity = "1";
@@ -2470,7 +2492,7 @@ window.selectedManufacturer = null;
       worldView.classList.remove("is-hidden");
       worldView.classList.add("is-active");
       worldView.style.opacity = "0";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToSection(worldView);
 
       requestAnimationFrame(() => {
         worldView.style.opacity = "1";
@@ -2504,14 +2526,14 @@ window.selectedManufacturer = null;
   if (crumbYear) {
     crumbYear.addEventListener("click", function() {
       if (modelsGrid) {
-        modelsGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToSection(modelsGrid);
       }
     });
   }
   if (crumbCar) {
     crumbCar.addEventListener("click", function() {
       if (automotiveDataStage) {
-        automotiveDataStage.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToSection(automotiveDataStage);
       }
     });
   }
@@ -2576,10 +2598,8 @@ window.selectedManufacturer = null;
   initializeVehicleComparison();
 
   function positionTooltip(event) {
-    if (!mapContainer) return;
-    const rect = mapContainer.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = event.clientX - mapContainerRect.left;
+    const y = event.clientY - mapContainerRect.top;
     tooltip.style.left = `${x}px`;
     tooltip.style.top = `${y}px`;
   }

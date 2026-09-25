@@ -26,10 +26,10 @@ toc: false
   <div class="sound-section-block" style="margin-bottom: 3.5rem;">
     <div class="viz-header">
       <div class="viz-title-block">
-        <div class="section-badge">Acoustic Archeology &bull; Open Recordings</div>
-        <h3 class="viz-heading">Representative Engine Recordings</h3>
+        <div class="section-badge">SOUND</div>
+        <h3 class="viz-heading">WHAT HAPPENED TO MECHANICAL VARIETY?</h3>
         <p class="viz-subheading">
-          Verified field recordings from named vehicles and engines. Click any track to hear changing RPM, acceleration, and engine character across the configurations represented in the dataset.
+          The recordings below represent engine and powertrain types actually represented in the dataset.
         </p>
       </div>
     </div>
