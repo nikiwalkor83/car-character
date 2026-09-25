@@ -26,15 +26,15 @@ toc: false
   <div class="sound-section-block" style="margin-bottom: 3.5rem;">
     <div class="viz-header">
       <div class="viz-title-block">
-        <div class="section-badge">Acoustic Archeology &bull; Zenodo Repository</div>
-        <h3 class="viz-heading">Curated Petrol Idle Specimens</h3>
+        <div class="section-badge">Acoustic Archeology &bull; Open Recordings</div>
+        <h3 class="viz-heading">Representative Engine Recordings</h3>
         <p class="viz-subheading">
-          High-fidelity field recordings captured in an underground garage acoustic test rig. Click any track to inspect the waveform and compare the rhythm and pressure pulses of different cylinder arrangements.
+          Verified field recordings from named vehicles and engines. Click any track to hear changing RPM, acceleration, and engine character across the configurations represented in the dataset.
         </p>
       </div>
     </div>
 
-    <!-- 6 Audio Player Cards Grid -->
+    <!-- Compact engine category selector and shared recording detail -->
     <div class="sound-players-grid" id="sound-players-grid">
       <!-- Rendered via JavaScript -->
     </div>
@@ -127,17 +127,15 @@ toc: false
         <div class="transparency-grid">
           <div class="transparency-item">
             <h4>Audio Research Source</h4>
-            <p><strong>Title:</strong> Sounds of Vehicle Internal Combustion Engines</p>
-            <p><strong>Authors:</strong> Dejan Ćirić and Marko Milivojčević (University of Niš &amp; School of Electrical and Computer Engineering, Serbia)</p>
-            <p><strong>Repository DOI:</strong> <a href="https://zenodo.org/records/18777405" target="_blank" rel="noopener">10.5281/zenodo.18777405</a></p>
-            <p><strong>License:</strong> Creative Commons Attribution 4.0 International (CC BY 4.0)</p>
-            <p class="small-note">The recordings were captured with calibrated condenser microphones during stationary idle cycles. Waveform envelopes were extracted and normalized for this web presentation.</p>
+            <p><strong>Source:</strong> Named vehicle and engine recordings from Wikimedia Commons.</p>
+            <p><strong>Licensing:</strong> Each track links to its original Commons page and carries its own license and attribution.</p>
+            <p class="small-note">Only categories with a verified recording are playable. Dataset categories without a verified recording remain visible and are marked unavailable.</p>
           </div>
           <div class="transparency-item">
             <h4>Powertrain Specifications Source</h4>
             <p><strong>Database:</strong> Historical Engine Specification Archive (29,880 production passenger models, 1970–2024)</p>
             <p><strong>Scope:</strong> Cylinders, configuration, displacement, turbocharging, and drivetrain architecture.</p>
-            <p class="small-note"><strong>Distinction:</strong> Audio recordings are anonymous empirical acoustic specimens from the Zenodo dataset; historical powertrain charts are computed from the complete specifications archive.</p>
+            <p class="small-note"><strong>Distinction:</strong> Audio recordings are individual named-vehicle representatives; historical powertrain charts are computed from the complete specifications archive.</p>
           </div>
         </div>
       </div>
@@ -167,3 +165,4 @@ toc: false
 ```
 
 <script src="scripts/sound-interactive.js"></script>
+<script src="scripts/engine-recordings.js"></script>
