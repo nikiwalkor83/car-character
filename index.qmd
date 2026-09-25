@@ -164,13 +164,6 @@ toc: false
     </div>
   </div>
 
-  <!-- MAIN CALL TO ACTION -->
-  <div style="text-align: center; margin: 3rem 0 5rem;">
-    <a href="story.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 1rem 2.5rem; font-size: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
-      <span>EXPLORE THE STORY</span>
-      <span class="cta-arrow">&rarr;</span>
-    </a>
-  </div>
 </div>
 
 <!-- CASE STUDY: FORTY YEARS (1980 VS 2024) -->
@@ -295,9 +288,9 @@ toc: false
     </div>
   </div>
 
-  <!-- Navigation CTA Box -->
-  <div style="text-align: center; margin: 3.5rem 0 1rem;">
-    <a href="story.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 0.95rem 2.25rem;">
+  <!-- MAIN CALL TO ACTION -->
+  <div style="text-align: center; margin: 3rem 0 5rem;">
+    <a href="story.html" class="final-cta-button" style="display: inline-flex; width: auto; padding: 1rem 2.5rem; font-size: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
       <span>EXPLORE THE STORY</span>
       <span class="cta-arrow">&rarr;</span>
     </a>

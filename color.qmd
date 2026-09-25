@@ -32,8 +32,10 @@ toc: false
     </div>
 
     <!-- Interactive Readout Bar -->
-    <div class="stream-readout" id="color-readout" style="margin: 1rem 0 1.5rem; text-align: center; font-family: var(--font-serif); font-size: 1.05rem; padding: 0.85rem 1rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
-      <span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>
+    <div class="color-readout-slot">
+      <div class="stream-readout" id="color-readout" style="text-align: center; font-family: var(--font-serif); font-size: 1.05rem; padding: 0.85rem 1rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
+        <span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>
+      </div>
     </div>
 
     <!-- Editorial Color Legend -->
@@ -345,11 +347,48 @@ function inspectColor(decade, colorName, pct) {
   const el = document.getElementById("color-readout");
   if (!el) return;
   el.innerHTML = `<strong>${decade}</strong> &bull; <span style="color: #1c3d2e; font-weight: 600;">${colorName}</span> accounted for <strong>${pct.toFixed(1)}%</strong> of global production`;
+
+  const swatch = document.querySelector(".palette-slice:hover");
+  const chart = el.closest(".color-viz-card");
+  if (!swatch || !chart) return;
+
+  el.classList.add("is-floating");
+  el.style.width = "max-content";
+
+  const chartRect = chart.getBoundingClientRect();
+  const swatchRect = swatch.getBoundingClientRect();
+  const margin = 8;
+  const horizontalMin = Math.max(margin, chartRect.left + margin);
+  const horizontalMax = Math.min(window.innerWidth - margin, chartRect.right - margin);
+  el.style.maxWidth = `${Math.max(0, horizontalMax - horizontalMin)}px`;
+
+  const tooltipRect = el.getBoundingClientRect();
+  const left = Math.min(
+    Math.max(swatchRect.left + (swatchRect.width - tooltipRect.width) / 2, horizontalMin),
+    horizontalMax - tooltipRect.width
+  );
+
+  const verticalMin = Math.max(margin, chartRect.top + margin);
+  const verticalMax = Math.min(window.innerHeight - margin, chartRect.bottom - margin);
+  const gap = 10;
+  let top = swatchRect.bottom + gap;
+  if (top + tooltipRect.height > verticalMax) {
+    top = swatchRect.top - tooltipRect.height - gap;
+  }
+  top = Math.min(Math.max(top, verticalMin), verticalMax - tooltipRect.height);
+
+  el.style.left = `${left}px`;
+  el.style.top = `${top}px`;
 }
 
 function resetColorReadout() {
   const el = document.getElementById("color-readout");
   if (!el) return;
+  el.classList.remove("is-floating");
+  el.style.removeProperty("left");
+  el.style.removeProperty("top");
+  el.style.removeProperty("width");
+  el.style.removeProperty("max-width");
   el.innerHTML = `<span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>`;
 }
 </script>

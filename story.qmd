@@ -21,19 +21,11 @@ toc: false
   <article class="story-essay">
 
     <p class="story-dropcap-para">
-      <span class="story-dropcap">C</span>ars changed. Not just mechanically, but visually and culturally.
+      <span class="story-dropcap">C</span>ars changed. Not just mechanically, but visually and culturally. Today, many cars share aerodynamic silhouettes, neutral colors, and quiet, computer-regulated engines. A few decades ago, long hoods, upright wagons, vivid paint, and varied engine sounds made models easier to tell apart.
     </p>
 
     <p>
-      Walk through an ordinary parking lot today, and many vehicles seem to share the same visual language. Silhouettes rise to a familiar aerodynamic height. Neutral tones reflect the light. Engines idle with quiet, computer-regulated consistency behind thick firewalls and acoustic dampening.
-    </p>
-
-    <p>
-      Go back a few decades, and the memory feels different. Long hoods, notched trunks, upright estate tailgates, brazen chromes, vibrant greens, and the unmistakable uneven throb of mechanical combustion. Different models carried an immediate sense of individuality.
-    </p>
-
-    <p>
-      Enthusiasts often describe this difference in a single word: <em>character</em>. They speak of it as though it were a tangible part installed at the factory—something older cars had in abundance and modern cars quietly abandoned.
+      Enthusiasts call this difference <em>character</em>, as if older cars had it and modern cars lost it.
     </p>
 
     <div class="story-emphasis-quote">
@@ -41,34 +33,19 @@ toc: false
     </div>
 
     <p>
-      Nostalgia is powerful, but it is notoriously unreliable. It filters out the vapor locks, the rusted rocker panels, the poor brakes, and the catastrophic crash test results of yesterday's automobiles. More importantly, &ldquo;character&rdquo; is impossible to measure directly. No specification sheet lists personality alongside horsepower, curb weight, or fuel economy.
-    </p>
-
-    <p>
+      Nostalgia is powerful but unreliable: it forgets vapor locks, rust, poor brakes, and terrible crash-test results. And character is hard to measure; no specification sheet lists personality beside horsepower or curb weight.
       So instead of asking whether older cars were simply better, we can ask a more grounded question: <em>what actually changed?</em>
     </p>
 
     <p>
       When people describe a car as memorable or distinctive, their impressions almost always trace back to three physical aspects:
-    </p>
-
-    <p>
       Maybe it is the <strong>color</strong>—the presence of bold, evocative pigments that once brightened ordinary streets.
-    </p>
-
-    <p>
       Maybe it is the <strong>shape</strong>—the variety of distinct architectural silhouettes, from low two-door coupes to upright station wagons, before the modern crossover became the universal standard.
-    </p>
-
-    <p>
       Maybe it is the <strong>sound</strong>—the mechanical rhythm and acoustic presence of varied cylinder configurations, displacement volumes, and raw combustion before forced-induction downsizing and electric powertrains.
     </p>
 
     <p>
       Those are three things that do not rely on nostalgia alone. They left five decades of verifiable records: annual paint production data, dimensional blueprints, and acoustic recordings.
-    </p>
-
-    <p>
       The data cannot tell us how to feel about modern cars. But it can show us what changed—and invite you to decide what it means.
     </p>
 

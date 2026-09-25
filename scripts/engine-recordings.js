@@ -6,25 +6,14 @@
     { key: "4-cylinder", label: "4-cylinder", count: 18955, file: "4-cylinder.wav" },
     { key: "5-cylinder", label: "5-cylinder", count: 684, file: "5-cylinder.ogg" },
     { key: "6-cylinder", label: "6-cylinder / Flat-6", count: 2724, file: "flat-6.wav" },
-    { key: "l6", label: "L6", count: 5 },
-    { key: "i6", label: "I6", count: 1 },
     { key: "v6", label: "V6", count: 2596, file: "v6.ogg" },
-    { key: "7-cylinder", label: "7-cylinder", count: 1 },
-    { key: "8-cylinder", label: "8-cylinder", count: 367 },
     { key: "v8", label: "V8", count: 1996, file: "v8.ogg" },
-    { key: "10-cylinder", label: "10-cylinder", count: 7 },
     { key: "v10", label: "V10", count: 80, file: "v10.ogg" },
-    { key: "12-cylinder", label: "12-cylinder", count: 37 },
     { key: "v12", label: "V12", count: 235, file: "v12.ogg" },
-    { key: "w12", label: "W12", count: 42 },
-    { key: "16-cylinder", label: "16-cylinder", count: 1 },
-    { key: "w16", label: "W16", count: 12, file: "w16.ogg" },
-    { key: "rotary", label: "Rotary", count: 9 },
     { key: "electric", label: "Electric motor", count: 705, file: "electric-motor.ogg" },
     { key: "hybrid", label: "Hybrid", count: 1319, file: "hybrid.ogg" },
-    { key: "diesel", label: "Diesel", count: 8320, file: "diesel.ogg" },
-    { key: "hydrogen", label: "Hydrogen fuel cell", count: 2 },
-    { key: "unspecified", label: "Unspecified powertrain", count: 107 }
+    { key: "w16", label: "W16", count: 12, file: "w16.ogg" },
+    { key: "diesel", label: "Diesel", count: 8320, file: "diesel.ogg" }
   ];
 
   const waveform = [0.3, 0.46, 0.35, 0.62, 0.42, 0.78, 0.52, 0.68, 0.38, 0.57, 0.74, 0.48, 0.64, 0.36, 0.58, 0.8, 0.45, 0.69, 0.4, 0.55, 0.72, 0.5, 0.63, 0.34];

@@ -129,7 +129,7 @@ toc: false
             <h4>Audio Research Source</h4>
             <p><strong>Source:</strong> Named vehicle and engine recordings from Wikimedia Commons.</p>
             <p><strong>Licensing:</strong> Each track links to its original Commons page and carries its own license and attribution.</p>
-            <p class="small-note">Only categories with a verified recording are playable. Dataset categories without a verified recording remain visible and are marked unavailable.</p>
+            <p class="small-note">Only categories with a verified, openly licensed recording are presented in the audio selector.</p>
           </div>
           <div class="transparency-item">
             <h4>Powertrain Specifications Source</h4>
