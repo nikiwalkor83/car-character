@@ -169,7 +169,7 @@ toc: false
         <div id="automotive-data-stage" class="automotive-data-stage is-hidden">
           <div class="spec-stage-header">
             <div class="spec-stage-heading">
-              <span class="spec-eyebrow">Automotive Data &amp; Engineering Specs</span>
+              <span class="spec-eyebrow">The Car</span>
               <h3 id="spec-stage-title" class="spec-title">Technical Dossier</h3>
               <p id="spec-stage-subtitle" class="spec-subtitle">Authentic factory specifications from master automotive engineering records.</p>
             </div>
@@ -237,6 +237,131 @@ toc: false
             </div>
           </div>
         </div>
+
+        <!-- STAGE D: COUNTRY CONTEXT (STEP 6B) -->
+        <div id="country-context-stage" class="country-context-stage is-hidden">
+          <div class="context-stage-header">
+            <div class="context-stage-heading">
+              <span class="context-eyebrow">The Country</span>
+              <h3 id="context-stage-title" class="context-title">The car in its context</h3>
+              <p id="context-stage-lead" class="context-lead">
+                The selected vehicle is shown alongside the wider country in <span id="context-active-year-label">1970</span>. These figures describe the conditions of its country and period, giving you a basis for comparison without implying that one caused the other.
+              </p>
+            </div>
+            <div class="context-country-badge" id="context-country-badge">
+              <span class="context-badge-nation" id="context-badge-nation">Country</span>
+              <span class="context-badge-year" id="context-badge-year">Year</span>
+            </div>
+          </div>
+
+          <div class="context-inquiry-box">
+            <span class="context-inquiry-icon">&para;</span>
+            <p class="context-inquiry-text" id="context-inquiry-text">
+              <strong>Investigation prompt:</strong> Could shifts in purchasing power, urbanization, or space constraints help explain changes in vehicle size, weight, and displacement across eras?
+            </p>
+          </div>
+
+          <!-- Four Context Indicators Grid -->
+          <div class="context-indicators-grid" id="context-indicators-grid">
+            <!-- 1. GDP Per Capita -->
+            <div class="context-indicator-card" id="card-context-gdp">
+              <div class="context-card-top">
+                <span class="context-card-label">Economic Output</span>
+                <span class="context-card-code">NY.GDP.PCAP.KD</span>
+              </div>
+              <h4 class="context-card-title">GDP Per Capita</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-gdp">&mdash;</div>
+                <div class="context-card-unit">Constant 2015 US$ per person</div>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-gdp"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-gdp-start">1970</span>
+                  <span class="context-sparkline-caption">Historical Trend</span>
+                  <span id="meta-context-gdp-end">2024</span>
+                </div>
+              </div>
+              <p class="context-card-desc">Real national economic output per resident, adjusted for inflation.</p>
+            </div>
+
+            <!-- 2. Population Density -->
+            <div class="context-indicator-card" id="card-context-density">
+              <div class="context-card-top">
+                <span class="context-card-label">Spatial Constraints</span>
+                <span class="context-card-code">EN.POP.DNST</span>
+              </div>
+              <h4 class="context-card-title">Population Density</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-density">&mdash;</div>
+                <div class="context-card-unit">People per km² of land</div>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-density"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-density-start">1970</span>
+                  <span class="context-sparkline-caption">Historical Trend</span>
+                  <span id="meta-context-density-end">2023</span>
+                </div>
+              </div>
+              <p class="context-card-desc">Indicates spatial concentration, road footprint constraints, and garage pressure.</p>
+            </div>
+
+            <!-- 3. Urbanization -->
+            <div class="context-indicator-card" id="card-context-urban">
+              <div class="context-card-top">
+                <span class="context-card-label">Demographic Distribution</span>
+                <span class="context-card-code">SP.URB.TOTL.IN.ZS</span>
+              </div>
+              <h4 class="context-card-title">Urbanization</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-urban">&mdash;</div>
+                <div class="context-card-unit">% living in urban areas</div>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-urban"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-urban-start">1970</span>
+                  <span class="context-sparkline-caption">Historical Trend</span>
+                  <span id="meta-context-urban-end">2024</span>
+                </div>
+              </div>
+              <p class="context-card-desc">Reflects daily driving patterns, city traffic, and transit proximity.</p>
+            </div>
+
+            <!-- 4. Passenger Cars Per 1,000 Inhabitants -->
+            <div class="context-indicator-card" id="card-context-cars">
+              <div class="context-card-top">
+                <span class="context-card-label">Motorization Rate</span>
+                <span class="context-card-code" id="code-context-cars">OECD / UNECE</span>
+              </div>
+              <h4 class="context-card-title">Passenger Car Ownership</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-cars">&mdash;</div>
+                <div class="context-card-unit">Cars per 1,000 inhabitants</div>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-cars"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-cars-start">1994</span>
+                  <span class="context-sparkline-caption">Harmonized Scope</span>
+                  <span id="meta-context-cars-end">2024</span>
+                </div>
+              </div>
+              <p class="context-card-desc" id="desc-context-cars">Measures personal car availability relative to total resident population.</p>
+            </div>
+          </div>
+
+          <!-- Compact Sources & Provenance Footer -->
+          <div class="context-provenance-bar">
+            <details class="context-provenance-details">
+              <summary class="context-provenance-summary">Sources &amp; Methodology Information</summary>
+              <div class="context-provenance-content">
+                <div class="context-provenance-grid" id="context-provenance-grid"></div>
+              </div>
+            </details>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -252,6 +377,7 @@ toc: false
 <script src="data/cars_metadata.js"></script>
 <script src="data/car_specs.js"></script>
 <script src="data/manufacturers_config.js"></script>
+<script src="data/country_context.js"></script>
 
 <script>
 // Modular reusable state
@@ -298,6 +424,48 @@ window.selectedManufacturer = null;
   const specStanceBars = document.getElementById("spec-stance-bars");
   const specNoDataNotice = document.getElementById("spec-no-data-notice");
   const specComparisonTable = document.getElementById("spec-comparison-table");
+
+  // Country context elements
+  const countryContextStage = document.getElementById("country-context-stage");
+  const contextActiveYearLabel = document.getElementById("context-active-year-label");
+  const contextBadgeNation = document.getElementById("context-badge-nation");
+  const contextBadgeYear = document.getElementById("context-badge-year");
+  const contextProvenanceGrid = document.getElementById("context-provenance-grid");
+
+  const contextIndicators = [
+    {
+      key: "gdp_per_capita_constant_2015_usd",
+      valueId: "val-context-gdp",
+      sparklineId: "sparkline-context-gdp",
+      startId: "meta-context-gdp-start",
+      endId: "meta-context-gdp-end",
+      format: value => `$${Math.round(value).toLocaleString()}`
+    },
+    {
+      key: "population_density_per_km2",
+      valueId: "val-context-density",
+      sparklineId: "sparkline-context-density",
+      startId: "meta-context-density-start",
+      endId: "meta-context-density-end",
+      format: value => value.toLocaleString(undefined, { maximumFractionDigits: 1 })
+    },
+    {
+      key: "urbanization_percent",
+      valueId: "val-context-urban",
+      sparklineId: "sparkline-context-urban",
+      startId: "meta-context-urban-start",
+      endId: "meta-context-urban-end",
+      format: value => `${value.toLocaleString(undefined, { maximumFractionDigits: 1 })}%`
+    },
+    {
+      key: "passenger_cars_per_1000",
+      valueId: "val-context-cars",
+      sparklineId: "sparkline-context-cars",
+      startId: "meta-context-cars-start",
+      endId: "meta-context-cars-end",
+      format: value => value.toLocaleString(undefined, { maximumFractionDigits: 1 })
+    }
+  ];
 
   // Automotive data state tracking
   let activeSelectedCar = null;
@@ -874,6 +1042,8 @@ window.selectedManufacturer = null;
   function selectCountry(d, element, targetMfg) {
     const country = getCountryInfo(d);
     activeCountryData = country;
+    activeSelectedCar = null;
+    updateCountryContext();
     hideCountryLogos();
 
     // Highlight on main map
@@ -1308,6 +1478,102 @@ window.selectedManufacturer = null;
       }
       renderCarsGrid(matching, activeTimelineYear, activeScopeName, availableScopeYears);
     }
+
+    updateCountryContext();
+  }
+
+  function renderContextSparkline(container, records, indicator, selectedYear) {
+    container.innerHTML = "";
+    const points = records
+      .filter(record => record[indicator.key] !== null && record[indicator.key] !== undefined)
+      .map(record => ({ year: record.year, value: record[indicator.key] }));
+
+    if (points.length < 2) return;
+
+    const width = 240;
+    const height = 32;
+    const x = d3.scaleLinear()
+      .domain(d3.extent(points, point => point.year))
+      .range([1, width - 1]);
+    const y = d3.scaleLinear()
+      .domain(d3.extent(points, point => point.value))
+      .nice()
+      .range([height - 3, 3]);
+    const svg = d3.select(container)
+      .append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("preserveAspectRatio", "none")
+      .attr("role", "img")
+      .attr("aria-label", `${indicator.key} historical trend`);
+    const line = d3.line()
+      .x(point => x(point.year))
+      .y(point => y(point.value));
+
+    svg.append("path")
+      .datum(points)
+      .attr("class", "context-sparkline-line")
+      .attr("d", line);
+
+    const selectedPoint = points.find(point => point.year === selectedYear);
+    if (selectedPoint) {
+      svg.append("circle")
+        .attr("class", "context-sparkline-point")
+        .attr("cx", x(selectedPoint.year))
+        .attr("cy", y(selectedPoint.value))
+        .attr("r", 2.5);
+    }
+
+    document.getElementById(indicator.startId).textContent = points[0].year;
+    document.getElementById(indicator.endId).textContent = points[points.length - 1].year;
+  }
+
+  function renderContextSources() {
+    if (!contextProvenanceGrid || !window.COUNTRY_CONTEXT_METADATA) return;
+    const variables = window.COUNTRY_CONTEXT_METADATA.variables || {};
+    contextProvenanceGrid.innerHTML = contextIndicators.map(indicator => {
+      const metadata = variables[indicator.key] || {};
+      const sourceUrl = metadata.source_url ? ` <a href="${metadata.source_url.split(" /")[0]}" target="_blank" rel="noopener">Source</a>.` : "";
+      return `<div class="context-provenance-item"><strong>${metadata.name || indicator.key}</strong>: ${metadata.source_agency || "Source not specified"} (indicator <code>${metadata.indicator_code || "not specified"}</code>). ${metadata.coverage_years || "Coverage not specified"}.<br><em>${metadata.notes || ""}</em>${sourceUrl}</div>`;
+    }).join("");
+  }
+
+  function updateCountryContext() {
+    if (!countryContextStage || !activeCountryData || !activeSelectedCar || !Array.isArray(window.COUNTRY_CONTEXT)) {
+      if (countryContextStage) {
+        countryContextStage.classList.remove("is-active");
+        countryContextStage.classList.add("is-hidden");
+      }
+      return;
+    }
+
+    const iso3 = (activeCountryData.iso3 || "").toUpperCase();
+    const selectedYear = activeTimelineYear || parseInt(activeSelectedCar["Model year"], 10);
+    const countryRecords = window.COUNTRY_CONTEXT.filter(record => record.iso3 === iso3);
+    const record = countryRecords.find(item => item.year === selectedYear);
+
+    if (!iso3 || !record || !selectedYear) {
+      countryContextStage.classList.remove("is-active");
+      countryContextStage.classList.add("is-hidden");
+      return;
+    }
+
+    countryContextStage.classList.remove("is-hidden");
+    countryContextStage.classList.add("is-active");
+    contextActiveYearLabel.textContent = selectedYear;
+    contextBadgeNation.textContent = record.country;
+    contextBadgeYear.textContent = selectedYear;
+
+    contextIndicators.forEach(indicator => {
+      const valueElement = document.getElementById(indicator.valueId);
+      const value = record[indicator.key];
+      valueElement.classList.toggle("is-unavailable", value === null || value === undefined);
+      valueElement.textContent = value === null || value === undefined
+        ? "Data unavailable for this year"
+        : indicator.format(value);
+      renderContextSparkline(document.getElementById(indicator.sparklineId), countryRecords, indicator, selectedYear);
+    });
+
+    renderContextSources();
   }
 
   function getCarSpecs(car) {
@@ -1379,11 +1645,12 @@ window.selectedManufacturer = null;
     if (currentSpecViewMode === "comparison") {
       renderSpecComparison(currentVisibleCars, car);
     }
+    updateCountryContext();
   }
 
   function renderSpecDossier(car) {
     if (!car) return;
-    const specs = getCarSpecs(car);
+    const specs = getCarSpecs(car) || {};
 
     // Hero metadata
     if (specHeroImg) {
@@ -1400,92 +1667,54 @@ window.selectedManufacturer = null;
       specHeroNote.textContent = `Archived engineering specimen • Source: ${src}`;
     }
 
-    const hasAnySpecs = specs && (
+    const hasAnySpecs = (
       specs.horsepower || specs.weight_kg || specs.mpg ||
       specs.engine || specs.drivetrain || specs.body_type ||
       specs.length_mm || specs.width_mm || specs.height_mm || specs.wheelbase_mm
     );
 
-    if (!hasAnySpecs) {
-      if (specBenchmarksGrid) specBenchmarksGrid.innerHTML = "";
-      if (specPowertrainBlock) specPowertrainBlock.style.display = "none";
-      if (specDimensionsBlock) specDimensionsBlock.style.display = "none";
-      if (specNoDataNotice) specNoDataNotice.style.display = "block";
-      return;
-    }
-
-    if (specNoDataNotice) specNoDataNotice.style.display = "none";
+    if (specNoDataNotice) specNoDataNotice.style.display = hasAnySpecs ? "none" : "block";
 
     // 1. Performance Benchmarks Grid (Horsepower, Weight, MPG)
     if (specBenchmarksGrid) {
       specBenchmarksGrid.innerHTML = "";
 
-      // Horsepower
-      if (specs.horsepower) {
-        const hpPct = Math.min(100, Math.max(10, Math.round((specs.horsepower / 750) * 100)));
-        const card = document.createElement("div");
-        card.className = "spec-benchmark-card";
-        card.innerHTML = `
-          <span class="spec-benchmark-label">Power Output</span>
-          <div class="spec-benchmark-value-group">
-            <span class="spec-benchmark-num">${specs.horsepower}</span>
-            <span class="spec-benchmark-unit">BHP / HP</span>
-          </div>
-          <div class="spec-benchmark-secondary">Mechanical horsepower at crank</div>
-          <div class="spec-benchmark-bar-track">
-            <div class="spec-benchmark-bar-fill" style="width: ${hpPct}%;"></div>
-          </div>
-        `;
-        specBenchmarksGrid.appendChild(card);
-      }
+      const benchmarkDefinitions = [
+        { label: "Power Output", key: "horsepower", unit: "BHP / HP", note: "Mechanical horsepower at crank", scale: 750 },
+        { label: "Curb Weight", key: "weight_kg", unit: "kg", note: specs.weight_lbs ? `${specs.weight_lbs.toLocaleString()} lbs unladen` : "Unladen weight", scale: 2600, accent: "gold" },
+        { label: "Combined Economy", key: "mpg", unit: "US MPG", note: specs.fuel_economy_l100 ? `${specs.fuel_economy_l100} L/100km combined` : "Combined rating", scale: 55 }
+      ];
 
-      // Curb Weight
-      if (specs.weight_kg) {
-        const wtPct = Math.min(100, Math.max(10, Math.round((specs.weight_kg / 2600) * 100)));
+      benchmarkDefinitions.forEach(benchmark => {
+        const value = specs[benchmark.key];
+        const available = value !== null && value !== undefined;
         const card = document.createElement("div");
-        card.className = "spec-benchmark-card";
+        card.className = `spec-benchmark-card${available ? "" : " is-unavailable"}`;
+        const bar = available
+          ? `<div class="spec-benchmark-bar-track"><div class="spec-benchmark-bar-fill ${benchmark.accent || ""}" style="width: ${Math.min(100, Math.max(10, Math.round((value / benchmark.scale) * 100)))}%;"></div></div>`
+          : "";
         card.innerHTML = `
-          <span class="spec-benchmark-label">Curb Weight</span>
+          <span class="spec-benchmark-label">${benchmark.label}</span>
           <div class="spec-benchmark-value-group">
-            <span class="spec-benchmark-num">${specs.weight_kg.toLocaleString()}</span>
-            <span class="spec-benchmark-unit">kg</span>
+            <span class="spec-benchmark-num">${available ? (typeof value === "number" ? value.toLocaleString() : value) : "Data unavailable"}</span>
+            <span class="spec-benchmark-unit">${available ? benchmark.unit : ""}</span>
           </div>
-          <div class="spec-benchmark-secondary">${specs.weight_lbs ? `${specs.weight_lbs.toLocaleString()} lbs unladen` : 'Unladen weight'}</div>
-          <div class="spec-benchmark-bar-track">
-            <div class="spec-benchmark-bar-fill gold" style="width: ${wtPct}%;"></div>
-          </div>
+          <div class="spec-benchmark-secondary">${available ? benchmark.note : "No exact value is recorded for this vehicle."}</div>
+          ${bar}
         `;
         specBenchmarksGrid.appendChild(card);
-      }
-
-      // Fuel Economy / MPG
-      if (specs.mpg) {
-        const mpgPct = Math.min(100, Math.max(10, Math.round((specs.mpg / 55) * 100)));
-        const card = document.createElement("div");
-        card.className = "spec-benchmark-card";
-        card.innerHTML = `
-          <span class="spec-benchmark-label">Combined Economy</span>
-          <div class="spec-benchmark-value-group">
-            <span class="spec-benchmark-num">${specs.mpg}</span>
-            <span class="spec-benchmark-unit">US MPG</span>
-          </div>
-          <div class="spec-benchmark-secondary">${specs.fuel_economy_l100 ? `${specs.fuel_economy_l100} L/100km combined` : 'Combined rating'}</div>
-          <div class="spec-benchmark-bar-track">
-            <div class="spec-benchmark-bar-fill" style="width: ${mpgPct}%;"></div>
-          </div>
-        `;
-        specBenchmarksGrid.appendChild(card);
-      }
+      });
     }
 
     // 2. Powertrain & Mechanical Architecture
     if (specPowertrainBlock && specPowertrainGrid) {
       specPowertrainGrid.innerHTML = "";
-      const powertrainAttrs = [];
+      const powertrainAttrs = [
+        { label: "Engine Configuration", val: specs.engine },
+        { label: "Drive Configuration", val: specs.drivetrain },
+        { label: "Body Architecture", val: specs.body_type }
+      ];
 
-      if (specs.engine) {
-        powertrainAttrs.push({ label: "Engine Configuration", val: specs.engine });
-      }
       if (specs.displacement_cc) {
         powertrainAttrs.push({ label: "Displacement", val: `${specs.displacement_cc.toLocaleString()} cc (${(specs.displacement_cc / 1000).toFixed(1)}L)` });
       }
@@ -1495,35 +1724,27 @@ window.selectedManufacturer = null;
       if (specs.fuel_type) {
         powertrainAttrs.push({ label: "Fuel System", val: specs.fuel_type });
       }
-      if (specs.drivetrain) {
-        powertrainAttrs.push({ label: "Drive Configuration", val: specs.drivetrain });
-      }
       if (specs.transmission) {
         powertrainAttrs.push({ label: "Transmission", val: specs.transmission });
       }
-      if (specs.body_type) {
-        powertrainAttrs.push({ label: "Body Architecture", val: specs.body_type });
-      }
 
-      if (powertrainAttrs.length > 0) {
-        specPowertrainBlock.style.display = "block";
-        powertrainAttrs.forEach(attr => {
-          const item = document.createElement("div");
-          item.className = "spec-attr-item";
-          item.innerHTML = `
-            <span class="spec-attr-label">${attr.label}</span>
-            <span class="spec-attr-value">${attr.val}</span>
-          `;
-          specPowertrainGrid.appendChild(item);
-        });
-      } else {
-        specPowertrainBlock.style.display = "none";
-      }
+      specPowertrainBlock.style.display = "block";
+      powertrainAttrs.forEach(attr => {
+        const item = document.createElement("div");
+        const available = attr.val !== null && attr.val !== undefined;
+        item.className = `spec-attr-item${available ? "" : " is-unavailable"}`;
+        item.innerHTML = `
+          <span class="spec-attr-label">${attr.label}</span>
+          <span class="spec-attr-value">${available ? attr.val : "Data unavailable"}</span>
+        `;
+        specPowertrainGrid.appendChild(item);
+      });
     }
 
     // 3. Physical Architecture & Stance Dimensions
     if (specDimensionsBlock && specDimensionsGrid) {
       specDimensionsGrid.innerHTML = "";
+      if (specStanceBars) specStanceBars.innerHTML = "";
       const dims = [];
 
       if (specs.length_mm) {
@@ -1539,19 +1760,28 @@ window.selectedManufacturer = null;
         dims.push({ label: "Overall Height", mm: specs.height_mm, inch: specs.height_in });
       }
 
-      if (dims.length > 0) {
-        specDimensionsBlock.style.display = "block";
-        dims.forEach(d => {
-          const card = document.createElement("div");
-          card.className = "spec-dim-card";
-          card.innerHTML = `
-            <div class="spec-dim-label">${d.label}</div>
-            <div class="spec-dim-primary">${d.mm.toLocaleString()} mm</div>
-            <div class="spec-dim-secondary">${d.inch ? `${d.inch} in` : ''}</div>
-          `;
-          specDimensionsGrid.appendChild(card);
-        });
+      const dimensionDefinitions = [
+        { label: "Overall Length", key: "length_mm", inchKey: "length_in" },
+        { label: "Wheelbase", key: "wheelbase_mm", inchKey: "wheelbase_in" },
+        { label: "Overall Width", key: "width_mm", inchKey: "width_in" },
+        { label: "Overall Height", key: "height_mm", inchKey: "height_in" }
+      ];
 
+      specDimensionsBlock.style.display = "block";
+      dimensionDefinitions.forEach(dimension => {
+        const millimetres = specs[dimension.key];
+        const available = millimetres !== null && millimetres !== undefined;
+        const card = document.createElement("div");
+        card.className = `spec-dim-card${available ? "" : " is-unavailable"}`;
+        card.innerHTML = `
+          <div class="spec-dim-label">${dimension.label}</div>
+          <div class="spec-dim-primary">${available ? `${millimetres.toLocaleString()} mm` : "Data unavailable"}</div>
+          <div class="spec-dim-secondary">${available && specs[dimension.inchKey] ? `${specs[dimension.inchKey]} in` : ""}</div>
+        `;
+        specDimensionsGrid.appendChild(card);
+      });
+
+      if (dims.length > 0) {
         // Stance relative bar graph
         if (specStanceBars) {
           specStanceBars.innerHTML = "";
@@ -1570,8 +1800,6 @@ window.selectedManufacturer = null;
             specStanceBars.appendChild(row);
           });
         }
-      } else {
-        specDimensionsBlock.style.display = "none";
       }
     }
   }

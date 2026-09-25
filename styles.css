@@ -5676,6 +5676,19 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.spec-benchmark-card.is-unavailable .spec-benchmark-num,
+.spec-attr-item.is-unavailable .spec-attr-value,
+.spec-dim-card.is-unavailable .spec-dim-primary {
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.spec-benchmark-card.is-unavailable .spec-benchmark-num {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
 .spec-benchmark-bar-track {
   width: 100%;
   height: 6px;
@@ -5981,3 +5994,339 @@ body {
 
 
 
+
+/* ==========================================================================
+   STAGE D: COUNTRY CONTEXT (BRITISH MOTORING EDITORIAL SYSTEM)
+   Restrained, academic, non-dashboard styling for macroeconomic context
+   ========================================================================== */
+
+.country-context-stage {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-rule);
+  transition: opacity 0.3s ease;
+}
+
+.country-context-stage.is-hidden {
+  display: none !important;
+}
+
+.country-context-stage.is-active {
+  display: block !important;
+}
+
+.context-stage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.context-stage-heading {
+  max-width: 48rem;
+}
+
+.context-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-brass);
+  margin-bottom: 0.4rem;
+}
+
+.context-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  line-height: 1.25;
+  margin: 0 0 0.65rem 0;
+}
+
+.context-lead {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.context-country-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.context-badge-nation {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-ink);
+}
+
+.context-badge-year {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--accent-racing-green);
+  border-left: 1px solid var(--border-rule);
+  padding-left: 0.5rem;
+}
+
+/* Inquiry Box (Academic framing, non-causal) */
+.context-inquiry-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background-color: #faf7f2;
+  border-left: 3px solid var(--accent-brass);
+  border-top: 1px solid var(--border-rule);
+  border-right: 1px solid var(--border-rule);
+  border-bottom: 1px solid var(--border-rule);
+  margin-bottom: 2rem;
+}
+
+.context-inquiry-icon {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--accent-brass);
+}
+
+.context-inquiry-text {
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+  font-style: italic;
+  color: var(--text-body);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Context 4-Indicators Grid */
+.context-indicators-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .context-indicators-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .context-indicators-grid {
+    grid-template-columns: 1fr;
+  }
+  .context-stage-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.context-indicator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-rule);
+  padding: 1.35rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.context-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.context-card-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.context-card-code {
+  font-family: monospace;
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+}
+
+.context-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.context-card-value-wrap {
+  margin-bottom: 1rem;
+  min-height: 4.2rem;
+}
+
+.context-card-value {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.context-card-value.is-unavailable {
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding-top: 0.35rem;
+}
+
+.context-card-unit {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+/* Sparklines */
+.context-sparkline-wrap {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.context-sparkline-svg {
+  width: 100%;
+  height: 32px;
+}
+
+.context-sparkline-svg svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.context-sparkline-line {
+  fill: none;
+  stroke: var(--accent-racing-green);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.context-sparkline-point {
+  fill: var(--accent-brass);
+  stroke: var(--bg-card);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.context-sparkline-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  margin-top: 0.25rem;
+}
+
+.context-sparkline-caption {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.58rem;
+}
+
+.context-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--text-body);
+  margin: 0.85rem 0 0 0;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border-rule);
+}
+
+/* Sources & Provenance Footer */
+.context-provenance-bar {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.context-provenance-details {
+  background: var(--bg-paper);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+}
+
+.context-provenance-summary {
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: color 0.15s ease;
+}
+
+.context-provenance-summary:hover {
+  color: var(--text-ink);
+}
+
+.context-provenance-content {
+  padding: 1rem 1.25rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--border-rule);
+  background: var(--bg-card);
+}
+
+.context-provenance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .context-provenance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.context-provenance-item {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.context-provenance-item code {
+  font-family: monospace;
+  font-size: 0.72rem;
+  background-color: var(--bg-cream);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  color: var(--text-ink);
+}

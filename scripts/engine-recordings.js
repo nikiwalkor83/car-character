@@ -2,8 +2,8 @@
 (function () {
   const engineCategories = [
     { key: "2-cylinder", label: "2-cylinder", count: 51, file: "2-cylinder.ogg" },
-    { key: "3-cylinder", label: "3-cylinder", count: 1260 },
-    { key: "4-cylinder", label: "4-cylinder", count: 18955 },
+    { key: "3-cylinder", label: "3-cylinder", count: 1260, file: "3-cylinder.ogg" },
+    { key: "4-cylinder", label: "4-cylinder", count: 18955, file: "4-cylinder.wav" },
     { key: "5-cylinder", label: "5-cylinder", count: 684, file: "5-cylinder.ogg" },
     { key: "6-cylinder", label: "6-cylinder / Flat-6", count: 2724, file: "flat-6.wav" },
     { key: "l6", label: "L6", count: 5 },
@@ -18,11 +18,12 @@
     { key: "v12", label: "V12", count: 235, file: "v12.ogg" },
     { key: "w12", label: "W12", count: 42 },
     { key: "16-cylinder", label: "16-cylinder", count: 1 },
-    { key: "w16", label: "W16", count: 12 },
+    { key: "w16", label: "W16", count: 12, file: "w16.ogg" },
     { key: "rotary", label: "Rotary", count: 9 },
-    { key: "electric", label: "Electric motor", count: 705 },
+    { key: "electric", label: "Electric motor", count: 705, file: "electric-motor.ogg" },
+    { key: "hybrid", label: "Hybrid", count: 1319, file: "hybrid.ogg" },
+    { key: "diesel", label: "Diesel", count: 8320, file: "diesel.ogg" },
     { key: "hydrogen", label: "Hydrogen fuel cell", count: 2 },
-    { key: "hybrid", label: "Hybrid", count: 1319 },
     { key: "unspecified", label: "Unspecified powertrain", count: 107 }
   ];
 
