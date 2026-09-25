@@ -5992,6 +5992,163 @@ body {
   }
 }
 
+/* ==========================================================================
+   WHY CARS CHANGED — SOURCE-LINKED EDITORIAL CONTEXT
+   ========================================================================== */
+
+.why-cars-changed-stage {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.why-stage-header {
+  max-width: 52rem;
+}
+
+.why-eyebrow,
+.why-selection-readout,
+.why-topic-button,
+.why-entry-date {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.why-eyebrow {
+  display: block;
+  color: var(--accent-brass);
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.why-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  margin: 0 0 0.6rem;
+}
+
+.why-lead {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.why-selection-readout {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+  color: var(--accent-racing-green);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.why-selection-separator {
+  color: var(--text-muted);
+}
+
+.why-topic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 1.25rem 0 1.75rem;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.why-topic-button {
+  padding: 0.6rem 0 0.7rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.why-topic-button:hover,
+.why-topic-button.is-active {
+  color: var(--accent-racing-green);
+  border-bottom-color: var(--accent-racing-green);
+}
+
+.why-topic-panel {
+  max-width: 58rem;
+}
+
+.why-entry {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.why-entry-date {
+  color: var(--accent-brass);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding-top: 0.2rem;
+}
+
+.why-entry-copy h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0 0 0.35rem;
+}
+
+.why-entry-copy p {
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--text-body);
+  margin: 0 0 0.5rem;
+}
+
+.why-entry-copy a {
+  font-family: var(--font-sans);
+  color: var(--accent-racing-green);
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+
+.why-entry-copy a:hover {
+  text-decoration: underline;
+}
+
+.why-data-unavailable,
+.why-inquiry {
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.why-data-unavailable {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-rule);
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.why-inquiry {
+  max-width: 58rem;
+  margin: 1.5rem 0 0;
+  font-size: 0.96rem;
+}
+
+@media (max-width: 640px) {
+  .why-entry {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
 
 
 
@@ -6329,4 +6486,188 @@ body {
   padding: 0.1rem 0.3rem;
   border-radius: 2px;
   color: var(--text-ink);
+}
+
+/* ==========================================================================
+   VEHICLE COMPARISON GATEWAY
+   Restrained two-column magazine comparison using the existing datasets
+   ========================================================================== */
+
+.vehicle-comparison-stage {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.comparison-stage-header {
+  max-width: 48rem;
+  margin-bottom: 1.75rem;
+}
+
+.comparison-eyebrow,
+.comparison-column-heading,
+.comparison-field,
+.comparison-vehicle-kicker,
+.comparison-vehicle-year,
+.comparison-context-heading {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.comparison-eyebrow {
+  display: block;
+  color: var(--accent-brass);
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.comparison-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  margin: 0 0 0.55rem;
+}
+
+.comparison-lead {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.comparison-selectors,
+.comparison-vehicle-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.comparison-selector-column {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border-rule);
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.comparison-column-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-racing-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.comparison-column-rule {
+  height: 1px;
+  flex: 1;
+  background: var(--border-rule);
+}
+
+.comparison-field {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.67rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
+}
+
+.comparison-field select {
+  min-width: 0;
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  background: var(--bg-paper);
+  color: var(--text-ink);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+}
+
+.comparison-result {
+  margin-top: 2.25rem;
+}
+
+.comparison-result.is-hidden {
+  display: none;
+}
+
+.comparison-vehicle-column {
+  min-width: 0;
+}
+
+.comparison-vehicle-kicker {
+  color: var(--text-muted);
+  font-size: 0.67rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.comparison-vehicle-column h4 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0;
+}
+
+.comparison-vehicle-year {
+  color: var(--accent-racing-green);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0.25rem 0 1rem;
+}
+
+.comparison-spec-list,
+.comparison-context-list {
+  border-top: 1px solid var(--border-rule);
+}
+
+.comparison-value-row,
+.comparison-context-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border-rule);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+}
+
+.comparison-value-row span,
+.comparison-context-row span {
+  color: var(--text-muted);
+}
+
+.comparison-value-row strong,
+.comparison-context-row strong {
+  color: var(--text-ink);
+  font-weight: 500;
+  text-align: right;
+}
+
+.comparison-context-heading {
+  color: var(--accent-brass);
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.65rem;
+}
+
+@media (max-width: 700px) {
+  .comparison-selectors,
+  .comparison-vehicle-columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .comparison-field {
+    grid-template-columns: 7rem 1fr;
+  }
 }

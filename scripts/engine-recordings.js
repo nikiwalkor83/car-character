@@ -86,8 +86,8 @@
       <div class="engine-detail-copy">
         <div class="sound-specimen-pill">${escapeHtml(category.label)}</div>
         <p class="engine-detail-count">${category.count.toLocaleString()} records in the 1970-present dataset</p>
-        <h4 class="sound-card-title">No verified recording available</h4>
-        <p class="sound-card-character">This category is represented in the dataset, but no matching engine recording has been added yet. No substitute recording is used.</p>
+        <h4 class="sound-card-title">No verified openly licensed recording currently available</h4>
+        <p class="sound-card-character">This category is represented in the dataset (${category.count.toLocaleString()} cataloged models), but no matching recording under an open redistribution license is currently available in public archives. No unverified, restricted, or synthetic recordings are substituted.</p>
       </div>
       <div class="sound-card-availability">NO VERIFIED AUDIO</div>
     `;
@@ -95,14 +95,22 @@
 
   function availableDetail(category, recording) {
     const extension = recording.filename.split(".").pop().toUpperCase();
+    const attributionHtml = recording.attribution
+      ? ` &bull; Attribution: ${escapeHtml(recording.attribution)}`
+      : "";
+    const powertrainDesc = recording.engine_description || recording.engine_type;
     return `
       <audio id="selected-engine-audio" src="audio/engines/${escapeHtml(recording.filename)}" preload="metadata"></audio>
       <div class="engine-detail-copy">
         <div class="sound-specimen-pill">${escapeHtml(category.label)}</div>
         <p class="engine-detail-count">${category.count.toLocaleString()} records in the 1970-present dataset</p>
         <h4 class="sound-card-title">${escapeHtml(recording.display_name)}</h4>
-        <p class="sound-card-character"><strong>${escapeHtml(recording.vehicle)}</strong><br>${escapeHtml(recording.engine_type)}<br>${escapeHtml(recording.recording_type)}</p>
-        <p class="sound-card-source"><a href="${escapeHtml(recording.source_page_url)}" target="_blank" rel="noopener">Source &amp; credit</a> &bull; ${escapeHtml(recording.license)}</p>
+        <p class="sound-card-character">
+          <strong>Vehicle:</strong> ${escapeHtml(recording.vehicle)}<br>
+          <strong>Powertrain:</strong> ${escapeHtml(powertrainDesc)}<br>
+          <strong>Recording:</strong> ${escapeHtml(recording.recording_type)}
+        </p>
+        <p class="sound-card-source"><a href="${escapeHtml(recording.source_page_url)}" target="_blank" rel="noopener">Source: ${escapeHtml(recording.source)}</a> &bull; ${escapeHtml(recording.license)}${attributionHtml}</p>
       </div>
       <div class="engine-detail-player">
         <div class="sound-waveform-track" id="selected-engine-track" title="Click waveform to seek">${waveformHtml()}</div>
@@ -136,6 +144,11 @@
       button.disabled = true;
     });
     button.addEventListener("click", () => {
+      document.querySelectorAll("audio").forEach(el => {
+        if (el !== audio && !el.paused) {
+          el.pause();
+        }
+      });
       if (audio.paused) {
         audio.play().then(() => {
           button.innerHTML = '<span class="btn-play-icon">&#10074;&#10074;</span><span class="btn-label-text">PAUSE</span>';
@@ -173,10 +186,14 @@
   }
 
   function selectCategory(category, container) {
-    if (activeAudio) {
-      activeAudio.pause();
-      activeAudio = null;
-    }
+    document.querySelectorAll("audio").forEach(el => {
+      if (!el.paused) {
+        el.pause();
+        el.currentTime = 0;
+      }
+    });
+    activeAudio = null;
+
     container.querySelectorAll(".engine-category-button").forEach(button => {
       const selected = button.dataset.engineKey === category.key;
       button.classList.toggle("is-selected", selected);

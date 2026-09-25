@@ -362,6 +362,60 @@ toc: false
             </details>
           </div>
         </div>
+
+        <!-- COMPARISON GATEWAY -->
+        <section id="vehicle-comparison-stage" class="vehicle-comparison-stage">
+          <div class="comparison-stage-header">
+            <span class="comparison-eyebrow">Further Investigation</span>
+            <h3 class="comparison-title">Compare the cars</h3>
+            <p class="comparison-lead">Place two vehicles from the archive side by side. The country figures below are context for each selected year, not explanations of the vehicle data.</p>
+          </div>
+
+          <div class="comparison-selectors">
+            <div class="comparison-selector-column">
+              <div class="comparison-column-heading"><span>Car A</span><span class="comparison-column-rule"></span></div>
+              <label class="comparison-field">Country<select id="comparison-a-country"></select></label>
+              <label class="comparison-field">Manufacturer<select id="comparison-a-manufacturer"></select></label>
+              <label class="comparison-field">Model<select id="comparison-a-model"></select></label>
+              <label class="comparison-field">Year<select id="comparison-a-year"></select></label>
+            </div>
+            <div class="comparison-selector-column">
+              <div class="comparison-column-heading"><span>Car B</span><span class="comparison-column-rule"></span></div>
+              <label class="comparison-field">Country<select id="comparison-b-country"></select></label>
+              <label class="comparison-field">Manufacturer<select id="comparison-b-manufacturer"></select></label>
+              <label class="comparison-field">Model<select id="comparison-b-model"></select></label>
+              <label class="comparison-field">Year<select id="comparison-b-year"></select></label>
+            </div>
+          </div>
+
+          <div id="comparison-result" class="comparison-result is-hidden"></div>
+        </section>
+
+        <!-- HISTORICAL CONTEXT -->
+        <section id="why-cars-changed-stage" class="why-cars-changed-stage">
+          <div class="why-stage-header">
+            <span class="why-eyebrow">Historical Context</span>
+            <h3 class="why-title">Why did cars change?</h3>
+            <p class="why-lead">Cars did not change for one reason. Regulations, fuel costs, technology, manufacturing, consumer preferences, and economic conditions all shaped what manufacturers could and wanted to build. This context helps frame the patterns shown by the vehicle data; it does not claim that one factor caused a specific change unless the evidence directly supports that conclusion.</p>
+          </div>
+
+          <div class="why-selection-readout">
+            <span id="why-selected-country">Country</span>
+            <span class="why-selection-separator">·</span>
+            <span id="why-selected-year">Year</span>
+          </div>
+
+          <nav class="why-topic-nav" aria-label="Historical context topics">
+            <button type="button" class="why-topic-button is-active" data-why-topic="regulation">Regulation</button>
+            <button type="button" class="why-topic-button" data-why-topic="fuel">Fuel &amp; Energy</button>
+            <button type="button" class="why-topic-button" data-why-topic="technology">Technology</button>
+            <button type="button" class="why-topic-button" data-why-topic="manufacturing">Manufacturing</button>
+            <button type="button" class="why-topic-button" data-why-topic="consumer">Consumer &amp; Market</button>
+          </nav>
+
+          <div id="why-topic-panel" class="why-topic-panel"></div>
+          <p class="why-inquiry">Could these documented changes help explain what we see in the cars?</p>
+        </section>
       </div>
 
     </div>
@@ -431,6 +485,107 @@ window.selectedManufacturer = null;
   const contextBadgeNation = document.getElementById("context-badge-nation");
   const contextBadgeYear = document.getElementById("context-badge-year");
   const contextProvenanceGrid = document.getElementById("context-provenance-grid");
+
+  // Comparison gateway elements
+  const comparisonResult = document.getElementById("comparison-result");
+  const comparisonSides = {
+    a: {
+      country: document.getElementById("comparison-a-country"),
+      manufacturer: document.getElementById("comparison-a-manufacturer"),
+      model: document.getElementById("comparison-a-model"),
+      year: document.getElementById("comparison-a-year")
+    },
+    b: {
+      country: document.getElementById("comparison-b-country"),
+      manufacturer: document.getElementById("comparison-b-manufacturer"),
+      model: document.getElementById("comparison-b-model"),
+      year: document.getElementById("comparison-b-year")
+    }
+  };
+  const comparisonState = { a: {}, b: {} };
+  const whySelectedCountry = document.getElementById("why-selected-country");
+  const whySelectedYear = document.getElementById("why-selected-year");
+  const whyTopicPanel = document.getElementById("why-topic-panel");
+  const whyTopicButtons = document.querySelectorAll(".why-topic-button");
+  let activeWhyTopic = "regulation";
+
+  const whyContextEntries = [
+    {
+      topic: "regulation", title: "Early federal emissions standards", start: 1970, end: 1975, regions: ["USA"],
+      text: "The United States established the Clean Air Act framework for controlling vehicle pollution during this period. National rules were developing on their own timelines, so this entry describes the US regulatory setting rather than every market.",
+      source: "US EPA: Clean Air Act requirements and history", url: "https://www.epa.gov/clean-air-act-overview/clean-air-act-requirements-and-history"
+    },
+    {
+      topic: "regulation", title: "Corporate Average Fuel Economy", start: 1975, end: 1990, regions: ["USA"],
+      text: "Corporate Average Fuel Economy standards were established in the United States in the mid-1970s. The requirements applied to the US market and should not be read as a description of European or Asian rules.",
+      source: "NHTSA: CAFE overview", url: "https://www.nhtsa.gov/laws-regulations/corporate-average-fuel-economy"
+    },
+    {
+      topic: "regulation", title: "Euro emissions standards", start: 1992, end: 2024, regions: ["EUROPE"],
+      text: "European vehicle emissions standards developed through successive Euro stages from the early 1990s onward. The exact implementation and vehicle categories varied by stage and market.",
+      source: "EUR-Lex: EU vehicle emissions legislation", url: "https://eur-lex.europa.eu/summary/EN/l28186.html"
+    },
+    {
+      topic: "fuel", title: "The 1970s oil shocks", start: 1973, end: 1981, regions: ["GLOBAL"],
+      text: "The oil disruptions of the 1970s created a period of major energy-market instability. The experience was international, but its effect on fuel availability and prices differed by country.",
+      source: "US EIA: Oil prices and outlook", url: "https://www.eia.gov/energyexplained/oil-and-petroleum-products/prices-and-outlook.php"
+    },
+    {
+      topic: "fuel", title: "Fuel markets remained a design context", start: 1990, end: 2024, regions: ["GLOBAL"],
+      text: "Fuel prices and availability continued to vary across markets. This provides historical context for comparing vehicles, but the archive does not establish a direct relationship for any individual model.",
+      source: "US EIA: Oil prices and outlook", url: "https://www.eia.gov/energyexplained/oil-and-petroleum-products/prices-and-outlook.php"
+    },
+    {
+      topic: "fuel", title: "The move toward electrification", start: 2010, end: 2024, regions: ["GLOBAL"],
+      text: "Battery-electric and plug-in vehicle adoption became an increasingly documented part of the global vehicle market during this period. Adoption rates were not uniform across countries.",
+      source: "IEA: Global EV Outlook 2024", url: "https://www.iea.org/reports/global-ev-outlook-2024"
+    },
+    {
+      topic: "technology", title: "Catalytic converters and cleaner exhaust", start: 1975, end: 1995, regions: ["USA"],
+      text: "Catalytic converters became part of the US response to vehicle air pollution requirements in the 1970s. Other countries adopted related technologies under different regulatory schedules.",
+      source: "US EPA: Clean Air Act requirements and history", url: "https://www.epa.gov/clean-air-act-overview/clean-air-act-requirements-and-history"
+    },
+    {
+      topic: "technology", title: "Electronic control entered the powertrain", start: 1980, end: 2000, regions: ["GLOBAL"],
+      text: "Electronic fuel injection and engine management became important technologies in modern powertrains during the late twentieth century. Their timing varied by manufacturer, model, and market.",
+      source: "Bosch Mobility: Powertrain solutions", url: "https://www.bosch-mobility.com/en/solutions/powertrain/"
+    },
+    {
+      topic: "technology", title: "Hybrid systems entered the market", start: 1997, end: 2010, regions: ["JPN", "GLOBAL"],
+      text: "Toyota introduced the Prius in Japan in 1997, making a mass-market hybrid system a visible part of the period's automotive technology landscape.",
+      source: "Toyota: Prius history", url: "https://global.toyota/en/prius20th/evolution/"
+    },
+    {
+      topic: "technology", title: "Electric vehicles became a visible market category", start: 2010, end: 2024, regions: ["GLOBAL"],
+      text: "Modern battery-electric vehicles moved from specialist products into a broader commercial market during this period. The pace and composition of that change differed by country.",
+      source: "IEA: Global EV Outlook 2024", url: "https://www.iea.org/reports/global-ev-outlook-2024"
+    },
+    {
+      topic: "manufacturing", title: "Production systems became a subject of international study", start: 1950, end: 2024, regions: ["JPN", "GLOBAL"],
+      text: "Toyota's production system documents a manufacturing approach built around flow, standardisation, and the removal of waste. It is a documented production philosophy, not a claim about every manufacturer.",
+      source: "Toyota: Toyota Production System", url: "https://global.toyota/en/company/vision-and-philosophy/production-system/"
+    },
+    {
+      topic: "manufacturing", title: "Automotive supply chains became more international", start: 1990, end: 2024, regions: ["GLOBAL"],
+      text: "Automotive production increasingly involved cross-border suppliers, plants, and component networks. The precise pattern differed between companies and vehicle programmes.",
+      source: "OECD: Global value chains", url: "https://www.oecd.org/industry/ind/global-value-chains.htm"
+    },
+    {
+      topic: "consumer", title: "Utility vehicles became a larger US market presence", start: 1990, end: 2024, regions: ["USA"],
+      text: "US market reports track a long-term change in the mix of cars and light trucks, including the growing importance of SUVs and other utility vehicles. This is a US market observation, not a universal pattern.",
+      source: "US EPA: Automotive Trends", url: "https://www.epa.gov/automotive-trends"
+    },
+    {
+      topic: "consumer", title: "Urbanisation and ownership provide country context", start: 1970, end: 2024, regions: ["GLOBAL"],
+      text: "The country-context dataset records urbanisation, population density, and passenger-car ownership for the selected country and year. These measures describe conditions to investigate alongside the vehicle record.",
+      source: "World Bank: Urban population indicator", url: "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS"
+    },
+    {
+      topic: "consumer", title: "Market patterns were not identical across countries", start: 1970, end: 2024, regions: ["GLOBAL"],
+      text: "Vehicle body types, ownership patterns, and customer preferences developed differently across national markets. The archive and country context should be read as evidence for comparison rather than a single worldwide story.",
+      source: "IEA: Global Fuel Economy Initiative", url: "https://www.iea.org/reports/global-fuel-economy-initiative-2021"
+    }
+  ];
 
   const contextIndicators = [
     {
@@ -1044,6 +1199,7 @@ window.selectedManufacturer = null;
     activeCountryData = country;
     activeSelectedCar = null;
     updateCountryContext();
+    updateWhyCarsChanged();
     hideCountryLogos();
 
     // Highlight on main map
@@ -1480,6 +1636,7 @@ window.selectedManufacturer = null;
     }
 
     updateCountryContext();
+    updateWhyCarsChanged();
   }
 
   function renderContextSparkline(container, records, indicator, selectedYear) {
@@ -1576,6 +1733,220 @@ window.selectedManufacturer = null;
     renderContextSources();
   }
 
+  function comparisonModelKey(car) {
+    return (car["Car name"] || "").replace(/^\d{4}\s+/, "");
+  }
+
+  function comparisonRecords() {
+    return Array.isArray(window.CARS_METADATA) ? window.CARS_METADATA : [];
+  }
+
+  function comparisonIso3(countryName) {
+    const matches = Object.values(window.ISO_COUNTRIES || {});
+    const match = matches.find(country => country.name === countryName);
+    return match ? match.iso3.toUpperCase() : "";
+  }
+
+  function comparisonOption(select, value, label, disabled = false) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = label;
+    option.disabled = disabled;
+    select.appendChild(option);
+  }
+
+  function comparisonValues(side, key) {
+    return comparisonSides[side][key];
+  }
+
+  function populateComparisonSide(side, resetModel = false) {
+    const records = comparisonRecords();
+    const controls = comparisonSides[side];
+    const state = comparisonState[side];
+    const countryRecords = records.filter(car => car["Country of manufacturer"] === state.country);
+    const manufacturers = [...new Set(countryRecords.map(car => car.Manufacturer).filter(Boolean))].sort();
+
+    controls.manufacturer.innerHTML = "";
+    manufacturers.forEach(manufacturer => comparisonOption(controls.manufacturer, manufacturer, manufacturer));
+    if (!manufacturers.includes(state.manufacturer)) state.manufacturer = manufacturers[0] || "";
+    controls.manufacturer.value = state.manufacturer;
+
+    const modelRecords = countryRecords.filter(car => car.Manufacturer === state.manufacturer);
+    const models = [...new Map(modelRecords.map(car => [comparisonModelKey(car), car])).values()]
+      .sort((left, right) => comparisonModelKey(left).localeCompare(comparisonModelKey(right)));
+    controls.model.innerHTML = "";
+    models.forEach(car => comparisonOption(controls.model, comparisonModelKey(car), comparisonModelKey(car)));
+    if (resetModel || !models.some(car => comparisonModelKey(car) === state.model)) {
+      state.model = models.length > 0 ? comparisonModelKey(models[0]) : "";
+    }
+    controls.model.value = state.model;
+
+    const years = modelRecords
+      .filter(car => comparisonModelKey(car) === state.model)
+      .map(car => parseInt(car["Model year"], 10))
+      .filter(year => !isNaN(year))
+      .sort((left, right) => left - right);
+    controls.year.innerHTML = "";
+    years.forEach(year => comparisonOption(controls.year, String(year), String(year)));
+    if (!years.includes(parseInt(state.year, 10))) state.year = years.length > 0 ? String(years[0]) : "";
+    controls.year.value = state.year;
+  }
+
+  function getComparisonCar(side) {
+    const state = comparisonState[side];
+    return comparisonRecords().find(car =>
+      car["Country of manufacturer"] === state.country &&
+      car.Manufacturer === state.manufacturer &&
+      comparisonModelKey(car) === state.model &&
+      parseInt(car["Model year"], 10) === parseInt(state.year, 10)
+    ) || null;
+  }
+
+  function comparisonDisplay(value, suffix = "") {
+    return value === null || value === undefined || value === ""
+      ? "Data unavailable"
+      : `${typeof value === "number" ? value.toLocaleString() : value}${suffix}`;
+  }
+
+  function escapeComparisonText(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function comparisonSpecRows(car) {
+    const specs = getCarSpecs(car) || {};
+    const fields = [
+      ["Horsepower", specs.horsepower, " BHP / HP"],
+      ["Weight", specs.weight_kg, " kg"],
+      ["MPG", specs.mpg, " US MPG"],
+      ["Engine configuration", specs.engine],
+      ["Drivetrain", specs.drivetrain],
+      ["Body type", specs.body_type],
+      ["Length", specs.length_mm, " mm"],
+      ["Width", specs.width_mm, " mm"],
+      ["Height", specs.height_mm, " mm"],
+      ["Wheelbase", specs.wheelbase_mm, " mm"]
+    ];
+    return fields.map(field => `
+      <div class="comparison-value-row">
+        <span>${escapeComparisonText(field[0])}</span>
+        <strong>${escapeComparisonText(comparisonDisplay(field[1], field[2] || ""))}</strong>
+      </div>
+    `).join("");
+  }
+
+  function comparisonContextRows(car) {
+    const iso3 = comparisonIso3(car["Country of manufacturer"]);
+    const year = parseInt(car["Model year"], 10);
+    const record = (window.COUNTRY_CONTEXT || []).find(item => item.iso3 === iso3 && item.year === year) || {};
+    const fields = [
+      ["GDP per capita", record.gdp_per_capita_constant_2015_usd, ""],
+      ["Population density", record.population_density_per_km2, " people / km²"],
+      ["Urbanization", record.urbanization_percent, "%"],
+      ["Passenger cars / 1,000", record.passenger_cars_per_1000, " cars"]
+    ];
+    return fields.map(field => `
+      <div class="comparison-context-row">
+        <span>${escapeComparisonText(field[0])}</span>
+        <strong>${escapeComparisonText(comparisonDisplay(field[1], field[2]))}</strong>
+      </div>
+    `).join("");
+  }
+
+  function renderVehicleComparison() {
+    const carA = getComparisonCar("a");
+    const carB = getComparisonCar("b");
+    if (!comparisonResult || !carA || !carB) {
+      if (comparisonResult) comparisonResult.classList.add("is-hidden");
+      return;
+    }
+
+    const vehicleColumn = car => `
+      <article class="comparison-vehicle-column">
+        <div class="comparison-vehicle-kicker">${escapeComparisonText(car["Country of manufacturer"])} · ${escapeComparisonText(car.Manufacturer)}</div>
+        <h4>${escapeComparisonText(comparisonModelKey(car))}</h4>
+        <div class="comparison-vehicle-year">${escapeComparisonText(car["Model year"])}</div>
+        <div class="comparison-spec-list">${comparisonSpecRows(car)}</div>
+        <div class="comparison-context-heading">Country context for ${escapeComparisonText(car["Model year"])}</div>
+        <div class="comparison-context-list">${comparisonContextRows(car)}</div>
+      </article>
+    `;
+
+    comparisonResult.innerHTML = `<div class="comparison-vehicle-columns">${vehicleColumn(carA)}${vehicleColumn(carB)}</div>`;
+    comparisonResult.classList.remove("is-hidden");
+  }
+
+  function initializeVehicleComparison() {
+    const records = comparisonRecords();
+    const countries = [...new Set(records.map(car => car["Country of manufacturer"]).filter(Boolean))].sort();
+    ["a", "b"].forEach((side, index) => {
+      const controls = comparisonSides[side];
+      comparisonOption(controls.country, "", "Select country", true);
+      countries.forEach(country => comparisonOption(controls.country, country, country));
+      comparisonState[side].country = countries[index] || countries[0] || "";
+      controls.country.value = comparisonState[side].country;
+      populateComparisonSide(side, true);
+
+      ["country", "manufacturer", "model", "year"].forEach(key => {
+        controls[key].addEventListener("change", () => {
+          comparisonState[side][key] = controls[key].value;
+          if (key === "country" || key === "manufacturer") populateComparisonSide(side, true);
+          if (key === "model") populateComparisonSide(side);
+          renderVehicleComparison();
+        });
+      });
+    });
+    renderVehicleComparison();
+  }
+
+  function whyRegionMatches(entry, iso3) {
+    const europeanIso3 = ["DEU", "FRA", "GBR", "ITA", "SWE"];
+    return entry.regions.includes("GLOBAL") || entry.regions.includes(iso3) ||
+      (entry.regions.includes("EUROPE") && europeanIso3.includes(iso3));
+  }
+
+  function updateWhyCarsChanged() {
+    if (!whyTopicPanel) return;
+    const iso3 = activeCountryData && activeCountryData.iso3 ? activeCountryData.iso3.toUpperCase() : "";
+    const selectedYear = activeTimelineYear || (activeSelectedCar ? parseInt(activeSelectedCar["Model year"], 10) : null);
+    const countryName = activeCountryData ? activeCountryData.name : "Country";
+
+    whySelectedCountry.textContent = countryName;
+    whySelectedYear.textContent = selectedYear || "Year";
+
+    const matchingEntries = selectedYear
+      ? whyContextEntries.filter(entry => entry.topic === activeWhyTopic && selectedYear >= entry.start && selectedYear <= entry.end && whyRegionMatches(entry, iso3))
+      : [];
+
+    if (matchingEntries.length === 0) {
+      whyTopicPanel.innerHTML = `<p class="why-data-unavailable">Data unavailable for this country and year.</p>`;
+      return;
+    }
+
+    whyTopicPanel.innerHTML = matchingEntries.map(entry => `
+      <article class="why-entry">
+        <div class="why-entry-date">${entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}</div>
+        <div class="why-entry-copy">
+          <h4>${escapeComparisonText(entry.title)}</h4>
+          <p>${escapeComparisonText(entry.text)}</p>
+          <a href="${entry.url}" target="_blank" rel="noopener">Source: ${escapeComparisonText(entry.source)}</a>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  whyTopicButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      activeWhyTopic = button.dataset.whyTopic;
+      whyTopicButtons.forEach(topicButton => topicButton.classList.toggle("is-active", topicButton === button));
+      updateWhyCarsChanged();
+    });
+  });
+
   function getCarSpecs(car) {
     if (!car) return null;
     const carName = car["Car name"];
@@ -1646,6 +2017,12 @@ window.selectedManufacturer = null;
       renderSpecComparison(currentVisibleCars, car);
     }
     updateCountryContext();
+    updateWhyCarsChanged();
+    requestAnimationFrame(() => {
+      if (automotiveDataStage && !automotiveDataStage.classList.contains("is-hidden")) {
+        automotiveDataStage.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   }
 
   function renderSpecDossier(car) {
@@ -2195,6 +2572,8 @@ window.selectedManufacturer = null;
       }
     });
   }
+
+  initializeVehicleComparison();
 
   function positionTooltip(event) {
     if (!mapContainer) return;
