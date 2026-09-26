@@ -32,7 +32,7 @@
     "recording_type": "Real vehicle engine recording"
   },
   {
-    "category": "6-cylinder",
+    "category": "flat-6",
     "filename": "flat-6.wav",
     "display_name": "2006 Porsche Cayman S acceleration",
     "vehicle": "Porsche Cayman S (2006)",
@@ -128,20 +128,20 @@
     "recording_type": "Real engine recording; operating mode not specified"
   },
   {
-    "category": "electric-motor",
-    "filename": "electric-motor.ogg",
-    "display_name": "Tesla Roadster start and acceleration",
-    "vehicle": "Tesla Roadster (2008–2012)",
-    "engine_type": "3-phase 4-pole AC induction electric motor",
-    "engine_description": "3-phase 4-pole AC induction electric motor (185 kW / 248 hp) with single-speed reduction gear transmission",
-    "source": "Wikimedia Commons",
-    "source_page_url": "https://commons.wikimedia.org/wiki/File:Tesla_Roadster.ogg",
-    "source_media_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Tesla_Roadster.ogg",
-    "creator": "Edvvc",
-    "license": "CC BY-SA 3.0",
-    "attribution": "Edvvc",
-    "original_filename": "Tesla Roadster.ogg",
-    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb"
+    "category": "electric",
+    "filename": "electric-imiev.ogg",
+    "display_name": "Mitsubishi i-MiEV acceleration and pass-by",
+    "vehicle": "Mitsubishi i-MiEV (2010)",
+    "engine_type": "Permanent Magnet Synchronous Motor (Y4F1)",
+    "engine_description": "Permanent magnet synchronous electric motor (47 kW / 63 hp, 180 N\u00b7m) with single-speed reduction gear transmission",
+    "source": "Freesound",
+    "source_page_url": "https://freesound.org/people/jakobthiesen/sounds/174829/",
+    "source_media_url": "https://cdn.freesound.org/previews/174/174829_213393-hq.ogg",
+    "creator": "Jakob Thiesen",
+    "license": "CC BY 3.0",
+    "attribution": "Jakob Thiesen",
+    "original_filename": "MITSUBISHI IMIEV electric car ACCELERATE into pass by.wav",
+    "recording_type": "Clean electric motor acceleration into pass-by with distinct rising inverter whine and zero spectator noise"
   },
   {
     "category": "w16",
@@ -179,7 +179,7 @@
     "category": "3-cylinder",
     "filename": "3-cylinder.ogg",
     "display_name": "Citroen C1 startup and drive away",
-    "vehicle": "Citroen C1 (1st Gen, 2005–2014)",
+    "vehicle": "Citroen C1 (1st Gen, 2005\u20132014)",
     "engine_type": "1.0L 3-cylinder naturally aspirated (Toyota 1KR-FE)",
     "engine_description": "1.0-liter Toyota 1KR-FE naturally aspirated DOHC 12-valve inline-3 engine (998 cc, 67 hp)",
     "source": "Freesound",
@@ -206,5 +206,21 @@
     "attribution": "YleArkisto / Finnish Broadcasting Company Archives",
     "original_filename": "255122_ylearkisto_henkiloauto-lahto-asfaltilla-a-car-pulling-away-on-asphalt-lada-1500-combi-a-1981-model.wav",
     "recording_type": "Entry, door closing, starter cranking, engine startup, idle, departure, and acceleration on asphalt recorded to Nagra analog tape"
+  },
+  {
+    "category": "inline-6",
+    "filename": "inline-6.ogg",
+    "display_name": "Chrysler 225 Slant-6 engine startup and idle",
+    "vehicle": "1965 Chrysler Valiant (225 Slant-6)",
+    "engine_type": "3.7L Inline-6 (Chrysler RG Slant-Six)",
+    "engine_description": "225 cu in (3.7L) OHV 12-valve inline-6 engine inclined at 30 degrees (145 hp)",
+    "source": "Wikimedia Commons",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:225_Slant_Six.ogg",
+    "source_media_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/225_Slant_Six.ogg",
+    "creator": "Scheinwerfermann",
+    "license": "CC BY-SA 4.0",
+    "attribution": "Scheinwerfermann",
+    "original_filename": "225 Slant Six.ogg",
+    "recording_type": "Chrysler 225 slant-6 engine cranks, fires, idles high, idles medium, and shuts off"
   }
 ]

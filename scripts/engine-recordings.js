@@ -1,10 +1,11 @@
 /* Dropdown engine-category selector for the Sound section. */
 (function () {
   const engineCategories = [
-    { key: "2-cylinder", label: "2-cylinder", count: 51, file: "2-cylinder.ogg" },
-    { key: "3-cylinder", label: "3-cylinder", count: 1260, file: "3-cylinder.ogg" },
-    { key: "4-cylinder", label: "4-cylinder", count: 18955, file: "4-cylinder.wav" },
-    { key: "5-cylinder", label: "5-cylinder", count: 684, file: "5-cylinder.ogg" },
+    { key: "2-cylinder", label: "2-Cylinder", count: 51, file: "2-cylinder.ogg" },
+    { key: "3-cylinder", label: "3-Cylinder", count: 1260, file: "3-cylinder.ogg" },
+    { key: "4-cylinder", label: "4-Cylinder", count: 18955, file: "4-cylinder.wav" },
+    { key: "5-cylinder", label: "5-Cylinder", count: 684, file: "5-cylinder.ogg" },
+    { key: "inline-6", label: "Inline-6", count: 2504, file: "inline-6.ogg" },
     { key: "flat-6", label: "Flat-6", count: 346, file: "flat-6.wav" },
     { key: "v6", label: "V6", count: 2596, file: "v6.ogg" },
     { key: "v8", label: "V8", count: 1996, file: "v8.ogg" },
@@ -13,7 +14,7 @@
     { key: "w16", label: "W16", count: 12, file: "w16.ogg" },
     { key: "diesel", label: "Diesel", count: 8320, file: "diesel.ogg" },
     { key: "hybrid", label: "Hybrid", count: 1319, file: "hybrid.ogg" },
-    { key: "electric", label: "Electric motor", count: 705, file: "electric-motor.ogg" }
+    { key: "electric", label: "Electric", count: 705, file: "electric-imiev.ogg" }
   ];
 
   const waveform = [0.3, 0.46, 0.35, 0.62, 0.42, 0.78, 0.52, 0.68, 0.38, 0.57, 0.74, 0.48, 0.64, 0.36, 0.58, 0.8, 0.45, 0.69, 0.4, 0.55, 0.72, 0.5, 0.63, 0.34];
