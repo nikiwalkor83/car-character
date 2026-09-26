@@ -82,6 +82,57 @@ function renderBodyStyleStream() {
   }).join("");
 }
 
+function getBodyTypeActiveRange(typeData) {
+  const yearly = typeData.yearly || [];
+  // Active years have recorded vehicle counts (n > 0) or valid dimension measurements
+  const activeEntries = yearly.filter(d => (d.n > 0) || (d.length_mm !== null) || (d.share_pct > 0));
+
+  let minYear = typeData.first_year || 1970;
+  let maxYear = typeData.latest_year || 2024;
+
+  if (activeEntries.length > 0) {
+    minYear = Math.min(...activeEntries.map(d => d.year));
+    maxYear = Math.max(...activeEntries.map(d => d.year));
+  }
+
+  const yearSpan = (maxYear > minYear) ? (maxYear - minYear) : 1;
+  const activeYearly = yearly.filter(d => d.year >= minYear && d.year <= maxYear);
+
+  return { minYear, maxYear, yearSpan, activeYearly };
+}
+
+function getDynamicYearTicks(minYear, maxYear) {
+  const span = maxYear - minYear;
+  let step = 10;
+  if (span <= 12) step = 2;
+  else if (span <= 20) step = 5;
+  else step = 10;
+
+  const ticks = [];
+  for (let yr = minYear; yr < maxYear; yr += step) {
+    if (maxYear - yr >= Math.max(3, Math.floor(step * 0.4))) {
+      ticks.push(yr);
+    }
+  }
+  ticks.push(maxYear);
+  return ticks;
+}
+
+function syncBodyTypeDropdowns(type) {
+  const dropdowns = document.querySelectorAll(".shape-body-dropdown");
+  dropdowns.forEach(select => {
+    if (select.options.length === 0 && typeof shapeDataset !== "undefined" && shapeDataset.categories) {
+      select.innerHTML = shapeDataset.categories.map(cat => {
+        const meta = shapeDataset.category_meta[cat];
+        return `<option value="${cat}">${meta ? meta.label : cat}</option>`;
+      }).join("");
+    }
+    if (select.value !== type) {
+      select.value = type;
+    }
+  });
+}
+
 function selectBodyType(type) {
   if (!shapeDataset.by_type[type]) return;
   currentBodyType = type;
@@ -92,28 +143,55 @@ function selectBodyType(type) {
     if (btn) btn.classList.toggle("is-active", cat === type);
   });
 
+  // Synchronize all local body-type dropdowns
+  syncBodyTypeDropdowns(type);
+
   const data = shapeDataset.by_type[type];
   const meta = data.meta;
   const labelUpper = meta.label.toUpperCase();
+  const { minYear, maxYear } = getBodyTypeActiveRange(data);
 
-  // Dynamic headings
+  // Dynamic headings reflecting actual active data coverage
   const shareHeading = document.getElementById("share-heading");
   if (shareHeading) shareHeading.textContent = `HOW COMMON WAS THE ${type === "SUV" ? "SUV" : labelUpper}?`;
 
   const shareSubheading = document.getElementById("share-subheading");
-  if (shareSubheading) shareSubheading.textContent = `Annual percentage share of vehicle introductions and total model counts for ${meta.label} from 1970 to 2024`;
+  if (shareSubheading) shareSubheading.textContent = `Annual percentage share of vehicle introductions and total model counts for ${meta.label} from ${minYear} to ${maxYear}`;
 
   const dimHeading = document.getElementById("dim-heading");
-  if (dimHeading) dimHeading.textContent = `${labelUpper} PHYSICAL DIMENSIONS (1970 — 2024)`;
+  if (dimHeading) dimHeading.textContent = `${labelUpper} PHYSICAL DIMENSIONS (${minYear} — ${maxYear})`;
 
   const dimSubheading = document.getElementById("dim-subheading");
   if (dimSubheading) dimSubheading.textContent = `Median exterior dimensions derived exclusively from ${meta.label} production models (${data.total_n.toLocaleString()} vehicles across ${data.years_with_data} distinct years). Insufficient data years are shown honestly with gaps.`;
 
   const propHeading = document.getElementById("prop-heading");
-  if (propHeading) propHeading.textContent = `HOW ${labelUpper} PROPORTIONS EVOLVED (1970 — 2024)`;
+  if (propHeading) propHeading.textContent = `HOW ${labelUpper} PROPORTIONS EVOLVED (${minYear} — ${maxYear})`;
 
   const propSubheading = document.getElementById("prop-subheading");
-  if (propSubheading) propSubheading.textContent = `Tracking the profile stance ratio (Length ÷ Height) and wheelbase efficiency (Wheelbase ÷ Length) specifically for ${meta.label} over time`;
+  if (propSubheading) propSubheading.textContent = `Tracking the profile stance ratio (Length ÷ Height) and wheelbase efficiency (Wheelbase ÷ Length) specifically for ${meta.label} from ${minYear} to ${maxYear}`;
+
+  // Reset readout strips to show the active range for the selected body type
+  const shareReadout = document.getElementById("share-hover-readout");
+  if (shareReadout) {
+    shareReadout.innerHTML = `
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
+        <span class="dim-readout-val">Inspect annual production share and recorded model count</span>
+        <span class="dim-readout-sample">[${minYear} &mdash; ${maxYear}]</span>
+      </div>
+    `;
+  }
+
+  const dimReadout = document.getElementById("dim-hover-readout");
+  if (dimReadout) {
+    dimReadout.innerHTML = `
+      <div class="dim-readout-content">
+        <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
+        <span class="dim-readout-val">Hover over any year to inspect isolated body type dimensions</span>
+        <span class="dim-readout-sample">[${minYear} &mdash; ${maxYear}]</span>
+      </div>
+    `;
+  }
 
   // Re-render all sub-visualizations
   renderBodyStyleStream();
@@ -133,8 +211,8 @@ function renderShareChart() {
   if (!container) return;
 
   const typeData = shapeDataset.by_type[currentBodyType];
-  const yearly = typeData.yearly;
   const meta = typeData.meta;
+  const { minYear, maxYear, yearSpan, activeYearly } = getBodyTypeActiveRange(typeData);
 
   const width = 900;
   const height = 280;
@@ -146,10 +224,10 @@ function renderShareChart() {
   const plotW = width - padLeft - padRight;
   const plotH = height - padTop - padBottom;
 
-  const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
+  const xForYear = yr => padLeft + ((yr - minYear) / yearSpan) * plotW;
 
-  // Max share for scaling
-  const maxShareVal = Math.max(...yearly.map(d => d.share_pct), 10);
+  // Max share for scaling (based on actual observations for this body type)
+  const maxShareVal = Math.max(...activeYearly.map(d => d.share_pct), 10);
   const yMax = Math.ceil(maxShareVal / 10) * 10;
   const yForShare = s => padTop + plotH - (s / yMax) * plotH;
 
@@ -165,24 +243,25 @@ function renderShareChart() {
     `;
   }
 
-  // X Axis Decades
+  // Dynamic X Axis Ticks adapted to active data coverage
+  const ticks = getDynamicYearTicks(minYear, maxYear);
   let xAxisSvg = "";
-  for (let yr = 1970; yr <= 2024; yr += 10) {
+  ticks.forEach(yr => {
     const xPos = xForYear(yr);
+    const isLatest = yr === maxYear;
     xAxisSvg += `
       <line x1="${xPos}" y1="${padTop}" x2="${xPos}" y2="${padTop + plotH}" stroke="rgba(255,255,255,0.05)" />
-      <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
+      <text x="${xPos}" y="${padTop + plotH + 20}" fill="${isLatest ? meta.hex : '#94a3b8'}" font-weight="${isLatest ? '700' : '400'}" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
     `;
-  }
-  xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="${meta.hex}" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
+  });
 
-  // Area & Line Path
-  const linePoints = yearly.map(d => `${xForYear(d.year).toFixed(1)},${yForShare(d.share_pct).toFixed(1)}`).join(" ");
-  const areaPoints = `${xForYear(1970).toFixed(1)},${padTop + plotH} ` + linePoints + ` ${xForYear(2024).toFixed(1)},${padTop + plotH}`;
+  // Area & Line Path strictly within active coverage range
+  const linePoints = activeYearly.map(d => `${xForYear(d.year).toFixed(1)},${yForShare(d.share_pct).toFixed(1)}`).join(" ");
+  const areaPoints = `${xForYear(minYear).toFixed(1)},${padTop + plotH} ` + linePoints + ` ${xForYear(maxYear).toFixed(1)},${padTop + plotH}`;
 
-  // Hover columns
-  const colW = plotW / yearly.length;
-  const colsSvg = yearly.map(d => `
+  // Hover columns across active years
+  const colW = plotW / activeYearly.length;
+  const colsSvg = activeYearly.map(d => `
     <rect x="${xForYear(d.year) - colW / 2}" y="${padTop}" width="${colW}" height="${plotH}" fill="transparent" class="dim-hover-col" style="cursor: pointer;"
       onmouseenter="showShareReadout(${d.year})" onclick="showShareReadout(${d.year})" />
   `).join("");
@@ -242,11 +321,13 @@ function showShareReadout(year) {
   const readout = document.getElementById("share-hover-readout");
   if (!d || !readout) return;
 
+  const { minYear, maxYear, yearSpan } = getBodyTypeActiveRange(typeData);
+
   readout.innerHTML = `
     <div class="dim-readout-content">
       <span class="dim-readout-year">${d.year} SHARE:</span>
       <span class="dim-readout-val"><strong>${d.share_pct}%</strong> of all classified vehicles (${d.n} models recorded)</span>
-      <span class="dim-readout-sample">[Category: ${typeData.meta.label}]</span>
+      <span class="dim-readout-sample">[Category: ${typeData.meta.label} &bull; ${minYear} &mdash; ${maxYear}]</span>
     </div>
   `;
 
@@ -256,7 +337,7 @@ function showShareReadout(year) {
     const padLeft = 65;
     const padRight = 30;
     const plotW = width - padLeft - padRight;
-    const xPos = padLeft + ((year - 1970) / (2024 - 1970)) * plotW;
+    const xPos = padLeft + ((year - minYear) / yearSpan) * plotW;
     line.setAttribute("x1", xPos);
     line.setAttribute("x2", xPos);
     line.style.display = "block";
@@ -287,7 +368,7 @@ function renderDimensionChart() {
   if (!container) return;
 
   const typeData = shapeDataset.by_type[currentBodyType];
-  const yearly = typeData.yearly;
+  const { minYear, maxYear, yearSpan, activeYearly } = getBodyTypeActiveRange(typeData);
 
   const width = 900;
   const height = 350;
@@ -299,13 +380,13 @@ function renderDimensionChart() {
   const plotW = width - padLeft - padRight;
   const plotH = height - padTop - padBottom;
 
-  const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
+  const xForYear = yr => padLeft + ((yr - minYear) / yearSpan) * plotW;
 
   const isInch = currentUnit === "in";
   const unitLabel = isInch ? "in" : "mm";
   const factor = isInch ? 1 / 25.4 : 1;
 
-  const valid = yearly.filter(d => d.length_mm !== null);
+  const valid = activeYearly.filter(d => d.length_mm !== null);
   if (valid.length === 0) {
     container.innerHTML = `<div style="padding:4rem; text-align:center; color:#64748b;">No dimensional data recorded for this body type.</div>`;
     return;
@@ -357,16 +438,17 @@ function renderDimensionChart() {
     `;
   }
 
-  // X Axis Decades
+  // Dynamic X Axis Ticks adapted to active data coverage
+  const ticks = getDynamicYearTicks(minYear, maxYear);
   let xAxisSvg = "";
-  for (let yr = 1970; yr <= 2024; yr += 10) {
+  ticks.forEach(yr => {
     const xPos = xForYear(yr);
+    const isLatest = yr === maxYear;
     xAxisSvg += `
       <line x1="${xPos}" y1="${padTop}" x2="${xPos}" y2="${padTop + plotH}" stroke="rgba(255,255,255,0.05)" />
-      <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
+      <text x="${xPos}" y="${padTop + plotH + 20}" fill="${isLatest ? '#38bdf8' : '#94a3b8'}" font-weight="${isLatest ? '700' : '400'}" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
     `;
-  }
-  xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
+  });
 
   // Break paths on missing data (honest presentation: no fake lines across gaps)
   const makeSegmentedPaths = (key, strokeColor, strokeWidth, dash = "") => {
@@ -374,7 +456,7 @@ function renderDimensionChart() {
     let isDrawing = false;
     let circlesSvg = "";
 
-    yearly.forEach(d => {
+    activeYearly.forEach(d => {
       const val = d[key];
       if (val !== null && val !== undefined) {
         const x = xForYear(d.year);
@@ -411,9 +493,9 @@ function renderDimensionChart() {
     pathsSvg += makeSegmentedPaths("wheelbase_mm", "#818cf8", 2.2, "4,3");
   }
 
-  // Hover overlay columns
-  const colW = plotW / yearly.length;
-  const colsSvg = yearly.map(d => `
+  // Hover overlay columns across active years
+  const colW = plotW / activeYearly.length;
+  const colsSvg = activeYearly.map(d => `
     <rect x="${xForYear(d.year) - colW / 2}" y="${padTop}" width="${colW}" height="${plotH}" fill="transparent" class="dim-hover-col" style="cursor: pointer;"
       onmouseenter="showDimensionReadout(${d.year})" onclick="showDimensionReadout(${d.year})" />
   `).join("");
@@ -435,6 +517,8 @@ function showDimensionReadout(year) {
   const readout = document.getElementById("dim-hover-readout");
   if (!d || !readout) return;
 
+  const { minYear, maxYear, yearSpan } = getBodyTypeActiveRange(typeData);
+
   const isInch = currentUnit === "in";
   const u = isInch ? "in" : "mm";
 
@@ -443,7 +527,7 @@ function showDimensionReadout(year) {
       <div class="dim-readout-content">
         <span class="dim-readout-year">${d.year} RECORD:</span>
         <span class="dim-readout-val" style="color:#94a3b8; font-style:italic;">Insufficient production records for ${typeData.meta.label} in ${d.year} (n = ${d.n} models)</span>
-        <span class="dim-readout-sample">[Honest gap &mdash; not estimated]</span>
+        <span class="dim-readout-sample">[Honest gap &mdash; not estimated &bull; ${minYear} &mdash; ${maxYear}]</span>
       </div>
     `;
   } else {
@@ -463,7 +547,7 @@ function showDimensionReadout(year) {
         <span class="dim-readout-year">${d.year} ${typeData.meta.label.toUpperCase()}:</span>
         <span class="dim-readout-val">Length ${len} ${u} &bull; Width ${wid} ${u} &bull; Height ${hgt} ${u} &bull; Wheelbase ${wb} ${u}</span>
         <span class="dim-readout-delta">(${deltaLenStr} len, ${deltaHgtStr} hgt since ${firstRec.year})</span>
-        <span class="dim-readout-sample">[n = ${d.n} models]</span>
+        <span class="dim-readout-sample">[n = ${d.n} models &bull; ${minYear} &mdash; ${maxYear}]</span>
       </div>
     `;
   }
@@ -474,7 +558,7 @@ function showDimensionReadout(year) {
     const padLeft = 65;
     const padRight = 30;
     const plotW = width - padLeft - padRight;
-    const xPos = padLeft + ((year - 1970) / (2024 - 1970)) * plotW;
+    const xPos = padLeft + ((year - minYear) / yearSpan) * plotW;
     line.setAttribute("x1", xPos);
     line.setAttribute("x2", xPos);
     line.style.display = "block";
@@ -540,7 +624,7 @@ function renderProportionsChart() {
   if (!container) return;
 
   const typeData = shapeDataset.by_type[currentBodyType];
-  const yearly = typeData.yearly;
+  const { minYear, maxYear, yearSpan, activeYearly } = getBodyTypeActiveRange(typeData);
 
   const width = 900;
   const height = 350;
@@ -552,9 +636,9 @@ function renderProportionsChart() {
   const plotW = width - padLeft - padRight;
   const plotH = height - padTop - padBottom;
 
-  const xForYear = yr => padLeft + ((yr - 1970) / (2024 - 1970)) * plotW;
+  const xForYear = yr => padLeft + ((yr - minYear) / yearSpan) * plotW;
 
-  const valid = yearly.filter(d => d.lh_ratio !== null);
+  const valid = activeYearly.filter(d => d.lh_ratio !== null);
   if (valid.length === 0) {
     container.innerHTML = `<div style="padding:4rem; text-align:center; color:#64748b;">No proportion records for this body type.</div>`;
     return;
@@ -584,16 +668,17 @@ function renderProportionsChart() {
     `;
   }
 
-  // X Axis Decades
+  // Dynamic X Axis Ticks adapted to active data coverage
+  const ticks = getDynamicYearTicks(minYear, maxYear);
   let xAxisSvg = "";
-  for (let yr = 1970; yr <= 2024; yr += 10) {
+  ticks.forEach(yr => {
     const xPos = xForYear(yr);
+    const isLatest = yr === maxYear;
     xAxisSvg += `
       <line x1="${xPos}" y1="${padTop}" x2="${xPos}" y2="${padTop + plotH}" stroke="rgba(255,255,255,0.05)" />
-      <text x="${xPos}" y="${padTop + plotH + 20}" fill="#94a3b8" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
+      <text x="${xPos}" y="${padTop + plotH + 20}" fill="${isLatest ? '#38bdf8' : '#94a3b8'}" font-weight="${isLatest ? '700' : '400'}" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">${yr}</text>
     `;
-  }
-  xAxisSvg += `<text x="${xForYear(2024)}" y="${padTop + plotH + 20}" fill="#38bdf8" font-weight="700" font-size="12" font-family="ui-monospace, monospace" text-anchor="middle">2024</text>`;
+  });
 
   // Build segmented paths for L/H ratio
   let lhPathD = "";
@@ -602,7 +687,7 @@ function renderProportionsChart() {
   let isWbDrawing = false;
   let circlesSvg = "";
 
-  yearly.forEach(d => {
+  activeYearly.forEach(d => {
     if (d.lh_ratio !== null) {
       const x = xForYear(d.year);
       const yLh = yForRatio(d.lh_ratio);

@@ -150,8 +150,27 @@ toc: false
         <div class="section-badge">Isolated Market Trajectory</div>
         <h3 class="viz-heading" id="share-heading">How common was this body style?</h3>
         <p class="viz-subheading" id="share-subheading">
-          Annual percentage share of vehicle introductions and total model counts from 1970 to 2024.
+          Annual percentage share of vehicle introductions and total model counts across active production years.
         </p>
+      </div>
+    </div>
+
+    <!-- Local Body-Type Dropdown -->
+    <div class="shape-chart-local-bar">
+      <div class="shape-local-select-wrap">
+        <label class="shape-local-select-label" for="local-body-select-share">BODY TYPE</label>
+        <div class="shape-select-box">
+          <select class="shape-body-dropdown" id="local-body-select-share" aria-label="Select body type for market trajectory" onchange="selectBodyType(this.value)">
+            <option value="Sedan">Sedan</option>
+            <option value="Coupe">Coupe</option>
+            <option value="SUV">SUV / Crossover</option>
+            <option value="Wagon">Station Wagon</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Convertible">Convertible</option>
+            <option value="Pickup">Pickup Truck</option>
+            <option value="Van">Van / Minivan</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -159,7 +178,7 @@ toc: false
       <div class="dim-readout-content">
         <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
         <span class="dim-readout-val">Inspect annual production share and recorded model count</span>
-        <span class="dim-readout-sample">[1970 &mdash; 2024]</span>
+        <span class="dim-readout-sample">[Active Coverage Range]</span>
       </div>
     </div>
 
@@ -172,10 +191,29 @@ toc: false
     <div class="viz-header">
       <div class="viz-title-block">
         <div class="section-badge">Isolated Physical Dimensions</div>
-        <h3 class="viz-heading" id="dim-heading">Exterior dimensions (1970 &mdash; 2024)</h3>
+        <h3 class="viz-heading" id="dim-heading">Exterior dimensions across active production years</h3>
         <p class="viz-subheading" id="dim-subheading">
           Median exterior dimensions derived exclusively from selected body type production models.
         </p>
+      </div>
+    </div>
+
+    <!-- Local Body-Type Dropdown -->
+    <div class="shape-chart-local-bar">
+      <div class="shape-local-select-wrap">
+        <label class="shape-local-select-label" for="local-body-select-dim">BODY TYPE</label>
+        <div class="shape-select-box">
+          <select class="shape-body-dropdown" id="local-body-select-dim" aria-label="Select body type for physical dimensions" onchange="selectBodyType(this.value)">
+            <option value="Sedan">Sedan</option>
+            <option value="Coupe">Coupe</option>
+            <option value="SUV">SUV / Crossover</option>
+            <option value="Wagon">Station Wagon</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Convertible">Convertible</option>
+            <option value="Pickup">Pickup Truck</option>
+            <option value="Van">Van / Minivan</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -198,7 +236,7 @@ toc: false
       <div class="dim-readout-content">
         <span class="dim-readout-year">HOVER OVER TIMELINE:</span>
         <span class="dim-readout-val">Hover over any year to inspect isolated body type dimensions</span>
-        <span class="dim-readout-sample">[1970 &mdash; 2024]</span>
+        <span class="dim-readout-sample">[Active Coverage Range]</span>
       </div>
     </div>
 
@@ -219,6 +257,25 @@ toc: false
         <p class="viz-subheading" id="prop-subheading">
           Size is not shape. Tracking the profile stance ratio (Length &divide; Height) and packaging wheelbase ratio (Wheelbase &divide; Length) specifically for this body shape over time.
         </p>
+      </div>
+    </div>
+
+    <!-- Local Body-Type Dropdown -->
+    <div class="shape-chart-local-bar">
+      <div class="shape-local-select-wrap">
+        <label class="shape-local-select-label" for="local-body-select-prop">BODY TYPE</label>
+        <div class="shape-select-box">
+          <select class="shape-body-dropdown" id="local-body-select-prop" aria-label="Select body type for proportion analysis" onchange="selectBodyType(this.value)">
+            <option value="Sedan">Sedan</option>
+            <option value="Coupe">Coupe</option>
+            <option value="SUV">SUV / Crossover</option>
+            <option value="Wagon">Station Wagon</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Convertible">Convertible</option>
+            <option value="Pickup">Pickup Truck</option>
+            <option value="Van">Van / Minivan</option>
+          </select>
+        </div>
       </div>
     </div>
 

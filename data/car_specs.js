@@ -386,7 +386,24 @@ window.CAR_SPECS = {
     "wheelbase_in": 96.5
   },
   "1971 Datsun 240Z": {
-    "body_type": "Sports"
+    "horsepower": 151,
+    "weight_kg": 1057,
+    "weight_lbs": 2330,
+    "engine": "2.4L I6 4MT RWD (151 HP)",
+    "cylinders": 6,
+    "displacement_cc": 2393,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed manual",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Sports",
+    "length_mm": 4140,
+    "length_in": 163.0,
+    "width_mm": 1630,
+    "width_in": 64.2,
+    "height_mm": 1283,
+    "height_in": 50.5,
+    "wheelbase_mm": 2305,
+    "wheelbase_in": 90.7
   },
   "1975 Honda Civic": {
     "horsepower": 60,
@@ -531,7 +548,26 @@ window.CAR_SPECS = {
     "wheelbase_in": 108.0
   },
   "1978 Saab 99 Turbo": {
-    "body_type": "Sedan"
+    "horsepower": 135,
+    "weight_kg": 1218,
+    "weight_lbs": 2685,
+    "fuel_economy_l100": 10.7,
+    "mpg": 22.0,
+    "engine": "2.0L Turbo I4 4MT FWD (135 HP)",
+    "cylinders": 4,
+    "displacement_cc": 1985,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed manual",
+    "drivetrain": "Front Wheel Drive",
+    "body_type": "Sedan",
+    "length_mm": 4550,
+    "length_in": 179.1,
+    "width_mm": 1690,
+    "width_in": 66.5,
+    "height_mm": 1430,
+    "height_in": 56.3,
+    "wheelbase_mm": 2474,
+    "wheelbase_in": 97.4
   },
   "1976 Peugeot 504": {
     "horsepower": 106,
@@ -1554,10 +1590,21 @@ window.CAR_SPECS = {
   },
   "2024 Volvo EX30": {
     "horsepower": 268,
+    "weight_kg": 1840,
+    "weight_lbs": 4057,
     "engine": "Single motor 51 KWh RWD (268 HP)",
     "fuel_type": "Electric",
+    "transmission": "1-speed automatic",
     "drivetrain": "Rear Wheel Drive",
-    "body_type": "SUV"
+    "body_type": "SUV",
+    "length_mm": 4233,
+    "length_in": 166.7,
+    "width_mm": 1838,
+    "width_in": 72.4,
+    "height_mm": 1550,
+    "height_in": 61.0,
+    "wheelbase_mm": 2650,
+    "wheelbase_in": 104.3
   },
   "1985 Volkswagen Golf Mk2": {
     "horsepower": 54,
@@ -1864,7 +1911,26 @@ window.CAR_SPECS = {
     "wheelbase_in": 95.3
   },
   "1978 Subaru BRAT": {
-    "body_type": "Pickup"
+    "horsepower": 67,
+    "weight_kg": 973,
+    "weight_lbs": 2145,
+    "fuel_economy_l100": 8.1,
+    "mpg": 29.0,
+    "engine": "1.6L Flat-4 4MT 4WD (67 HP)",
+    "cylinders": 4,
+    "displacement_cc": 1595,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed manual",
+    "drivetrain": "Four Wheel Drive",
+    "body_type": "Pickup",
+    "length_mm": 4186,
+    "length_in": 164.8,
+    "width_mm": 1549,
+    "width_in": 61.0,
+    "height_mm": 1440,
+    "height_in": 56.7,
+    "wheelbase_mm": 2451,
+    "wheelbase_in": 96.5
   },
   "1978 Lincoln Continental Mark V": {
     "horsepower": 168,
@@ -2081,7 +2147,22 @@ window.CAR_SPECS = {
     "wheelbase_in": 95.3
   },
   "1983 Toyota Sprinter Trueno (AE86)": {
-    "body_type": "Coupe"
+    "horsepower": 128,
+    "engine": "1.6L DOHC 16V 5MT RWD (128 HP)",
+    "cylinders": 4,
+    "displacement_cc": 1587,
+    "fuel_type": "Gasoline",
+    "transmission": "5-speed manual",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Coupe",
+    "length_mm": 4205,
+    "length_in": 165.6,
+    "width_mm": 1625,
+    "width_in": 64.0,
+    "height_mm": 1335,
+    "height_in": 52.6,
+    "wheelbase_mm": 2400,
+    "wheelbase_in": 94.5
   },
   "1984 Honda CRX": {
     "horsepower": 131,
@@ -2216,7 +2297,26 @@ window.CAR_SPECS = {
     "wheelbase_in": 91.3
   },
   "1987 Buick GNX": {
-    "body_type": "Coupe"
+    "horsepower": 276,
+    "weight_kg": 1608,
+    "weight_lbs": 3545,
+    "fuel_economy_l100": 11.8,
+    "mpg": 20.0,
+    "engine": "3.8L Turbo V6 4AT RWD (276 HP)",
+    "cylinders": 6,
+    "displacement_cc": 3791,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed automatic",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Coupe",
+    "length_mm": 5095,
+    "length_in": 200.6,
+    "width_mm": 1819,
+    "width_in": 71.6,
+    "height_mm": 1387,
+    "height_in": 54.6,
+    "wheelbase_mm": 2746,
+    "wheelbase_in": 108.1
   },
   "1987 Ferrari F40": {
     "horsepower": 478,
@@ -2285,7 +2385,26 @@ window.CAR_SPECS = {
     "wheelbase_in": 90.6
   },
   "1988 Volvo 740 Turbo": {
-    "body_type": "Wagon"
+    "horsepower": 162,
+    "weight_kg": 1440,
+    "weight_lbs": 3175,
+    "fuel_economy_l100": 13.1,
+    "mpg": 18.0,
+    "engine": "2.3L Turbo I4 4AT RWD (162 HP)",
+    "cylinders": 4,
+    "displacement_cc": 2316,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed automatic",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Wagon",
+    "length_mm": 4785,
+    "length_in": 188.4,
+    "width_mm": 1760,
+    "width_in": 69.3,
+    "height_mm": 1435,
+    "height_in": 56.5,
+    "wheelbase_mm": 2770,
+    "wheelbase_in": 109.1
   },
   "1989 Chevrolet Corvette ZR-1": {
     "horsepower": 238,
@@ -2398,7 +2517,26 @@ window.CAR_SPECS = {
     "wheelbase_in": 99.6
   },
   "1991 GMC Syclone": {
-    "body_type": "Pickup"
+    "horsepower": 280,
+    "weight_kg": 1633,
+    "weight_lbs": 3599,
+    "fuel_economy_l100": 15.7,
+    "mpg": 15.0,
+    "engine": "4.3L Turbo V6 4AT AWD (280 HP)",
+    "cylinders": 6,
+    "displacement_cc": 4300,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed automatic",
+    "drivetrain": "All Wheel Drive",
+    "body_type": "Pickup",
+    "length_mm": 4585,
+    "length_in": 180.5,
+    "width_mm": 1646,
+    "width_in": 64.8,
+    "height_mm": 1524,
+    "height_in": 60.0,
+    "wheelbase_mm": 2751,
+    "wheelbase_in": 108.3
   },
   "1991 Mazda RX-7 (FD)": {
     "horsepower": 147,
@@ -2655,7 +2793,24 @@ window.CAR_SPECS = {
     "wheelbase_in": 90.6
   },
   "1997 Plymouth Prowler": {
-    "body_type": "Sports"
+    "horsepower": 214,
+    "weight_kg": 1285,
+    "weight_lbs": 2832,
+    "engine": "3.5L V6 4AT RWD (214 HP)",
+    "cylinders": 6,
+    "displacement_cc": 3518,
+    "fuel_type": "Gasoline",
+    "transmission": "4-speed automatic",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Sports",
+    "length_mm": 4191,
+    "length_in": 165.0,
+    "width_mm": 1930,
+    "width_in": 76.0,
+    "height_mm": 1293,
+    "height_in": 50.9,
+    "wheelbase_mm": 2870,
+    "wheelbase_in": 113.0
   },
   "1997 Honda CR-V": {
     "horsepower": 128,
@@ -3948,10 +4103,25 @@ window.CAR_SPECS = {
   },
   "2023 Chevrolet Corvette Z06 (C8)": {
     "horsepower": 679,
+    "weight_kg": 1712,
+    "weight_lbs": 3774,
+    "fuel_economy_l100": 15.7,
+    "mpg": 15.0,
     "engine": "5.5L V8 (679 HP)",
     "cylinders": 8,
+    "displacement_cc": 5463,
     "fuel_type": "Gasoline",
-    "body_type": "Sports"
+    "transmission": "8-speed dual-clutch",
+    "drivetrain": "Rear Wheel Drive",
+    "body_type": "Sports",
+    "length_mm": 4688,
+    "length_in": 184.6,
+    "width_mm": 2025,
+    "width_in": 79.7,
+    "height_mm": 1235,
+    "height_in": 48.6,
+    "wheelbase_mm": 2722,
+    "wheelbase_in": 107.2
   },
   "2023 Dodge Hornet": {
     "horsepower": 272,
