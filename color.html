@@ -166,8 +166,10 @@ ul.task-list li input[type="checkbox"] {
     </div>
 
     <!-- Interactive Readout Bar -->
-    <div class="stream-readout" id="color-readout" style="margin: 1rem 0 1.5rem; text-align: center; font-family: var(--font-serif); font-size: 1.05rem; padding: 0.85rem 1rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
-      <span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>
+    <div class="color-readout-slot">
+      <div class="stream-readout" id="color-readout" style="text-align: center; font-family: var(--font-serif); font-size: 1.05rem; padding: 0.85rem 1rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
+        <span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>
+      </div>
     </div>
 
     <!-- Editorial Color Legend -->
@@ -185,45 +187,45 @@ ul.task-list li input[type="checkbox"] {
     </div>
 
     <!-- THE SIX DECADE PILLARS TIMELINE -->
-    <div class="palette-decades-grid">
+    <div class="palette-decades-grid" onmouseleave="resetColorReadout()">
 
       <!-- 1970s -->
-      <div class="decade-palette-column" onmouseleave="resetColorReadout()">
+      <div class="decade-palette-column">
         <div class="column-header">
           <span class="column-decade">1970s</span>
           <span class="column-range">1970–1979</span>
         </div>
         <div class="column-pillar" style="height: 440px;">
           <!-- Neutrals (28.3%) -->
-          <div class="palette-slice" style="height: 12.3%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('1970s', 'White', 12.3)">
+          <div class="palette-slice" style="height: 12.3%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('1970s', 'White', 12.3, this)">
             <span class="slice-pct">12%</span>
           </div>
-          <div class="palette-slice" style="height: 4.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Black', 4.8)">
+          <div class="palette-slice" style="height: 4.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Black', 4.8, this)">
             <span class="slice-pct">5%</span>
           </div>
-          <div class="palette-slice" style="height: 4.0%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Gray', 4.0)">
+          <div class="palette-slice" style="height: 4.0%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Gray', 4.0, this)">
             <span class="slice-pct">4%</span>
           </div>
-          <div class="palette-slice" style="height: 7.2%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('1970s', 'Silver', 7.2)">
+          <div class="palette-slice" style="height: 7.2%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('1970s', 'Silver', 7.2, this)">
             <span class="slice-pct">7%</span>
           </div>
           <!-- Chromatics (71.7%) -->
-          <div class="palette-slice" style="height: 17.5%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Blue', 17.5)">
+          <div class="palette-slice" style="height: 17.5%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Blue', 17.5, this)">
             <span class="slice-pct">18%</span>
           </div>
-          <div class="palette-slice" style="height: 12.2%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Red', 12.2)">
+          <div class="palette-slice" style="height: 12.2%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Red', 12.2, this)">
             <span class="slice-pct">12%</span>
           </div>
-          <div class="palette-slice" style="height: 14.7%; background-color: #16a34a; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Green', 14.7)">
+          <div class="palette-slice" style="height: 14.7%; background-color: #16a34a; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Green', 14.7, this)">
             <span class="slice-pct">15%</span>
           </div>
-          <div class="palette-slice" style="height: 13.5%; background-color: #a16207; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Brown / Beige', 13.5)">
+          <div class="palette-slice" style="height: 13.5%; background-color: #a16207; color: #ffffff;" onmouseenter="inspectColor('1970s', 'Brown / Beige', 13.5, this)">
             <span class="slice-pct">14%</span>
           </div>
-          <div class="palette-slice" style="height: 9.3%; background-color: #eab308; color: #0f172a;" onmouseenter="inspectColor('1970s', 'Gold / Yellow', 9.3)">
+          <div class="palette-slice" style="height: 9.3%; background-color: #eab308; color: #0f172a;" onmouseenter="inspectColor('1970s', 'Gold / Yellow', 9.3, this)">
             <span class="slice-pct">9%</span>
           </div>
-          <div class="palette-slice is-compact" style="height: 4.5%; background-color: #7c3aed;" onmouseenter="inspectColor('1970s', 'Other', 4.5)"></div>
+          <div class="palette-slice is-compact" style="height: 4.5%; background-color: #7c3aed;" onmouseenter="inspectColor('1970s', 'Other', 4.5, this)"></div>
         </div>
         <div class="column-footer">
           <div class="footer-highlight">
@@ -235,42 +237,42 @@ ul.task-list li input[type="checkbox"] {
       </div>
 
       <!-- 1980s -->
-      <div class="decade-palette-column" onmouseleave="resetColorReadout()">
+      <div class="decade-palette-column">
         <div class="column-header">
           <span class="column-decade">1980s</span>
           <span class="column-range">1980–1989</span>
         </div>
         <div class="column-pillar" style="height: 440px;">
           <!-- Neutrals (37.9%) -->
-          <div class="palette-slice" style="height: 17.1%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('1980s', 'White', 17.1)">
+          <div class="palette-slice" style="height: 17.1%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('1980s', 'White', 17.1, this)">
             <span class="slice-pct">17%</span>
           </div>
-          <div class="palette-slice" style="height: 6.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Black', 6.8)">
+          <div class="palette-slice" style="height: 6.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Black', 6.8, this)">
             <span class="slice-pct">7%</span>
           </div>
-          <div class="palette-slice" style="height: 4.6%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Gray', 4.6)">
+          <div class="palette-slice" style="height: 4.6%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Gray', 4.6, this)">
             <span class="slice-pct">5%</span>
           </div>
-          <div class="palette-slice" style="height: 9.4%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('1980s', 'Silver', 9.4)">
+          <div class="palette-slice" style="height: 9.4%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('1980s', 'Silver', 9.4, this)">
             <span class="slice-pct">9%</span>
           </div>
           <!-- Chromatics (62.1%) -->
-          <div class="palette-slice" style="height: 15.3%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Blue', 15.3)">
+          <div class="palette-slice" style="height: 15.3%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Blue', 15.3, this)">
             <span class="slice-pct">15%</span>
           </div>
-          <div class="palette-slice" style="height: 15.4%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Red', 15.4)">
+          <div class="palette-slice" style="height: 15.4%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Red', 15.4, this)">
             <span class="slice-pct">15%</span>
           </div>
-          <div class="palette-slice" style="height: 8.9%; background-color: #16a34a; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Green', 8.9)">
+          <div class="palette-slice" style="height: 8.9%; background-color: #16a34a; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Green', 8.9, this)">
             <span class="slice-pct">9%</span>
           </div>
-          <div class="palette-slice" style="height: 11.2%; background-color: #a16207; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Brown / Beige', 11.2)">
+          <div class="palette-slice" style="height: 11.2%; background-color: #a16207; color: #ffffff;" onmouseenter="inspectColor('1980s', 'Brown / Beige', 11.2, this)">
             <span class="slice-pct">11%</span>
           </div>
-          <div class="palette-slice" style="height: 6.8%; background-color: #eab308; color: #0f172a;" onmouseenter="inspectColor('1980s', 'Gold / Yellow', 6.8)">
+          <div class="palette-slice" style="height: 6.8%; background-color: #eab308; color: #0f172a;" onmouseenter="inspectColor('1980s', 'Gold / Yellow', 6.8, this)">
             <span class="slice-pct">7%</span>
           </div>
-          <div class="palette-slice is-compact" style="height: 4.5%; background-color: #7c3aed;" onmouseenter="inspectColor('1980s', 'Other', 4.5)"></div>
+          <div class="palette-slice is-compact" style="height: 4.5%; background-color: #7c3aed;" onmouseenter="inspectColor('1980s', 'Other', 4.5, this)"></div>
         </div>
         <div class="column-footer">
           <div class="footer-highlight">
@@ -282,38 +284,38 @@ ul.task-list li input[type="checkbox"] {
       </div>
 
       <!-- 1990s -->
-      <div class="decade-palette-column" onmouseleave="resetColorReadout()">
+      <div class="decade-palette-column">
         <div class="column-header">
           <span class="column-decade">1990s</span>
           <span class="column-range">1990–1999</span>
         </div>
         <div class="column-pillar" style="height: 440px;">
           <!-- Neutrals (50.8%) -->
-          <div class="palette-slice" style="height: 24.5%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('1990s', 'White', 24.5)">
+          <div class="palette-slice" style="height: 24.5%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('1990s', 'White', 24.5, this)">
             <span class="slice-pct">25%</span>
           </div>
-          <div class="palette-slice" style="height: 10.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Black', 10.8)">
+          <div class="palette-slice" style="height: 10.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Black', 10.8, this)">
             <span class="slice-pct">11%</span>
           </div>
-          <div class="palette-slice" style="height: 5.0%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Gray', 5.0)">
+          <div class="palette-slice" style="height: 5.0%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Gray', 5.0, this)">
             <span class="slice-pct">5%</span>
           </div>
-          <div class="palette-slice" style="height: 10.5%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('1990s', 'Silver', 10.5)">
+          <div class="palette-slice" style="height: 10.5%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('1990s', 'Silver', 10.5, this)">
             <span class="slice-pct">11%</span>
           </div>
           <!-- Chromatics (49.2%) -->
-          <div class="palette-slice" style="height: 10.8%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Blue', 10.8)">
+          <div class="palette-slice" style="height: 10.8%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Blue', 10.8, this)">
             <span class="slice-pct">11%</span>
           </div>
-          <div class="palette-slice" style="height: 13.7%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Red', 13.7)">
+          <div class="palette-slice" style="height: 13.7%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Red', 13.7, this)">
             <span class="slice-pct">14%</span>
           </div>
-          <div class="palette-slice" style="height: 14.5%; background-color: #16a34a; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Green', 14.5)">
+          <div class="palette-slice" style="height: 14.5%; background-color: #16a34a; color: #ffffff;" onmouseenter="inspectColor('1990s', 'Green', 14.5, this)">
             <span class="slice-pct">15%</span>
           </div>
-          <div class="palette-slice is-compact" style="height: 4.4%; background-color: #a16207;" onmouseenter="inspectColor('1990s', 'Brown / Beige', 4.4)"></div>
-          <div class="palette-slice is-compact" style="height: 2.7%; background-color: #eab308;" onmouseenter="inspectColor('1990s', 'Gold / Yellow', 2.7)"></div>
-          <div class="palette-slice is-compact" style="height: 3.1%; background-color: #7c3aed;" onmouseenter="inspectColor('1990s', 'Other', 3.1)"></div>
+          <div class="palette-slice is-compact" style="height: 4.4%; background-color: #a16207;" onmouseenter="inspectColor('1990s', 'Brown / Beige', 4.4, this)"></div>
+          <div class="palette-slice is-compact" style="height: 2.7%; background-color: #eab308;" onmouseenter="inspectColor('1990s', 'Gold / Yellow', 2.7, this)"></div>
+          <div class="palette-slice is-compact" style="height: 3.1%; background-color: #7c3aed;" onmouseenter="inspectColor('1990s', 'Other', 3.1, this)"></div>
         </div>
         <div class="column-footer">
           <div class="footer-highlight">
@@ -325,36 +327,36 @@ ul.task-list li input[type="checkbox"] {
       </div>
 
       <!-- 2000s -->
-      <div class="decade-palette-column" onmouseleave="resetColorReadout()">
+      <div class="decade-palette-column">
         <div class="column-header">
           <span class="column-decade">2000s</span>
           <span class="column-range">2000–2009</span>
         </div>
         <div class="column-pillar" style="height: 440px;">
           <!-- Neutrals (68.6%) -->
-          <div class="palette-slice" style="height: 20.9%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('2000s', 'White', 20.9)">
+          <div class="palette-slice" style="height: 20.9%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('2000s', 'White', 20.9, this)">
             <span class="slice-pct">21%</span>
           </div>
-          <div class="palette-slice" style="height: 14.2%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Black', 14.2)">
+          <div class="palette-slice" style="height: 14.2%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Black', 14.2, this)">
             <span class="slice-pct">14%</span>
           </div>
-          <div class="palette-slice" style="height: 9.3%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Gray', 9.3)">
+          <div class="palette-slice" style="height: 9.3%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Gray', 9.3, this)">
             <span class="slice-pct">9%</span>
           </div>
-          <div class="palette-slice" style="height: 24.2%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('2000s', 'Silver', 24.2)">
+          <div class="palette-slice" style="height: 24.2%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('2000s', 'Silver', 24.2, this)">
             <span class="slice-pct">24%</span>
           </div>
           <!-- Chromatics (31.4%) -->
-          <div class="palette-slice" style="height: 8.5%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Blue', 8.5)">
+          <div class="palette-slice" style="height: 8.5%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Blue', 8.5, this)">
             <span class="slice-pct">9%</span>
           </div>
-          <div class="palette-slice" style="height: 10.0%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Red', 10.0)">
+          <div class="palette-slice" style="height: 10.0%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('2000s', 'Red', 10.0, this)">
             <span class="slice-pct">10%</span>
           </div>
-          <div class="palette-slice is-compact" style="height: 4.4%; background-color: #16a34a;" onmouseenter="inspectColor('2000s', 'Green', 4.4)"></div>
-          <div class="palette-slice is-compact" style="height: 4.3%; background-color: #a16207;" onmouseenter="inspectColor('2000s', 'Brown / Beige', 4.3)"></div>
-          <div class="palette-slice is-compact" style="height: 1.2%; background-color: #eab308;" onmouseenter="inspectColor('2000s', 'Gold / Yellow', 1.2)"></div>
-          <div class="palette-slice is-compact" style="height: 3.0%; background-color: #7c3aed;" onmouseenter="inspectColor('2000s', 'Other', 3.0)"></div>
+          <div class="palette-slice is-compact" style="height: 4.4%; background-color: #16a34a;" onmouseenter="inspectColor('2000s', 'Green', 4.4, this)"></div>
+          <div class="palette-slice is-compact" style="height: 4.3%; background-color: #a16207;" onmouseenter="inspectColor('2000s', 'Brown / Beige', 4.3, this)"></div>
+          <div class="palette-slice is-compact" style="height: 1.2%; background-color: #eab308;" onmouseenter="inspectColor('2000s', 'Gold / Yellow', 1.2, this)"></div>
+          <div class="palette-slice is-compact" style="height: 3.0%; background-color: #7c3aed;" onmouseenter="inspectColor('2000s', 'Other', 3.0, this)"></div>
         </div>
         <div class="column-footer">
           <div class="footer-highlight">
@@ -366,36 +368,36 @@ ul.task-list li input[type="checkbox"] {
       </div>
 
       <!-- 2010s -->
-      <div class="decade-palette-column" onmouseleave="resetColorReadout()">
+      <div class="decade-palette-column">
         <div class="column-header">
           <span class="column-decade">2010s</span>
           <span class="column-range">2010–2019</span>
         </div>
         <div class="column-pillar" style="height: 440px;">
           <!-- Neutrals (78.1%) -->
-          <div class="palette-slice" style="height: 32.1%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('2010s', 'White', 32.1)">
+          <div class="palette-slice" style="height: 32.1%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('2010s', 'White', 32.1, this)">
             <span class="slice-pct">32%</span>
           </div>
-          <div class="palette-slice" style="height: 18.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Black', 18.8)">
+          <div class="palette-slice" style="height: 18.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Black', 18.8, this)">
             <span class="slice-pct">19%</span>
           </div>
-          <div class="palette-slice" style="height: 14.4%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Gray', 14.4)">
+          <div class="palette-slice" style="height: 14.4%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Gray', 14.4, this)">
             <span class="slice-pct">14%</span>
           </div>
-          <div class="palette-slice" style="height: 12.8%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('2010s', 'Silver', 12.8)">
+          <div class="palette-slice" style="height: 12.8%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('2010s', 'Silver', 12.8, this)">
             <span class="slice-pct">13%</span>
           </div>
           <!-- Chromatics (21.9%) -->
-          <div class="palette-slice" style="height: 7.8%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Blue', 7.8)">
+          <div class="palette-slice" style="height: 7.8%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Blue', 7.8, this)">
             <span class="slice-pct">8%</span>
           </div>
-          <div class="palette-slice" style="height: 6.5%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Red', 6.5)">
+          <div class="palette-slice" style="height: 6.5%; background-color: #dc2626; color: #ffffff;" onmouseenter="inspectColor('2010s', 'Red', 6.5, this)">
             <span class="slice-pct">7%</span>
           </div>
-          <div class="palette-slice is-compact" style="height: 1.4%; background-color: #16a34a;" onmouseenter="inspectColor('2010s', 'Green', 1.4)"></div>
-          <div class="palette-slice is-compact" style="height: 2.7%; background-color: #a16207;" onmouseenter="inspectColor('2010s', 'Brown / Beige', 2.7)"></div>
-          <div class="palette-slice is-compact" style="height: 1.0%; background-color: #eab308;" onmouseenter="inspectColor('2010s', 'Gold / Yellow', 1.0)"></div>
-          <div class="palette-slice is-compact" style="height: 2.5%; background-color: #7c3aed;" onmouseenter="inspectColor('2010s', 'Other', 2.5)"></div>
+          <div class="palette-slice is-compact" style="height: 1.4%; background-color: #16a34a;" onmouseenter="inspectColor('2010s', 'Green', 1.4, this)"></div>
+          <div class="palette-slice is-compact" style="height: 2.7%; background-color: #a16207;" onmouseenter="inspectColor('2010s', 'Brown / Beige', 2.7, this)"></div>
+          <div class="palette-slice is-compact" style="height: 1.0%; background-color: #eab308;" onmouseenter="inspectColor('2010s', 'Gold / Yellow', 1.0, this)"></div>
+          <div class="palette-slice is-compact" style="height: 2.5%; background-color: #7c3aed;" onmouseenter="inspectColor('2010s', 'Other', 2.5, this)"></div>
         </div>
         <div class="column-footer">
           <div class="footer-highlight">
@@ -407,34 +409,34 @@ ul.task-list li input[type="checkbox"] {
       </div>
 
       <!-- 2020s -->
-      <div class="decade-palette-column" onmouseleave="resetColorReadout()">
+      <div class="decade-palette-column">
         <div class="column-header">
           <span class="column-decade">2020s</span>
           <span class="column-range">2020–2024</span>
         </div>
         <div class="column-pillar" style="height: 440px;">
           <!-- Neutrals (82.0%) -->
-          <div class="palette-slice" style="height: 36.4%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('2020s', 'White', 36.4)">
+          <div class="palette-slice" style="height: 36.4%; background-color: #f8fafc; color: #0f172a; border-bottom: 1px solid rgba(0,0,0,0.08);" onmouseenter="inspectColor('2020s', 'White', 36.4, this)">
             <span class="slice-pct">36%</span>
           </div>
-          <div class="palette-slice" style="height: 20.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('2020s', 'Black', 20.8)">
+          <div class="palette-slice" style="height: 20.8%; background-color: #18181b; color: #ffffff;" onmouseenter="inspectColor('2020s', 'Black', 20.8, this)">
             <span class="slice-pct">21%</span>
           </div>
-          <div class="palette-slice" style="height: 16.2%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('2020s', 'Gray', 16.2)">
+          <div class="palette-slice" style="height: 16.2%; background-color: #64748b; color: #ffffff;" onmouseenter="inspectColor('2020s', 'Gray', 16.2, this)">
             <span class="slice-pct">16%</span>
           </div>
-          <div class="palette-slice" style="height: 8.6%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('2020s', 'Silver', 8.6)">
+          <div class="palette-slice" style="height: 8.6%; background-color: #cbd5e1; color: #0f172a; border-bottom: 2px solid var(--border-rule);" onmouseenter="inspectColor('2020s', 'Silver', 8.6, this)">
             <span class="slice-pct">9%</span>
           </div>
           <!-- Chromatics (18.0%) -->
-          <div class="palette-slice" style="height: 7.8%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('2020s', 'Blue', 7.8)">
+          <div class="palette-slice" style="height: 7.8%; background-color: #2563eb; color: #ffffff;" onmouseenter="inspectColor('2020s', 'Blue', 7.8, this)">
             <span class="slice-pct">8%</span>
           </div>
-          <div class="palette-slice is-compact" style="height: 4.2%; background-color: #dc2626;" onmouseenter="inspectColor('2020s', 'Red', 4.2)"></div>
-          <div class="palette-slice is-compact" style="height: 1.0%; background-color: #16a34a;" onmouseenter="inspectColor('2020s', 'Green', 1.0)"></div>
-          <div class="palette-slice is-compact" style="height: 2.0%; background-color: #a16207;" onmouseenter="inspectColor('2020s', 'Brown / Beige', 2.0)"></div>
-          <div class="palette-slice is-compact" style="height: 1.0%; background-color: #eab308;" onmouseenter="inspectColor('2020s', 'Gold / Yellow', 1.0)"></div>
-          <div class="palette-slice is-compact" style="height: 2.0%; background-color: #7c3aed;" onmouseenter="inspectColor('2020s', 'Other', 2.0)"></div>
+          <div class="palette-slice is-compact" style="height: 4.2%; background-color: #dc2626;" onmouseenter="inspectColor('2020s', 'Red', 4.2, this)"></div>
+          <div class="palette-slice is-compact" style="height: 1.0%; background-color: #16a34a;" onmouseenter="inspectColor('2020s', 'Green', 1.0, this)"></div>
+          <div class="palette-slice is-compact" style="height: 2.0%; background-color: #a16207;" onmouseenter="inspectColor('2020s', 'Brown / Beige', 2.0, this)"></div>
+          <div class="palette-slice is-compact" style="height: 1.0%; background-color: #eab308;" onmouseenter="inspectColor('2020s', 'Gold / Yellow', 1.0, this)"></div>
+          <div class="palette-slice is-compact" style="height: 2.0%; background-color: #7c3aed;" onmouseenter="inspectColor('2020s', 'Other', 2.0, this)"></div>
         </div>
         <div class="column-footer">
           <div class="footer-highlight">
@@ -473,16 +475,118 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 <script>
-function inspectColor(decade, colorName, pct) {
+let currentSwatch = null;
+let resetTimer = null;
+
+function positionColorTooltip(el, swatch, chart) {
+  if (!el || !swatch || !chart) return;
+
+  const chartRect = chart.getBoundingClientRect();
+  const swatchRect = swatch.getBoundingClientRect();
+  const pillar = swatch.closest(".column-pillar");
+  const pillarRect = pillar ? pillar.getBoundingClientRect() : null;
+
+  const margin = 8;
+  const horizontalMin = Math.max(margin, chartRect.left + margin);
+  const horizontalMax = Math.min(window.innerWidth - margin, chartRect.right - margin);
+  const availableWidth = horizontalMax - horizontalMin;
+
+  // Stable width prevents horizontal jitter/wobble when moving vertically between swatches
+  const stableWidth = Math.min(440, availableWidth);
+  el.style.width = `${stableWidth}px`;
+  el.style.maxWidth = `${availableWidth}px`;
+
+  // Center horizontally relative to the column/swatch and clamp within bounds
+  const left = Math.min(
+    Math.max(swatchRect.left + (swatchRect.width - stableWidth) / 2, horizontalMin),
+    horizontalMax - stableWidth
+  );
+
+  const verticalMin = Math.max(margin, chartRect.top + margin);
+  const verticalMax = Math.min(window.innerHeight - margin, chartRect.bottom - margin);
+  const gap = 10;
+  const tooltipHeight = 52;
+
+  // Bottom boundary: do not exceed the pillar, the visualization card, or the viewport
+  const pillarBottomLimit = pillarRect ? pillarRect.bottom : verticalMax;
+  const bottomLimit = Math.min(verticalMax, pillarBottomLimit);
+
+  let top = swatchRect.bottom + gap;
+  if (top + tooltipHeight > bottomLimit) {
+    // Automatically move/flip ABOVE the hovered color when near the bottom
+    top = swatchRect.top - tooltipHeight - gap;
+  }
+  top = Math.min(Math.max(top, verticalMin), verticalMax - tooltipHeight);
+
+  el.style.left = `${Math.round(left)}px`;
+  el.style.top = `${Math.round(top)}px`;
+}
+
+function inspectColor(decade, colorName, pct, swatchEl) {
+  const swatch = (swatchEl && swatchEl.nodeType ? swatchEl : null) ||
+    (typeof window !== "undefined" && window.event ? (window.event.currentTarget || (window.event.target && window.event.target.closest && window.event.target.closest(".palette-slice"))) : null) ||
+    document.querySelector(".palette-slice:hover");
+  if (!swatch) return;
+
+  // Cancel any pending reset from crossing column gaps
+  if (resetTimer) {
+    clearTimeout(resetTimer);
+    resetTimer = null;
+  }
+
+  // Single active-tooltip state: if already active on this swatch, do not recalculate or update
+  if (currentSwatch === swatch) return;
+  currentSwatch = swatch;
+
   const el = document.getElementById("color-readout");
-  if (!el) return;
+  const chart = el ? el.closest(".color-viz-card") : null;
+  if (!el || !chart) return;
+
   el.innerHTML = `<strong>${decade}</strong> &bull; <span style="color: #1c3d2e; font-weight: 600;">${colorName}</span> accounted for <strong>${pct.toFixed(1)}%</strong> of global production`;
+
+  el.classList.add("is-floating");
+  el.style.pointerEvents = "none";
+
+  positionColorTooltip(el, swatch, chart);
 }
 
 function resetColorReadout() {
-  const el = document.getElementById("color-readout");
-  if (!el) return;
-  el.innerHTML = `<span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>`;
+  if (resetTimer) clearTimeout(resetTimer);
+  // Short delay bridges gaps between columns during rapid hover without visual lag on exit
+  resetTimer = setTimeout(() => {
+    currentSwatch = null;
+    const el = document.getElementById("color-readout");
+    if (!el) return;
+    el.classList.remove("is-floating");
+    el.style.removeProperty("left");
+    el.style.removeProperty("top");
+    el.style.removeProperty("width");
+    el.style.removeProperty("max-width");
+    el.style.removeProperty("pointer-events");
+    el.innerHTML = `<span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>`;
+    resetTimer = null;
+  }, 100);
+}
+
+if (typeof window !== "undefined") {
+  window.addEventListener("scroll", () => {
+    if (!currentSwatch) return;
+    const swatchRect = currentSwatch.getBoundingClientRect();
+    if (swatchRect.bottom < 0 || swatchRect.top > window.innerHeight) {
+      resetColorReadout();
+      return;
+    }
+    const el = document.getElementById("color-readout");
+    const chart = el ? el.closest(".color-viz-card") : null;
+    if (el && chart) positionColorTooltip(el, currentSwatch, chart);
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    if (!currentSwatch) return;
+    const el = document.getElementById("color-readout");
+    const chart = el ? el.closest(".color-viz-card") : null;
+    if (el && chart) positionColorTooltip(el, currentSwatch, chart);
+  }, { passive: true });
 }
 </script>
 
@@ -562,7 +666,7 @@ function resetColorReadout() {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/nikiwalkor83\.github\.io\/car-character\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

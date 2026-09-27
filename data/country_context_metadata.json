@@ -1,0 +1,54 @@
+{
+  "title": "Country-Level Contextual Indicators for Automotive Exploration",
+  "description": "Annual macroeconomic, demographic, and motorization indicators for eight primary automotive manufacturing nations (1970\u20132024).",
+  "temporal_coverage": "1970-2024",
+  "country_coverage": [
+    "DEU",
+    "FRA",
+    "GBR",
+    "ITA",
+    "JPN",
+    "KOR",
+    "SWE",
+    "USA"
+  ],
+  "total_observations": 440,
+  "variables": {
+    "gdp_per_capita_constant_2015_usd": {
+      "name": "GDP per capita (constant 2015 US$)",
+      "unit": "Constant 2015 US Dollars ($)",
+      "source_agency": "World Bank",
+      "indicator_code": "NY.GDP.PCAP.KD",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD",
+      "coverage_years": "1970-2024 (100% complete across all 8 countries)",
+      "notes": "Data for Germany before 1991 refers to West Germany (Federal Republic of Germany prior to reunification), while data from 1991 onward refers to unified Germany."
+    },
+    "population_density_per_km2": {
+      "name": "Population density (people per sq. km of land area)",
+      "unit": "People / km\u00b2",
+      "source_agency": "World Bank / UN Food and Agriculture Organization",
+      "indicator_code": "EN.POP.DNST",
+      "source_url": "https://data.worldbank.org/indicator/EN.POP.DNST",
+      "coverage_years": "1970-2023 (100% complete across all 8 countries through 2023; 2024 land area survey pending)",
+      "notes": "Midyear population divided by land area in square kilometers."
+    },
+    "urbanization_percent": {
+      "name": "Urban population (% of total population)",
+      "unit": "Percentage (%)",
+      "source_agency": "World Bank / UN Population Division (World Urbanization Prospects)",
+      "indicator_code": "SP.URB.TOTL.IN.ZS",
+      "source_url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+      "coverage_years": "1970-2024 (100% complete across all 8 countries)",
+      "notes": "Urban population refers to people living in urban areas as defined by national statistical offices."
+    },
+    "passenger_cars_per_1000": {
+      "name": "Passenger cars per 1,000 inhabitants",
+      "unit": "Cars / 1,000 inhabitants",
+      "source_agency": "OECD / International Transport Forum (ITF) & UNECE Transport Statistics / US DOT FHWA",
+      "indicator_code": "OECD.ITF:DSD_INDICATORS@DF_EQUIPMENT(1.0)/10P3HB & UNECE:01_en_TRRoadTypVehR_r.px/TR.123",
+      "source_url": "https://stats.oecd.org / https://w3.unece.org/PXWeb2015",
+      "coverage_years": "1994-2024 for DEU, FRA, GBR, ITA, JPN, KOR, SWE; 1993-2023 for USA. (Pre-1994 unrecorded in harmonized international databases; kept as NA)",
+      "notes": "For European nations, Japan, and South Korea, strictly tracks category M1 passenger cars. For the United States, FHWA data reported to UNECE includes all light-duty passenger vehicles (cars + passenger light trucks/SUVs) in 1993-2005 and 2019-2023, while isolating sedans only in 2006-2018."
+    }
+  }
+}

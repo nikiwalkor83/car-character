@@ -303,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
         <div id="automotive-data-stage" class="automotive-data-stage is-hidden">
           <div class="spec-stage-header">
             <div class="spec-stage-heading">
-              <span class="spec-eyebrow">Automotive Data &amp; Engineering Specs</span>
+              <span class="spec-eyebrow">The Car</span>
               <h3 id="spec-stage-title" class="spec-title">Technical Dossier</h3>
               <p id="spec-stage-subtitle" class="spec-subtitle">Authentic factory specifications from master automotive engineering records.</p>
             </div>
@@ -383,6 +383,257 @@ ul.task-list li input[type="checkbox"] {
             </div>
           </div>
         </div>
+
+        <!-- STAGE D: COUNTRY CONTEXT (STEP 6B) -->
+        <div id="country-context-stage" class="country-context-stage is-hidden">
+          <div class="context-stage-header">
+            <div class="context-stage-heading">
+              <span class="context-eyebrow">The Country</span>
+              <h3 id="context-stage-title" class="context-title">The car in its context</h3>
+              <p id="context-stage-lead" class="context-lead">
+                Before looking at the car, look at the country it came from. The figures below describe the broader national environment in <span id="context-active-year-label">1970</span>, offering background context without assuming that economic or demographic figures directly dictated vehicle design.
+              </p>
+            </div>
+            <div class="context-country-badge" id="context-country-badge">
+              <span class="context-badge-nation" id="context-badge-nation">Country</span>
+              <span class="context-badge-year" id="context-badge-year">Year</span>
+            </div>
+          </div>
+
+          <!-- DUAL DOSSIER: THIS CAR & ITS SETTING -->
+          <div class="context-dual-dossier" id="context-dual-dossier">
+            <div class="context-dossier-card context-dossier-car">
+              <div class="context-dossier-header">
+                <span class="context-dossier-eyebrow">This Car</span>
+                <h4 class="context-dossier-title" id="dossier-car-name">—</h4>
+              </div>
+              <ul class="context-dossier-list" id="dossier-car-list">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+            <div class="context-dossier-divider" aria-hidden="true">
+              <span class="context-dossier-connector">beside</span>
+            </div>
+            <div class="context-dossier-card context-dossier-country">
+              <div class="context-dossier-header">
+                <span class="context-dossier-eyebrow">Its Setting</span>
+                <h4 class="context-dossier-title" id="dossier-country-name">—</h4>
+              </div>
+              <ul class="context-dossier-list" id="dossier-country-list">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="context-inquiry-box">
+            <span class="context-inquiry-icon">¶</span>
+            <p class="context-inquiry-text" id="context-inquiry-text">
+              <strong>Investigation prompt:</strong> How did purchasing power, spatial concentration, urbanization, and motorization depth characterize the vehicle's domestic market environment?
+            </p>
+          </div>
+
+          <!-- Four Context Indicators Grid -->
+          <div class="context-indicators-grid" id="context-indicators-grid">
+            <!-- 1. GDP Per Capita -->
+            <div class="context-indicator-card" id="card-context-gdp">
+              <div class="context-card-top">
+                <span class="context-card-label">Economic Output</span>
+                <span class="context-card-code">NY.GDP.PCAP.KD</span>
+              </div>
+              <h4 class="context-card-title">GDP Per Capita</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-gdp">—</div>
+                <div class="context-card-unit">Constant 2015 US$ per person</div>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">An indicator of economic output per person, adjusted for inflation.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-gdp">Provides broad macroeconomic context for household purchasing power during this period.</p>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-gdp"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-gdp-start">1970</span>
+                  <span class="context-sparkline-caption" id="trend-context-gdp">Historical Trend</span>
+                  <span id="meta-context-gdp-end">2024</span>
+                </div>
+              </div>
+              <p class="context-card-desc"><em>What this does not prove:</em> National income does not determine which price segment a car targeted or what individual buyers could afford.</p>
+            </div>
+
+            <!-- 2. Population Density -->
+            <div class="context-indicator-card" id="card-context-density">
+              <div class="context-card-top">
+                <span class="context-card-label">Land &amp; Spatial Constraints</span>
+                <span class="context-card-code">EN.POP.DNST</span>
+              </div>
+              <h4 class="context-card-title">Population Density</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-density">—</div>
+                <div class="context-card-unit">People per km² of land</div>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">Average population per unit of land area.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-density">Describes how concentrated or dispersed the population was across national territory.</p>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-density"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-density-start">1970</span>
+                  <span class="context-sparkline-caption" id="trend-context-density">Historical Trend</span>
+                  <span id="meta-context-density-end">2023</span>
+                </div>
+              </div>
+              <p class="context-card-desc"><em>What this does not prove:</em> Density describes spatial settlement; it does not force manufacturers to produce vehicles of a single footprint.</p>
+            </div>
+
+            <!-- 3. Urbanization -->
+            <div class="context-indicator-card" id="card-context-urban">
+              <div class="context-card-top">
+                <span class="context-card-label">Settlement Pattern</span>
+                <span class="context-card-code">SP.URB.TOTL.IN.ZS</span>
+              </div>
+              <h4 class="context-card-title">Urbanization</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-urban">—</div>
+                <div class="context-card-unit">% living in urban areas</div>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">Share of the population living in urban areas.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-urban">Reflects the proportion of residents living in towns and cities versus regional communities.</p>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-urban"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-urban-start">1970</span>
+                  <span class="context-sparkline-caption" id="trend-context-urban">Historical Trend</span>
+                  <span id="meta-context-urban-end">2024</span>
+                </div>
+              </div>
+              <p class="context-card-desc"><em>What this does not prove:</em> Urban residence indicates population clustering; it does not demonstrate that a car was built only for city streets.</p>
+            </div>
+
+            <!-- 4. Passenger Cars Per 1,000 Inhabitants -->
+            <div class="context-indicator-card" id="card-context-cars">
+              <div class="context-card-top">
+                <span class="context-card-label">Motorization Rate</span>
+                <span class="context-card-code" id="code-context-cars">OECD / UNECE</span>
+              </div>
+              <h4 class="context-card-title">Passenger Cars</h4>
+              <div class="context-card-value-wrap">
+                <div class="context-card-value" id="val-context-cars">—</div>
+                <div class="context-card-unit">Cars per 1,000 inhabitants</div>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">How common private passenger cars were relative to population.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-cars">Measures personal car availability and the depth of the domestic passenger-vehicle fleet.</p>
+              </div>
+              <div class="context-sparkline-wrap">
+                <div class="context-sparkline-svg" id="sparkline-context-cars"></div>
+                <div class="context-sparkline-meta">
+                  <span id="meta-context-cars-start">1994</span>
+                  <span class="context-sparkline-caption" id="trend-context-cars">Harmonized Scope</span>
+                  <span id="meta-context-cars-end">2024</span>
+                </div>
+              </div>
+              <p class="context-card-desc" id="desc-context-cars"><em>What this does not prove:</em> Motorization rates measure vehicle availability; they do not explain why individual models adopted particular engines or body styles.</p>
+            </div>
+          </div>
+
+          <!-- Editorial Connection: WHAT DOES THIS MEAN FOR THE CAR? -->
+          <div class="context-meaning-stage" id="context-meaning-stage">
+            <div class="context-meaning-header">
+              <span class="context-meaning-eyebrow">Synthesis</span>
+              <h4 class="context-meaning-title">What does this mean for the car?</h4>
+            </div>
+            <p class="context-meaning-prose" id="context-meaning-prose">
+              <!-- Dynamically populated 1-3 concise editorial sentences -->
+            </p>
+            <div class="context-meaning-disclaimer">
+              <span class="context-disclaimer-tag">Historical Method</span>
+              <span class="context-disclaimer-text">These observations distinguish documented historical relationships from broad environmental context. Macroeconomic and demographic figures describe the national setting; they do not prove that individual engineering decisions were caused by national averages.</span>
+            </div>
+          </div>
+
+          <!-- Compact Sources & Provenance Footer -->
+          <div class="context-provenance-bar">
+            <details class="context-provenance-details">
+              <summary class="context-provenance-summary">Sources &amp; Methodology Information</summary>
+              <div class="context-provenance-content">
+                <div class="context-provenance-grid" id="context-provenance-grid"></div>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- COMPARISON GATEWAY -->
+        <section id="vehicle-comparison-stage" class="vehicle-comparison-stage">
+          <div class="comparison-stage-header">
+            <span class="comparison-eyebrow">Further Investigation</span>
+            <h3 class="comparison-title">Compare the cars</h3>
+            <p class="comparison-lead">Place two vehicles from the archive side by side. The country figures below are context for each selected year, not explanations of the vehicle data.</p>
+          </div>
+
+          <div class="comparison-selectors">
+            <div class="comparison-selector-column">
+              <div class="comparison-column-heading"><span>Car A</span><span class="comparison-column-rule"></span></div>
+              <label class="comparison-field">Country<select id="comparison-a-country"></select></label>
+              <label class="comparison-field">Manufacturer<select id="comparison-a-manufacturer"></select></label>
+              <label class="comparison-field">Model<select id="comparison-a-model"></select></label>
+              <label class="comparison-field">Year<select id="comparison-a-year"></select></label>
+            </div>
+            <div class="comparison-selector-column">
+              <div class="comparison-column-heading"><span>Car B</span><span class="comparison-column-rule"></span></div>
+              <label class="comparison-field">Country<select id="comparison-b-country"></select></label>
+              <label class="comparison-field">Manufacturer<select id="comparison-b-manufacturer"></select></label>
+              <label class="comparison-field">Model<select id="comparison-b-model"></select></label>
+              <label class="comparison-field">Year<select id="comparison-b-year"></select></label>
+            </div>
+          </div>
+
+          <div id="comparison-result" class="comparison-result is-hidden"></div>
+        </section>
+
+        <!-- HISTORICAL CONTEXT -->
+        <section id="why-cars-changed-stage" class="why-cars-changed-stage">
+          <div class="why-stage-header">
+            <span class="why-eyebrow">Historical Context</span>
+            <h3 class="why-title">Why did cars change?</h3>
+            <p class="why-lead">Cars did not change for one reason. Regulations, fuel costs, technology, manufacturing, consumer preferences, and economic conditions all shaped what manufacturers could and wanted to build. This context helps frame the patterns shown by the vehicle data; it does not claim that one factor caused a specific change unless the evidence directly supports that conclusion.</p>
+          </div>
+
+          <div class="why-selection-readout">
+            <span id="why-selected-country">Country</span>
+            <span class="why-selection-separator">·</span>
+            <span id="why-selected-year">Year</span>
+          </div>
+
+          <nav class="why-topic-nav" aria-label="Historical context topics">
+            <button type="button" class="why-topic-button is-active" data-why-topic="regulation">Regulation</button>
+            <button type="button" class="why-topic-button" data-why-topic="fuel">Fuel &amp; Energy</button>
+            <button type="button" class="why-topic-button" data-why-topic="technology">Technology</button>
+            <button type="button" class="why-topic-button" data-why-topic="manufacturing">Manufacturing</button>
+            <button type="button" class="why-topic-button" data-why-topic="consumer">Consumer &amp; Market</button>
+          </nav>
+
+          <div id="why-topic-panel" class="why-topic-panel"></div>
+          <p class="why-inquiry">Could these documented changes help explain what we see in the cars?</p>
+        </section>
       </div>
 
     </div>
@@ -398,6 +649,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="data/cars_metadata.js"></script>
 <script src="data/car_specs.js"></script>
 <script src="data/manufacturers_config.js"></script>
+<script src="data/country_context.js"></script>
 
 <script>
 // Modular reusable state
@@ -444,6 +696,730 @@ window.selectedManufacturer = null;
   const specStanceBars = document.getElementById("spec-stance-bars");
   const specNoDataNotice = document.getElementById("spec-no-data-notice");
   const specComparisonTable = document.getElementById("spec-comparison-table");
+
+  // Country context elements
+  const countryContextStage = document.getElementById("country-context-stage");
+  const contextActiveYearLabel = document.getElementById("context-active-year-label");
+  const contextBadgeNation = document.getElementById("context-badge-nation");
+  const contextBadgeYear = document.getElementById("context-badge-year");
+  const contextProvenanceGrid = document.getElementById("context-provenance-grid");
+
+  // Comparison gateway elements
+  const comparisonResult = document.getElementById("comparison-result");
+  const comparisonSides = {
+    a: {
+      country: document.getElementById("comparison-a-country"),
+      manufacturer: document.getElementById("comparison-a-manufacturer"),
+      model: document.getElementById("comparison-a-model"),
+      year: document.getElementById("comparison-a-year")
+    },
+    b: {
+      country: document.getElementById("comparison-b-country"),
+      manufacturer: document.getElementById("comparison-b-manufacturer"),
+      model: document.getElementById("comparison-b-model"),
+      year: document.getElementById("comparison-b-year")
+    }
+  };
+  const comparisonState = { a: {}, b: {} };
+  const whySelectedCountry = document.getElementById("why-selected-country");
+  const whySelectedYear = document.getElementById("why-selected-year");
+  const whyTopicPanel = document.getElementById("why-topic-panel");
+  const whyTopicButtons = document.querySelectorAll(".why-topic-button");
+  let activeWhyTopic = "regulation";
+
+  const whyContextEntries = [
+  // ==========================================
+  // UNITED STATES (USA)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "US Federal Emissions & Bumper Standards", start: 1970, end: 1974, regions: ["USA"],
+    text: "The Clean Air Act of 1970 authorized the newly established EPA to set National Ambient Air Quality Standards and mandate 90% reductions in tailpipe hydrocarbons and carbon monoxide. In 1971, NHTSA issued FMVSS 215, requiring passenger cars to withstand 5-mph front and 2.5-mph rear barrier impacts by model year 1973/1974, leading to prominent energy-absorbing bumper structures.",
+    source: "US EPA: Clean Air Act History / NHTSA FMVSS Standards", url: "https://www.epa.gov/clean-air-act-overview/clean-air-act-requirements-and-history"
+  },
+  {
+    topic: "regulation", title: "Corporate Average Fuel Economy & Catalytic Mandate", start: 1975, end: 1985, regions: ["USA"],
+    text: "Congress passed the Energy Policy and Conservation Act of 1975, establishing Corporate Average Fuel Economy (CAFE) standards requiring passenger car fleets to achieve 18.0 mpg in model year 1978, rising to 27.5 mpg by 1985. Meeting tightening EPA hydrocarbon and CO limits concurrently prompted the near-universal adoption of oxidation and three-way catalytic converters on new gasoline vehicles.",
+    source: "NHTSA: CAFE Overview and Fleet Benchmarks", url: "https://www.nhtsa.gov/laws-regulations/corporate-average-fuel-economy"
+  },
+  {
+    topic: "regulation", title: "Leaded Fuel Phase-Down & Passive Restraints", start: 1986, end: 1993, regions: ["USA"],
+    text: "The EPA drastically lowered allowable lead in motor fuel to 0.10 grams per gallon on January 1, 1986, concluding the lead phase-down. Meanwhile, NHTSA's revised FMVSS 208 rule phased in mandatory automatic crash protection, requiring automatic seat belts or driver airbags across all new passenger cars by model year 1990.",
+    source: "US EPA Lead Phase-down Archive / NHTSA FMVSS 208 History", url: "https://www.epa.gov/history/epa-history-lead"
+  },
+  {
+    topic: "regulation", title: "1990 Clean Air Act Amendments & Tier 1 Standards", start: 1994, end: 2003, regions: ["USA"],
+    text: "The Clean Air Act Amendments of 1990 created the EPA Tier 1 emissions standards, phased in across light-duty vehicles from model years 1994 to 1996. The statute also mandated standardized On-Board Diagnostics (OBD-II) starting in 1996, and Congress required dual front airbags across all light vehicles by model year 1998.",
+    source: "US EPA: Light-Duty Vehicle Emission Standards History", url: "https://www.epa.gov/regulations-emissions-vehicles-and-engines"
+  },
+  {
+    topic: "regulation", title: "Tier 2 Vehicle Standards & EISA Reform", start: 2004, end: 2016, regions: ["USA"],
+    text: "EPA Tier 2 standards phased in from 2004 to 2009, subjecting SUVs, pickups, and passenger cars to the same national emissions bin limits (averaging 0.07 g/mi NOx) and capping gasoline sulfur at 30 ppm. The Energy Independence and Security Act of 2007 mandated modern attribute-based footprint CAFE standards targeting a fleet average of 35 mpg by 2020.",
+    source: "US EPA / NHTSA: Light-Duty Greenhouse Gas and CAFE Rule", url: "https://www.epa.gov/regulations-emissions-vehicles-and-engines"
+  },
+  {
+    topic: "regulation", title: "Tier 3 Emissions & Harmonized Greenhouse Gas Standards", start: 2017, end: 2024, regions: ["USA"],
+    text: "EPA Tier 3 standards phased in from model years 2017 through 2025, requiring an 80% reduction in fleet average exhaust NMOG+NOx (down to 30 mg/mi) and lowering fuel sulfur to 10 ppm. Concurrently, harmonized EPA greenhouse gas and NHTSA CAFE rules established corporate CO2 targets for light vehicles through 2026.",
+    source: "US EPA: Final Rule for Control of Air Pollution from Motor Vehicles: Tier 3", url: "https://www.epa.gov/tier3"
+  },
+  // Fuel (USA)
+  {
+    topic: "fuel", title: "High-Octane Leaded Era & 1973 Oil Embargo", start: 1970, end: 1974, regions: ["USA"],
+    text: "High-compression American V8s utilized leaded premium gasoline with anti-knock additives. The October 1973 OPEC oil embargo abruptly quadrupled global crude prices, causing domestic fuel rationing and prompting Congress to pass the Emergency Highway Energy Conservation Act of 1974 establishing a national 55-mph speed limit.",
+    source: "US EIA: History of Energy in the United States", url: "https://www.eia.gov/energyexplained/"
+  },
+  {
+    topic: "fuel", title: "Second Oil Shock & Unleaded Fuel Infrastructure", start: 1975, end: 1985, regions: ["USA"],
+    text: "The federal government mandated dedicated unleaded gasoline nozzles and pumps nationwide to support catalytic converters. The 1979 Iranian Revolution triggered a second global oil shock, with US retail gasoline prices doubling from roughly 65 cents per gallon in 1978 to over $1.30 per gallon by 1981, accelerating demand for fuel-efficient models.",
+    source: "US EIA: Petroleum Chronology and Price Shocks", url: "https://www.eia.gov/totalenergy/data/monthly/"
+  },
+  {
+    topic: "fuel", title: "Gasoline Price Softening & Reformulated Gasoline", start: 1986, end: 1999, regions: ["USA"],
+    text: "Crude oil prices collapsed during the 1986 'oil glut', initiating a decade of low real fuel prices in the US. In 1995, the EPA implemented the Reformulated Gasoline (RFG) program under the Clean Air Act, mandating oxygenated and lower-volatility gasoline formulations in metropolitan areas with severe ozone pollution.",
+    source: "US EPA: Reformulated Gasoline Program Archive", url: "https://www.epa.gov/gasoline-standards/reformulated-gasoline"
+  },
+  {
+    topic: "fuel", title: "Crude Volatility, Ethanol Blends & Early Electrification", start: 2000, end: 2014, regions: ["USA"],
+    text: "Global crude oil prices experienced historic volatility through the 2000s, peaking above $140 per barrel in July 2008. Federal legislation (Energy Policy Act of 2005 and EISA 2007) established the Renewable Fuel Standard mandating nationwide E10 ethanol blending, while volatile energy costs accompanied early consumer electric vehicle commercialization including the Tesla Model S.",
+    source: "US EIA / EPA: Renewable Fuel Standard & Alternative Fuel History", url: "https://www.epa.gov/renewable-fuel-standard-program"
+  },
+  {
+    topic: "fuel", title: "Ultra-Low Sulfur Fuels & Electric Infrastructure", start: 2015, end: 2024, regions: ["USA"],
+    text: "The US transportation energy landscape incorporated ultra-low sulfur gasoline (capped at 10 ppm under Tier 3) alongside expanding public electric charging networks. Federal policies including the Inflation Reduction Act of 2022 established consumer tax credits for qualifying clean vehicles.",
+    source: "US Department of Energy: Alternative Fuels Data Center", url: "https://afdc.energy.gov/"
+  },
+  // Technology (USA)
+  {
+    topic: "technology", title: "Transitional Emissions Hardware & Compression Reductions", start: 1970, end: 1974, regions: ["USA"],
+    text: "Ahead of widespread catalytic converter availability, automakers met initial Clean Air Act limits by reducing compression ratios (often to 8.5:1 or lower), altering ignition timing, and fitting Exhaust Gas Recirculation (EGR) valves and air injection reactor pumps, which noticeably reduced engine specific output.",
+    source: "Society of Automotive Engineers (SAE) Technical Papers", url: "https://www.sae.org/"
+  },
+  {
+    topic: "technology", title: "Catalytic Converters, Electronic Ignition & Turbocharging", start: 1975, end: 1985, regions: ["USA"],
+    text: "Catalytic converters became standard equipment on American road cars from 1975 onward. Automakers introduced high-energy electronic ignition systems, early electronic throttle-body injection (TBI), and pioneer production turbocharging applications (such as the turbocharged Buick V6) to regain performance within emissions limits.",
+    source: "US EPA / SAE Technical Archive", url: "https://www.epa.gov/clean-air-act-overview/clean-air-act-requirements-and-history"
+  },
+  {
+    topic: "technology", title: "Multi-Port Fuel Injection & Digital Engine Controls", start: 1986, end: 1995, regions: ["USA"],
+    text: "Domestic passenger cars transitioned en masse from carburetors and basic throttle-body injection to electronic multi-port fuel injection (MPFI) and microprocessor engine management (e.g., Ford EEC-IV, GM OBD-I). Four-speed overdrive automatic transmissions, distributorless ignition, and Anti-lock Braking Systems (ABS) became mainstream.",
+    source: "Bosch Automotive Handbook / Ward's Automotive Yearbook", url: "https://www.bosch-mobility.com/"
+  },
+  {
+    topic: "technology", title: "Standardized OBD-II, Variable Cam Timing & Advanced Safety", start: 1996, end: 2009, regions: ["USA"],
+    text: "Automakers adopted standardized On-Board Diagnostics (OBD-II), variable cam timing, multi-valve cylinder heads, and integrated electronic stability control. Crash safety engineering advanced rapidly with computer-modeled crumple zones, side-impact door beams, and dual-stage front and side-curtain airbags.",
+    source: "NHTSA: Vehicle Safety Research / SAE International", url: "https://www.nhtsa.gov/"
+  },
+  {
+    topic: "technology", title: "Downsized Turbo Powertrains & Dedicated Electric Platforms", start: 2010, end: 2024, regions: ["USA"],
+    text: "To meet tightening federal fuel economy and GHG rules, automakers deployed direct gasoline injection, twin-scroll turbocharging (such as Ford EcoBoost), cylinder deactivation, and 8- to 10-speed planetary automatics. Battery-electric platforms advanced with high-voltage lithium-ion skateboard architecture and camera/radar driver assistance suites.",
+    source: "US EPA Automotive Trends Report", url: "https://www.epa.gov/automotive-trends"
+  },
+  // Manufacturing (USA)
+  {
+    topic: "manufacturing", title: "Traditional Assembly & Downsizing Restructuring", start: 1970, end: 1985, regions: ["USA"],
+    text: "American vehicle production historically relied on massive body-on-frame assembly plants. Following the 1970s oil shocks and federal regulations, domestic manufacturers undertook extensive multi-billion-dollar downsizing programs, retooling plants for lighter transverse front-wheel-drive unibody architectures.",
+    source: "US Department of Commerce / Automotive News Manufacturing Archive", url: "https://www.autonews.com/"
+  },
+  {
+    topic: "manufacturing", title: "Transplant Factories & Lean Production Adoption", start: 1986, end: 2009, regions: ["USA"],
+    text: "The establishment of Japanese transplant factories across the American Midwest and South (Honda Marysville, Nissan Smyrna, Toyota NUMMI) demonstrated flexible lean manufacturing in North America. The Detroit Big Three invested heavily in automated robotics, flexible stamping, and computer-integrated manufacturing.",
+    source: "MIT International Motor Vehicle Program (IMVP)", url: "https://imvp.mit.edu/"
+  },
+  {
+    topic: "manufacturing", title: "Supplier Spin-offs, Modular Platforms & EV Joint Ventures", start: 2010, end: 2024, regions: ["USA"],
+    text: "Automakers streamlined assembly using modular platform architectures, flexible robotic body shops, and Tier 1 component systems. Production increasingly incorporated dedicated high-voltage battery cell joint ventures ('Gigafactories') to support electrified model lineups.",
+    source: "US Department of Energy: Advanced Manufacturing Office", url: "https://www.energy.gov/"
+  },
+  // Consumer (USA)
+  {
+    topic: "consumer", title: "Muscle Car Retreat & Compact Economy Import Growth", start: 1970, end: 1981, regions: ["USA"],
+    text: "Rising insurance premiums, federal emissions controls, and the 1973/1979 oil crises contributed to a sharp decline in traditional high-compression muscle cars. Consumer demand shifted toward fuel-efficient domestic compacts and imported subcompacts from Japan and Germany, whose US market share doubled during this decade.",
+    source: "Ward's Automotive Intelligence Fleet Data", url: "https://wardsintelligence.informa.com/"
+  },
+  {
+    topic: "consumer", title: "The Minivan & Aerodynamic Front-Wheel-Drive Family Cars", start: 1982, end: 1995, regions: ["USA"],
+    text: "Consumer demand moved away from traditional full-size station wagons following Chrysler's 1984 launch of front-wheel-drive minivans (Dodge Caravan/Plymouth Voyager) and Ford's aerodynamic 1986 Taurus. Family transport increasingly prioritized flexible interior seating, front-wheel drive traction, and car-like ride comfort.",
+    source: "Ward's Automotive Yearbook Archive", url: "https://wardsintelligence.informa.com/"
+  },
+  {
+    topic: "consumer", title: "SUV and Light-Truck Boom", start: 1996, end: 2009, regions: ["USA"],
+    text: "Consumer purchasing in the United States shifted decisively toward four-wheel-drive sport utility vehicles, pickup trucks, and car-based crossovers. Classified as light trucks under CAFE regulations, these vehicles offered higher ride height, command seating, and cargo versatility.",
+    source: "US EPA: Automotive Trends", url: "https://www.epa.gov/automotive-trends"
+  },
+  {
+    topic: "consumer", title: "Crossover Dominance & Passenger Sedan Retreat", start: 2010, end: 2024, regions: ["USA"],
+    text: "Light trucks, SUVs, and unibody crossovers expanded to represent over 78% of US new light vehicle sales by 2023. Higher driving position, all-wheel drive, and flexible cargo packaging led major domestic manufacturers to phase out most traditional compact and midsize sedans.",
+    source: "US Bureau of Transportation Statistics / EPA Automotive Trends", url: "https://www.bts.gov/"
+  },
+
+  // ==========================================
+  // JAPAN (JPN)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "1973/1975 Emissions Standards & 1976 Kei Revision", start: 1971, end: 1977, regions: ["JPN"],
+    text: "Responding to severe urban smog, the Japanese Ministry of Transport and Environment Agency established phased emissions targets modeled on the US Muskie Act. Because two-stroke Kei engines struggled to meet the limits, the Ministry revised light-automobile regulations on January 1, 1976, raising maximum engine displacement from 360cc to 550cc and expanding vehicle dimensions.",
+    source: "Japan Automobile Manufacturers Association (JAMA) / MLIT Archive", url: "https://www.jama-english.jp/"
+  },
+  {
+    topic: "regulation", title: "1978 Japanese Muskie Standards & Displacement Tax", start: 1978, end: 1989, regions: ["JPN"],
+    text: "Japan's 1978 emissions standard took full effect, setting a world-leading NOx limit of 0.25 g/km for passenger cars. Concurrently, Japan's annual Automobile Tax structured rates sharply by engine displacement (with a major threshold above 2,000cc) and vehicle width (exceeding 1,700mm in the '3-number' tax bracket), heavily steering Japanese domestic market designs toward compact 2.0L engines.",
+    source: "Ministry of the Environment (MOE) Japan: Vehicle Exhaust Standards", url: "https://www.env.go.jp/en/air/"
+  },
+  {
+    topic: "regulation", title: "1990 Kei 660cc Standards & 1992 Automotive NOx Law", start: 1990, end: 1998, regions: ["JPN"],
+    text: "In March 1990, the Ministry revised Kei car regulations, expanding maximum displacement from 550cc to 660cc and length by 100mm. In 1992, the Diet enacted the Automotive NOx Law, restricting high-polluting diesel and commercial vehicles in designated Tokyo and Osaka urban areas. Concurrently, JAMA manufacturers maintained a voluntary 280-PS domestic power limit.",
+    source: "Japanese Ministry of Land, Infrastructure, Transport and Tourism (MLIT)", url: "https://www.mlit.go.jp/en/"
+  },
+  {
+    topic: "regulation", title: "1999 Top Runner Fuel Economy Program & Modern Clean Air", start: 1999, end: 2009, regions: ["JPN"],
+    text: "Under the revised Energy Conservation Law of 1998, Japan introduced the 'Top Runner' program, mandating that average vehicle fuel economy match or exceed the most efficient market leader in each weight class by target years. The NOx Law was expanded in 2001 to regulate Particulate Matter (PM), prompting municipal bans on non-filter diesels in Tokyo in 2003.",
+    source: "Agency for Natural Resources and Energy (ANRE) Japan: Top Runner Program", url: "https://www.enecho.meti.go.jp/en/"
+  },
+  {
+    topic: "regulation", title: "2015/2020 Top Runner Targets & WLTC Adoption", start: 2010, end: 2024, regions: ["JPN"],
+    text: "Japan established Top Runner fuel economy standards for 2015 and 2020, transitioning official certification from the JC08 test cycle to the Worldwide Harmonized Light Vehicles Test Cycle (WLTC) in 2018. In 2021, MLIT mandated Advanced Emergency Braking Systems (AEBS) across all newly manufactured domestic passenger models.",
+    source: "MLIT Japan: Fuel Efficiency Standards and Environmental Standards", url: "https://www.mlit.go.jp/jidosha/jidosha_fr1_000010.html"
+  },
+  // Fuel (JPN)
+  {
+    topic: "fuel", title: "High Import Energy Dependence & 1973 Oil Crisis", start: 1971, end: 1974, regions: ["JPN"],
+    text: "Japan relied on imports for virtually all domestic petroleum consumption. The 1973 OPEC oil crisis delivered a severe economic shock to Japanese industry, prompting national energy conservation directives and accelerating the development of small, highly fuel-efficient engines.",
+    source: "Petroleum Association of Japan (PAJ) Historical Archive", url: "https://www.paj.gr.jp/english/"
+  },
+  {
+    topic: "fuel", title: "Early Regular Unleaded Fuel Leadership", start: 1975, end: 1989, regions: ["JPN"],
+    text: "Japan became the first industrialized nation to establish widespread regular unleaded gasoline availability in 1975, motivated by the rapid adoption of oxidation and three-way catalytic converters to combat metropolitan photochemical smog.",
+    source: "Petroleum Association of Japan (PAJ) Historical Archive", url: "https://www.paj.gr.jp/english/"
+  },
+  {
+    topic: "fuel", title: "Premium High-Octane Availability & Urban Diesel Restrictions", start: 1990, end: 2009, regions: ["JPN"],
+    text: "Widespread availability of 100 RON premium unleaded gasoline supported high-compression and turbocharged performance engines. In 2003, the Tokyo Metropolitan Government implemented strict diesel particulate regulations, virtually eliminating conventional diesel passenger cars from the Japanese domestic market.",
+    source: "Tokyo Metropolitan Government Bureau of Environment / PAJ", url: "https://www.kankyo.metro.tokyo.lg.jp/en/"
+  },
+  {
+    topic: "fuel", title: "Hybrid Efficiency Leadership & Electrification Transition", start: 2010, end: 2024, regions: ["JPN"],
+    text: "Gasoline-electric hybrid powertrains achieved unprecedented market penetration in Japan, accounting for over 40% of all domestic passenger car sales by the early 2020s. Government green vehicle tax incentives supported hybrid and zero-emission vehicles alongside nationwide fast-charging infrastructure.",
+    source: "JAMA: Motor Vehicle Statistics of Japan", url: "https://www.jama-english.jp/"
+  },
+  // Technology (JPN)
+  {
+    topic: "technology", title: "Lean Combustion, CVCC & Rotary Exploration", start: 1971, end: 1979, regions: ["JPN"],
+    text: "Japanese engineers explored innovative combustion technologies to meet emissions limits. In 1973, Honda commercialized the Compound Vortex Controlled Combustion (CVCC) engine, meeting strict 1975 Japanese and US Clean Air Act limits without a catalytic converter. Mazda pioneered production Wankel rotary engines, while electronic transistorized ignitions spread widely.",
+    source: "Society of Automotive Engineers of Japan (JSAE): 240 Landmarks of Japanese Automotive Technology", url: "https://www.jsae.or.jp/english/"
+  },
+  {
+    topic: "technology", title: "Multi-Valve DOHC Engineering & Electronic Control", start: 1980, end: 1989, regions: ["JPN"],
+    text: "Japanese manufacturers pioneered mass-production four-valve-per-cylinder DOHC engines (e.g., Toyota 4A-GE, Nissan RB-series) and computerized electronic fuel injection across popular passenger cars, combining high engine speeds, fuel economy, and emissions compliance.",
+    source: "Society of Automotive Engineers of Japan (JSAE)", url: "https://www.jsae.or.jp/english/"
+  },
+  {
+    topic: "technology", title: "Variable Valve Timing & Performance All-Wheel Drive", start: 1990, end: 1999, regions: ["JPN"],
+    text: "The 1990s saw widespread commercialization of variable valve timing and lift systems (Honda VTEC, Toyota VVT-i, Mitsubishi MIVEC) and electronically managed all-wheel-drive systems (Nissan ATTESA E-TS, Mitsubishi Super AYC, Subaru Symmetrical AWD). In 1997, Toyota introduced the world's first mass-market hybrid, the Prius.",
+    source: "JSAE Automotive Engineering Milestones Archive", url: "https://www.jsae.or.jp/english/"
+  },
+  {
+    topic: "technology", title: "Mainstream Hybrid Systems & Continuous Variable Transmissions", start: 2000, end: 2009, regions: ["JPN"],
+    text: "Automakers expanded full-hybrid powertrains (Toyota Hybrid System II) into high-volume sedans and SUVs, while continuously variable transmissions (CVTs) became standard in compact and Kei vehicles to maximize fuel economy under the Top Runner program. Concurrently, advanced electronically controlled performance all-wheel-drive systems matured, including Mitsubishi Super AYC, Subaru DCCD, and Nissan ATTESA.",
+    source: "JSAE Automotive Engineering Archive", url: "https://www.jsae.or.jp/english/"
+  },
+  {
+    topic: "technology", title: "High-Thermal-Efficiency Engines & Integrated Active Safety", start: 2010, end: 2024, regions: ["JPN"],
+    text: "Japanese engine development pushed thermal efficiency beyond 40% using high-compression Atkinson-cycle combustion (e.g., Toyota Dynamic Force). Advanced driver assistance systems utilizing stereo camera and millimeter-wave radar suites (Subaru EyeSight, Toyota Safety Sense) became standard across passenger vehicles.",
+    source: "JSAE Technical Review", url: "https://www.jsae.or.jp/english/"
+  },
+  // Manufacturing (JPN)
+  {
+    topic: "manufacturing", title: "Toyota Production System & Lean Quality Circles", start: 1971, end: 1980, regions: ["JPN"],
+    text: "Japanese automakers refined just-in-time production, pull-scheduling (kanban), and mistake-proofing (poka-yoke). Higher assembly precision, lower defect rates, and rapid die-change stamping enabled Japanese vehicle exports to expand globally.",
+    source: "Taiichi Ohno, Toyota Production System / MIT IMVP", url: "https://global.toyota/en/company/vision-and-philosophy/production-system/"
+  },
+  {
+    topic: "manufacturing", title: "Flexible Robotics & Overseas Transplant Expansion", start: 1981, end: 1990, regions: ["JPN"],
+    text: "Japan became the world's largest automotive producer in 1980. To mitigate trade frictions and Voluntary Export Restraints, Japanese automakers established major transplant assembly plants across North America and Europe while deploying advanced automated welding and paint robots domestically.",
+    source: "JAMA Historical Manufacturing Overview", url: "https://www.jama-english.jp/"
+  },
+  {
+    topic: "manufacturing", title: "Post-Bubble Restructuring & Global Alliances", start: 1991, end: 2009, regions: ["JPN"],
+    text: "The collapse of the Japanese asset price bubble in the early 1990s initiated intensive platform rationalization and cost-reduction drives. The era saw historic cross-border alliances, most notably the 1999 Renault-Nissan Alliance, and shared platform development across corporate families.",
+    source: "JAMA / University of Tokyo Manufacturing Management Research Center", url: "https://www.jama-english.jp/"
+  },
+  {
+    topic: "manufacturing", title: "Modular Architectures (TNGA) & Multi-Brand Partnerships", start: 2010, end: 2024, regions: ["JPN"],
+    text: "Automakers deployed unified modular platforms, exemplified by the Toyota New Global Architecture (TNGA) and Subaru Global Platform (SGP), standardizing chassis components and driving positions while increasing body torsional rigidity. Collaborative joint ventures (e.g., Toyota-Subaru 86/BRZ) shared development costs for specialist sports models.",
+    source: "Toyota Global TNGA Architecture Archive / JAMA", url: "https://global.toyota/en/"
+  },
+  // Consumer (JPN)
+  {
+    topic: "consumer", title: "Rapid Motorization & Affordable Sports Coupe Boom", start: 1971, end: 1985, regions: ["JPN"],
+    text: "Rising household incomes drove rapid domestic motorization. Enthusiastic younger buyers embraced accessible, stylish sports coupes and liftbacks such as the Nissan Fairlady Z, Toyota Celica, Skyline GT-R, and Toyota Sprinter Trueno AE86.",
+    source: "JAMA Historical Market Trends", url: "https://www.jama-english.jp/"
+  },
+  {
+    topic: "consumer", title: "Bubble Economy Luxury & High-Performance Boom", start: 1986, end: 1991, regions: ["JPN"],
+    text: "During Japan's late-1980s asset bubble, strong consumer purchasing power drove an unprecedented boom in luxury pillarless hardtops, twin-turbo sports GTs, and advanced engineering showcases, prompting the launch of dedicated export luxury channels (Acura, Lexus, Infiniti).",
+    source: "JAMA Automotive Statistics / Bank of Japan Historical Data", url: "https://www.jama-english.jp/"
+  },
+  {
+    topic: "consumer", title: "Space-Utility Shift: Kei Tall-Wagons & Minivans", start: 1992, end: 2009, regions: ["JPN"],
+    text: "Following the economic slowdown of the 1990s, consumer demand pivoted decisively from traditional sedans toward space-efficient 'tall-wagon' Kei cars (Suzuki Wagon R, Daihatsu Move) and versatile three-row family minivans (Honda Stepwgn, Toyota Estima/Alphard).",
+    source: "Japan Mini Vehicles Association (Zenkeijikyo) Annual Statistics", url: "https://www.zenkeijikyo.or.jp/"
+  },
+  {
+    topic: "consumer", title: "Kei Car Dominance & Micro-Van Versatility", start: 2010, end: 2024, regions: ["JPN"],
+    text: "Kei-class microcars expanded to capture over 35% of all new passenger car registrations in Japan. Super-height sliding-door wagons like the Honda N-Box, Daihatsu Tanto, and Suzuki Spacia dominated sales rankings, favored for low taxes, tight turning radii, and exceptional packaging.",
+    source: "Zenkeijikyo Annual Registration Data / JAMA", url: "https://www.zenkeijikyo.or.jp/"
+  },
+
+  // ==========================================
+  // GERMANY (DEU)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "ECE Regulation 15 & Federal Immission Control Act", start: 1970, end: 1984, regions: ["DEU"],
+    text: "West Germany established baseline emissions compliance through UNECE Regulation 15 and passed the Federal Immission Control Act (BImSchG) in 1974. Emissions standards were updated iteratively through ECE R15 amendments without requiring catalytic converters on domestic models.",
+    source: "German Federal Ministry for the Environment (BMUV) / UNECE", url: "https://www.bmuv.de/en/"
+  },
+  {
+    topic: "regulation", title: "German G-Kat Tax Incentives & Early Catalytic Transition", start: 1985, end: 1991, regions: ["DEU"],
+    text: "Responding to public alarm over acid rain and forest dieback (Waldsterben), West Germany introduced aggressive vehicle tax incentives in 1985 for cars equipped with controlled three-way catalytic converters (G-Kat). This spurred rapid adoption of catalysts in the German market years ahead of European Community mandates.",
+    source: "Federal Environment Agency (Umweltbundesamt - UBA): History of Air Pollution Control", url: "https://www.umweltbundesamt.de/en/"
+  },
+  {
+    topic: "regulation", title: "Euro 1 & Euro 2 European Harmonization", start: 1992, end: 1999, regions: ["DEU"],
+    text: "Directive 91/441/EEC (Euro 1) came into force in July 1992 for new type approvals and January 1993 for all registrations, establishing the first unified European emission limits and mandating closed-loop three-way catalytic converters on all new petrol cars, followed by Euro 2 in 1996.",
+    source: "European Environment Agency (EEA): Road Transport Emissions Regulations", url: "https://www.eea.europa.eu/"
+  },
+  {
+    topic: "regulation", title: "Euro 3/4 & Urban Low-Emission Environmental Zones", start: 2000, end: 2013, regions: ["DEU"],
+    text: "Euro 3 (2000) and Euro 4 (2005) introduced European on-board diagnostics (EOBD) and reduced permissible particulate matter and NOx. In 2008, Germany established municipal low-emission zones (Umweltzonen), requiring colored windshield badges (Plaketten) to enter major city centers like Berlin, Munich, and Frankfurt.",
+    source: "Umweltbundesamt (UBA): Environmental Zones in Germany", url: "https://www.umweltbundesamt.de/themen/luft/umweltzonen-in-deutschland"
+  },
+  {
+    topic: "regulation", title: "Euro 6, Real Driving Emissions & WLTP Transition", start: 2014, end: 2024, regions: ["DEU"],
+    text: "Euro 6 standards tightened light diesel NOx limits to 80 mg/km. Following the 2015 diesel emissions controversy, the EU introduced Real Driving Emissions (RDE) testing with on-vehicle PEMS analyzers and made the Worldwide Harmonized Light Vehicles Test Procedure (WLTP) mandatory for all registrations in 2018.",
+    source: "European Commission Directorate-General for Internal Market", url: "https://single-market-economy.ec.europa.eu/sectors/automotive-industry_en"
+  },
+  // Fuel (DEU)
+  {
+    topic: "fuel", title: "Petrol Lead Law & European Fuel Quality", start: 1971, end: 1984, regions: ["DEU"],
+    text: "West Germany enacted the Petrol Lead Law (Benzinbleigesetz) in 1971, capping petrol lead content at 0.15 g/L by 1976, one of the strictest limits in Europe at the time.",
+    source: "German Federal Ministry of Finance (BMF) Tax Statistics / UBA", url: "https://www.umweltbundesamt.de/en/"
+  },
+  {
+    topic: "fuel", title: "Unleaded Fuel Network Rollout & Leaded Phaseout", start: 1985, end: 1999, regions: ["DEU"],
+    text: "Germany led the European rollout of unleaded Euro-super 95 RON gasoline through tax differentials, establishing fueling infrastructure along transit corridors to support G-Kat adoption before leaded petrol was completely banned across the EU in 2000.",
+    source: "Umweltbundesamt Archive / European Fuel Quality Directives", url: "https://www.umweltbundesamt.de/en/"
+  },
+  {
+    topic: "fuel", title: "Favorable Diesel Excise Duty & The European Diesel Boom", start: 2000, end: 2014, regions: ["DEU"],
+    text: "German energy taxation levied substantially lower excise duty on diesel fuel than petrol. Favorable running costs spurred mass consumer adoption of turbocharged direct-injection (TDI/CDI) passenger vehicles across executive and family classes.",
+    source: "Federal Ministry of Finance / VDA Fuel Statistics", url: "https://www.vda.de/en"
+  },
+  {
+    topic: "fuel", title: "Post-2015 Diesel Retraction & High-Power Charging Infrastructure", start: 2015, end: 2024, regions: ["DEU"],
+    text: "Following diesel emissions scrutiny and urban driving bans in cities like Stuttgart and Hamburg, consumer demand shifted toward petrol hybrids and battery electrics. The Autobahn network saw rapid deployment of high-power Combined Charging System (CCS) charging plazas.",
+    source: "Federal Network Agency (Bundesnetzagentur): EV Charging Infrastructure", url: "https://www.bundesnetzagentur.de/en/"
+  },
+  // Technology (DEU)
+  {
+    topic: "technology", title: "Mechanical Continuous Injection & Anti-Lock Braking", start: 1971, end: 1979, regions: ["DEU"],
+    text: "Bosch continuous mechanical fuel injection (K-Jetronic) became standard across high-performance European cars in 1973. In 1978, Bosch and Mercedes-Benz commercialized the world's first modern multi-channel electronic Anti-lock Braking System (ABS), transforming active crash avoidance.",
+    source: "Robert Bosch GmbH Historical Archives: Milestones of Automotive Technology", url: "https://www.bosch.com/company/history/"
+  },
+  {
+    topic: "technology", title: "Digital Engine Management & Multi-Valve Powertrains", start: 1980, end: 1989, regions: ["DEU"],
+    text: "Bosch Motronic digital engine electronics integrated fuel injection and ignition timing into a single microprocessor ECU. Closed-loop oxygen sensor control enabled precise stoichiometric fueling for three-way catalytic converters across multi-valve four, six, and eight-cylinder engines.",
+    source: "Bosch Mobility Technology History / VDA", url: "https://www.bosch-mobility.com/"
+  },
+  {
+    topic: "technology", title: "Direct-Injection TDI Turbodiesels & Electronic Stability Program", start: 1990, end: 2003, regions: ["DEU"],
+    text: "Audi and Volkswagen introduced direct-injection electronic turbodiesels (TDI) in 1989/1991, transforming passenger diesel efficiency. In 1995, Bosch and Mercedes-Benz commercialized the Electronic Stability Program (ESP), which quickly became a standard safety benchmark.",
+    source: "VDA Technical Review / Bosch History", url: "https://www.vda.de/en"
+  },
+  {
+    topic: "technology", title: "Dual-Clutch Transmissions (DSG) & Turbocharged Downsizing", start: 2004, end: 2013, regions: ["DEU"],
+    text: "Volkswagen Group launched the world's first mass-production dual-clutch transmission (DSG) in 2003, delivering seamless gear changes without torque interruption. Automakers paired transmissions with downsized direct-injection turbocharged petrol engines (TSI/TFSI).",
+    source: "VDA Technical Milestones Archive", url: "https://www.vda.de/en"
+  },
+  {
+    topic: "technology", title: "Dedicated EV Platforms & 800-Volt Charging Architectures", start: 2014, end: 2024, regions: ["DEU"],
+    text: "German manufacturers introduced dedicated modular battery-electric platforms (VW MEB/PPE) and pioneering 800-volt high-speed electrical architectures (Porsche Taycan), enabling sustained high charging power alongside active air suspensions and twin-scroll turbocharging with 48V mild hybrid assistance.",
+    source: "VDA Innovation Reports / Manufacturer Technical Releases", url: "https://www.vda.de/en"
+  },
+  // Manufacturing (DEU)
+  {
+    topic: "manufacturing", title: "Premium Engineering Export Focus & Early Platform Sharing", start: 1971, end: 1989, regions: ["DEU"],
+    text: "German automotive manufacturing focused on high-precision machining, automated body welding, and premium quality assembly. Volkswagen and Audi established early modular platform sharing (e.g., VW Passat / Audi 80) to achieve economies of scale.",
+    source: "VDA Annual Industry Reports", url: "https://www.vda.de/en"
+  },
+  {
+    topic: "manufacturing", title: "Post-Reunification Expansion & Group Platform Standardization", start: 1990, end: 2011, regions: ["DEU"],
+    text: "German manufacturers restructured and expanded into the eastern federal states, building state-of-the-art facilities like VW Zwickau. Carmakers standardized components across corporate groups (VW, Audi, SEAT, Skoda), sharing engines, transmissions, and floorpans.",
+    source: "VDA / German Federal Statistical Office (Destatis)", url: "https://www.destatis.de/EN/"
+  },
+  {
+    topic: "manufacturing", title: "Modular Transverse Toolkit (MQB) Architecture", start: 2012, end: 2024, regions: ["DEU"],
+    text: "Volkswagen Group launched the Modularer Querbaukasten (MQB), standardizing the engine mounting angle and front-axle-to-pedal distance across dozens of models and multiple brands (VW, Audi, SEAT, Skoda), dramatically increasing economies of scale and assembly flexibility.",
+    source: "Volkswagen AG Annual Reports / VDA Technical Review", url: "https://www.vda.de/en"
+  },
+  // Consumer (DEU)
+  {
+    topic: "consumer", title: "Autobahn Cruiser Dynamics & The Modern Hatchback", start: 1971, end: 1989, regions: ["DEU"],
+    text: "The absence of a general speed limit on unrestricted Autobahn sections created strong domestic demand for high-speed directional stability, robust cooling systems, and sustained braking performance. Concurrently, the VW Golf defined the modern front-wheel-drive family hatchback.",
+    source: "Kraftfahrt-Bundesamt (KBA) Historical Registration Statistics", url: "https://www.kba.de/"
+  },
+  {
+    topic: "consumer", title: "Station Wagon Utility & Premium Brand Expansion", start: 1990, end: 2009, regions: ["DEU"],
+    text: "German buyers embraced premium station wagons (Kombi/Avant/Touring) as stylish and practical family transport. Concurrently, executive brands (BMW, Mercedes-Benz, Audi) expanded downward into compact segments with models like the Audi A3 and BMW 1 Series.",
+    source: "KBA Registration Statistics", url: "https://www.kba.de/"
+  },
+  {
+    topic: "consumer", title: "Premium Crossover Growth & Shift Toward Electrification", start: 2010, end: 2024, regions: ["DEU"],
+    text: "Compact and mid-size SUVs and crossovers gradually surpassed traditional saloons and estates in German registrations. Federal purchase incentives (Umweltbonus) spurred rapid growth in plug-in hybrid and pure battery-electric vehicle sales.",
+    source: "KBA Annual Vehicle Registration Analysis", url: "https://www.kba.de/"
+  },
+
+  // ==========================================
+  // SWEDEN (SWE)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "Swedish A10 Emission Standards & Strict National Rules", start: 1974, end: 1987, regions: ["SWE"],
+    text: "Statens naturvårdsverk (Swedish Environmental Protection Board) implemented the A10 vehicle emission regulations for model year 1976 based on the US FTP-72 dynamometer driving cycle. These independent rules set the strictest tailpipe limits in Europe, prompting domestic makers Volvo and Saab to develop advanced closed-loop exhaust controls.",
+    source: "Statens naturvårdsverk Archive / Swedish Transport Agency (Transportstyrelsen)", url: "https://www.transportstyrelsen.se/"
+  },
+  {
+    topic: "regulation", title: "Swedish Mandatory Catalysts & EU Accession Harmonization", start: 1988, end: 2024, regions: ["SWE"],
+    text: "Sweden mandated three-way catalytic converters on all new petrol passenger cars starting in model year 1989, ahead of the EU Euro 1 timeline. Following Sweden's entry into the European Union in 1995, national rules aligned with EU Directives, culminating in the 2018 Bonus-Malus tax system subsidizing low-emission vehicles and penalizing high CO2.",
+    source: "Swedish Transport Agency (Transportstyrelsen) Environmental Standards Archive", url: "https://www.transportstyrelsen.se/"
+  },
+  // Fuel (SWE)
+  {
+    topic: "fuel", title: "Early Unleaded Rollout & Clean Fuel Classification", start: 1974, end: 2005, regions: ["SWE"],
+    text: "Sweden pioneered national clean fuel classifications, introducing ultra-low sulfur Miljöklass 1 diesel and unleaded petrol in 1991 through differential taxation to reduce urban particulate emissions and enable catalytic converter longevity.",
+    source: "Swedish Environmental Protection Agency (Naturvårdsverket)", url: "https://www.naturvardsverket.se/en/"
+  },
+  {
+    topic: "fuel", title: "E85 Biofuel Transition to World-Leading EV Adoption", start: 2006, end: 2024, regions: ["SWE"],
+    text: "Following mid-2000s policy support for E85 flex-fuel vehicles (championed by Saab BioPower and Volvo Flexifuel), Sweden transitioned to one of Europe's highest battery-electric vehicle adoption rates, with plug-in cars exceeding 50% of new registrations by 2023.",
+    source: "Mobility Sweden (formerly BIL Sweden) Annual Statistics", url: "https://mobilitysweden.se/"
+  },
+  // Technology (SWE)
+  {
+    topic: "technology", title: "Lambda-Sond Three-Way Catalytic Breakthrough", start: 1974, end: 1984, regions: ["SWE"],
+    text: "In 1976, Volvo, in partnership with Bosch, introduced the world's first three-way catalytic converter equipped with an oxygen sensor (Lambda-sond) on California-bound 240 models. In 1978, Saab commercialized reliable daily-driver turbocharging in the 99 Turbo with an exhaust wastegate.",
+    source: "Volvo Car Corporation Heritage Archive / SAE Technical Paper 770295", url: "https://www.volvocars.com/"
+  },
+  {
+    topic: "technology", title: "Direct Ignition, Side-Impact Protection & Whiplash Mitigation", start: 1985, end: 1999, regions: ["SWE"],
+    text: "Swedish automakers pioneered advanced occupant crash protection and engine technology, including Saab Direct Ignition (SDI) with individual spark-plug coils in 1988, Volvo's Side Impact Protection System (SIPS) in 1991, and the WHIPS whiplash protection seating system in 1998.",
+    source: "Saab Heritage Archive / Volvo Safety Milestones", url: "https://www.volvocars.com/"
+  },
+  {
+    topic: "technology", title: "City Safety Autonomous Braking & Modular Architectures", start: 2000, end: 2024, regions: ["SWE"],
+    text: "In 2008, Volvo introduced City Safety, the world's first standard low-speed autonomous emergency braking system using laser sensors. Swedish engineering transitioned to unified four-cylinder Drive-E powertrains and dedicated electric skateboard platforms (e.g., SEA in Volvo EX30).",
+    source: "Volvo Car Group Global Newsroom: Safety Milestones", url: "https://www.media.volvocars.com/"
+  },
+  // Manufacturing (SWE)
+  {
+    topic: "manufacturing", title: "Autonomous Assembly Teams & Boron Steel Crash Structures", start: 1974, end: 1999, regions: ["SWE"],
+    text: "Swedish vehicle production prioritized structural crash integrity, hot-formed boron alloy steel, and galvanized anti-corrosion protection designed for salted winter roadways. In 1974, Volvo's Kalmar plant pioneered autonomous transport trolleys and stationary work teams in place of traditional moving assembly lines.",
+    source: "Volvo Historical Archives / Saab Heritage Collection", url: "https://www.volvocars.com/"
+  },
+  {
+    topic: "manufacturing", title: "Modular Scandinavian Platforms & Global EV Realignment", start: 2000, end: 2024, regions: ["SWE"],
+    text: "Following acquisition by Ford (1999) and Geely (2010), Swedish manufacturing evolved into modular platform architectures (Scalable Product Architecture SPA and Compact Modular Architecture CMA) supporting electrified and battery-electric assembly in Sweden, Belgium, and China.",
+    source: "Volvo Car Group Financial and Industrial Reports", url: "https://investors.volvocars.com/"
+  },
+  // Consumer (SWE)
+  {
+    topic: "consumer", title: "The Iconic Swedish Estate Tradition", start: 1974, end: 2010, regions: ["SWE"],
+    text: "Practical station wagons (herrgårdsvagn) represented an exceptionally high proportion of the Swedish domestic vehicle market. Boxy profiles like the Volvo 245, 740, and 940 prioritized maximum flat cargo volume, child safety seating, and winter tire clearance.",
+    source: "Mobility Sweden Historical Market Statistics", url: "https://mobilitysweden.se/"
+  },
+  {
+    topic: "consumer", title: "Shift from Station Wagons to Scandinavian Luxury Crossovers", start: 2011, end: 2024, regions: ["SWE"],
+    text: "Consumer demand shifted away from traditional long-roof estates toward luxury all-wheel-drive crossovers (Volvo XC60 and XC90), favored for commanding ride height, all-weather clearance, and modern Scandinavian interior design.",
+    source: "Mobility Sweden Annual Vehicle Statistics", url: "https://mobilitysweden.se/"
+  },
+
+  // ==========================================
+  // UNITED KINGDOM (GBR)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "Road Traffic Act & ECE Regulation 15 Baseline", start: 1970, end: 1985, regions: ["GBR"],
+    text: "In the 1970s and early 1980s, UK vehicle standards were governed under the Motor Vehicles (Construction and Use) Regulations and Road Traffic Act 1972, transposing UNECE Regulation 15. The UK did not impose domestic catalytic converter requirements during this period.",
+    source: "UK Department for Transport / National Archives", url: "https://www.nationalarchives.gov.uk/"
+  },
+  {
+    topic: "regulation", title: "1986 Construction & Use Update and Catalytic Mandate", start: 1986, end: 1992, regions: ["GBR"],
+    text: "The UK updated vehicle standards under the Road Vehicles (Construction and Use) Regulations 1986, incorporating ECE R15.04. In 1992, the UK transposed European Directive 91/441/EEC, requiring all new petrol passenger vehicles registered after December 31, 1992, to be fitted with closed-loop catalytic converters.",
+    source: "UK Department for Transport: Road Vehicles Regulations 1992", url: "https://www.legislation.gov.uk/"
+  },
+  {
+    topic: "regulation", title: "CO2-Based Vehicle Excise Duty & London ULEZ Mandates", start: 1993, end: 2024, regions: ["GBR"],
+    text: "Following Euro 1 and Euro 2 harmonization, the UK reformed annual Vehicle Excise Duty (VED) in 2001 into graduated carbon dioxide bands, creating a strong tax incentive for low-CO2 vehicles. In 2019, London introduced the Ultra Low Emission Zone (ULEZ), charging non-compliant vehicles, followed by a national zero-emission vehicle (ZEV) manufacturer mandate in 2024.",
+    source: "Driver and Vehicle Licensing Agency (DVLA) / Transport for London (TfL)", url: "https://tfl.gov.uk/modes/driving/ultra-low-emission-zone"
+  },
+  // Fuel (GBR)
+  {
+    topic: "fuel", title: "North Sea Oil Development & 4-Star Leaded Petrol", start: 1970, end: 1986, regions: ["GBR"],
+    text: "The commercial exploitation of North Sea oil reserves in the 1970s transformed the UK into a net petroleum exporter. British road vehicles primarily ran on high-octane 4-star leaded petrol until environmental concerns began prompting reform.",
+    source: "UK Department of Energy / National Archives", url: "https://www.nationalarchives.gov.uk/"
+  },
+  {
+    topic: "fuel", title: "Fuel Duty Escalator & Unleaded Tax Differential", start: 1987, end: 2024, regions: ["GBR"],
+    text: "In 1987, the Chancellor introduced an excise tax differential making unleaded petrol cheaper than 4-star leaded petrol. Between 1993 and 1999, the UK maintained the Fuel Duty Escalator, raising road fuel duties by up to 6% above inflation annually, giving the UK some of Europe's highest retail fuel pump prices.",
+    source: "UK HM Treasury: Historical Fuel Duty Rates / House of Commons Library", url: "https://www.gov.uk/government/organisations/hm-treasury"
+  },
+  // Technology (GBR)
+  {
+    topic: "technology", title: "Overhead Cam Powertrains & Fluid-Interconnected Suspension", start: 1970, end: 1982, regions: ["GBR"],
+    text: "British manufacturers deployed advanced technical solutions such as all-aluminum V8s (Rover 3.5), mass-market 16-valve cylinder heads (Triumph Dolomite Sprint in 1973), and innovative interconnected fluid suspension systems (British Leyland Hydrolastic and Hydragas).",
+    source: "Society of Motor Manufacturers and Traders (SMMT) Historical Archive", url: "https://www.smmt.co.uk/"
+  },
+  {
+    topic: "technology", title: "Joint Powertrain Development & Electronic Injection", start: 1983, end: 1995, regions: ["GBR"],
+    text: "British automakers collaborated with international partners (most notably the Rover-Honda engineering alliance), adopting multi-valve electronic fuel injection, electronic engine management, and developing the lightweight all-aluminum Rover K-Series engine with through-bolt construction.",
+    source: "SMMT Engineering Milestones Archive", url: "https://www.smmt.co.uk/"
+  },
+  {
+    topic: "technology", title: "Bonded Aluminum Monocoques & Terrain Control Systems", start: 1996, end: 2024, regions: ["GBR"],
+    text: "British specialist and luxury engineering pioneered bonded extruded aluminum monocoques (Lotus Elise, Aston Martin VH architecture) and riveted all-aluminum bodies (Jaguar XJ, Range Rover). Land Rover commercialized automated multi-terrain electronic traction management (Terrain Response).",
+    source: "SMMT Technical Review / Manufacturer Archives", url: "https://www.smmt.co.uk/"
+  },
+  // Manufacturing (GBR)
+  {
+    topic: "manufacturing", title: "British Leyland Nationalization & Factory Consolidation", start: 1970, end: 1979, regions: ["GBR"],
+    text: "The 1975 Ryder Report led to the state bailout of British Leyland, followed by extensive rationalization in the 1980s under Michael Edwardes. In 1986, Nissan opened its Sunderland manufacturing plant, introducing Japanese lean manufacturing and high productivity, followed by Toyota (Burnaston, 1992) and Honda (Swindon, 1992).",
+    source: "Society of Motor Manufacturers and Traders (SMMT) / Parliamentary Papers", url: "https://www.smmt.co.uk/"
+  },
+  {
+    topic: "manufacturing", title: "Japanese Transplant Inward Investment & Lean Transition", start: 1980, end: 1994, regions: ["GBR"],
+    text: "Japanese automakers established landmark assembly plants in the UK (Nissan Sunderland 1986, Toyota Burnaston 1992, Honda Swindon 1992), introducing lean manufacturing, single-union agreements, and high productivity, transforming the UK into a major export assembly hub.",
+    source: "SMMT Motor Industry Facts", url: "https://www.smmt.co.uk/"
+  },
+  {
+    topic: "manufacturing", title: "Premium, Luxury & Specialist Manufacturing Focus", start: 1995, end: 2024, regions: ["GBR"],
+    text: "While domestic volume mass-market brands disappeared, the UK developed an internationally prominent specialist and premium manufacturing sector (Jaguar Land Rover, MINI, Rolls-Royce, Bentley, Aston Martin, McLaren), alongside high-volume transplant export plants.",
+    source: "SMMT Annual Motor Industry Review", url: "https://www.smmt.co.uk/"
+  },
+  // Consumer (GBR)
+  {
+    topic: "consumer", title: "The British 'Company Car' Fleet Dominance", start: 1970, end: 1989, regions: ["GBR"],
+    text: "Favorable tax rules for employer-provided vehicles created a dominant 'company car' fleet market in the UK, making D-segment saloons and hatchbacks (Ford Cortina, Sierra, Mondeo, Vauxhall Cavalier) long-running sales leaders. For private buyers, accessible 'hot hatchbacks' enjoyed exceptional cultural popularity.",
+    source: "SMMT Annual Motor Industry Facts / HM Revenue & Customs Company Car Benefit Statistics", url: "https://www.smmt.co.uk/"
+  },
+  {
+    topic: "consumer", title: "Supermini Leadership & Benefit-in-Kind Electric Transition", start: 1990, end: 2024, regions: ["GBR"],
+    text: "Compact B-segment superminis (Ford Fiesta, Vauxhall Corsa) became the UK's best-selling passenger vehicles for decades. In the 2020s, low Benefit-in-Kind (BIK) company car tax rates (1–2%) for zero-emission vehicles triggered rapid corporate fleet electrification.",
+    source: "SMMT Registration Data / HMRC Statistics", url: "https://www.smmt.co.uk/"
+  },
+
+  // ==========================================
+  // FRANCE (FRA)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "Fiscal Horsepower (Puissance Fiscale) & ECE R15", start: 1970, end: 1991, regions: ["FRA"],
+    text: "Before Euro 1, France complied with UNECE Regulation 15. The domestic car market was heavily structured by the cheval fiscal (CV) tax formula, which calculated administrative vehicle horsepower from cylinder displacement and transmission gear ratios, penalizing engines over 2.0L and encouraging small engines with tall top gearing.",
+    source: "Ministère de la Transition écologique / Code Général des Impôts (Article 1011 bis)", url: "https://www.ecologie.gouv.fr/"
+  },
+  {
+    topic: "regulation", title: "Euro Standards & The French Bonus-Malus Écologique", start: 1992, end: 2024, regions: ["FRA"],
+    text: "France implemented Euro 1 through Euro 6 under European Community Directives. In 2008, France enacted the Bonus-Malus Écologique, providing cash rebates for low-CO2 vehicles while imposing heavy progressive purchase surcharges on vehicles emitting higher CO2 levels.",
+    source: "ADEME (Agence de la transition écologique) Car Labelling Guide", url: "https://www.ademe.fr/"
+  },
+  // Fuel (FRA)
+  {
+    topic: "fuel", title: "Favorable Diesel Taxation & The European Diesel Boom", start: 1970, end: 2014, regions: ["FRA"],
+    text: "French state policy maintained significantly lower excise tax on diesel fuel compared to gasoline to support agricultural transport and domestic refineries. This spurred automakers PSA and Renault to develop compact passenger diesels (e.g., Peugeot XUD), resulting in diesel capturing over 70% of French new car sales by the late 2000s.",
+    source: "Comité des Constructeurs Français d’Automobiles (CCFA) / UFIP", url: "https://www.ccfa.fr/"
+  },
+  {
+    topic: "fuel", title: "Crit'Air Environmental Vignettes & Clean Air Zones", start: 2015, end: 2024, regions: ["FRA"],
+    text: "In 2016, France established the Crit'Air color-coded vignette system, classifying vehicles based on their Euro emission standard and fuel type. Major metropolitan areas (ZFE-m) progressively restricted older diesel and petrol vehicles to reduce urban nitrogen dioxide pollution.",
+    source: "Ministère de la Transition écologique: Crit'Air System", url: "https://www.certificat-air.gouv.fr/"
+  },
+  // Technology (FRA)
+  {
+    topic: "technology", title: "Hydropneumatic Suspension, Transverse FWD & Turbocharging", start: 1970, end: 1985, regions: ["FRA"],
+    text: "French engineering emphasized compact space packaging, long-travel comfortable suspensions, front-wheel-drive transverse layouts, and Citroën's signature hydropneumatic self-leveling systems. Renault pioneered turbocharging technology in mass-production road cars following Formula 1 breakthroughs.",
+    source: "CCFA Historical Overview / Archives Nationales du Monde du Travail", url: "https://www.ccfa.fr/"
+  },
+  {
+    topic: "technology", title: "High-Efficiency Turbodiesels & Multi-Mode Hybrids", start: 1986, end: 2024, regions: ["FRA"],
+    text: "PSA and Renault became world leaders in small, durable indirect and common-rail turbodiesel engines (XUD, HDi, dCi). In recent years, French engineering developed downsized 3-cylinder turbo petrols (PureTech) and innovative clutchless dog-ring multi-mode hybrid transmissions (Renault E-Tech).",
+    source: "CCFA Technical Archive", url: "https://www.ccfa.fr/"
+  },
+  // Manufacturing (FRA)
+  {
+    topic: "manufacturing", title: "State-Supported National Champions & Global Alliances", start: 1970, end: 2024, regions: ["FRA"],
+    text: "French automotive production centered on state-supported national champions: Régie Renault (state-owned until privatization in the 1990s) and PSA Group (formed when Peugeot acquired Citroën in 1976 and Chrysler Europe in 1978). In 1999, Renault formed an alliance with Nissan, and in 2021 PSA merged with FCA to create Stellantis.",
+    source: "CCFA Industry Statistics / Stellantis Corporate History", url: "https://www.ccfa.fr/"
+  },
+  // Consumer (FRA)
+  {
+    topic: "consumer", title: "French Supermini Culture & The Monospace/Crossover Shifts", start: 1970, end: 2024, regions: ["FRA"],
+    text: "Compact B-segment superminis (Renault 5, Peugeot 205, Renault Clio, Peugeot 208) consistently topped domestic sales charts for agility on French urban and rural roads. In the 1980s and 1990s, French carmakers popularized the one-box monospace/MPV (Espace, Scenic), before consumer demand transitioned to compact crossovers.",
+    source: "CCFA Annual Registration Data", url: "https://www.ccfa.fr/"
+  },
+
+  // ==========================================
+  // ITALY (ITA)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "The 2000cc Value Added Tax Surcharge", start: 1970, end: 1992, regions: ["ITA"],
+    text: "Between 1970 and 1975, Italian vehicle standards adhered to the international UNECE Regulation 15 emissions baseline without domestic catalytic mandates. From 1976 onward, the Italian government enacted a 38% luxury Value Added Tax (IVA) rate on gasoline cars with engine displacements exceeding 2,000cc (and diesels over 2,500cc), compared to the standard 18–19% rate. This prompted manufacturers (Ferrari, Maserati, Alfa Romeo, BMW) to design specialized sub-2.0L turbocharged engines specifically for Italy.",
+    source: "Gazzetta Ufficiale della Repubblica Italiana / Ministero delle Finanze Archive", url: "https://www.gazzettaufficiale.it/"
+  },
+  {
+    topic: "regulation", title: "European Emission Standards & Urban ZTL Zones", start: 1993, end: 2024, regions: ["ITA"],
+    text: "Italy harmonized with EU Euro 1 through Euro 6 directives from 1993 onward. Italian municipalities introduced widespread Limited Traffic Zones (Zona a Traffico Limitato - ZTL), restricting non-resident and older non-compliant combustion vehicles from entering historic city centers via camera enforcement.",
+    source: "Ministero delle Infrastrutture e dei Trasporti (MIT) / Automobile Club d'Italia (ACI)", url: "https://www.mit.gov.it/"
+  },
+  // Fuel (ITA)
+  {
+    topic: "fuel", title: "High Petrol Excises & Autogas/Methane Infrastructure", start: 1970, end: 2024, regions: ["ITA"],
+    text: "Italy historically maintained some of Europe's highest fuel prices due to heavy state excise taxes. To reduce running costs, Italy developed Europe's largest distribution network for alternative gaseous fuels (LPG and Compressed Natural Gas / Methane), supported by OEM dual-fuel models.",
+    source: "Unione Energie per la Mobilità (UNEM) / Consorzio Ecogas", url: "https://www.unem.it/"
+  },
+  // Technology (ITA)
+  {
+    topic: "technology", title: "All-Aluminum Twin-Cams, Transaxles & Sub-2.0L Turbochargers", start: 1970, end: 1985, regions: ["ITA"],
+    text: "Italian engineering celebrated free-revving all-aluminum twin-cam engines, rear transaxle layouts with de Dion rear suspension (Alfa Romeo Alfetta), and specialized turbocharged engines built under 2,000cc to comply with luxury tax laws (Ferrari 208 Turbo, Maserati Biturbo).",
+    source: "Automobile Club d'Italia (ACI) Technical Heritage", url: "https://www.aci.it/"
+  },
+  {
+    topic: "technology", title: "Variable Valve Timing & Common-Rail Diesel Invention", start: 1986, end: 2005, regions: ["ITA"],
+    text: "Alfa Romeo was the first to deploy mechanical variable valve timing on a production engine in 1980. In the 1990s, the Fiat Research Centre (CRF) and Magneti Marelli invented automotive common-rail direct-injection diesel technology (Unijet), commercialized in the 1997 Alfa Romeo 156 JTD before being licensed to Bosch.",
+    source: "Centro Ricerche Fiat (CRF) Historical Patents / Magneti Marelli", url: "https://www.marelli.com/"
+  },
+  {
+    topic: "technology", title: "MultiAir Valve Control & High-Output Turbocharged Powertrains", start: 2006, end: 2024, regions: ["ITA"],
+    text: "Fiat developed MultiAir electro-hydraulic variable intake valve actuation, controlling air charge cylinder-by-cylinder without a throttle butterfly. In high-performance segments, Ferrari, Lamborghini, and Maserati developed twin-turbocharged V6/V8 and hybrid powertrains (e.g., Ferrari 296 GTB plug-in hybrid).",
+    source: "SAE Technical Papers / ACI Review", url: "https://www.sae.org/"
+  },
+  // Manufacturing (ITA)
+  {
+    topic: "manufacturing", title: "Fiat Industrial Hegemony & 'Robogate' Automation", start: 1970, end: 1995, regions: ["ITA"],
+    text: "In 1978, Fiat revolutionized body assembly by installing the automated 'Robogate' framing system at Rivalta and Cassino, enabling multiple distinct models to be robotically welded on the same line. During this period, Fiat consolidated the Italian auto sector by acquiring Lancia, Ferrari, and Alfa Romeo.",
+    source: "ACI / Historical Archives of Fiat (Archivio Storico Fiat)", url: "https://www.fcaheritage.com/"
+  },
+  {
+    topic: "manufacturing", title: "Platform Integration & Artisan Coachbuilder Transformation", start: 1996, end: 2024, regions: ["ITA"],
+    text: "Italian manufacturing integrated platforms across Alfa Romeo, Fiat, and Lancia, before Fiat merged with Chrysler in 2014 (FCA) and PSA in 2021 (Stellantis). Historic Italian coachbuilders (Pininfarina, Italdesign, Bertone) transitioned from contract vehicle assembly to styling, prototyping, and engineering consultancies.",
+    source: "ANFIA (Associazione Nazionale Filiera Industria Automobilistica)", url: "https://www.anfia.it/"
+  },
+  // Consumer (ITA)
+  {
+    topic: "consumer", title: "The City Car Domination: Cinquecento, 127, Panda & 500", start: 1970, end: 2024, regions: ["ITA"],
+    text: "Dense historic city centers and tight parking favored subcompact city cars. The Fiat 127, original Giugiaro Panda (1980), Uno, Punto, and the retro 2007 Fiat 500 revival represented massive shares of domestic registrations, establishing Italy as Europe's premier small-car market.",
+    source: "ANFIA Market Data / ACI Statistics", url: "https://www.anfia.it/"
+  },
+
+  // ==========================================
+  // SOUTH KOREA (KOR)
+  // ==========================================
+  // Regulation
+  {
+    topic: "regulation", title: "Automobile Industry Promotion Act & 1974 Long-Term Plan", start: 1970, end: 1986, regions: ["KOR"],
+    text: "Under the 1974 Long-Term Automobile Industry Promotion Plan, the Korean Ministry of Commerce and Industry directed domestic manufacturers to transition from assembling foreign knockdown kits to developing indigenous passenger cars with over 90% domestic content, backed by protective tariffs and export targets.",
+    source: "Korea Automobile Manufacturers Association (KAMA): History of the Korean Auto Industry", url: "http://www.kama.or.kr/"
+  },
+  {
+    topic: "regulation", title: "1987 Catalytic Converter Mandate & Clean Air Conservation Act", start: 1987, end: 2005, regions: ["KOR"],
+    text: "South Korea mandated catalytic converters on all new gasoline passenger vehicles starting in 1987, concurrently phasing out leaded fuel. Mobile source emissions limits were codified under the Clean Air Conservation Act of 1990, with tailpipe testing modeled after US EPA Federal Test Procedures.",
+    source: "Ministry of Environment (MOE) Republic of Korea: Clean Air Conservation Act Archive", url: "https://eng.me.go.kr/"
+  },
+  {
+    topic: "regulation", title: "Korean Fuel Economy Standards & Tier 3/Euro 6 Alignment", start: 2006, end: 2024, regions: ["KOR"],
+    text: "South Korea introduced Corporate Average Fuel Economy (CAFE) standards in 2006, transitioning to unified fleet GHG targets under the Ministry of Environment. Gasoline tailpipe standards aligned with California LEV III / US Tier 3, while diesel aligned with Euro 6, supported by incentives under the Eco-Friendly Vehicle Act.",
+    source: "Ministry of Trade, Industry and Energy (MOTIE) & MOE Korea: Fuel Economy Regulations", url: "https://english.motie.go.kr/"
+  },
+  // Fuel (KOR)
+  {
+    topic: "fuel", title: "Total Import Reliance & Unleaded Fuel Transition", start: 1970, end: 1999, regions: ["KOR"],
+    text: "Relying wholly on imported crude oil, South Korea managed fuel supply tightly. Leaded fuel was rapidly phased out following the 1987 catalyst mandate, culminating in a complete ban on leaded gasoline in 1993.",
+    source: "Korea Petroleum Association (KPA) Energy Data", url: "http://www.petroleum.or.kr/"
+  },
+  {
+    topic: "fuel", title: "LPG Infrastructure & High-Speed EV Charging Networks", start: 2000, end: 2024, regions: ["KOR"],
+    text: "South Korea developed extensive Liquefied Petroleum Gas (LPG) infrastructure, heavily utilized by domestic taxis, rental fleets, and disabled drivers. In recent years, Korea deployed dense nationwide ultra-fast public DC charging infrastructure to support battery electric vehicles.",
+    source: "Korea Energy Economics Institute (KEEI) / MOTIE", url: "http://www.keei.re.kr/"
+  },
+  // Technology (KOR)
+  {
+    topic: "technology", title: "Technology Licensing to First Indigenous Powertrains (Alpha)", start: 1970, end: 2005, regions: ["KOR"],
+    text: "After relying on licensed Mitsubishi engines and platforms in the 1970s and 1980s, Hyundai developed South Korea's first wholly indigenous passenger engine, the 1.5-liter SOHC Alpha, in 1991. This was followed by the Beta and Theta engine families, establishing independent powertrain capability.",
+    source: "Hyundai Motor Company 50-Year History Archive", url: "https://www.hyundaimotorgroup.com/"
+  },
+  {
+    topic: "technology", title: "Electric-Global Modular Platform (E-GMP) & 800V Architecture", start: 2006, end: 2024, regions: ["KOR"],
+    text: "Korean automakers advanced through turbo direct-injection petrols and dual-clutch transmissions, before Hyundai Motor Group launched the dedicated Electric-Global Modular Platform (E-GMP) in 2020. The platform features 800-volt high-speed charging, bi-directional Vehicle-to-Load (V2L) power export, and flat battery-skateboard packaging.",
+    source: "Hyundai Motor Group Technology Media Archive", url: "https://www.hyundaimotorgroup.com/"
+  },
+  // Manufacturing (KOR)
+  {
+    topic: "manufacturing", title: "Integrated Mega-Plant Assembly & Chaebol Expansion", start: 1970, end: 1997, regions: ["KOR"],
+    text: "Korean automotive manufacturing centered on massive vertically integrated complexes, most notably Hyundai's Ulsan plant, which grew into the world's largest single automobile manufacturing facility with its own dedicated shipping berths.",
+    source: "KAMA Industry Review / Harvard Business School Case: Hyundai Motor", url: "http://www.kama.or.kr/"
+  },
+  {
+    topic: "manufacturing", title: "Post-Crisis Restructuring & Global Quality Overhaul", start: 1998, end: 2024, regions: ["KOR"],
+    text: "Following the 1997 Asian financial crisis, Hyundai acquired bankrupt Kia in 1998, consolidating domestic assembly. Chairman Chung Mong-koo instituted a rigorous quality-control overhaul, backed by 10-year warranties, automated robotic body shops, and expanding transplant factories worldwide.",
+    source: "KAMA / Chung Mong-koo Foundation Monograph", url: "http://www.kama.or.kr/"
+  },
+  // Consumer (KOR)
+  {
+    topic: "consumer", title: "Restricted Motorization to The 'My Car' Boom", start: 1970, end: 1999, regions: ["KOR"],
+    text: "Automobile ownership was rare in South Korea until the late 1980s. Rapid economic growth surrounding the 1988 Seoul Olympics sparked the 'My Car' boom, where compact four-door notchback sedans (Hyundai Excel, Elantra) symbolized middle-class arrival.",
+    source: "Korea Transport Institute (KOTI) National Vehicle Ownership Surveys", url: "https://www.koti.re.kr/"
+  },
+  {
+    topic: "consumer", title: "Executive Sedan Status, Premium Genesis & SUV Expansion", start: 2000, end: 2024, regions: ["KOR"],
+    text: "Consumer preferences matured into mid-size and executive sedans (Sonata, Grandeur) and increasingly toward spacious SUVs (Santa Fe, Palisade, Sorento). In 2015, Hyundai launched Genesis as a standalone luxury brand, successfully challenging established European executive cars.",
+    source: "KOTI Vehicle Statistics / KAMA", url: "https://www.koti.re.kr/"
+  }
+];
+
+  const contextIndicators = [
+    {
+      key: "gdp_per_capita_constant_2015_usd",
+      valueId: "val-context-gdp",
+      sparklineId: "sparkline-context-gdp",
+      startId: "meta-context-gdp-start",
+      endId: "meta-context-gdp-end",
+      format: value => `$${Math.round(value).toLocaleString()}`
+    },
+    {
+      key: "population_density_per_km2",
+      valueId: "val-context-density",
+      sparklineId: "sparkline-context-density",
+      startId: "meta-context-density-start",
+      endId: "meta-context-density-end",
+      format: value => value.toLocaleString(undefined, { maximumFractionDigits: 1 })
+    },
+    {
+      key: "urbanization_percent",
+      valueId: "val-context-urban",
+      sparklineId: "sparkline-context-urban",
+      startId: "meta-context-urban-start",
+      endId: "meta-context-urban-end",
+      format: value => `${value.toLocaleString(undefined, { maximumFractionDigits: 1 })}%`
+    },
+    {
+      key: "passenger_cars_per_1000",
+      valueId: "val-context-cars",
+      sparklineId: "sparkline-context-cars",
+      startId: "meta-context-cars-start",
+      endId: "meta-context-cars-end",
+      format: value => value.toLocaleString(undefined, { maximumFractionDigits: 1 })
+    }
+  ];
 
   // Automotive data state tracking
   let activeSelectedCar = null;
@@ -492,8 +1468,13 @@ window.selectedManufacturer = null;
   const mapSvg = d3.select("#world-map-svg");
   const locatorSvg = d3.select("#locator-svg");
   const mapContainer = document.getElementById("map-container");
+  let mapContainerRect = mapContainer.getBoundingClientRect();
   const tooltip = document.getElementById("map-tooltip");
   const selectedNameEl = document.getElementById("selected-country-name");
+
+  window.addEventListener("resize", () => {
+    mapContainerRect = mapContainer.getBoundingClientRect();
+  });
 
   // Country view elements
   const countryNameEl = document.getElementById("country-view-name");
@@ -518,12 +1499,15 @@ window.selectedManufacturer = null;
   const gBase = mapSvg.append("g").attr("class", "map-base-layer");
   const gCountries = mapSvg.append("g").attr("class", "map-countries-layer");
   const gConnectors = mapSvg.append("g").attr("class", "map-connectors-layer");
+  const gInteraction = mapSvg.append("g").attr("class", "map-interaction-layer");
   const gLogos = mapSvg.append("g").attr("class", "map-logos-layer");
 
   let activeCountryPath = null;
   let locatorCountries = null;
   let currentHoverCountryId = null;
   let hoverHideTimeout = null;
+  const logoPositionCache = new Map();
+  const countryGeometryMap = new Map();
 
   function getCountryInfo(d) {
     const isoMap = window.ISO_COUNTRIES || {};
@@ -582,6 +1566,168 @@ window.selectedManufacturer = null;
     });
   }
 
+  function getCountryHitStrokeWidth(d) {
+    const geom = countryGeometryMap.get(String(d.id));
+    const diag = geom ? geom.diag : 40;
+    if (diag < 25) return 20; // very small countries (Belgium, Luxembourg, Switzerland, Netherlands)
+    if (diag < 45) return 16; // small European countries (Austria, Czechia, Denmark, Ireland)
+    if (diag < 75) return 12; // medium countries (Germany, France, Italy)
+    if (diag < 140) return 8;  // medium-large countries (UK, Spain, Japan, Sweden)
+    return 4; // large continental countries (USA, Russia, Canada, Australia)
+  }
+
+  function getSvgPoint(clientX, clientY) {
+    const node = mapSvg.node();
+    if (!node || !node.createSVGPoint) return { x: clientX, y: clientY };
+    const pt = node.createSVGPoint();
+    pt.x = clientX;
+    pt.y = clientY;
+    const ctm = node.getScreenCTM();
+    if (!ctm) return { x: clientX, y: clientY };
+    const transformed = pt.matrixTransform(ctm.inverse());
+    return { x: transformed.x, y: transformed.y };
+  }
+
+  function resolveCountryAtPoint(clientX, clientY) {
+    const target = document.elementFromPoint ? document.elementFromPoint(clientX, clientY) : null;
+    if (target && target.closest && target.closest(".mfg-logo-node")) {
+      return null;
+    }
+
+    const svgPt = getSvgPoint(clientX, clientY);
+    const node = mapSvg.node();
+    const svgPointObj = node && node.createSVGPoint ? node.createSVGPoint() : null;
+    if (svgPointObj) {
+      svgPointObj.x = svgPt.x;
+      svgPointObj.y = svgPt.y;
+    }
+
+    const candidateIds = new Set();
+    if (typeof document.elementsFromPoint === "function") {
+      const elements = document.elementsFromPoint(clientX, clientY);
+      for (let i = 0; i < elements.length; i++) {
+        const el = elements[i];
+        if (el && el.classList && (el.classList.contains("country-hit-area") || el.classList.contains("world-country"))) {
+          const id = el.getAttribute("data-id");
+          if (id && countryGeometryMap.has(String(id))) {
+            candidateIds.add(String(id));
+          }
+        }
+      }
+    }
+
+    // Fallback: If elementsFromPoint found nothing, check bounding boxes expanded by buffer
+    if (candidateIds.size === 0) {
+      countryGeometryMap.forEach((geom, id) => {
+        const b = geom.bounds;
+        const strokeBuffer = 12;
+        if (svgPt.x >= b[0][0] - strokeBuffer && svgPt.x <= b[1][0] + strokeBuffer &&
+            svgPt.y >= b[0][1] - strokeBuffer && svgPt.y <= b[1][1] + strokeBuffer) {
+          candidateIds.add(id);
+        }
+      });
+    }
+
+    if (candidateIds.size === 0) {
+      return null;
+    }
+
+    // Fast path: exactly 1 candidate
+    if (candidateIds.size === 1) {
+      const onlyId = candidateIds.values().next().value;
+      return countryGeometryMap.get(onlyId) || null;
+    }
+
+    // Overlapping candidates: resolve using proximity and boundary distance
+    let bestGeom = null;
+    let minEffectiveDist = Infinity;
+
+    candidateIds.forEach(id => {
+      const geom = countryGeometryMap.get(id);
+      if (!geom) return;
+
+      let dist = Infinity;
+
+      // 1. Point directly inside true visual country land
+      if (svgPointObj && geom.visualNode && typeof geom.visualNode.isPointInFill === "function") {
+        try {
+          if (geom.visualNode.isPointInFill(svgPointObj)) {
+            dist = 0;
+          }
+        } catch (_) {}
+      }
+
+      // 2. If not inside land, measure boundary sample distance
+      if (dist > 0) {
+        if (geom.samplePoints && geom.samplePoints.length > 0) {
+          let minSq = Infinity;
+          const sps = geom.samplePoints;
+          for (let j = 0; j < sps.length; j++) {
+            const dx = svgPt.x - sps[j][0];
+            const dy = svgPt.y - sps[j][1];
+            const sq = dx * dx + dy * dy;
+            if (sq < minSq) minSq = sq;
+          }
+          dist = Math.sqrt(minSq);
+        } else if (geom.centroid) {
+          dist = Math.hypot(svgPt.x - geom.centroid[0], svgPt.y - geom.centroid[1]);
+        }
+      }
+
+      // Apply 2.5px hysteresis bonus for current hover country to prevent boundary jitter
+      const isCurrent = (String(id) === String(currentHoverCountryId));
+      const effectiveDist = isCurrent ? Math.max(0, dist - 2.5) : dist;
+
+      if (effectiveDist < minEffectiveDist) {
+        minEffectiveDist = effectiveDist;
+        bestGeom = geom;
+      }
+    });
+
+    return bestGeom;
+  }
+
+  function activateCountryHover(d, event) {
+    if (!d) return;
+    const country = getCountryInfo(d);
+    const cars = getCountryCars(country);
+
+    if (currentHoverCountryId === d.id) {
+      if (event) positionTooltip(event);
+      return;
+    }
+
+    gCountries.selectAll("path.world-country")
+      .classed("is-hovered", feat => feat.id === d.id)
+      .classed("is-active-source", feat => feat.id === d.id);
+
+    if (cars.length > 0) {
+      clearTimeout(hoverHideTimeout);
+      tooltip.innerHTML = `
+        <span class="tooltip-name">${country.name}</span>
+        ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
+        <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• ${cars.length} specimen${cars.length === 1 ? '' : 's'}</span>
+      `;
+      tooltip.style.opacity = "1";
+      if (event) positionTooltip(event);
+      showCountryLogos(d, country, cars);
+    } else {
+      tooltip.innerHTML = `
+        <span class="tooltip-name">${country.name}</span>
+        <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• No vehicle data</span>
+      `;
+      tooltip.style.opacity = "0.75";
+      if (event) positionTooltip(event);
+      scheduleHideLogos(180);
+    }
+  }
+
+  function deactivateCountryHover() {
+    tooltip.style.opacity = "0";
+    gCountries.selectAll("path.world-country").classed("is-hovered", false);
+    scheduleHideLogos(450);
+  }
+
   function renderTopology(worldData) {
     if (!worldData || !worldData.objects || !worldData.objects.countries) return;
 
@@ -604,6 +1750,7 @@ window.selectedManufacturer = null;
       .attr("class", "map-graticule")
       .attr("d", pathGenerator);
 
+    // 1. Geographically exact visual country paths
     gCountries.selectAll("path.world-country")
       .data(countries)
       .enter()
@@ -614,44 +1761,91 @@ window.selectedManufacturer = null;
         return cars.length > 0 ? "world-country has-data" : "world-country is-muted";
       })
       .attr("d", pathGenerator)
-      .attr("data-id", d => d.id)
-      .on("mouseenter", function(event, d) {
+      .attr("data-id", d => d.id);
+
+    // 2. Pre-index country geometries for proximity and boundary distance testing
+    countryGeometryMap.clear();
+    countries.forEach(d => {
+      const visualEl = gCountries.select(`path.world-country[data-id="${d.id}"]`).node();
+      if (!visualEl) return;
+
+      const totalLen = visualEl.getTotalLength ? visualEl.getTotalLength() : 0;
+      const samplePoints = [];
+      if (totalLen > 0) {
+        const numSamples = Math.min(32, Math.max(12, Math.floor(totalLen / 16)));
+        const step = totalLen / numSamples;
+        for (let s = 0; s <= totalLen; s += step) {
+          const p = visualEl.getPointAtLength(s);
+          samplePoints.push([p.x, p.y]);
+        }
+      }
+
+      const bounds = pathGenerator.bounds(d);
+      const centroid = pathGenerator.centroid(d);
+      const dx = bounds[1][0] - bounds[0][0];
+      const dy = bounds[1][1] - bounds[0][1];
+      const diag = Math.hypot(dx, dy);
+
+      countryGeometryMap.set(String(d.id), {
+        feature: d,
+        visualNode: visualEl,
+        centroid: centroid,
+        samplePoints: samplePoints,
+        bounds: bounds,
+        diag: diag
+      });
+    });
+
+    // 3. Enlarged invisible interaction layer conforming to actual country shapes
+    gInteraction.selectAll("path.country-hit-area")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("class", d => {
         const country = getCountryInfo(d);
         const cars = getCountryCars(country);
-        if (cars.length > 0) {
-          clearTimeout(hoverHideTimeout);
-          tooltip.innerHTML = `
-            <span class="tooltip-name">${country.name}</span>
-            ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
-            <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• ${cars.length} specimen${cars.length === 1 ? '' : 's'}</span>
-          `;
-          tooltip.style.opacity = "1";
-          positionTooltip(event);
-          showCountryLogos(d, country, cars);
-        } else {
-          tooltip.innerHTML = `
-            <span class="tooltip-name">${country.name}</span>
-            <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• No vehicle data</span>
-          `;
-          tooltip.style.opacity = "0.75";
-          positionTooltip(event);
-          scheduleHideLogos(180);
+        return cars.length > 0 ? "country-hit-area has-data" : "country-hit-area is-muted";
+      })
+      .attr("d", pathGenerator)
+      .attr("data-id", d => d.id)
+      .style("stroke-width", d => `${getCountryHitStrokeWidth(d)}px`)
+      .on("pointerenter", function(event, d) {
+        const resolved = resolveCountryAtPoint(event.clientX, event.clientY) || countryGeometryMap.get(String(d.id));
+        if (resolved && resolved.feature) {
+          activateCountryHover(resolved.feature, event);
         }
       })
-      .on("mousemove", function(event) {
+      .on("pointermove", function(event, d) {
         positionTooltip(event);
+        const resolved = resolveCountryAtPoint(event.clientX, event.clientY) || countryGeometryMap.get(String(d.id));
+        if (resolved && resolved.feature) {
+          activateCountryHover(resolved.feature, event);
+        }
       })
-      .on("mouseleave", function() {
-        tooltip.style.opacity = "0";
-        scheduleHideLogos(450);
+      .on("pointerleave", function(event) {
+        const nextEl = event.relatedTarget;
+        if (!nextEl || !nextEl.closest || !nextEl.closest("#world-map-svg")) {
+          deactivateCountryHover();
+        }
       })
       .on("click", function(event, d) {
-        const country = getCountryInfo(d);
-        const cars = getCountryCars(country);
-        if (cars.length > 0) {
-          selectCountry(d, this);
+        const resolved = resolveCountryAtPoint(event.clientX, event.clientY) || countryGeometryMap.get(String(d.id));
+        if (resolved && resolved.feature) {
+          const country = getCountryInfo(resolved.feature);
+          const cars = getCountryCars(country);
+          if (cars.length > 0) {
+            selectCountry(resolved.feature);
+          }
         }
       });
+
+    // Handle cursor leaving the map container
+    const mapContainer = document.getElementById("map-container");
+    if (mapContainer) {
+      mapContainer.addEventListener("mouseleave", () => {
+        deactivateCountryHover();
+      });
+    }
 
     locatorCountries = locatorSvg.selectAll("path.locator-country")
       .data(countries)
@@ -671,7 +1865,9 @@ window.selectedManufacturer = null;
 
   function hideCountryLogos() {
     currentHoverCountryId = null;
-    gCountries.selectAll("path.world-country").classed("is-active-source", false);
+    gCountries.selectAll("path.world-country")
+      .classed("is-active-source", false)
+      .classed("is-hovered", false);
     gConnectors.selectAll("circle.mfg-cluster-aura").remove();
 
     gConnectors.selectAll("line")
@@ -821,28 +2017,22 @@ window.selectedManufacturer = null;
       };
     });
 
-    // Anchor coordinates for geographic precision
-    const COUNTRY_COORDS = {
-      "USA": [-98.5, 39.5],
-      "JPN": [138.2, 36.2],
-      "DEU": [10.4, 51.1],
-      "GBR": [-2.2, 54.5],
-      "ITA": [12.5, 42.5],
-      "FRA": [2.2, 46.6],
-      "SWE": [16.5, 62.0],
-      "KOR": [127.7, 36.5]
-    };
-
-    let center;
-    if (country.iso3 && COUNTRY_COORDS[country.iso3]) {
-      center = projection(COUNTRY_COORDS[country.iso3]);
-    } else {
-      center = pathGenerator.centroid(d);
+    const cacheKey = `${d.id}:${mfgItems.length}`;
+    let layout = logoPositionCache.get(cacheKey);
+    if (!layout) {
+      const countryCoords = {
+        USA: [-98.5, 39.5], JPN: [138.2, 36.2], DEU: [10.4, 51.1], GBR: [-2.2, 54.5],
+        ITA: [12.5, 42.5], FRA: [2.2, 46.6], SWE: [16.5, 62.0], KOR: [127.7, 36.5]
+      };
+      const center = country.iso3 && countryCoords[country.iso3]
+        ? projection(countryCoords[country.iso3])
+        : pathGenerator.centroid(d);
+      const cx = center[0];
+      const cy = center[1];
+      layout = { cx, cy, positions: calculateLogoPositions(cx, cy, mfgItems.length, country.iso3) };
+      logoPositionCache.set(cacheKey, layout);
     }
-
-    const cx = center[0];
-    const cy = center[1];
-    const positions = calculateLogoPositions(cx, cy, mfgItems.length, country.iso3);
+    const { cx, cy, positions } = layout;
 
     // Continuous interactive aura behind cluster to prevent premature closes
     const maxDist = Math.max(...positions.map(p => Math.hypot(p.x - cx, p.y - cy)), 60);
@@ -1020,19 +2210,17 @@ window.selectedManufacturer = null;
   function selectCountry(d, element, targetMfg) {
     const country = getCountryInfo(d);
     activeCountryData = country;
+    activeSelectedCar = null;
+    updateCountryContext();
+    updateWhyCarsChanged();
     hideCountryLogos();
 
     // Highlight on main map
     if (activeCountryPath) {
       activeCountryPath.classed("is-selected", false);
     }
-    if (element) {
-      activeCountryPath = d3.select(element);
-      activeCountryPath.classed("is-selected", true);
-    } else {
-      activeCountryPath = gCountries.select(`path[data-id="${d.id}"]`);
-      activeCountryPath.classed("is-selected", true);
-    }
+    activeCountryPath = gCountries.select(`path.world-country[data-id="${d.id}"]`);
+    activeCountryPath.classed("is-selected", true);
 
     // Highlight on locator map
     if (locatorCountries) {
@@ -1103,7 +2291,6 @@ window.selectedManufacturer = null;
         countryView.classList.remove("is-hidden");
         countryView.classList.add("is-active");
         countryView.style.opacity = "0";
-        document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
         requestAnimationFrame(() => {
           countryView.style.opacity = "1";
@@ -1133,7 +2320,6 @@ window.selectedManufacturer = null;
         countryView.classList.remove("is-hidden");
         countryView.classList.add("is-active");
         countryView.style.opacity = "0";
-        window.scrollTo({ top: 0, behavior: "smooth" });
 
         requestAnimationFrame(() => {
           countryView.style.opacity = "1";
@@ -1286,7 +2472,6 @@ window.selectedManufacturer = null;
       modelsPanel.classList.add("is-active");
       modelsPanel.style.opacity = "0";
 
-      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
       requestAnimationFrame(() => {
         modelsPanel.style.opacity = "1";
@@ -1454,7 +2639,569 @@ window.selectedManufacturer = null;
       }
       renderCarsGrid(matching, activeTimelineYear, activeScopeName, availableScopeYears);
     }
+
   }
+
+  function renderContextSparkline(container, records, indicator, selectedYear) {
+    container.innerHTML = "";
+    const points = records
+      .filter(record => record[indicator.key] !== null && record[indicator.key] !== undefined)
+      .map(record => ({ year: record.year, value: record[indicator.key] }));
+
+    if (points.length < 2) return;
+
+    const width = 240;
+    const height = 32;
+    const x = d3.scaleLinear()
+      .domain(d3.extent(points, point => point.year))
+      .range([1, width - 1]);
+    const y = d3.scaleLinear()
+      .domain(d3.extent(points, point => point.value))
+      .nice()
+      .range([height - 3, 3]);
+    const svg = d3.select(container)
+      .append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("preserveAspectRatio", "none")
+      .attr("role", "img")
+      .attr("aria-label", `${indicator.key} historical trend`);
+    const line = d3.line()
+      .x(point => x(point.year))
+      .y(point => y(point.value));
+
+    svg.append("path")
+      .datum(points)
+      .attr("class", "context-sparkline-line")
+      .attr("d", line);
+
+    const selectedPoint = points.find(point => point.year === selectedYear);
+    if (selectedPoint) {
+      svg.append("circle")
+        .attr("class", "context-sparkline-point")
+        .attr("cx", x(selectedPoint.year))
+        .attr("cy", y(selectedPoint.value))
+        .attr("r", 2.5);
+    }
+
+    document.getElementById(indicator.startId).textContent = points[0].year;
+    document.getElementById(indicator.endId).textContent = points[points.length - 1].year;
+  }
+
+  function renderContextSources() {
+    if (!contextProvenanceGrid || !window.COUNTRY_CONTEXT_METADATA) return;
+    const variables = window.COUNTRY_CONTEXT_METADATA.variables || {};
+    contextProvenanceGrid.innerHTML = contextIndicators.map(indicator => {
+      const metadata = variables[indicator.key] || {};
+      const sourceUrl = metadata.source_url ? ` <a href="${metadata.source_url.split(" /")[0]}" target="_blank" rel="noopener">Source</a>.` : "";
+      return `<div class="context-provenance-item"><strong>${metadata.name || indicator.key}</strong>: ${metadata.source_agency || "Source not specified"} (indicator <code>${metadata.indicator_code || "not specified"}</code>). ${metadata.coverage_years || "Coverage not specified"}.<br><em>${metadata.notes || ""}</em>${sourceUrl}</div>`;
+    }).join("");
+  }
+
+  function generateCountryCarSynthesis(car, record, specs) {
+    if (!car) return "";
+    const name = car["Car name"] || "This vehicle";
+    const c = car["Country of manufacturer"] || (record ? record.country : "its home market");
+    const yr = parseInt(car["Model year"], 10);
+    const body = (specs.body_type || car["Body type"] || "").toLowerCase();
+    const drive = specs.drivetrain || car.Drivetrain || "";
+    const eng = specs.engine || car["Engine configuration"] || "";
+    const hp = specs.horsepower || car["Horsepower (HP)"];
+    const wt = specs.weight_kg || car["Curb weight (kg)"];
+
+    const dens = record ? record.population_density_per_km2 : null;
+    const urb = record ? record.urbanization_percent : null;
+
+    let sentences = [];
+
+    // Sentence 1: National Environmental Setting
+    if (c === "Sweden") {
+      if (dens !== null && dens < 30) {
+        sentences.push(`${c} in ${yr} had a low overall population density (~${Math.round(dens)} people/km²) alongside high urbanization (~${Math.round(urb || 83)}%), creating demand for durable vehicles capable of enduring long journeys and severe Nordic winters.`);
+      } else {
+        sentences.push(`In ${yr}, Sweden maintained an established passenger-car market with high urbanization (~${Math.round(urb || 85)}%).`);
+      }
+    } else if (c === "Japan") {
+      sentences.push(`${c} in ${yr} combined substantial population density (~${Math.round(dens || 300)} people/km²) and rapid urbanization with an export-oriented automotive sector that engineered vehicles for both tight domestic streets and overseas highways.`);
+    } else if (c === "United States") {
+      sentences.push(`The United States in ${yr} featured expansive geography with low population density (~${Math.round(dens || 30)} people/km²) and an extensive interstate highway network, fostering long-distance passenger travel and an established multi-car culture.`);
+    } else if (c === "Germany") {
+      sentences.push(`Germany in ${yr} possessed a mature industrial economy and high population density (~${Math.round(dens || 230)} people/km²), where derestricted Autobahn transit and high consumer expectations shaped automotive engineering.`);
+    } else if (c === "Italy") {
+      sentences.push(`Italy in ${yr} combined dense historic city centers requiring compact daily transit with a distinguished national tradition of high-performance coachbuilding and sports car engineering.`);
+    } else if (c === "United Kingdom") {
+      sentences.push(`The United Kingdom in ${yr} operated with dense road networks (~${Math.round(dens || 240)} people/km²) and distinctive national tax frameworks (such as company car policies) that influenced domestic fleet composition.`);
+    } else if (c === "France") {
+      sentences.push(`France in ${yr} featured substantial regional geography with a centralized urban population, where fiscal horsepower regulations and rural-urban travel encouraged innovative suspension comfort and space efficiency.`);
+    } else if (c === "South Korea") {
+      sentences.push(`South Korea in ${yr} featured intensive urban concentration (~${Math.round(dens || 500)} people/km² and ~${Math.round(urb || 80)}% urbanization) alongside rapid modern industrialization and infrastructure growth.`);
+    } else {
+      sentences.push(`In ${yr}, ${c} presented a distinct national environment reflecting its economic scale and infrastructure development.`);
+    }
+
+    // Sentence 2: The Car in That Context
+    let specDetails = [];
+    if (hp) specDetails.push(`${hp} hp`);
+    if (wt) specDetails.push(`${wt.toLocaleString()} kg`);
+    if (drive) specDetails.push(drive);
+    const specStr = specDetails.length ? ` (${specDetails.join(", ")})` : "";
+
+    const lowerName = name.toLowerCase();
+    const lowerEng = eng.toLowerCase();
+
+    if (/electric|ev|battery/i.test(lowerEng) || /taycan|ioniq|ex30|lightning|model s|leaf|bolt|ev6/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} represents the transition toward electrified transport, emerging as national policy and charging infrastructure began addressing carbon targets in heavily urbanized environments.`);
+    } else if (/sports|coupe|roadster/i.test(body) || /gnx|gt-r|corvette|viper|prowler|911|ferrari|turbo|nsx|miata|supra|s2000|rx-7|camaro|firebird|mustang|trueno|ae86/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} catered to performance and enthusiast motoring, demonstrating how specialized engineering operated alongside broader national economic and fuel-efficiency trends without representing the average commuter vehicle.`);
+    } else if (/pickup|truck/i.test(body) || /syclone|brat|f-150|silverado|ram|tacoma|tundra|ranger/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} highlights the distinctive role of light-duty utility vehicles in markets with lower density and commercial utility demand, showing how practical formats accommodated specialized powertrain variants.`);
+    } else if (/wagon|estate/i.test(body)) {
+      sentences.push(`The ${name}${specStr} reflects family packaging priorities of cargo capacity and passenger comfort, suited to intercity travel in an urbanized society with significant regional road networks.`);
+    } else if (/hatchback/i.test(body) || /golf|civic|clio|205|corolla|yaris|fit|polo|fiesta|panda|500/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} balanced exterior compactness with practical interior packaging, well suited to navigating dense urban traffic and parking constraints while maintaining highway capability.`);
+    } else if (/suv/i.test(body) || /cherokee|explorer|rav4|cr-v|suburban|land cruiser|tahoe|q7|x5/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} reflects the consumer evolution toward multi-purpose utility and all-weather capability, navigating suburban expansion and shifting household driving patterns.`);
+    } else {
+      sentences.push(`The ${name}${specStr} embodies contemporary passenger car engineering for its market, navigating the period's prevailing regulatory and energy conditions.`);
+    }
+
+    return sentences.join(" ");
+  }
+
+  function updateCountryContext() {
+    if (!countryContextStage || !activeCountryData || !activeSelectedCar || !Array.isArray(window.COUNTRY_CONTEXT)) {
+      if (countryContextStage) {
+        countryContextStage.classList.remove("is-active");
+        countryContextStage.classList.add("is-hidden");
+      }
+      return;
+    }
+
+    const iso3 = (activeCountryData.iso3 || "").toUpperCase();
+    const selectedYear = activeTimelineYear || parseInt(activeSelectedCar["Model year"], 10);
+    const countryRecords = window.COUNTRY_CONTEXT.filter(record => record.iso3 === iso3);
+    const record = countryRecords.find(item => item.year === selectedYear);
+
+    if (!iso3 || !record || !selectedYear) {
+      countryContextStage.classList.remove("is-active");
+      countryContextStage.classList.add("is-hidden");
+      return;
+    }
+
+    countryContextStage.classList.remove("is-hidden");
+    countryContextStage.classList.add("is-active");
+    contextActiveYearLabel.textContent = selectedYear;
+    contextBadgeNation.textContent = record.country;
+    contextBadgeYear.textContent = selectedYear;
+
+    const carSpecs = getCarSpecs(activeSelectedCar) || {};
+
+    // 1. Update Dual Dossier (THIS CAR against ITS SETTING)
+    const dossierCarName = document.getElementById("dossier-car-name");
+    const dossierCarList = document.getElementById("dossier-car-list");
+    const dossierCountryName = document.getElementById("dossier-country-name");
+    const dossierCountryList = document.getElementById("dossier-country-list");
+
+    if (dossierCarName && dossierCarList) {
+      dossierCarName.textContent = activeSelectedCar["Car name"] || "Selected Vehicle";
+      const hp = carSpecs.horsepower || activeSelectedCar["Horsepower (HP)"];
+      const wt = carSpecs.weight_kg || activeSelectedCar["Curb weight (kg)"];
+      const body = carSpecs.body_type || activeSelectedCar["Body type"] || "—";
+      const drive = carSpecs.drivetrain || activeSelectedCar.Drivetrain || "—";
+      const eng = carSpecs.engine || activeSelectedCar["Engine configuration"] || "—";
+      const len = carSpecs.length_mm;
+
+      dossierCarList.innerHTML = `
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Body Style</span>
+          <span class="context-dossier-val">${body}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Drivetrain</span>
+          <span class="context-dossier-val">${drive}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Power Output</span>
+          <span class="context-dossier-val">${hp ? `${hp} HP` : "—"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Curb Weight</span>
+          <span class="context-dossier-val">${wt ? `${wt.toLocaleString()} kg` : "—"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Powertrain</span>
+          <span class="context-dossier-val">${eng}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Length</span>
+          <span class="context-dossier-val">${len ? `${len.toLocaleString()} mm` : "—"}</span>
+        </li>
+      `;
+    }
+
+    if (dossierCountryName && dossierCountryList) {
+      dossierCountryName.textContent = `${record.country} · ${selectedYear}`;
+      dossierCountryList.innerHTML = `
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Economic Output</span>
+          <span class="context-dossier-val">$${Math.round(record.gdp_per_capita_constant_2015_usd).toLocaleString()}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Population Density</span>
+          <span class="context-dossier-val">${record.population_density_per_km2 !== null && record.population_density_per_km2 !== undefined ? `${record.population_density_per_km2.toFixed(1)} people/km²` : "Data pending"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Urbanization</span>
+          <span class="context-dossier-val">${record.urbanization_percent !== null && record.urbanization_percent !== undefined ? `${record.urbanization_percent.toFixed(1)}% urban` : "—"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Motorization</span>
+          <span class="context-dossier-val">${record.passenger_cars_per_1000 !== null && record.passenger_cars_per_1000 !== undefined ? `${record.passenger_cars_per_1000.toFixed(1)} per 1,000` : "Unrecorded before 1994"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Macro Baseline</span>
+          <span class="context-dossier-val">World Bank / OECD</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Series Window</span>
+          <span class="context-dossier-val">1970–2024</span>
+        </li>
+      `;
+    }
+
+    // 2. Update 4 Indicator Cards
+    contextIndicators.forEach(indicator => {
+      const valueElement = document.getElementById(indicator.valueId);
+      const value = record[indicator.key];
+      valueElement.classList.toggle("is-unavailable", value === null || value === undefined);
+      valueElement.textContent = value === null || value === undefined
+        ? "Data unavailable for this year"
+        : indicator.format(value);
+      renderContextSparkline(document.getElementById(indicator.sparklineId), countryRecords, indicator, selectedYear);
+    });
+
+    // 3. Environmental Interpretations
+    const interpretGdp = document.getElementById("interpret-context-gdp");
+    if (interpretGdp) {
+      const gdpVal = record.gdp_per_capita_constant_2015_usd;
+      let gdpTier = "an expanding industrial economy";
+      if (gdpVal >= 45000) gdpTier = "an advanced high-income economy";
+      else if (gdpVal >= 30000) gdpTier = "a mature, high-income economy";
+      else if (gdpVal >= 15000) gdpTier = "a solid middle-income economy";
+      interpretGdp.textContent = `Reflects ${gdpTier} with real output of $${Math.round(gdpVal).toLocaleString()} per person, describing the broad economic capacity surrounding durable vehicle purchases during this period.`;
+    }
+
+    const interpretDensity = document.getElementById("interpret-context-density");
+    if (interpretDensity) {
+      const dVal = record.population_density_per_km2;
+      if (dVal !== null && dVal !== undefined) {
+        let dTier = "low population density and expansive travel distances";
+        if (dVal >= 300) dTier = "very dense settlements and constrained road footprints";
+        else if (dVal >= 150) dTier = "high population concentration";
+        else if (dVal >= 40) dTier = "moderate density across regional centers";
+        interpretDensity.textContent = `With ${dVal.toFixed(1)} people/km², the country featured ${dTier}, framing physical travel distances and parking constraints.`;
+      } else {
+        interpretDensity.textContent = "National territory and spatial distribution remained consistent with contemporaneous regional records.";
+      }
+    }
+
+    const interpretUrban = document.getElementById("interpret-context-urban");
+    if (interpretUrban) {
+      const uVal = record.urbanization_percent;
+      if (uVal !== null && uVal !== undefined) {
+        interpretUrban.textContent = `With ${uVal.toFixed(1)}% of residents in towns and cities, domestic driving was heavily shaped by metropolitan traffic alongside regional highway transit.`;
+      } else {
+        interpretUrban.textContent = "Reflects ongoing demographic distribution between metropolitan and rural regions.";
+      }
+    }
+
+    const interpretCars = document.getElementById("interpret-context-cars");
+    if (interpretCars) {
+      const cVal = record.passenger_cars_per_1000;
+      if (cVal !== null && cVal !== undefined) {
+        let cTier = "an emerging consumer fleet";
+        if (cVal >= 450) cTier = "already deeply established";
+        else if (cVal >= 250) cTier = "expanding steadily into mainstream households";
+        interpretCars.textContent = `At ${cVal.toFixed(1)} passenger cars per 1,000 residents, private vehicle ownership was ${cTier}, sustaining a large domestic replacement and multi-car household market.`;
+      } else {
+        interpretCars.textContent = "Harmonized international motorization figures are unrecorded for this year in standard OECD/UNECE archives; domestic adoption was growing but not recorded in standardized datasets.";
+      }
+    }
+
+    // 4. Trend Movement Captions
+    const trendGdp = document.getElementById("trend-context-gdp");
+    if (trendGdp && countryRecords.length > 0) {
+      const startGdp = countryRecords[0].gdp_per_capita_constant_2015_usd;
+      const currentGdp = record.gdp_per_capita_constant_2015_usd;
+      const pct = Math.round(((currentGdp - startGdp) / startGdp) * 100);
+      if (selectedYear === 1970) {
+        trendGdp.textContent = "Baseline 1970: real output grew substantially in subsequent decades";
+      } else if (pct > 0) {
+        trendGdp.textContent = `Up +${pct}% in real output per person since 1970`;
+      } else {
+        trendGdp.textContent = "Real output per person reflected contemporaneous economic shifts";
+      }
+    }
+
+    const trendDensity = document.getElementById("trend-context-density");
+    if (trendDensity && countryRecords.length > 0 && record.population_density_per_km2 !== null) {
+      const startD = countryRecords[0].population_density_per_km2;
+      if (startD) {
+        const dPct = Math.round(((record.population_density_per_km2 - startD) / startD) * 100);
+        trendDensity.textContent = dPct !== 0 ? `Density changed ${dPct > 0 ? "+" : ""}${dPct}% since 1970` : "Density remained steady across fixed land area";
+      } else {
+        trendDensity.textContent = "Population density observed across historical period";
+      }
+    }
+
+    const trendUrban = document.getElementById("trend-context-urban");
+    if (trendUrban && countryRecords.length > 0 && record.urbanization_percent !== null) {
+      const startU = countryRecords[0].urbanization_percent;
+      const uDelta = (record.urbanization_percent - startU).toFixed(1);
+      if (selectedYear === 1970) {
+        trendUrban.textContent = "Baseline 1970: urban proportion rose over following decades";
+      } else {
+        trendUrban.textContent = `Urban share shifted ${Number(uDelta) >= 0 ? "+" : ""}${uDelta} percentage points since 1970`;
+      }
+    }
+
+    const trendCars = document.getElementById("trend-context-cars");
+    if (trendCars) {
+      const validCars = countryRecords.filter(r => r.passenger_cars_per_1000 !== null);
+      if (validCars.length > 0 && record.passenger_cars_per_1000 !== null) {
+        const firstCar = validCars[0];
+        if (selectedYear > firstCar.year) {
+          const carDiff = Math.round(record.passenger_cars_per_1000 - firstCar.passenger_cars_per_1000);
+          trendCars.textContent = `Ownership changed ${carDiff >= 0 ? "+" : ""}${carDiff} cars/1,000 since ${firstCar.year}`;
+        } else {
+          trendCars.textContent = `Standardized OECD/UNECE reporting starts in ${firstCar.year}`;
+        }
+      } else {
+        trendCars.textContent = "Harmonized series begins in 1994 (prior years unrecorded)";
+      }
+    }
+
+    // 5. Synthesis Editorial Prose
+    const proseEl = document.getElementById("context-meaning-prose");
+    if (proseEl) {
+      proseEl.textContent = generateCountryCarSynthesis(activeSelectedCar, record, carSpecs);
+    }
+
+    renderContextSources();
+  }
+
+  function comparisonModelKey(car) {
+    return (car["Car name"] || "").replace(/^\d{4}\s+/, "");
+  }
+
+  function comparisonRecords() {
+    return Array.isArray(window.CARS_METADATA) ? window.CARS_METADATA : [];
+  }
+
+  function comparisonIso3(countryName) {
+    const matches = Object.values(window.ISO_COUNTRIES || {});
+    const match = matches.find(country => country.name === countryName);
+    return match ? match.iso3.toUpperCase() : "";
+  }
+
+  function comparisonOption(select, value, label, disabled = false) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = label;
+    option.disabled = disabled;
+    select.appendChild(option);
+  }
+
+  function comparisonValues(side, key) {
+    return comparisonSides[side][key];
+  }
+
+  function populateComparisonSide(side, resetModel = false) {
+    const records = comparisonRecords();
+    const controls = comparisonSides[side];
+    const state = comparisonState[side];
+    const countryRecords = records.filter(car => car["Country of manufacturer"] === state.country);
+    const manufacturers = [...new Set(countryRecords.map(car => car.Manufacturer).filter(Boolean))].sort();
+
+    controls.manufacturer.innerHTML = "";
+    manufacturers.forEach(manufacturer => comparisonOption(controls.manufacturer, manufacturer, manufacturer));
+    if (!manufacturers.includes(state.manufacturer)) state.manufacturer = manufacturers[0] || "";
+    controls.manufacturer.value = state.manufacturer;
+
+    const modelRecords = countryRecords.filter(car => car.Manufacturer === state.manufacturer);
+    const models = [...new Map(modelRecords.map(car => [comparisonModelKey(car), car])).values()]
+      .sort((left, right) => comparisonModelKey(left).localeCompare(comparisonModelKey(right)));
+    controls.model.innerHTML = "";
+    models.forEach(car => comparisonOption(controls.model, comparisonModelKey(car), comparisonModelKey(car)));
+    if (resetModel || !models.some(car => comparisonModelKey(car) === state.model)) {
+      state.model = models.length > 0 ? comparisonModelKey(models[0]) : "";
+    }
+    controls.model.value = state.model;
+
+    const years = modelRecords
+      .filter(car => comparisonModelKey(car) === state.model)
+      .map(car => parseInt(car["Model year"], 10))
+      .filter(year => !isNaN(year))
+      .sort((left, right) => left - right);
+    controls.year.innerHTML = "";
+    years.forEach(year => comparisonOption(controls.year, String(year), String(year)));
+    if (!years.includes(parseInt(state.year, 10))) state.year = years.length > 0 ? String(years[0]) : "";
+    controls.year.value = state.year;
+  }
+
+  function getComparisonCar(side) {
+    const state = comparisonState[side];
+    return comparisonRecords().find(car =>
+      car["Country of manufacturer"] === state.country &&
+      car.Manufacturer === state.manufacturer &&
+      comparisonModelKey(car) === state.model &&
+      parseInt(car["Model year"], 10) === parseInt(state.year, 10)
+    ) || null;
+  }
+
+  function comparisonDisplay(value, suffix = "") {
+    return value === null || value === undefined || value === ""
+      ? "Data unavailable"
+      : `${typeof value === "number" ? value.toLocaleString() : value}${suffix}`;
+  }
+
+  function escapeComparisonText(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function comparisonSpecRows(car) {
+    const specs = getCarSpecs(car) || {};
+    const fields = [
+      ["Horsepower", specs.horsepower, " BHP / HP"],
+      ["Weight", specs.weight_kg, " kg"],
+      ["MPG", specs.mpg, " US MPG"],
+      ["Engine configuration", specs.engine],
+      ["Drivetrain", specs.drivetrain],
+      ["Body type", specs.body_type],
+      ["Length", specs.length_mm, " mm"],
+      ["Width", specs.width_mm, " mm"],
+      ["Height", specs.height_mm, " mm"],
+      ["Wheelbase", specs.wheelbase_mm, " mm"]
+    ];
+    return fields.map(field => `
+      <div class="comparison-value-row">
+        <span>${escapeComparisonText(field[0])}</span>
+        <strong>${escapeComparisonText(comparisonDisplay(field[1], field[2] || ""))}</strong>
+      </div>
+    `).join("");
+  }
+
+  function comparisonContextRows(car) {
+    const iso3 = comparisonIso3(car["Country of manufacturer"]);
+    const year = parseInt(car["Model year"], 10);
+    const record = (window.COUNTRY_CONTEXT || []).find(item => item.iso3 === iso3 && item.year === year) || {};
+    const fields = [
+      ["GDP per capita", record.gdp_per_capita_constant_2015_usd, ""],
+      ["Population density", record.population_density_per_km2, " people / km²"],
+      ["Urbanization", record.urbanization_percent, "%"],
+      ["Passenger cars / 1,000", record.passenger_cars_per_1000, " cars"]
+    ];
+    return fields.map(field => `
+      <div class="comparison-context-row">
+        <span>${escapeComparisonText(field[0])}</span>
+        <strong>${escapeComparisonText(comparisonDisplay(field[1], field[2]))}</strong>
+      </div>
+    `).join("");
+  }
+
+  function renderVehicleComparison() {
+    const carA = getComparisonCar("a");
+    const carB = getComparisonCar("b");
+    if (!comparisonResult || !carA || !carB) {
+      if (comparisonResult) comparisonResult.classList.add("is-hidden");
+      return;
+    }
+
+    const vehicleColumn = car => `
+      <article class="comparison-vehicle-column">
+        <div class="comparison-vehicle-kicker">${escapeComparisonText(car["Country of manufacturer"])} · ${escapeComparisonText(car.Manufacturer)}</div>
+        <h4>${escapeComparisonText(comparisonModelKey(car))}</h4>
+        <div class="comparison-vehicle-year">${escapeComparisonText(car["Model year"])}</div>
+        <div class="comparison-spec-list">${comparisonSpecRows(car)}</div>
+        <div class="comparison-context-heading">Country context for ${escapeComparisonText(car["Model year"])}</div>
+        <div class="comparison-context-list">${comparisonContextRows(car)}</div>
+      </article>
+    `;
+
+    comparisonResult.innerHTML = `<div class="comparison-vehicle-columns">${vehicleColumn(carA)}${vehicleColumn(carB)}</div>`;
+    comparisonResult.classList.remove("is-hidden");
+  }
+
+  function initializeVehicleComparison() {
+    const records = comparisonRecords();
+    const countries = [...new Set(records.map(car => car["Country of manufacturer"]).filter(Boolean))].sort();
+    ["a", "b"].forEach((side, index) => {
+      const controls = comparisonSides[side];
+      comparisonOption(controls.country, "", "Select country", true);
+      countries.forEach(country => comparisonOption(controls.country, country, country));
+      comparisonState[side].country = countries[index] || countries[0] || "";
+      controls.country.value = comparisonState[side].country;
+      populateComparisonSide(side, true);
+
+      ["country", "manufacturer", "model", "year"].forEach(key => {
+        controls[key].addEventListener("change", () => {
+          comparisonState[side][key] = controls[key].value;
+          if (key === "country" || key === "manufacturer") populateComparisonSide(side, true);
+          if (key === "model") populateComparisonSide(side);
+          renderVehicleComparison();
+        });
+      });
+    });
+    renderVehicleComparison();
+  }
+
+  function whyRegionMatches(entry, iso3) {
+    const europeanIso3 = ["DEU", "FRA", "GBR", "ITA", "SWE"];
+    return entry.regions.includes("GLOBAL") || entry.regions.includes(iso3) ||
+      (entry.regions.includes("EUROPE") && europeanIso3.includes(iso3));
+  }
+
+  function updateWhyCarsChanged() {
+    if (!whyTopicPanel) return;
+    const iso3 = activeCountryData && activeCountryData.iso3 ? activeCountryData.iso3.toUpperCase() : "";
+    const selectedYear = activeTimelineYear || (activeSelectedCar ? parseInt(activeSelectedCar["Model year"], 10) : null);
+    const countryName = activeCountryData ? activeCountryData.name : "Country";
+
+    whySelectedCountry.textContent = countryName;
+    whySelectedYear.textContent = selectedYear || "Year";
+
+    const matchingEntries = selectedYear
+      ? whyContextEntries.filter(entry => entry.topic === activeWhyTopic && selectedYear >= entry.start && selectedYear <= entry.end && whyRegionMatches(entry, iso3))
+      : [];
+
+    if (matchingEntries.length === 0) {
+      whyTopicPanel.innerHTML = `<p class="why-data-unavailable">Data unavailable for this country and year.</p>`;
+      return;
+    }
+
+    whyTopicPanel.innerHTML = matchingEntries.map(entry => `
+      <article class="why-entry">
+        <div class="why-entry-date">${entry.start === entry.end ? entry.start : `${entry.start}–${entry.end}`}</div>
+        <div class="why-entry-copy">
+          <h4>${escapeComparisonText(entry.title)}</h4>
+          <p>${escapeComparisonText(entry.text)}</p>
+          <a href="${entry.url}" target="_blank" rel="noopener">Source: ${escapeComparisonText(entry.source)}</a>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  whyTopicButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      activeWhyTopic = button.dataset.whyTopic;
+      whyTopicButtons.forEach(topicButton => topicButton.classList.toggle("is-active", topicButton === button));
+      updateWhyCarsChanged();
+    });
+  });
 
   function getCarSpecs(car) {
     if (!car) return null;
@@ -1465,7 +3212,23 @@ window.selectedManufacturer = null;
     return car.specs || null;
   }
 
-  function selectCar(car, visibleCars = null) {
+  let lastScrollTarget = null;
+  let lastScrollAt = 0;
+
+  function scrollToSection(element) {
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    if (rect.top >= 0 && rect.top <= window.innerHeight * 0.35) return;
+
+    const now = performance.now();
+    if (lastScrollTarget === element && now - lastScrollAt < 700) return;
+    lastScrollTarget = element;
+    lastScrollAt = now;
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    element.scrollIntoView({ behavior, block: "start" });
+  }
+
+  function selectCar(car, visibleCars = null, scrollToStage = false) {
     if (!car) return;
     activeSelectedCar = car;
     if (visibleCars) {
@@ -1525,11 +3288,16 @@ window.selectedManufacturer = null;
     if (currentSpecViewMode === "comparison") {
       renderSpecComparison(currentVisibleCars, car);
     }
+    updateCountryContext();
+    updateWhyCarsChanged();
+    if (scrollToStage && automotiveDataStage && !automotiveDataStage.classList.contains("is-hidden")) {
+      scrollToSection(automotiveDataStage);
+    }
   }
 
   function renderSpecDossier(car) {
     if (!car) return;
-    const specs = getCarSpecs(car);
+    const specs = getCarSpecs(car) || {};
 
     // Hero metadata
     if (specHeroImg) {
@@ -1546,92 +3314,54 @@ window.selectedManufacturer = null;
       specHeroNote.textContent = `Archived engineering specimen • Source: ${src}`;
     }
 
-    const hasAnySpecs = specs && (
+    const hasAnySpecs = (
       specs.horsepower || specs.weight_kg || specs.mpg ||
       specs.engine || specs.drivetrain || specs.body_type ||
       specs.length_mm || specs.width_mm || specs.height_mm || specs.wheelbase_mm
     );
 
-    if (!hasAnySpecs) {
-      if (specBenchmarksGrid) specBenchmarksGrid.innerHTML = "";
-      if (specPowertrainBlock) specPowertrainBlock.style.display = "none";
-      if (specDimensionsBlock) specDimensionsBlock.style.display = "none";
-      if (specNoDataNotice) specNoDataNotice.style.display = "block";
-      return;
-    }
-
-    if (specNoDataNotice) specNoDataNotice.style.display = "none";
+    if (specNoDataNotice) specNoDataNotice.style.display = hasAnySpecs ? "none" : "block";
 
     // 1. Performance Benchmarks Grid (Horsepower, Weight, MPG)
     if (specBenchmarksGrid) {
       specBenchmarksGrid.innerHTML = "";
 
-      // Horsepower
-      if (specs.horsepower) {
-        const hpPct = Math.min(100, Math.max(10, Math.round((specs.horsepower / 750) * 100)));
-        const card = document.createElement("div");
-        card.className = "spec-benchmark-card";
-        card.innerHTML = `
-          <span class="spec-benchmark-label">Power Output</span>
-          <div class="spec-benchmark-value-group">
-            <span class="spec-benchmark-num">${specs.horsepower}</span>
-            <span class="spec-benchmark-unit">BHP / HP</span>
-          </div>
-          <div class="spec-benchmark-secondary">Mechanical horsepower at crank</div>
-          <div class="spec-benchmark-bar-track">
-            <div class="spec-benchmark-bar-fill" style="width: ${hpPct}%;"></div>
-          </div>
-        `;
-        specBenchmarksGrid.appendChild(card);
-      }
+      const benchmarkDefinitions = [
+        { label: "Power Output", key: "horsepower", unit: "BHP / HP", note: "Mechanical horsepower at crank", scale: 750 },
+        { label: "Curb Weight", key: "weight_kg", unit: "kg", note: specs.weight_lbs ? `${specs.weight_lbs.toLocaleString()} lbs unladen` : "Unladen weight", scale: 2600, accent: "gold" },
+        { label: "Combined Economy", key: "mpg", unit: "US MPG", note: specs.fuel_economy_l100 ? `${specs.fuel_economy_l100} L/100km combined` : "Combined rating", scale: 55 }
+      ];
 
-      // Curb Weight
-      if (specs.weight_kg) {
-        const wtPct = Math.min(100, Math.max(10, Math.round((specs.weight_kg / 2600) * 100)));
+      benchmarkDefinitions.forEach(benchmark => {
+        const value = specs[benchmark.key];
+        const available = value !== null && value !== undefined;
         const card = document.createElement("div");
-        card.className = "spec-benchmark-card";
+        card.className = `spec-benchmark-card${available ? "" : " is-unavailable"}`;
+        const bar = available
+          ? `<div class="spec-benchmark-bar-track"><div class="spec-benchmark-bar-fill ${benchmark.accent || ""}" style="width: ${Math.min(100, Math.max(10, Math.round((value / benchmark.scale) * 100)))}%;"></div></div>`
+          : "";
         card.innerHTML = `
-          <span class="spec-benchmark-label">Curb Weight</span>
+          <span class="spec-benchmark-label">${benchmark.label}</span>
           <div class="spec-benchmark-value-group">
-            <span class="spec-benchmark-num">${specs.weight_kg.toLocaleString()}</span>
-            <span class="spec-benchmark-unit">kg</span>
+            <span class="spec-benchmark-num">${available ? (typeof value === "number" ? value.toLocaleString() : value) : "Data unavailable"}</span>
+            <span class="spec-benchmark-unit">${available ? benchmark.unit : ""}</span>
           </div>
-          <div class="spec-benchmark-secondary">${specs.weight_lbs ? `${specs.weight_lbs.toLocaleString()} lbs unladen` : 'Unladen weight'}</div>
-          <div class="spec-benchmark-bar-track">
-            <div class="spec-benchmark-bar-fill gold" style="width: ${wtPct}%;"></div>
-          </div>
+          <div class="spec-benchmark-secondary">${available ? benchmark.note : "No exact value is recorded for this vehicle."}</div>
+          ${bar}
         `;
         specBenchmarksGrid.appendChild(card);
-      }
-
-      // Fuel Economy / MPG
-      if (specs.mpg) {
-        const mpgPct = Math.min(100, Math.max(10, Math.round((specs.mpg / 55) * 100)));
-        const card = document.createElement("div");
-        card.className = "spec-benchmark-card";
-        card.innerHTML = `
-          <span class="spec-benchmark-label">Combined Economy</span>
-          <div class="spec-benchmark-value-group">
-            <span class="spec-benchmark-num">${specs.mpg}</span>
-            <span class="spec-benchmark-unit">US MPG</span>
-          </div>
-          <div class="spec-benchmark-secondary">${specs.fuel_economy_l100 ? `${specs.fuel_economy_l100} L/100km combined` : 'Combined rating'}</div>
-          <div class="spec-benchmark-bar-track">
-            <div class="spec-benchmark-bar-fill" style="width: ${mpgPct}%;"></div>
-          </div>
-        `;
-        specBenchmarksGrid.appendChild(card);
-      }
+      });
     }
 
     // 2. Powertrain & Mechanical Architecture
     if (specPowertrainBlock && specPowertrainGrid) {
       specPowertrainGrid.innerHTML = "";
-      const powertrainAttrs = [];
+      const powertrainAttrs = [
+        { label: "Engine Configuration", val: specs.engine },
+        { label: "Drive Configuration", val: specs.drivetrain },
+        { label: "Body Architecture", val: specs.body_type }
+      ];
 
-      if (specs.engine) {
-        powertrainAttrs.push({ label: "Engine Configuration", val: specs.engine });
-      }
       if (specs.displacement_cc) {
         powertrainAttrs.push({ label: "Displacement", val: `${specs.displacement_cc.toLocaleString()} cc (${(specs.displacement_cc / 1000).toFixed(1)}L)` });
       }
@@ -1641,35 +3371,27 @@ window.selectedManufacturer = null;
       if (specs.fuel_type) {
         powertrainAttrs.push({ label: "Fuel System", val: specs.fuel_type });
       }
-      if (specs.drivetrain) {
-        powertrainAttrs.push({ label: "Drive Configuration", val: specs.drivetrain });
-      }
       if (specs.transmission) {
         powertrainAttrs.push({ label: "Transmission", val: specs.transmission });
       }
-      if (specs.body_type) {
-        powertrainAttrs.push({ label: "Body Architecture", val: specs.body_type });
-      }
 
-      if (powertrainAttrs.length > 0) {
-        specPowertrainBlock.style.display = "block";
-        powertrainAttrs.forEach(attr => {
-          const item = document.createElement("div");
-          item.className = "spec-attr-item";
-          item.innerHTML = `
-            <span class="spec-attr-label">${attr.label}</span>
-            <span class="spec-attr-value">${attr.val}</span>
-          `;
-          specPowertrainGrid.appendChild(item);
-        });
-      } else {
-        specPowertrainBlock.style.display = "none";
-      }
+      specPowertrainBlock.style.display = "block";
+      powertrainAttrs.forEach(attr => {
+        const item = document.createElement("div");
+        const available = attr.val !== null && attr.val !== undefined;
+        item.className = `spec-attr-item${available ? "" : " is-unavailable"}`;
+        item.innerHTML = `
+          <span class="spec-attr-label">${attr.label}</span>
+          <span class="spec-attr-value">${available ? attr.val : "Data unavailable"}</span>
+        `;
+        specPowertrainGrid.appendChild(item);
+      });
     }
 
     // 3. Physical Architecture & Stance Dimensions
     if (specDimensionsBlock && specDimensionsGrid) {
       specDimensionsGrid.innerHTML = "";
+      if (specStanceBars) specStanceBars.innerHTML = "";
       const dims = [];
 
       if (specs.length_mm) {
@@ -1685,19 +3407,28 @@ window.selectedManufacturer = null;
         dims.push({ label: "Overall Height", mm: specs.height_mm, inch: specs.height_in });
       }
 
-      if (dims.length > 0) {
-        specDimensionsBlock.style.display = "block";
-        dims.forEach(d => {
-          const card = document.createElement("div");
-          card.className = "spec-dim-card";
-          card.innerHTML = `
-            <div class="spec-dim-label">${d.label}</div>
-            <div class="spec-dim-primary">${d.mm.toLocaleString()} mm</div>
-            <div class="spec-dim-secondary">${d.inch ? `${d.inch} in` : ''}</div>
-          `;
-          specDimensionsGrid.appendChild(card);
-        });
+      const dimensionDefinitions = [
+        { label: "Overall Length", key: "length_mm", inchKey: "length_in" },
+        { label: "Wheelbase", key: "wheelbase_mm", inchKey: "wheelbase_in" },
+        { label: "Overall Width", key: "width_mm", inchKey: "width_in" },
+        { label: "Overall Height", key: "height_mm", inchKey: "height_in" }
+      ];
 
+      specDimensionsBlock.style.display = "block";
+      dimensionDefinitions.forEach(dimension => {
+        const millimetres = specs[dimension.key];
+        const available = millimetres !== null && millimetres !== undefined;
+        const card = document.createElement("div");
+        card.className = `spec-dim-card${available ? "" : " is-unavailable"}`;
+        card.innerHTML = `
+          <div class="spec-dim-label">${dimension.label}</div>
+          <div class="spec-dim-primary">${available ? `${millimetres.toLocaleString()} mm` : "Data unavailable"}</div>
+          <div class="spec-dim-secondary">${available && specs[dimension.inchKey] ? `${specs[dimension.inchKey]} in` : ""}</div>
+        `;
+        specDimensionsGrid.appendChild(card);
+      });
+
+      if (dims.length > 0) {
         // Stance relative bar graph
         if (specStanceBars) {
           specStanceBars.innerHTML = "";
@@ -1716,8 +3447,6 @@ window.selectedManufacturer = null;
             specStanceBars.appendChild(row);
           });
         }
-      } else {
-        specDimensionsBlock.style.display = "none";
       }
     }
   }
@@ -1831,13 +3560,14 @@ window.selectedManufacturer = null;
 
   function renderCarsGrid(carsList, year, scopeName, availableYears) {
     if (!modelsGrid) return;
-    modelsGrid.innerHTML = "";
 
     if (carsList.length === 0) {
       if (automotiveDataStage) automotiveDataStage.classList.add("is-hidden");
       if (crumbCarSep) crumbCarSep.style.display = "none";
       if (crumbCar) crumbCar.style.display = "none";
       activeSelectedCar = null;
+      updateCountryContext();
+      updateWhyCarsChanged();
 
       const prevYears = availableYears.filter(y => y < year);
       const prevYear = prevYears.length > 0 ? prevYears[prevYears.length - 1] : null;
@@ -1870,47 +3600,62 @@ window.selectedManufacturer = null;
         });
       });
 
-      modelsGrid.appendChild(emptyCard);
+      modelsGrid.replaceChildren(emptyCard);
       return;
     }
 
     const sortedCars = [...carsList].filter(c => parseInt(c["Model year"] || 0, 10) >= 1970).sort((a, b) => parseInt(a["Model year"] || 0, 10) - parseInt(b["Model year"] || 0, 10));
     currentVisibleCars = sortedCars;
 
-    sortedCars.forEach(car => {
-      const card = document.createElement("div");
-      card.className = "car-model-card";
-      card.dataset.carName = car["Car name"];
+    const existingCards = new Map(
+      Array.from(modelsGrid.querySelectorAll(".car-model-card"), card => [card.dataset.carName, card])
+    );
+    const nextCards = sortedCars.map(car => {
+      let card = existingCards.get(car["Car name"]);
+      if (!card) {
+        card = document.createElement("div");
+        card.className = "car-model-card";
+        card.dataset.carName = car["Car name"];
 
-      const imgSrc = car["Image filename"] || "";
-      const carName = car["Car name"] || `${car["Model year"]} ${car["Manufacturer"] || scopeName}`;
-      const carYear = car["Model year"] || "";
-      const category = car["Vehicle category"] || car["Decade"] || "Specimen";
-      const generation = car["Exact model generation"] || car["Decade"] || "";
-      const source = car["Image source"] || "Automotive Archive";
+        const imgSrc = car["Image filename"] || "";
+        const carName = car["Car name"] || `${car["Model year"]} ${car["Manufacturer"] || scopeName}`;
+        const carYear = car["Model year"] || "";
+        const category = car["Vehicle category"] || car["Decade"] || "Specimen";
+        const generation = car["Exact model generation"] || car["Decade"] || "";
+        const source = car["Image source"] || "Automotive Archive";
 
-      card.innerHTML = `
-        <div class="car-image-frame">
-          <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
-          <div class="car-pills-overlay">
-            <span class="car-year-pill">${carYear}</span>
-            <span class="car-cat-pill">${category}</span>
+        card.innerHTML = `
+          <div class="car-image-frame">
+            <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
+            <div class="car-pills-overlay">
+              <span class="car-year-pill">${carYear}</span>
+              <span class="car-cat-pill">${category}</span>
+            </div>
           </div>
-        </div>
-        <div class="car-details-body">
-          <h4 class="car-model-name">${carName}</h4>
-          <div class="car-model-gen">${generation}</div>
-          <div class="car-credit-line">Source: ${source}</div>
-        </div>
-        <span class="car-selected-badge">Selected</span>
-      `;
+          <div class="car-details-body">
+            <h4 class="car-model-name">${carName}</h4>
+            <div class="car-model-gen">${generation}</div>
+            <div class="car-credit-line">Source: ${source}</div>
+          </div>
+          <span class="car-selected-badge">Selected</span>
+        `;
 
-      card.addEventListener("click", () => {
-        selectCar(car, sortedCars);
-      });
-
-      modelsGrid.appendChild(card);
+        card.addEventListener("click", () => {
+          const selectedCar = currentVisibleCars.find(item => item["Car name"] === card.dataset.carName);
+          if (selectedCar) selectCar(selectedCar, currentVisibleCars, true);
+        });
+      }
+      existingCards.delete(car["Car name"]);
+      return card;
     });
+
+    modelsGrid.querySelectorAll(".timeline-empty-card").forEach(card => card.remove());
+    let nextPosition = modelsGrid.firstElementChild;
+    nextCards.forEach(card => {
+      if (card !== nextPosition) modelsGrid.insertBefore(card, nextPosition);
+      nextPosition = card.nextElementSibling;
+    });
+    existingCards.forEach(card => card.remove());
 
     // Auto-select car: keep current if still in visible set, else select first
     const stillVisible = activeSelectedCar && sortedCars.find(c => c["Car name"] === activeSelectedCar["Car name"]);
@@ -1949,8 +3694,6 @@ window.selectedManufacturer = null;
       modelsPanel.classList.add("is-active");
       modelsPanel.style.opacity = "0";
 
-      // Scroll smoothly to content space
-      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
       requestAnimationFrame(() => {
         modelsPanel.style.opacity = "1";
@@ -1984,7 +3727,6 @@ window.selectedManufacturer = null;
       automakersPanel.classList.add("is-active");
       automakersPanel.style.opacity = "0";
 
-      document.querySelector(".country-content-space").scrollIntoView({ behavior: "smooth", block: "start" });
 
       requestAnimationFrame(() => {
         automakersPanel.style.opacity = "1";
@@ -2011,7 +3753,7 @@ window.selectedManufacturer = null;
       worldView.classList.remove("is-hidden");
       worldView.classList.add("is-active");
       worldView.style.opacity = "0";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollToSection(worldView);
 
       requestAnimationFrame(() => {
         worldView.style.opacity = "1";
@@ -2045,14 +3787,14 @@ window.selectedManufacturer = null;
   if (crumbYear) {
     crumbYear.addEventListener("click", function() {
       if (modelsGrid) {
-        modelsGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToSection(modelsGrid);
       }
     });
   }
   if (crumbCar) {
     crumbCar.addEventListener("click", function() {
       if (automotiveDataStage) {
-        automotiveDataStage.scrollIntoView({ behavior: "smooth", block: "start" });
+        scrollToSection(automotiveDataStage);
       }
     });
   }
@@ -2114,11 +3856,11 @@ window.selectedManufacturer = null;
     });
   }
 
+  initializeVehicleComparison();
+
   function positionTooltip(event) {
-    if (!mapContainer) return;
-    const rect = mapContainer.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = event.clientX - mapContainerRect.left;
+    const y = event.clientY - mapContainerRect.top;
     tooltip.style.left = `${x}px`;
     tooltip.style.top = `${y}px`;
   }
@@ -2211,7 +3953,7 @@ window.selectedManufacturer = null;
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/nikiwalkor83\.github\.io\/car-character\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

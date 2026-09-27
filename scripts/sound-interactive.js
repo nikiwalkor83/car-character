@@ -7,19 +7,22 @@ const soundDataset = [{"id": "petrol_rec26", "file": "audio/cars/petrol_rec26.wa
 const powertrainMeta = {
   i4: { label: "Inline-4", hex: "#38bdf8" },
   v8: { label: "V8", hex: "#f43f5e" },
-  v6_i6: { label: "6-Cylinder (V6 / I6)", hex: "#a855f7" },
+  v6: { label: "V6", hex: "#a855f7" },
+  inline6: { label: "Inline-6", hex: "#0ea5e9" },
+  flat6: { label: "Flat-6", hex: "#f97316" },
+  six_unspecified: { label: "6-Cylinder (layout unspecified)", hex: "#94a3b8" },
   i3: { label: "Inline-3", hex: "#eab308" },
   other: { label: "Electric / Hybrid / Other", hex: "#10b981" },
   niche: { label: "Niche (I5 / V10 / V12)", hex: "#64748b" }
 };
 
 const powertrainDecades = [
-  { decade: "1970s", n: 689, i4: 52.7, v8: 19.9, v6_i6: 20.6, i3: 0.0, other: 1.9, niche: 4.9, dominant: "Inline-4 (52.7%) &bull; V8 (19.9%)" },
-  { decade: "1980s", n: 1580, i4: 68.7, v8: 7.2, v6_i6: 17.0, i3: 0.4, other: 0.9, niche: 5.8, dominant: "Inline-4 (68.7%)" },
-  { decade: "1990s", n: 4315, i4: 67.7, v8: 6.5, v6_i6: 19.8, i3: 0.7, other: 0.4, niche: 4.9, dominant: "Inline-4 (67.7%)" },
-  { decade: "2000s", n: 9996, i4: 65.0, v8: 8.1, v6_i6: 20.6, i3: 2.0, other: 0.5, niche: 3.8, dominant: "Inline-4 (65.0%) &bull; V6/I6 (20.6%)" },
-  { decade: "2010s", n: 10384, i4: 65.6, v8: 7.9, v6_i6: 15.4, i3: 7.0, other: 1.9, niche: 2.2, dominant: "Inline-4 (65.6%)" },
-  { decade: "2020s", n: 2547, i4: 46.3, v8: 7.2, v6_i6: 14.1, i3: 10.2, other: 20.8, niche: 1.4, dominant: "Inline-4 (46.3%) &bull; EV/Hybrid (20.8%)" }
+  { decade: "1970s", n: 689, i4: 52.7, v8: 19.9, v6: 5.08, inline6: 0, flat6: 0, six_unspecified: 15.52, i3: 0.0, other: 1.9, niche: 4.9, dominant: "Inline-4 (52.7%) &bull; V8 (19.9%)" },
+  { decade: "1980s", n: 1580, i4: 68.7, v8: 7.2, v6: 5.00, inline6: 0, flat6: 0, six_unspecified: 12.00, i3: 0.4, other: 0.9, niche: 5.8, dominant: "Inline-4 (68.7%)" },
+  { decade: "1990s", n: 4315, i4: 67.7, v8: 6.5, v6: 9.87, inline6: 0.02, flat6: 0, six_unspecified: 9.91, i3: 0.7, other: 0.4, niche: 4.9, dominant: "Inline-4 (67.7%)" },
+  { decade: "2000s", n: 9996, i4: 65.0, v8: 8.1, v6: 10.90, inline6: 0, flat6: 0, six_unspecified: 9.70, i3: 2.0, other: 0.5, niche: 3.8, dominant: "Inline-4 (65.0%) &bull; Six-cylinder (20.6%)" },
+  { decade: "2010s", n: 10384, i4: 65.6, v8: 7.9, v6: 7.29, inline6: 0, flat6: 0, six_unspecified: 8.11, i3: 7.0, other: 1.9, niche: 2.2, dominant: "Inline-4 (65.6%)" },
+  { decade: "2020s", n: 2547, i4: 46.3, v8: 7.2, v6: 6.16, inline6: 0, flat6: 0, six_unspecified: 7.94, i3: 10.2, other: 20.8, niche: 1.4, dominant: "Inline-4 (46.3%) &bull; EV/Hybrid (20.8%)" }
 ];
 
 let activeAudioElement = null;
