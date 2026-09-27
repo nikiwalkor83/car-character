@@ -3183,7 +3183,104 @@ body {
   letter-spacing: 0.08em;
 }
 
-/* Custom Interactive Waveform */
+/* Real Interactive Audio Waveform */
+.sound-waveform-container {
+  margin-bottom: 1.25rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 0.65rem 0.85rem 0.55rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.sound-waveform-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.sound-waveform-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sound-waveform-indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-racing-green);
+  opacity: 0.75;
+}
+
+.sound-waveform-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.sound-waveform-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.sound-waveform-duration {
+  color: var(--text-muted);
+}
+
+.sound-waveform-seek-preview {
+  color: var(--accent-racing-green);
+  font-weight: 700;
+}
+
+.sound-waveform-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  cursor: pointer;
+  background: rgba(28, 61, 46, 0.02);
+  border-radius: 1px;
+  border: 1px solid rgba(28, 61, 46, 0.1);
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+.sound-waveform-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sound-waveform-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(251, 250, 248, 0.85);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Legacy waveform fallback track */
 .sound-waveform-track {
   display: flex;
   align-items: flex-end;
@@ -3805,6 +3902,7 @@ body {
   stroke-width: 0.5px;
   cursor: default;
   transition: fill 0.22s ease, stroke 0.22s ease, opacity 0.22s ease;
+  pointer-events: none;
 }
 
 /* Countries without automotive data: quiet and muted */
@@ -3823,10 +3921,31 @@ body {
 }
 
 .world-country.has-data:hover,
+.world-country.has-data.is-hovered,
 .world-country.has-data.is-active-source {
   fill: var(--accent-racing-green) !important;
   stroke: #ffffff !important;
   stroke-width: 1.2px !important;
+}
+
+.world-country.is-muted.is-hovered {
+  fill: #d8d2c4 !important;
+  stroke: #ece6d8 !important;
+  stroke-width: 0.9px !important;
+}
+
+/* Invisible interaction hit layer - follows exact country geometry */
+.country-hit-area {
+  fill: rgba(0, 0, 0, 0.001);
+  stroke: rgba(0, 0, 0, 0.001);
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: all;
+  cursor: default;
+}
+
+.country-hit-area.has-data {
+  cursor: pointer;
 }
 
 .world-country.is-selected {
@@ -3953,7 +4072,7 @@ body {
 
 .mfg-cluster-aura {
   fill: transparent;
-  pointer-events: all;
+  pointer-events: none;
   cursor: default;
 }
 
@@ -6394,6 +6513,127 @@ body {
   line-height: 1.55;
 }
 
+/* Dual Dossier: THIS CAR against ITS SETTING */
+.context-dual-dossier {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-rule);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 860px) {
+  .context-dual-dossier {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .context-dossier-divider {
+    display: none;
+  }
+}
+
+.context-dossier-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.context-dossier-header {
+  border-bottom: 1px solid var(--border-rule);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.context-dossier-eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-brass);
+  margin-bottom: 0.25rem;
+}
+
+.context-dossier-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.context-dossier-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem 1rem;
+}
+
+@media (max-width: 520px) {
+  .context-dossier-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.context-dossier-item {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text-body);
+}
+
+.context-dossier-label {
+  display: block;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.context-dossier-val {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-ink);
+  font-size: 0.95rem;
+}
+
+.context-dossier-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.context-dossier-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: var(--border-rule);
+}
+
+.context-dossier-connector {
+  position: relative;
+  background-color: var(--bg-card);
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--accent-racing-green);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+}
+
 /* Context 4-Indicators Grid */
 .context-indicators-grid {
   display: grid;
@@ -6425,6 +6665,31 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+.context-card-section {
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.context-card-section-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.context-card-section-text {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--text-body);
+  margin: 0;
 }
 
 .context-card-top {
@@ -6546,6 +6811,72 @@ body {
   margin: 0.85rem 0 0 0;
   padding-top: 0.65rem;
   border-top: 1px dashed var(--border-rule);
+}
+
+/* Editorial Connection: WHAT DOES THIS MEAN FOR THE CAR? */
+.context-meaning-stage {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-rule);
+  border-left: 4px solid var(--accent-racing-green);
+  padding: 1.5rem 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.context-meaning-header {
+  margin-bottom: 0.75rem;
+}
+
+.context-meaning-eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-brass);
+  margin-bottom: 0.25rem;
+}
+
+.context-meaning-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.context-meaning-prose {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: var(--text-ink);
+  margin: 0 0 1rem 0;
+}
+
+.context-meaning-disclaimer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-rule);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.context-disclaimer-tag {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-racing-green);
+  white-space: nowrap;
+}
+
+.context-disclaimer-text {
+  color: var(--text-muted);
 }
 
 /* Sources & Provenance Footer */

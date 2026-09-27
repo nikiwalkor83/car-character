@@ -245,7 +245,7 @@ toc: false
               <span class="context-eyebrow">The Country</span>
               <h3 id="context-stage-title" class="context-title">The car in its context</h3>
               <p id="context-stage-lead" class="context-lead">
-                The selected vehicle is shown alongside the wider country in <span id="context-active-year-label">1970</span>. These figures describe the conditions of its country and period, giving you a basis for comparison without implying that one caused the other.
+                Before looking at the car, look at the country it came from. The figures below describe the broader national environment in <span id="context-active-year-label">1970</span>, offering background context without assuming that economic or demographic figures directly dictated vehicle design.
               </p>
             </div>
             <div class="context-country-badge" id="context-country-badge">
@@ -254,10 +254,35 @@ toc: false
             </div>
           </div>
 
+          <!-- DUAL DOSSIER: THIS CAR & ITS SETTING -->
+          <div class="context-dual-dossier" id="context-dual-dossier">
+            <div class="context-dossier-card context-dossier-car">
+              <div class="context-dossier-header">
+                <span class="context-dossier-eyebrow">This Car</span>
+                <h4 class="context-dossier-title" id="dossier-car-name">&mdash;</h4>
+              </div>
+              <ul class="context-dossier-list" id="dossier-car-list">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+            <div class="context-dossier-divider" aria-hidden="true">
+              <span class="context-dossier-connector">beside</span>
+            </div>
+            <div class="context-dossier-card context-dossier-country">
+              <div class="context-dossier-header">
+                <span class="context-dossier-eyebrow">Its Setting</span>
+                <h4 class="context-dossier-title" id="dossier-country-name">&mdash;</h4>
+              </div>
+              <ul class="context-dossier-list" id="dossier-country-list">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+          </div>
+
           <div class="context-inquiry-box">
             <span class="context-inquiry-icon">&para;</span>
             <p class="context-inquiry-text" id="context-inquiry-text">
-              <strong>Investigation prompt:</strong> Could shifts in purchasing power, urbanization, or space constraints help explain changes in vehicle size, weight, and displacement across eras?
+              <strong>Investigation prompt:</strong> How did purchasing power, spatial concentration, urbanization, and motorization depth characterize the vehicle's domestic market environment?
             </p>
           </div>
 
@@ -274,21 +299,29 @@ toc: false
                 <div class="context-card-value" id="val-context-gdp">&mdash;</div>
                 <div class="context-card-unit">Constant 2015 US$ per person</div>
               </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">An indicator of economic output per person, adjusted for inflation.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-gdp">Provides broad macroeconomic context for household purchasing power during this period.</p>
+              </div>
               <div class="context-sparkline-wrap">
                 <div class="context-sparkline-svg" id="sparkline-context-gdp"></div>
                 <div class="context-sparkline-meta">
                   <span id="meta-context-gdp-start">1970</span>
-                  <span class="context-sparkline-caption">Historical Trend</span>
+                  <span class="context-sparkline-caption" id="trend-context-gdp">Historical Trend</span>
                   <span id="meta-context-gdp-end">2024</span>
                 </div>
               </div>
-              <p class="context-card-desc">Real national economic output per resident, adjusted for inflation.</p>
+              <p class="context-card-desc"><em>What this does not prove:</em> National income does not determine which price segment a car targeted or what individual buyers could afford.</p>
             </div>
 
             <!-- 2. Population Density -->
             <div class="context-indicator-card" id="card-context-density">
               <div class="context-card-top">
-                <span class="context-card-label">Spatial Constraints</span>
+                <span class="context-card-label">Land &amp; Spatial Constraints</span>
                 <span class="context-card-code">EN.POP.DNST</span>
               </div>
               <h4 class="context-card-title">Population Density</h4>
@@ -296,21 +329,29 @@ toc: false
                 <div class="context-card-value" id="val-context-density">&mdash;</div>
                 <div class="context-card-unit">People per km² of land</div>
               </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">Average population per unit of land area.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-density">Describes how concentrated or dispersed the population was across national territory.</p>
+              </div>
               <div class="context-sparkline-wrap">
                 <div class="context-sparkline-svg" id="sparkline-context-density"></div>
                 <div class="context-sparkline-meta">
                   <span id="meta-context-density-start">1970</span>
-                  <span class="context-sparkline-caption">Historical Trend</span>
+                  <span class="context-sparkline-caption" id="trend-context-density">Historical Trend</span>
                   <span id="meta-context-density-end">2023</span>
                 </div>
               </div>
-              <p class="context-card-desc">Indicates spatial concentration, road footprint constraints, and garage pressure.</p>
+              <p class="context-card-desc"><em>What this does not prove:</em> Density describes spatial settlement; it does not force manufacturers to produce vehicles of a single footprint.</p>
             </div>
 
             <!-- 3. Urbanization -->
             <div class="context-indicator-card" id="card-context-urban">
               <div class="context-card-top">
-                <span class="context-card-label">Demographic Distribution</span>
+                <span class="context-card-label">Settlement Pattern</span>
                 <span class="context-card-code">SP.URB.TOTL.IN.ZS</span>
               </div>
               <h4 class="context-card-title">Urbanization</h4>
@@ -318,15 +359,23 @@ toc: false
                 <div class="context-card-value" id="val-context-urban">&mdash;</div>
                 <div class="context-card-unit">% living in urban areas</div>
               </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">Share of the population living in urban areas.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-urban">Reflects the proportion of residents living in towns and cities versus regional communities.</p>
+              </div>
               <div class="context-sparkline-wrap">
                 <div class="context-sparkline-svg" id="sparkline-context-urban"></div>
                 <div class="context-sparkline-meta">
                   <span id="meta-context-urban-start">1970</span>
-                  <span class="context-sparkline-caption">Historical Trend</span>
+                  <span class="context-sparkline-caption" id="trend-context-urban">Historical Trend</span>
                   <span id="meta-context-urban-end">2024</span>
                 </div>
               </div>
-              <p class="context-card-desc">Reflects daily driving patterns, city traffic, and transit proximity.</p>
+              <p class="context-card-desc"><em>What this does not prove:</em> Urban residence indicates population clustering; it does not demonstrate that a car was built only for city streets.</p>
             </div>
 
             <!-- 4. Passenger Cars Per 1,000 Inhabitants -->
@@ -335,20 +384,43 @@ toc: false
                 <span class="context-card-label">Motorization Rate</span>
                 <span class="context-card-code" id="code-context-cars">OECD / UNECE</span>
               </div>
-              <h4 class="context-card-title">Passenger Car Ownership</h4>
+              <h4 class="context-card-title">Passenger Cars</h4>
               <div class="context-card-value-wrap">
                 <div class="context-card-value" id="val-context-cars">&mdash;</div>
                 <div class="context-card-unit">Cars per 1,000 inhabitants</div>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it represents</span>
+                <p class="context-card-section-text">How common private passenger cars were relative to population.</p>
+              </div>
+              <div class="context-card-section">
+                <span class="context-card-section-label">What it tells us</span>
+                <p class="context-card-section-text" id="interpret-context-cars">Measures personal car availability and the depth of the domestic passenger-vehicle fleet.</p>
               </div>
               <div class="context-sparkline-wrap">
                 <div class="context-sparkline-svg" id="sparkline-context-cars"></div>
                 <div class="context-sparkline-meta">
                   <span id="meta-context-cars-start">1994</span>
-                  <span class="context-sparkline-caption">Harmonized Scope</span>
+                  <span class="context-sparkline-caption" id="trend-context-cars">Harmonized Scope</span>
                   <span id="meta-context-cars-end">2024</span>
                 </div>
               </div>
-              <p class="context-card-desc" id="desc-context-cars">Measures personal car availability relative to total resident population.</p>
+              <p class="context-card-desc" id="desc-context-cars"><em>What this does not prove:</em> Motorization rates measure vehicle availability; they do not explain why individual models adopted particular engines or body styles.</p>
+            </div>
+          </div>
+
+          <!-- Editorial Connection: WHAT DOES THIS MEAN FOR THE CAR? -->
+          <div class="context-meaning-stage" id="context-meaning-stage">
+            <div class="context-meaning-header">
+              <span class="context-meaning-eyebrow">Synthesis</span>
+              <h4 class="context-meaning-title">What does this mean for the car?</h4>
+            </div>
+            <p class="context-meaning-prose" id="context-meaning-prose">
+              <!-- Dynamically populated 1-3 concise editorial sentences -->
+            </p>
+            <div class="context-meaning-disclaimer">
+              <span class="context-disclaimer-tag">Historical Method</span>
+              <span class="context-disclaimer-text">These observations distinguish documented historical relationships from broad environmental context. Macroeconomic and demographic figures describe the national setting; they do not prove that individual engineering decisions were caused by national averages.</span>
             </div>
           </div>
 
@@ -1281,6 +1353,7 @@ window.selectedManufacturer = null;
   const gBase = mapSvg.append("g").attr("class", "map-base-layer");
   const gCountries = mapSvg.append("g").attr("class", "map-countries-layer");
   const gConnectors = mapSvg.append("g").attr("class", "map-connectors-layer");
+  const gInteraction = mapSvg.append("g").attr("class", "map-interaction-layer");
   const gLogos = mapSvg.append("g").attr("class", "map-logos-layer");
 
   let activeCountryPath = null;
@@ -1288,6 +1361,7 @@ window.selectedManufacturer = null;
   let currentHoverCountryId = null;
   let hoverHideTimeout = null;
   const logoPositionCache = new Map();
+  const countryGeometryMap = new Map();
 
   function getCountryInfo(d) {
     const isoMap = window.ISO_COUNTRIES || {};
@@ -1346,6 +1420,168 @@ window.selectedManufacturer = null;
     });
   }
 
+  function getCountryHitStrokeWidth(d) {
+    const geom = countryGeometryMap.get(String(d.id));
+    const diag = geom ? geom.diag : 40;
+    if (diag < 25) return 20; // very small countries (Belgium, Luxembourg, Switzerland, Netherlands)
+    if (diag < 45) return 16; // small European countries (Austria, Czechia, Denmark, Ireland)
+    if (diag < 75) return 12; // medium countries (Germany, France, Italy)
+    if (diag < 140) return 8;  // medium-large countries (UK, Spain, Japan, Sweden)
+    return 4; // large continental countries (USA, Russia, Canada, Australia)
+  }
+
+  function getSvgPoint(clientX, clientY) {
+    const node = mapSvg.node();
+    if (!node || !node.createSVGPoint) return { x: clientX, y: clientY };
+    const pt = node.createSVGPoint();
+    pt.x = clientX;
+    pt.y = clientY;
+    const ctm = node.getScreenCTM();
+    if (!ctm) return { x: clientX, y: clientY };
+    const transformed = pt.matrixTransform(ctm.inverse());
+    return { x: transformed.x, y: transformed.y };
+  }
+
+  function resolveCountryAtPoint(clientX, clientY) {
+    const target = document.elementFromPoint ? document.elementFromPoint(clientX, clientY) : null;
+    if (target && target.closest && target.closest(".mfg-logo-node")) {
+      return null;
+    }
+
+    const svgPt = getSvgPoint(clientX, clientY);
+    const node = mapSvg.node();
+    const svgPointObj = node && node.createSVGPoint ? node.createSVGPoint() : null;
+    if (svgPointObj) {
+      svgPointObj.x = svgPt.x;
+      svgPointObj.y = svgPt.y;
+    }
+
+    const candidateIds = new Set();
+    if (typeof document.elementsFromPoint === "function") {
+      const elements = document.elementsFromPoint(clientX, clientY);
+      for (let i = 0; i < elements.length; i++) {
+        const el = elements[i];
+        if (el && el.classList && (el.classList.contains("country-hit-area") || el.classList.contains("world-country"))) {
+          const id = el.getAttribute("data-id");
+          if (id && countryGeometryMap.has(String(id))) {
+            candidateIds.add(String(id));
+          }
+        }
+      }
+    }
+
+    // Fallback: If elementsFromPoint found nothing, check bounding boxes expanded by buffer
+    if (candidateIds.size === 0) {
+      countryGeometryMap.forEach((geom, id) => {
+        const b = geom.bounds;
+        const strokeBuffer = 12;
+        if (svgPt.x >= b[0][0] - strokeBuffer && svgPt.x <= b[1][0] + strokeBuffer &&
+            svgPt.y >= b[0][1] - strokeBuffer && svgPt.y <= b[1][1] + strokeBuffer) {
+          candidateIds.add(id);
+        }
+      });
+    }
+
+    if (candidateIds.size === 0) {
+      return null;
+    }
+
+    // Fast path: exactly 1 candidate
+    if (candidateIds.size === 1) {
+      const onlyId = candidateIds.values().next().value;
+      return countryGeometryMap.get(onlyId) || null;
+    }
+
+    // Overlapping candidates: resolve using proximity and boundary distance
+    let bestGeom = null;
+    let minEffectiveDist = Infinity;
+
+    candidateIds.forEach(id => {
+      const geom = countryGeometryMap.get(id);
+      if (!geom) return;
+
+      let dist = Infinity;
+
+      // 1. Point directly inside true visual country land
+      if (svgPointObj && geom.visualNode && typeof geom.visualNode.isPointInFill === "function") {
+        try {
+          if (geom.visualNode.isPointInFill(svgPointObj)) {
+            dist = 0;
+          }
+        } catch (_) {}
+      }
+
+      // 2. If not inside land, measure boundary sample distance
+      if (dist > 0) {
+        if (geom.samplePoints && geom.samplePoints.length > 0) {
+          let minSq = Infinity;
+          const sps = geom.samplePoints;
+          for (let j = 0; j < sps.length; j++) {
+            const dx = svgPt.x - sps[j][0];
+            const dy = svgPt.y - sps[j][1];
+            const sq = dx * dx + dy * dy;
+            if (sq < minSq) minSq = sq;
+          }
+          dist = Math.sqrt(minSq);
+        } else if (geom.centroid) {
+          dist = Math.hypot(svgPt.x - geom.centroid[0], svgPt.y - geom.centroid[1]);
+        }
+      }
+
+      // Apply 2.5px hysteresis bonus for current hover country to prevent boundary jitter
+      const isCurrent = (String(id) === String(currentHoverCountryId));
+      const effectiveDist = isCurrent ? Math.max(0, dist - 2.5) : dist;
+
+      if (effectiveDist < minEffectiveDist) {
+        minEffectiveDist = effectiveDist;
+        bestGeom = geom;
+      }
+    });
+
+    return bestGeom;
+  }
+
+  function activateCountryHover(d, event) {
+    if (!d) return;
+    const country = getCountryInfo(d);
+    const cars = getCountryCars(country);
+
+    if (currentHoverCountryId === d.id) {
+      if (event) positionTooltip(event);
+      return;
+    }
+
+    gCountries.selectAll("path.world-country")
+      .classed("is-hovered", feat => feat.id === d.id)
+      .classed("is-active-source", feat => feat.id === d.id);
+
+    if (cars.length > 0) {
+      clearTimeout(hoverHideTimeout);
+      tooltip.innerHTML = `
+        <span class="tooltip-name">${country.name}</span>
+        ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
+        <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• ${cars.length} specimen${cars.length === 1 ? '' : 's'}</span>
+      `;
+      tooltip.style.opacity = "1";
+      if (event) positionTooltip(event);
+      showCountryLogos(d, country, cars);
+    } else {
+      tooltip.innerHTML = `
+        <span class="tooltip-name">${country.name}</span>
+        <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• No vehicle data</span>
+      `;
+      tooltip.style.opacity = "0.75";
+      if (event) positionTooltip(event);
+      scheduleHideLogos(180);
+    }
+  }
+
+  function deactivateCountryHover() {
+    tooltip.style.opacity = "0";
+    gCountries.selectAll("path.world-country").classed("is-hovered", false);
+    scheduleHideLogos(450);
+  }
+
   function renderTopology(worldData) {
     if (!worldData || !worldData.objects || !worldData.objects.countries) return;
 
@@ -1368,6 +1604,7 @@ window.selectedManufacturer = null;
       .attr("class", "map-graticule")
       .attr("d", pathGenerator);
 
+    // 1. Geographically exact visual country paths
     gCountries.selectAll("path.world-country")
       .data(countries)
       .enter()
@@ -1378,44 +1615,91 @@ window.selectedManufacturer = null;
         return cars.length > 0 ? "world-country has-data" : "world-country is-muted";
       })
       .attr("d", pathGenerator)
-      .attr("data-id", d => d.id)
-      .on("mouseenter", function(event, d) {
+      .attr("data-id", d => d.id);
+
+    // 2. Pre-index country geometries for proximity and boundary distance testing
+    countryGeometryMap.clear();
+    countries.forEach(d => {
+      const visualEl = gCountries.select(`path.world-country[data-id="${d.id}"]`).node();
+      if (!visualEl) return;
+
+      const totalLen = visualEl.getTotalLength ? visualEl.getTotalLength() : 0;
+      const samplePoints = [];
+      if (totalLen > 0) {
+        const numSamples = Math.min(32, Math.max(12, Math.floor(totalLen / 16)));
+        const step = totalLen / numSamples;
+        for (let s = 0; s <= totalLen; s += step) {
+          const p = visualEl.getPointAtLength(s);
+          samplePoints.push([p.x, p.y]);
+        }
+      }
+
+      const bounds = pathGenerator.bounds(d);
+      const centroid = pathGenerator.centroid(d);
+      const dx = bounds[1][0] - bounds[0][0];
+      const dy = bounds[1][1] - bounds[0][1];
+      const diag = Math.hypot(dx, dy);
+
+      countryGeometryMap.set(String(d.id), {
+        feature: d,
+        visualNode: visualEl,
+        centroid: centroid,
+        samplePoints: samplePoints,
+        bounds: bounds,
+        diag: diag
+      });
+    });
+
+    // 3. Enlarged invisible interaction layer conforming to actual country shapes
+    gInteraction.selectAll("path.country-hit-area")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("class", d => {
         const country = getCountryInfo(d);
         const cars = getCountryCars(country);
-        if (cars.length > 0) {
-          clearTimeout(hoverHideTimeout);
-          tooltip.innerHTML = `
-            <span class="tooltip-name">${country.name}</span>
-            ${country.iso3 ? `<span class="tooltip-iso">${country.iso3}</span>` : ""}
-            <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• ${cars.length} specimen${cars.length === 1 ? '' : 's'}</span>
-          `;
-          tooltip.style.opacity = "1";
-          positionTooltip(event);
-          showCountryLogos(d, country, cars);
-        } else {
-          tooltip.innerHTML = `
-            <span class="tooltip-name">${country.name}</span>
-            <span style="color:var(--text-muted);margin-left:0.35rem;font-size:0.75rem;">• No vehicle data</span>
-          `;
-          tooltip.style.opacity = "0.75";
-          positionTooltip(event);
-          scheduleHideLogos(180);
+        return cars.length > 0 ? "country-hit-area has-data" : "country-hit-area is-muted";
+      })
+      .attr("d", pathGenerator)
+      .attr("data-id", d => d.id)
+      .style("stroke-width", d => `${getCountryHitStrokeWidth(d)}px`)
+      .on("pointerenter", function(event, d) {
+        const resolved = resolveCountryAtPoint(event.clientX, event.clientY) || countryGeometryMap.get(String(d.id));
+        if (resolved && resolved.feature) {
+          activateCountryHover(resolved.feature, event);
         }
       })
-      .on("mousemove", function(event) {
+      .on("pointermove", function(event, d) {
         positionTooltip(event);
+        const resolved = resolveCountryAtPoint(event.clientX, event.clientY) || countryGeometryMap.get(String(d.id));
+        if (resolved && resolved.feature) {
+          activateCountryHover(resolved.feature, event);
+        }
       })
-      .on("mouseleave", function() {
-        tooltip.style.opacity = "0";
-        scheduleHideLogos(450);
+      .on("pointerleave", function(event) {
+        const nextEl = event.relatedTarget;
+        if (!nextEl || !nextEl.closest || !nextEl.closest("#world-map-svg")) {
+          deactivateCountryHover();
+        }
       })
       .on("click", function(event, d) {
-        const country = getCountryInfo(d);
-        const cars = getCountryCars(country);
-        if (cars.length > 0) {
-          selectCountry(d, this);
+        const resolved = resolveCountryAtPoint(event.clientX, event.clientY) || countryGeometryMap.get(String(d.id));
+        if (resolved && resolved.feature) {
+          const country = getCountryInfo(resolved.feature);
+          const cars = getCountryCars(country);
+          if (cars.length > 0) {
+            selectCountry(resolved.feature);
+          }
         }
       });
+
+    // Handle cursor leaving the map container
+    const mapContainer = document.getElementById("map-container");
+    if (mapContainer) {
+      mapContainer.addEventListener("mouseleave", () => {
+        deactivateCountryHover();
+      });
+    }
 
     locatorCountries = locatorSvg.selectAll("path.locator-country")
       .data(countries)
@@ -1435,7 +1719,9 @@ window.selectedManufacturer = null;
 
   function hideCountryLogos() {
     currentHoverCountryId = null;
-    gCountries.selectAll("path.world-country").classed("is-active-source", false);
+    gCountries.selectAll("path.world-country")
+      .classed("is-active-source", false)
+      .classed("is-hovered", false);
     gConnectors.selectAll("circle.mfg-cluster-aura").remove();
 
     gConnectors.selectAll("line")
@@ -1787,13 +2073,8 @@ window.selectedManufacturer = null;
     if (activeCountryPath) {
       activeCountryPath.classed("is-selected", false);
     }
-    if (element) {
-      activeCountryPath = d3.select(element);
-      activeCountryPath.classed("is-selected", true);
-    } else {
-      activeCountryPath = gCountries.select(`path[data-id="${d.id}"]`);
-      activeCountryPath.classed("is-selected", true);
-    }
+    activeCountryPath = gCountries.select(`path.world-country[data-id="${d.id}"]`);
+    activeCountryPath.classed("is-selected", true);
 
     // Highlight on locator map
     if (locatorCountries) {
@@ -2270,6 +2551,76 @@ window.selectedManufacturer = null;
     }).join("");
   }
 
+  function generateCountryCarSynthesis(car, record, specs) {
+    if (!car) return "";
+    const name = car["Car name"] || "This vehicle";
+    const c = car["Country of manufacturer"] || (record ? record.country : "its home market");
+    const yr = parseInt(car["Model year"], 10);
+    const body = (specs.body_type || car["Body type"] || "").toLowerCase();
+    const drive = specs.drivetrain || car.Drivetrain || "";
+    const eng = specs.engine || car["Engine configuration"] || "";
+    const hp = specs.horsepower || car["Horsepower (HP)"];
+    const wt = specs.weight_kg || car["Curb weight (kg)"];
+
+    const dens = record ? record.population_density_per_km2 : null;
+    const urb = record ? record.urbanization_percent : null;
+
+    let sentences = [];
+
+    // Sentence 1: National Environmental Setting
+    if (c === "Sweden") {
+      if (dens !== null && dens < 30) {
+        sentences.push(`${c} in ${yr} had a low overall population density (~${Math.round(dens)} people/km²) alongside high urbanization (~${Math.round(urb || 83)}%), creating demand for durable vehicles capable of enduring long journeys and severe Nordic winters.`);
+      } else {
+        sentences.push(`In ${yr}, Sweden maintained an established passenger-car market with high urbanization (~${Math.round(urb || 85)}%).`);
+      }
+    } else if (c === "Japan") {
+      sentences.push(`${c} in ${yr} combined substantial population density (~${Math.round(dens || 300)} people/km²) and rapid urbanization with an export-oriented automotive sector that engineered vehicles for both tight domestic streets and overseas highways.`);
+    } else if (c === "United States") {
+      sentences.push(`The United States in ${yr} featured expansive geography with low population density (~${Math.round(dens || 30)} people/km²) and an extensive interstate highway network, fostering long-distance passenger travel and an established multi-car culture.`);
+    } else if (c === "Germany") {
+      sentences.push(`Germany in ${yr} possessed a mature industrial economy and high population density (~${Math.round(dens || 230)} people/km²), where derestricted Autobahn transit and high consumer expectations shaped automotive engineering.`);
+    } else if (c === "Italy") {
+      sentences.push(`Italy in ${yr} combined dense historic city centers requiring compact daily transit with a distinguished national tradition of high-performance coachbuilding and sports car engineering.`);
+    } else if (c === "United Kingdom") {
+      sentences.push(`The United Kingdom in ${yr} operated with dense road networks (~${Math.round(dens || 240)} people/km²) and distinctive national tax frameworks (such as company car policies) that influenced domestic fleet composition.`);
+    } else if (c === "France") {
+      sentences.push(`France in ${yr} featured substantial regional geography with a centralized urban population, where fiscal horsepower regulations and rural-urban travel encouraged innovative suspension comfort and space efficiency.`);
+    } else if (c === "South Korea") {
+      sentences.push(`South Korea in ${yr} featured intensive urban concentration (~${Math.round(dens || 500)} people/km² and ~${Math.round(urb || 80)}% urbanization) alongside rapid modern industrialization and infrastructure growth.`);
+    } else {
+      sentences.push(`In ${yr}, ${c} presented a distinct national environment reflecting its economic scale and infrastructure development.`);
+    }
+
+    // Sentence 2: The Car in That Context
+    let specDetails = [];
+    if (hp) specDetails.push(`${hp} hp`);
+    if (wt) specDetails.push(`${wt.toLocaleString()} kg`);
+    if (drive) specDetails.push(drive);
+    const specStr = specDetails.length ? ` (${specDetails.join(", ")})` : "";
+
+    const lowerName = name.toLowerCase();
+    const lowerEng = eng.toLowerCase();
+
+    if (/electric|ev|battery/i.test(lowerEng) || /taycan|ioniq|ex30|lightning|model s|leaf|bolt|ev6/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} represents the transition toward electrified transport, emerging as national policy and charging infrastructure began addressing carbon targets in heavily urbanized environments.`);
+    } else if (/sports|coupe|roadster/i.test(body) || /gnx|gt-r|corvette|viper|prowler|911|ferrari|turbo|nsx|miata|supra|s2000|rx-7|camaro|firebird|mustang|trueno|ae86/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} catered to performance and enthusiast motoring, demonstrating how specialized engineering operated alongside broader national economic and fuel-efficiency trends without representing the average commuter vehicle.`);
+    } else if (/pickup|truck/i.test(body) || /syclone|brat|f-150|silverado|ram|tacoma|tundra|ranger/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} highlights the distinctive role of light-duty utility vehicles in markets with lower density and commercial utility demand, showing how practical formats accommodated specialized powertrain variants.`);
+    } else if (/wagon|estate/i.test(body)) {
+      sentences.push(`The ${name}${specStr} reflects family packaging priorities of cargo capacity and passenger comfort, suited to intercity travel in an urbanized society with significant regional road networks.`);
+    } else if (/hatchback/i.test(body) || /golf|civic|clio|205|corolla|yaris|fit|polo|fiesta|panda|500/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} balanced exterior compactness with practical interior packaging, well suited to navigating dense urban traffic and parking constraints while maintaining highway capability.`);
+    } else if (/suv/i.test(body) || /cherokee|explorer|rav4|cr-v|suburban|land cruiser|tahoe|q7|x5/i.test(lowerName)) {
+      sentences.push(`The ${name}${specStr} reflects the consumer evolution toward multi-purpose utility and all-weather capability, navigating suburban expansion and shifting household driving patterns.`);
+    } else {
+      sentences.push(`The ${name}${specStr} embodies contemporary passenger car engineering for its market, navigating the period's prevailing regulatory and energy conditions.`);
+    }
+
+    return sentences.join(" ");
+  }
+
   function updateCountryContext() {
     if (!countryContextStage || !activeCountryData || !activeSelectedCar || !Array.isArray(window.COUNTRY_CONTEXT)) {
       if (countryContextStage) {
@@ -2296,6 +2647,82 @@ window.selectedManufacturer = null;
     contextBadgeNation.textContent = record.country;
     contextBadgeYear.textContent = selectedYear;
 
+    const carSpecs = getCarSpecs(activeSelectedCar) || {};
+
+    // 1. Update Dual Dossier (THIS CAR against ITS SETTING)
+    const dossierCarName = document.getElementById("dossier-car-name");
+    const dossierCarList = document.getElementById("dossier-car-list");
+    const dossierCountryName = document.getElementById("dossier-country-name");
+    const dossierCountryList = document.getElementById("dossier-country-list");
+
+    if (dossierCarName && dossierCarList) {
+      dossierCarName.textContent = activeSelectedCar["Car name"] || "Selected Vehicle";
+      const hp = carSpecs.horsepower || activeSelectedCar["Horsepower (HP)"];
+      const wt = carSpecs.weight_kg || activeSelectedCar["Curb weight (kg)"];
+      const body = carSpecs.body_type || activeSelectedCar["Body type"] || "—";
+      const drive = carSpecs.drivetrain || activeSelectedCar.Drivetrain || "—";
+      const eng = carSpecs.engine || activeSelectedCar["Engine configuration"] || "—";
+      const len = carSpecs.length_mm;
+
+      dossierCarList.innerHTML = `
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Body Style</span>
+          <span class="context-dossier-val">${body}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Drivetrain</span>
+          <span class="context-dossier-val">${drive}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Power Output</span>
+          <span class="context-dossier-val">${hp ? `${hp} HP` : "—"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Curb Weight</span>
+          <span class="context-dossier-val">${wt ? `${wt.toLocaleString()} kg` : "—"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Powertrain</span>
+          <span class="context-dossier-val">${eng}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Length</span>
+          <span class="context-dossier-val">${len ? `${len.toLocaleString()} mm` : "—"}</span>
+        </li>
+      `;
+    }
+
+    if (dossierCountryName && dossierCountryList) {
+      dossierCountryName.textContent = `${record.country} · ${selectedYear}`;
+      dossierCountryList.innerHTML = `
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Economic Output</span>
+          <span class="context-dossier-val">$${Math.round(record.gdp_per_capita_constant_2015_usd).toLocaleString()}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Population Density</span>
+          <span class="context-dossier-val">${record.population_density_per_km2 !== null && record.population_density_per_km2 !== undefined ? `${record.population_density_per_km2.toFixed(1)} people/km²` : "Data pending"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Urbanization</span>
+          <span class="context-dossier-val">${record.urbanization_percent !== null && record.urbanization_percent !== undefined ? `${record.urbanization_percent.toFixed(1)}% urban` : "—"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Motorization</span>
+          <span class="context-dossier-val">${record.passenger_cars_per_1000 !== null && record.passenger_cars_per_1000 !== undefined ? `${record.passenger_cars_per_1000.toFixed(1)} per 1,000` : "Unrecorded before 1994"}</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Macro Baseline</span>
+          <span class="context-dossier-val">World Bank / OECD</span>
+        </li>
+        <li class="context-dossier-item">
+          <span class="context-dossier-label">Series Window</span>
+          <span class="context-dossier-val">1970–2024</span>
+        </li>
+      `;
+    }
+
+    // 2. Update 4 Indicator Cards
     contextIndicators.forEach(indicator => {
       const valueElement = document.getElementById(indicator.valueId);
       const value = record[indicator.key];
@@ -2305,6 +2732,113 @@ window.selectedManufacturer = null;
         : indicator.format(value);
       renderContextSparkline(document.getElementById(indicator.sparklineId), countryRecords, indicator, selectedYear);
     });
+
+    // 3. Environmental Interpretations
+    const interpretGdp = document.getElementById("interpret-context-gdp");
+    if (interpretGdp) {
+      const gdpVal = record.gdp_per_capita_constant_2015_usd;
+      let gdpTier = "an expanding industrial economy";
+      if (gdpVal >= 45000) gdpTier = "an advanced high-income economy";
+      else if (gdpVal >= 30000) gdpTier = "a mature, high-income economy";
+      else if (gdpVal >= 15000) gdpTier = "a solid middle-income economy";
+      interpretGdp.textContent = `Reflects ${gdpTier} with real output of $${Math.round(gdpVal).toLocaleString()} per person, describing the broad economic capacity surrounding durable vehicle purchases during this period.`;
+    }
+
+    const interpretDensity = document.getElementById("interpret-context-density");
+    if (interpretDensity) {
+      const dVal = record.population_density_per_km2;
+      if (dVal !== null && dVal !== undefined) {
+        let dTier = "low population density and expansive travel distances";
+        if (dVal >= 300) dTier = "very dense settlements and constrained road footprints";
+        else if (dVal >= 150) dTier = "high population concentration";
+        else if (dVal >= 40) dTier = "moderate density across regional centers";
+        interpretDensity.textContent = `With ${dVal.toFixed(1)} people/km², the country featured ${dTier}, framing physical travel distances and parking constraints.`;
+      } else {
+        interpretDensity.textContent = "National territory and spatial distribution remained consistent with contemporaneous regional records.";
+      }
+    }
+
+    const interpretUrban = document.getElementById("interpret-context-urban");
+    if (interpretUrban) {
+      const uVal = record.urbanization_percent;
+      if (uVal !== null && uVal !== undefined) {
+        interpretUrban.textContent = `With ${uVal.toFixed(1)}% of residents in towns and cities, domestic driving was heavily shaped by metropolitan traffic alongside regional highway transit.`;
+      } else {
+        interpretUrban.textContent = "Reflects ongoing demographic distribution between metropolitan and rural regions.";
+      }
+    }
+
+    const interpretCars = document.getElementById("interpret-context-cars");
+    if (interpretCars) {
+      const cVal = record.passenger_cars_per_1000;
+      if (cVal !== null && cVal !== undefined) {
+        let cTier = "an emerging consumer fleet";
+        if (cVal >= 450) cTier = "already deeply established";
+        else if (cVal >= 250) cTier = "expanding steadily into mainstream households";
+        interpretCars.textContent = `At ${cVal.toFixed(1)} passenger cars per 1,000 residents, private vehicle ownership was ${cTier}, sustaining a large domestic replacement and multi-car household market.`;
+      } else {
+        interpretCars.textContent = "Harmonized international motorization figures are unrecorded for this year in standard OECD/UNECE archives; domestic adoption was growing but not recorded in standardized datasets.";
+      }
+    }
+
+    // 4. Trend Movement Captions
+    const trendGdp = document.getElementById("trend-context-gdp");
+    if (trendGdp && countryRecords.length > 0) {
+      const startGdp = countryRecords[0].gdp_per_capita_constant_2015_usd;
+      const currentGdp = record.gdp_per_capita_constant_2015_usd;
+      const pct = Math.round(((currentGdp - startGdp) / startGdp) * 100);
+      if (selectedYear === 1970) {
+        trendGdp.textContent = "Baseline 1970: real output grew substantially in subsequent decades";
+      } else if (pct > 0) {
+        trendGdp.textContent = `Up +${pct}% in real output per person since 1970`;
+      } else {
+        trendGdp.textContent = "Real output per person reflected contemporaneous economic shifts";
+      }
+    }
+
+    const trendDensity = document.getElementById("trend-context-density");
+    if (trendDensity && countryRecords.length > 0 && record.population_density_per_km2 !== null) {
+      const startD = countryRecords[0].population_density_per_km2;
+      if (startD) {
+        const dPct = Math.round(((record.population_density_per_km2 - startD) / startD) * 100);
+        trendDensity.textContent = dPct !== 0 ? `Density changed ${dPct > 0 ? "+" : ""}${dPct}% since 1970` : "Density remained steady across fixed land area";
+      } else {
+        trendDensity.textContent = "Population density observed across historical period";
+      }
+    }
+
+    const trendUrban = document.getElementById("trend-context-urban");
+    if (trendUrban && countryRecords.length > 0 && record.urbanization_percent !== null) {
+      const startU = countryRecords[0].urbanization_percent;
+      const uDelta = (record.urbanization_percent - startU).toFixed(1);
+      if (selectedYear === 1970) {
+        trendUrban.textContent = "Baseline 1970: urban proportion rose over following decades";
+      } else {
+        trendUrban.textContent = `Urban share shifted ${Number(uDelta) >= 0 ? "+" : ""}${uDelta} percentage points since 1970`;
+      }
+    }
+
+    const trendCars = document.getElementById("trend-context-cars");
+    if (trendCars) {
+      const validCars = countryRecords.filter(r => r.passenger_cars_per_1000 !== null);
+      if (validCars.length > 0 && record.passenger_cars_per_1000 !== null) {
+        const firstCar = validCars[0];
+        if (selectedYear > firstCar.year) {
+          const carDiff = Math.round(record.passenger_cars_per_1000 - firstCar.passenger_cars_per_1000);
+          trendCars.textContent = `Ownership changed ${carDiff >= 0 ? "+" : ""}${carDiff} cars/1,000 since ${firstCar.year}`;
+        } else {
+          trendCars.textContent = `Standardized OECD/UNECE reporting starts in ${firstCar.year}`;
+        }
+      } else {
+        trendCars.textContent = "Harmonized series begins in 1994 (prior years unrecorded)";
+      }
+    }
+
+    // 5. Synthesis Editorial Prose
+    const proseEl = document.getElementById("context-meaning-prose");
+    if (proseEl) {
+      proseEl.textContent = generateCountryCarSynthesis(activeSelectedCar, record, carSpecs);
+    }
 
     renderContextSources();
   }
