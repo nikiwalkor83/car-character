@@ -38,8 +38,93 @@ toc: false
       </div>
     </div>
     <p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic;">
-      A feeling isn't data. We gathered 55 years of paint popularity, 16,469 classified body dimensions, and 29,880 powertrain records to measure what changed.
+      A feeling isn't data. We gathered 55 years of paint popularity, 16,334 classified body dimensions, and 29,880 powertrain records to measure what changed.
     </p>
+  </div>
+
+  <!-- PRIMARY EDITORIAL DATA VISUALIZATION: HOW CARS HAVE CHANGED SHAPE -->
+  <div class="homepage-scatter-section">
+    <div class="scatter-card">
+      <div class="scatter-header-block">
+        <span class="scatter-eyebrow">Physical Proportion Data &bull; 1970 &mdash; 2024</span>
+        <h2 class="scatter-title">Cars changed shape.</h2>
+        <p class="scatter-lead">
+          Across thousands of vehicles, the dimensions tell a different story than photographs alone.
+        </p>
+        <p class="scatter-subtext">
+          Below, vehicle length is plotted against vehicle width for 16,334 classified production vehicle records. As decades progressed, automotive footprints shifted from the low, slender proportions of the 1970s and 1980s to the broader, longer silhouettes of modern roads.
+        </p>
+      </div>
+
+      <!-- Controls: Decade Filter & Unit Toggle -->
+      <div class="scatter-controls-bar">
+        <div class="scatter-decade-pills" id="scatter-decade-filters">
+          <span class="scatter-filter-label">Filter Decade:</span>
+          <button type="button" class="scatter-pill is-active" data-decade="all">
+            All Decades
+          </button>
+          <button type="button" class="scatter-pill" data-decade="1970s">
+            <span class="pill-indicator" style="background: #c26e38;"></span>1970s
+          </button>
+          <button type="button" class="scatter-pill" data-decade="1980s">
+            <span class="pill-indicator" style="background: #967444;"></span>1980s
+          </button>
+          <button type="button" class="scatter-pill" data-decade="1990s">
+            <span class="pill-indicator" style="background: #1c3d2e;"></span>1990s
+          </button>
+          <button type="button" class="scatter-pill" data-decade="2000s">
+            <span class="pill-indicator" style="background: #742d33;"></span>2000s
+          </button>
+          <button type="button" class="scatter-pill" data-decade="2010s">
+            <span class="pill-indicator" style="background: #2c4c5e;"></span>2010s
+          </button>
+          <button type="button" class="scatter-pill" data-decade="2020s">
+            <span class="pill-indicator" style="background: #475569;"></span>2020s
+          </button>
+        </div>
+
+        <div class="scatter-unit-group">
+          <span class="unit-label">Units:</span>
+          <button type="button" class="scatter-unit-btn is-active" id="scatter-unit-in">Inches</button>
+          <button type="button" class="scatter-unit-btn" id="scatter-unit-mm">Millimeters</button>
+        </div>
+      </div>
+
+      <!-- Interactive Canvas Stage -->
+      <div class="scatter-stage-wrap">
+        <canvas id="shape-scatter-canvas"></canvas>
+        <div id="scatter-tooltip" class="scatter-tooltip"></div>
+      </div>
+
+      <!-- Dynamic Readout Strip -->
+      <div class="scatter-readout-strip" id="scatter-readout">
+        <div class="scatter-readout-item">
+          <span class="readout-label">Dataset:</span>
+          <span class="readout-value"><strong>16,334</strong> verified vehicle records (1970–2024) across <strong>2,841</strong> model dimensions</span>
+        </div>
+        <div class="scatter-readout-item">
+          <span class="readout-label">Interactive:</span>
+          <span class="readout-value">Hover or tap any point to inspect individual vehicle specifications</span>
+        </div>
+      </div>
+
+      <!-- Explanatory Editorial Caption -->
+      <div class="scatter-caption-block">
+        <p class="scatter-caption-text">
+          Each mark represents a classified vehicle in the dataset. Together, they show how the physical proportions of cars have shifted across the period.
+        </p>
+        <p class="scatter-transparency-note">
+          Data source: 16,334 production vehicle specifications (1970&ndash;2024) with physically verified overall length, overall width, and generation production year from the project archive. For deep-dive body type distributions and cross-sectional comparisons, visit the <a href="shape.html" style="color: var(--accent-racing-green); text-decoration: underline;">Shape</a> tab.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION HEADER: PHOTOGRAPHIC PROGRESSION -->
+  <div style="text-align: center; max-width: 720px; margin: 0 auto 2rem; padding: 0 1rem;">
+    <span class="hero-eyebrow" style="margin-bottom: 0.5rem; display: inline-block;">Visual Progression &bull; Six Decades</span>
+    <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-ink); margin: 0 0 0.5rem;">The Photographic Record</h3>
+    <p style="font-size: 0.92rem; color: var(--text-muted); margin: 0;">How exterior design cues and proportions evolved generation by generation.</p>
   </div>
 
   <!-- SIX EQUAL VERTICAL PANELS: PHOTOGRAPHIC PROGRESSION -->
@@ -296,4 +381,8 @@ toc: false
     </a>
   </div>
 </div>
+
+<script src="data/shape_scatter_data.js"></script>
+<script src="scripts/homepage-scatter.js"></script>
 ```
+
