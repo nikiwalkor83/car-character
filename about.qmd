@@ -28,6 +28,14 @@ toc: false
       </p>
 
       <p>
+        I am an undergraduate student at <a href="https://www.ncf.edu/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-racing-green); text-decoration: underline;">New College of Florida</a>.
+      </p>
+
+      <p>
+        You can find my work on GitHub at <a href="https://github.com/nikiwalkor83" target="_blank" rel="noopener noreferrer" style="color: var(--accent-racing-green); text-decoration: underline;">nikiwalkor83</a>.
+      </p>
+
+      <p>
         I've always been really into cars — how they look, sound, and just the personality they have. I've always felt like older cars had something that a lot of newer cars don't.
       </p>
 
