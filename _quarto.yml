@@ -21,7 +21,7 @@ website:
       - href: index.qmd
         text: Home
       - href: story.qmd
-        text: Story
+        text: "Where Did Car Character Go?"
       - href: color.qmd
         text: Color
       - href: shape.qmd
@@ -29,7 +29,7 @@ website:
       - href: sound.qmd
         text: Sound
       - href: exploration.qmd
-        text: Exploration
+        text: "Interactive Motoring Atlas"
       - href: about.qmd
         text: About
 
