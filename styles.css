@@ -7126,3 +7126,353 @@ body {
     grid-template-columns: 7rem 1fr;
   }
 }
+
+/* ==========================================================================
+   HOMEPAGE DATA VISUALIZATION: "HOW CARS HAVE CHANGED SHAPE"
+   Restrained British Motoring Editorial Scatter Visualization
+   ========================================================================== */
+
+.homepage-scatter-section {
+  max-width: 1040px;
+  margin: 0 auto 4.5rem;
+  padding: 0 1.5rem;
+}
+
+.scatter-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.scatter-header-block {
+  margin-bottom: 2rem;
+}
+
+.scatter-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-racing-green);
+  margin-bottom: 0.65rem;
+}
+
+.scatter-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  color: var(--text-ink);
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.scatter-lead {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  max-width: 760px;
+  margin: 0 0 0.5rem;
+}
+
+.scatter-subtext {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0;
+}
+
+.scatter-controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-rule);
+  border-bottom: 1px solid var(--border-rule);
+  margin-bottom: 1.25rem;
+}
+
+.scatter-decade-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.scatter-filter-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-right: 0.35rem;
+}
+
+.scatter-pill {
+  background: var(--bg-paper);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-body);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+}
+
+.scatter-pill:hover {
+  background: var(--bg-cream);
+  border-color: var(--border-strong);
+  color: var(--text-ink);
+}
+
+.scatter-pill.is-active {
+  background: var(--accent-racing-green);
+  border-color: var(--accent-racing-green);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pill-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.scatter-unit-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.unit-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.scatter-unit-btn {
+  background: var(--bg-paper);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 0.3rem 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.scatter-unit-btn:hover {
+  background: var(--bg-cream);
+  border-color: var(--border-strong);
+}
+
+.scatter-unit-btn.is-active {
+  background: var(--text-ink);
+  border-color: var(--text-ink);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.scatter-stage-wrap {
+  position: relative;
+  width: 100%;
+  background: #faf8f4;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+#shape-scatter-canvas {
+  display: block;
+  width: 100%;
+  cursor: crosshair;
+}
+
+/* Tooltip floating over canvas */
+.scatter-tooltip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  background: rgba(30, 34, 37, 0.94);
+  color: #ffffff;
+  border-radius: 2px;
+  padding: 0.75rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  z-index: 20;
+  min-width: 190px;
+  max-width: 260px;
+}
+
+.tip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.tip-pill {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tip-body {
+  font-size: 0.7rem;
+  color: #b8c1c5;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tip-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.tip-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 0.45rem;
+}
+
+.tip-spec {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: #9ea7ad;
+}
+
+.tip-val {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f7f5ef;
+}
+
+.tip-val small {
+  font-size: 0.72rem;
+  color: #b8c1c5;
+  font-weight: 400;
+}
+
+.tip-footer {
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  color: #9ea7ad;
+}
+
+/* Readout Strip below chart */
+.scatter-readout-strip {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--text-body);
+}
+
+.scatter-readout-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.readout-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent-racing-green);
+  text-transform: uppercase;
+}
+
+.readout-value {
+  color: var(--text-ink);
+}
+
+.readout-value.highlight-car {
+  color: var(--accent-racing-green);
+}
+
+/* Editorial Caption Block */
+.scatter-caption-block {
+  border-top: 1px solid var(--border-rule);
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.scatter-caption-text {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.scatter-transparency-note {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .scatter-card {
+    padding: 1.5rem 1rem 1.25rem;
+  }
+  .scatter-controls-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .scatter-readout-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
