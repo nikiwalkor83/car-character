@@ -106,6 +106,124 @@ toc: false
           </div>
         </div>
       </div>
+
+      <!-- THEN THE OWNER CHANGED IT (STEP 3) -->
+      <div class="tuning-owner-block">
+        <div class="tuning-dataset-header">
+          <div class="tuning-dataset-kicker">Documented Enthusiast Build &middot; Japan</div>
+          <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
+        </div>
+
+        <div class="tuning-comparison-grid">
+          <!-- FACTORY (From Project Dataset) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Project Dataset</span>
+              <h4 class="tuning-comparison-heading">FACTORY</h4>
+            </div>
+            <div class="tuning-spec-table">
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model</span>
+                <span class="tuning-spec-val">1983 Toyota Sprinter Trueno AE86</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Engine</span>
+                <span class="tuning-spec-val">1.6L DOHC 16V</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Horsepower</span>
+                <span class="tuning-spec-val">128 hp</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Transmission</span>
+                <span class="tuning-spec-val">5-speed manual</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Drivetrain</span>
+                <span class="tuning-spec-val">RWD</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Body Style</span>
+                <span class="tuning-spec-val">Coupe</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transition Indicator -->
+          <div class="tuning-comparison-arrow" aria-hidden="true">&darr;</div>
+
+          <!-- MODIFIED (From Documented Build) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Documented Real Build &middot; Tec-Art&rsquo;s</span>
+              <h4 class="tuning-comparison-heading">MODIFIED</h4>
+            </div>
+            <div class="tuning-mod-list">
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Engine</span>
+                  <span class="tuning-mod-part">1.8L 7A-GE 20-Valve Conversion</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The owner replaced the factory 1.6L unit with a 1.8-litre 7A-GE built by specialist shop Tec-Art&rsquo;s, using a 7A block, 20-valve cylinder head, Toda Racing camshafts (272&deg; in / 288&deg; ex), Toda valves and springs, and a TRD custom exhaust. The builder documented that this was tuned for linear throttle control and mid-range response on mountain passes rather than sheer peak horsepower.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Drivetrain</span>
+                  <span class="tuning-mod-part">Close-Ratio 1st&ndash;3rd &amp; TRD 2-Way LSD</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The owner changed the drivetrain to close-ratio gearing for first through third, a short-shift lever kit, and a TRD two-way limited-slip differential with a 4.778 final drive to withstand aggressive clutch-kicking and keep the engine in its optimal torque band during slides.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Suspension</span>
+                  <span class="tuning-mod-part">Custom In-House Tec-Art&rsquo;s Setup</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The previous coilover setup was replaced by a custom in-house suspension designed by Tec-Art&rsquo;s specifically to tighten body control and reward precise weight transfer while actively punishing driver errors.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Chassis &amp; Body</span>
+                  <span class="tuning-mod-part">3,500 Spot Welds &amp; Carbon Bonnet</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The unibody received 3,500 spot welds and 22 additional reinforcement points to handle drifting stresses without flexing, paired with a lightweight green carbon-fibre bonnet, Zenki front lip, and TRD boot spoiler.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Wheels</span>
+                  <span class="tuning-mod-part">15-inch Work Meister CR-01</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The owner chose 15-inch Work Meister wheels to preserve period-authentic Japanese proportions rather than fitting oversized modern diameters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuning-owner-narrative">
+          <p>
+            The project dataset captures what this car was when it left the factory: an economical, lightweight Japanese coupe. But this particular documented build—Keiichi Tsuchiya&rsquo;s personal Trueno, developed and maintained by Japanese AE86 specialist Tec-Art&rsquo;s—shows how an owner reoriented that starting point around a completely different mechanical purpose.
+          </p>
+          <div class="tuning-dataset-core-thought">
+            A factory specification is only the starting point.
+          </div>
+          <p class="tuning-source-note">
+            Source: One documented example detailed by <em>NZ Performance Car</em>, <a href="https://nzperformancecar.co.nz/2014-12-9-high-expectations-dorikins-86/" target="_blank" rel="noopener noreferrer">&ldquo;High expectations &mdash; Dorikin&rsquo;s 86&rdquo;</a> (11 January 2015).
+          </p>
+        </div>
+      </div>
     </article>
 
     <!-- 02 — VIP / STANCE -->

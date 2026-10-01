@@ -222,7 +222,6 @@
     const powertrainDesc = recording.engine_description || recording.engine_type;
 
     return `
-      <audio id="selected-engine-audio" src="audio/engines/${escapeHtml(recording.filename)}" preload="metadata"></audio>
       <div class="sound-specimen-meta">
         <div class="sound-specimen-heading-row">
           <h4 class="sound-specimen-title">${escapeHtml(category.label)}</h4>
@@ -233,21 +232,22 @@
       </div>
 
       <div class="engine-detail-player">
-        <div class="sound-waveform-container sound-tuner-container">
+        <div class="sound-waveform-container sound-rev-container">
           <div class="sound-waveform-header">
             <div class="sound-waveform-header-left">
-              <span class="sound-waveform-indicator-dot"></span>
-              <span class="sound-waveform-label">ANALOG RADIO TUNER // FREQUENCY SCALE</span>
+              <span class="sound-waveform-indicator-dot sound-rev-dot" id="selected-rev-dot"></span>
+              <span class="sound-waveform-label">ENGINE ACOUSTIC INTENSITY // DYNAMIC REV PROFILE</span>
             </div>
             <div class="sound-waveform-header-right">
+              <span class="sound-rev-intensity-badge" id="selected-rev-badge">RESTING</span>
               <span class="sound-waveform-duration" id="selected-waveform-duration">--:--</span>
-              <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">TUNE 0:00</span>
+              <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">SEEK 0:00</span>
             </div>
           </div>
-          <div class="sound-waveform-canvas-wrap sound-tuner-canvas-wrap" id="selected-engine-track" role="region" aria-label="Analog car radio tuner scale. Click or drag to tune playback." title="Click or drag to tune playback">
+          <div class="sound-waveform-canvas-wrap sound-rev-canvas-wrap" id="selected-engine-track" role="region" aria-label="Dynamic engine rev visualizer. Click or drag to seek." title="Click or drag to seek playback">
             <canvas id="selected-waveform-canvas" class="sound-waveform-canvas"></canvas>
             <div class="sound-waveform-loading" id="selected-waveform-loading" style="display: none;">
-              <span class="sound-waveform-loading-text">RECEIVER READY...</span>
+              <span class="sound-waveform-loading-text">CALIBRATING ACOUSTIC SENSORS...</span>
             </div>
           </div>
         </div>
@@ -277,13 +277,13 @@
     const status = document.getElementById("selected-engine-status");
     const track = document.getElementById("selected-engine-track");
     const canvas = document.getElementById("selected-waveform-canvas");
-    const loading = document.getElementById("selected-waveform-loading");
     const durationBadge = document.getElementById("selected-waveform-duration");
     const seekPreview = document.getElementById("selected-waveform-seek");
+    const dot = document.getElementById("selected-rev-dot");
+    const badge = document.getElementById("selected-rev-badge");
 
     if (!audio || !button || !time || !status || !track || !canvas) return;
 
-    // Reset previous loop and observer
     if (activeRafId) {
       cancelAnimationFrame(activeRafId);
       activeRafId = null;
@@ -296,22 +296,48 @@
     activeAudio = audio;
     audio.autoplay = false;
     audio.loop = false;
+    audio.src = `audio/engines/${recording.filename}`;
+    audio.load();
 
     let currentDuration = waveformCache.has(recording.filename)
       ? waveformCache.get(recording.filename).duration
       : 0;
-    let currentProgress = 0;
+    if (currentDuration > 0) {
+      if (durationBadge) durationBadge.textContent = formatTime(currentDuration);
+      time.textContent = `0:00 / ${formatTime(currentDuration)}`;
+    }
+
+    const numColumns = 24;
+    const currentLevels = new Float32Array(numColumns);
+    const peakLevels = new Float32Array(numColumns);
+    const peakHoldTimes = new Float32Array(numColumns);
     let currentHoverRatio = null;
     let isScrubbing = false;
-    let playbackAnchorTime = 0;
-    let playbackAnchorAudioTime = 0;
-    let lastKnownAudioTime = -1;
 
-    function draw(progress = currentProgress, hoverRatio = currentHoverRatio) {
+    function ensureWebAudio() {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+      const analyser = getAnalyser();
+      if (!audio._sourceConnected && analyser) {
+        try {
+          const src = ctx.createMediaElementSource(audio);
+          src.connect(analyser);
+          analyser.connect(ctx.destination);
+          audio._sourceConnected = true;
+        } catch (e) {
+          console.warn("MediaElementAudioSource connection:", e);
+        }
+      }
+    }
+
+    function draw(isResting = false, hoverRatio = currentHoverRatio) {
       if (!canvas || !track) return;
       const rect = track.getBoundingClientRect();
       const width = Math.max(10, Math.floor(rect.width));
-      const height = Math.max(10, Math.floor(rect.height || 82));
+      const height = Math.max(10, Math.floor(rect.height || 130));
       const dpr = window.devicePixelRatio || 1;
 
       const targetW = Math.floor(width * dpr);
@@ -327,290 +353,274 @@
       ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Dial plate background: Deep vintage British racing charcoal
-      ctx.fillStyle = "#141c17";
+      // 1. Dial plate background: Deep vintage British racing dark instrument slate
+      ctx.fillStyle = "#121a15";
       ctx.fillRect(0, 0, width, height);
 
-      // Subtle horizontal brushed / grooved texture lines
+      // Subtle horizontal instrument texture lines
       ctx.strokeStyle = "rgba(255, 255, 255, 0.018)";
       ctx.lineWidth = 1;
-      for (let gy = 4; gy < height; gy += 4) {
+      for (let gy = 6; gy < height; gy += 6) {
         ctx.beginPath();
         ctx.moveTo(0, gy);
         ctx.lineTo(width, gy);
         ctx.stroke();
       }
 
-      // 2. Bezel rim inner shadow & glass reflection
-      const topShadow = ctx.createLinearGradient(0, 0, 0, 7);
-      topShadow.addColorStop(0, "rgba(0, 0, 0, 0.55)");
+      // Top bezel inner shadow & glass reflection
+      const topShadow = ctx.createLinearGradient(0, 0, 0, 10);
+      topShadow.addColorStop(0, "rgba(0, 0, 0, 0.65)");
       topShadow.addColorStop(1, "rgba(0, 0, 0, 0)");
       ctx.fillStyle = topShadow;
-      ctx.fillRect(0, 0, width, 7);
+      ctx.fillRect(0, 0, width, 10);
 
-      const btmShadow = ctx.createLinearGradient(0, height - 6, 0, height);
-      btmShadow.addColorStop(0, "rgba(0, 0, 0, 0)");
-      btmShadow.addColorStop(1, "rgba(0, 0, 0, 0.45)");
-      ctx.fillStyle = btmShadow;
-      ctx.fillRect(0, height - 6, width, 6);
-
-      // Specular glass sheen across upper portion
-      const glassGrad = ctx.createLinearGradient(0, 0, 0, height * 0.48);
-      glassGrad.addColorStop(0, "rgba(255, 255, 255, 0.05)");
-      glassGrad.addColorStop(0.3, "rgba(255, 255, 255, 0.02)");
-      glassGrad.addColorStop(1, "rgba(255, 255, 255, 0)");
-      ctx.fillStyle = glassGrad;
-      ctx.fillRect(0, 0, width, height * 0.48);
-
-      // 3. Layout geometry
       const isNarrow = width < 520;
-      const padLeft = isNarrow ? 38 : 50;
-      const padRight = isNarrow ? 38 : 50;
-      const scaleW = Math.max(10, width - padLeft - padRight);
+      const padLeft = isNarrow ? 36 : 48;
+      const padRight = isNarrow ? 12 : 18;
+      const padTop = 14;
+      const padBottom = 22; // space for bottom progress runner
 
-      const yTopRail = 14;
-      const yBtmRail = height - 14;
-      const yCenter = Math.round(height / 2);
+      const plotW = Math.max(10, width - padLeft - padRight);
+      const plotH = Math.max(10, height - padTop - padBottom);
 
-      // 4. Center mechanical slider slot
-      ctx.fillStyle = "rgba(8, 12, 10, 0.85)";
-      ctx.fillRect(padLeft - 10, yCenter - 4, scaleW + 20, 8);
+      // 2. Horizontal Reference Markings & Engraved Labels
+      const thresholds = [
+        { ratio: 0.85, label: "PEAK", color: "rgba(207, 56, 36, 0.45)", textColor: "rgba(235, 120, 105, 0.75)", dash: [3, 3] },
+        { ratio: 0.60, label: "PWR", color: "rgba(212, 162, 64, 0.3)", textColor: "rgba(226, 185, 110, 0.65)", dash: [2, 4] },
+        { ratio: 0.35, label: "MID", color: "rgba(226, 218, 205, 0.16)", textColor: "rgba(226, 218, 205, 0.45)", dash: [2, 4] },
+        { ratio: 0.12, label: "IDLE", color: "rgba(226, 218, 205, 0.12)", textColor: "rgba(226, 218, 205, 0.4)", dash: [2, 4] }
+      ];
 
-      // Slot borders
-      ctx.strokeStyle = "rgba(226, 218, 205, 0.15)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(padLeft - 10, yCenter - 4);
-      ctx.lineTo(padLeft + scaleW + 10, yCenter - 4);
-      ctx.moveTo(padLeft - 10, yCenter + 4);
-      ctx.lineTo(padLeft + scaleW + 10, yCenter + 4);
-      ctx.stroke();
-
-      // Centerline rule
-      ctx.strokeStyle = "rgba(226, 218, 205, 0.08)";
-      ctx.beginPath();
-      ctx.moveTo(padLeft, yCenter);
-      ctx.lineTo(padLeft + scaleW, yCenter);
-      ctx.stroke();
-
-      // Center vintage designation badge
-      ctx.fillStyle = "rgba(226, 218, 205, 0.35)";
-      ctx.font = `600 ${isNarrow ? "7px" : "8px"} -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      const badgeText = isNarrow ? "ANALOG TUNER" : "BRITISH MOTORING // SOLID STATE TUNER";
-      ctx.fillText(badgeText, width / 2, yCenter);
-
-      // 5. Guide rails
-      ctx.strokeStyle = "rgba(226, 218, 205, 0.28)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(padLeft - 8, yTopRail);
-      ctx.lineTo(padLeft + scaleW + 8, yTopRail);
-      ctx.moveTo(padLeft - 8, yBtmRail);
-      ctx.lineTo(padLeft + scaleW + 8, yBtmRail);
-      ctx.stroke();
-
-      // 6. Band labels (MW and FM)
-      ctx.fillStyle = "rgba(235, 228, 218, 0.82)";
-      ctx.font = "bold 9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-      ctx.textAlign = "right";
-      ctx.textBaseline = "middle";
-      ctx.fillText("MW", padLeft - 10, yTopRail + 5);
-
-      ctx.textAlign = "left";
-      ctx.fillStyle = "rgba(226, 218, 205, 0.45)";
-      ctx.font = "8px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-      ctx.fillText("kHz", padLeft + scaleW + 8, yTopRail + 5);
-
-      ctx.fillStyle = "rgba(235, 228, 218, 0.82)";
-      ctx.font = "bold 9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-      ctx.textAlign = "right";
-      ctx.textBaseline = "middle";
-      ctx.fillText("FM", padLeft - 10, yBtmRail - 5);
-
-      ctx.textAlign = "left";
-      ctx.fillStyle = "rgba(226, 218, 205, 0.45)";
-      ctx.font = "8px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-      ctx.fillText("MHz", padLeft + scaleW + 8, yBtmRail - 5);
-
-      // 7. Scale 1 (Top): MW Frequencies (54 to 160 kHz × 10)
-      const mwFrequencies = isNarrow
-        ? [54, 70, 90, 120, 160]
-        : [54, 60, 70, 80, 100, 120, 140, 160];
-
-      // Ticks across MW rail
-      const mwTotalSteps = isNarrow ? 30 : 53;
-      for (let s = 0; s <= mwTotalSteps; s++) {
-        const sx = padLeft + (s / mwTotalSteps) * scaleW;
-        const isMajor = s % (isNarrow ? 6 : 5) === 0;
-        const isMid = s % 2 === 0;
-        const tickH = isMajor ? 8 : (isMid ? 5 : 3);
-        const alpha = isMajor ? 0.6 : (isMid ? 0.35 : 0.2);
-
-        ctx.strokeStyle = `rgba(226, 218, 205, ${alpha})`;
+      thresholds.forEach(th => {
+        const y = Math.round(padTop + plotH * (1 - th.ratio));
+        ctx.strokeStyle = th.color;
+        ctx.lineWidth = 1;
+        ctx.setLineDash(th.dash);
         ctx.beginPath();
-        ctx.moveTo(sx, yTopRail);
-        ctx.lineTo(sx, yTopRail + tickH);
+        ctx.moveTo(padLeft, y);
+        ctx.lineTo(padLeft + plotW, y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = th.textColor;
+        ctx.font = `600 ${isNarrow ? "7px" : "8px"} ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
+        ctx.textAlign = "right";
+        ctx.textBaseline = "middle";
+        ctx.fillText(th.label, padLeft - (isNarrow ? 4 : 8), y);
+      });
+
+      // 3. 24 Dynamic Equalizer / Rev Columns
+      const colGap = isNarrow ? 2 : 4;
+      const totalGaps = (numColumns - 1) * colGap;
+      const colWidth = Math.max(2, (plotW - totalGaps) / numColumns);
+      const numSegments = 16;
+      const segGap = 2;
+      const totalSegGaps = (numSegments - 1) * segGap;
+      const segHeight = Math.max(2, (plotH - totalSegGaps) / numSegments);
+
+      for (let c = 0; c < numColumns; c++) {
+        const colX = Math.round(padLeft + c * (colWidth + colGap));
+        const level = isResting ? 0 : (currentLevels[c] || 0);
+        const activeSegments = Math.min(numSegments, Math.round(level * numSegments));
+        const peakSeg = isResting ? -1 : Math.min(numSegments - 1, Math.floor((peakLevels[c] || 0) * numSegments));
+
+        for (let s = 0; s < numSegments; s++) {
+          const segY = Math.round(padTop + plotH - (s + 1) * segHeight - s * segGap);
+          const isLit = s < activeSegments;
+          const isPeak = s === peakSeg && !isLit;
+
+          if (isLit) {
+            const segRatio = s / (numSegments - 1);
+            if (segRatio >= 0.85) {
+              ctx.fillStyle = "#cf3824";
+            } else if (segRatio >= 0.60) {
+              ctx.fillStyle = "#d49632";
+            } else {
+              ctx.fillStyle = "#dfd7ca";
+            }
+            ctx.fillRect(colX, segY, Math.round(colWidth), Math.round(segHeight));
+
+            ctx.fillStyle = "rgba(255, 255, 255, 0.35)";
+            ctx.fillRect(colX, segY, Math.round(colWidth), 1);
+          } else if (isPeak) {
+            const segRatio = s / (numSegments - 1);
+            ctx.fillStyle = segRatio >= 0.85 ? "#ff5a43" : (segRatio >= 0.60 ? "#f0b348" : "#ffffff");
+            ctx.fillRect(colX, segY + Math.round(segHeight / 2) - 1, Math.round(colWidth), 2);
+          } else {
+            ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
+            ctx.fillRect(colX, segY, Math.round(colWidth), Math.round(segHeight));
+          }
+        }
+      }
+
+      // 4. Bottom Playback Runner
+      const runnerY = height - 12;
+      const runnerH = 4;
+      const curDur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+      const progressRatio = (curDur > 0 && Number.isFinite(audio.currentTime))
+        ? Math.max(0, Math.min(1, audio.currentTime / curDur))
+        : 0;
+
+      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+      ctx.fillRect(padLeft, runnerY, plotW, runnerH);
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
+      ctx.lineWidth = 1;
+      ctx.strokeRect(padLeft, runnerY, plotW, runnerH);
+
+      if (progressRatio > 0) {
+        const fillW = Math.max(0, Math.min(plotW, progressRatio * plotW));
+        const progGrad = ctx.createLinearGradient(padLeft, 0, padLeft + fillW, 0);
+        progGrad.addColorStop(0, "#1c3d2e");
+        progGrad.addColorStop(1, "#c29b38");
+        ctx.fillStyle = progGrad;
+        ctx.fillRect(padLeft, runnerY, fillW, runnerH);
+
+        const headX = padLeft + fillW;
+        ctx.fillStyle = "#dfd7ca";
+        ctx.beginPath();
+        ctx.arc(headX, runnerY + runnerH / 2, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "#121a15";
+        ctx.lineWidth = 1;
         ctx.stroke();
       }
 
-      // MW Frequency labels
-      ctx.fillStyle = "rgba(235, 228, 218, 0.85)";
-      ctx.font = "9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "top";
-      mwFrequencies.forEach((freq, idx) => {
-        const frac = idx / (mwFrequencies.length - 1);
-        const fx = padLeft + frac * scaleW;
-        ctx.fillText(freq.toString(), fx, yTopRail + 9);
-      });
-
-      // 8. Scale 2 (Bottom): FM Frequencies (88 to 108 MHz)
-      const fmFrequencies = isNarrow
-        ? [88, 94, 100, 108]
-        : [88, 92, 96, 100, 104, 108];
-
-      // Ticks across FM rail
-      const fmTotalSteps = isNarrow ? 28 : 50;
-      for (let s = 0; s <= fmTotalSteps; s++) {
-        const sx = padLeft + (s / fmTotalSteps) * scaleW;
-        const isMajor = s % (isNarrow ? 7 : 5) === 0;
-        const isMid = s % 2 === 0;
-        const tickH = isMajor ? 8 : (isMid ? 5 : 3);
-        const alpha = isMajor ? 0.6 : (isMid ? 0.35 : 0.2);
-
-        ctx.strokeStyle = `rgba(226, 218, 205, ${alpha})`;
-        ctx.beginPath();
-        ctx.moveTo(sx, yBtmRail);
-        ctx.lineTo(sx, yBtmRail - tickH);
-        ctx.stroke();
-      }
-
-      // FM Frequency labels
-      ctx.fillStyle = "rgba(235, 228, 218, 0.85)";
-      ctx.font = "9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "bottom";
-      fmFrequencies.forEach((freq, idx) => {
-        const frac = idx / (fmFrequencies.length - 1);
-        const fx = padLeft + frac * scaleW;
-        ctx.fillText(freq.toString(), fx, yBtmRail - 9);
-      });
-
-      // 9. Hover guideline (when pointer hovers over scale)
+      // Hover Seek Guideline
       if (hoverRatio !== null && hoverRatio >= 0 && hoverRatio <= 1) {
-        const hX = Math.round(padLeft + hoverRatio * scaleW);
-        ctx.strokeStyle = "rgba(226, 218, 205, 0.35)";
+        const hX = Math.round(padLeft + hoverRatio * plotW);
+        ctx.strokeStyle = "rgba(207, 56, 36, 0.65)";
         ctx.lineWidth = 1;
         ctx.setLineDash([2, 3]);
         ctx.beginPath();
-        ctx.moveTo(hX, 6);
+        ctx.moveTo(hX, padTop);
         ctx.lineTo(hX, height - 6);
         ctx.stroke();
         ctx.setLineDash([]);
       }
-
-      // 10. The Analog Mechanical Tuning Needle
-      const clampedProgress = Math.max(0, Math.min(1, progress || 0));
-      const needleX = padLeft + clampedProgress * scaleW;
-
-      // Needle drop shadow on the dial plate
-      ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
-      ctx.fillRect(Math.round(needleX + 2), 6, 2, height - 12);
-
-      // Primary mechanical needle (classic vintage dial vermilion)
-      ctx.fillStyle = "#cf3824";
-      ctx.fillRect(Math.round(needleX - 1), 6, 2, height - 12);
-
-      // Fine highlight hairline down needle center
-      ctx.fillStyle = "rgba(255, 185, 170, 0.65)";
-      ctx.fillRect(Math.round(needleX), 7, 1, height - 14);
-
-      // Top mechanical carriage pointer tab
-      ctx.fillStyle = "#cf3824";
-      ctx.beginPath();
-      ctx.moveTo(needleX - 4, 6);
-      ctx.lineTo(needleX + 4, 6);
-      ctx.lineTo(needleX, 13);
-      ctx.closePath();
-      ctx.fill();
-
-      // Bottom mechanical carriage pointer tab
-      ctx.beginPath();
-      ctx.moveTo(needleX - 4, height - 6);
-      ctx.lineTo(needleX + 4, height - 6);
-      ctx.lineTo(needleX, height - 13);
-      ctx.closePath();
-      ctx.fill();
-
-      // Center mechanical slide bead / carriage jewel
-      ctx.fillStyle = "#8a1c10";
-      ctx.beginPath();
-      ctx.arc(needleX, yCenter, 3.5, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = "#ff6a56";
-      ctx.beginPath();
-      ctx.arc(needleX, yCenter, 1.6, 0, Math.PI * 2);
-      ctx.fill();
 
       ctx.restore();
     }
 
     function startPlaybackLoop() {
       if (activeRafId) {
-        if (typeof window !== "undefined" && window.cancelAnimationFrame) {
-          window.cancelAnimationFrame(activeRafId);
-        } else if (typeof cancelAnimationFrame !== "undefined") {
-          cancelAnimationFrame(activeRafId);
-        }
+        cancelAnimationFrame(activeRafId);
+        activeRafId = null;
       }
-      playbackAnchorTime = performance.now();
-      playbackAnchorAudioTime = audio.currentTime;
-      lastKnownAudioTime = audio.currentTime;
 
       function frame() {
         if (!audio || audio.paused || audio.ended) {
           activeRafId = null;
           return;
         }
-        const now = performance.now();
-        if (audio.currentTime !== lastKnownAudioTime) {
-          lastKnownAudioTime = audio.currentTime;
-          playbackAnchorTime = now;
-          playbackAnchorAudioTime = audio.currentTime;
-        }
-        const elapsed = (now - playbackAnchorTime) / 1000;
-        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
 
-        if (dur > 0) {
-          const estimatedCurrent = Math.min(dur, playbackAnchorAudioTime + elapsed * (audio.playbackRate || 1));
-          currentProgress = Math.max(0, Math.min(1, estimatedCurrent / dur));
-          draw(currentProgress, currentHoverRatio);
+        if (analyserNode && freqArray && timeArray) {
+          analyserNode.getByteFrequencyData(freqArray);
+          analyserNode.getByteTimeDomainData(timeArray);
+
+          let sumSq = 0;
+          for (let i = 0; i < timeArray.length; i++) {
+            const v = (timeArray[i] - 128) / 128;
+            sumSq += v * v;
+          }
+          const rms = Math.sqrt(sumSq / timeArray.length);
+          const acousticIntensity = Math.min(1, Math.max(0, (rms - 0.02) / 0.38));
+
+          const rawBands = new Float32Array(numColumns);
+          for (let c = 0; c < numColumns; c++) {
+            const [startBin, endBin] = bandBinRanges[c];
+            let sum = 0;
+            let count = 0;
+            for (let b = startBin; b <= endBin && b < freqArray.length; b++) {
+              sum += freqArray[b];
+              count++;
+            }
+            const avg = count > 0 ? (sum / count) / 255 : 0;
+            const hfBoost = 1.0 + Math.pow(c / numColumns, 1.2) * 1.6;
+            rawBands[c] = Math.min(1, avg * hfBoost);
+          }
+
+          const smoothedBands = new Float32Array(numColumns);
+          for (let c = 0; c < numColumns; c++) {
+            const prev = c > 0 ? rawBands[c - 1] : rawBands[c];
+            const next = c < numColumns - 1 ? rawBands[c + 1] : rawBands[c];
+            smoothedBands[c] = 0.22 * prev + 0.56 * rawBands[c] + 0.22 * next;
+          }
+
+          const now = performance.now();
+          let maxCol = 0;
+
+          for (let c = 0; c < numColumns; c++) {
+            const arcWeight = 0.82 + 0.36 * Math.sin((c / (numColumns - 1)) * Math.PI);
+            const target = Math.min(1, Math.max(0,
+              (smoothedBands[c] * 0.60 + acousticIntensity * 0.60) * arcWeight
+            ));
+
+            if (target > currentLevels[c]) {
+              currentLevels[c] += (target - currentLevels[c]) * 0.40;
+            } else {
+              currentLevels[c] += (target - currentLevels[c]) * 0.12;
+            }
+
+            if (currentLevels[c] > peakLevels[c]) {
+              peakLevels[c] = currentLevels[c];
+              peakHoldTimes[c] = now + 250;
+            } else if (now > peakHoldTimes[c]) {
+              peakLevels[c] = Math.max(0, peakLevels[c] - 0.012);
+            }
+
+            if (currentLevels[c] > maxCol) {
+              maxCol = currentLevels[c];
+            }
+          }
+
+          if (badge) {
+            if (maxCol >= 0.80) {
+              badge.textContent = "PEAK REV";
+              badge.className = "sound-rev-intensity-badge is-peak";
+            } else if (maxCol >= 0.45) {
+              badge.textContent = "ACCEL";
+              badge.className = "sound-rev-intensity-badge is-accel";
+            } else if (maxCol >= 0.15) {
+              badge.textContent = "IDLE";
+              badge.className = "sound-rev-intensity-badge";
+            } else {
+              badge.textContent = "LOW";
+              badge.className = "sound-rev-intensity-badge";
+            }
+          }
+        }
+
+        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+        if (dur > 0 && time) {
           time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
         }
-        if (typeof window !== "undefined" && window.requestAnimationFrame) {
-          activeRafId = window.requestAnimationFrame(frame);
-        } else if (typeof requestAnimationFrame !== "undefined") {
-          activeRafId = requestAnimationFrame(frame);
-        }
-      }
-      if (typeof window !== "undefined" && window.requestAnimationFrame) {
-        activeRafId = window.requestAnimationFrame(frame);
-      } else if (typeof requestAnimationFrame !== "undefined") {
+
+        draw(false, currentHoverRatio);
         activeRafId = requestAnimationFrame(frame);
       }
+
+      activeRafId = requestAnimationFrame(frame);
     }
 
     function stopPlaybackLoop() {
       if (activeRafId) {
-        if (typeof window !== "undefined" && window.cancelAnimationFrame) {
-          window.cancelAnimationFrame(activeRafId);
-        } else if (typeof cancelAnimationFrame !== "undefined") {
-          cancelAnimationFrame(activeRafId);
-        }
+        cancelAnimationFrame(activeRafId);
         activeRafId = null;
       }
+    }
+
+    function resetVisualizer() {
+      currentLevels.fill(0);
+      peakLevels.fill(0);
+      peakHoldTimes.fill(0);
+      if (badge) {
+        badge.textContent = "RESTING";
+        badge.className = "sound-rev-intensity-badge";
+      }
+      if (dot) {
+        dot.classList.remove("is-active");
+      }
+      draw(true, null);
     }
 
     audio.addEventListener("loadedmetadata", () => {
@@ -618,7 +628,7 @@
       waveformCache.set(recording.filename, { duration: audio.duration, peaks: [] });
       if (durationBadge) durationBadge.textContent = formatTime(audio.duration);
       time.textContent = `0:00 / ${formatTime(audio.duration)}`;
-      draw(currentProgress, currentHoverRatio);
+      draw(audio.paused, currentHoverRatio);
     });
 
     audio.addEventListener("error", () => {
@@ -632,10 +642,12 @@
           el.pause();
         }
       });
+      ensureWebAudio();
       if (audio.paused) {
         audio.play().then(() => {
           button.innerHTML = '<span class="btn-play-icon">&#10074;&#10074;</span><span class="btn-label-text">PAUSE</span>';
           status.textContent = "PLAYING";
+          if (dot) dot.classList.add("is-active");
           startPlaybackLoop();
         }).catch(() => {
           status.textContent = "ERROR";
@@ -645,11 +657,7 @@
         stopPlaybackLoop();
         button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>';
         status.textContent = "PAUSED";
-        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
-        if (dur > 0) {
-          currentProgress = Math.max(0, Math.min(1, audio.currentTime / dur));
-          draw(currentProgress, currentHoverRatio);
-        }
+        if (dot) dot.classList.remove("is-active");
       }
     });
 
@@ -657,98 +665,85 @@
       stopPlaybackLoop();
       button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>';
       status.textContent = "READY";
-      currentProgress = 1.0;
-      draw(1.0, null);
       audio.currentTime = 0;
-      time.textContent = `0:00 / ${formatTime(audio.duration)}`;
-      setTimeout(() => {
-        if (audio.paused) {
-          currentProgress = 0;
-          draw(0, null);
-        }
-      }, 900);
+      resetVisualizer();
+      const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+      if (dur > 0 && time) {
+        time.textContent = `0:00 / ${formatTime(dur)}`;
+      }
     });
 
     function getRatioFromEvent(e) {
       const bounds = track.getBoundingClientRect();
       if (bounds.width <= 0) return 0;
       const isNarrow = bounds.width < 520;
-      const padLeft = isNarrow ? 38 : 50;
-      const padRight = isNarrow ? 38 : 50;
-      const scaleW = Math.max(1, bounds.width - padLeft - padRight);
+      const padLeft = isNarrow ? 36 : 48;
+      const padRight = isNarrow ? 12 : 18;
+      const plotW = Math.max(1, bounds.width - padLeft - padRight);
       const clickX = e.clientX - bounds.left;
-      const ratio = (clickX - padLeft) / scaleW;
+      const ratio = (clickX - padLeft) / plotW;
       return Math.max(0, Math.min(1, ratio));
     }
 
-    track.addEventListener("pointerdown", e => {
-      const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
-      if (dur <= 0) return;
+    track.addEventListener("pointerdown", (e) => {
       isScrubbing = true;
-      if (track.setPointerCapture) {
-        try { track.setPointerCapture(e.pointerId); } catch (_) {}
-      }
+      try { track.setPointerCapture(e.pointerId); } catch (_) {}
       const ratio = getRatioFromEvent(e);
-      audio.currentTime = ratio * dur;
-      playbackAnchorTime = performance.now();
-      playbackAnchorAudioTime = audio.currentTime;
-      lastKnownAudioTime = audio.currentTime;
-      currentProgress = ratio;
-      draw(currentProgress, ratio);
-      time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
+      const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+      if (dur > 0) {
+        audio.currentTime = ratio * dur;
+        time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
+      }
+      draw(audio.paused, ratio);
     });
 
-    track.addEventListener("pointermove", e => {
-      const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+    track.addEventListener("pointermove", (e) => {
       const ratio = getRatioFromEvent(e);
       currentHoverRatio = ratio;
-
+      const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
       if (seekPreview && dur > 0) {
-        seekPreview.textContent = `TUNE ${formatTime(ratio * dur)}`;
+        seekPreview.textContent = `SEEK ${formatTime(ratio * dur)}`;
         seekPreview.style.display = "inline";
       }
-
       if (isScrubbing && dur > 0) {
         audio.currentTime = ratio * dur;
-        playbackAnchorTime = performance.now();
-        playbackAnchorAudioTime = audio.currentTime;
-        lastKnownAudioTime = audio.currentTime;
-        currentProgress = ratio;
-        draw(currentProgress, ratio);
         time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
-      } else {
-        draw(currentProgress, ratio);
+        draw(audio.paused, ratio);
+      } else if (!isScrubbing) {
+        draw(audio.paused, ratio);
       }
     });
 
-    function endScrub() {
-      isScrubbing = false;
+    function endScrub(e) {
+      if (isScrubbing) {
+        isScrubbing = false;
+        try { if (e && e.pointerId) track.releasePointerCapture(e.pointerId); } catch (_) {}
+        currentHoverRatio = null;
+        if (seekPreview) seekPreview.style.display = "none";
+        draw(audio.paused, null);
+      }
     }
     track.addEventListener("pointerup", endScrub);
     track.addEventListener("pointercancel", endScrub);
 
     track.addEventListener("pointerleave", () => {
-      currentHoverRatio = null;
-      if (seekPreview) seekPreview.style.display = "none";
       if (!isScrubbing) {
-        draw(currentProgress, null);
+        currentHoverRatio = null;
+        if (seekPreview) seekPreview.style.display = "none";
+        draw(audio.paused, null);
       }
     });
 
-    const ResizeObserverClass = (typeof window !== "undefined" && window.ResizeObserver) || (typeof ResizeObserver !== "undefined" ? ResizeObserver : null);
+    const ResizeObserverClass = window.ResizeObserver || null;
     if (ResizeObserverClass) {
       activeResizeObserver = new ResizeObserverClass(() => {
-        draw(currentProgress, currentHoverRatio);
+        draw(audio.paused, currentHoverRatio);
       });
       activeResizeObserver.observe(track);
     }
 
-    // Initial render of tuner scale and reset position
-    activeRecordingFile = recording.filename;
-    if (currentDuration > 0 && durationBadge) {
-      durationBadge.textContent = formatTime(currentDuration);
-    }
-    draw(0, null);
+    // Initial render of resting state
+    resetVisualizer();
   }
 
   function selectCategory(category) {
@@ -757,8 +752,6 @@
         activeAudio.pause();
       }
       activeAudio.currentTime = 0;
-      activeAudio.removeAttribute("src");
-      activeAudio.load();
     }
     activeAudio = null;
 

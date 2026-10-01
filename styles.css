@@ -7843,4 +7843,158 @@ body {
   }
 }
 
+/* Step 3: Owner Modification Comparison Block */
+.tuning-owner-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.tuning-comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 300px) auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.tuning-comparison-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.tuning-comparison-badge {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--text-ink);
+}
+
+.tuning-badge-source {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold, #967444);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.tuning-comparison-heading {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-ink);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.tuning-comparison-arrow {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--text-muted);
+  align-self: center;
+  padding-top: 2.25rem;
+  line-height: 1;
+}
+
+.tuning-mod-list {
+  border-top: 1px solid var(--text-ink);
+}
+
+.tuning-mod-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.tuning-mod-item:last-child {
+  border-bottom: none;
+}
+
+.tuning-mod-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.tuning-mod-system {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-racing-green, #1c3d2e);
+  flex-shrink: 0;
+}
+
+.tuning-mod-part {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  text-align: right;
+}
+
+.tuning-mod-detail {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.tuning-owner-narrative {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.tuning-owner-narrative p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 1rem;
+}
+
+.tuning-source-note {
+  font-family: var(--font-sans) !important;
+  font-size: 0.78rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.5 !important;
+  margin-top: 1.25rem !important;
+}
+
+.tuning-source-note a {
+  color: var(--text-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tuning-source-note a:hover {
+  color: var(--accent-racing-green, #1c3d2e);
+}
+
+@media (max-width: 860px) {
+  .tuning-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .tuning-comparison-arrow {
+    text-align: center;
+    padding-top: 0;
+  }
+  .tuning-mod-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .tuning-mod-part {
+    text-align: left;
+  }
+}
+
+
 
