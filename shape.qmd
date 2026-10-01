@@ -20,7 +20,7 @@ toc: false
   </div>
 </div>
 
-<div class="story-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 6rem;">
+<div class="story-container" style="max-width: 1160px; margin: 0 auto; padding: 0 1.5rem 6rem;">
 
   <!-- SECTION 1: VISUAL SILHOUETTE EVOLUTION -->
   <div class="silhouette-section" style="margin: 2rem 0 3.5rem;">
@@ -182,7 +182,21 @@ toc: false
       </div>
     </div>
 
-    <div class="dim-chart-svg-container" id="share-svg-container" style="min-height: 280px;"></div>
+    <div class="editorial-viz-layout">
+      <div class="editorial-viz-main">
+        <div class="dim-chart-svg-container" id="share-svg-container" style="min-height: 280px;"></div>
+      </div>
+      <aside class="editorial-callout-sidebar" aria-label="Editorial margin note">
+        <div class="editorial-callout" id="shape-share-callout">
+          <div class="editorial-callout-kicker">DID YOU NOTICE?</div>
+          <h4 class="editorial-callout-title">The classic three-box silhouette gave ground.</h4>
+          <p class="editorial-callout-body">
+            Sedans commanded 28.7% of cataloged introductions in 1970 and peaked at 39.8% in 1982, before gradually contracting to 13.2% by 2024 as utility crossovers expanded.
+          </p>
+          <div class="editorial-callout-meta">Sedan &bull; 1970–2024 Market Share</div>
+        </div>
+      </aside>
+    </div>
     <div class="share-stats-row" id="share-stats-container"></div>
   </div>
 
@@ -240,9 +254,23 @@ toc: false
       </div>
     </div>
 
-    <div class="dim-chart-svg-container" id="dim-svg-container"></div>
-    <div class="gap-note">
-      <span>&lowast; Continuous Fleet Metric: Based on vehicles actively produced during each calendar year across their generation lifespan.</span>
+    <div class="editorial-viz-layout">
+      <div class="editorial-viz-main">
+        <div class="dim-chart-svg-container" id="dim-svg-container"></div>
+        <div class="gap-note">
+          <span>&lowast; Continuous Fleet Metric: Based on vehicles actively produced during each calendar year across their generation lifespan.</span>
+        </div>
+      </div>
+      <aside class="editorial-callout-sidebar" aria-label="Editorial margin note">
+        <div class="editorial-callout" id="shape-dim-callout">
+          <div class="editorial-callout-kicker">LOOK CLOSER</div>
+          <h4 class="editorial-callout-title">The numbers move even when the silhouette looks familiar.</h4>
+          <p class="editorial-callout-body">
+            Between 1970 and 2024, median sedan length grew by 104 mm (4,750 mm to 4,854 mm) and width widened by 81 mm (1,786 mm to 1,867 mm), while median roof height remained virtually fixed at ~1,440–1,445 mm.
+          </p>
+          <div class="editorial-callout-meta">Sedan &bull; 1970 vs 2024 Dimensions</div>
+        </div>
+      </aside>
     </div>
 
     <div class="dim-stats-summary-grid" id="dim-stats-summary-grid"></div>

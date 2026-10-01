@@ -170,6 +170,106 @@
     }
   }
 
+  const engineCalloutData = {
+    "v8": {
+      kicker: "DID YOU NOTICE?",
+      title: "A cross-plane boom that shifted from mainstream to prestige.",
+      body: "The cross-plane V8 accounts for 1,996 cataloged vehicles. Once representing 20% of the entire passenger fleet in the 1970s, its uneven burble gradually migrated into high-performance and luxury badges.",
+      meta: "V8 &bull; 1,996 Models Cataloged (6.7%)"
+    },
+    "v10": {
+      kicker: "DID YOU NOTICE?",
+      title: "Some sounds were always rare.",
+      body: "With only 80 cataloged models in the 29,880-vehicle archive, the ten-cylinder was never an everyday note—it existed almost exclusively as a high-revving exotic hallmark.",
+      meta: "V10 &bull; 80 Models Cataloged (0.3%)"
+    },
+    "v12": {
+      kicker: "DID YOU NOTICE?",
+      title: "Some sounds were always rare.",
+      body: "The twelve-cylinder accounts for just 235 models out of nearly 30,000 recorded. Its seamless overlapping power strokes were a luxury preserve that few motorists ever experienced first-hand.",
+      meta: "V12 &bull; 235 Models Cataloged (0.8%)"
+    },
+    "w16": {
+      kicker: "DID YOU NOTICE?",
+      title: "Some sounds were always rare.",
+      body: "Representing just 12 cataloged models in the entire database, the quad-turbocharged sixteen-cylinder represents the absolute acoustic fringe of production combustion engineering.",
+      meta: "W16 &bull; 12 Models Cataloged (<0.1%)"
+    },
+    "flat-6": {
+      kicker: "DID YOU NOTICE?",
+      title: "Some sounds were always rare.",
+      body: "Horizontally opposed sixes appear in just 346 cataloged models—an inherently balanced acoustic signature that remained almost solely tied to a single German sports car marque.",
+      meta: "Flat-6 &bull; 346 Models Cataloged (1.2%)"
+    },
+    "2-cylinder": {
+      kicker: "DID YOU NOTICE?",
+      title: "Some sounds were always rare.",
+      body: "With only 51 cataloged examples, two-cylinder engines belong almost entirely to early economy runabouts, producing an uneven, puttering cadence that all but vanished from production.",
+      meta: "2-Cylinder &bull; 51 Models Cataloged (0.2%)"
+    },
+    "4-cylinder": {
+      kicker: "DID YOU NOTICE?",
+      title: "The undisputed workhorse of the century.",
+      body: "The four-cylinder is the acoustic backdrop of modern motoring, accounting for 18,955 vehicles—nearly two-thirds of all cataloged passenger cars. Its even firing intervals became the default rhythm of global mobility.",
+      meta: "Inline-4 &bull; 18,955 Models Cataloged (63.4%)"
+    },
+    "3-cylinder": {
+      kicker: "DID YOU NOTICE?",
+      title: "The thrum of cylinder downsizing.",
+      body: "With 1,260 models—mostly recorded after 2010—the three-cylinder delivers a characteristic off-beat syncopated thrum that grew as turbocharging replaced natural displacement.",
+      meta: "3-Cylinder &bull; 1,260 Models Cataloged (4.2%)"
+    },
+    "5-cylinder": {
+      kicker: "DID YOU NOTICE?",
+      title: "The distinctive warble of an odd cylinder count.",
+      body: "Appearing in 684 models, the five-cylinder's 144-degree firing order creates a unique off-beat acoustic warble midway between the rasp of a four and the howl of a straight-six.",
+      meta: "5-Cylinder &bull; 684 Models Cataloged (2.3%)"
+    },
+    "inline-6": {
+      kicker: "DID YOU NOTICE?",
+      title: "Inherent primary balance.",
+      body: "With 2,504 cataloged models, the straight-six generates a harmonically smooth acoustic delivery due to its natural mechanical balance, before packaging constraints pushed manufacturers toward compact V6 layouts.",
+      meta: "Inline-6 &bull; 2,504 Models Cataloged (8.4%)"
+    },
+    "v6": {
+      kicker: "DID YOU NOTICE?",
+      title: "The packaging compromise that conquered executive cars.",
+      body: "Recording 2,596 models, the V6 offered six-cylinder output within the transverse engine bays of front-wheel-drive platforms, becoming the ubiquitous mid-displacement executive sound of the 1990s and 2000s.",
+      meta: "V6 &bull; 2,596 Models Cataloged (8.7%)"
+    },
+    "diesel": {
+      kicker: "DID YOU NOTICE?",
+      title: "Compression ignition's heavy cadence.",
+      body: "With 8,320 cataloged models, compression-ignition engines formed the second-largest powertrain family, identifiable by rapid high-pressure fuel injection rattle rather than spark ignition.",
+      meta: "Diesel &bull; 8,320 Models Cataloged (27.8%)"
+    },
+    "hybrid": {
+      kicker: "DID YOU NOTICE?",
+      title: "Intermittent silence meets combustion load.",
+      body: "Accounting for 1,319 models, hybrids introduced a novel acoustic pattern: silent low-speed electric gliding punctuated by sudden internal combustion engagement under acceleration.",
+      meta: "Hybrid &bull; 1,319 Models Cataloged (4.4%)"
+    },
+    "electric": {
+      kicker: "DID YOU NOTICE?",
+      title: "Silence isn't empty—it shifts the frequency spectrum.",
+      body: "Across 705 cataloged electric models, the absence of combustion pressure waves brings high-frequency inverter switching, motor stator harmonics, and tire roar to the auditory forefront.",
+      meta: "Electric &bull; 705 Models Cataloged (2.4%)"
+    }
+  };
+
+  function updateEngineCallout(category) {
+    const item = engineCalloutData[category.key];
+    if (!item) return;
+    const callout = document.getElementById("sound-engine-callout");
+    if (!callout) return;
+    callout.innerHTML = `
+      <div class="editorial-callout-kicker">${item.kicker}</div>
+      <h4 class="editorial-callout-title">${item.title}</h4>
+      <p class="editorial-callout-body">${item.body}</p>
+      <div class="editorial-callout-meta">${item.meta}</div>
+    `;
+  }
+
   function selectorHtml() {
     return `
       <div class="sound-dropdown-wrap">
@@ -182,7 +282,16 @@
           </select>
         </div>
       </div>
-      <div class="engine-recording-detail" id="engine-recording-detail" aria-live="polite"></div>
+      <div class="editorial-viz-layout">
+        <div class="editorial-viz-main">
+          <div class="engine-recording-detail" id="engine-recording-detail" aria-live="polite"></div>
+        </div>
+        <aside class="editorial-callout-sidebar" aria-label="Editorial margin note">
+          <div class="editorial-callout" id="sound-engine-callout">
+            <!-- Populated dynamically via selectCategory -->
+          </div>
+        </aside>
+      </div>
     `;
   }
 
@@ -205,21 +314,21 @@
       </div>
 
       <div class="engine-detail-player">
-        <div class="sound-waveform-container">
+        <div class="sound-waveform-container sound-tuner-container">
           <div class="sound-waveform-header">
             <div class="sound-waveform-header-left">
               <span class="sound-waveform-indicator-dot"></span>
-              <span class="sound-waveform-label">ACOUSTIC PROFILE // AMPLITUDE OVER TIME</span>
+              <span class="sound-waveform-label">ANALOG RADIO TUNER // FREQUENCY SCALE</span>
             </div>
             <div class="sound-waveform-header-right">
               <span class="sound-waveform-duration" id="selected-waveform-duration">--:--</span>
-              <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">SEEK 0:00</span>
+              <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">TUNE 0:00</span>
             </div>
           </div>
-          <div class="sound-waveform-canvas-wrap" id="selected-engine-track" role="region" aria-label="Interactive audio waveform. Click or drag to seek." title="Click or drag to seek playback">
+          <div class="sound-waveform-canvas-wrap sound-tuner-canvas-wrap" id="selected-engine-track" role="region" aria-label="Analog car radio tuner scale. Click or drag to tune playback." title="Click or drag to tune playback">
             <canvas id="selected-waveform-canvas" class="sound-waveform-canvas"></canvas>
             <div class="sound-waveform-loading" id="selected-waveform-loading" style="display: none;">
-              <span class="sound-waveform-loading-text">MEASURING ACOUSTIC SIGNAL...</span>
+              <span class="sound-waveform-loading-text">RECEIVER READY...</span>
             </div>
           </div>
         </div>
@@ -269,17 +378,21 @@
     audio.autoplay = false;
     audio.loop = false;
 
-    let currentPeaks = null;
-    let currentDuration = 0;
+    let currentDuration = waveformCache.has(recording.filename)
+      ? waveformCache.get(recording.filename).duration
+      : 0;
     let currentProgress = 0;
     let currentHoverRatio = null;
     let isScrubbing = false;
+    let playbackAnchorTime = 0;
+    let playbackAnchorAudioTime = 0;
+    let lastKnownAudioTime = -1;
 
     function draw(progress = currentProgress, hoverRatio = currentHoverRatio) {
       if (!canvas || !track) return;
       const rect = track.getBoundingClientRect();
       const width = Math.max(10, Math.floor(rect.width));
-      const height = Math.max(10, Math.floor(rect.height || 80));
+      const height = Math.max(10, Math.floor(rect.height || 82));
       const dpr = window.devicePixelRatio || 1;
 
       const targetW = Math.floor(width * dpr);
@@ -295,157 +408,298 @@
       ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, width, height);
 
+      // 1. Dial plate background: Deep vintage British racing charcoal
+      ctx.fillStyle = "#141c17";
+      ctx.fillRect(0, 0, width, height);
+
+      // Subtle horizontal brushed / grooved texture lines
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.018)";
+      ctx.lineWidth = 1;
+      for (let gy = 4; gy < height; gy += 4) {
+        ctx.beginPath();
+        ctx.moveTo(0, gy);
+        ctx.lineTo(width, gy);
+        ctx.stroke();
+      }
+
+      // 2. Bezel rim inner shadow & glass reflection
+      const topShadow = ctx.createLinearGradient(0, 0, 0, 7);
+      topShadow.addColorStop(0, "rgba(0, 0, 0, 0.55)");
+      topShadow.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = topShadow;
+      ctx.fillRect(0, 0, width, 7);
+
+      const btmShadow = ctx.createLinearGradient(0, height - 6, 0, height);
+      btmShadow.addColorStop(0, "rgba(0, 0, 0, 0)");
+      btmShadow.addColorStop(1, "rgba(0, 0, 0, 0.45)");
+      ctx.fillStyle = btmShadow;
+      ctx.fillRect(0, height - 6, width, 6);
+
+      // Specular glass sheen across upper portion
+      const glassGrad = ctx.createLinearGradient(0, 0, 0, height * 0.48);
+      glassGrad.addColorStop(0, "rgba(255, 255, 255, 0.05)");
+      glassGrad.addColorStop(0.3, "rgba(255, 255, 255, 0.02)");
+      glassGrad.addColorStop(1, "rgba(255, 255, 255, 0)");
+      ctx.fillStyle = glassGrad;
+      ctx.fillRect(0, 0, width, height * 0.48);
+
+      // 3. Layout geometry
+      const isNarrow = width < 520;
+      const padLeft = isNarrow ? 38 : 50;
+      const padRight = isNarrow ? 38 : 50;
+      const scaleW = Math.max(10, width - padLeft - padRight);
+
+      const yTopRail = 14;
+      const yBtmRail = height - 14;
       const yCenter = Math.round(height / 2);
 
-      // Reference guide lines (+50% / -50% amplitude)
-      ctx.strokeStyle = "rgba(28, 61, 46, 0.08)";
-      ctx.lineWidth = 1;
-      ctx.setLineDash([3, 4]);
-      ctx.beginPath();
-      ctx.moveTo(0, Math.round(height * 0.2));
-      ctx.lineTo(width, Math.round(height * 0.2));
-      ctx.moveTo(0, Math.round(height * 0.8));
-      ctx.lineTo(width, Math.round(height * 0.8));
-      ctx.stroke();
-      ctx.setLineDash([]);
+      // 4. Center mechanical slider slot
+      ctx.fillStyle = "rgba(8, 12, 10, 0.85)";
+      ctx.fillRect(padLeft - 10, yCenter - 4, scaleW + 20, 8);
 
-      // Centerline zero-crossing baseline
-      ctx.strokeStyle = "rgba(28, 61, 46, 0.18)";
+      // Slot borders
+      ctx.strokeStyle = "rgba(226, 218, 205, 0.15)";
       ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(0, yCenter);
-      ctx.lineTo(width, yCenter);
+      ctx.moveTo(padLeft - 10, yCenter - 4);
+      ctx.lineTo(padLeft + scaleW + 10, yCenter - 4);
+      ctx.moveTo(padLeft - 10, yCenter + 4);
+      ctx.lineTo(padLeft + scaleW + 10, yCenter + 4);
       ctx.stroke();
 
-      // Time ticks along bottom baseline
-      const dur = currentDuration > 0
-        ? currentDuration
-        : (audio && Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 10);
+      // Centerline rule
+      ctx.strokeStyle = "rgba(226, 218, 205, 0.08)";
+      ctx.beginPath();
+      ctx.moveTo(padLeft, yCenter);
+      ctx.lineTo(padLeft + scaleW, yCenter);
+      ctx.stroke();
 
-      if (dur > 0) {
-        const step = dur <= 12 ? 2 : (dur <= 25 ? 5 : 10);
-        ctx.fillStyle = "rgba(71, 85, 105, 0.55)";
-        ctx.font = "9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "bottom";
+      // Center vintage designation badge
+      ctx.fillStyle = "rgba(226, 218, 205, 0.35)";
+      ctx.font = `600 ${isNarrow ? "7px" : "8px"} -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      const badgeText = isNarrow ? "ANALOG TUNER" : "BRITISH MOTORING // SOLID STATE TUNER";
+      ctx.fillText(badgeText, width / 2, yCenter);
 
-        for (let t = step; t < dur; t += step) {
-          const tx = Math.round((t / dur) * width);
-          ctx.strokeStyle = "rgba(28, 61, 46, 0.12)";
-          ctx.beginPath();
-          ctx.moveTo(tx, height - 5);
-          ctx.lineTo(tx, height);
-          ctx.stroke();
-          ctx.fillText(`${t}s`, tx, height - 6);
-        }
-      }
+      // 5. Guide rails
+      ctx.strokeStyle = "rgba(226, 218, 205, 0.28)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(padLeft - 8, yTopRail);
+      ctx.lineTo(padLeft + scaleW + 8, yTopRail);
+      ctx.moveTo(padLeft - 8, yBtmRail);
+      ctx.lineTo(padLeft + scaleW + 8, yBtmRail);
+      ctx.stroke();
 
-      // Amplitude bars
-      if (currentPeaks && currentPeaks.length > 0) {
-        const barW = 2.0;
-        const gap = 1.5;
-        const barStep = barW + gap;
-        const totalBars = Math.floor((width - 4) / barStep);
-        const maxBarH = height * 0.38;
+      // 6. Band labels (MW and FM)
+      ctx.fillStyle = "rgba(235, 228, 218, 0.82)";
+      ctx.font = "bold 9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      ctx.fillText("MW", padLeft - 10, yTopRail + 5);
 
-        for (let i = 0; i < totalBars; i++) {
-          const bx = 2 + i * barStep;
-          const sampleIdx = Math.floor((i / totalBars) * currentPeaks.length);
-          const amp = currentPeaks[sampleIdx] || 0.04;
-          const halfH = Math.max(2, Math.round(amp * maxBarH));
-          const isPlayed = (bx + barW / 2) / width <= progress;
+      ctx.textAlign = "left";
+      ctx.fillStyle = "rgba(226, 218, 205, 0.45)";
+      ctx.font = "8px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
+      ctx.fillText("kHz", padLeft + scaleW + 8, yTopRail + 5);
 
-          ctx.fillStyle = isPlayed ? "#1c3d2e" : "rgba(30, 41, 59, 0.28)";
-          if (ctx.roundRect) {
-            ctx.beginPath();
-            ctx.roundRect(bx, yCenter - halfH, barW, halfH * 2, 1);
-            ctx.fill();
-          } else {
-            ctx.fillRect(bx, yCenter - halfH, barW, halfH * 2);
-          }
-        }
-      }
+      ctx.fillStyle = "rgba(235, 228, 218, 0.82)";
+      ctx.font = "bold 9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      ctx.fillText("FM", padLeft - 10, yBtmRail - 5);
 
-      // Playhead needle
-      if (progress > 0) {
-        const needleX = Math.max(0, Math.min(width, Math.round(progress * width)));
+      ctx.textAlign = "left";
+      ctx.fillStyle = "rgba(226, 218, 205, 0.45)";
+      ctx.font = "8px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
+      ctx.fillText("MHz", padLeft + scaleW + 8, yBtmRail - 5);
 
-        // Needle subtle wash
-        ctx.fillStyle = "rgba(28, 61, 46, 0.12)";
-        ctx.fillRect(needleX - 2, 0, 4, height);
+      // 7. Scale 1 (Top): MW Frequencies (54 to 160 kHz × 10)
+      const mwFrequencies = isNarrow
+        ? [54, 70, 90, 120, 160]
+        : [54, 60, 70, 80, 100, 120, 140, 160];
 
-        // Needle line
-        ctx.strokeStyle = "#1c3d2e";
-        ctx.lineWidth = 2;
+      // Ticks across MW rail
+      const mwTotalSteps = isNarrow ? 30 : 53;
+      for (let s = 0; s <= mwTotalSteps; s++) {
+        const sx = padLeft + (s / mwTotalSteps) * scaleW;
+        const isMajor = s % (isNarrow ? 6 : 5) === 0;
+        const isMid = s % 2 === 0;
+        const tickH = isMajor ? 8 : (isMid ? 5 : 3);
+        const alpha = isMajor ? 0.6 : (isMid ? 0.35 : 0.2);
+
+        ctx.strokeStyle = `rgba(226, 218, 205, ${alpha})`;
         ctx.beginPath();
-        ctx.moveTo(needleX, 0);
-        ctx.lineTo(needleX, height);
+        ctx.moveTo(sx, yTopRail);
+        ctx.lineTo(sx, yTopRail + tickH);
         ctx.stroke();
-
-        // Top pointer cap
-        ctx.fillStyle = "#1c3d2e";
-        ctx.beginPath();
-        ctx.moveTo(needleX - 3, 0);
-        ctx.lineTo(needleX + 3, 0);
-        ctx.lineTo(needleX, 4);
-        ctx.closePath();
-        ctx.fill();
-
-        // Bottom pointer cap
-        ctx.beginPath();
-        ctx.moveTo(needleX - 3, height);
-        ctx.lineTo(needleX + 3, height);
-        ctx.lineTo(needleX, height - 4);
-        ctx.closePath();
-        ctx.fill();
       }
 
-      // Hover hairline (only appears when cursor is over waveform)
-      if (hoverRatio !== null && hoverRatio >= 0 && hoverRatio <= 1) {
-        const hX = Math.round(hoverRatio * width);
-        ctx.strokeStyle = "rgba(28, 61, 46, 0.35)";
-        ctx.lineWidth = 1;
-        ctx.setLineDash([2, 2]);
+      // MW Frequency labels
+      ctx.fillStyle = "rgba(235, 228, 218, 0.85)";
+      ctx.font = "9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      mwFrequencies.forEach((freq, idx) => {
+        const frac = idx / (mwFrequencies.length - 1);
+        const fx = padLeft + frac * scaleW;
+        ctx.fillText(freq.toString(), fx, yTopRail + 9);
+      });
+
+      // 8. Scale 2 (Bottom): FM Frequencies (88 to 108 MHz)
+      const fmFrequencies = isNarrow
+        ? [88, 94, 100, 108]
+        : [88, 92, 96, 100, 104, 108];
+
+      // Ticks across FM rail
+      const fmTotalSteps = isNarrow ? 28 : 50;
+      for (let s = 0; s <= fmTotalSteps; s++) {
+        const sx = padLeft + (s / fmTotalSteps) * scaleW;
+        const isMajor = s % (isNarrow ? 7 : 5) === 0;
+        const isMid = s % 2 === 0;
+        const tickH = isMajor ? 8 : (isMid ? 5 : 3);
+        const alpha = isMajor ? 0.6 : (isMid ? 0.35 : 0.2);
+
+        ctx.strokeStyle = `rgba(226, 218, 205, ${alpha})`;
         ctx.beginPath();
-        ctx.moveTo(hX, 0);
-        ctx.lineTo(hX, height);
+        ctx.moveTo(sx, yBtmRail);
+        ctx.lineTo(sx, yBtmRail - tickH);
+        ctx.stroke();
+      }
+
+      // FM Frequency labels
+      ctx.fillStyle = "rgba(235, 228, 218, 0.85)";
+      ctx.font = "9px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      fmFrequencies.forEach((freq, idx) => {
+        const frac = idx / (fmFrequencies.length - 1);
+        const fx = padLeft + frac * scaleW;
+        ctx.fillText(freq.toString(), fx, yBtmRail - 9);
+      });
+
+      // 9. Hover guideline (when pointer hovers over scale)
+      if (hoverRatio !== null && hoverRatio >= 0 && hoverRatio <= 1) {
+        const hX = Math.round(padLeft + hoverRatio * scaleW);
+        ctx.strokeStyle = "rgba(226, 218, 205, 0.35)";
+        ctx.lineWidth = 1;
+        ctx.setLineDash([2, 3]);
+        ctx.beginPath();
+        ctx.moveTo(hX, 6);
+        ctx.lineTo(hX, height - 6);
         ctx.stroke();
         ctx.setLineDash([]);
       }
+
+      // 10. The Analog Mechanical Tuning Needle
+      const clampedProgress = Math.max(0, Math.min(1, progress || 0));
+      const needleX = padLeft + clampedProgress * scaleW;
+
+      // Needle drop shadow on the dial plate
+      ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
+      ctx.fillRect(Math.round(needleX + 2), 6, 2, height - 12);
+
+      // Primary mechanical needle (classic vintage dial vermilion)
+      ctx.fillStyle = "#cf3824";
+      ctx.fillRect(Math.round(needleX - 1), 6, 2, height - 12);
+
+      // Fine highlight hairline down needle center
+      ctx.fillStyle = "rgba(255, 185, 170, 0.65)";
+      ctx.fillRect(Math.round(needleX), 7, 1, height - 14);
+
+      // Top mechanical carriage pointer tab
+      ctx.fillStyle = "#cf3824";
+      ctx.beginPath();
+      ctx.moveTo(needleX - 4, 6);
+      ctx.lineTo(needleX + 4, 6);
+      ctx.lineTo(needleX, 13);
+      ctx.closePath();
+      ctx.fill();
+
+      // Bottom mechanical carriage pointer tab
+      ctx.beginPath();
+      ctx.moveTo(needleX - 4, height - 6);
+      ctx.lineTo(needleX + 4, height - 6);
+      ctx.lineTo(needleX, height - 13);
+      ctx.closePath();
+      ctx.fill();
+
+      // Center mechanical slide bead / carriage jewel
+      ctx.fillStyle = "#8a1c10";
+      ctx.beginPath();
+      ctx.arc(needleX, yCenter, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#ff6a56";
+      ctx.beginPath();
+      ctx.arc(needleX, yCenter, 1.6, 0, Math.PI * 2);
+      ctx.fill();
 
       ctx.restore();
     }
 
     function startPlaybackLoop() {
-      if (activeRafId) cancelAnimationFrame(activeRafId);
+      if (activeRafId) {
+        if (typeof window !== "undefined" && window.cancelAnimationFrame) {
+          window.cancelAnimationFrame(activeRafId);
+        } else if (typeof cancelAnimationFrame !== "undefined") {
+          cancelAnimationFrame(activeRafId);
+        }
+      }
+      playbackAnchorTime = performance.now();
+      playbackAnchorAudioTime = audio.currentTime;
+      lastKnownAudioTime = audio.currentTime;
 
       function frame() {
         if (!audio || audio.paused || audio.ended) {
           activeRafId = null;
           return;
         }
-        if (Number.isFinite(audio.duration) && audio.duration > 0) {
-          currentProgress = audio.currentTime / audio.duration;
-          draw(currentProgress, currentHoverRatio);
-          time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+        const now = performance.now();
+        if (audio.currentTime !== lastKnownAudioTime) {
+          lastKnownAudioTime = audio.currentTime;
+          playbackAnchorTime = now;
+          playbackAnchorAudioTime = audio.currentTime;
         }
+        const elapsed = (now - playbackAnchorTime) / 1000;
+        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+
+        if (dur > 0) {
+          const estimatedCurrent = Math.min(dur, playbackAnchorAudioTime + elapsed * (audio.playbackRate || 1));
+          currentProgress = Math.max(0, Math.min(1, estimatedCurrent / dur));
+          draw(currentProgress, currentHoverRatio);
+          time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
+        }
+        if (typeof window !== "undefined" && window.requestAnimationFrame) {
+          activeRafId = window.requestAnimationFrame(frame);
+        } else if (typeof requestAnimationFrame !== "undefined") {
+          activeRafId = requestAnimationFrame(frame);
+        }
+      }
+      if (typeof window !== "undefined" && window.requestAnimationFrame) {
+        activeRafId = window.requestAnimationFrame(frame);
+      } else if (typeof requestAnimationFrame !== "undefined") {
         activeRafId = requestAnimationFrame(frame);
       }
-      activeRafId = requestAnimationFrame(frame);
     }
 
     function stopPlaybackLoop() {
       if (activeRafId) {
-        cancelAnimationFrame(activeRafId);
+        if (typeof window !== "undefined" && window.cancelAnimationFrame) {
+          window.cancelAnimationFrame(activeRafId);
+        } else if (typeof cancelAnimationFrame !== "undefined") {
+          cancelAnimationFrame(activeRafId);
+        }
         activeRafId = null;
       }
     }
 
     audio.addEventListener("loadedmetadata", () => {
       currentDuration = audio.duration;
+      waveformCache.set(recording.filename, { duration: audio.duration, peaks: [] });
       if (durationBadge) durationBadge.textContent = formatTime(audio.duration);
       time.textContent = `0:00 / ${formatTime(audio.duration)}`;
-      draw();
+      draw(currentProgress, currentHoverRatio);
     });
 
     audio.addEventListener("error", () => {
@@ -472,8 +726,9 @@
         stopPlaybackLoop();
         button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>';
         status.textContent = "PAUSED";
-        if (Number.isFinite(audio.duration) && audio.duration > 0) {
-          currentProgress = audio.currentTime / audio.duration;
+        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+        if (dur > 0) {
+          currentProgress = Math.max(0, Math.min(1, audio.currentTime / dur));
           draw(currentProgress, currentHoverRatio);
         }
       }
@@ -492,13 +747,19 @@
           currentProgress = 0;
           draw(0, null);
         }
-      }, 1200);
+      }, 900);
     });
 
     function getRatioFromEvent(e) {
       const bounds = track.getBoundingClientRect();
       if (bounds.width <= 0) return 0;
-      return Math.max(0, Math.min(1, (e.clientX - bounds.left) / bounds.width));
+      const isNarrow = bounds.width < 520;
+      const padLeft = isNarrow ? 38 : 50;
+      const padRight = isNarrow ? 38 : 50;
+      const scaleW = Math.max(1, bounds.width - padLeft - padRight);
+      const clickX = e.clientX - bounds.left;
+      const ratio = (clickX - padLeft) / scaleW;
+      return Math.max(0, Math.min(1, ratio));
     }
 
     track.addEventListener("pointerdown", e => {
@@ -510,6 +771,9 @@
       }
       const ratio = getRatioFromEvent(e);
       audio.currentTime = ratio * dur;
+      playbackAnchorTime = performance.now();
+      playbackAnchorAudioTime = audio.currentTime;
+      lastKnownAudioTime = audio.currentTime;
       currentProgress = ratio;
       draw(currentProgress, ratio);
       time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
@@ -521,12 +785,15 @@
       currentHoverRatio = ratio;
 
       if (seekPreview && dur > 0) {
-        seekPreview.textContent = `SEEK ${formatTime(ratio * dur)}`;
+        seekPreview.textContent = `TUNE ${formatTime(ratio * dur)}`;
         seekPreview.style.display = "inline";
       }
 
       if (isScrubbing && dur > 0) {
         audio.currentTime = ratio * dur;
+        playbackAnchorTime = performance.now();
+        playbackAnchorAudioTime = audio.currentTime;
+        lastKnownAudioTime = audio.currentTime;
         currentProgress = ratio;
         draw(currentProgress, ratio);
         time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
@@ -557,36 +824,22 @@
       activeResizeObserver.observe(track);
     }
 
-    // Load / retrieve waveform for current recording
-    const targetFile = recording.filename;
-    activeRecordingFile = targetFile;
-
-    if (waveformCache.has(targetFile)) {
-      const cached = waveformCache.get(targetFile);
-      currentPeaks = cached.peaks;
-      currentDuration = cached.duration;
-      if (durationBadge) durationBadge.textContent = formatTime(currentDuration);
-      draw(0, null);
-    } else {
-      if (loading) loading.style.display = "flex";
-      extractWaveformFromAudio(targetFile).then(data => {
-        if (activeRecordingFile === targetFile) {
-          if (loading) loading.style.display = "none";
-          currentPeaks = data.peaks;
-          currentDuration = data.duration;
-          if (durationBadge) durationBadge.textContent = formatTime(currentDuration);
-          draw(0, null);
-        }
-      }).catch(() => {
-        if (loading) loading.style.display = "none";
-      });
+    // Initial render of tuner scale and reset position
+    activeRecordingFile = recording.filename;
+    if (currentDuration > 0 && durationBadge) {
+      durationBadge.textContent = formatTime(currentDuration);
     }
+    draw(0, null);
   }
 
   function selectCategory(category) {
-    if (activeAudio && !activeAudio.paused) {
-      activeAudio.pause();
+    if (activeAudio) {
+      if (!activeAudio.paused) {
+        activeAudio.pause();
+      }
       activeAudio.currentTime = 0;
+      activeAudio.removeAttribute("src");
+      activeAudio.load();
     }
     activeAudio = null;
 
@@ -603,6 +856,9 @@
     if (select && select.value !== category.key) {
       select.value = category.key;
     }
+
+    // Synchronize dynamic editorial margin callout
+    updateEngineCallout(category);
 
     const detail = document.getElementById("engine-recording-detail");
     if (!detail) return;

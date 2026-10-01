@@ -17,7 +17,7 @@ toc: false
   </div>
 </div>
 
-<div class="story-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 6rem;">
+<div class="story-container" style="max-width: 1160px; margin: 0 auto; padding: 0 1.5rem 6rem;">
 
   <!-- MAIN INVESTIGATION: HOW CAR COLORS CHANGED OVER THE DECADES -->
   <div class="color-viz-card" style="margin: 2rem 0 3rem;">
@@ -31,8 +31,11 @@ toc: false
       </div>
     </div>
 
-    <!-- Interactive Readout Bar -->
-    <div class="color-readout-slot">
+    <div class="editorial-viz-layout">
+      <div class="editorial-viz-main">
+
+        <!-- Interactive Readout Bar -->
+        <div class="color-readout-slot">
       <div class="stream-readout" id="color-readout" style="text-align: center; font-family: var(--font-serif); font-size: 1.05rem; padding: 0.85rem 1rem; background: var(--bg-cream); border: 1px solid var(--border-rule); border-radius: 2px;">
         <span class="readout-idle" style="color: var(--text-muted); font-style: italic;">Hover over any color segment below to inspect its historical share</span>
       </div>
@@ -316,6 +319,29 @@ toc: false
     </div>
   </div>
 
+      <!-- EDITORIAL MARGIN CALLOUTS -->
+      <aside class="editorial-callout-sidebar" aria-label="Editorial margin notes">
+        <div class="editorial-callout">
+          <div class="editorial-callout-kicker">DID YOU NOTICE?</div>
+          <h4 class="editorial-callout-title">The tipping point arrived in the 1990s.</h4>
+          <p class="editorial-callout-body">
+            Neutrals did not take over overnight. Chromatics commanded 72% of output in the 1970s and 62% in the 1980s before the balance tipped in the 1990s, when white, black, gray, and silver crossed 50% for the first time.
+          </p>
+          <div class="editorial-callout-meta">1990–1999 &bull; 50.8% Neutral Share</div>
+        </div>
+
+        <div class="editorial-callout">
+          <div class="editorial-callout-kicker">LOOK CLOSER</div>
+          <h4 class="editorial-callout-title">Silver had its own distinct decade.</h4>
+          <p class="editorial-callout-body">
+            Silver climbed from 7% in the 1970s before surging to nearly one in four cars (24.2%) during the 2000s—briefly overtaking white. By the 2020s, its share contracted back to 8.6% as flat whites and grays absorbed the market.
+          </p>
+          <div class="editorial-callout-meta">2000–2009 &bull; Peak Silver at 24.2%</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
   <!-- EXPLANATORY EDITORIAL TEXT -->
   <div style="max-width: 740px; margin: 3rem auto; font-family: var(--font-serif); font-size: 1.12rem; line-height: 1.85; color: var(--text-ink);">
     <p>
@@ -407,7 +433,7 @@ function inspectColor(decade, colorName, pct, swatchEl) {
   currentSwatch = swatch;
 
   const el = document.getElementById("color-readout");
-  const chart = el ? el.closest(".color-viz-card") : null;
+  const chart = el ? (el.closest(".editorial-viz-main") || el.closest(".color-viz-card")) : null;
   if (!el || !chart) return;
 
   el.innerHTML = `<strong>${decade}</strong> &bull; <span style="color: #1c3d2e; font-weight: 600;">${colorName}</span> accounted for <strong>${pct.toFixed(1)}%</strong> of global production`;
@@ -445,14 +471,14 @@ if (typeof window !== "undefined") {
       return;
     }
     const el = document.getElementById("color-readout");
-    const chart = el ? el.closest(".color-viz-card") : null;
+    const chart = el ? (el.closest(".editorial-viz-main") || el.closest(".color-viz-card")) : null;
     if (el && chart) positionColorTooltip(el, currentSwatch, chart);
   }, { passive: true });
 
   window.addEventListener("resize", () => {
     if (!currentSwatch) return;
     const el = document.getElementById("color-readout");
-    const chart = el ? el.closest(".color-viz-card") : null;
+    const chart = el ? (el.closest(".editorial-viz-main") || el.closest(".color-viz-card")) : null;
     if (el && chart) positionColorTooltip(el, currentSwatch, chart);
   }, { passive: true });
 }
