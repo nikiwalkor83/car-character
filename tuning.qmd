@@ -1,0 +1,218 @@
+---
+title: ""
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<div class="tuning-feature-wrapper">
+
+  <!-- MASTHEAD / HEADER -->
+  <header class="tuning-masthead">
+    <div class="tuning-kicker">Motoring Culture &bull; Post-Production Reinterpretation</div>
+    <h1 class="tuning-headline">The Factory Is Only the Beginning</h1>
+    <p class="tuning-deck">
+      How car owners and global automotive cultures give machines a second identity long after they roll off the assembly line.
+    </p>
+
+    <!-- CORE IDEA HIGHLIGHT -->
+    <div class="tuning-core-quote">
+      <blockquote>
+        &ldquo;Manufacturers decide what a car leaves the factory as. Owners decide what happens next.&rdquo;
+      </blockquote>
+    </div>
+
+    <p class="tuning-core-intro">
+      Automobiles leave the factory with fixed specifications: factory ride heights, commuter gear ratios, compliant springs, and showroom silhouettes. Yet a car is rarely a finished cultural statement. Around the world, diverse subcultures have taken ordinary production platforms and reshaped them according to distinct technical, aesthetic, and mechanical philosophies. The purpose is not to argue that modified cars are objectively superior to original machinery, but to observe how deeply people can reinterpret the very same physical foundation.
+    </p>
+  </header>
+
+  <!-- FIVE TUNING PHILOSOPHIES -->
+  <div class="tuning-sections">
+
+    <!-- 01 — DRIFT -->
+    <article class="tuning-item tuning-item-drift">
+      <div class="tuning-grid-drift">
+        <figure class="tuning-figure">
+          <img src="public/images/tuning/ae86-drift.jpg" alt="Toyota AE86 drift car in motion with tire smoke">
+          <figcaption class="tuning-caption">
+            <span class="tuning-caption-tag">01 &middot; DRIFT</span>
+            <span>Toyota AE86 &middot; Japan</span>
+          </figcaption>
+        </figure>
+        <div class="tuning-content">
+          <div class="tuning-meta-header">
+            <span class="tuning-number">Subsection 01</span>
+            <h2 class="tuning-title">DRIFT</h2>
+          </div>
+          <div class="tuning-thesis">Change what the car does.</div>
+          <p class="tuning-prose">
+            The 1983 Toyota Sprinter Trueno AE86 left the factory as a lightweight, economical Japanese coupe. It was neither fast nor luxurious. But drivers on mountain passes discovered that its rear-wheel-drive layout, natural chassis balance, and modest power made it uniquely controllable beyond the limits of traction.
+          </p>
+          <p class="tuning-prose">
+            Rather than modifying a car to grip the road faster, drift culture modified it to slide with sustained momentum and angle. Suspensions were stiffened, steering angles widened, and mechanical limited-slip differentials installed—reorienting the car&rsquo;s entire mechanical objective from transit to dynamic expression.
+          </p>
+        </div>
+      </div>
+
+      <!-- FACTORY → MODIFIED → CULTURE (DATASET EVIDENCE) -->
+      <div class="tuning-dataset-block">
+        <div class="tuning-dataset-header">
+          <div class="tuning-dataset-kicker">Factory &rarr; Modified &rarr; Culture</div>
+          <h3 class="tuning-dataset-title">FROM THE DATASET</h3>
+        </div>
+
+        <div class="tuning-dataset-layout">
+          <!-- Small magazine-style vehicle specification block -->
+          <div class="tuning-spec-table">
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Model Year</span>
+              <span class="tuning-spec-val">1983</span>
+            </div>
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Model</span>
+              <span class="tuning-spec-val">Toyota Sprinter Trueno AE86</span>
+            </div>
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Engine</span>
+              <span class="tuning-spec-val">1.6L DOHC 16V</span>
+            </div>
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Horsepower</span>
+              <span class="tuning-spec-val">128 hp</span>
+            </div>
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Transmission</span>
+              <span class="tuning-spec-val">5-speed manual</span>
+            </div>
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Drivetrain</span>
+              <span class="tuning-spec-val">RWD</span>
+            </div>
+            <div class="tuning-spec-row">
+              <span class="tuning-spec-label">Body Style</span>
+              <span class="tuning-spec-val">Coupe</span>
+            </div>
+          </div>
+
+          <!-- Editorial Transition -->
+          <div class="tuning-dataset-narrative">
+            <p>
+              The car left the factory as a relatively ordinary production coupe. Over time, people gave cars like the AE86 a different identity through drifting, modification, competition, and enthusiast culture.
+            </p>
+            <div class="tuning-dataset-core-thought">
+              The factory built the car. People gave it another life.
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 — VIP / STANCE -->
+    <article class="tuning-item tuning-item-vip">
+      <div class="tuning-grid-vip">
+        <div class="tuning-content">
+          <div class="tuning-meta-header">
+            <span class="tuning-number">Subsection 02</span>
+            <h2 class="tuning-title">VIP / STANCE</h2>
+          </div>
+          <div class="tuning-thesis">Change how the car looks.</div>
+          <p class="tuning-prose">
+            Originating in Japan, VIP style (or <em>Bippu</em>) takes large, conservative executive saloons—such as the Toyota Crown and Celsior—and radically disrupts their formal executive character. What was originally built to convey understated corporate authority becomes an arresting street sculpture.
+          </p>
+          <p class="tuning-prose">
+            Through aggressive negative camber, dramatically lowered ride heights, deep-dish polished wheels, and widened body panels, stance culture shifts visual gravity to the asphalt. The transformation demonstrates how altering proportion and wheel fitment can fundamentally redefine a vehicle&rsquo;s cultural posture.
+          </p>
+        </div>
+        <figure class="tuning-figure">
+          <img src="public/images/tuning/toyota-crown-vip.jpg" alt="VIP style Toyota Crown with custom stance and wheels">
+          <figcaption class="tuning-caption">
+            <span class="tuning-caption-tag">02 &middot; VIP / STANCE</span>
+            <span>Toyota Crown &middot; Japan</span>
+          </figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 03 — OEM+ -->
+    <article class="tuning-item tuning-item-oem">
+      <div class="tuning-grid-oem">
+        <figure class="tuning-figure">
+          <img src="public/images/tuning/civic-oemplus.jpg" alt="Subtly modified Honda Civic built in OEM+ style">
+          <figcaption class="tuning-caption">
+            <span class="tuning-caption-tag">03 &middot; OEM+</span>
+            <span>Honda Civic &middot; Japan</span>
+          </figcaption>
+        </figure>
+        <div class="tuning-content">
+          <div class="tuning-meta-header">
+            <span class="tuning-number">Subsection 03</span>
+            <h2 class="tuning-title">OEM+</h2>
+          </div>
+          <div class="tuning-thesis">Improve the original without losing it.</div>
+          <p class="tuning-prose">
+            OEM+ is the discipline of restraint. Rather than installing dramatic aftermarket body kits or flamboyant spoilers, this approach treats the original design with surgical reverence—improving components while keeping the car looking as though it could have been an unreleased factory special edition.
+          </p>
+          <p class="tuning-prose">
+            A subtly modified Honda Civic exemplifies this philosophy: performance upgrades borrowed from higher-spec factory trims, tasteful ride height refinements, and period-correct wheels. The car remains immediately recognizable, yet sharper and cleaner in every detail.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 — RESTOMOD -->
+    <article class="tuning-item tuning-item-restomod">
+      <div class="tuning-grid-restomod">
+        <figure class="tuning-figure">
+          <img src="public/images/tuning/porsche-911-restomod.jpg" alt="Classic Porsche 911 restomod combining heritage with modern engineering">
+          <figcaption class="tuning-caption">
+            <span class="tuning-caption-tag">04 &middot; RESTOMOD</span>
+            <span>Porsche 911 &middot; Germany</span>
+          </figcaption>
+        </figure>
+        <div class="tuning-content">
+          <div class="tuning-meta-header">
+            <span class="tuning-number">Subsection 04</span>
+            <h2 class="tuning-title">RESTOMOD</h2>
+          </div>
+          <div class="tuning-thesis">Keep the old character. Modernize the rest.</div>
+          <p class="tuning-prose">
+            The restomod movement resolves a classic automotive paradox: vintage cars possess timeless silhouette and tactile soul, but often suffer from dated brakes, fragile electrics, and harsh reliability. Restomodding preserves the iconic exterior character while re-engineering everything underneath.
+          </p>
+          <p class="tuning-prose">
+            Applied to the classic air-cooled Porsche 911, the approach pairs classic styling with carbon-composite panels, precision modern suspension, and bespoke engine architecture. The car maintains its historical identity while gaining modern performance and durability.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 — RALLY -->
+    <article class="tuning-item tuning-item-rally">
+      <div class="tuning-grid-rally">
+        <div class="tuning-content">
+          <div class="tuning-meta-header">
+            <span class="tuning-number">Subsection 05</span>
+            <h2 class="tuning-title">RALLY</h2>
+          </div>
+          <div class="tuning-thesis">Build around a purpose.</div>
+          <p class="tuning-prose">
+            Unlike aesthetic or stylistic modifications, rally builds are shaped strictly by function, terrain, and survival. Every component added or subtracted answers an environmental demand: raised long-travel suspension, reinforced underbody skid plates, mud flaps, and high-intensity auxiliary lighting.
+          </p>
+          <p class="tuning-prose">
+            In competition platforms like the Subaru Impreza WRC, all-wheel-drive capability is honed to withstand gravel, snow, jumps, and mud. The resulting machine has an unmistakable functional aesthetic—an identity born purely from the terrain it was built to master.
+          </p>
+        </div>
+        <figure class="tuning-figure">
+          <img src="public/images/tuning/subaru-rally.jpg" alt="Subaru Impreza WRC purpose-built rally car">
+          <figcaption class="tuning-caption">
+            <span class="tuning-caption-tag">05 &middot; RALLY</span>
+            <span>Subaru Impreza &middot; Japan</span>
+          </figcaption>
+        </figure>
+      </div>
+    </article>
+
+  </div>
+
+</div>
+```

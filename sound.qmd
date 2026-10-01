@@ -20,7 +20,7 @@ toc: false
   </div>
 </div>
 
-<div class="story-container" style="max-width: 1160px; margin: 0 auto; padding: 0 1.5rem 6rem;">
+<div class="story-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 6rem;">
 
   <!-- SECTION 1: AUDIO SPECIMEN LAB -->
   <div class="sound-section-block" style="margin-bottom: 3.5rem;">
@@ -54,28 +54,13 @@ toc: false
     <div class="editorial-subheading" style="color: var(--text-ink); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.75rem; font-family: var(--font-serif);">
       Engine Architecture Distribution by Decade (1970 &ndash; 2024)
     </div>
+    <div class="engine-cfg-chart" id="powertrain-chart-container">
+      <!-- Rendered dynamically from engines dataset -->
+    </div>
 
-    <div class="editorial-viz-layout">
-      <div class="editorial-viz-main">
-        <div class="engine-cfg-chart" id="powertrain-chart-container">
-          <!-- Rendered dynamically from engines dataset -->
-        </div>
-
-        <!-- Engine Legend -->
-        <div class="engine-legend" id="engine-legend-container">
-          <!-- Rendered dynamically -->
-        </div>
-      </div>
-      <aside class="editorial-callout-sidebar" aria-label="Editorial margin note">
-        <div class="editorial-callout">
-          <div class="editorial-callout-kicker">WORTH NOTING</div>
-          <h4 class="editorial-callout-title">The engine bay got quieter in one direction — but not simpler.</h4>
-          <p class="editorial-callout-body">
-            While cylinder counts converged around inline-4s (commanding 65–68% of models from 1980 to 2019) before electrics surged to 21% in the 2020s, mechanical complexity actually multiplied through turbochargers, intercoolers, and high-voltage inverters.
-          </p>
-          <div class="editorial-callout-meta">1970–2024 &bull; 29,880 Powertrain Records</div>
-        </div>
-      </aside>
+    <!-- Engine Legend -->
+    <div class="engine-legend" id="engine-legend-container">
+      <!-- Rendered dynamically -->
     </div>
 
     <!-- Displacement Trend & Downsizing Stats -->

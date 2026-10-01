@@ -23,6 +23,18 @@
   let activeResizeObserver = null;
   let activeRecordingFile = null;
   let audioContextInstance = null;
+  let analyserNode = null;
+  let freqArray = null;
+  let timeArray = null;
+
+  const bandBinRanges = [
+    [0, 1],   [1, 2],   [2, 3],   [3, 4],
+    [4, 5],   [5, 6],   [6, 7],   [7, 9],
+    [8, 11],  [10, 13], [12, 16], [15, 20],
+    [19, 25], [23, 30], [28, 36], [34, 43],
+    [41, 51], [49, 60], [58, 70], [68, 81],
+    [79, 93], [90, 105], [102, 116], [113, 127]
+  ];
 
   // In-memory cache of extracted audio waveform peaks: Map<filename, { peaks: number[], duration: number }>
   const waveformCache = new Map();
@@ -45,6 +57,21 @@
       }
     }
     return audioContextInstance;
+  }
+
+  function getAnalyser() {
+    const ctx = getAudioContext();
+    if (!ctx) return null;
+    if (!analyserNode) {
+      analyserNode = ctx.createAnalyser();
+      analyserNode.fftSize = 256;
+      analyserNode.smoothingTimeConstant = 0.55;
+      analyserNode.minDecibels = -90;
+      analyserNode.maxDecibels = -15;
+      freqArray = new Uint8Array(analyserNode.frequencyBinCount);
+      timeArray = new Uint8Array(analyserNode.fftSize);
+    }
+    return analyserNode;
   }
 
   function escapeHtml(value) {
@@ -170,106 +197,6 @@
     }
   }
 
-  const engineCalloutData = {
-    "v8": {
-      kicker: "DID YOU NOTICE?",
-      title: "A cross-plane boom that shifted from mainstream to prestige.",
-      body: "The cross-plane V8 accounts for 1,996 cataloged vehicles. Once representing 20% of the entire passenger fleet in the 1970s, its uneven burble gradually migrated into high-performance and luxury badges.",
-      meta: "V8 &bull; 1,996 Models Cataloged (6.7%)"
-    },
-    "v10": {
-      kicker: "DID YOU NOTICE?",
-      title: "Some sounds were always rare.",
-      body: "With only 80 cataloged models in the 29,880-vehicle archive, the ten-cylinder was never an everyday note—it existed almost exclusively as a high-revving exotic hallmark.",
-      meta: "V10 &bull; 80 Models Cataloged (0.3%)"
-    },
-    "v12": {
-      kicker: "DID YOU NOTICE?",
-      title: "Some sounds were always rare.",
-      body: "The twelve-cylinder accounts for just 235 models out of nearly 30,000 recorded. Its seamless overlapping power strokes were a luxury preserve that few motorists ever experienced first-hand.",
-      meta: "V12 &bull; 235 Models Cataloged (0.8%)"
-    },
-    "w16": {
-      kicker: "DID YOU NOTICE?",
-      title: "Some sounds were always rare.",
-      body: "Representing just 12 cataloged models in the entire database, the quad-turbocharged sixteen-cylinder represents the absolute acoustic fringe of production combustion engineering.",
-      meta: "W16 &bull; 12 Models Cataloged (<0.1%)"
-    },
-    "flat-6": {
-      kicker: "DID YOU NOTICE?",
-      title: "Some sounds were always rare.",
-      body: "Horizontally opposed sixes appear in just 346 cataloged models—an inherently balanced acoustic signature that remained almost solely tied to a single German sports car marque.",
-      meta: "Flat-6 &bull; 346 Models Cataloged (1.2%)"
-    },
-    "2-cylinder": {
-      kicker: "DID YOU NOTICE?",
-      title: "Some sounds were always rare.",
-      body: "With only 51 cataloged examples, two-cylinder engines belong almost entirely to early economy runabouts, producing an uneven, puttering cadence that all but vanished from production.",
-      meta: "2-Cylinder &bull; 51 Models Cataloged (0.2%)"
-    },
-    "4-cylinder": {
-      kicker: "DID YOU NOTICE?",
-      title: "The undisputed workhorse of the century.",
-      body: "The four-cylinder is the acoustic backdrop of modern motoring, accounting for 18,955 vehicles—nearly two-thirds of all cataloged passenger cars. Its even firing intervals became the default rhythm of global mobility.",
-      meta: "Inline-4 &bull; 18,955 Models Cataloged (63.4%)"
-    },
-    "3-cylinder": {
-      kicker: "DID YOU NOTICE?",
-      title: "The thrum of cylinder downsizing.",
-      body: "With 1,260 models—mostly recorded after 2010—the three-cylinder delivers a characteristic off-beat syncopated thrum that grew as turbocharging replaced natural displacement.",
-      meta: "3-Cylinder &bull; 1,260 Models Cataloged (4.2%)"
-    },
-    "5-cylinder": {
-      kicker: "DID YOU NOTICE?",
-      title: "The distinctive warble of an odd cylinder count.",
-      body: "Appearing in 684 models, the five-cylinder's 144-degree firing order creates a unique off-beat acoustic warble midway between the rasp of a four and the howl of a straight-six.",
-      meta: "5-Cylinder &bull; 684 Models Cataloged (2.3%)"
-    },
-    "inline-6": {
-      kicker: "DID YOU NOTICE?",
-      title: "Inherent primary balance.",
-      body: "With 2,504 cataloged models, the straight-six generates a harmonically smooth acoustic delivery due to its natural mechanical balance, before packaging constraints pushed manufacturers toward compact V6 layouts.",
-      meta: "Inline-6 &bull; 2,504 Models Cataloged (8.4%)"
-    },
-    "v6": {
-      kicker: "DID YOU NOTICE?",
-      title: "The packaging compromise that conquered executive cars.",
-      body: "Recording 2,596 models, the V6 offered six-cylinder output within the transverse engine bays of front-wheel-drive platforms, becoming the ubiquitous mid-displacement executive sound of the 1990s and 2000s.",
-      meta: "V6 &bull; 2,596 Models Cataloged (8.7%)"
-    },
-    "diesel": {
-      kicker: "DID YOU NOTICE?",
-      title: "Compression ignition's heavy cadence.",
-      body: "With 8,320 cataloged models, compression-ignition engines formed the second-largest powertrain family, identifiable by rapid high-pressure fuel injection rattle rather than spark ignition.",
-      meta: "Diesel &bull; 8,320 Models Cataloged (27.8%)"
-    },
-    "hybrid": {
-      kicker: "DID YOU NOTICE?",
-      title: "Intermittent silence meets combustion load.",
-      body: "Accounting for 1,319 models, hybrids introduced a novel acoustic pattern: silent low-speed electric gliding punctuated by sudden internal combustion engagement under acceleration.",
-      meta: "Hybrid &bull; 1,319 Models Cataloged (4.4%)"
-    },
-    "electric": {
-      kicker: "DID YOU NOTICE?",
-      title: "Silence isn't empty—it shifts the frequency spectrum.",
-      body: "Across 705 cataloged electric models, the absence of combustion pressure waves brings high-frequency inverter switching, motor stator harmonics, and tire roar to the auditory forefront.",
-      meta: "Electric &bull; 705 Models Cataloged (2.4%)"
-    }
-  };
-
-  function updateEngineCallout(category) {
-    const item = engineCalloutData[category.key];
-    if (!item) return;
-    const callout = document.getElementById("sound-engine-callout");
-    if (!callout) return;
-    callout.innerHTML = `
-      <div class="editorial-callout-kicker">${item.kicker}</div>
-      <h4 class="editorial-callout-title">${item.title}</h4>
-      <p class="editorial-callout-body">${item.body}</p>
-      <div class="editorial-callout-meta">${item.meta}</div>
-    `;
-  }
-
   function selectorHtml() {
     return `
       <div class="sound-dropdown-wrap">
@@ -282,16 +209,8 @@
           </select>
         </div>
       </div>
-      <div class="editorial-viz-layout">
-        <div class="editorial-viz-main">
-          <div class="engine-recording-detail" id="engine-recording-detail" aria-live="polite"></div>
-        </div>
-        <aside class="editorial-callout-sidebar" aria-label="Editorial margin note">
-          <div class="editorial-callout" id="sound-engine-callout">
-            <!-- Populated dynamically via selectCategory -->
-          </div>
-        </aside>
-      </div>
+      <audio id="selected-engine-audio" preload="metadata" style="display: none;"></audio>
+      <div class="engine-recording-detail" id="engine-recording-detail" aria-live="polite"></div>
     `;
   }
 
@@ -856,10 +775,6 @@
     if (select && select.value !== category.key) {
       select.value = category.key;
     }
-
-    // Synchronize dynamic editorial margin callout
-    updateEngineCallout(category);
-
     const detail = document.getElementById("engine-recording-detail");
     if (!detail) return;
 

@@ -5,6 +5,7 @@ project:
     - "data/**"
     - "scripts/**"
     - "images/**"
+    - "public/**"
     - "1960s/**"
     - "1970s/**"
     - "1980s/**"
@@ -28,6 +29,8 @@ website:
         text: Shape
       - href: sound.qmd
         text: Sound
+      - href: tuning.qmd
+        text: Tuning
       - href: exploration.qmd
         text: "Interactive Motoring Atlas"
       - href: about.qmd
