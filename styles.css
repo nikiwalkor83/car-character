@@ -3261,16 +3261,115 @@ body {
   transition: all 0.2s ease;
 }
 
-.sound-rev-intensity-badge.is-accel {
+.sound-rev-intensity-badge.is-accel,
+.sound-rev-intensity-badge.is-power {
   color: #c08524;
   background: rgba(212, 150, 50, 0.12);
   border-color: rgba(212, 150, 50, 0.38);
 }
 
-.sound-rev-intensity-badge.is-peak {
+.sound-rev-intensity-badge.is-peak,
+.sound-rev-intensity-badge.is-redline {
   color: #cf3824;
   background: rgba(207, 56, 36, 0.12);
   border-color: rgba(207, 56, 36, 0.42);
+}
+
+.sound-rev-intensity-badge.is-cruising {
+  color: #2b7a4b;
+  background: rgba(43, 122, 75, 0.10);
+  border-color: rgba(43, 122, 75, 0.30);
+}
+
+.sound-rev-intensity-badge.is-idle {
+  color: var(--accent-racing-green);
+  background: rgba(28, 61, 46, 0.08);
+  border-color: rgba(28, 61, 46, 0.22);
+}
+
+.sound-rpm-live {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #dfd7ca;
+  background: #0d1410;
+  border: 1px solid rgba(223, 215, 202, 0.25);
+  padding: 0.12rem 0.45rem;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  min-width: 76px;
+  text-align: center;
+}
+
+.sound-rpm-max-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #cf3824;
+  background: rgba(207, 56, 36, 0.08);
+  border: 1px solid rgba(207, 56, 36, 0.25);
+  padding: 0.12rem 0.38rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.sound-rpm-provenance {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  background: rgba(18, 26, 21, 0.03);
+  border: 1px solid var(--border-rule);
+  border-left: 3px solid var(--accent-racing-green);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+.sound-rpm-provenance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sound-rpm-prov-title {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--accent-racing-green);
+}
+
+.sound-rpm-prov-mode {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  background: rgba(28, 61, 46, 0.08);
+  color: var(--accent-racing-green);
+  border: 1px solid rgba(28, 61, 46, 0.18);
+}
+
+.sound-rpm-prov-specs {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  color: var(--text-ink);
+  margin-bottom: 0.2rem;
+}
+
+.sound-rpm-prov-desc {
+  font-size: 0.70rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
 }
 
 .sound-waveform-indicator-dot.sound-rev-dot.is-active {

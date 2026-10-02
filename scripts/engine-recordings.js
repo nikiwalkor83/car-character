@@ -1,4 +1,5 @@
-/* Dropdown engine-category selector & real interactive audio waveform for the Sound section. */
+/* Dropdown engine-category selector & real interactive audio waveform for the Sound section.
+   RPM is the primary scale of vertical movement; real audio provides subtle acoustic texture. */
 (function () {
   const engineCategories = [
     { key: "2-cylinder", label: "2-Cylinder", count: 51, file: "2-cylinder.ogg" },
@@ -17,11 +18,258 @@
     { key: "electric", label: "Electric", count: 705, file: "electric-imiev.ogg" }
   ];
 
+  /* Documented engine specifications & representative RPM profiles */
+  const rpmDataByCategory = {
+    "2-cylinder": {
+      label: "2-Cylinder",
+      vehicle: "Citroën 2CV6 Charleston (1987)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 900,
+      peakPowerRpm: 5750,
+      maxRpm: 6000,
+      redlineStartRpm: 5750,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 900], [5.0, 920], [12.0, 1900], [18.0, 3100], [24.0, 2400],
+        [32.0, 950], [40.0, 2200], [48.0, 3500], [56.0, 2600], [64.0, 950], [69.6, 900]
+      ]
+    },
+    "3-cylinder": {
+      label: "3-Cylinder",
+      vehicle: "Citroën C1 (1st Gen, 2005–2014)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 800,
+      peakPowerRpm: 6000,
+      maxRpm: 6500,
+      redlineStartRpm: 6000,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 0], [2.5, 0], [3.2, 1400], [4.5, 820], [6.0, 800],
+        [7.5, 1200], [9.5, 2600], [11.5, 3600], [12.2, 2200], [14.0, 3400],
+        [15.5, 4100], [16.9, 2800]
+      ]
+    },
+    "4-cylinder": {
+      label: "4-Cylinder",
+      vehicle: "Lada 1500 Combi (VAZ-21023, 1981)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 850,
+      peakPowerRpm: 5600,
+      maxRpm: 6000,
+      redlineStartRpm: 5600,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 0], [9.0, 0], [10.5, 250], [12.5, 400], [14.0, 1600],
+        [16.0, 880], [20.0, 850], [25.5, 850], [27.0, 1400], [30.0, 2400],
+        [34.0, 3500], [35.5, 2100], [38.5, 3200], [41.0, 3700], [42.9, 2600]
+      ]
+    },
+    "5-cylinder": {
+      label: "5-Cylinder",
+      vehicle: "Volvo 850 T5",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 850,
+      peakPowerRpm: 5200,
+      maxRpm: 6000,
+      redlineStartRpm: 5600,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 850], [3.0, 850], [6.0, 2200], [9.0, 3800], [12.0, 4800],
+        [15.0, 1600], [18.0, 850], [21.0, 2800], [24.0, 4900], [27.0, 3200],
+        [30.0, 1200], [32.6, 850]
+      ]
+    },
+    "inline-6": {
+      label: "Inline-6",
+      vehicle: "1965 Chrysler Valiant (225 Slant-6)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 600,
+      peakPowerRpm: 4000,
+      maxRpm: 4500,
+      redlineStartRpm: 4000,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 0], [0.8, 200], [1.6, 1450], [3.2, 1300], [5.0, 950],
+        [6.8, 650], [7.6, 600], [8.2, 0], [9.0, 0]
+      ]
+    },
+    "flat-6": {
+      label: "Flat-6",
+      vehicle: "Porsche Cayman S (2006)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 700,
+      peakPowerRpm: 6250,
+      maxRpm: 7300,
+      redlineStartRpm: 7000,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 750], [2.0, 800], [3.5, 2200], [6.0, 4200], [9.0, 6200],
+        [11.5, 6900], [12.5, 4100], [15.0, 5200], [18.0, 6500], [21.0, 7050],
+        [22.5, 4400], [26.0, 3900], [30.0, 3600], [33.1, 3500]
+      ]
+    },
+    "v6": {
+      label: "V6",
+      vehicle: "Lotus Evora (2009)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 680,
+      peakPowerRpm: 6400,
+      maxRpm: 7000,
+      redlineStartRpm: 6600,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 2400], [1.8, 3200], [2.8, 5200], [4.5, 6600], [5.2, 4600],
+        [6.5, 6200], [7.8, 6700], [8.8, 5800]
+      ]
+    },
+    "v8": {
+      label: "V8",
+      vehicle: "Ferrari F60 Formula One (2009)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 4500,
+      peakPowerRpm: 18000,
+      maxRpm: 18000,
+      redlineStartRpm: 17000,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 7800], [1.5, 8600], [2.8, 9200], [4.0, 14200], [5.5, 17400],
+        [6.5, 17800], [7.2, 13800], [9.0, 16800], [11.0, 17700], [12.2, 14200],
+        [14.5, 16500], [17.0, 17400], [19.5, 15500]
+      ]
+    },
+    "v10": {
+      label: "V10",
+      vehicle: "Lamborghini Gallardo LP570-4 Superleggera (2010)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 900,
+      peakPowerRpm: 8000,
+      maxRpm: 8500,
+      redlineStartRpm: 8000,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 2200], [1.2, 3600], [2.4, 4200], [3.6, 6800], [5.2, 8250],
+        [5.8, 5600], [7.2, 7800], [8.5, 8300], [9.5, 7400]
+      ]
+    },
+    "v12": {
+      label: "V12",
+      vehicle: "Pagani Zonda Roadster F",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 650,
+      peakPowerRpm: 6200,
+      maxRpm: 7000,
+      redlineStartRpm: 6500,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 1800], [1.8, 2800], [3.2, 4400], [5.0, 6200], [6.6, 6700],
+        [7.4, 4600], [9.2, 5900], [11.0, 6650], [13.1, 5800]
+      ]
+    },
+    "w16": {
+      label: "W16",
+      vehicle: "Bugatti Veyron 16.4 Grand Sport (2009)",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 700,
+      peakPowerRpm: 6000,
+      maxRpm: 6000,
+      redlineStartRpm: 5800,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 1600], [1.5, 2400], [2.8, 3800], [4.5, 5400], [5.8, 5900],
+        [6.4, 4200], [7.8, 5500], [9.2, 5700]
+      ]
+    },
+    "diesel": {
+      label: "Diesel",
+      vehicle: "BMW M57 3.0L Turbodiesel",
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 700,
+      peakPowerRpm: 4000,
+      maxRpm: 4500,
+      redlineStartRpm: 4200,
+      isMotor: false,
+      isHybrid: false,
+      methodologyLabel: "Representative rev animation based on documented engine specifications",
+      timeline: [
+        [0.0, 700], [3.0, 720], [5.5, 1400], [8.0, 2600], [10.5, 3400],
+        [12.5, 2200], [15.0, 1100], [17.5, 750], [19.6, 700]
+      ]
+    },
+    "hybrid": {
+      label: "Hybrid",
+      vehicle: "Toyota Prius C (2015)",
+      scaleType: "HYBRID SYSTEM RPM",
+      rpmUnit: "ICE RPM",
+      idleRpm: 0,
+      peakPowerRpm: 4800,
+      maxRpm: 5000,
+      redlineStartRpm: 4800,
+      isMotor: false,
+      isHybrid: true,
+      methodologyLabel: "Representative hybrid powertrain state based on documented specifications",
+      timeline: [
+        [0.0, 1800], [3.0, 1500], [6.0, 1200], [8.5, 600], [10.0, 0],
+        [12.0, 0], [14.0, 0], [16.5, 0], [18.5, 800], [21.0, 1600],
+        [24.0, 2400], [27.0, 2700], [30.4, 2100]
+      ]
+    },
+    "electric": {
+      label: "Electric",
+      vehicle: "Mitsubishi i-MiEV (2010)",
+      scaleType: "MOTOR RPM",
+      rpmUnit: "MOTOR RPM",
+      idleRpm: 0,
+      peakPowerRpm: 6000,
+      maxRpm: 9900,
+      redlineStartRpm: 8500,
+      isMotor: true,
+      isHybrid: false,
+      methodologyLabel: "Representative electric motor rotation speed based on documented specifications",
+      timeline: [
+        [0.0, 0], [1.5, 500], [3.5, 2100], [6.0, 4200], [8.5, 6400],
+        [11.0, 8200], [13.0, 7800], [15.0, 6500], [17.6, 5200]
+      ]
+    }
+  };
+
   let recordingsByFilename = new Map();
   let activeAudio = null;
   let activeRafId = null;
   let activeResizeObserver = null;
-  let activeRecordingFile = null;
   let audioContextInstance = null;
   let analyserNode = null;
   let freqArray = null;
@@ -36,18 +284,7 @@
     [79, 93], [90, 105], [102, 116], [113, 127]
   ];
 
-  // In-memory cache of extracted audio waveform peaks: Map<filename, { peaks: number[], duration: number }>
   const waveformCache = new Map();
-
-  // Seed cache with pre-extracted real audio buffer peaks for uncompressed WAV specimens
-  waveformCache.set("flat-6.wav", {
-    duration: 33.08,
-    peaks: [0.4128, 0.3488, 0.2933, 0.2008, 0.1755, 0.1712, 0.5111, 0.6903, 0.6491, 0.658, 0.8222, 0.7241, 0.7321, 0.6594, 0.755, 0.9267, 0.7972, 0.6827, 0.7226, 0.7512, 0.6524, 0.661, 0.6814, 0.8322, 0.849, 0.8936, 0.7706, 0.8551, 0.8154, 0.7796, 0.7231, 0.7539, 0.7339, 0.8183, 0.8339, 0.7836, 0.5662, 0.8202, 0.9388, 1.0, 0.8926, 0.8612, 0.8141, 0.8196, 0.7933, 0.8607, 0.8314, 0.8154, 0.7943, 0.7636, 0.7446, 0.6671, 0.7145, 0.7959, 0.7444, 0.7847, 0.7325, 0.7765, 0.8788, 0.8011, 0.859, 0.806, 0.7179, 0.6523, 0.6504, 0.6778, 0.9016, 0.8535, 0.861, 0.9237, 0.8736, 0.8521, 0.7959, 0.8158, 0.7896, 0.8327, 0.7792, 0.8017, 0.7783, 0.8007, 0.7646, 0.6256, 0.8886, 0.9513, 0.96, 0.8335, 0.77, 0.7667, 0.6852, 0.8176, 0.7589, 0.7244, 0.7239, 0.7446, 0.8419, 0.7624, 0.8767, 0.7995, 0.9145, 0.8953, 0.8104, 0.7935, 0.8995, 0.8055, 0.7949, 0.935, 0.7723, 0.8101, 0.8914, 0.8098, 0.9979, 0.7378, 0.8337, 0.8529, 0.8186, 0.9357, 0.7877, 0.8081, 0.7989, 0.8326, 0.9421, 0.8184, 0.8348, 0.9136, 0.8858, 0.7429, 0.8008, 0.8393, 0.7745, 0.7054, 0.84, 0.7986, 0.7538, 0.816, 0.8802, 0.9547, 0.9008, 0.7972, 0.7414, 0.7233, 0.736, 0.7396, 0.8084, 0.7101, 0.8344, 0.9428, 0.7895, 0.7923, 0.8446, 0.7244, 0.8555, 0.8311, 0.759, 0.7344, 0.7184, 0.7305, 0.8124, 0.7844, 0.8016, 0.8041]
-  });
-  waveformCache.set("4-cylinder.wav", {
-    duration: 42.86,
-    peaks: [0.0515, 0.1471, 0.0888, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.1155, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.1425, 0.0834, 0.1977, 0.2455, 0.1246, 0.1323, 0.091, 0.0584, 0.0608, 0.0515, 0.0515, 0.0515, 0.0515, 0.0647, 0.073, 0.06, 0.0515, 0.0815, 0.1443, 0.0974, 0.0529, 0.0524, 0.0943, 0.0995, 0.1263, 0.1509, 0.2047, 0.2698, 0.3952, 0.3819, 0.4983, 0.7208, 0.581, 0.9587, 0.9181, 1.0, 0.7146, 0.688, 0.6343, 0.4145, 0.2667, 0.207, 0.2924, 0.2913, 0.2655, 0.234, 0.2278, 0.224, 0.2227, 0.2168, 0.2173, 0.2389, 0.218, 0.2022, 0.2018, 0.1434, 0.1808, 0.1075, 0.1458, 0.1363, 0.126, 0.152, 0.1554, 0.1451, 0.1447, 0.1574, 0.1205, 0.1355, 0.1249, 0.1165, 0.1251, 0.1052, 0.1339, 0.1249, 0.1388, 0.1173, 0.1097, 0.1153, 0.1628, 0.1336, 0.1128, 0.1093, 0.0964, 0.0875, 0.0808, 0.0729, 0.083, 0.0821, 0.0829, 0.0922, 0.0824, 0.0955, 0.0792, 0.0819, 0.0799, 0.0768, 0.072, 0.0645, 0.0515, 0.0515, 0.0515, 0.0752, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515, 0.0515]
-  });
 
   function getAudioContext() {
     if (!audioContextInstance) {
@@ -90,111 +327,66 @@
     return `${minutes}:${remainder}`;
   }
 
-  function formatPreciseTime(seconds) {
-    if (!Number.isFinite(seconds) || seconds < 0) return "0:00.0";
-    const minutes = Math.floor(seconds / 60);
-    const secs = (seconds % 60).toFixed(1).padStart(4, "0");
-    return `${minutes}:${secs}`;
-  }
-
   function recordingFor(category) {
     return category.file ? recordingsByFilename.get(category.file) : null;
   }
 
-  // Synthetic acoustic envelope fallback for offline / restricted environments
-  function generateFallbackProfile(filename, buckets = 160) {
-    const peaks = new Array(buckets);
-    let hash = 0;
-    for (let i = 0; i < filename.length; i++) {
-      hash = (hash * 31 + filename.charCodeAt(i)) & 0xffffff;
+  /* Compute instantaneous RPM based on documented timeline keyframes */
+  function getRpmState(categoryKey, currentTime, duration) {
+    const spec = rpmDataByCategory[categoryKey];
+    if (!spec) {
+      return { rpm: 0, normalizedRatio: 0, label: "0 RPM", spec: null };
     }
-    const isElectric = filename.includes("electric");
-    const isIdle = !isElectric;
-
-    for (let i = 0; i < buckets; i++) {
-      const t = i / buckets;
-      let amp = 0.2;
-      if (isElectric) {
-        // Rising whine during motor acceleration into pass-by
-        const rise = Math.sin(t * Math.PI * 0.95);
-        const flutter = 0.08 * Math.sin(i * 1.8 + hash);
-        amp = Math.max(0.04, rise * 0.9 + flutter);
-      } else {
-        // Starter cranking, engine firing peak, steady idle harmonics, shutoff
-        if (t < 0.12) {
-          amp = 0.25 + 0.18 * Math.sin(i * 4.2);
-        } else if (t < 0.25) {
-          amp = 0.85 + 0.12 * Math.sin(i * 2.5);
-        } else if (t < 0.88) {
-          amp = 0.52 + 0.15 * Math.sin(i * 1.4) + 0.08 * Math.cos(i * 3.7 + hash);
-        } else {
-          amp = Math.max(0.04, 0.45 * Math.exp(-(t - 0.88) * 12));
-        }
-      }
-      peaks[i] = Math.max(0.04, Math.min(1.0, amp));
-    }
-    return { peaks, duration: 12.0 };
-  }
-
-  // Web Audio API: Extract amplitude samples from real audio buffer
-  async function extractWaveformFromAudio(filename, buckets = 160) {
-    if (waveformCache.has(filename)) {
-      return waveformCache.get(filename);
-    }
-
-    const ctx = getAudioContext();
-    if (!ctx) {
-      const fallback = generateFallbackProfile(filename, buckets);
-      waveformCache.set(filename, fallback);
-      return fallback;
-    }
-
-    try {
-      const response = await fetch(`audio/engines/${filename}`);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const arrayBuffer = await response.arrayBuffer();
-      const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
-      const channelData = audioBuffer.getChannelData(0);
-
-      const totalSamples = channelData.length;
-      const blockSize = Math.floor(totalSamples / buckets);
-      const peaks = new Array(buckets);
-      let maxMetric = 0.001;
-
-      for (let i = 0; i < buckets; i++) {
-        const start = i * blockSize;
-        const end = Math.min(start + blockSize, totalSamples);
-        let peak = 0;
-        let sumSq = 0;
-        for (let j = start; j < end; j++) {
-          const val = Math.abs(channelData[j]);
-          if (val > peak) peak = val;
-          sumSq += val * val;
-        }
-        const rms = Math.sqrt(sumSq / Math.max(1, end - start));
-        // Acoustic profile: blend peak and RMS for sharp percussive idle and motor whine
-        const metric = peak * 0.7 + rms * 0.3;
-        peaks[i] = metric;
-        if (metric > maxMetric) maxMetric = metric;
-      }
-
-      // Normalize so loudest peak reaches full visual amplitude, minimum baseline is 0.04
-      for (let i = 0; i < buckets; i++) {
-        peaks[i] = Math.max(0.04, Math.min(1.0, peaks[i] / maxMetric));
-      }
-
-      const data = {
-        peaks,
-        duration: audioBuffer.duration
+    const timeline = spec.timeline;
+    if (!timeline || timeline.length === 0) {
+      const idleNorm = spec.idleRpm / spec.maxRpm;
+      return {
+        rpm: spec.idleRpm,
+        normalizedRatio: idleNorm,
+        label: `${spec.idleRpm.toLocaleString()} ${spec.rpmUnit}`,
+        spec
       };
-      waveformCache.set(filename, data);
-      return data;
-    } catch (err) {
-      console.warn(`Web Audio decoding fallback for ${filename}:`, err);
-      const fallback = generateFallbackProfile(filename, buckets);
-      waveformCache.set(filename, fallback);
-      return fallback;
     }
+
+    const maxT = duration > 0 ? duration : timeline[timeline.length - 1][0];
+    const t = Math.max(0, Math.min(currentTime, maxT));
+    let rpm = timeline[0][1];
+
+    if (t <= timeline[0][0]) {
+      rpm = timeline[0][1];
+    } else if (t >= timeline[timeline.length - 1][0]) {
+      rpm = timeline[timeline.length - 1][1];
+    } else {
+      for (let i = 0; i < timeline.length - 1; i++) {
+        const t0 = timeline[i][0];
+        const t1 = timeline[i + 1][0];
+        if (t >= t0 && t <= t1) {
+          const span = t1 - t0;
+          const progress = span > 0 ? (t - t0) / span : 0;
+          // Smooth cosine easing so RPM transition feels like a physical mechanical rotating mass
+          const ease = 0.5 * (1 - Math.cos(progress * Math.PI));
+          rpm = timeline[i][1] + (timeline[i + 1][1] - timeline[i][1]) * ease;
+          break;
+        }
+      }
+    }
+
+    const roundedRpm = Math.round(rpm);
+    let label = `${roundedRpm.toLocaleString()} ${spec.rpmUnit}`;
+
+    if (spec.isHybrid && roundedRpm === 0 && t >= 9.5 && t <= 17.0) {
+      label = "0 ICE RPM [AUTO-STOP]";
+    } else if (spec.isMotor && roundedRpm === 0) {
+      label = "0 MOTOR RPM [REST]";
+    }
+
+    const normalizedRatio = Math.max(0, Math.min(1.0, roundedRpm / spec.maxRpm));
+    return {
+      rpm: roundedRpm,
+      normalizedRatio,
+      label,
+      spec
+    };
   }
 
   function selectorHtml() {
@@ -220,6 +412,25 @@
       ? ` &bull; Attribution: ${escapeHtml(recording.attribution)}`
       : "";
     const powertrainDesc = recording.engine_description || recording.engine_type;
+    const spec = rpmDataByCategory[category.key] || {
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 800,
+      peakPowerRpm: 5500,
+      maxRpm: 6500,
+      redlineStartRpm: 6000,
+      methodologyLabel: "Representative rev animation based on documented engine specifications"
+    };
+
+    const maxBadgeText = spec.isMotor
+      ? `MAX ${spec.maxRpm.toLocaleString()} MOTOR RPM`
+      : (spec.isHybrid
+          ? `ICE MAX ${spec.maxRpm.toLocaleString()} RPM`
+          : `REDLINE ${spec.maxRpm.toLocaleString()} RPM`);
+
+    const initialRpmText = spec.idleRpm > 0
+      ? `${spec.idleRpm.toLocaleString()} ${spec.rpmUnit}`
+      : `0 ${spec.rpmUnit}`;
 
     return `
       <div class="sound-specimen-meta">
@@ -236,10 +447,12 @@
           <div class="sound-waveform-header">
             <div class="sound-waveform-header-left">
               <span class="sound-waveform-indicator-dot sound-rev-dot" id="selected-rev-dot"></span>
-              <span class="sound-waveform-label">ENGINE ACOUSTIC INTENSITY // DYNAMIC REV PROFILE</span>
+              <span class="sound-waveform-label" id="selected-rpm-type-label">${escapeHtml(spec.scaleType)} &bull; REV PROFILE</span>
+              <span class="sound-rpm-live" id="selected-rpm-live">${initialRpmText}</span>
             </div>
             <div class="sound-waveform-header-right">
-              <span class="sound-rev-intensity-badge" id="selected-rev-badge">RESTING</span>
+              <span class="sound-rpm-max-badge" id="selected-rpm-max">${maxBadgeText}</span>
+              <span class="sound-rev-intensity-badge is-idle" id="selected-rev-badge">RESTING</span>
               <span class="sound-waveform-duration" id="selected-waveform-duration">--:--</span>
               <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">SEEK 0:00</span>
             </div>
@@ -247,8 +460,19 @@
           <div class="sound-waveform-canvas-wrap sound-rev-canvas-wrap" id="selected-engine-track" role="region" aria-label="Dynamic engine rev visualizer. Click or drag to seek." title="Click or drag to seek playback">
             <canvas id="selected-waveform-canvas" class="sound-waveform-canvas"></canvas>
             <div class="sound-waveform-loading" id="selected-waveform-loading" style="display: none;">
-              <span class="sound-waveform-loading-text">CALIBRATING ACOUSTIC SENSORS...</span>
+              <span class="sound-waveform-loading-text">CALIBRATING RPM SENSORS...</span>
             </div>
+          </div>
+
+          <div class="sound-rpm-provenance" id="selected-rpm-provenance">
+            <div class="sound-rpm-provenance-header">
+              <span class="sound-rpm-prov-title">POWERTRAIN CALIBRATION</span>
+              <span class="sound-rpm-prov-mode">REPRESENTATIVE PROFILE</span>
+            </div>
+            <span class="sound-rpm-prov-specs">Documented Range: Idle ${spec.idleRpm.toLocaleString()} ${spec.rpmUnit} &bull; Peak ${spec.peakPowerRpm.toLocaleString()} &bull; Max ${spec.maxRpm.toLocaleString()} ${spec.rpmUnit}</span>
+            <p class="sound-rpm-prov-desc">
+              Vertical bar height represents documented engine rotational speed (${spec.scaleType}) rather than microphone loudness. The actual recording modulates subtle acoustic harmonic texture without inflating apparent engine speed.
+            </p>
           </div>
         </div>
 
@@ -270,7 +494,7 @@
     `;
   }
 
-  function attachSelectedPlayer(recording) {
+  function attachSelectedPlayer(recording, category) {
     const audio = document.getElementById("selected-engine-audio");
     const button = document.getElementById("selected-engine-button");
     const time = document.getElementById("selected-engine-time");
@@ -281,6 +505,7 @@
     const seekPreview = document.getElementById("selected-waveform-seek");
     const dot = document.getElementById("selected-rev-dot");
     const badge = document.getElementById("selected-rev-badge");
+    const liveRpmEl = document.getElementById("selected-rpm-live");
 
     if (!audio || !button || !time || !status || !track || !canvas) return;
 
@@ -292,6 +517,17 @@
       activeResizeObserver.disconnect();
       activeResizeObserver = null;
     }
+
+    const catKey = category.key;
+    const spec = rpmDataByCategory[catKey] || {
+      scaleType: "ENGINE RPM",
+      rpmUnit: "RPM",
+      idleRpm: 800,
+      peakPowerRpm: 5500,
+      maxRpm: 6500,
+      redlineStartRpm: 6000,
+      timeline: []
+    };
 
     activeAudio = audio;
     audio.autoplay = false;
@@ -311,6 +547,7 @@
     const currentLevels = new Float32Array(numColumns);
     const peakLevels = new Float32Array(numColumns);
     const peakHoldTimes = new Float32Array(numColumns);
+    const smoothedBands = new Float32Array(numColumns);
     let currentHoverRatio = null;
     let isScrubbing = false;
 
@@ -374,8 +611,8 @@
       ctx.fillStyle = topShadow;
       ctx.fillRect(0, 0, width, 10);
 
-      const isNarrow = width < 520;
-      const padLeft = isNarrow ? 36 : 48;
+      const isNarrow = width < 540;
+      const padLeft = isNarrow ? 56 : 74;
       const padRight = isNarrow ? 12 : 18;
       const padTop = 14;
       const padBottom = 22; // space for bottom progress runner
@@ -383,15 +620,68 @@
       const plotW = Math.max(10, width - padLeft - padRight);
       const plotH = Math.max(10, height - padTop - padBottom);
 
-      // 2. Horizontal Reference Markings & Engraved Labels
-      const thresholds = [
-        { ratio: 0.85, label: "PEAK", color: "rgba(207, 56, 36, 0.45)", textColor: "rgba(235, 120, 105, 0.75)", dash: [3, 3] },
-        { ratio: 0.60, label: "PWR", color: "rgba(212, 162, 64, 0.3)", textColor: "rgba(226, 185, 110, 0.65)", dash: [2, 4] },
-        { ratio: 0.35, label: "MID", color: "rgba(226, 218, 205, 0.16)", textColor: "rgba(226, 218, 205, 0.45)", dash: [2, 4] },
-        { ratio: 0.12, label: "IDLE", color: "rgba(226, 218, 205, 0.12)", textColor: "rgba(226, 218, 205, 0.4)", dash: [2, 4] }
-      ];
+      // 2. Horizontal Reference Markings calibrated to Documented Engine RPM
+      const redlineRatio = Math.min(1.0, spec.redlineStartRpm / spec.maxRpm);
+      const peakPowerRatio = Math.min(0.95, spec.peakPowerRpm / spec.maxRpm);
+      const idleRatio = Math.max(0.06, Math.min(0.35, spec.idleRpm / spec.maxRpm));
 
-      thresholds.forEach(th => {
+      const ticks = [];
+
+      // Redline / Max Mark
+      ticks.push({
+        ratio: redlineRatio,
+        label: spec.isMotor
+          ? `${spec.maxRpm.toLocaleString()} MAX`
+          : `${spec.maxRpm.toLocaleString()} REDLINE`,
+        color: "rgba(207, 56, 36, 0.55)",
+        textColor: "rgba(235, 120, 105, 0.85)",
+        dash: [3, 3]
+      });
+
+      // Peak Power Mark (if distinct from redline)
+      if (Math.abs(peakPowerRatio - redlineRatio) > 0.08) {
+        ticks.push({
+          ratio: peakPowerRatio,
+          label: `${spec.peakPowerRpm.toLocaleString()} PWR`,
+          color: "rgba(212, 150, 50, 0.38)",
+          textColor: "rgba(226, 185, 110, 0.75)",
+          dash: [2, 4]
+        });
+      }
+
+      // Mid-Scale Reference Mark (~50% of maximum rotational speed)
+      const midRatio = 0.50;
+      if (Math.abs(midRatio - redlineRatio) > 0.12 && Math.abs(midRatio - peakPowerRatio) > 0.10) {
+        const midRpm = Math.round(spec.maxRpm * 0.50);
+        ticks.push({
+          ratio: midRatio,
+          label: `${midRpm.toLocaleString()}`,
+          color: "rgba(226, 218, 205, 0.16)",
+          textColor: "rgba(226, 218, 205, 0.45)",
+          dash: [2, 4]
+        });
+      }
+
+      // Idle / Standstill Mark
+      if (spec.idleRpm > 0) {
+        ticks.push({
+          ratio: idleRatio,
+          label: `${spec.idleRpm.toLocaleString()} IDLE`,
+          color: "rgba(226, 218, 205, 0.15)",
+          textColor: "rgba(226, 218, 205, 0.50)",
+          dash: [2, 4]
+        });
+      } else {
+        ticks.push({
+          ratio: 0.05,
+          label: spec.isMotor ? "0 REST" : "0 STOP",
+          color: "rgba(226, 218, 205, 0.12)",
+          textColor: "rgba(226, 218, 205, 0.40)",
+          dash: [2, 4]
+        });
+      }
+
+      ticks.forEach(th => {
         const y = Math.round(padTop + plotH * (1 - th.ratio));
         ctx.strokeStyle = th.color;
         ctx.lineWidth = 1;
@@ -428,23 +718,25 @@
           const segY = Math.round(padTop + plotH - (s + 1) * segHeight - s * segGap);
           const isLit = s < activeSegments;
           const isPeak = s === peakSeg && !isLit;
+          const segRatio = s / (numSegments - 1);
 
           if (isLit) {
-            const segRatio = s / (numSegments - 1);
-            if (segRatio >= 0.85) {
+            if (segRatio >= redlineRatio || segRatio >= 0.85) {
               ctx.fillStyle = "#cf3824";
-            } else if (segRatio >= 0.60) {
+            } else if (segRatio >= (peakPowerRatio * 0.85) || segRatio >= 0.60) {
               ctx.fillStyle = "#d49632";
             } else {
               ctx.fillStyle = "#dfd7ca";
             }
             ctx.fillRect(colX, segY, Math.round(colWidth), Math.round(segHeight));
 
+            // Top edge gloss highlight
             ctx.fillStyle = "rgba(255, 255, 255, 0.35)";
             ctx.fillRect(colX, segY, Math.round(colWidth), 1);
           } else if (isPeak) {
-            const segRatio = s / (numSegments - 1);
-            ctx.fillStyle = segRatio >= 0.85 ? "#ff5a43" : (segRatio >= 0.60 ? "#f0b348" : "#ffffff");
+            ctx.fillStyle = (segRatio >= redlineRatio || segRatio >= 0.85)
+              ? "#ff5a43"
+              : (segRatio >= 0.60 ? "#f0b348" : "#ffffff");
             ctx.fillRect(colX, segY + Math.round(segHeight / 2) - 1, Math.round(colWidth), 2);
           } else {
             ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
@@ -513,17 +805,13 @@
           return;
         }
 
+        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+        const rpmState = getRpmState(catKey, audio.currentTime, dur);
+        const baseRatio = rpmState.normalizedRatio;
+
+        // Process real audio frequency bands for subtle acoustic modulation
         if (analyserNode && freqArray && timeArray) {
           analyserNode.getByteFrequencyData(freqArray);
-          analyserNode.getByteTimeDomainData(timeArray);
-
-          let sumSq = 0;
-          for (let i = 0; i < timeArray.length; i++) {
-            const v = (timeArray[i] - 128) / 128;
-            sumSq += v * v;
-          }
-          const rms = Math.sqrt(sumSq / timeArray.length);
-          const acousticIntensity = Math.min(1, Math.max(0, (rms - 0.02) / 0.38));
 
           const rawBands = new Float32Array(numColumns);
           for (let c = 0; c < numColumns; c++) {
@@ -535,62 +823,65 @@
               count++;
             }
             const avg = count > 0 ? (sum / count) / 255 : 0;
-            const hfBoost = 1.0 + Math.pow(c / numColumns, 1.2) * 1.6;
+            const hfBoost = 1.0 + Math.pow(c / numColumns, 1.2) * 1.4;
             rawBands[c] = Math.min(1, avg * hfBoost);
           }
 
-          const smoothedBands = new Float32Array(numColumns);
           for (let c = 0; c < numColumns; c++) {
             const prev = c > 0 ? rawBands[c - 1] : rawBands[c];
             const next = c < numColumns - 1 ? rawBands[c + 1] : rawBands[c];
             smoothedBands[c] = 0.22 * prev + 0.56 * rawBands[c] + 0.22 * next;
           }
+        }
 
-          const now = performance.now();
-          let maxCol = 0;
+        const now = performance.now();
 
-          for (let c = 0; c < numColumns; c++) {
-            const arcWeight = 0.82 + 0.36 * Math.sin((c / (numColumns - 1)) * Math.PI);
-            const target = Math.min(1, Math.max(0,
-              (smoothedBands[c] * 0.60 + acousticIntensity * 0.60) * arcWeight
-            ));
+        // RPM is the primary driver of height; real audio adds fine physical texture (+/- 0.08)
+        for (let c = 0; c < numColumns; c++) {
+          const bandEnergy = smoothedBands[c] || 0.35;
+          // Subtle acoustic fluctuation (+/- 0.08) so real sound pulses without distorting engine RPM
+          const audioTexture = (bandEnergy - 0.35) * 0.16;
+          // Gentle acoustic curvature across columns
+          const arcWeight = 0.96 + 0.08 * Math.sin((c / (numColumns - 1)) * Math.PI);
+          const colTarget = Math.max(0.04, Math.min(1.0, (baseRatio + audioTexture) * arcWeight));
 
-            if (target > currentLevels[c]) {
-              currentLevels[c] += (target - currentLevels[c]) * 0.40;
-            } else {
-              currentLevels[c] += (target - currentLevels[c]) * 0.12;
-            }
+          // Physical mechanical inertia for needle / segment tracking
+          const smooth = colTarget > currentLevels[c] ? 0.32 : 0.15;
+          currentLevels[c] += (colTarget - currentLevels[c]) * smooth;
 
-            if (currentLevels[c] > peakLevels[c]) {
-              peakLevels[c] = currentLevels[c];
-              peakHoldTimes[c] = now + 250;
-            } else if (now > peakHoldTimes[c]) {
-              peakLevels[c] = Math.max(0, peakLevels[c] - 0.012);
-            }
-
-            if (currentLevels[c] > maxCol) {
-              maxCol = currentLevels[c];
-            }
-          }
-
-          if (badge) {
-            if (maxCol >= 0.80) {
-              badge.textContent = "PEAK REV";
-              badge.className = "sound-rev-intensity-badge is-peak";
-            } else if (maxCol >= 0.45) {
-              badge.textContent = "ACCEL";
-              badge.className = "sound-rev-intensity-badge is-accel";
-            } else if (maxCol >= 0.15) {
-              badge.textContent = "IDLE";
-              badge.className = "sound-rev-intensity-badge";
-            } else {
-              badge.textContent = "LOW";
-              badge.className = "sound-rev-intensity-badge";
-            }
+          if (currentLevels[c] > peakLevels[c]) {
+            peakLevels[c] = currentLevels[c];
+            peakHoldTimes[c] = now + 250;
+          } else if (now > peakHoldTimes[c]) {
+            peakLevels[c] = Math.max(0, peakLevels[c] - 0.010);
           }
         }
 
-        const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
+        // Update live RPM counter readout
+        if (liveRpmEl) {
+          liveRpmEl.textContent = rpmState.label;
+        }
+
+        // Update status badge
+        if (badge) {
+          if (baseRatio >= 0.85) {
+            badge.textContent = spec.isMotor ? "PEAK REV" : "REDLINE";
+            badge.className = "sound-rev-intensity-badge is-redline";
+          } else if (baseRatio >= 0.60) {
+            badge.textContent = "POWER BAND";
+            badge.className = "sound-rev-intensity-badge is-power";
+          } else if (baseRatio >= 0.20) {
+            badge.textContent = "CRUISING";
+            badge.className = "sound-rev-intensity-badge is-cruising";
+          } else if (rpmState.rpm > 0) {
+            badge.textContent = "IDLE";
+            badge.className = "sound-rev-intensity-badge is-idle";
+          } else {
+            badge.textContent = spec.isMotor ? "REST" : (spec.isHybrid ? "ENGINE OFF" : "STOPPED");
+            badge.className = "sound-rev-intensity-badge";
+          }
+        }
+
         if (dur > 0 && time) {
           time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
         }
@@ -613,12 +904,18 @@
       currentLevels.fill(0);
       peakLevels.fill(0);
       peakHoldTimes.fill(0);
+      smoothedBands.fill(0);
       if (badge) {
         badge.textContent = "RESTING";
-        badge.className = "sound-rev-intensity-badge";
+        badge.className = "sound-rev-intensity-badge is-idle";
       }
       if (dot) {
         dot.classList.remove("is-active");
+      }
+      if (liveRpmEl) {
+        liveRpmEl.textContent = spec.idleRpm > 0
+          ? `${spec.idleRpm.toLocaleString()} ${spec.rpmUnit}`
+          : `0 ${spec.rpmUnit}`;
       }
       draw(true, null);
     }
@@ -676,8 +973,8 @@
     function getRatioFromEvent(e) {
       const bounds = track.getBoundingClientRect();
       if (bounds.width <= 0) return 0;
-      const isNarrow = bounds.width < 520;
-      const padLeft = isNarrow ? 36 : 48;
+      const isNarrow = bounds.width < 540;
+      const padLeft = isNarrow ? 56 : 74;
       const padRight = isNarrow ? 12 : 18;
       const plotW = Math.max(1, bounds.width - padLeft - padRight);
       const clickX = e.clientX - bounds.left;
@@ -693,6 +990,8 @@
       if (dur > 0) {
         audio.currentTime = ratio * dur;
         time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
+        const rpmState = getRpmState(catKey, audio.currentTime, dur);
+        if (liveRpmEl) liveRpmEl.textContent = rpmState.label;
       }
       draw(audio.paused, ratio);
     });
@@ -708,6 +1007,8 @@
       if (isScrubbing && dur > 0) {
         audio.currentTime = ratio * dur;
         time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
+        const rpmState = getRpmState(catKey, audio.currentTime, dur);
+        if (liveRpmEl) liveRpmEl.textContent = rpmState.label;
         draw(audio.paused, ratio);
       } else if (!isScrubbing) {
         draw(audio.paused, ratio);
@@ -775,34 +1076,9 @@
     setTimeout(() => {
       const recording = recordingFor(category);
       detail.innerHTML = recording ? availableDetail(category, recording) : "";
-      if (recording) attachSelectedPlayer(recording);
+      if (recording) attachSelectedPlayer(recording, category);
       detail.classList.remove("is-fading");
     }, 120);
-  }
-
-  // Background preloader: quietly decode other audio specimens during browser idle time
-  function preloadRemainingWaveforms() {
-    const remaining = engineCategories.filter(cat => cat.file && !waveformCache.has(cat.file));
-    if (remaining.length === 0) return;
-
-    let idx = 0;
-    function scheduleNext() {
-      if (idx >= remaining.length) return;
-      const cat = remaining[idx++];
-      extractWaveformFromAudio(cat.file).finally(() => {
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(scheduleNext, { timeout: 2000 });
-        } else {
-          setTimeout(scheduleNext, 250);
-        }
-      });
-    }
-
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(scheduleNext, { timeout: 2000 });
-    } else {
-      setTimeout(scheduleNext, 500);
-    }
   }
 
   async function renderEngineRecordings() {
@@ -825,9 +1101,6 @@
 
       const defaultCategory = engineCategories.find(category => category.key === "v8") || engineCategories[0];
       selectCategory(defaultCategory);
-
-      // Start quiet background preloading of remaining waveforms
-      preloadRemainingWaveforms();
     } catch (error) {
       container.innerHTML = '<p class="sound-card-character">Engine recording metadata could not be loaded.</p>';
       console.error("Unable to render engine recordings:", error);

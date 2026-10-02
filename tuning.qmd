@@ -250,6 +250,128 @@ toc: false
           </figcaption>
         </figure>
       </div>
+
+      <!-- THEN THE OWNER CHANGED IT (STEP 4) -->
+      <div class="tuning-owner-block">
+        <div class="tuning-dataset-header">
+          <div class="tuning-dataset-kicker">Documented Enthusiast Build &middot; Japan &amp; USA</div>
+          <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
+        </div>
+
+        <div class="tuning-comparison-grid">
+          <!-- FACTORY (From Project Dataset) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Project Dataset</span>
+              <h4 class="tuning-comparison-heading">FACTORY</h4>
+            </div>
+            <div class="tuning-spec-table">
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model</span>
+                <span class="tuning-spec-val">1990 Lexus LS 400</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Engine</span>
+                <span class="tuning-spec-val">4.0L DOHC 32V V8</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Horsepower</span>
+                <span class="tuning-spec-val">245 hp</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Transmission</span>
+                <span class="tuning-spec-val">4-speed automatic</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Drivetrain</span>
+                <span class="tuning-spec-val">RWD</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Body Style</span>
+                <span class="tuning-spec-val">Luxury Saloon</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Wheelbase</span>
+                <span class="tuning-spec-val">111.0 in (2,819 mm)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transition Indicator -->
+          <div class="tuning-comparison-arrow" aria-hidden="true">&darr;</div>
+
+          <!-- MODIFIED (From Documented Build) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Documented Real Build &middot; Junction Produce / Matt Campos</span>
+              <h4 class="tuning-comparison-heading">MODIFIED</h4>
+            </div>
+            <div class="tuning-mod-list">
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Suspension</span>
+                  <span class="tuning-mod-part">Air Runner Air Suspension System</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The factory steel-spring suspension was replaced by an Air Runner air setup. This allows the saloon to achieve the signature VIP ground-scraping stance when parked while retaining the ability to raise the chassis several inches on the move to clear city obstacles without cracking low-slung aero panels.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Wheels</span>
+                  <span class="tuning-mod-part">19-inch Leon Hardiritt Orden</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The owner replaced standard factory alloys with imported 19-inch Leon Hardiritt Orden multi-piece wheels from Japan, utilizing aggressive negative offset and polished lips to fill the wheel arches and pull the vehicle&rsquo;s visual weight down to the road surface.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Bodywork</span>
+                  <span class="tuning-mod-part">Full Junction Produce Aero Package</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Originally prepared as an official demo car by Japanese tuning house Junction Produce for the SEMA Show, the body received a full authentic aerodynamic package, extending the bumpers and sills downward to disrupt the conservative factory executive silhouette.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Interior</span>
+                  <span class="tuning-mod-part">Junction Produce Pillows &amp; Crystal Curtains</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Reflecting authentic Japanese <em>Bippu</em> culture, the cabin was converted into an executive salon with Junction Produce leather-wrapped pads, custom seat cushions, and window privacy curtains trimmed with Swarovski crystals.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Electronics</span>
+                  <span class="tuning-mod-part">Ambient LED Illumination &amp; Upgraded Audio</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The interior received bespoke nighttime ambient LED lighting alongside an upgraded stereo navigation head unit and CD changer to complete the private lounge environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuning-owner-narrative">
+          <p>
+            The project dataset captures what this platform was when it left the factory: an impeccably engineered luxury flagship designed for whisper-quiet corporate transit. But this documented build—first prepared by Japanese styling house Junction Produce for SEMA and personalized by Matt Campos—demonstrates how the VIP subculture inverts that character. Rather than conveying understated corporate conformity, the saloon becomes a pavement-skimming, countercultural street lounge.
+          </p>
+          <div class="tuning-dataset-core-thought">
+            The factory built a boardroom cruiser. The subculture turned it into low-slung street royalty.
+          </div>
+          <p class="tuning-source-note">
+            Source: One documented example detailed by Antonio Alvendia in <em>Driving Line</em>, <a href="https://www.drivingline.com/articles/rolling-vip-with-junction-produce-lexus/" target="_blank" rel="noopener noreferrer">&ldquo;Rolling VIP With Junction Produce Lexus&rdquo;</a> (17 April 2013). Factory baseline from project dataset (1990 Lexus LS 400).
+          </p>
+        </div>
+      </div>
     </article>
 
     <!-- 03 — OEM+ -->
