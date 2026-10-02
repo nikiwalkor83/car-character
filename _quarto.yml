@@ -29,10 +29,10 @@ website:
         text: Shape
       - href: sound.qmd
         text: Sound
-      - href: tuning.qmd
-        text: Tuning
       - href: exploration.qmd
         text: "Interactive Motoring Atlas"
+      - href: tuning.qmd
+        text: Tuning
       - href: about.qmd
         text: About
 

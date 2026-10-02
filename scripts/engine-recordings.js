@@ -18,254 +18,6 @@
     { key: "electric", label: "Electric", count: 705, file: "electric-imiev.ogg" }
   ];
 
-  /* Documented engine specifications & representative RPM profiles */
-  const rpmDataByCategory = {
-    "2-cylinder": {
-      label: "2-Cylinder",
-      vehicle: "Citroën 2CV6 Charleston (1987)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 900,
-      peakPowerRpm: 5750,
-      maxRpm: 6000,
-      redlineStartRpm: 5750,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 900], [5.0, 920], [12.0, 1900], [18.0, 3100], [24.0, 2400],
-        [32.0, 950], [40.0, 2200], [48.0, 3500], [56.0, 2600], [64.0, 950], [69.6, 900]
-      ]
-    },
-    "3-cylinder": {
-      label: "3-Cylinder",
-      vehicle: "Citroën C1 (1st Gen, 2005–2014)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 800,
-      peakPowerRpm: 6000,
-      maxRpm: 6500,
-      redlineStartRpm: 6000,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 0], [2.5, 0], [3.2, 1400], [4.5, 820], [6.0, 800],
-        [7.5, 1200], [9.5, 2600], [11.5, 3600], [12.2, 2200], [14.0, 3400],
-        [15.5, 4100], [16.9, 2800]
-      ]
-    },
-    "4-cylinder": {
-      label: "4-Cylinder",
-      vehicle: "Lada 1500 Combi (VAZ-21023, 1981)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 850,
-      peakPowerRpm: 5600,
-      maxRpm: 6000,
-      redlineStartRpm: 5600,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 0], [9.0, 0], [10.5, 250], [12.5, 400], [14.0, 1600],
-        [16.0, 880], [20.0, 850], [25.5, 850], [27.0, 1400], [30.0, 2400],
-        [34.0, 3500], [35.5, 2100], [38.5, 3200], [41.0, 3700], [42.9, 2600]
-      ]
-    },
-    "5-cylinder": {
-      label: "5-Cylinder",
-      vehicle: "Volvo 850 T5",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 850,
-      peakPowerRpm: 5200,
-      maxRpm: 6000,
-      redlineStartRpm: 5600,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 850], [3.0, 850], [6.0, 2200], [9.0, 3800], [12.0, 4800],
-        [15.0, 1600], [18.0, 850], [21.0, 2800], [24.0, 4900], [27.0, 3200],
-        [30.0, 1200], [32.6, 850]
-      ]
-    },
-    "inline-6": {
-      label: "Inline-6",
-      vehicle: "1965 Chrysler Valiant (225 Slant-6)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 600,
-      peakPowerRpm: 4000,
-      maxRpm: 4500,
-      redlineStartRpm: 4000,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 0], [0.8, 200], [1.6, 1450], [3.2, 1300], [5.0, 950],
-        [6.8, 650], [7.6, 600], [8.2, 0], [9.0, 0]
-      ]
-    },
-    "flat-6": {
-      label: "Flat-6",
-      vehicle: "Porsche Cayman S (2006)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 700,
-      peakPowerRpm: 6250,
-      maxRpm: 7300,
-      redlineStartRpm: 7000,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 750], [2.0, 800], [3.5, 2200], [6.0, 4200], [9.0, 6200],
-        [11.5, 6900], [12.5, 4100], [15.0, 5200], [18.0, 6500], [21.0, 7050],
-        [22.5, 4400], [26.0, 3900], [30.0, 3600], [33.1, 3500]
-      ]
-    },
-    "v6": {
-      label: "V6",
-      vehicle: "Lotus Evora (2009)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 680,
-      peakPowerRpm: 6400,
-      maxRpm: 7000,
-      redlineStartRpm: 6600,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 2400], [1.8, 3200], [2.8, 5200], [4.5, 6600], [5.2, 4600],
-        [6.5, 6200], [7.8, 6700], [8.8, 5800]
-      ]
-    },
-    "v8": {
-      label: "V8",
-      vehicle: "Ferrari F60 Formula One (2009)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 4500,
-      peakPowerRpm: 18000,
-      maxRpm: 18000,
-      redlineStartRpm: 17000,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 7800], [1.5, 8600], [2.8, 9200], [4.0, 14200], [5.5, 17400],
-        [6.5, 17800], [7.2, 13800], [9.0, 16800], [11.0, 17700], [12.2, 14200],
-        [14.5, 16500], [17.0, 17400], [19.5, 15500]
-      ]
-    },
-    "v10": {
-      label: "V10",
-      vehicle: "Lamborghini Gallardo LP570-4 Superleggera (2010)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 900,
-      peakPowerRpm: 8000,
-      maxRpm: 8500,
-      redlineStartRpm: 8000,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 2200], [1.2, 3600], [2.4, 4200], [3.6, 6800], [5.2, 8250],
-        [5.8, 5600], [7.2, 7800], [8.5, 8300], [9.5, 7400]
-      ]
-    },
-    "v12": {
-      label: "V12",
-      vehicle: "Pagani Zonda Roadster F",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 650,
-      peakPowerRpm: 6200,
-      maxRpm: 7000,
-      redlineStartRpm: 6500,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 1800], [1.8, 2800], [3.2, 4400], [5.0, 6200], [6.6, 6700],
-        [7.4, 4600], [9.2, 5900], [11.0, 6650], [13.1, 5800]
-      ]
-    },
-    "w16": {
-      label: "W16",
-      vehicle: "Bugatti Veyron 16.4 Grand Sport (2009)",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 700,
-      peakPowerRpm: 6000,
-      maxRpm: 6000,
-      redlineStartRpm: 5800,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 1600], [1.5, 2400], [2.8, 3800], [4.5, 5400], [5.8, 5900],
-        [6.4, 4200], [7.8, 5500], [9.2, 5700]
-      ]
-    },
-    "diesel": {
-      label: "Diesel",
-      vehicle: "BMW M57 3.0L Turbodiesel",
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 700,
-      peakPowerRpm: 4000,
-      maxRpm: 4500,
-      redlineStartRpm: 4200,
-      isMotor: false,
-      isHybrid: false,
-      methodologyLabel: "Representative rev animation based on documented engine specifications",
-      timeline: [
-        [0.0, 700], [3.0, 720], [5.5, 1400], [8.0, 2600], [10.5, 3400],
-        [12.5, 2200], [15.0, 1100], [17.5, 750], [19.6, 700]
-      ]
-    },
-    "hybrid": {
-      label: "Hybrid",
-      vehicle: "Toyota Prius C (2015)",
-      scaleType: "HYBRID SYSTEM RPM",
-      rpmUnit: "ICE RPM",
-      idleRpm: 0,
-      peakPowerRpm: 4800,
-      maxRpm: 5000,
-      redlineStartRpm: 4800,
-      isMotor: false,
-      isHybrid: true,
-      methodologyLabel: "Representative hybrid powertrain state based on documented specifications",
-      timeline: [
-        [0.0, 1800], [3.0, 1500], [6.0, 1200], [8.5, 600], [10.0, 0],
-        [12.0, 0], [14.0, 0], [16.5, 0], [18.5, 800], [21.0, 1600],
-        [24.0, 2400], [27.0, 2700], [30.4, 2100]
-      ]
-    },
-    "electric": {
-      label: "Electric",
-      vehicle: "Mitsubishi i-MiEV (2010)",
-      scaleType: "MOTOR RPM",
-      rpmUnit: "MOTOR RPM",
-      idleRpm: 0,
-      peakPowerRpm: 6000,
-      maxRpm: 9900,
-      redlineStartRpm: 8500,
-      isMotor: true,
-      isHybrid: false,
-      methodologyLabel: "Representative electric motor rotation speed based on documented specifications",
-      timeline: [
-        [0.0, 0], [1.5, 500], [3.5, 2100], [6.0, 4200], [8.5, 6400],
-        [11.0, 8200], [13.0, 7800], [15.0, 6500], [17.6, 5200]
-      ]
-    }
-  };
-
   let recordingsByFilename = new Map();
   let activeAudio = null;
   let activeRafId = null;
@@ -275,11 +27,6 @@
   let freqArray = null;
   let timeArray = null;
 
-  const bandCenterFrequencies = [
-    50, 65, 80, 100, 130, 160, 200, 260,
-    330, 410, 520, 660, 830, 1050, 1320, 1670,
-    2100, 2650, 3350, 4200, 5300, 6700, 8500, 11000
-  ];
 
   function getBandBinRanges(sampleRate = 44100, fftSize = 512, numColumns = 24) {
     const binCount = fftSize / 2;
@@ -364,38 +111,30 @@
 
   function selectorHtml() {
     return `
-      <div class="sound-dropdown-wrap">
-        <label for="engine-type-select" class="sound-dropdown-label">SELECT AN ENGINE TYPE</label>
-        <div class="sound-select-box">
-          <select id="engine-type-select" class="sound-engine-select" aria-label="Select an engine type">
-            ${engineCategories.map(cat => `
-              <option value="${cat.key}">${escapeHtml(cat.label)}</option>
-            `).join("")}
-          </select>
-        </div>
-      </div>
       <audio id="selected-engine-audio" preload="metadata" style="display: none;"></audio>
-      <div class="engine-recording-detail" id="engine-recording-detail" aria-live="polite"></div>
+      <div class="sound-two-column-layout" id="engine-recording-detail">
+        <div class="sound-column-left">
+          <div class="sound-dropdown-wrap">
+            <label for="engine-type-select" class="sound-dropdown-label">SELECT AN ENGINE TYPE</label>
+            <div class="sound-select-box">
+              <select id="engine-type-select" class="sound-engine-select" aria-label="Select an engine type">
+                ${engineCategories.map(cat => `
+                  <option value="${cat.key}">${escapeHtml(cat.label)}</option>
+                `).join("")}
+              </select>
+            </div>
+          </div>
+          <div class="sound-specimen-left" id="sound-specimen-left" aria-live="polite"></div>
+        </div>
+        <div class="sound-column-right" id="sound-column-right"></div>
+      </div>
+      <div class="sound-specimen-source-row" id="sound-specimen-source"></div>
     `;
   }
 
-  function availableDetail(category, recording) {
+  function leftInfoHtml(category, recording) {
     const extension = recording.filename.split(".").pop().toUpperCase();
-    const attributionHtml = recording.attribution
-      ? ` &bull; Attribution: ${escapeHtml(recording.attribution)}`
-      : "";
     const powertrainDesc = recording.engine_description || recording.engine_type;
-    const spec = rpmDataByCategory[category.key] || {
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 800,
-      peakPowerRpm: 5500,
-      maxRpm: 6500,
-      redlineStartRpm: 6000
-    };
-
-    const maxBadgeText = "45 Hz &ndash; 12 kHz SPECTRUM";
-    const initialBandText = "SPECTRUM";
 
     return `
       <div class="sound-specimen-meta">
@@ -407,55 +146,48 @@
         <div class="sound-specimen-engine-desc">${escapeHtml(powertrainDesc)}</div>
       </div>
 
-      <div class="engine-detail-player">
-        <div class="sound-waveform-container sound-rev-container">
-          <div class="sound-waveform-header">
-            <div class="sound-waveform-header-left">
-              <span class="sound-waveform-indicator-dot sound-rev-dot" id="selected-rev-dot"></span>
-              <span class="sound-waveform-label" id="selected-rpm-type-label">ACOUSTIC SPECTRUM &bull; 24 BANDS</span>
-              <span class="sound-rpm-live" id="selected-rpm-live">${initialBandText}</span>
-            </div>
-            <div class="sound-waveform-header-right">
-              <span class="sound-rpm-max-badge" id="selected-rpm-max">${maxBadgeText}</span>
-              <span class="sound-rev-intensity-badge is-idle" id="selected-rev-badge">RESTING</span>
-              <span class="sound-waveform-duration" id="selected-waveform-duration">--:--</span>
-              <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">SEEK 0:00</span>
-            </div>
-          </div>
-          <div class="sound-waveform-canvas-wrap sound-rev-canvas-wrap" id="selected-engine-track" role="region" aria-label="Acoustic spectrum visualizer. Click or drag to seek." title="Click or drag to seek playback">
-            <canvas id="selected-waveform-canvas" class="sound-waveform-canvas"></canvas>
-            <div class="sound-waveform-loading" id="selected-waveform-loading" style="display: none;">
-              <span class="sound-waveform-loading-text">ANALYZING AUDIO SPECTRUM...</span>
-            </div>
-          </div>
+      <div class="sound-controls-row">
+        <button class="sound-play-btn" id="selected-engine-button" type="button" aria-label="Play ${escapeHtml(category.label)} recording">
+          <span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>
+        </button>
+        <span class="sound-time-readout" id="selected-engine-time">0:00 / --:--</span>
+        <span class="sound-status-dot"><span class="status-indicator-circle"></span><span class="status-label" id="selected-engine-status">READY</span></span>
+        <span class="sound-format-badge">${extension}</span>
+      </div>
+    `;
+  }
 
-          <div class="sound-rpm-provenance" id="selected-rpm-provenance">
-            <div class="sound-rpm-provenance-header">
-              <span class="sound-rpm-prov-title">ACOUSTIC SPECTRUM ANALYSIS</span>
-              <span class="sound-rpm-prov-mode">REAL-TIME WEB AUDIO</span>
-            </div>
-            <span class="sound-rpm-prov-specs">Vehicle: ${escapeHtml(recording.vehicle)} &bull; ${escapeHtml(spec.scaleType)}${spec.idleRpm > 0 ? " &bull; Documented Spec: Idle ~" + spec.idleRpm.toLocaleString() + " " + spec.rpmUnit + ", Redline ~" + spec.redlineStartRpm.toLocaleString() + " " + spec.rpmUnit : ""}</span>
-            <p class="sound-rpm-prov-desc">
-              The 24 visual columns display real-time acoustic frequency energy processed directly from the selected audio recording via the Web Audio API. Low bands capture engine mechanical thrum and exhaust pulse; higher bands reflect intake air rush, valve train harmonics, and induction acoustics.
-            </p>
+  function rightWaveformHtml(category, recording) {
+    return `
+      <div class="sound-waveform-container sound-rev-container">
+        <div class="sound-waveform-header">
+          <div class="sound-waveform-header-left">
+            <span class="sound-waveform-indicator-dot sound-rev-dot" id="selected-rev-dot"></span>
+            <span class="sound-waveform-label" id="selected-rpm-type-label">AUDIO VISUALIZER</span>
+          </div>
+          <div class="sound-waveform-header-right">
+            <span class="sound-waveform-duration" id="selected-waveform-duration">--:--</span>
+            <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">SEEK 0:00</span>
           </div>
         </div>
-
-        <div class="sound-controls-row">
-          <button class="sound-play-btn" id="selected-engine-button" type="button" aria-label="Play ${escapeHtml(category.label)} recording">
-            <span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>
-          </button>
-          <span class="sound-time-readout" id="selected-engine-time">0:00 / --:--</span>
-          <span class="sound-status-dot"><span class="status-indicator-circle"></span><span class="status-label" id="selected-engine-status">READY</span></span>
-          <span class="sound-format-badge">${extension}</span>
+        <div class="sound-waveform-canvas-wrap sound-rev-canvas-wrap" id="selected-engine-track" role="region" aria-label="Audio visualizer. Click or drag to seek." title="Click or drag to seek playback">
+          <canvas id="selected-waveform-canvas" class="sound-waveform-canvas"></canvas>
+          <div class="sound-waveform-loading" id="selected-waveform-loading" style="display: none;">
+            <span class="sound-waveform-loading-text">LOADING AUDIO...</span>
+          </div>
         </div>
       </div>
+    `;
+  }
 
-      <div class="sound-specimen-source-row">
-        <p class="sound-card-source">
-          <a href="${escapeHtml(recording.source_page_url)}" target="_blank" rel="noopener">Source: ${escapeHtml(recording.source)}</a> &bull; ${escapeHtml(recording.license)}${attributionHtml}
-        </p>
-      </div>
+  function sourceHtml(recording) {
+    const attributionHtml = recording.attribution
+      ? ` &bull; Attribution: ${escapeHtml(recording.attribution)}`
+      : "";
+    return `
+      <p class="sound-card-source">
+        <a href="${escapeHtml(recording.source_page_url)}" target="_blank" rel="noopener">Source: ${escapeHtml(recording.source)}</a> &bull; ${escapeHtml(recording.license)}${attributionHtml}
+      </p>
     `;
   }
 
@@ -469,8 +201,6 @@
     const durationBadge = document.getElementById("selected-waveform-duration");
     const seekPreview = document.getElementById("selected-waveform-seek");
     const dot = document.getElementById("selected-rev-dot");
-    const badge = document.getElementById("selected-rev-badge");
-    const liveRpmEl = document.getElementById("selected-rpm-live");
 
     if (!audio || !button || !time || !status || !track || !canvas) return;
 
@@ -482,17 +212,6 @@
       activeResizeObserver.disconnect();
       activeResizeObserver = null;
     }
-
-    const catKey = category.key;
-    const spec = rpmDataByCategory[catKey] || {
-      scaleType: "ENGINE RPM",
-      rpmUnit: "RPM",
-      idleRpm: 800,
-      peakPowerRpm: 5500,
-      maxRpm: 6500,
-      redlineStartRpm: 6000,
-      timeline: []
-    };
 
     activeAudio = audio;
     audio.autoplay = false;
@@ -606,10 +325,10 @@
       ctx.fillRect(0, 0, width, 10);
 
       const isNarrow = width < 540;
-      const padLeft = isNarrow ? 56 : 74;
-      const padRight = isNarrow ? 12 : 18;
-      const padTop = 16;
-      const padBottom = 26; // space for frequency labels and bottom progress runner
+      const padLeft = isNarrow ? 12 : 16;
+      const padRight = isNarrow ? 12 : 16;
+      const padTop = 14;
+      const padBottom = 20;
 
       const plotW = Math.max(10, width - padLeft - padRight);
       const plotH = Math.max(10, height - padTop - padBottom);
@@ -690,17 +409,6 @@
           }
         }
       }
-
-      // Frequency Axis Range Labels
-      ctx.fillStyle = "rgba(226, 218, 205, 0.28)";
-      ctx.font = `600 ${isNarrow ? "7px" : "8px"} ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
-      ctx.textBaseline = "top";
-      ctx.textAlign = "left";
-      ctx.fillText("45 Hz", padLeft, padTop + plotH + 4);
-      ctx.textAlign = "center";
-      ctx.fillText("1 kHz", padLeft + plotW / 2, padTop + plotH + 4);
-      ctx.textAlign = "right";
-      ctx.fillText("12 kHz", padLeft + plotW, padTop + plotH + 4);
 
       // 4. Bottom Playback Runner
       const runnerY = height - 10;
@@ -857,44 +565,6 @@
           }
         }
 
-        // Update live dominant acoustic frequency readout
-        if (liveRpmEl) {
-          if (scaledEnvelope < 0.07) {
-            liveRpmEl.innerHTML = "IDLE &bull; LOW SPECTRUM";
-          } else {
-            const centerHz = bandCenterFrequencies[dominantCol] || 1000;
-            const hzText = centerHz >= 1000
-              ? `${(centerHz / 1000).toFixed(1)} kHz`
-              : `${centerHz} Hz`;
-            if (dominantCol <= 4) {
-              liveRpmEl.innerHTML = `BASS &bull; ${hzText}`;
-            } else if (dominantCol <= 11) {
-              liveRpmEl.innerHTML = `MID &bull; ${hzText}`;
-            } else if (dominantCol <= 18) {
-              liveRpmEl.innerHTML = `INDUCTION &bull; ${hzText}`;
-            } else {
-              liveRpmEl.innerHTML = `TREBLE &bull; ${hzText}`;
-            }
-          }
-        }
-
-        // Update dynamic intensity badge
-        if (badge) {
-          if (scaledEnvelope >= 0.65) {
-            badge.textContent = "PEAK";
-            badge.className = "sound-rev-intensity-badge is-redline";
-          } else if (scaledEnvelope >= 0.35) {
-            badge.textContent = "ACTIVE";
-            badge.className = "sound-rev-intensity-badge is-power";
-          } else if (scaledEnvelope >= 0.10) {
-            badge.textContent = "BUILD";
-            badge.className = "sound-rev-intensity-badge is-cruising";
-          } else {
-            badge.textContent = "IDLE";
-            badge.className = "sound-rev-intensity-badge is-idle";
-          }
-        }
-
         if (dur > 0 && time) {
           time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
         }
@@ -920,15 +590,8 @@
       smoothedBands.fill(0);
       rawBands.fill(0);
       runningObservedAmp = 0.05;
-      if (badge) {
-        badge.textContent = "RESTING";
-        badge.className = "sound-rev-intensity-badge is-idle";
-      }
       if (dot) {
         dot.classList.remove("is-active");
-      }
-      if (liveRpmEl) {
-        liveRpmEl.textContent = "SPECTRUM";
       }
       draw(true, null);
     }
@@ -1102,15 +765,26 @@
     if (select && select.value !== category.key) {
       select.value = category.key;
     }
-    const detail = document.getElementById("engine-recording-detail");
-    if (!detail) return;
+    const leftEl = document.getElementById("sound-specimen-left");
+    const rightEl = document.getElementById("sound-column-right");
+    const sourceEl = document.getElementById("sound-specimen-source");
+    if (!leftEl || !rightEl) return;
 
-    detail.classList.add("is-fading");
+    leftEl.classList.add("is-fading");
+    rightEl.classList.add("is-fading");
+    if (sourceEl) sourceEl.classList.add("is-fading");
+
     setTimeout(() => {
       const recording = recordingFor(category);
-      detail.innerHTML = recording ? availableDetail(category, recording) : "";
+      leftEl.innerHTML = recording ? leftInfoHtml(category, recording) : "";
+      rightEl.innerHTML = recording ? rightWaveformHtml(category, recording) : "";
+      if (sourceEl) {
+        sourceEl.innerHTML = recording ? sourceHtml(recording) : "";
+      }
       if (recording) attachSelectedPlayer(recording, category);
-      detail.classList.remove("is-fading");
+      leftEl.classList.remove("is-fading");
+      rightEl.classList.remove("is-fading");
+      if (sourceEl) sourceEl.classList.remove("is-fading");
     }, 120);
   }
 

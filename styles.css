@@ -2942,7 +2942,7 @@ body {
 
 /* Sound Dropdown Selector */
 .sound-dropdown-wrap {
-  margin: 1.5rem 0 0;
+  margin: 0 0 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -3004,6 +3004,49 @@ body {
   pointer-events: none;
 }
 
+.sound-two-column-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.sound-column-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sound-column-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.sound-specimen-left {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.sound-specimen-left.is-fading,
+.sound-column-right.is-fading,
+.sound-specimen-source-row.is-fading,
+.engine-recording-detail.is-fading {
+  opacity: 0.15;
+}
+
+@media (max-width: 860px) {
+  .sound-two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 .engine-recording-detail {
   min-height: 290px;
   display: flex;
@@ -3014,10 +3057,6 @@ body {
   border-top: 1px solid var(--border-rule);
   transition: opacity 0.15s ease-in-out;
   opacity: 1;
-}
-
-.engine-recording-detail.is-fading {
-  opacity: 0.15;
 }
 
 .sound-specimen-meta {
@@ -3062,13 +3101,13 @@ body {
   font-size: 0.92rem;
   color: var(--text-body);
   line-height: 1.55;
-  max-width: 760px;
+  max-width: 100%;
 }
 
 .sound-specimen-source-row {
   border-top: 1px solid var(--border-rule);
   padding-top: 0.85rem;
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
 }
 
 .sound-specimen-source-row .sound-card-source {
@@ -3185,7 +3224,7 @@ body {
 
 /* Real Interactive Audio Waveform */
 .sound-waveform-container {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   background: var(--bg-paper);
   border: 1px solid var(--border-rule);
   border-radius: 2px;
@@ -3197,6 +3236,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   margin-bottom: 0.45rem;
   font-family: var(--font-sans);
   font-size: 0.68rem;
@@ -3208,6 +3249,7 @@ body {
 .sound-waveform-header-left {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.45rem;
 }
 
@@ -3244,132 +3286,6 @@ body {
 .sound-waveform-seek-preview {
   color: #cf3824;
   font-weight: 700;
-}
-
-.sound-rev-intensity-badge {
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-racing-green);
-  background: rgba(28, 61, 46, 0.08);
-  border: 1px solid rgba(28, 61, 46, 0.22);
-  padding: 0.15rem 0.45rem;
-  border-radius: 2px;
-  line-height: 1;
-  transition: all 0.2s ease;
-}
-
-.sound-rev-intensity-badge.is-accel,
-.sound-rev-intensity-badge.is-power {
-  color: #c08524;
-  background: rgba(212, 150, 50, 0.12);
-  border-color: rgba(212, 150, 50, 0.38);
-}
-
-.sound-rev-intensity-badge.is-peak,
-.sound-rev-intensity-badge.is-redline {
-  color: #cf3824;
-  background: rgba(207, 56, 36, 0.12);
-  border-color: rgba(207, 56, 36, 0.42);
-}
-
-.sound-rev-intensity-badge.is-cruising {
-  color: #2b7a4b;
-  background: rgba(43, 122, 75, 0.10);
-  border-color: rgba(43, 122, 75, 0.30);
-}
-
-.sound-rev-intensity-badge.is-idle {
-  color: var(--accent-racing-green);
-  background: rgba(28, 61, 46, 0.08);
-  border-color: rgba(28, 61, 46, 0.22);
-}
-
-.sound-rpm-live {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: #dfd7ca;
-  background: #0d1410;
-  border: 1px solid rgba(223, 215, 202, 0.25);
-  padding: 0.12rem 0.45rem;
-  border-radius: 2px;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  display: inline-block;
-  min-width: 76px;
-  text-align: center;
-}
-
-.sound-rpm-max-badge {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.64rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: #cf3824;
-  background: rgba(207, 56, 36, 0.08);
-  border: 1px solid rgba(207, 56, 36, 0.25);
-  padding: 0.12rem 0.38rem;
-  border-radius: 2px;
-  white-space: nowrap;
-}
-
-.sound-rpm-provenance {
-  margin-top: 0.75rem;
-  padding: 0.6rem 0.85rem;
-  background: rgba(18, 26, 21, 0.03);
-  border: 1px solid var(--border-rule);
-  border-left: 3px solid var(--accent-racing-green);
-  border-radius: 2px;
-  font-family: var(--font-sans);
-  font-size: 0.74rem;
-  line-height: 1.5;
-}
-
-.sound-rpm-provenance-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.25rem;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.sound-rpm-prov-title {
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  color: var(--accent-racing-green);
-}
-
-.sound-rpm-prov-mode {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.1rem 0.35rem;
-  border-radius: 2px;
-  background: rgba(28, 61, 46, 0.08);
-  color: var(--accent-racing-green);
-  border: 1px solid rgba(28, 61, 46, 0.18);
-}
-
-.sound-rpm-prov-specs {
-  display: block;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.72rem;
-  color: var(--text-ink);
-  margin-bottom: 0.2rem;
-}
-
-.sound-rpm-prov-desc {
-  font-size: 0.70rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin: 0;
 }
 
 .sound-waveform-indicator-dot.sound-rev-dot.is-active {
@@ -3460,7 +3376,9 @@ body {
 .sound-controls-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.85rem;
+  margin-top: 1.5rem;
 }
 
 .sound-play-btn {
@@ -4691,10 +4609,31 @@ body {
 /* Car Models Grid & Cards */
 .models-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
   margin-top: 1.75rem;
   min-height: 18rem;
+}
+
+@media (max-width: 1040px) {
+  .models-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .models-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .models-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .car-model-card {
@@ -4736,9 +4675,9 @@ body {
 
 .car-pills-overlay {
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  right: 0.75rem;
+  top: 0.6rem;
+  left: 0.6rem;
+  right: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4747,31 +4686,31 @@ body {
 
 .car-year-pill {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text-ink);
   background: var(--bg-paper);
   border: 1px solid var(--border-rule);
-  padding: 0.2rem 0.5rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 2px;
 }
 
 .car-cat-pill {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent-racing-green);
   background: var(--bg-paper);
   border: 1px solid var(--border-rule);
-  padding: 0.2rem 0.5rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 2px;
 }
 
 .car-details-body {
-  padding: 1.25rem;
+  padding: 1rem 1.1rem 1.15rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -4779,7 +4718,7 @@ body {
 
 .car-model-name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-ink);
   margin: 0 0 0.35rem 0;
@@ -4787,18 +4726,18 @@ body {
 
 .car-model-gen {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   line-height: 1.4;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.65rem 0;
 }
 
 .car-credit-line {
   margin-top: auto;
-  padding-top: 0.65rem;
+  padding-top: 0.6rem;
   border-top: 1px solid var(--border-rule);
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
