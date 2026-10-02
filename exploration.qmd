@@ -3149,6 +3149,117 @@ window.selectedManufacturer = null;
     }
   }
 
+  // Set of car specimens with extreme aspect ratios (tall/portrait or panoramic)
+  // or aggressive crops where object-fit: contain ensures the full vehicle is clearly visible.
+  // Standard composition photos (~1.45 to 1.78) retain object-fit: cover.
+  const FIT_CONTAIN_CARS = new Set([
+    "1970 Ford Mustang",
+    "1971 Alfa Romeo Montreal",
+    "1971 Datsun 240Z",
+    "1973 Chevrolet Chevelle",
+    "1974 Volvo 240",
+    "1975 Ferrari 308 GTB",
+    "1975 Honda Civic",
+    "1975 Mercedes-Benz S-Class (W116)",
+    "1976 Lotus Esprit S1",
+    "1976 Peugeot 504",
+    "1976 Renault 5 Alpine",
+    "1977 Aston Martin V8 Vantage",
+    "1977 BMW 320i",
+    "1977 Chevrolet Caprice",
+    "1978 Mazda RX-7 (SA22C)",
+    "1978 Saab 99 Turbo",
+    "1979 Honda Prelude",
+    "1980 Toyota Corolla",
+    "1982 Porsche 944",
+    "1983 Toyota Sprinter Trueno (AE86)",
+    "1984 Chevrolet Cavalier",
+    "1984 Honda CRX",
+    "1985 Ford Sierra RS Cosworth",
+    "1986 Ford Taurus",
+    "1986 Toyota MR2 (AW11)",
+    "1987 Mazda RX-7 (FC)",
+    "1987 Mitsubishi Starion",
+    "1988 Volvo 740 Turbo",
+    "1989 Mercedes-Benz 500SL (R129)",
+    "1989 Subaru Legacy",
+    "1990 Acura NSX",
+    "1990 Lexus LS 400",
+    "1991 GMC Syclone",
+    "1992 McLaren F1",
+    "1994 Audi RS2 Avant",
+    "1994 Ferrari F355",
+    "1994 Subaru Impreza 555",
+    "1995 Subaru Impreza",
+    "1996 BMW 5 Series (E39)",
+    "1996 Dodge Viper GTS",
+    "1996 Lotus Elise Series 1",
+    "1998 Alfa Romeo 156",
+    "1998 Chevrolet Corvette (C5)",
+    "1999 Ford Focus",
+    "1999 Pagani Zonda C12",
+    "1999 Porsche 911 GT3 (996)",
+    "2000 BMW M3 (E46)",
+    "2000 Lotus Exige Series 1",
+    "2001 Honda S2000",
+    "2001 Mini Cooper",
+    "2003 Bentley Continental GT",
+    "2003 Nissan 350Z",
+    "2003 Toyota Prius",
+    "2004 Lamborghini Gallardo",
+    "2004 Subaru Impreza WRX STI",
+    "2004 Volkswagen Golf R32 (Mk4)",
+    "2005 Chevrolet Corvette (C6)",
+    "2005 Chrysler 300C",
+    "2005 Ford GT",
+    "2006 Audi RS4 (B7)",
+    "2006 Ford Mustang GT (S197)",
+    "2006 Mazda 3",
+    "2007 BMW M3 (E92)",
+    "2007 Mini Cooper S (R56)",
+    "2008 Audi R8",
+    "2008 Dodge Challenger SRT8",
+    "2008 Subaru Outback",
+    "2009 Nissan GT-R (R35)",
+    "2010 Chevrolet Camaro",
+    "2010 Lexus LFA",
+    "2011 BMW 1 Series M Coupe",
+    "2011 Nissan Leaf",
+    "2012 Subaru BRZ",
+    "2013 Chevrolet Corvette Stingray (C7)",
+    "2013 Toyota GT86",
+    "2014 BMW i8",
+    "2015 Ford Mustang",
+    "2016 Mazda CX-5",
+    "2016 Mercedes-AMG GT",
+    "2017 Bugatti Chiron",
+    "2017 Honda Civic Type R",
+    "2017 Kia Stinger GT",
+    "2018 Alpine A110",
+    "2018 Genesis G70",
+    "2019 Hyundai Veloster N",
+    "2020 Chevrolet Corvette (C8)",
+    "2020 Polestar 2",
+    "2020 Porsche Taycan",
+    "2020 Toyota GR Supra",
+    "2021 BMW M4 (G82)",
+    "2021 Ford Mustang Mach-E",
+    "2021 Genesis GV70",
+    "2021 Hyundai Ioniq 5",
+    "2021 Lucid Air",
+    "2021 Mercedes-Benz S-Class (W223)",
+    "2021 Ram 1500 TRX",
+    "2022 Cadillac CT5-V Blackwing",
+    "2022 Ford F-150 Lightning",
+    "2022 Kia EV6",
+    "2022 Rivian R1T",
+    "2023 BMW i4",
+    "2023 Dodge Hornet",
+    "2023 Honda Civic",
+    "2024 Ford Mustang Dark Horse",
+    "2024 Hyundai Ioniq 5 N"
+  ]);
+
   function renderSpecDossier(car) {
     if (!car) return;
     const specs = getCarSpecs(car) || {};
@@ -3157,6 +3268,11 @@ window.selectedManufacturer = null;
     if (specHeroImg) {
       specHeroImg.src = car["Image filename"] || "";
       specHeroImg.alt = car["Car name"] || "Vehicle specimen";
+      if (FIT_CONTAIN_CARS.has(car["Car name"])) {
+        specHeroImg.classList.add("fit-contain");
+      } else {
+        specHeroImg.classList.remove("fit-contain");
+      }
     }
     if (specBadgeYear) specBadgeYear.textContent = car["Model year"] || "";
     if (specBadgeMake) specBadgeMake.textContent = car["Manufacturer"] || activeScopeName;
@@ -3477,10 +3593,11 @@ window.selectedManufacturer = null;
         const category = car["Vehicle category"] || car["Decade"] || "Specimen";
         const generation = car["Exact model generation"] || car["Decade"] || "";
         const source = car["Image source"] || "Automotive Archive";
+        const isFitContain = FIT_CONTAIN_CARS.has(car["Car name"]);
 
         card.innerHTML = `
           <div class="car-image-frame">
-            <img src="${imgSrc}" alt="${carName}" class="car-specimen-img" loading="lazy" />
+            <img src="${imgSrc}" alt="${carName}" class="car-specimen-img${isFitContain ? " fit-contain" : ""}" loading="lazy" />
             <div class="car-pills-overlay">
               <span class="car-year-pill">${carYear}</span>
               <span class="car-cat-pill">${category}</span>
@@ -3493,6 +3610,25 @@ window.selectedManufacturer = null;
           </div>
           <span class="car-selected-badge">Selected</span>
         `;
+
+        if (!isFitContain) {
+          const imgEl = card.querySelector(".car-specimen-img");
+          if (imgEl) {
+            const checkRatio = () => {
+              if (imgEl.naturalWidth && imgEl.naturalHeight) {
+                const ar = imgEl.naturalWidth / imgEl.naturalHeight;
+                if (ar < 1.43 || ar > 1.79) {
+                  imgEl.classList.add("fit-contain");
+                }
+              }
+            };
+            if (imgEl.complete && imgEl.naturalWidth) {
+              checkRatio();
+            } else {
+              imgEl.addEventListener("load", checkRatio, { once: true });
+            }
+          }
+        }
 
         card.addEventListener("click", () => {
           const selectedCar = currentVisibleCars.find(item => item["Car name"] === card.dataset.carName);
