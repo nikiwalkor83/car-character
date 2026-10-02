@@ -7951,20 +7951,33 @@ body {
 
 /* Progressive Disclosure: Expandable Build Stories */
 .tuning-build-details {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   border-top: 1px solid var(--border-rule);
+  transition: border-color 0.2s ease;
+}
+
+.tuning-build-details:hover {
+  border-top-color: var(--accent-racing-green, #1c3d2e);
 }
 
 .tuning-build-summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 0;
+  padding: 1.35rem 0.5rem;
   cursor: pointer;
   list-style: none;
   user-select: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--border-rule);
   transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tuning-build-summary:hover {
+  border-bottom-color: var(--accent-racing-green, #1c3d2e);
+}
+
+.tuning-build-summary:active {
+  opacity: 0.7;
 }
 
 .tuning-build-summary::-webkit-details-marker,
@@ -7979,30 +7992,44 @@ body {
 
 .tuning-summary-title {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-ink);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tuning-summary-title .summary-label-open {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-title .summary-label-closed {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-title .summary-label-open {
+  display: inline;
 }
 
 .tuning-build-summary:hover .tuning-summary-title {
   color: var(--accent-racing-green, #1c3d2e);
+  transform: translateX(2px);
 }
 
 .tuning-summary-indicator {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 400;
   color: var(--text-muted);
   line-height: 1;
   margin-left: 1rem;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .tuning-build-summary:hover .tuning-summary-indicator {
   color: var(--accent-racing-green, #1c3d2e);
+  transform: translateX(4px);
 }
 
 .tuning-summary-indicator .indicator-minus {
@@ -8019,6 +8046,19 @@ body {
 
 .tuning-build-details[open] > .tuning-build-summary {
   border-bottom: 1px solid var(--border-rule);
+}
+
+.tuning-build-details .tuning-dataset-block {
+  margin-top: 0;
+  padding-top: 2.25rem;
+  border-top: none;
+  animation: tuningRevealStory 0.35s ease-out forwards;
+}
+
+.tuning-build-details .tuning-dataset-block + .tuning-owner-block {
+  margin-top: 2.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-rule);
 }
 
 .tuning-build-details .tuning-owner-block {
@@ -8040,8 +8080,13 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tuning-build-details .tuning-owner-block {
+  .tuning-build-details .tuning-owner-block,
+  .tuning-build-details .tuning-dataset-block {
     animation: none;
+  }
+  .tuning-build-summary:hover .tuning-summary-title,
+  .tuning-build-summary:hover .tuning-summary-indicator {
+    transform: none;
   }
 }
 
@@ -8189,6 +8234,19 @@ body {
   }
   .tuning-mod-part {
     text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .tuning-build-summary {
+    padding: 1.15rem 0.25rem;
+  }
+  .tuning-summary-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+  .tuning-summary-indicator {
+    font-size: 1.25rem;
   }
 }
 

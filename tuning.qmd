@@ -55,67 +55,70 @@ toc: false
         </div>
       </div>
 
-      <!-- FACTORY → MODIFIED → CULTURE (DATASET EVIDENCE) -->
-      <div class="tuning-dataset-block">
-        <div class="tuning-dataset-header">
-          <div class="tuning-dataset-kicker">Factory &rarr; Modified &rarr; Culture</div>
-          <h3 class="tuning-dataset-title">FROM THE DATASET</h3>
-        </div>
-
-        <div class="tuning-dataset-layout">
-          <!-- Small magazine-style vehicle specification block -->
-          <div class="tuning-spec-table">
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Model Year</span>
-              <span class="tuning-spec-val">1983</span>
-            </div>
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Model</span>
-              <span class="tuning-spec-val">Toyota Sprinter Trueno AE86</span>
-            </div>
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Engine</span>
-              <span class="tuning-spec-val">1.6L DOHC 16V</span>
-            </div>
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Horsepower</span>
-              <span class="tuning-spec-val">128 hp</span>
-            </div>
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Transmission</span>
-              <span class="tuning-spec-val">5-speed manual</span>
-            </div>
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Drivetrain</span>
-              <span class="tuning-spec-val">RWD</span>
-            </div>
-            <div class="tuning-spec-row">
-              <span class="tuning-spec-label">Body Style</span>
-              <span class="tuning-spec-val">Coupe</span>
-            </div>
-          </div>
-
-          <!-- Editorial Transition -->
-          <div class="tuning-dataset-narrative">
-            <p>
-              The car left the factory as a relatively ordinary production coupe. Over time, people gave cars like the AE86 a different identity through drifting, modification, competition, and enthusiast culture.
-            </p>
-            <div class="tuning-dataset-core-thought">
-              The factory built the car. People gave it another life.
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- EXPANDABLE REAL BUILD STORY -->
       <details class="tuning-build-details">
         <summary class="tuning-build-summary">
-          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-title">
+            <span class="summary-label-closed">Explore the Build</span>
+            <span class="summary-label-open">Close the Build</span>
+          </span>
           <span class="tuning-summary-indicator" aria-hidden="true">
             <span class="indicator-plus">+</span>
             <span class="indicator-minus">&minus;</span>
           </span>
         </summary>
+
+        <!-- FACTORY → MODIFIED → CULTURE (DATASET EVIDENCE) -->
+        <div class="tuning-dataset-block">
+          <div class="tuning-dataset-header">
+            <div class="tuning-dataset-kicker">Factory &rarr; Modified &rarr; Culture</div>
+            <h3 class="tuning-dataset-title">FROM THE DATASET</h3>
+          </div>
+
+          <div class="tuning-dataset-layout">
+            <!-- Small magazine-style vehicle specification block -->
+            <div class="tuning-spec-table">
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model Year</span>
+                <span class="tuning-spec-val">1983</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model</span>
+                <span class="tuning-spec-val">Toyota Sprinter Trueno AE86</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Engine</span>
+                <span class="tuning-spec-val">1.6L DOHC 16V</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Horsepower</span>
+                <span class="tuning-spec-val">128 hp</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Transmission</span>
+                <span class="tuning-spec-val">5-speed manual</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Drivetrain</span>
+                <span class="tuning-spec-val">RWD</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Body Style</span>
+                <span class="tuning-spec-val">Coupe</span>
+              </div>
+            </div>
+
+            <!-- Editorial Transition -->
+            <div class="tuning-dataset-narrative">
+              <p>
+                The car left the factory as a relatively ordinary production coupe. Over time, people gave cars like the AE86 a different identity through drifting, modification, competition, and enthusiast culture.
+              </p>
+              <div class="tuning-dataset-core-thought">
+                The factory built the car. People gave it another life.
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="tuning-owner-block">
           <div class="tuning-dataset-header">
@@ -264,7 +267,10 @@ toc: false
       <!-- EXPANDABLE REAL BUILD STORY -->
       <details class="tuning-build-details">
         <summary class="tuning-build-summary">
-          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-title">
+            <span class="summary-label-closed">Explore the Build</span>
+            <span class="summary-label-open">Close the Build</span>
+          </span>
           <span class="tuning-summary-indicator" aria-hidden="true">
             <span class="indicator-plus">+</span>
             <span class="indicator-minus">&minus;</span>
@@ -422,7 +428,10 @@ toc: false
       <!-- EXPANDABLE REAL BUILD STORY -->
       <details class="tuning-build-details">
         <summary class="tuning-build-summary">
-          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-title">
+            <span class="summary-label-closed">Explore the Build</span>
+            <span class="summary-label-open">Close the Build</span>
+          </span>
           <span class="tuning-summary-indicator" aria-hidden="true">
             <span class="indicator-plus">+</span>
             <span class="indicator-minus">&minus;</span>
@@ -580,7 +589,10 @@ toc: false
       <!-- EXPANDABLE REAL BUILD STORY -->
       <details class="tuning-build-details">
         <summary class="tuning-build-summary">
-          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-title">
+            <span class="summary-label-closed">Explore the Build</span>
+            <span class="summary-label-open">Close the Build</span>
+          </span>
           <span class="tuning-summary-indicator" aria-hidden="true">
             <span class="indicator-plus">+</span>
             <span class="indicator-minus">&minus;</span>
@@ -741,7 +753,10 @@ toc: false
       <!-- EXPANDABLE REAL BUILD STORY -->
       <details class="tuning-build-details">
         <summary class="tuning-build-summary">
-          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-title">
+            <span class="summary-label-closed">Explore the Build</span>
+            <span class="summary-label-open">Close the Build</span>
+          </span>
           <span class="tuning-summary-indicator" aria-hidden="true">
             <span class="indicator-plus">+</span>
             <span class="indicator-minus">&minus;</span>
