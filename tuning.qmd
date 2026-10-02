@@ -398,6 +398,128 @@ toc: false
           </p>
         </div>
       </div>
+
+      <!-- THEN THE OWNER CHANGED IT (STEP 5) -->
+      <div class="tuning-owner-block">
+        <div class="tuning-dataset-header">
+          <div class="tuning-dataset-kicker">Documented Enthusiast Build &middot; North Carolina, USA</div>
+          <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
+        </div>
+
+        <div class="tuning-comparison-grid">
+          <!-- FACTORY (From Project Dataset) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Project Dataset</span>
+              <h4 class="tuning-comparison-heading">FACTORY</h4>
+            </div>
+            <div class="tuning-spec-table">
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model</span>
+                <span class="tuning-spec-val">2000 BMW M3 (E46)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Engine</span>
+                <span class="tuning-spec-val">3.2L DOHC 24V I6 (S54)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Horsepower</span>
+                <span class="tuning-spec-val">343 hp</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Transmission</span>
+                <span class="tuning-spec-val">6-speed manual</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Drivetrain</span>
+                <span class="tuning-spec-val">RWD</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Body Style</span>
+                <span class="tuning-spec-val">Sports Coupe</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Curb Weight</span>
+                <span class="tuning-spec-val">1,470 kg (3,241 lbs)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transition Indicator -->
+          <div class="tuning-comparison-arrow" aria-hidden="true">&darr;</div>
+
+          <!-- MODIFIED (From Documented Build) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Documented Real Build &middot; Paul Ehrlich / Ehrlich Wheel Works</span>
+              <h4 class="tuning-comparison-heading">MODIFIED</h4>
+            </div>
+            <div class="tuning-mod-list">
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Roof &amp; Aero</span>
+                  <span class="tuning-mod-part">OEM BMW M3 CSL Carbon Slicktop &amp; CSL Trunk</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The factory steel roof and sunroof cassette were replaced with an authentic OEM BMW M3 CSL carbon-fiber roof panel, eliminating significant unsprung weight from the highest point of the vehicle. Complemented by an authentic OEM CSL front bumper, CSL ducktail trunk lid, subtle carbon front splitter, and rear diffuser, all refinished in factory Alpine White.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Braking</span>
+                  <span class="tuning-mod-part">Porsche 996 Brembo 4-Piston Calipers</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  In a revered OEM-plus cross-platform upgrade, the factory single-piston floating front calipers were replaced by Porsche 996-generation Brembo four-piston monobloc calipers mounted on bespoke brackets. The conversion improves pedal firmness and thermal capacity while fitting discreetly behind period wheel spokes.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Suspension &amp; Drivetrain</span>
+                  <span class="tuning-mod-part">Broadway Static Coilovers &amp; Diffsonline 4.10 LSD</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Fitted with Broadway Static coilovers dialed in for functional road compliance rather than extreme stance, paired with a rebuilt Diffsonline 4.10 limited-slip differential. Every undercarriage control arm, bushing, ball joint, and bracket was dismantled, powder-coated, or re-plated with fresh factory hardware.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Wheels</span>
+                  <span class="tuning-mod-part">Custom 3-Piece BBS Super RS (19&times;10 front, 19&times;11 rear)</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Built by Ehrlich Wheel Works, the wheels are three-piece converted, double-stepped 19-inch BBS Super RS mesh alloys (19&times;10 ET27 front, 19&times;11 ET22 rear). The design preserves the classic motorsport mesh pattern synonymous with high-performance BMW heritage, modernized through custom modular multi-piece engineering without excessive tire stretch.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Interior</span>
+                  <span class="tuning-mod-part">Recaro Pole Positions in Factory Imola Red Leather</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The cabin features fixed-back Recaro Pole Position bucket seats reupholstered in OEM-spec BMW Imola Red leather, accented by Alpine White painted seat backs. The headliner, pillars, and consoles were reupholstered in wrinkle-free Euro Black smooth leather, paired with piano black trim and custom door sills.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuning-owner-narrative">
+          <p>
+            The project dataset captures what the E46 M3 was when it left Munich in 2000: an atmospheric straight-six benchmark of factory balance. But builder Paul Ehrlich&rsquo;s decade-long project shows how the OEM+ philosophy works in practice. Rather than installing exaggerated widebody flares or forced induction, the build sharpens the car by borrowing lightweight carbon-fiber composite components from BMW&rsquo;s own halo model—the M3 CSL—and combining them with period-correct Porsche Brembo calipers and factory-spec Imola Red leather. The car remains unmistakably an E46, yet elevated in every mechanical and visual detail.
+          </p>
+          <div class="tuning-dataset-core-thought">
+            Sometimes giving a car more character means knowing when to leave its character alone.
+          </div>
+          <p class="tuning-source-note">
+            Source: One documented example detailed by Mike Bevels in <em>BimmerLife</em>, <a href="https://bimmerlife.com/2024/07/30/rising-from-the-ashes-paul-ehrlichs-2001-m3/" target="_blank" rel="noopener noreferrer">&ldquo;Rising From The Ashes: Paul Ehrlich’s 2001 M3&rdquo;</a> (30 July 2024). Factory baseline from project dataset (2000 BMW M3 E46).
+          </p>
+        </div>
+      </div>
     </article>
 
     <!-- 04 — RESTOMOD -->
@@ -421,6 +543,131 @@ toc: false
           </p>
           <p class="tuning-prose">
             Applied to the classic air-cooled Porsche 911, the approach pairs classic styling with carbon-composite panels, precision modern suspension, and bespoke engine architecture. The car maintains its historical identity while gaining modern performance and durability.
+          </p>
+        </div>
+      </div>
+
+      <!-- THEN THE OWNER CHANGED IT (STEP 6) -->
+      <div class="tuning-owner-block">
+        <div class="tuning-dataset-header">
+          <div class="tuning-dataset-kicker">Documented Bespoke Commission &middot; Singer Vehicle Design</div>
+          <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
+        </div>
+
+        <div class="tuning-comparison-grid">
+          <!-- FACTORY (From Project Dataset) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Project Dataset</span>
+              <h4 class="tuning-comparison-heading">FACTORY</h4>
+            </div>
+            <div class="tuning-spec-table">
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model</span>
+                <span class="tuning-spec-val">1990 Porsche 911 Carrera 2 (964)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Engine</span>
+                <span class="tuning-spec-val">3.6L SOHC 12V Flat-6 (M64/01)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Horsepower</span>
+                <span class="tuning-spec-val">250 hp @ 6,100 rpm</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Transmission</span>
+                <span class="tuning-spec-val">5-speed manual (G50)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Drivetrain</span>
+                <span class="tuning-spec-val">RWD</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Body Style</span>
+                <span class="tuning-spec-val">Sports Coupe</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Curb Weight</span>
+                <span class="tuning-spec-val">1,350 kg (2,976 lbs)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transition Indicator -->
+          <div class="tuning-comparison-arrow" aria-hidden="true">&darr;</div>
+
+          <!-- MODIFIED (From Documented Build) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Documented Real Build &middot; Singer Vehicle Design &ldquo;Goldfinger&rdquo;</span>
+              <h4 class="tuning-comparison-heading">MODIFIED</h4>
+            </div>
+            <div class="tuning-mod-list">
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Engine &amp; Powertrain</span>
+                  <span class="tuning-mod-part">4.0L Hand-Built Flat-6 by Ed Pink Racing Engines</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The original 3.6-liter engine was stripped to bare crankcases and rebuilt into a bespoke 4.0-liter naturally aspirated flat-six producing approximately 390 hp. Hand-assembled with Cosworth-designed cylinder heads, Carrillo connecting rods, Mahle forged pistons and cylinders, a lightweight Pankl crankshaft, Rothsport individual throttle bodies, and an AEM programmable engine management system.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Transmission</span>
+                  <span class="tuning-mod-part">Getrag 6-Speed Manual &amp; Limited-Slip Differential</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Replaced the factory 5-speed G50 gearbox with a bespoke close-ratio Getrag 6-speed manual transmission mated to an upgraded limited-slip differential, calibrated to harness the increased torque band while delivering precise, tactile vintage shift throws.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Body &amp; Aerodynamics</span>
+                  <span class="tuning-mod-part">Carbon-Fiber Panels &amp; Casablanca Beige Metallic</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The factory steel front fenders, hood, rear quarters, and bumpers were replaced with hand-laid pre-preg carbon-fiber composite panels. The bodywork backdates the profile to iconic late-1960s long-hood proportions while reducing weight, finished in one-of-one Paint-to-Sample Casablanca Beige Metallic with nickel Touring bumperettes and 24-karat gold-plated decklid badging.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Suspension</span>
+                  <span class="tuning-mod-part">&Ouml;hlins 2-Way Adjustable Sport Coilovers</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The factory suspension was substituted with an &Ouml;hlins 2-way adjustable sport coilover setup paired with lightweight modern suspension linkages and sway bars, delivering supple GT ride compliance on broken road surfaces alongside flat cornering stability on track.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Braking &amp; Wheels</span>
+                  <span class="tuning-mod-part">Brembo 4-Piston Calipers &amp; 17&Prime; Fuchs-Style Forged Alloys</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Equipped with high-performance Brembo 4-piston calipers in Singer Racing Red over cross-drilled steel rotors, resolving the heat dissipation limits of 1990 factory brakes. Housed within bespoke 17-inch forged Fuchs-style wheels with nickel RS centers, wrapped in sticky Michelin Pilot Sport rubber.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuning-owner-narrative">
+          <p>
+            A factory specification describes what a car was when it left the manufacturer. It does not describe everything the car can become afterward. The project dataset catalogs the 1990 Porsche 911 (Typ 964) as an air-cooled classic with 250 horsepower, steel bodywork, and period switchgear. But Singer Vehicle Design&rsquo;s &ldquo;Goldfinger Commission&rdquo; illustrates the restorative philosophy at the heart of the restomod movement: changing the car without completely abandoning what made the original car distinctive.
+          </p>
+          <p>
+            By preserving the unmistakable air-cooled flat-six cadence, rear-engine weight balance, and iconic silhouette while re-engineering the chassis in carbon fiber, modernizing the valvetrain with Ed Pink racing architecture, and fitting &Ouml;hlins damping, the build erases four decades of mechanical compromises. The car retains its vintage soul, yet operates with the reliability, structural stiffness, and stopping power of a contemporary supercar.
+          </p>
+          <div class="tuning-dataset-core-thought">
+            Keep the character. Change what needs changing.
+          </div>
+          <p class="tuning-source-note">
+            Source: Documented build specifications from Singer Vehicle Design and Broad Arrow Auctions, <a href="https://www.broadarrowauctions.com/vehicles/dg25_r0011/1990-porsche-911-coupe-reimagined-by-singer-goldfinger-commission" target="_blank" rel="noopener noreferrer">&ldquo;1990 Porsche 911 Coupe Reimagined by Singer &lsquo;Goldfinger Commission&rsquo;&rdquo;</a> (Chassis WP0AB2964LS451541, Zurich 2025). Factory baseline from project dataset (1989&ndash;1993 Porsche 911 Typ 964 Carrera 2).
           </p>
         </div>
       </div>
@@ -449,6 +696,131 @@ toc: false
             <span>Subaru Impreza &middot; Japan</span>
           </figcaption>
         </figure>
+      </div>
+
+      <!-- THEN THE OWNER CHANGED IT (STEP 7) -->
+      <div class="tuning-owner-block">
+        <div class="tuning-dataset-header">
+          <div class="tuning-dataset-kicker">Documented Competition Build &middot; Banbury, UK &amp; Nairobi, Kenya</div>
+          <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
+        </div>
+
+        <div class="tuning-comparison-grid">
+          <!-- FACTORY (From Project Dataset) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Project Dataset</span>
+              <h4 class="tuning-comparison-heading">FACTORY</h4>
+            </div>
+            <div class="tuning-spec-table">
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Model</span>
+                <span class="tuning-spec-val">1998 Subaru Impreza WRX STi (GC8)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Engine</span>
+                <span class="tuning-spec-val">2.0L Turbo Flat-4 (EJ20)</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Horsepower</span>
+                <span class="tuning-spec-val">265 hp @ 6,000 rpm</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Transmission</span>
+                <span class="tuning-spec-val">5-speed manual</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Drivetrain</span>
+                <span class="tuning-spec-val">AWD</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Body Style</span>
+                <span class="tuning-spec-val">Sports Saloon</span>
+              </div>
+              <div class="tuning-spec-row">
+                <span class="tuning-spec-label">Curb Weight</span>
+                <span class="tuning-spec-val">1,260 kg (2,778 lbs)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transition Indicator -->
+          <div class="tuning-comparison-arrow" aria-hidden="true">&darr;</div>
+
+          <!-- MODIFIED (From Documented Build) -->
+          <div class="tuning-comparison-col">
+            <div class="tuning-comparison-badge">
+              <span class="tuning-badge-source">Documented Real Build &middot; Prodrive / Subaru World Rally Team</span>
+              <h4 class="tuning-comparison-heading">MODIFIED</h4>
+            </div>
+            <div class="tuning-mod-list">
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Safari Protection</span>
+                  <span class="tuning-mod-part">A-Pillar Snorkel &amp; Chassis-Mounted Kangaroo Bar</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Engineered specifically for the Safari Rally Kenya, an external carbon-composite snorkel intake was routed from the right front wing up the A-pillar to the roofline, preventing fine dust ingestion and engine drowning during river crossings. A heavy-duty tubular steel kangaroo bar with protective wire mesh was mounted directly to the chassis frame ahead of the front bumper, safeguarding the radiator, oil coolers, and intercooler against wildlife and boulder collisions.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Suspension &amp; Chassis</span>
+                  <span class="tuning-mod-part">Prodrive/Bilstein Inverted Long-Travel Coilovers</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Production road dampers were replaced with heavy-duty Prodrive/Bilstein inverted long-travel MacPherson struts featuring hydraulic bump stops, substantially elevated ride height, and reinforced tubular steel lower control arms with spherical rose joints. The unibody was seam-welded and integrated with a multi-point T45 steel roll cage, enduring repeated high-speed jumps and punishing volcanic bedrock ruts.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Transmission</span>
+                  <span class="tuning-mod-part">Hewland 6-Speed Paddle-Shift &amp; Active Differentials</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  Substituted the factory H-pattern manual gearbox with a Prodrive/Hewland hydraulically actuated 6-speed sequential gearbox controlled via steering-column paddle shifters&mdash;allowing gear selection without removing hands from the wheel over violently rough terrain. Symmetrical AWD was upgraded with computer-managed active hydraulic front, center, and Hewland rear differentials to continuously adjust front-to-rear torque split over shifting sand and mud.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Engine &amp; Powertrain</span>
+                  <span class="tuning-mod-part">EJ20 Boxer with IHI RX6 Turbo &amp; Anti-Lag System</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The 2.0-liter flat-four was blueprinted with an aluminum block, lightweight forged internals, high-flow cylinder heads, and an IHI RX6 turbocharger restricted by the mandatory FIA 34mm restrictor. Calibrated with an aggressive Anti-Lag System (ALS) that kept boost spooled under deceleration, yielding a regulated 300 bhp and an enormous 650 Nm (479 lb-ft) of low-end torque to claw through thick mud.
+                </p>
+              </div>
+
+              <div class="tuning-mod-item">
+                <div class="tuning-mod-header">
+                  <span class="tuning-mod-system">Wheels &amp; Brakes</span>
+                  <span class="tuning-mod-part">15&Prime; Forged OZ Racing Wheels &amp; AP Racing 4-Piston Calipers</span>
+                </div>
+                <p class="tuning-mod-detail">
+                  The platform was fitted with rugged 15-inch forged OZ Racing gravel wheels wrapped in reinforced, deep-tread Pirelli rally tires with run-flat mousse. Braking was converted to water-cooled AP Racing 4-piston calipers gripping ventilated steel gravel rotors designed to shed caked clay, complemented by twin spare wheels and auxiliary night-stage pod lamps.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuning-owner-narrative">
+          <p>
+            A factory specification describes what a car was when it left the manufacturer. It does not describe everything the car can become afterward. The project dataset catalogs the 1998 Subaru Impreza WRX STi as a spirited road car: a 265-horsepower all-wheel-drive saloon engineered for paved mountain passes and wet tarmac. But chassis PRO-WRC-99.010 (registered as T14 SRT)&mdash;prepared by Prodrive for the 2000 Safari Rally Kenya and driven by Richard Burns and Robert Reid&mdash;demonstrates how competition transforms that character entirely.
+          </p>
+          <p>
+            Over 2,698 kilometers of unforgiving African savanna, deep riverbeds, and suffocating volcanic silt, the build transformed the car&rsquo;s relationship with the environment. With raised long-travel suspension clearing jagged rocks, an A-pillar snorkel drawing clean air above dust clouds, and an active all-wheel-drive system adapting to shifting sand in milliseconds, the car was no longer an ordinary road car modified for speed. It became a survival machine purpose-built to conquer terrain the factory car was never designed to navigate.
+          </p>
+          <div class="tuning-dataset-core-thought">
+            Take the road less traveled. Then make the car ready for it.
+          </div>
+          <p class="tuning-source-note">
+            Source: Documented competition build specifications from Prodrive Heritage Collection and FIA World Rally Championship archives, &ldquo;1999 Subaru Impreza WRC99 &lsquo;Safari Rally Spec&rsquo;&rdquo; (Chassis PRO-WRC-99.010, Registration T14 SRT, driven by Richard Burns and Robert Reid to victory at the 2000 Safari Rally Kenya). Factory baseline from project dataset (1998 Subaru Impreza WRX STi GC8).
+          </p>
+        </div>
       </div>
     </article>
 

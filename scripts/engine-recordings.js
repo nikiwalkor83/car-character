@@ -1,5 +1,5 @@
-/* Dropdown engine-category selector & real interactive audio waveform for the Sound section.
-   RPM is the primary scale of vertical movement; real audio provides subtle acoustic texture. */
+/* Dropdown engine-category selector & real-time audio-reactive 24-band frequency spectrum instrument for the Sound section.
+   Real-time Web Audio API frequency analysis drives vertical LED segments with mechanical inertia. */
 (function () {
   const engineCategories = [
     { key: "2-cylinder", label: "2-Cylinder", count: 51, file: "2-cylinder.ogg" },
@@ -275,14 +275,27 @@
   let freqArray = null;
   let timeArray = null;
 
-  const bandBinRanges = [
-    [0, 1],   [1, 2],   [2, 3],   [3, 4],
-    [4, 5],   [5, 6],   [6, 7],   [7, 9],
-    [8, 11],  [10, 13], [12, 16], [15, 20],
-    [19, 25], [23, 30], [28, 36], [34, 43],
-    [41, 51], [49, 60], [58, 70], [68, 81],
-    [79, 93], [90, 105], [102, 116], [113, 127]
+  const bandCenterFrequencies = [
+    50, 65, 80, 100, 130, 160, 200, 260,
+    330, 410, 520, 660, 830, 1050, 1320, 1670,
+    2100, 2650, 3350, 4200, 5300, 6700, 8500, 11000
   ];
+
+  function getBandBinRanges(sampleRate = 44100, fftSize = 512, numColumns = 24) {
+    const binCount = fftSize / 2;
+    const binHz = sampleRate / fftSize;
+    const minF = 40;
+    const maxF = Math.min(12000, sampleRate / 2);
+    const ranges = [];
+    for (let c = 0; c < numColumns; c++) {
+      const f0 = minF * Math.pow(maxF / minF, c / numColumns);
+      const f1 = minF * Math.pow(maxF / minF, (c + 1) / numColumns);
+      const b0 = Math.max(0, Math.floor(f0 / binHz));
+      const b1 = Math.min(binCount - 1, Math.max(b0, Math.round(f1 / binHz)));
+      ranges.push([b0, b1]);
+    }
+    return ranges;
+  }
 
   const waveformCache = new Map();
 
@@ -301,10 +314,10 @@
     if (!ctx) return null;
     if (!analyserNode) {
       analyserNode = ctx.createAnalyser();
-      analyserNode.fftSize = 256;
-      analyserNode.smoothingTimeConstant = 0.55;
+      analyserNode.fftSize = 512;
+      analyserNode.smoothingTimeConstant = 0.50;
       analyserNode.minDecibels = -90;
-      analyserNode.maxDecibels = -15;
+      analyserNode.maxDecibels = -12;
       freqArray = new Uint8Array(analyserNode.frequencyBinCount);
       timeArray = new Uint8Array(analyserNode.fftSize);
     }
@@ -329,64 +342,6 @@
 
   function recordingFor(category) {
     return category.file ? recordingsByFilename.get(category.file) : null;
-  }
-
-  /* Compute instantaneous RPM based on documented timeline keyframes */
-  function getRpmState(categoryKey, currentTime, duration) {
-    const spec = rpmDataByCategory[categoryKey];
-    if (!spec) {
-      return { rpm: 0, normalizedRatio: 0, label: "0 RPM", spec: null };
-    }
-    const timeline = spec.timeline;
-    if (!timeline || timeline.length === 0) {
-      const idleNorm = spec.idleRpm / spec.maxRpm;
-      return {
-        rpm: spec.idleRpm,
-        normalizedRatio: idleNorm,
-        label: `${spec.idleRpm.toLocaleString()} ${spec.rpmUnit}`,
-        spec
-      };
-    }
-
-    const maxT = duration > 0 ? duration : timeline[timeline.length - 1][0];
-    const t = Math.max(0, Math.min(currentTime, maxT));
-    let rpm = timeline[0][1];
-
-    if (t <= timeline[0][0]) {
-      rpm = timeline[0][1];
-    } else if (t >= timeline[timeline.length - 1][0]) {
-      rpm = timeline[timeline.length - 1][1];
-    } else {
-      for (let i = 0; i < timeline.length - 1; i++) {
-        const t0 = timeline[i][0];
-        const t1 = timeline[i + 1][0];
-        if (t >= t0 && t <= t1) {
-          const span = t1 - t0;
-          const progress = span > 0 ? (t - t0) / span : 0;
-          // Smooth cosine easing so RPM transition feels like a physical mechanical rotating mass
-          const ease = 0.5 * (1 - Math.cos(progress * Math.PI));
-          rpm = timeline[i][1] + (timeline[i + 1][1] - timeline[i][1]) * ease;
-          break;
-        }
-      }
-    }
-
-    const roundedRpm = Math.round(rpm);
-    let label = `${roundedRpm.toLocaleString()} ${spec.rpmUnit}`;
-
-    if (spec.isHybrid && roundedRpm === 0 && t >= 9.5 && t <= 17.0) {
-      label = "0 ICE RPM [AUTO-STOP]";
-    } else if (spec.isMotor && roundedRpm === 0) {
-      label = "0 MOTOR RPM [REST]";
-    }
-
-    const normalizedRatio = Math.max(0, Math.min(1.0, roundedRpm / spec.maxRpm));
-    return {
-      rpm: roundedRpm,
-      normalizedRatio,
-      label,
-      spec
-    };
   }
 
   function selectorHtml() {
@@ -418,19 +373,11 @@
       idleRpm: 800,
       peakPowerRpm: 5500,
       maxRpm: 6500,
-      redlineStartRpm: 6000,
-      methodologyLabel: "Representative rev animation based on documented engine specifications"
+      redlineStartRpm: 6000
     };
 
-    const maxBadgeText = spec.isMotor
-      ? `MAX ${spec.maxRpm.toLocaleString()} MOTOR RPM`
-      : (spec.isHybrid
-          ? `ICE MAX ${spec.maxRpm.toLocaleString()} RPM`
-          : `REDLINE ${spec.maxRpm.toLocaleString()} RPM`);
-
-    const initialRpmText = spec.idleRpm > 0
-      ? `${spec.idleRpm.toLocaleString()} ${spec.rpmUnit}`
-      : `0 ${spec.rpmUnit}`;
+    const maxBadgeText = "45 Hz &ndash; 12 kHz SPECTRUM";
+    const initialBandText = "SPECTRUM";
 
     return `
       <div class="sound-specimen-meta">
@@ -447,8 +394,8 @@
           <div class="sound-waveform-header">
             <div class="sound-waveform-header-left">
               <span class="sound-waveform-indicator-dot sound-rev-dot" id="selected-rev-dot"></span>
-              <span class="sound-waveform-label" id="selected-rpm-type-label">${escapeHtml(spec.scaleType)} &bull; REV PROFILE</span>
-              <span class="sound-rpm-live" id="selected-rpm-live">${initialRpmText}</span>
+              <span class="sound-waveform-label" id="selected-rpm-type-label">ACOUSTIC SPECTRUM &bull; 24 BANDS</span>
+              <span class="sound-rpm-live" id="selected-rpm-live">${initialBandText}</span>
             </div>
             <div class="sound-waveform-header-right">
               <span class="sound-rpm-max-badge" id="selected-rpm-max">${maxBadgeText}</span>
@@ -457,21 +404,21 @@
               <span class="sound-waveform-seek-preview" id="selected-waveform-seek" style="display: none;">SEEK 0:00</span>
             </div>
           </div>
-          <div class="sound-waveform-canvas-wrap sound-rev-canvas-wrap" id="selected-engine-track" role="region" aria-label="Dynamic engine rev visualizer. Click or drag to seek." title="Click or drag to seek playback">
+          <div class="sound-waveform-canvas-wrap sound-rev-canvas-wrap" id="selected-engine-track" role="region" aria-label="Acoustic spectrum visualizer. Click or drag to seek." title="Click or drag to seek playback">
             <canvas id="selected-waveform-canvas" class="sound-waveform-canvas"></canvas>
             <div class="sound-waveform-loading" id="selected-waveform-loading" style="display: none;">
-              <span class="sound-waveform-loading-text">CALIBRATING RPM SENSORS...</span>
+              <span class="sound-waveform-loading-text">ANALYZING AUDIO SPECTRUM...</span>
             </div>
           </div>
 
           <div class="sound-rpm-provenance" id="selected-rpm-provenance">
             <div class="sound-rpm-provenance-header">
-              <span class="sound-rpm-prov-title">POWERTRAIN CALIBRATION</span>
-              <span class="sound-rpm-prov-mode">REPRESENTATIVE PROFILE</span>
+              <span class="sound-rpm-prov-title">ACOUSTIC SPECTRUM ANALYSIS</span>
+              <span class="sound-rpm-prov-mode">REAL-TIME WEB AUDIO</span>
             </div>
-            <span class="sound-rpm-prov-specs">Documented Range: Idle ${spec.idleRpm.toLocaleString()} ${spec.rpmUnit} &bull; Peak ${spec.peakPowerRpm.toLocaleString()} &bull; Max ${spec.maxRpm.toLocaleString()} ${spec.rpmUnit}</span>
+            <span class="sound-rpm-prov-specs">Vehicle: ${escapeHtml(recording.vehicle)} &bull; ${escapeHtml(spec.scaleType)}${spec.idleRpm > 0 ? " &bull; Documented Spec: Idle ~" + spec.idleRpm.toLocaleString() + " " + spec.rpmUnit + ", Redline ~" + spec.redlineStartRpm.toLocaleString() + " " + spec.rpmUnit : ""}</span>
             <p class="sound-rpm-prov-desc">
-              Vertical bar height represents documented engine rotational speed (${spec.scaleType}) rather than microphone loudness. The actual recording modulates subtle acoustic harmonic texture without inflating apparent engine speed.
+              The 24 visual columns display real-time acoustic frequency energy processed directly from the selected audio recording via the Web Audio API. Low bands capture engine mechanical thrum and exhaust pulse; higher bands reflect intake air rush, valve train harmonics, and induction acoustics.
             </p>
           </div>
         </div>
@@ -574,7 +521,7 @@
       if (!canvas || !track) return;
       const rect = track.getBoundingClientRect();
       const width = Math.max(10, Math.floor(rect.width));
-      const height = Math.max(10, Math.floor(rect.height || 130));
+      const height = Math.max(10, Math.floor(rect.height || 230));
       const dpr = window.devicePixelRatio || 1;
 
       const targetW = Math.floor(width * dpr);
@@ -614,72 +561,36 @@
       const isNarrow = width < 540;
       const padLeft = isNarrow ? 56 : 74;
       const padRight = isNarrow ? 12 : 18;
-      const padTop = 14;
-      const padBottom = 22; // space for bottom progress runner
+      const padTop = 16;
+      const padBottom = 26; // space for frequency labels and bottom progress runner
 
       const plotW = Math.max(10, width - padLeft - padRight);
       const plotH = Math.max(10, height - padTop - padBottom);
 
-      // 2. Horizontal Reference Markings calibrated to Documented Engine RPM
-      const redlineRatio = Math.min(1.0, spec.redlineStartRpm / spec.maxRpm);
-      const peakPowerRatio = Math.min(0.95, spec.peakPowerRpm / spec.maxRpm);
-      const idleRatio = Math.max(0.06, Math.min(0.35, spec.idleRpm / spec.maxRpm));
-
-      const ticks = [];
-
-      // Redline / Max Mark
-      ticks.push({
-        ratio: redlineRatio,
-        label: spec.isMotor
-          ? `${spec.maxRpm.toLocaleString()} MAX`
-          : `${spec.maxRpm.toLocaleString()} REDLINE`,
-        color: "rgba(207, 56, 36, 0.55)",
-        textColor: "rgba(235, 120, 105, 0.85)",
-        dash: [3, 3]
-      });
-
-      // Peak Power Mark (if distinct from redline)
-      if (Math.abs(peakPowerRatio - redlineRatio) > 0.08) {
-        ticks.push({
-          ratio: peakPowerRatio,
-          label: `${spec.peakPowerRpm.toLocaleString()} PWR`,
-          color: "rgba(212, 150, 50, 0.38)",
-          textColor: "rgba(226, 185, 110, 0.75)",
+      // 2. Horizontal Reference Markings (Acoustic Dynamic Levels)
+      const ticks = [
+        {
+          ratio: 0.88,
+          label: "+3 dB PEAK",
+          color: "rgba(207, 56, 36, 0.45)",
+          textColor: "rgba(235, 120, 105, 0.75)",
+          dash: [3, 3]
+        },
+        {
+          ratio: 0.50,
+          label: "0 dB NOMINAL",
+          color: "rgba(212, 150, 50, 0.35)",
+          textColor: "rgba(226, 185, 110, 0.70)",
           dash: [2, 4]
-        });
-      }
-
-      // Mid-Scale Reference Mark (~50% of maximum rotational speed)
-      const midRatio = 0.50;
-      if (Math.abs(midRatio - redlineRatio) > 0.12 && Math.abs(midRatio - peakPowerRatio) > 0.10) {
-        const midRpm = Math.round(spec.maxRpm * 0.50);
-        ticks.push({
-          ratio: midRatio,
-          label: `${midRpm.toLocaleString()}`,
-          color: "rgba(226, 218, 205, 0.16)",
+        },
+        {
+          ratio: 0.16,
+          label: "-18 dB FLOOR",
+          color: "rgba(226, 218, 205, 0.15)",
           textColor: "rgba(226, 218, 205, 0.45)",
           dash: [2, 4]
-        });
-      }
-
-      // Idle / Standstill Mark
-      if (spec.idleRpm > 0) {
-        ticks.push({
-          ratio: idleRatio,
-          label: `${spec.idleRpm.toLocaleString()} IDLE`,
-          color: "rgba(226, 218, 205, 0.15)",
-          textColor: "rgba(226, 218, 205, 0.50)",
-          dash: [2, 4]
-        });
-      } else {
-        ticks.push({
-          ratio: 0.05,
-          label: spec.isMotor ? "0 REST" : "0 STOP",
-          color: "rgba(226, 218, 205, 0.12)",
-          textColor: "rgba(226, 218, 205, 0.40)",
-          dash: [2, 4]
-        });
-      }
+        }
+      ];
 
       ticks.forEach(th => {
         const y = Math.round(padTop + plotH * (1 - th.ratio));
@@ -699,11 +610,11 @@
         ctx.fillText(th.label, padLeft - (isNarrow ? 4 : 8), y);
       });
 
-      // 3. 24 Dynamic Equalizer / Rev Columns
+      // 3. 24 Dynamic Equalizer Columns
       const colGap = isNarrow ? 2 : 4;
       const totalGaps = (numColumns - 1) * colGap;
       const colWidth = Math.max(2, (plotW - totalGaps) / numColumns);
-      const numSegments = 16;
+      const numSegments = 24;
       const segGap = 2;
       const totalSegGaps = (numSegments - 1) * segGap;
       const segHeight = Math.max(2, (plotH - totalSegGaps) / numSegments);
@@ -721,9 +632,9 @@
           const segRatio = s / (numSegments - 1);
 
           if (isLit) {
-            if (segRatio >= redlineRatio || segRatio >= 0.85) {
+            if (segRatio >= 0.85) {
               ctx.fillStyle = "#cf3824";
-            } else if (segRatio >= (peakPowerRatio * 0.85) || segRatio >= 0.60) {
+            } else if (segRatio >= 0.58) {
               ctx.fillStyle = "#d49632";
             } else {
               ctx.fillStyle = "#dfd7ca";
@@ -734,9 +645,9 @@
             ctx.fillStyle = "rgba(255, 255, 255, 0.35)";
             ctx.fillRect(colX, segY, Math.round(colWidth), 1);
           } else if (isPeak) {
-            ctx.fillStyle = (segRatio >= redlineRatio || segRatio >= 0.85)
+            ctx.fillStyle = (segRatio >= 0.85)
               ? "#ff5a43"
-              : (segRatio >= 0.60 ? "#f0b348" : "#ffffff");
+              : (segRatio >= 0.58 ? "#f0b348" : "#ffffff");
             ctx.fillRect(colX, segY + Math.round(segHeight / 2) - 1, Math.round(colWidth), 2);
           } else {
             ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
@@ -745,8 +656,19 @@
         }
       }
 
+      // Frequency Axis Range Labels
+      ctx.fillStyle = "rgba(226, 218, 205, 0.28)";
+      ctx.font = `600 ${isNarrow ? "7px" : "8px"} ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
+      ctx.textBaseline = "top";
+      ctx.textAlign = "left";
+      ctx.fillText("45 Hz", padLeft, padTop + plotH + 4);
+      ctx.textAlign = "center";
+      ctx.fillText("1 kHz", padLeft + plotW / 2, padTop + plotH + 4);
+      ctx.textAlign = "right";
+      ctx.fillText("12 kHz", padLeft + plotW, padTop + plotH + 4);
+
       // 4. Bottom Playback Runner
-      const runnerY = height - 12;
+      const runnerY = height - 10;
       const runnerH = 4;
       const curDur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
       const progressRatio = (curDur > 0 && Number.isFinite(audio.currentTime))
@@ -806,16 +728,21 @@
         }
 
         const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
-        const rpmState = getRpmState(catKey, audio.currentTime, dur);
-        const baseRatio = rpmState.normalizedRatio;
 
-        // Process real audio frequency bands for subtle acoustic modulation
-        if (analyserNode && freqArray && timeArray) {
+        // Process real-time Web Audio frequency spectrum across 24 logarithmic bands
+        let meanEnergy = 0;
+        let dominantCol = 0;
+        let dominantColEnergy = 0;
+
+        if (analyserNode && freqArray) {
           analyserNode.getByteFrequencyData(freqArray);
+
+          const sampleRate = (audioContextInstance && audioContextInstance.sampleRate) ? audioContextInstance.sampleRate : 44100;
+          const bandRanges = getBandBinRanges(sampleRate, analyserNode.fftSize, numColumns);
 
           const rawBands = new Float32Array(numColumns);
           for (let c = 0; c < numColumns; c++) {
-            const [startBin, endBin] = bandBinRanges[c];
+            const [startBin, endBin] = bandRanges[c];
             let sum = 0;
             let count = 0;
             for (let b = startBin; b <= endBin && b < freqArray.length; b++) {
@@ -823,62 +750,86 @@
               count++;
             }
             const avg = count > 0 ? (sum / count) / 255 : 0;
-            const hfBoost = 1.0 + Math.pow(c / numColumns, 1.2) * 1.4;
-            rawBands[c] = Math.min(1, avg * hfBoost);
+            // High-frequency compensation tilt so harmonic roar and induction acoustic character register visibly
+            const tilt = 1.0 + Math.pow(c / (numColumns - 1), 1.25) * 2.4;
+            rawBands[c] = avg * tilt;
           }
 
+          // Spatial acoustic smoothing across neighboring bands
           for (let c = 0; c < numColumns; c++) {
             const prev = c > 0 ? rawBands[c - 1] : rawBands[c];
             const next = c < numColumns - 1 ? rawBands[c + 1] : rawBands[c];
-            smoothedBands[c] = 0.22 * prev + 0.56 * rawBands[c] + 0.22 * next;
+            smoothedBands[c] = 0.18 * prev + 0.64 * rawBands[c] + 0.18 * next;
+            meanEnergy += smoothedBands[c];
+            if (smoothedBands[c] > dominantColEnergy) {
+              dominantColEnergy = smoothedBands[c];
+              dominantCol = c;
+            }
           }
+          meanEnergy /= numColumns;
         }
+
+        // Dynamic headroom adaptation: prevents close-mic recordings from slamming to the top
+        // while preserving dynamic breathing room and settling calmly during quiet portions
+        runningPeakEnergy = Math.max(meanEnergy, runningPeakEnergy * 0.995);
+        const effectiveHeadroom = Math.max(0.36, runningPeakEnergy);
+        const autoScale = 0.82 / effectiveHeadroom;
 
         const now = performance.now();
 
-        // RPM is the primary driver of height; real audio adds fine physical texture (+/- 0.08)
+        // Map spectral energy into bar height with substantial mechanical inertia
         for (let c = 0; c < numColumns; c++) {
-          const bandEnergy = smoothedBands[c] || 0.35;
-          // Subtle acoustic fluctuation (+/- 0.08) so real sound pulses without distorting engine RPM
-          const audioTexture = (bandEnergy - 0.35) * 0.16;
-          // Gentle acoustic curvature across columns
-          const arcWeight = 0.96 + 0.08 * Math.sin((c / (numColumns - 1)) * Math.PI);
-          const colTarget = Math.max(0.04, Math.min(1.0, (baseRatio + audioTexture) * arcWeight));
+          const scaledBand = smoothedBands[c] * autoScale;
+          // Compressive curve: keeps quiet portions low/calm, opens dynamically as energy increases
+          const colTarget = Math.max(0, Math.min(1.0, Math.pow(scaledBand, 1.18)));
 
-          // Physical mechanical inertia for needle / segment tracking
-          const smooth = colTarget > currentLevels[c] ? 0.32 : 0.15;
+          // Physical mechanical inertia for heavy needle tracking
+          const smooth = colTarget > currentLevels[c] ? 0.26 : 0.11;
           currentLevels[c] += (colTarget - currentLevels[c]) * smooth;
 
           if (currentLevels[c] > peakLevels[c]) {
             peakLevels[c] = currentLevels[c];
-            peakHoldTimes[c] = now + 250;
+            peakHoldTimes[c] = now + 380;
           } else if (now > peakHoldTimes[c]) {
-            peakLevels[c] = Math.max(0, peakLevels[c] - 0.010);
+            peakLevels[c] = Math.max(0, peakLevels[c] - 0.008);
           }
         }
 
-        // Update live RPM counter readout
+        // Update live dominant acoustic frequency readout
         if (liveRpmEl) {
-          liveRpmEl.textContent = rpmState.label;
+          if (meanEnergy < 0.06) {
+            liveRpmEl.textContent = "IDLE &bull; QUIET";
+          } else {
+            const centerHz = bandCenterFrequencies[dominantCol] || 1000;
+            const hzText = centerHz >= 1000
+              ? `${(centerHz / 1000).toFixed(1)} kHz`
+              : `${centerHz} Hz`;
+            if (dominantCol <= 4) {
+              liveRpmEl.textContent = `BASS &bull; ${hzText}`;
+            } else if (dominantCol <= 11) {
+              liveRpmEl.textContent = `MID &bull; ${hzText}`;
+            } else if (dominantCol <= 18) {
+              liveRpmEl.textContent = `INDUCTION &bull; ${hzText}`;
+            } else {
+              liveRpmEl.textContent = `TREBLE &bull; ${hzText}`;
+            }
+          }
         }
 
-        // Update status badge
+        // Update dynamic intensity badge
         if (badge) {
-          if (baseRatio >= 0.85) {
-            badge.textContent = spec.isMotor ? "PEAK REV" : "REDLINE";
+          if (meanEnergy >= 0.52) {
+            badge.textContent = "SURGE";
             badge.className = "sound-rev-intensity-badge is-redline";
-          } else if (baseRatio >= 0.60) {
-            badge.textContent = "POWER BAND";
+          } else if (meanEnergy >= 0.28) {
+            badge.textContent = "ACTIVE";
             badge.className = "sound-rev-intensity-badge is-power";
-          } else if (baseRatio >= 0.20) {
-            badge.textContent = "CRUISING";
+          } else if (meanEnergy >= 0.10) {
+            badge.textContent = "MELLOW";
             badge.className = "sound-rev-intensity-badge is-cruising";
-          } else if (rpmState.rpm > 0) {
-            badge.textContent = "IDLE";
-            badge.className = "sound-rev-intensity-badge is-idle";
           } else {
-            badge.textContent = spec.isMotor ? "REST" : (spec.isHybrid ? "ENGINE OFF" : "STOPPED");
-            badge.className = "sound-rev-intensity-badge";
+            badge.textContent = "QUIET";
+            badge.className = "sound-rev-intensity-badge is-idle";
           }
         }
 
@@ -905,6 +856,7 @@
       peakLevels.fill(0);
       peakHoldTimes.fill(0);
       smoothedBands.fill(0);
+      runningPeakEnergy = 0.35;
       if (badge) {
         badge.textContent = "RESTING";
         badge.className = "sound-rev-intensity-badge is-idle";
@@ -913,11 +865,37 @@
         dot.classList.remove("is-active");
       }
       if (liveRpmEl) {
-        liveRpmEl.textContent = spec.idleRpm > 0
-          ? `${spec.idleRpm.toLocaleString()} ${spec.rpmUnit}`
-          : `0 ${spec.rpmUnit}`;
+        liveRpmEl.textContent = "SPECTRUM";
       }
       draw(true, null);
+    }
+
+    function smoothReturnToRest() {
+      stopPlaybackLoop();
+      button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>';
+      status.textContent = "READY";
+      if (dot) dot.classList.remove("is-active");
+
+      let framesLeft = 24;
+      function decayStep() {
+        let active = false;
+        for (let c = 0; c < numColumns; c++) {
+          currentLevels[c] *= 0.80;
+          peakLevels[c] *= 0.82;
+          if (currentLevels[c] > 0.005 || peakLevels[c] > 0.005) {
+            active = true;
+          }
+        }
+        draw(false, null);
+        framesLeft--;
+        if (active && framesLeft > 0) {
+          activeRafId = requestAnimationFrame(decayStep);
+        } else {
+          resetVisualizer();
+          activeRafId = null;
+        }
+      }
+      activeRafId = requestAnimationFrame(decayStep);
     }
 
     audio.addEventListener("loadedmetadata", () => {
@@ -946,28 +924,26 @@
           status.textContent = "PLAYING";
           if (dot) dot.classList.add("is-active");
           startPlaybackLoop();
-        }).catch(() => {
-          status.textContent = "ERROR";
+        }).catch(err => {
+          console.warn("Audio playback error:", err);
+          status.textContent = "READY";
         });
       } else {
         audio.pause();
         stopPlaybackLoop();
-        button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>';
+        button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">RESUME</span>';
         status.textContent = "PAUSED";
         if (dot) dot.classList.remove("is-active");
       }
     });
 
     audio.addEventListener("ended", () => {
-      stopPlaybackLoop();
-      button.innerHTML = '<span class="btn-play-icon">&#9654;</span><span class="btn-label-text">LISTEN</span>';
-      status.textContent = "READY";
       audio.currentTime = 0;
-      resetVisualizer();
       const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
       if (dur > 0 && time) {
         time.textContent = `0:00 / ${formatTime(dur)}`;
       }
+      smoothReturnToRest();
     });
 
     function getRatioFromEvent(e) {
@@ -990,10 +966,8 @@
       if (dur > 0) {
         audio.currentTime = ratio * dur;
         time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
-        const rpmState = getRpmState(catKey, audio.currentTime, dur);
-        if (liveRpmEl) liveRpmEl.textContent = rpmState.label;
       }
-      draw(audio.paused, ratio);
+      draw(false, ratio);
     });
 
     track.addEventListener("pointermove", (e) => {
@@ -1007,12 +981,8 @@
       if (isScrubbing && dur > 0) {
         audio.currentTime = ratio * dur;
         time.textContent = `${formatTime(audio.currentTime)} / ${formatTime(dur)}`;
-        const rpmState = getRpmState(catKey, audio.currentTime, dur);
-        if (liveRpmEl) liveRpmEl.textContent = rpmState.label;
-        draw(audio.paused, ratio);
-      } else if (!isScrubbing) {
-        draw(audio.paused, ratio);
       }
+      draw(false, ratio);
     });
 
     function endScrub(e) {
@@ -1021,7 +991,7 @@
         try { if (e && e.pointerId) track.releasePointerCapture(e.pointerId); } catch (_) {}
         currentHoverRatio = null;
         if (seekPreview) seekPreview.style.display = "none";
-        draw(audio.paused, null);
+        draw(false, null);
       }
     }
     track.addEventListener("pointerup", endScrub);
@@ -1031,14 +1001,14 @@
       if (!isScrubbing) {
         currentHoverRatio = null;
         if (seekPreview) seekPreview.style.display = "none";
-        draw(audio.paused, null);
+        draw(false, null);
       }
     });
 
     const ResizeObserverClass = window.ResizeObserver || null;
     if (ResizeObserverClass) {
       activeResizeObserver = new ResizeObserverClass(() => {
-        draw(audio.paused, currentHoverRatio);
+        draw(false, currentHoverRatio);
       });
       activeResizeObserver.observe(track);
     }
