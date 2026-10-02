@@ -299,6 +299,24 @@
 
   const waveformCache = new Map();
 
+  // Reference recorded peak amplitudes (master headroom baseline)
+  const recordingPeaks = new Map([
+    ["2-cylinder.ogg", 0.95],
+    ["3-cylinder.ogg", 0.96],
+    ["4-cylinder.wav", 0.958],
+    ["5-cylinder.ogg", 0.94],
+    ["inline-6.ogg", 0.92],
+    ["flat-6.wav", 1.00],
+    ["v6.ogg", 0.95],
+    ["v8.ogg", 0.96],
+    ["v10.ogg", 0.98],
+    ["v12.ogg", 0.96],
+    ["w16.ogg", 0.97],
+    ["diesel.ogg", 0.95],
+    ["hybrid.ogg", 0.93],
+    ["electric-imiev.ogg", 0.91]
+  ]);
+
   function getAudioContext() {
     if (!audioContextInstance) {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -495,8 +513,37 @@
     const peakLevels = new Float32Array(numColumns);
     const peakHoldTimes = new Float32Array(numColumns);
     const smoothedBands = new Float32Array(numColumns);
+    const rawBands = new Float32Array(numColumns);
     let currentHoverRatio = null;
     let isScrubbing = false;
+    let runningObservedAmp = 0.05;
+
+    // Asynchronously measure precise decoded audio buffer peak if Web Audio decoding is available
+    async function updateAccurateRecordingPeak() {
+      const fn = recording.filename;
+      if (!fn) return;
+      const ctx = getAudioContext();
+      if (!ctx || !window.fetch) return;
+      try {
+        const res = await fetch(`audio/engines/${fn}`);
+        if (!res.ok) return;
+        const buf = await res.arrayBuffer();
+        const audioBuf = await ctx.decodeAudioData(buf);
+        const data = audioBuf.getChannelData(0);
+        let peak = 0.05;
+        const step = Math.max(1, Math.floor(data.length / 30000));
+        for (let i = 0; i < data.length; i += step) {
+          const v = Math.abs(data[i]);
+          if (v > peak) peak = v;
+        }
+        if (peak > 0.01) {
+          recordingPeaks.set(fn, peak);
+        }
+      } catch (e) {
+        // Fallback map remains active
+      }
+    }
+    updateAccurateRecordingPeak();
 
     function ensureWebAudio() {
       const ctx = getAudioContext();
@@ -571,23 +618,17 @@
       const ticks = [
         {
           ratio: 0.88,
-          label: "+3 dB PEAK",
           color: "rgba(207, 56, 36, 0.45)",
-          textColor: "rgba(235, 120, 105, 0.75)",
           dash: [3, 3]
         },
         {
           ratio: 0.50,
-          label: "0 dB NOMINAL",
           color: "rgba(212, 150, 50, 0.35)",
-          textColor: "rgba(226, 185, 110, 0.70)",
           dash: [2, 4]
         },
         {
           ratio: 0.16,
-          label: "-18 dB FLOOR",
           color: "rgba(226, 218, 205, 0.15)",
-          textColor: "rgba(226, 218, 205, 0.45)",
           dash: [2, 4]
         }
       ];
@@ -602,12 +643,6 @@
         ctx.lineTo(padLeft + plotW, y);
         ctx.stroke();
         ctx.setLineDash([]);
-
-        ctx.fillStyle = th.textColor;
-        ctx.font = `600 ${isNarrow ? "7px" : "8px"} ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`;
-        ctx.textAlign = "right";
-        ctx.textBaseline = "middle";
-        ctx.fillText(th.label, padLeft - (isNarrow ? 4 : 8), y);
       });
 
       // 3. 24 Dynamic Equalizer Columns
@@ -729,62 +764,89 @@
 
         const dur = (Number.isFinite(audio.duration) && audio.duration > 0) ? audio.duration : currentDuration;
 
-        // Process real-time Web Audio frequency spectrum across 24 logarithmic bands
+        let currentRawAmp = 0;
         let meanEnergy = 0;
         let dominantCol = 0;
         let dominantColEnergy = 0;
 
-        if (analyserNode && freqArray) {
-          analyserNode.getByteFrequencyData(freqArray);
-
-          const sampleRate = (audioContextInstance && audioContextInstance.sampleRate) ? audioContextInstance.sampleRate : 44100;
-          const bandRanges = getBandBinRanges(sampleRate, analyserNode.fftSize, numColumns);
-
-          const rawBands = new Float32Array(numColumns);
-          for (let c = 0; c < numColumns; c++) {
-            const [startBin, endBin] = bandRanges[c];
-            let sum = 0;
-            let count = 0;
-            for (let b = startBin; b <= endBin && b < freqArray.length; b++) {
-              sum += freqArray[b];
-              count++;
+        if (analyserNode) {
+          // 1. Time-domain waveform amplitude: measure physical acoustic signal
+          if (timeArray) {
+            analyserNode.getByteTimeDomainData(timeArray);
+            let peakSample = 0;
+            let sumSq = 0;
+            for (let i = 0; i < timeArray.length; i++) {
+              const s = Math.abs(timeArray[i] - 128) / 128;
+              if (s > peakSample) peakSample = s;
+              sumSq += s * s;
             }
-            const avg = count > 0 ? (sum / count) / 255 : 0;
-            // High-frequency compensation tilt so harmonic roar and induction acoustic character register visibly
-            const tilt = 1.0 + Math.pow(c / (numColumns - 1), 1.25) * 2.4;
-            rawBands[c] = avg * tilt;
+            const rmsSample = Math.sqrt(sumSq / timeArray.length);
+            // Blend peak transients (70%) and RMS acoustic body (30%)
+            currentRawAmp = peakSample * 0.70 + rmsSample * 0.30;
           }
 
-          // Spatial acoustic smoothing across neighboring bands
-          for (let c = 0; c < numColumns; c++) {
-            const prev = c > 0 ? rawBands[c - 1] : rawBands[c];
-            const next = c < numColumns - 1 ? rawBands[c + 1] : rawBands[c];
-            smoothedBands[c] = 0.18 * prev + 0.64 * rawBands[c] + 0.18 * next;
-            meanEnergy += smoothedBands[c];
-            if (smoothedBands[c] > dominantColEnergy) {
-              dominantColEnergy = smoothedBands[c];
-              dominantCol = c;
+          // 2. Frequency spectrum analysis across 24 logarithmic bands
+          if (freqArray) {
+            analyserNode.getByteFrequencyData(freqArray);
+            const sampleRate = (audioContextInstance && audioContextInstance.sampleRate) ? audioContextInstance.sampleRate : 44100;
+            const bandRanges = getBandBinRanges(sampleRate, analyserNode.fftSize, numColumns);
+
+            for (let c = 0; c < numColumns; c++) {
+              const [startBin, endBin] = bandRanges[c];
+              let sum = 0;
+              let count = 0;
+              for (let b = startBin; b <= endBin && b < freqArray.length; b++) {
+                sum += freqArray[b];
+                count++;
+              }
+              const avg = count > 0 ? (sum / count) / 255 : 0;
+              // Gentle high-frequency compensation tilt for mechanical/induction harmonics
+              const tilt = 1.0 + Math.pow(c / (numColumns - 1), 1.25) * 1.8;
+              rawBands[c] = avg * tilt;
             }
+
+            // Spatial acoustic smoothing across neighboring bands
+            for (let c = 0; c < numColumns; c++) {
+              const prev = c > 0 ? rawBands[c - 1] : rawBands[c];
+              const next = c < numColumns - 1 ? rawBands[c + 1] : rawBands[c];
+              smoothedBands[c] = 0.18 * prev + 0.64 * rawBands[c] + 0.18 * next;
+              meanEnergy += smoothedBands[c];
+              if (smoothedBands[c] > dominantColEnergy) {
+                dominantColEnergy = smoothedBands[c];
+                dominantCol = c;
+              }
+            }
+            meanEnergy /= numColumns;
           }
-          meanEnergy /= numColumns;
         }
 
-        // Dynamic headroom adaptation: prevents close-mic recordings from slamming to the top
-        // while preserving dynamic breathing room and settling calmly during quiet portions
-        runningPeakEnergy = Math.max(meanEnergy, runningPeakEnergy * 0.995);
-        const effectiveHeadroom = Math.max(0.36, runningPeakEnergy);
-        const autoScale = 0.82 / effectiveHeadroom;
+        // Track live maximum observed amplitude so no legitimate peaks ever clip
+        if (currentRawAmp > runningObservedAmp) {
+          runningObservedAmp = currentRawAmp;
+        }
+        const recordingMax = recordingPeaks.get(recording.filename) || 0.95;
+        const effectiveMax = Math.max(recordingMax, runningObservedAmp);
+
+        // Amplitude normalized to actual maximum in the recording:
+        const normalizedAmp = effectiveMax > 0 ? Math.min(1.0, currentRawAmp / effectiveMax) : 0;
+
+        // Nonlinear amplitude scaling (dynamic range expansion):
+        // Small idle/ambient variations occupy very little vertical space,
+        // rising engine RPM builds progressively, and the actual peak reaches near the top.
+        const scaledEnvelope = Math.pow(normalizedAmp, 1.65);
 
         const now = performance.now();
 
-        // Map spectral energy into bar height with substantial mechanical inertia
+        // Modulate 24 frequency bands with the scaled amplitude envelope
         for (let c = 0; c < numColumns; c++) {
-          const scaledBand = smoothedBands[c] * autoScale;
-          // Compressive curve: keeps quiet portions low/calm, opens dynamically as energy increases
-          const colTarget = Math.max(0, Math.min(1.0, Math.pow(scaledBand, 1.18)));
+          const spectralFactor = meanEnergy > 0.001
+            ? (smoothedBands[c] / meanEnergy)
+            : 1.0;
+          const colWeight = 0.60 + 0.40 * Math.max(0.25, Math.min(2.0, spectralFactor));
+          const colTarget = Math.max(0, Math.min(1.0, scaledEnvelope * colWeight));
 
           // Physical mechanical inertia for heavy needle tracking
-          const smooth = colTarget > currentLevels[c] ? 0.26 : 0.11;
+          const smooth = colTarget > currentLevels[c] ? 0.28 : 0.12;
           currentLevels[c] += (colTarget - currentLevels[c]) * smooth;
 
           if (currentLevels[c] > peakLevels[c]) {
@@ -797,38 +859,38 @@
 
         // Update live dominant acoustic frequency readout
         if (liveRpmEl) {
-          if (meanEnergy < 0.06) {
-            liveRpmEl.textContent = "IDLE &bull; QUIET";
+          if (scaledEnvelope < 0.07) {
+            liveRpmEl.innerHTML = "IDLE &bull; LOW SPECTRUM";
           } else {
             const centerHz = bandCenterFrequencies[dominantCol] || 1000;
             const hzText = centerHz >= 1000
               ? `${(centerHz / 1000).toFixed(1)} kHz`
               : `${centerHz} Hz`;
             if (dominantCol <= 4) {
-              liveRpmEl.textContent = `BASS &bull; ${hzText}`;
+              liveRpmEl.innerHTML = `BASS &bull; ${hzText}`;
             } else if (dominantCol <= 11) {
-              liveRpmEl.textContent = `MID &bull; ${hzText}`;
+              liveRpmEl.innerHTML = `MID &bull; ${hzText}`;
             } else if (dominantCol <= 18) {
-              liveRpmEl.textContent = `INDUCTION &bull; ${hzText}`;
+              liveRpmEl.innerHTML = `INDUCTION &bull; ${hzText}`;
             } else {
-              liveRpmEl.textContent = `TREBLE &bull; ${hzText}`;
+              liveRpmEl.innerHTML = `TREBLE &bull; ${hzText}`;
             }
           }
         }
 
         // Update dynamic intensity badge
         if (badge) {
-          if (meanEnergy >= 0.52) {
-            badge.textContent = "SURGE";
+          if (scaledEnvelope >= 0.65) {
+            badge.textContent = "PEAK";
             badge.className = "sound-rev-intensity-badge is-redline";
-          } else if (meanEnergy >= 0.28) {
+          } else if (scaledEnvelope >= 0.35) {
             badge.textContent = "ACTIVE";
             badge.className = "sound-rev-intensity-badge is-power";
-          } else if (meanEnergy >= 0.10) {
-            badge.textContent = "MELLOW";
+          } else if (scaledEnvelope >= 0.10) {
+            badge.textContent = "BUILD";
             badge.className = "sound-rev-intensity-badge is-cruising";
           } else {
-            badge.textContent = "QUIET";
+            badge.textContent = "IDLE";
             badge.className = "sound-rev-intensity-badge is-idle";
           }
         }
@@ -856,7 +918,8 @@
       peakLevels.fill(0);
       peakHoldTimes.fill(0);
       smoothedBands.fill(0);
-      runningPeakEnergy = 0.35;
+      rawBands.fill(0);
+      runningObservedAmp = 0.05;
       if (badge) {
         badge.textContent = "RESTING";
         badge.className = "sound-rev-intensity-badge is-idle";

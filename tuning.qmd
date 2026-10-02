@@ -107,9 +107,18 @@ toc: false
         </div>
       </div>
 
-      <!-- THEN THE OWNER CHANGED IT (STEP 3) -->
-      <div class="tuning-owner-block">
-        <div class="tuning-dataset-header">
+      <!-- EXPANDABLE REAL BUILD STORY -->
+      <details class="tuning-build-details">
+        <summary class="tuning-build-summary">
+          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-indicator" aria-hidden="true">
+            <span class="indicator-plus">+</span>
+            <span class="indicator-minus">&minus;</span>
+          </span>
+        </summary>
+
+        <div class="tuning-owner-block">
+          <div class="tuning-dataset-header">
           <div class="tuning-dataset-kicker">Documented Enthusiast Build &middot; Japan</div>
           <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
         </div>
@@ -224,6 +233,7 @@ toc: false
           </p>
         </div>
       </div>
+      </details>
     </article>
 
     <!-- 02 — VIP / STANCE -->
@@ -251,9 +261,18 @@ toc: false
         </figure>
       </div>
 
-      <!-- THEN THE OWNER CHANGED IT (STEP 4) -->
-      <div class="tuning-owner-block">
-        <div class="tuning-dataset-header">
+      <!-- EXPANDABLE REAL BUILD STORY -->
+      <details class="tuning-build-details">
+        <summary class="tuning-build-summary">
+          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-indicator" aria-hidden="true">
+            <span class="indicator-plus">+</span>
+            <span class="indicator-minus">&minus;</span>
+          </span>
+        </summary>
+
+        <div class="tuning-owner-block">
+          <div class="tuning-dataset-header">
           <div class="tuning-dataset-kicker">Documented Enthusiast Build &middot; Japan &amp; USA</div>
           <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
         </div>
@@ -372,6 +391,7 @@ toc: false
           </p>
         </div>
       </div>
+      </details>
     </article>
 
     <!-- 03 — OEM+ -->
@@ -399,9 +419,18 @@ toc: false
         </div>
       </div>
 
-      <!-- THEN THE OWNER CHANGED IT (STEP 5) -->
-      <div class="tuning-owner-block">
-        <div class="tuning-dataset-header">
+      <!-- EXPANDABLE REAL BUILD STORY -->
+      <details class="tuning-build-details">
+        <summary class="tuning-build-summary">
+          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-indicator" aria-hidden="true">
+            <span class="indicator-plus">+</span>
+            <span class="indicator-minus">&minus;</span>
+          </span>
+        </summary>
+
+        <div class="tuning-owner-block">
+          <div class="tuning-dataset-header">
           <div class="tuning-dataset-kicker">Documented Enthusiast Build &middot; North Carolina, USA</div>
           <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
         </div>
@@ -520,6 +549,7 @@ toc: false
           </p>
         </div>
       </div>
+      </details>
     </article>
 
     <!-- 04 — RESTOMOD -->
@@ -547,9 +577,18 @@ toc: false
         </div>
       </div>
 
-      <!-- THEN THE OWNER CHANGED IT (STEP 6) -->
-      <div class="tuning-owner-block">
-        <div class="tuning-dataset-header">
+      <!-- EXPANDABLE REAL BUILD STORY -->
+      <details class="tuning-build-details">
+        <summary class="tuning-build-summary">
+          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-indicator" aria-hidden="true">
+            <span class="indicator-plus">+</span>
+            <span class="indicator-minus">&minus;</span>
+          </span>
+        </summary>
+
+        <div class="tuning-owner-block">
+          <div class="tuning-dataset-header">
           <div class="tuning-dataset-kicker">Documented Bespoke Commission &middot; Singer Vehicle Design</div>
           <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
         </div>
@@ -671,6 +710,7 @@ toc: false
           </p>
         </div>
       </div>
+      </details>
     </article>
 
     <!-- 05 — RALLY -->
@@ -698,9 +738,18 @@ toc: false
         </figure>
       </div>
 
-      <!-- THEN THE OWNER CHANGED IT (STEP 7) -->
-      <div class="tuning-owner-block">
-        <div class="tuning-dataset-header">
+      <!-- EXPANDABLE REAL BUILD STORY -->
+      <details class="tuning-build-details">
+        <summary class="tuning-build-summary">
+          <span class="tuning-summary-title">Explore the Build</span>
+          <span class="tuning-summary-indicator" aria-hidden="true">
+            <span class="indicator-plus">+</span>
+            <span class="indicator-minus">&minus;</span>
+          </span>
+        </summary>
+
+        <div class="tuning-owner-block">
+          <div class="tuning-dataset-header">
           <div class="tuning-dataset-kicker">Documented Competition Build &middot; Banbury, UK &amp; Nairobi, Kenya</div>
           <h3 class="tuning-dataset-title">THEN THE OWNER CHANGED IT</h3>
         </div>
@@ -822,6 +871,7 @@ toc: false
           </p>
         </div>
       </div>
+      </details>
     </article>
 
   </div>

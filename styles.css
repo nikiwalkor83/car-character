@@ -7949,6 +7949,103 @@ body {
   border-top: 1px solid var(--border-rule);
 }
 
+/* Progressive Disclosure: Expandable Build Stories */
+.tuning-build-details {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.tuning-build-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tuning-build-summary::-webkit-details-marker,
+.tuning-build-summary::marker {
+  display: none;
+}
+
+.tuning-build-summary:focus-visible {
+  outline: 1px dotted var(--accent-racing-green, #1c3d2e);
+  outline-offset: 4px;
+}
+
+.tuning-summary-title {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-ink);
+  transition: color 0.2s ease;
+}
+
+.tuning-build-summary:hover .tuning-summary-title {
+  color: var(--accent-racing-green, #1c3d2e);
+}
+
+.tuning-summary-indicator {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-left: 1rem;
+  transition: color 0.2s ease;
+}
+
+.tuning-build-summary:hover .tuning-summary-indicator {
+  color: var(--accent-racing-green, #1c3d2e);
+}
+
+.tuning-summary-indicator .indicator-minus {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-indicator .indicator-plus {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-indicator .indicator-minus {
+  display: inline;
+}
+
+.tuning-build-details[open] > .tuning-build-summary {
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.tuning-build-details .tuning-owner-block {
+  margin-top: 0;
+  padding-top: 2.25rem;
+  border-top: none;
+  animation: tuningRevealStory 0.35s ease-out forwards;
+}
+
+@keyframes tuningRevealStory {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tuning-build-details .tuning-owner-block {
+    animation: none;
+  }
+}
+
+
 .tuning-comparison-grid {
   display: grid;
   grid-template-columns: minmax(250px, 300px) auto 1fr;
