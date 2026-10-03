@@ -223,7 +223,7 @@ function renderPowertrainChart() {
 
 
 function initSoundVisuals() {
-  if (typeof renderSoundPlayers === 'function') {
+  if (!document.querySelector('script[src*="engine-recordings"]') && typeof renderSoundPlayers === 'function') {
     renderSoundPlayers();
   }
   if (typeof renderPowertrainChart === 'function') {

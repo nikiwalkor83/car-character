@@ -2942,7 +2942,7 @@ body {
 
 /* Sound Dropdown Selector */
 .sound-dropdown-wrap {
-  margin: 1.5rem 0 0;
+  margin: 0 0 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -3004,6 +3004,49 @@ body {
   pointer-events: none;
 }
 
+.sound-two-column-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.sound-column-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sound-column-right {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.sound-specimen-left {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.sound-specimen-left.is-fading,
+.sound-column-right.is-fading,
+.sound-specimen-source-row.is-fading,
+.engine-recording-detail.is-fading {
+  opacity: 0.15;
+}
+
+@media (max-width: 860px) {
+  .sound-two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 .engine-recording-detail {
   min-height: 290px;
   display: flex;
@@ -3014,10 +3057,6 @@ body {
   border-top: 1px solid var(--border-rule);
   transition: opacity 0.15s ease-in-out;
   opacity: 1;
-}
-
-.engine-recording-detail.is-fading {
-  opacity: 0.15;
 }
 
 .sound-specimen-meta {
@@ -3062,13 +3101,13 @@ body {
   font-size: 0.92rem;
   color: var(--text-body);
   line-height: 1.55;
-  max-width: 760px;
+  max-width: 100%;
 }
 
 .sound-specimen-source-row {
   border-top: 1px solid var(--border-rule);
   padding-top: 0.85rem;
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
 }
 
 .sound-specimen-source-row .sound-card-source {
@@ -3185,7 +3224,7 @@ body {
 
 /* Real Interactive Audio Waveform */
 .sound-waveform-container {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   background: var(--bg-paper);
   border: 1px solid var(--border-rule);
   border-radius: 2px;
@@ -3197,6 +3236,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   margin-bottom: 0.45rem;
   font-family: var(--font-sans);
   font-size: 0.68rem;
@@ -3208,6 +3249,7 @@ body {
 .sound-waveform-header-left {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.45rem;
 }
 
@@ -3242,21 +3284,39 @@ body {
 }
 
 .sound-waveform-seek-preview {
-  color: var(--accent-racing-green);
+  color: #cf3824;
   font-weight: 700;
+}
+
+.sound-waveform-indicator-dot.sound-rev-dot.is-active {
+  background: #cf3824;
+  box-shadow: 0 0 6px rgba(207, 56, 36, 0.6);
+  animation: revPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes revPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 .sound-waveform-canvas-wrap {
   position: relative;
   width: 100%;
-  height: 80px;
-  cursor: pointer;
-  background: rgba(28, 61, 46, 0.02);
-  border-radius: 1px;
-  border: 1px solid rgba(28, 61, 46, 0.1);
+  height: 230px;
+  cursor: ew-resize;
+  background: #121a15;
+  border-radius: 2px;
+  border: 1px solid #233127;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.65), 0 1px 0 rgba(255, 255, 255, 0.3);
   overflow: hidden;
   user-select: none;
   touch-action: none;
+}
+
+@media (max-width: 600px) {
+  .sound-waveform-canvas-wrap {
+    height: 170px;
+  }
 }
 
 .sound-waveform-canvas {
@@ -3271,12 +3331,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(251, 250, 248, 0.85);
+  background: rgba(20, 28, 23, 0.85);
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: #e2dacd;
   pointer-events: none;
 }
 
@@ -3316,7 +3376,9 @@ body {
 .sound-controls-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.85rem;
+  margin-top: 1.5rem;
 }
 
 .sound-play-btn {
@@ -4547,10 +4609,31 @@ body {
 /* Car Models Grid & Cards */
 .models-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
   margin-top: 1.75rem;
   min-height: 18rem;
+}
+
+@media (max-width: 1040px) {
+  .models-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .models-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .models-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .car-model-card {
@@ -4586,15 +4669,22 @@ body {
   transition: transform 0.4s ease;
 }
 
+.car-specimen-img.fit-contain {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.35rem 0.5rem;
+  box-sizing: border-box;
+}
+
 .car-model-card:hover .car-specimen-img {
   transform: scale(1.02);
 }
 
 .car-pills-overlay {
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  right: 0.75rem;
+  top: 0.6rem;
+  left: 0.6rem;
+  right: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4603,31 +4693,31 @@ body {
 
 .car-year-pill {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text-ink);
   background: var(--bg-paper);
   border: 1px solid var(--border-rule);
-  padding: 0.2rem 0.5rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 2px;
 }
 
 .car-cat-pill {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent-racing-green);
   background: var(--bg-paper);
   border: 1px solid var(--border-rule);
-  padding: 0.2rem 0.5rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 2px;
 }
 
 .car-details-body {
-  padding: 1.25rem;
+  padding: 1rem 1.1rem 1.15rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -4635,7 +4725,7 @@ body {
 
 .car-model-name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-ink);
   margin: 0 0 0.35rem 0;
@@ -4643,18 +4733,18 @@ body {
 
 .car-model-gen {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   line-height: 1.4;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.65rem 0;
 }
 
 .car-credit-line {
   margin-top: auto;
-  padding-top: 0.65rem;
+  padding-top: 0.6rem;
   border-top: 1px solid var(--border-rule);
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -5810,6 +5900,13 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.spec-hero-img.fit-contain {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 .spec-hero-info {
@@ -7475,4 +7572,636 @@ body {
     padding: 0.75rem 1rem;
   }
 }
+
+/* ==========================================================================
+   EDITORIAL FEATURE: THE FACTORY IS ONLY THE BEGINNING
+   British Motoring Magazine Aesthetic: Asymmetric Spreads & Refined Typography
+   ========================================================================== */
+
+.tuning-feature-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+  background-color: var(--bg-paper);
+}
+
+.tuning-masthead {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.tuning-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold, #967444);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tuning-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-ink);
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.tuning-deck {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0 auto 1.75rem;
+  font-style: italic;
+  max-width: 700px;
+}
+
+.tuning-core-quote {
+  border-left: 2px solid var(--accent-racing-green, #1c3d2e);
+  padding: 0.75rem 0 0.75rem 1.75rem;
+  margin: 2rem auto;
+  text-align: left;
+  max-width: 700px;
+}
+
+.tuning-core-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--text-ink);
+  font-style: italic;
+  margin: 0;
+}
+
+.tuning-core-intro {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+/* Editorial Sections Container */
+.tuning-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/* Base Editorial Subsection */
+.tuning-item {
+  border-top: 1px solid var(--border-rule);
+  padding-top: 2.5rem;
+}
+
+.tuning-meta-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tuning-number {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold, #967444);
+}
+
+.tuning-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 600;
+  color: var(--text-ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.tuning-thesis {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent-racing-green, #1c3d2e);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tuning-prose {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin-bottom: 1rem;
+}
+
+/* Images & Captions - British Motoring Elegance */
+.tuning-figure {
+  margin: 0;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-rule);
+  overflow: hidden;
+}
+
+.tuning-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.tuning-caption {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-paper);
+}
+
+.tuning-caption-tag {
+  font-weight: 600;
+  color: var(--text-ink);
+}
+
+/* Asymmetric Rhythm Variations */
+
+/* 01 Drift */
+.tuning-item-drift .tuning-grid-drift {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* 02 VIP / Stance */
+.tuning-item-vip .tuning-grid-vip {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* 03 OEM+ */
+.tuning-item-oem .tuning-grid-oem {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* 04 Restomod */
+.tuning-item-restomod .tuning-grid-restomod {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* 05 Rally */
+.tuning-item-rally .tuning-grid-rally {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Mobile & Narrow viewports */
+@media (max-width: 860px) {
+  .tuning-grid-drift,
+  .tuning-grid-vip,
+  .tuning-grid-oem,
+  .tuning-grid-restomod,
+  .tuning-grid-rally {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .tuning-sections {
+    gap: 3.5rem;
+  }
+  .tuning-core-quote {
+    padding-left: 1rem;
+  }
+}
+
+/* Drift Dataset Evidence Block */
+.tuning-dataset-block {
+  margin-top: 2.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.tuning-dataset-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold, #967444);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.tuning-dataset-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+}
+
+.tuning-dataset-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Magazine-style Spec Strip (restrained, no cards, no shadows) */
+.tuning-spec-table {
+  border-top: 1px solid var(--text-ink);
+  border-bottom: 1px solid var(--border-rule);
+  padding: 0.5rem 0;
+}
+
+.tuning-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border-rule);
+  font-size: 0.84rem;
+}
+
+.tuning-spec-row:last-child {
+  border-bottom: none;
+}
+
+.tuning-spec-label {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.tuning-spec-val {
+  font-family: var(--font-sans);
+  color: var(--text-ink);
+  font-weight: 600;
+  text-align: right;
+}
+
+.tuning-dataset-narrative p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 1rem;
+}
+
+.tuning-dataset-core-thought {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  font-style: italic;
+  margin-top: 1.25rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent-racing-green, #1c3d2e);
+}
+
+@media (max-width: 860px) {
+  .tuning-dataset-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Step 3: Owner Modification Comparison Block */
+.tuning-owner-block {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+/* Progressive Disclosure: Expandable Build Stories */
+.tuning-build-details {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--border-rule);
+  transition: border-color 0.2s ease;
+}
+
+.tuning-build-details:hover {
+  border-top-color: var(--accent-racing-green, #1c3d2e);
+}
+
+.tuning-build-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.35rem 0.5rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  border-bottom: 1px solid var(--border-rule);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tuning-build-summary:hover {
+  border-bottom-color: var(--accent-racing-green, #1c3d2e);
+}
+
+.tuning-build-summary:active {
+  opacity: 0.7;
+}
+
+.tuning-build-summary::-webkit-details-marker,
+.tuning-build-summary::marker {
+  display: none;
+}
+
+.tuning-build-summary:focus-visible {
+  outline: 1px dotted var(--accent-racing-green, #1c3d2e);
+  outline-offset: 4px;
+}
+
+.tuning-summary-title {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-ink);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tuning-summary-title .summary-label-open {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-title .summary-label-closed {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-title .summary-label-open {
+  display: inline;
+}
+
+.tuning-build-summary:hover .tuning-summary-title {
+  color: var(--accent-racing-green, #1c3d2e);
+  transform: translateX(2px);
+}
+
+.tuning-summary-indicator {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-left: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tuning-build-summary:hover .tuning-summary-indicator {
+  color: var(--accent-racing-green, #1c3d2e);
+  transform: translateX(4px);
+}
+
+.tuning-summary-indicator .indicator-minus {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-indicator .indicator-plus {
+  display: none;
+}
+
+.tuning-build-details[open] .tuning-summary-indicator .indicator-minus {
+  display: inline;
+}
+
+.tuning-build-details[open] > .tuning-build-summary {
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.tuning-build-details .tuning-dataset-block {
+  margin-top: 0;
+  padding-top: 2.25rem;
+  border-top: none;
+  animation: tuningRevealStory 0.35s ease-out forwards;
+}
+
+.tuning-build-details .tuning-dataset-block + .tuning-owner-block {
+  margin-top: 2.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.tuning-build-details .tuning-owner-block {
+  margin-top: 0;
+  padding-top: 2.25rem;
+  border-top: none;
+  animation: tuningRevealStory 0.35s ease-out forwards;
+}
+
+@keyframes tuningRevealStory {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tuning-build-details .tuning-owner-block,
+  .tuning-build-details .tuning-dataset-block {
+    animation: none;
+  }
+  .tuning-build-summary:hover .tuning-summary-title,
+  .tuning-build-summary:hover .tuning-summary-indicator {
+    transform: none;
+  }
+}
+
+
+.tuning-comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 300px) auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.tuning-comparison-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.tuning-comparison-badge {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--text-ink);
+}
+
+.tuning-badge-source {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold, #967444);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.tuning-comparison-heading {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-ink);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.tuning-comparison-arrow {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--text-muted);
+  align-self: center;
+  padding-top: 2.25rem;
+  line-height: 1;
+}
+
+.tuning-mod-list {
+  border-top: 1px solid var(--text-ink);
+}
+
+.tuning-mod-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.tuning-mod-item:last-child {
+  border-bottom: none;
+}
+
+.tuning-mod-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.tuning-mod-system {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-racing-green, #1c3d2e);
+  flex-shrink: 0;
+}
+
+.tuning-mod-part {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  text-align: right;
+}
+
+.tuning-mod-detail {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.tuning-owner-narrative {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-rule);
+}
+
+.tuning-owner-narrative p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 1rem;
+}
+
+.tuning-source-note {
+  font-family: var(--font-sans) !important;
+  font-size: 0.78rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.5 !important;
+  margin-top: 1.25rem !important;
+}
+
+.tuning-source-note a {
+  color: var(--text-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tuning-source-note a:hover {
+  color: var(--accent-racing-green, #1c3d2e);
+}
+
+@media (max-width: 860px) {
+  .tuning-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .tuning-comparison-arrow {
+    text-align: center;
+    padding-top: 0;
+  }
+  .tuning-mod-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .tuning-mod-part {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .tuning-build-summary {
+    padding: 1.15rem 0.25rem;
+  }
+  .tuning-summary-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+  .tuning-summary-indicator {
+    font-size: 1.25rem;
+  }
+}
+
+
 

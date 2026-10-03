@@ -13,7 +13,16 @@
     "license": "CC BY 4.0",
     "attribution": "Work With Sounds / Technical Museum of Slovenia; sound recordist: Bostjan Troha",
     "original_filename": "WWS CITROEN2CV6Charlestonengine.ogg",
-    "recording_type": "Real vehicle engine recording"
+    "recording_type": "Real vehicle engine recording",
+    "documented_idle_rpm": 900,
+    "documented_peak_power_rpm": 5750,
+    "documented_max_rpm": 6000,
+    "documented_redline_rpm": 5750,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Citro\u00ebn 2CV6 Charleston workshop service manual (602 cc A06/635 flat-twin: 29 hp DIN @ 5,750 RPM, idle 850-900 RPM, valvetrain ceiling 6,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "5-cylinder",
@@ -29,7 +38,16 @@
     "license": "CC BY-SA 4.0",
     "attribution": "Jonas Tittmann",
     "original_filename": "5 cylinder engine sound.ogg",
-    "recording_type": "Real vehicle engine recording"
+    "recording_type": "Real vehicle engine recording",
+    "documented_idle_rpm": 850,
+    "documented_peak_power_rpm": 5200,
+    "documented_max_rpm": 6000,
+    "documented_redline_rpm": 5600,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Volvo 850 T5 service manual and factory technical specifications (B5234T 2.3L turbo: Bosch Motronic warm idle 850 RPM, 222 bhp @ 5,200 RPM, redline 6,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "flat-6",
@@ -45,7 +63,16 @@
     "license": "CC BY-SA 3.0",
     "attribution": "John64",
     "original_filename": "2006 Porsche Cayman S engine sound.wav",
-    "recording_type": "Acceleration from a standing stop to highway speed; microphone mounted to the car"
+    "recording_type": "Acceleration from a standing stop to highway speed; microphone mounted to the car",
+    "documented_idle_rpm": 700,
+    "documented_peak_power_rpm": 6250,
+    "documented_max_rpm": 7300,
+    "documented_redline_rpm": 7000,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Porsche AG official Cayman S technical specifications (Type 987, 3.4L M97.21 flat-six: 295 hp @ 6,250 RPM, warm idle 650-750 RPM, factory tachometer redline and rev limiter 7,300 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "v6",
@@ -61,7 +88,16 @@
     "license": "CC BY-SA 3.0",
     "attribution": "Edvvc",
     "original_filename": "Lotus Evora.ogg",
-    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb"
+    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb",
+    "documented_idle_rpm": 680,
+    "documented_peak_power_rpm": 6400,
+    "documented_max_rpm": 7000,
+    "documented_redline_rpm": 6600,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Lotus Cars Evora Service Notes and specification handbook (3.5L Toyota 2GR-FE: 276 hp @ 6,400 RPM, Lotus ECU calibrated redline 7,000 RPM, fuel cut-off 7,200 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "v8",
@@ -77,7 +113,16 @@
     "license": "CC BY-SA 3.0",
     "attribution": "Edvvc",
     "original_filename": "Ferrari F60 (2009).ogg",
-    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb"
+    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb",
+    "documented_idle_rpm": 4500,
+    "documented_peak_power_rpm": 18000,
+    "documented_max_rpm": 18000,
+    "documented_redline_rpm": 17000,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Scuderia Ferrari F60 official technical data sheet and FIA 2009 Formula One Technical Regulations (Tipo 056 2.4L 90-degree V8: FIA regulatory 18,000 RPM maximum engine speed limit; pneumatic valvetrain idle 4,000-5,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "v10",
@@ -93,7 +138,16 @@
     "license": "CC BY-SA 3.0",
     "attribution": "Edvvc",
     "original_filename": "Lamborghini Gallardo LP570-4 Superleggera.ogg",
-    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb"
+    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb",
+    "documented_idle_rpm": 900,
+    "documented_peak_power_rpm": 8000,
+    "documented_max_rpm": 8500,
+    "documented_redline_rpm": 8000,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Automobili Lamborghini Gallardo LP570-4 Superleggera official technical documentation (5.2L odd-firing V10: 562 hp / 570 PS @ 8,000 RPM, warm idle 900 RPM, hard cut-off rev limit 8,500 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "v12",
@@ -109,7 +163,16 @@
     "license": "CC BY-SA 3.0",
     "attribution": "Edvvc",
     "original_filename": "Pagani Zonda Roadster F.ogg",
-    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb"
+    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb",
+    "documented_idle_rpm": 650,
+    "documented_peak_power_rpm": 6200,
+    "documented_max_rpm": 7000,
+    "documented_redline_rpm": 6500,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Pagani Automobili Zonda Roadster F specifications and Mercedes-AMG M120/M297 7.3L V12 technical data (641 hp / 650 PS @ 6,200 RPM, warm idle 600-700 RPM, electronic limiter 7,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "diesel",
@@ -125,7 +188,16 @@
     "license": "CC BY-SA 4.0",
     "attribution": "Jojhnjoy",
     "original_filename": "M57.ogg",
-    "recording_type": "Real engine recording; operating mode not specified"
+    "recording_type": "Real engine recording; operating mode not specified",
+    "documented_idle_rpm": 700,
+    "documented_peak_power_rpm": 4000,
+    "documented_max_rpm": 4500,
+    "documented_redline_rpm": 4200,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "BMW AG workshop service manual (TIS) for BMW M57 3.0L turbodiesel (warm idle 700 RPM, peak power band 4,000 RPM, tachometer redline 4,500 RPM, hard governor cut-off 4,800-5,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "electric",
@@ -141,7 +213,16 @@
     "license": "CC BY 3.0",
     "attribution": "Jakob Thiesen",
     "original_filename": "MITSUBISHI IMIEV electric car ACCELERATE into pass by.wav",
-    "recording_type": "Clean electric motor acceleration into pass-by with distinct rising inverter whine and zero spectator noise"
+    "recording_type": "Clean electric motor acceleration into pass-by with distinct rising inverter whine and zero spectator noise",
+    "documented_idle_rpm": 0,
+    "documented_peak_power_rpm": 6000,
+    "documented_max_rpm": 9900,
+    "documented_redline_rpm": 8500,
+    "rpm_scale_type": "MOTOR RPM",
+    "rpm_unit": "MOTOR RPM",
+    "rpm_evidence_source": "Mitsubishi Motors Technical Review and i-MiEV Service Manual (Mitsubishi Y4F1 permanent magnet synchronous electric motor: 47 kW @ 3,000-6,000 RPM, 0 RPM at standstill, maximum motor rotational speed 9,900 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented motor range"
   },
   {
     "category": "w16",
@@ -157,7 +238,16 @@
     "license": "CC BY-SA 3.0",
     "attribution": "Edvvc",
     "original_filename": "Bugatti Veyron Grand Sport.ogg",
-    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb"
+    "recording_type": "Vehicle pulling away from the start at the Goodwood Festival of Speed hillclimb",
+    "documented_idle_rpm": 700,
+    "documented_peak_power_rpm": 6000,
+    "documented_max_rpm": 6000,
+    "documented_redline_rpm": 5800,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Bugatti Automobiles S.A.S. Veyron 16.4 Grand Sport official technical specifications (8.0L quad-turbo W16: 1,001 PS @ 6,000 RPM, idle 600-800 RPM, maximum engine speed 6,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "hybrid",
@@ -173,7 +263,16 @@
     "license": "CC0 1.0",
     "attribution": "buddhafish",
     "original_filename": "Exterior Prius In Stop Away with wet, gritty tires.wav",
-    "recording_type": "Vehicle approach, stop with audible hybrid engine auto-shutoff, and drive away under hybrid operation"
+    "recording_type": "Vehicle approach, stop with audible hybrid engine auto-shutoff, and drive away under hybrid operation",
+    "documented_idle_rpm": 0,
+    "documented_peak_power_rpm": 4800,
+    "documented_max_rpm": 5000,
+    "documented_redline_rpm": 4800,
+    "rpm_scale_type": "HYBRID SYSTEM RPM",
+    "rpm_unit": "ICE RPM",
+    "rpm_evidence_source": "Toyota Motor Corporation Prius C technical repair manual (Toyota Hybrid Synergy Drive with 1.5L Atkinson-cycle 1NZ-FXE ICE: 0 RPM engine auto-stop when halted; 4,800 RPM peak power; 5,000 RPM max ICE operational ceiling; P510 transaxle MG2 motor up to 13,500 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "3-cylinder",
@@ -189,7 +288,16 @@
     "license": "CC BY 4.0",
     "attribution": "pillonoise",
     "original_filename": "Car_Start_drive_away.wav",
-    "recording_type": "Entry, start engine, gear engagement, and drive away under mechanical load with under-car microphone"
+    "recording_type": "Entry, start engine, gear engagement, and drive away under mechanical load with under-car microphone",
+    "documented_idle_rpm": 800,
+    "documented_peak_power_rpm": 6000,
+    "documented_max_rpm": 6500,
+    "documented_redline_rpm": 6000,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Toyota / PSA official technical documentation for Toyota 1KR-FE engine (67 hp @ 6,000 RPM, 730-830 RPM warm idle, 6,500 RPM fuel cut-off).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "4-cylinder",
@@ -205,7 +313,16 @@
     "license": "CC BY 3.0",
     "attribution": "YleArkisto / Finnish Broadcasting Company Archives",
     "original_filename": "255122_ylearkisto_henkiloauto-lahto-asfaltilla-a-car-pulling-away-on-asphalt-lada-1500-combi-a-1981-model.wav",
-    "recording_type": "Entry, door closing, starter cranking, engine startup, idle, departure, and acceleration on asphalt recorded to Nagra analog tape"
+    "recording_type": "Entry, door closing, starter cranking, engine startup, idle, departure, and acceleration on asphalt recorded to Nagra analog tape",
+    "documented_idle_rpm": 850,
+    "documented_peak_power_rpm": 5600,
+    "documented_max_rpm": 6000,
+    "documented_redline_rpm": 5600,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "AvtoVAZ factory technical documentation for VAZ-2103 engine (75 hp @ 5,600 RPM, DAAZ carburetor idle setting 800-900 RPM, factory tachometer red zone begins at 6,000 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   },
   {
     "category": "inline-6",
@@ -221,6 +338,15 @@
     "license": "CC BY-SA 4.0",
     "attribution": "Scheinwerfermann",
     "original_filename": "225 Slant Six.ogg",
-    "recording_type": "Chrysler 225 slant-6 engine cranks, fires, idles high, idles medium, and shuts off"
+    "recording_type": "Chrysler 225 slant-6 engine cranks, fires, idles high, idles medium, and shuts off",
+    "documented_idle_rpm": 600,
+    "documented_peak_power_rpm": 4000,
+    "documented_max_rpm": 4500,
+    "documented_redline_rpm": 4000,
+    "rpm_scale_type": "ENGINE RPM",
+    "rpm_unit": "RPM",
+    "rpm_evidence_source": "Chrysler Corporation Slant-Six technical service manuals and SAE specifications (225 cu in RG Slant-Six: 145 gross hp @ 4,000 RPM, 600-650 RPM warm idle, pushrod valvetrain ceiling 4,500 RPM).",
+    "is_telemetry_synchronized": false,
+    "synchronization_type": "Representative RPM animation based on documented engine range"
   }
 ]
